@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Webdesign für Handwerker &amp; lokale Betriebe | msy-designs</title>
+  <meta name="description" content="Professionelle Websites für Handwerker und lokale Betriebe – modern, schnell und bei Google gefunden. Jetzt unverbindlich anfragen bei msy-designs.">
+  <meta name="author" content="msy-designs">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://msy-designs.de/">
+  <meta name="theme-color" content="#f6f5f2">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="msy-designs">
+  <meta property="og:title" content="Webdesign für Handwerker &amp; lokale Betriebe | msy-designs">
+  <meta property="og:description" content="Moderne, schnelle Websites für Handwerk und lokale Betriebe, die aus Besuchern Anfragen machen. Jetzt unverbindlich anfragen.">
+  <meta property="og:url" content="https://msy-designs.de/">
+  <meta property="og:image" content="https://msy-designs.de/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="msy-designs – Webdesign für Handwerker und lokale Betriebe">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Webdesign für Handwerker &amp; lokale Betriebe | msy-designs">
+  <meta name="twitter:description" content="Moderne, schnelle Websites, die aus Besuchern Anfragen machen. Jetzt unverbindlich anfragen.">
+  <meta name="twitter:image" content="https://msy-designs.de/og-image.png">
+  <meta name="twitter:image:alt" content="msy-designs – Webdesign für Handwerker und lokale Betriebe">
+
+  <!-- Icons & Manifest -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts: lokal gehostet (DSGVO-konform), kritische Schnitte vorab geladen -->
+  <link rel="preload" href="/fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/satoshi-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/satoshi-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        d.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Strukturierte Daten -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://msy-designs.de/#business",
+        "name": "msy-designs",
+        "description": "Webdesign-Studio für Handwerker und lokale Betriebe. Moderne, schnelle und DSGVO-konforme Websites, die aus Besuchern Kunden machen.",
+        "url": "https://msy-designs.de/",
+        "image": "https://msy-designs.de/og-image.png",
+        "logo": "https://msy-designs.de/favicon.svg",
+        "email": "msywebdesign@gmail.com",
+        "telephone": "+49-178-6004553",
+        "priceRange": "€€",
+        "areaServed": { "@type": "Country", "name": "Deutschland" },
+        "serviceType": ["Webdesign", "Website für Handwerker", "Website-Erstellung", "Website-Relaunch", "Lokales SEO", "Website-Pflege"],
+        "founder": { "@id": "https://msy-designs.de/#person" },
+        "hasOfferCatalog": { "@id": "https://msy-designs.de/#leistungen" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://msy-designs.de/#person",
+        "name": "Muhammed Selman",
+        "jobTitle": "Webdesigner",
+        "url": "https://msy-designs.de/",
+        "knowsAbout": ["Webdesign", "Responsive Design", "Lokales SEO", "Conversion-Optimierung"],
+        "worksFor": { "@id": "https://msy-designs.de/#business" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://msy-designs.de/#website",
+        "name": "msy-designs",
+        "url": "https://msy-designs.de/",
+        "inLanguage": "de-DE",
+        "publisher": { "@id": "https://msy-designs.de/#business" }
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://msy-designs.de/#leistungen",
+        "name": "Leistungen",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Komplett neue Website", "serviceType": "Webdesign" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO – bei Google gefunden werden", "serviceType": "SEO" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wartung & Betreuung", "serviceType": "Wartung" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Design-Aktualisierung", "serviceType": "Relaunch" } }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://msy-designs.de/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Für welche Branchen erstellen Sie Websites?", "acceptedAnswer": { "@type": "Answer", "text": "In erster Linie für Handwerksbetriebe – vom Maler, Elektriker, Schreiner und Fliesenleger über Dachdecker, Sanitär-, Heizungs- und Klimatechnik (SHK), Maurer und Trockenbauer bis zu Garten- und Landschaftsbau, Zimmerern, Bodenlegern, Metallbauern und KFZ-Betrieben. Auf Anfrage gestalte ich auch für weitere Branchen Websites." } },
+          { "@type": "Question", "name": "Was kostet eine Website?", "acceptedAnswer": { "@type": "Answer", "text": "Jedes Projekt ist individuell. Den passenden Umfang und ein faires Angebot besprechen wir persönlich – fragen Sie einfach unverbindlich an oder buchen Sie ein kostenloses Erstgespräch." } },
+          { "@type": "Question", "name": "Ich habe noch keine Website, kein Logo und keine Texte. Geht das trotzdem?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, absolut. Wir starten gemeinsam bei null. Ich übernehme Aufbau, Gestaltung und auf Wunsch auch die Texte – Sie müssen kein Technik-Profi sein." } },
+          { "@type": "Question", "name": "Werde ich bei Google gefunden?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Jede Website wird mit sauberen SEO-Grundlagen erstellt, damit Kunden aus Ihrer Region Sie finden – und nicht die Konkurrenz." } },
+          { "@type": "Question", "name": "Wie kann ich Sie erreichen?", "acceptedAnswer": { "@type": "Answer", "text": "Am schnellsten über WhatsApp, telefonisch oder per E-Mail über die Buttons unten rechts. Oder Sie senden eine Anfrage über die Pakete. Sie bekommen zeitnah eine persönliche Rückmeldung." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="msy-designs Startseite">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="10" fill="#14151a"/>
+        <path d="M9 28V13.5L16.5 22 24 13.5V28" stroke="#f6f5f2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M27 13.5L31.5 19.5 27 25.5" stroke="#ff4d2e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>msy<b>-</b>designs</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#pakete">Pakete</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <button type="button" class="theme-toggle" id="themeToggle" role="switch" aria-checked="false" aria-label="Dunkelmodus umschalten" title="Hell / Dunkel umschalten">
+        <span class="theme-toggle-track">
+          <span class="theme-toggle-icon theme-toggle-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span>
+          <span class="theme-toggle-icon theme-toggle-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span>
+          <span class="theme-toggle-thumb"></span>
+        </span>
+      </button>
+      <a href="#pakete" class="btn btn--glow">Jetzt anfragen</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-paths" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow reveal">Webdesign für Handwerk &amp; lokale Betriebe</span>
+        <h1>Die Website, die Ihr Handwerk <span class="accent">zu Kunden bringt.</span></h1>
+        <p class="hero-sub reveal reveal-d2">Moderne, schnelle Websites, die aus Besuchern Anfragen machen – professionell umgesetzt, von A bis Z. Sie kümmern sich um Ihr Handwerk, ich um Ihren Auftritt.</p>
+        <div class="hero-actions reveal reveal-d3">
+          <a href="#pakete" class="btn btn--lg btn--glow">Jetzt anfragen</a>
+        </div>
+        <p class="hero-microcopy reveal reveal-d3">
+          <span>Unverbindlich</span><span class="dot"></span>
+          <span>Persönliche Betreuung</span><span class="dot"></span>
+          <span>Schnelle Rückmeldung</span><span class="dot"></span>
+          <span>Moderne Websites</span>
+        </p>
+
+        <div class="trust-strip reveal reveal-d3">
+          <span class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Bei Google gefunden</span>
+          <span class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Perfekt am Handy</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ LEISTUNGEN ============ -->
+  <section class="section section--surface" id="leistungen">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Leistungen</span>
+        <h2 class="h-section">Alles für Ihren Auftritt – aus einer Hand</h2>
+        <p>Von der ersten Seite bis zur laufenden Pflege. Sie sagen, was Sie brauchen – ich liefere das fertige Ergebnis.</p>
+      </div>
+      <div class="leistungen-grid">
+        <article class="leistung reveal">
+          <div class="l-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <h3>Komplett neue Website</h3>
+          <p>Ein moderner, professioneller Auftritt, der zu Ihrem Betrieb passt und Vertrauen schafft.</p>
+        </article>
+        <article class="leistung reveal reveal-d1">
+          <div class="l-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <h3>SEO</h3>
+          <p>Damit Kunden aus Ihrer Region Sie bei Google finden – nicht die Konkurrenz nebenan.</p>
+        </article>
+        <article class="leistung reveal reveal-d2">
+          <div class="l-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6z"/></svg></div>
+          <h3>Wartung &amp; Betreuung</h3>
+          <p>Hosting, Updates, Sicherheit und kleine Änderungen – ich halte alles am Laufen, Sie haben Ruhe.</p>
+        </article>
+        <article class="leistung reveal reveal-d3">
+          <div class="l-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+          <h3>Design-Aktualisierung</h3>
+          <p>Ihre alte Seite wirkt veraltet? Ich mache sie modern, schnell und überzeugend – ohne Neustart bei null.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAKETE ============ -->
+  <section class="section" id="pakete">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Pakete</span>
+        <h2 class="h-section">So arbeiten wir zusammen</h2>
+        <p>Wählen Sie, was zu Ihnen passt. Den genauen Umfang besprechen wir unverbindlich und persönlich.</p>
+      </div>
+
+      <div class="packages">
+        <div class="pkg-pair">
+          <article class="pkg reveal">
+            <h3 class="pkg-name">Website</h3>
+            <div class="pkg-tagline">Erstellung &amp; Übergabe</div>
+            <p class="pkg-desc">Ihre fertige, professionelle Website – einmal erstellt und an Sie übergeben.</p>
+            <ul class="pkg-list">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Modernes, individuelles Design</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Perfekt auf Handy &amp; Desktop</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>SEO-Grundlagen inklusive</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Kontaktmöglichkeiten &amp; Karte</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Impressum &amp; Datenschutz</li>
+            </ul>
+            <button type="button" class="btn btn--ghost btn--block" data-open="modal-anfrage" data-package="Website (Erstellung &amp; Übergabe)">Angebot anfragen</button>
+          </article>
+
+          <div class="pkg-or" aria-hidden="true"><span>oder</span></div>
+
+          <article class="pkg pkg--featured reveal reveal-d1">
+            <span class="pkg-badge">★ Unsere Empfehlung</span>
+            <h3 class="pkg-name">Website + Verwaltung</h3>
+            <div class="pkg-tagline">Erstellung &amp; laufende Betreuung</div>
+            <p class="pkg-desc">Ich erstelle Ihre Website und kümmere mich dauerhaft darum – Sie müssen an nichts denken.</p>
+            <ul class="pkg-list">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Modernes, individuelles Design</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Perfekt auf Handy &amp; Desktop</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>SEO-Grundlagen inklusive</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Kontaktmöglichkeiten &amp; Karte</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Hosting &amp; Sicherheit</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Laufende Pflege &amp; Updates</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Persönliche Betreuung &amp; Verwaltung</li>
+            </ul>
+            <button type="button" class="btn btn--ghost btn--block" data-open="modal-anfrage" data-package="Website + Verwaltung (laufende Betreuung)">Angebot anfragen</button>
+          </article>
+        </div>
+
+        <article class="pkg pkg--enterprise reveal">
+          <div class="pkg-ent-inner">
+            <div>
+              <h3 class="pkg-name">Enterprise</h3>
+              <div class="pkg-tagline">Die große Lösung für Ihren Auftritt</div>
+              <p class="pkg-desc">Eine umfangreiche Website mit mehreren Seiten, Kontaktformular und allem, was Ihr Betrieb braucht – individuell für Sie geplant.</p>
+              <p class="pkg-ent-note">Wir besprechen alles in einem kostenlosen, unverbindlichen 30-Minuten-Erstgespräch.</p>
+              <button type="button" class="btn btn--glow" data-open="modal-termin">Termin buchen</button>
+            </div>
+            <ul class="pkg-list">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Mehrseitige Website</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Individuelles Design &amp; Aufbau</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Kontaktformular &amp; Funktionen</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Umfassende SEO-Optimierung</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Persönliche Betreuung</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WARUM ============ -->
+  <section class="section section--mist" id="warum">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Warum msy-designs</span>
+        <h2 class="h-section">Eine Website, die wirklich arbeitet</h2>
+      </div>
+      <div class="value-grid">
+        <article class="value-card reveal">
+          <div class="v-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg></div>
+          <h3>Aus Besuchern werden Anfragen</h3>
+          <p>Klare Struktur, starke Buttons, kein Schnickschnack – jede Seite ist darauf ausgelegt, dass Interessenten zu Kunden werden.</p>
+        </article>
+        <article class="value-card reveal reveal-d1">
+          <div class="v-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.3-7-10a7 7 0 0 1 14 0c0 5.7-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
+          <h3>In Ihrer Region gefunden</h3>
+          <p>Saubere SEO-Grundlagen sorgen dafür, dass Kunden aus Ihrer Stadt Sie bei Google finden.</p>
+        </article>
+        <article class="value-card reveal reveal-d2">
+          <div class="v-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <h3>Perfekt auf jedem Gerät</h3>
+          <p>Ihre Website sieht auf Handy, Tablet und Desktop top aus und lädt blitzschnell – dort, wo Ihre Kunden sind.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section--surface" id="faq">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="h-section">Häufige Fragen</h2>
+      </div>
+      <div class="faq-wrap reveal">
+        <details class="faq-item">
+          <summary>Für welche Branchen erstellen Sie Websites?<span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-answer">
+            <p>In erster Linie für <strong>Handwerksbetriebe</strong> – vom Maler, Elektriker, Schreiner und Fliesenleger über Dachdecker, Sanitär-, Heizungs- und Klimatechnik (SHK), Maurer und Trockenbauer bis zu Garten- und Landschaftsbau, Zimmerern, Bodenlegern, Metallbauern und KFZ-Betrieben.</p>
+            <p>Auf Anfrage gestalte ich auch für weitere Branchen Websites.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Was kostet eine Website?<span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-answer"><p>Jedes Projekt ist individuell. Den passenden Umfang und ein faires Angebot besprechen wir persönlich – fragen Sie einfach unverbindlich an oder buchen Sie ein kostenloses Erstgespräch.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Ich habe noch keine Website, kein Logo und keine Texte. Geht das trotzdem?<span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-answer"><p>Ja, absolut. Wir starten gemeinsam bei null. Ich übernehme Aufbau, Gestaltung und auf Wunsch auch die Texte – Sie müssen kein Technik-Profi sein.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Werde ich bei Google gefunden?<span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-answer"><p>Ja. Jede Website wird mit sauberen SEO-Grundlagen erstellt, damit Kunden aus Ihrer Region Sie finden – und nicht die Konkurrenz.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Wie kann ich Sie erreichen?<span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-answer"><p>Telefonisch oder per E-Mail über die Buttons unten rechts. Oder Sie senden eine Anfrage über die Pakete. Sie bekommen zeitnah eine persönliche Rückmeldung.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BAND ============ -->
+  <section class="section cta-band">
+    <div class="container">
+      <h2 class="reveal">Bereit für mehr Anfragen?</h2>
+      <p class="reveal reveal-d1">Holen Sie sich einen Auftritt, der für Sie arbeitet. Unverbindlich, persönlich und ohne Risiko.</p>
+      <div class="hero-actions reveal reveal-d2">
+        <button type="button" class="btn btn--lg btn--glow" data-open="modal-anfrage" data-package="Allgemeine Anfrage">Jetzt anfragen</button>
+        <button type="button" class="btn btn--lg btn--light" data-open="modal-termin">Termin buchen</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="#1c1d24"/>
+            <path d="M9 28V13.5L16.5 22 24 13.5V28" stroke="#f6f5f2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M27 13.5L31.5 19.5 27 25.5" stroke="#ff4d2e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>msy<b>-</b>designs</span>
+        </span>
+        <p>Webdesign für Handwerker und lokale Betriebe. Moderne, schnelle Websites, die aus Besuchern Kunden machen.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#pakete">Pakete</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt &amp; Recht</h4>
+        <ul>
+          <li><a href="tel:+491786004553">0178 6004553</a></li>
+          <li><a href="mailto:msywebdesign@gmail.com">msywebdesign@gmail.com</a></li>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> msy-designs. Alle Rechte vorbehalten.</span>
+      <span class="footer-made">Mit <span class="heart" aria-hidden="true">●</span> in Deutschland gebaut</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING KONTAKT-DOCK ============ -->
+<div class="dock" aria-label="Schnellkontakt">
+  <a class="dock-call" href="tel:+491786004553" aria-label="Anrufen" title="Anrufen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  </a>
+  <a class="dock-mail" href="mailto:msywebdesign@gmail.com" aria-label="E-Mail schreiben" title="E-Mail">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+  </a>
+</div>
+
+<!-- ============ MODAL: ANGEBOT ANFRAGEN ============ -->
+<div class="modal" id="modal-anfrage" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="anfrage-title">
+    <button type="button" class="modal-close" data-close aria-label="Schließen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <form id="formAnfrage" novalidate>
+      <div class="form-body">
+        <span class="modal-eyebrow">Anfrage</span>
+        <h2 id="anfrage-title">Angebot anfragen</h2>
+        <p class="modal-sub" data-package-label>Erzählen Sie kurz von Ihrem Vorhaben – ich melde mich persönlich bei Ihnen.</p>
+
+        <input type="hidden" name="paket" value="Allgemeine Anfrage">
+
+        <div class="field">
+          <label for="a-email">E-Mail <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="a-email" name="email" autocomplete="email" required placeholder="name@firma.de">
+        </div>
+        <div class="field">
+          <label for="a-phone">Telefonnummer <span class="req" aria-hidden="true">*</span></label>
+          <input type="tel" id="a-phone" name="telefon" autocomplete="tel" required placeholder="z. B. 0178 6004553">
+        </div>
+        <div class="field">
+          <label for="a-message">Ihre Nachricht <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="a-message" name="nachricht" required placeholder="Worum geht es?"></textarea>
+          <p class="field-hint">Geben Sie bitte alle zur Website relevanten Informationen an.</p>
+        </div>
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="a-company">Firma (bitte leer lassen)</label>
+          <input type="text" id="a-company" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn btn--lg btn--block">Anfrage senden</button>
+        <p class="form-privacy">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung Ihrer Anfrage zu. Mehr in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+      </div>
+
+      <div class="form-success" role="status" aria-live="polite">
+        <div class="fs-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Fast geschafft!</h3>
+        <p>Ihr E-Mail-Programm wurde mit Ihrer Anfrage geöffnet – bitte dort nur noch auf „Senden“ klicken.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ MODAL: TERMIN BUCHEN ============ -->
+<div class="modal" id="modal-termin" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="termin-title">
+    <button type="button" class="modal-close" data-close aria-label="Schließen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <form id="formTermin" novalidate>
+      <div class="form-body">
+        <span class="modal-eyebrow">Erstgespräch</span>
+        <h2 id="termin-title">Termin buchen</h2>
+        <p class="modal-sub">Kostenloses, unverbindliches 30-Minuten-Erstgespräch. Wählen Sie einfach einen Wunschtermin.</p>
+
+        <div class="field">
+          <label for="t-phone">Telefonnummer <span class="req" aria-hidden="true">*</span></label>
+          <input type="tel" id="t-phone" name="telefon" autocomplete="tel" required placeholder="z. B. 0178 6004553">
+        </div>
+        <div class="field">
+          <label for="t-email">E-Mail <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="t-email" name="email" autocomplete="email" required placeholder="name@firma.de">
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="t-date">Wunschtag <span class="req" aria-hidden="true">*</span></label>
+            <input type="date" id="t-date" name="datum" required>
+          </div>
+          <div class="field">
+            <label for="t-time">Uhrzeit <span class="req" aria-hidden="true">*</span></label>
+            <select id="t-time" name="uhrzeit" required>
+              <option value="" disabled selected>Bitte wählen …</option>
+              <option value="Andere Uhrzeit">Andere Uhrzeit angeben …</option>
+              <option>14:00</option>
+              <option>14:30</option>
+              <option>15:00</option>
+              <option>15:30</option>
+              <option>16:00</option>
+              <option>16:30</option>
+              <option>17:00</option>
+              <option>17:30</option>
+              <option>18:00</option>
+              <option>18:30</option>
+              <option>19:00</option>
+              <option>19:30</option>
+              <option>20:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="field" id="customTimeWrap" hidden>
+          <label for="t-time-custom">Ihre Wunsch-Uhrzeit</label>
+          <input type="text" id="t-time-custom" name="wunsch_uhrzeit" placeholder="z. B. 12:30 oder vormittags">
+        </div>
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="t-company">Firma (bitte leer lassen)</label>
+          <input type="text" id="t-company" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn btn--lg btn--block">Termin anfragen</button>
+        <p class="form-privacy">Termine sind täglich von 14 bis 20 Uhr möglich. Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zu. Mehr in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+      </div>
+
+      <div class="form-success" role="status" aria-live="polite">
+        <div class="fs-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Fast geschafft!</h3>
+        <p>Ihr E-Mail-Programm wurde mit Ihrer Terminanfrage geöffnet – bitte dort nur noch auf „Senden“ klicken.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/script.js" defer></script>
+</body>
+</html>

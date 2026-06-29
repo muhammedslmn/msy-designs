@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://msy-designs.de/sitemap.xml
