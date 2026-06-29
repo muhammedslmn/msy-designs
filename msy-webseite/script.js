@@ -12,7 +12,7 @@
      ========================================================= */
   var CONFIG = {
     email: 'msywebdesign@gmail.com',
-    formspree: ''
+    formspree: 'https://formspree.io/f/xaqgbjvp'
   };
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -277,9 +277,11 @@
     if (CONFIG.formspree) {
       var btn = form.querySelector('button[type="submit"]');
       if (btn) { btn.disabled = true; }
+      var fd = new FormData(form);
+      if (subject) fd.append('_subject', subject);
       fetch(CONFIG.formspree, {
         method: 'POST',
-        body: new FormData(form),
+        body: fd,
         headers: { Accept: 'application/json' }
       }).then(function (res) {
         if (res.ok) { markSent(form, 'fetch'); if (btn) btn.disabled = false; }
