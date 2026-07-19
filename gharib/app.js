@@ -119,6 +119,7 @@ function render() {
     case 'quiz_setup':  screen = renderQuizSetup(); break;
     case 'quiz_play':   screen = renderQuizPlay(); break;
     case 'quiz_result': screen = renderQuizResult(); break;
+    case 'online':      screen = renderOnline(); break;
     default:       screen = renderHub();
   }
   root.append(screen);
@@ -168,7 +169,7 @@ function renderHub() {
     h('div', { class: 'hero-mark', style: 'width:82px;height:82px', html: ICONS.star8 }),
     h('h1', { class: 'hub-title' }, 'Gharîb', h('span', { class: 'ar' }, 'غريب')),
     h('p', { class: 'hub-sub' }, T('hub_sub')),
-    h('div', { class: 'gamecards' }, gameCard('gharib'), gameCard('quiz')),
+    h('div', { class: 'gamecards' }, gameCard('gharib'), gameCard('quiz'), gameCard('slf')),
     h('button', { class: 'btn btn-ghost btn-block', style: 'margin-top:.2rem', onclick: openRules }, icon(UI.info), T('home_rules')),
     divider(),
     h('p', { class: 'hero-foot' }, icon(UI.book, ''), T('home_foot')),
@@ -177,12 +178,18 @@ function renderHub() {
   return s;
 }
 function gameCard(which) {
-  const isG = which === 'gharib';
-  return h('button', { class: 'gamecard ' + (isG ? 'g' : 'q'), onclick: () => setScreen(isG ? 'setup' : 'quiz_setup') },
-    h('span', { class: 'gc-ico', html: isG ? ICONS.star8 : ICONS.quiz, 'aria-hidden': 'true' }),
+  const slft = (typeof SLF_T !== 'undefined') ? (SLF_T[state.lang] || SLF_T.de) : { title: 'İsim Şehir', desc: '' };
+  const cfg = {
+    gharib: { cls: 'g', ico: ICONS.star8, name: h('span', {}, 'Gharîb', h('span', { class: 'gc-ar' }, ' غريب')), desc: T('game_gharib_desc'), go: () => setScreen('setup') },
+    quiz:   { cls: 'q', ico: ICONS.quiz,  name: T('game_quiz_name'), desc: T('game_quiz_desc'), go: () => setScreen('quiz_setup') },
+    slf:    { cls: 's', ico: ICONS.history, name: slft.title, desc: slft.desc, badge: 'ONLINE',
+              go: () => { if (typeof OS !== 'undefined') { OS.rs = null; OS.joinCode = ''; OS.error = ''; OS.role = null; if (OS.net) { OS.net.leave(); OS.net = null; } } setScreen('online'); } },
+  }[which];
+  return h('button', { class: 'gamecard ' + cfg.cls, onclick: cfg.go },
+    h('span', { class: 'gc-ico', html: cfg.ico, 'aria-hidden': 'true' }),
     h('span', { class: 'gc-body' },
-      h('span', { class: 'gc-name' }, isG ? h('span', {}, 'Gharîb', h('span', { class: 'gc-ar' }, ' غريب')) : T('game_quiz_name')),
-      h('span', { class: 'gc-desc' }, T(isG ? 'game_gharib_desc' : 'game_quiz_desc')),
+      h('span', { class: 'gc-name' }, cfg.name, cfg.badge ? h('span', { class: 'gc-badge' }, cfg.badge) : null),
+      h('span', { class: 'gc-desc' }, cfg.desc),
     ),
     h('span', { class: 'gc-play', html: UI.play, 'aria-hidden': 'true' }),
   );
@@ -762,5 +769,6 @@ function renderQuizResult() {
 document.addEventListener('click', () => { if (state.langMenuOpen) { state.langMenuOpen = false; render(); } });
 
 /* ---------- Start ---------- */
+try { if (typeof slfCheckInviteURL === 'function') slfCheckInviteURL(); } catch {}
 applyLangDir();
 render();
