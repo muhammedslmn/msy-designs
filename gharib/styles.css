@@ -533,3 +533,9 @@ html[data-theme="dark"] .chip.is-selected { color: var(--green-2); }
 .score-num span { font-size: 1.2rem; color: var(--ink-3); }
 .score-msg { font-family: var(--display); font-weight: 700; font-size: 1.4rem; color: var(--ink); margin-top: .7rem; text-wrap: balance; }
 .score-sub { font-size: .95rem; margin-top: .2rem; }
+
+/* ---------- Kategorie-Gruppen (aufgeräumte Auswahl) ---------- */
+.cat-group { font-size: .74rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); margin: 1.1rem 0 .1rem; display: flex; align-items: center; gap: .6rem; }
+.cat-group::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+html[lang="ar"] .cat-group { letter-spacing: 0; }
+.field .cat.mixed { margin-bottom: .2rem; }

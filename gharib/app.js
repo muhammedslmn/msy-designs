@@ -226,26 +226,34 @@ function renderSetup() {
     h('div', { class: 'hint', style: 'margin-top:.7rem' }, T('gharib_hint', { p: c.players, m: mg })),
   ));
 
-  /* Kategorie */
-  const grid = h('div', { class: 'cat-grid' });
-  CATEGORIES.forEach(cat => {
+  /* Kategorie – gruppiert (aufgeräumt) */
+  const CAT_GROUP = { islam: { de:'Islam', tr:'İslami', en:'Islamic', ar:'إسلامية' }, daily: { de:'Alltag & Werte', tr:'Günlük & değerler', en:'Everyday & values', ar:'الحياة والقيم' } };
+  const ISLAMIC = ['prophets', 'companions', 'worship', 'quran', 'places', 'akhlaq', 'aqida', 'history'];
+  const catBtn = (cat) => {
     const count = TERMS.filter(t => t.cat === cat.id).length;
-    grid.append(h('button', { class: 'cat' + (c.category === cat.id ? ' is-selected' : ''),
+    return h('button', { class: 'cat' + (c.category === cat.id ? ' is-selected' : ''),
       onclick: () => { c.category = cat.id; persistSetup(); render(); } },
       h('span', { class: 'tick', html: UI.check }),
       h('span', { class: 'ico', html: cat.icon }),
       h('span', { class: 'nm' }, cat.name[state.lang]),
       h('span', { class: 'cnt' }, count + ' ' + T('words_unit')),
-    ));
-  });
-  const mixedCount = TERMS.length;
-  grid.append(h('button', { class: 'cat mixed' + (c.category === 'mixed' ? ' is-selected' : ''),
+    );
+  };
+  const gridIslam = h('div', { class: 'cat-grid' });
+  ISLAMIC.forEach(id => { const cat = CATEGORIES.find(x => x.id === id); if (cat) gridIslam.append(catBtn(cat)); });
+  const gridDaily = h('div', { class: 'cat-grid' });
+  CATEGORIES.filter(x => !ISLAMIC.includes(x.id)).forEach(cat => gridDaily.append(catBtn(cat)));
+  const mixedBtn = h('button', { class: 'cat mixed' + (c.category === 'mixed' ? ' is-selected' : ''),
     onclick: () => { c.category = 'mixed'; persistSetup(); render(); } },
     h('span', { class: 'ico', html: ICONS.mixed }),
-    h('span', {}, h('span', { class: 'nm' }, T('mixed_name')), h('span', { class: 'cnt', style: 'display:block' }, T('mixed_desc') + ' · ' + mixedCount + ' ' + T('words_unit'))),
+    h('span', {}, h('span', { class: 'nm' }, T('mixed_name')), h('span', { class: 'cnt', style: 'display:block' }, T('mixed_desc') + ' · ' + TERMS.length + ' ' + T('words_unit'))),
     h('span', { class: 'tick', html: UI.check }),
+  );
+  wrap.append(field('category_label', 'category_hint', ICONS.quran,
+    mixedBtn,
+    h('div', { class: 'cat-group' }, CAT_GROUP.islam[state.lang]), gridIslam,
+    h('div', { class: 'cat-group' }, CAT_GROUP.daily[state.lang]), gridDaily,
   ));
-  wrap.append(field('category_label', 'category_hint', ICONS.quran, grid));
 
   /* Schwierigkeit */
   const levels = h('div', { class: 'levels' });

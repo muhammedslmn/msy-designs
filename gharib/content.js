@@ -23,6 +23,11 @@ const ICONS = {
   aqida: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/><path d="M18.5 3.2l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z"/></svg>',
   history: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 4h9a2 2 0 0 1 2 2v13a1 1 0 0 0 1 1H8a3 3 0 0 1-3-3z"/><path d="M8 8h5M8 12h5"/></svg>',
   quiz: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.2a2.7 2.7 0 0 1 5.2 1c0 1.9-2.6 2.2-2.6 3.9"/><path d="M12 17.1v.1"/></svg>',
+  objects: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M4 12h16M9 8V6h6v2"/></svg>',
+  animals: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 20c0-9 6-15 15-15 0 9-6 15-15 15z"/><path d="M6 19c4-5 8-8 12-9"/></svg>',
+  food: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 8c-1.2-2.2-3.4-3-5.4-2C3.7 7.4 3.7 12 6 15c1.5 2 3 3.6 6 3.6s4.5-1.6 6-3.6c2.3-3 2.3-7.6-.6-9-2-1-4.2-.2-5.4 2z"/><path d="M12 8V4.5c.8-1 1.9-1.3 3-1.1"/></svg>',
+  jobs: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M15.5 7.5a3.4 3.4 0 0 0-4.6 4.2l-5.6 5.6a1.6 1.6 0 0 0 2.2 2.2l5.6-5.6a3.4 3.4 0 0 0 4.2-4.6l-2.3 2.3-1.8-1.8z"/></svg>',
+  baddeeds: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg>',
   star8: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M50 6l10 14 16-6-2 17 14 10-14 10 2 17-16-6-10 14-10-14-16 6 2-17L14 51l14-10-2-17 16 6z"/><circle cx="50" cy="50" r="13"/></svg>',
 };
 
@@ -36,6 +41,13 @@ const CATEGORIES = [
   { id: 'akhlaq',     icon: ICONS.akhlaq,     name: { de: 'Charakter',   tr: 'Ahlak',        en: 'Character',  ar: 'الأخلاق' } },
   { id: 'aqida',      icon: ICONS.aqida,      name: { de: 'Glaube & Jenseits', tr: 'İman & Ahiret', en: 'Faith & Hereafter', ar: 'العقيدة والآخرة' } },
   { id: 'history',    icon: ICONS.history,    name: { de: 'Sîra & Geschichte', tr: 'Siyer & Tarih', en: 'Sîrah & History', ar: 'السيرة والتاريخ' } },
+  { id: 'objects',    icon: ICONS.objects,    name: { de: 'Gegenstände', tr: 'Eşyalar',   en: 'Objects', ar: 'أشياء' } },
+  { id: 'animals',    icon: ICONS.animals,    name: { de: 'Tiere',       tr: 'Hayvanlar', en: 'Animals', ar: 'حيوانات' } },
+  { id: 'food',       icon: ICONS.food,       name: { de: 'Obst, Gemüse & Speisen', tr: 'Meyve, sebze & yiyecek', en: 'Food', ar: 'أطعمة' } },
+  { id: 'jobs',       icon: ICONS.jobs,       name: { de: 'Berufe',      tr: 'Meslekler', en: 'Professions', ar: 'مهن' } },
+  { id: 'people',     icon: ICONS.companions, name: { de: 'Menschen',    tr: 'İnsanlar',  en: 'People', ar: 'أشخاص' } },
+  { id: 'good_deeds', icon: ICONS.akhlaq,     name: { de: 'Gute Taten',  tr: 'Güzel ameller', en: 'Good deeds', ar: 'أعمال صالحة' } },
+  { id: 'bad_deeds',  icon: ICONS.baddeeds,   name: { de: 'Sünden & Harâm', tr: 'Günah & Haram', en: 'Sins & Ḥarâm', ar: 'ذنوب ومحرمات' } },
 ];
 
 /* ---------- Nasîha-Bibliothek (belegte Verse & Hadithe) ---------- */
@@ -245,6 +257,24 @@ const NASIHA = {
     tr: '„Şüphesiz o zikri (Kur’an’ı) biz indirdik ve onu mutlaka biz koruyacağız.“',
     en: '“Indeed, it is We who sent down the Reminder, and indeed, We will be its guardian.”' },
 
+  creation: { type: 'verse', ref: 'Âl ʿImrân 3:190',
+    ar: 'إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ لِّأُولِي الْأَلْبَابِ',
+    de: '„Wahrlich, in der Schöpfung der Himmel und der Erde und im Wechsel von Nacht und Tag liegen Zeichen für die Einsichtigen.“',
+    tr: '„Şüphesiz göklerin ve yerin yaratılışında, gece ile gündüzün ardarda gelişinde akıl sahipleri için âyetler vardır.“',
+    en: '“Indeed, in the creation of the heavens and the earth and the alternation of night and day are signs for people of understanding.”' },
+
+  provision: { type: 'verse', ref: 'al-Baqara 2:172',
+    ar: 'كُلُوا مِن طَيِّبَاتِ مَا رَزَقْنَاكُمْ وَاشْكُرُوا لِلَّهِ',
+    de: '„Esst von den guten Dingen, mit denen Wir euch versorgt haben, und seid Allah dankbar.“',
+    tr: '„Size verdiğimiz rızıkların temiz olanlarından yiyin ve Allah’a şükredin.“',
+    en: '“Eat from the good things We have provided you, and be grateful to Allah.”' },
+
+  avoid_sin: { type: 'verse', ref: 'al-Anʿâm 6:151',
+    ar: 'وَلَا تَقْرَبُوا الْفَوَاحِشَ مَا ظَهَرَ مِنْهَا وَمَا بَطَنَ',
+    de: '„Und nähert euch nicht den Abscheulichkeiten, den offenkundigen von ihnen und den verborgenen.“',
+    tr: '„Kötülüklerin açığına da gizlisine de yaklaşmayın.“',
+    en: '“And do not approach immoralities — what is apparent of them and what is concealed.”' },
+
   /* --- Hadithe (nur Ṣaḥîḥ) --- */
   niyyah: { type: 'hadith', ref: 'Ṣaḥîḥ al-Bukhârî 1 · Ṣaḥîḥ Muslim 1907', grade: 'Ṣaḥîḥ',
     ar: 'إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ',
@@ -299,6 +329,8 @@ const CATEGORY_DEFAULT_NASIHA = {
   prophets: 'prophets_guided', companions: 'love_brother', worship: 'worship_purpose',
   quran: 'quran_guidance', places: 'mecca_kaaba', akhlaq: 'taqwa',
   aqida: 'iman_pillars', history: 'victory',
+  objects: 'creation', animals: 'creation', food: 'provision', jobs: 'muslim_safe',
+  people: 'love_brother', good_deeds: 'love_brother', bad_deeds: 'avoid_sin',
 };
 const DEFAULT_NASIHA = 'nasiha_deen';
 
@@ -487,6 +519,76 @@ const TERMS = [
   { cat:'history', level:2, n:'hajj', w:{de:'ʿÎd al-Aḍḥâ',tr:'Kurban Bayramı',en:'ʿÎd al-Aḍḥâ',ar:'عيد الأضحى'}, h:{de:'Opferfest',tr:'kurban bayramı',en:'feast of sacrifice',ar:'الأضحية'} },
   { cat:'history', level:3, n:'musa', w:{de:'ʿÂshûrâʾ',tr:'Aşure',en:'ʿÂshûrâʾ',ar:'عاشوراء'}, h:{de:'10. Muḥarram',tr:'Muharrem’in 10’u',en:'10th of Muḥarram',ar:'عاشر محرم'} },
   { cat:'history', level:4, n:'tawakkul', w:{de:'Ghazwat Tabûk',tr:'Tebük Seferi',en:'Expedition of Tabûk',ar:'غزوة تبوك'}, h:{de:'Feldzug in der Hitze',tr:'sıcakta sefer',en:'march in the heat',ar:'في شدة الحر'} },
+
+  /* ===== Gegenstände ===== */
+  { cat:'objects', level:1, n:'creation', w:{de:'Stuhl',tr:'Sandalye',en:'Chair',ar:'كرسي'}, h:{de:'zum Sitzen',tr:'oturmak için',en:'for sitting',ar:'للجلوس'} },
+  { cat:'objects', level:1, n:'creation', w:{de:'Tisch',tr:'Masa',en:'Table',ar:'طاولة'}, h:{de:'zum Essen & Schreiben',tr:'yemek & yazı',en:'to eat & write',ar:'للطعام'} },
+  { cat:'objects', level:1, n:'creation', w:{de:'Uhr',tr:'Saat',en:'Clock',ar:'ساعة'}, h:{de:'zeigt die Zeit',tr:'zamanı gösterir',en:'shows the time',ar:'الوقت'} },
+  { cat:'objects', level:1, n:'creation', w:{de:'Schlüssel',tr:'Anahtar',en:'Key',ar:'مفتاح'}, h:{de:'öffnet die Tür',tr:'kapıyı açar',en:'opens the door',ar:'يفتح الباب'} },
+  { cat:'objects', level:2, n:'creation', w:{de:'Lampe',tr:'Lamba',en:'Lamp',ar:'مصباح'}, h:{de:'gibt Licht',tr:'ışık verir',en:'gives light',ar:'النور'} },
+  { cat:'objects', level:2, n:'knowledge', w:{de:'Buch',tr:'Kitap',en:'Book',ar:'كتاب'}, h:{de:'zum Lesen',tr:'okumak için',en:'for reading',ar:'للقراءة'} },
+  { cat:'objects', level:1, n:'creation', w:{de:'Tür',tr:'Kapı',en:'Door',ar:'باب'}, h:{de:'der Eingang',tr:'giriş',en:'entrance',ar:'المدخل'} },
+  { cat:'objects', level:2, n:'salah', w:{de:'Gebetsteppich',tr:'Seccade',en:'Prayer rug',ar:'سجادة'}, h:{de:'zum Beten',tr:'namaz için',en:'for prayer',ar:'للصلاة'} },
+
+  /* ===== Tiere ===== */
+  { cat:'animals', level:1, n:'creation', w:{de:'Katze',tr:'Kedi',en:'Cat',ar:'قطة'}, h:{de:'miaut',tr:'miyavlar',en:'meows',ar:'تموء'} },
+  { cat:'animals', level:2, n:'creation', w:{de:'Pferd',tr:'At',en:'Horse',ar:'حصان'}, h:{de:'zum Reiten',tr:'binmek için',en:'for riding',ar:'للركوب'} },
+  { cat:'animals', level:1, n:'creation', w:{de:'Kamel',tr:'Deve',en:'Camel',ar:'جمل'}, h:{de:'Schiff der Wüste',tr:'çöl gemisi',en:'ship of the desert',ar:'سفينة الصحراء'} },
+  { cat:'animals', level:2, n:'creation', w:{de:'Schaf',tr:'Koyun',en:'Sheep',ar:'خروف'}, h:{de:'gibt Wolle',tr:'yün verir',en:'gives wool',ar:'الصوف'} },
+  { cat:'animals', level:2, n:'creation', w:{de:'Biene',tr:'Arı',en:'Bee',ar:'نحلة'}, h:{de:'macht Honig',tr:'bal yapar',en:'makes honey',ar:'العسل'} },
+  { cat:'animals', level:3, n:'creation', w:{de:'Ameise',tr:'Karınca',en:'Ant',ar:'نملة'}, h:{de:'klein & fleißig',tr:'küçük & çalışkan',en:'tiny & busy',ar:'صغيرة'} },
+  { cat:'animals', level:2, n:'creation', w:{de:'Vogel',tr:'Kuş',en:'Bird',ar:'طائر'}, h:{de:'fliegt',tr:'uçar',en:'flies',ar:'يطير'} },
+  { cat:'animals', level:1, n:'provision', w:{de:'Fisch',tr:'Balık',en:'Fish',ar:'سمكة'}, h:{de:'im Wasser',tr:'suda',en:'in the water',ar:'في الماء'} },
+
+  /* ===== Obst, Gemüse & Speisen ===== */
+  { cat:'food', level:1, n:'provision', w:{de:'Apfel',tr:'Elma',en:'Apple',ar:'تفاح'}, h:{de:'rot oder grün',tr:'kırmızı/yeşil',en:'red or green',ar:'فاكهة'} },
+  { cat:'food', level:1, n:'provision', w:{de:'Dattel',tr:'Hurma',en:'Date',ar:'تمر'}, h:{de:'süß, Sunna-Frucht',tr:'tatlı, sünnet',en:'sweet, Sunnah fruit',ar:'حلوة'} },
+  { cat:'food', level:2, n:'provision', w:{de:'Traube',tr:'Üzüm',en:'Grape',ar:'عنب'}, h:{de:'in Trauben',tr:'salkım',en:'in bunches',ar:'عناقيد'} },
+  { cat:'food', level:2, n:'provision', w:{de:'Feige',tr:'İncir',en:'Fig',ar:'تين'}, h:{de:'im Qurʾân erwähnt',tr:'Kurʾân’da',en:'in the Qurʾân',ar:'سورة التين'} },
+  { cat:'food', level:2, n:'provision', w:{de:'Olive',tr:'Zeytin',en:'Olive',ar:'زيتون'}, h:{de:'gesegneter Baum',tr:'mübarek ağaç',en:'blessed tree',ar:'شجرة مباركة'} },
+  { cat:'food', level:3, n:'provision', w:{de:'Granatapfel',tr:'Nar',en:'Pomegranate',ar:'رمان'}, h:{de:'viele Kerne',tr:'çok çekirdek',en:'many seeds',ar:'حبات'} },
+  { cat:'food', level:2, n:'provision', w:{de:'Honig',tr:'Bal',en:'Honey',ar:'عسل'}, h:{de:'von der Biene, Heilung',tr:'arıdan, şifa',en:'from bees, a healing',ar:'شفاء'} },
+  { cat:'food', level:1, n:'provision', w:{de:'Brot',tr:'Ekmek',en:'Bread',ar:'خبز'}, h:{de:'Grundnahrung',tr:'temel gıda',en:'staple food',ar:'الطعام'} },
+
+  /* ===== Berufe ===== */
+  { cat:'jobs', level:1, n:'knowledge', w:{de:'Lehrer',tr:'Öğretmen',en:'Teacher',ar:'معلّم'}, h:{de:'lehrt Wissen',tr:'ilim öğretir',en:'teaches knowledge',ar:'يعلّم'} },
+  { cat:'jobs', level:1, n:'muslim_safe', w:{de:'Arzt',tr:'Doktor',en:'Doctor',ar:'طبيب'}, h:{de:'heilt Kranke',tr:'hastayı iyileştirir',en:'heals the sick',ar:'يعالج'} },
+  { cat:'jobs', level:2, n:'provision', w:{de:'Bäcker',tr:'Fırıncı',en:'Baker',ar:'خبّاز'}, h:{de:'backt Brot',tr:'ekmek yapar',en:'bakes bread',ar:'يخبز'} },
+  { cat:'jobs', level:2, n:'provision', w:{de:'Bauer',tr:'Çiftçi',en:'Farmer',ar:'مزارع'}, h:{de:'bestellt das Feld',tr:'tarla eker',en:'works the land',ar:'يزرع'} },
+  { cat:'jobs', level:2, n:'muslim_safe', w:{de:'Kaufmann',tr:'Tüccar',en:'Merchant',ar:'تاجر'}, h:{de:'ehrlicher Handel',tr:'dürüst ticaret',en:'honest trade',ar:'التجارة'} },
+  { cat:'jobs', level:3, n:'muslim_safe', w:{de:'Schmied',tr:'Demirci',en:'Blacksmith',ar:'حدّاد'}, h:{de:'arbeitet mit Eisen',tr:'demir işler',en:'works iron',ar:'الحديد'} },
+  { cat:'jobs', level:1, n:'salah', w:{de:'Imâm',tr:'İmam',en:'Imam',ar:'إمام'}, h:{de:'leitet das Gebet',tr:'namaz kıldırır',en:'leads the prayer',ar:'يؤمّ الصلاة'} },
+  { cat:'jobs', level:2, n:'muslim_safe', w:{de:'Schneider',tr:'Terzi',en:'Tailor',ar:'خيّاط'}, h:{de:'näht Kleidung',tr:'elbise diker',en:'sews clothes',ar:'يخيط'} },
+
+  /* ===== Menschen ===== */
+  { cat:'people', level:1, n:'parents', w:{de:'Mutter',tr:'Anne',en:'Mother',ar:'أم'}, h:{de:'Paradies zu ihren Füßen',tr:'ayağı altında cennet',en:'Paradise at her feet',ar:'الجنة تحت قدميها'} },
+  { cat:'people', level:1, n:'parents', w:{de:'Vater',tr:'Baba',en:'Father',ar:'أب'}, h:{de:'Güte gebührt ihm',tr:'iyilik hakkı',en:'kindness is his right',ar:'بِرّه'} },
+  { cat:'people', level:2, n:'love_brother', w:{de:'Nachbar',tr:'Komşu',en:'Neighbor',ar:'جار'}, h:{de:'hat große Rechte',tr:'komşu hakkı',en:'has great rights',ar:'حق الجار'} },
+  { cat:'people', level:2, n:'good_word', w:{de:'Gast',tr:'Misafir',en:'Guest',ar:'ضيف'}, h:{de:'ehre ihn',tr:'ikram et',en:'honour him',ar:'أكرم ضيفك'} },
+  { cat:'people', level:2, n:'love_brother', w:{de:'Waise',tr:'Yetim',en:'Orphan',ar:'يتيم'}, h:{de:'nicht bedrängen',tr:'incitme',en:'do not oppress',ar:'لا تقهره'} },
+  { cat:'people', level:1, n:'love_brother', w:{de:'Freund',tr:'Arkadaş',en:'Friend',ar:'صديق'}, h:{de:'guter Umgang',tr:'iyi arkadaş',en:'good company',ar:'الصحبة'} },
+  { cat:'people', level:3, n:'love_brother', w:{de:'Reisender',tr:'Yolcu',en:'Traveler',ar:'مسافر'}, h:{de:'hat Anrecht auf Hilfe',tr:'yolcu hakkı',en:'has a right to help',ar:'ابن السبيل'} },
+  { cat:'people', level:1, n:'prophet_mercy', w:{de:'Kind',tr:'Çocuk',en:'Child',ar:'طفل'}, h:{de:'zeige Barmherzigkeit',tr:'merhamet göster',en:'show mercy',ar:'الرحمة'} },
+
+  /* ===== Gute Taten ===== */
+  { cat:'good_deeds', level:1, n:'love_brother', w:{de:'Lächeln',tr:'Tebessüm',en:'Smiling',ar:'التبسّم'}, h:{de:'ist eine Sadaqa',tr:'sadakadır',en:'is a charity',ar:'صدقة'} },
+  { cat:'good_deeds', level:1, n:'muslim_safe', w:{de:'Salâm geben',tr:'Selam vermek',en:'Giving Salâm',ar:'إفشاء السلام'}, h:{de:'Frieden verbreiten',tr:'selamı yaymak',en:'spread peace',ar:'السلام'} },
+  { cat:'good_deeds', level:1, n:'love_brother', w:{de:'Helfen',tr:'Yardım etmek',en:'Helping',ar:'المساعدة'}, h:{de:'dem Bruder beistehen',tr:'kardeşe yardım',en:'aid a brother',ar:'العون'} },
+  { cat:'good_deeds', level:2, n:'love_brother', w:{de:'Krankenbesuch',tr:'Hasta ziyareti',en:'Visiting the sick',ar:'عيادة المريض'}, h:{de:'ein Recht des Muslims',tr:'müslümanın hakkı',en:'a right of the Muslim',ar:'حق'} },
+  { cat:'good_deeds', level:1, n:'zakat_salah', w:{de:'Spenden',tr:'Sadaka vermek',en:'Giving charity',ar:'التصدّق'}, h:{de:'für Allah geben',tr:'Allah için vermek',en:'give for Allah',ar:'في سبيل الله'} },
+  { cat:'good_deeds', level:2, n:'good_word', w:{de:'Vergeben',tr:'Affetmek',en:'Forgiving',ar:'العفو'}, h:{de:'verzeihen',tr:'bağışlamak',en:'to pardon',ar:'الصفح'} },
+  { cat:'good_deeds', level:2, n:'quran_guidance', w:{de:'Qurʾân lesen',tr:'Kurʾân okumak',en:'Reciting Qurʾân',ar:'تلاوة القرآن'}, h:{de:'Lohn je Buchstabe',tr:'her harfe sevap',en:'reward per letter',ar:'بكل حرف حسنة'} },
+  { cat:'good_deeds', level:2, n:'salawat', w:{de:'Ṣalawât sprechen',tr:'Salavat getirmek',en:'Sending Ṣalawât',ar:'الصلاة على النبي ﷺ'}, h:{de:'auf den Propheten ﷺ',tr:'Peygamber’e ﷺ',en:'upon the Prophet ﷺ',ar:'اللهم صلِّ عليه'} },
+
+  /* ===== Sünden & Harâm (zu erkennen und zu meiden) ===== */
+  { cat:'bad_deeds', level:1, n:'good_word', w:{de:'Lügen',tr:'Yalan',en:'Lying',ar:'الكذب'}, h:{de:'meide es',tr:'kaçın',en:'avoid it',ar:'تجنّبه'} },
+  { cat:'bad_deeds', level:2, n:'avoid_sin', w:{de:'Stehlen',tr:'Hırsızlık',en:'Stealing',ar:'السرقة'}, h:{de:'verboten',tr:'haram',en:'forbidden',ar:'حرام'} },
+  { cat:'bad_deeds', level:2, n:'avoid_sin', w:{de:'Neid',tr:'Haset',en:'Envy',ar:'الحسد'}, h:{de:'verzehrt das Gute',tr:'iyiliği yer',en:'consumes good deeds',ar:'يأكل الحسنات'} },
+  { cat:'bad_deeds', level:2, n:'taqwa', w:{de:'Hochmut',tr:'Kibir',en:'Arrogance',ar:'الكِبر'}, h:{de:'hält vom Paradies ab',tr:'cennete engel',en:'bars from Paradise',ar:'يمنع الجنة'} },
+  { cat:'bad_deeds', level:2, n:'good_word', w:{de:'Üble Nachrede (Ghîba)',tr:'Gıybet',en:'Backbiting (Ghîba)',ar:'الغيبة'}, h:{de:'über Abwesende reden',tr:'arkadan konuşmak',en:'of the absent',ar:'أكل لحم الأخ'} },
+  { cat:'bad_deeds', level:3, n:'avoid_sin', w:{de:'Zins (Ribâ)',tr:'Faiz (Ribâ)',en:'Usury (Ribâ)',ar:'الربا'}, h:{de:'streng verboten',tr:'şiddetle haram',en:'strictly forbidden',ar:'محرّم'} },
+  { cat:'bad_deeds', level:3, n:'avoid_sin', w:{de:'Glücksspiel',tr:'Kumar',en:'Gambling',ar:'الميسر'}, h:{de:'Ḥarâm',tr:'haram',en:'forbidden',ar:'القمار'} },
+  { cat:'bad_deeds', level:2, n:'good_word', w:{de:'Zorn',tr:'Öfke',en:'Anger',ar:'الغضب'}, h:{de:'beherrsche ihn',tr:'öfkeni yen',en:'control it',ar:'اضبطه'} },
 ];
 
 /* =================================================================
