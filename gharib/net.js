@@ -27,10 +27,11 @@ const MQTT_BROKERS = [
 function netBrokerOverride() {
   try { return new URLSearchParams(location.search).get('broker') || null; } catch { return null; }
 }
-// Relay-Liste, die eine Instanz durchprobiert.
+// Relay-Liste, mit der sich eine Instanz verbindet. Override (?broker=…) darf
+// mehrere, per Komma getrennte Relays enthalten (nur für lokale Tests).
 function netBrokerList(explicit) {
   const ov = netBrokerOverride();
-  if (ov) return [ov];
+  if (ov) return ov.split(',').map(s => s.trim()).filter(Boolean);
   if (explicit) return [explicit];
   return MQTT_BROKERS.slice();
 }
@@ -93,21 +94,24 @@ class LocalTransport {
   close() { try { this.ch.close(); } catch {} }
 }
 
-/* ---------------- Transport: MQTT über WebSocket (Relay, echte Geräte) ----------------
-   Host lauscht auf .../toHost, sendet an alle über .../toAll und privat
-   an einen Spieler über .../to/<id>. Clients umgekehrt. Nur ausgehende
-   WebSocket-Verbindungen → funktioniert hinter jedem NAT (kein TURN nötig). */
+/* ---------------- Transport: MQTT über WebSocket (Multi-Relay, echte Geräte) ----------------
+   Jedes Gerät verbindet sich mit ALLEN erreichbaren Relays gleichzeitig.
+   Host und Gast müssen so nur EINEN gemeinsamen Relay erreichen → verbindet
+   sich auch, wenn in einem Netz ein einzelner Relay-Port gesperrt ist.
+   Nachrichten werden an alle Relays gesendet und empfangsseitig anhand einer
+   _id dedupliziert. Nur ausgehende WebSockets → funktioniert hinter jedem NAT. */
 class MqttTransport {
   constructor(code, explicitBroker) {
     this.code = code;
     this.cbs = {};
-    this.client = null;
+    this.clients = [];          // verbundene MQTT-Clients (mehrere Relays)
     this.selfId = null;
     this._ready = false;
     this._base = MQTT_ROOT + '/' + code;
     this._brokers = netBrokerList(explicitBroker);
-    this.brokerIndex = 0;
-    this.brokerUrl = this._brokers[0];
+    this._seq = 0;
+    this._seen = new Set();     // gesehene Nachrichten-IDs (Dedup über Relays)
+    this._seenQ = [];
   }
   on(ev, cb) { this.cbs[ev] = cb; return this; }
   _emit(ev, ...a) { if (this.cbs[ev]) this.cbs[ev](...a); }
@@ -116,6 +120,18 @@ class MqttTransport {
     return { toHost: b + '/toHost', toAll: b + '/toAll', to: (id) => b + '/to/' + id };
   }
   _payload(p) { try { return JSON.parse(typeof p === 'string' ? p : p.toString()); } catch { return null; } }
+  _fresh(id) {
+    if (id == null) return true;
+    if (this._seen.has(id)) return false;
+    this._seen.add(id); this._seenQ.push(id);
+    if (this._seenQ.length > 800) this._seen.delete(this._seenQ.shift());
+    return true;
+  }
+  _mkId() { return this.selfId + '-' + (++this._seq); }
+  _pubAll(topic, obj) {
+    const s = JSON.stringify(obj);
+    this.clients.forEach((c) => { try { c.publish(topic, s, { qos: 0 }); } catch {} });
+  }
 
   // Verbindung zu EINEM Relay; erfüllt sich bei 'connect', sonst Fehler/Timeout.
   _open(url) {
@@ -123,60 +139,61 @@ class MqttTransport {
       if (typeof mqtt === 'undefined' || !mqtt.connect) return reject(new Error('MQTT nicht geladen'));
       const cid = 'ghrb_' + (this.selfId || 'x') + '_' + Math.random().toString(36).slice(2, 8);
       let settled = false;
-      const client = mqtt.connect(url, { clientId: cid, clean: true, keepalive: 30, reconnectPeriod: 2500, connectTimeout: 6000, protocolVersion: 4 });
-      const to = setTimeout(() => { if (!settled) { settled = true; try { client.end(true); } catch {} reject(new Error('timeout ' + url)); } }, 7000);
+      const client = mqtt.connect(url, { clientId: cid, clean: true, keepalive: 30, reconnectPeriod: 3000, connectTimeout: 7000, protocolVersion: 4 });
+      const to = setTimeout(() => { if (!settled) { settled = true; try { client.end(true); } catch {} reject(new Error('timeout')); } }, 8000);
       client.once('connect', () => { if (!settled) { settled = true; clearTimeout(to); resolve(client); } });
       client.once('error', (err) => { if (!settled) { settled = true; clearTimeout(to); try { client.end(true); } catch {} reject(err); } });
     });
   }
-  // Relays der Reihe nach durchprobieren, ersten erreichbaren nehmen.
-  async _openAny() {
-    let lastErr = null;
-    for (let i = 0; i < this._brokers.length; i++) {
-      try {
-        const client = await this._open(this._brokers[i]);
-        this.brokerIndex = i; this.brokerUrl = this._brokers[i];
-        return client;
-      } catch (e) { lastErr = e; }
-    }
-    throw lastErr || new Error('kein Relay erreichbar');
+
+  // Alle Relays parallel verbinden; jede erfolgreiche Verbindung abonnieren.
+  // Erfüllt sich, sobald mindestens EIN Relay verbunden ist; wartet noch kurz
+  // auf weitere. Lehnt nur ab, wenn KEIN Relay erreichbar ist.
+  _openAll(topics, onMsg) {
+    return new Promise((resolve, reject) => {
+      let pending = this._brokers.length, anyOk = false, settleTimer = null, resolved = false;
+      const ok = () => { if (!resolved) { resolved = true; this._ready = true; resolve(); } };
+      this._brokers.forEach((url) => {
+        this._open(url).then((client) => {
+          client.on('message', (topic, payload) => onMsg(topic, payload));
+          client.on('error', (e) => this._emit('neterror', e));
+          client.subscribe(topics, { qos: 0 }, () => {});
+          client.on('connect', () => { client.subscribe(topics, { qos: 0 }, () => this._emit('reopen')); }); // Reconnect → resync
+          this.clients.push(client);
+          anyOk = true;
+          pending--;
+          if (pending === 0) { if (settleTimer) clearTimeout(settleTimer); ok(); }
+          else if (!settleTimer) settleTimer = setTimeout(ok, 500); // kurze Sammelfrist für weitere Relays
+        }).catch(() => {
+          pending--;
+          if (pending === 0) { if (settleTimer) clearTimeout(settleTimer); anyOk ? ok() : reject(new Error('kein Relay erreichbar')); }
+        });
+      });
+    });
   }
 
   async hostStart() {
     const T = this._t();
-    const client = await this._openAny();
-    this.client = client;
-    client.on('message', (topic, payload) => {
+    await this._openAll(T.toHost, (topic, payload) => {
       if (topic !== T.toHost) return;
       const env = this._payload(payload);
-      if (!env || env._k == null) return;
+      if (!env || env._k == null || !this._fresh(env._id)) return;
       this._emit('message', env._k, env.m);
     });
-    client.on('error', (err) => this._emit('neterror', err));
-    await new Promise((res, rej) => client.subscribe(T.toHost, { qos: 0 }, (e) => e ? rej(e) : res()));
-    this._ready = true;
-    // Reconnect (mqtt.js abonniert automatisch neu) → Zustand erneut verteilen.
-    client.on('connect', () => { client.subscribe(T.toHost, { qos: 0 }, () => this._emit('reopen')); });
   }
   async clientStart() {
     const T = this._t(); const mine = T.to(this.selfId);
-    const client = await this._openAny();
-    this.client = client;
-    client.on('message', (topic, payload) => {
+    await this._openAll([T.toAll, mine], (topic, payload) => {
       if (topic !== T.toAll && topic !== mine) return;
       const m = this._payload(payload);
-      if (m) this._emit('message', m);
+      if (!m || !this._fresh(m._id)) return;
+      this._emit('message', m);
     });
-    client.on('error', (err) => this._emit('neterror', err));
-    await new Promise((res, rej) => client.subscribe([T.toAll, mine], { qos: 0 }, (e) => e ? rej(e) : res()));
-    this._ready = true;
-    // Reconnect → erneut beitreten, damit der Host frischen Zustand schickt.
-    client.on('connect', () => { client.subscribe([T.toAll, mine], { qos: 0 }, () => this._emit('reopen')); });
   }
-  broadcast(obj) { if (this.client) try { this.client.publish(this._t().toAll, JSON.stringify(obj), { qos: 0 }); } catch {} }
-  sendTo(key, obj) { if (this.client) try { this.client.publish(this._t().to(key), JSON.stringify(obj), { qos: 0 }); } catch {} }
-  send(obj) { if (this.client) try { this.client.publish(this._t().toHost, JSON.stringify({ _k: this.selfId, m: obj }), { qos: 0 }); } catch {} }
-  close() { try { if (this.client) this.client.end(true); } catch {} }
+  broadcast(obj) { this._pubAll(this._t().toAll, { ...obj, _id: this._mkId() }); }
+  sendTo(key, obj) { this._pubAll(this._t().to(key), { ...obj, _id: this._mkId() }); }
+  send(obj) { this._pubAll(this._t().toHost, { _k: this.selfId, m: obj, _id: this._mkId() }); }
+  close() { this.clients.forEach((c) => { try { c.end(true); } catch {} }); this.clients = []; }
 }
 
 /* ---------------- RoomNet (Protokoll über dem Transport) ---------------- */
@@ -226,7 +243,6 @@ class RoomNet {
       }
     });
     await this.transport.hostStart();
-    if (this.transport.brokerIndex != null) this.brokerIndex = this.transport.brokerIndex;
     return this.code;
   }
   // Host: neuen Zustand setzen → an alle senden + lokal melden

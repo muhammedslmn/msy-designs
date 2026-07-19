@@ -11,10 +11,8 @@ function slfPlayerLabel(p) {
 }
 function slfInviteLink() {
   const base = location.origin + location.pathname;
-  let q = '?r=' + OS.rs.code;
-  if (typeof detectNetMode === 'function' && detectNetMode() === 'local') q += '&local=1';
-  else if (OS.net && OS.net.brokerIndex != null) q += '&b=' + OS.net.brokerIndex; // gleicher Relay für den Gast
-  return base + q;
+  const local = (typeof detectNetMode === 'function' && detectNetMode() === 'local') ? '&local=1' : '';
+  return base + '?r=' + OS.rs.code + local; // Gast verbindet sich mit allen Relays (Multi-Relay)
 }
 function slfCopy() {
   const link = slfInviteLink();
