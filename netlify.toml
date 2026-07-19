@@ -1,0 +1,5 @@
+# Netlify: veröffentlicht das Spiel (Ordner "gharib") als Website-Wurzel.
+# Dadurch reicht beim Import: einfach "Deploy" — keine weiteren Eingaben nötig.
+[build]
+  publish = "gharib"
+  command = ""

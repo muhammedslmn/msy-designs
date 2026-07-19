@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f5c46" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b1512" media="(prefers-color-scheme: dark)" />
+  <title>Gharîb · غريب — Das islamische Lernspiel</title>
+  <meta name="description" content="Gharîb – ein islamisches Party- & Lernspiel für die Familie und Freunde. In Deutsch, Türkisch, Englisch und Arabisch. Ohne Bilder von Lebewesen, auf Tawhîd-Grundlage." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- PWA / Icons -->
+  <link rel="manifest" href="./site.webmanifest" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Gharîb" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gharîb · غريب — Das islamische Lernspiel" />
+  <meta property="og:description" content="Wer ist der Gharîb? Ein islamisches Lern- & Partyspiel in 4 Sprachen." />
+  <meta property="og:image" content="./og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preload" href="./fonts/satoshi-500.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Dekorativer geometrischer Hintergrund (keine Lebewesen, reine Ornamentik) -->
+  <div class="bg-ornament" aria-hidden="true"></div>
+
+  <div id="app" class="app"><!-- Screens werden von app.js gerendert --></div>
+
+  <noscript>
+    <div style="padding:2rem;text-align:center;font-family:system-ui">
+      Bitte aktiviere JavaScript, um Gharîb zu spielen.
+    </div>
+  </noscript>
+
+  <script src="./peerjs.min.js" defer></script>
+  <script src="./i18n.js" defer></script>
+  <script src="./content.js" defer></script>
+  <script src="./net.js" defer></script>
+  <script src="./slf.js" defer></script>
+  <script src="./slf-ui.js" defer></script>
+  <script src="./gharib-online.js" defer></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
