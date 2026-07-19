@@ -23,7 +23,7 @@ const SLF_POINTS_LABEL = { de:'Punkte', tr:'Puan', en:'Points', ar:'نقاط' };
 /* ---------- Oberflächen-Texte (4 Sprachen) ---------- */
 const SLF_T = {
   de: {
-    title:'İsim Şehir', desc:'Ein gemeinsamer Buchstabe – findet zu jeder Kategorie ein passendes Wort. Online, jeder am eigenen Handy.',
+    title:'Stadt-Land-Fluss', desc:'Ein gemeinsamer Buchstabe – findet zu jeder Kategorie ein passendes Wort. Online, jeder am eigenen Handy.',
     your_name:'Dein Name', name_ph:'Name eingeben', create:'Raum erstellen', join:'Raum beitreten', code_ph:'Raum-Code',
     or_join:'…oder mit Code beitreten', room:'Raum', invite:'Einladungslink', copy:'Link kopieren', copied:'Kopiert!',
     lobby:'Warteraum', players:'Spieler', host:'Host', you:'du', waiting_host:'Warte, bis der Host startet …',
@@ -53,7 +53,7 @@ const SLF_T = {
     empty_players:'Henüz kimse yok. Bağlantıyı paylaş!', enter_name_first:'Lütfen önce bir isim yaz.',
   },
   en: {
-    title:'İsim Şehir', desc:'One shared letter – find a fitting word for each category. Online, everyone on their own phone.',
+    title:'City–Country–River', desc:'One shared letter – find a fitting word for each category. Online, everyone on their own phone.',
     your_name:'Your name', name_ph:'Enter your name', create:'Create room', join:'Join room', code_ph:'Room code',
     or_join:'…or join with a code', room:'Room', invite:'Invite link', copy:'Copy link', copied:'Copied!',
     lobby:'Waiting room', players:'Players', host:'Host', you:'you', waiting_host:'Waiting for the host to start …',
@@ -68,7 +68,7 @@ const SLF_T = {
     empty_players:'Nobody here yet. Share the link!', enter_name_first:'Please enter a name first.',
   },
   ar: {
-    title:'إسم شهر', desc:'حرف مشترك – جِد كلمة مناسبة لكل فئة. عبر الإنترنت، كلٌّ على هاتفه.',
+    title:'مدينة وبلد', desc:'حرف مشترك – جِد كلمة مناسبة لكل فئة. عبر الإنترنت، كلٌّ على هاتفه.',
     your_name:'اسمك', name_ph:'اكتب اسمك', create:'إنشاء غرفة', join:'انضمّ للغرفة', code_ph:'رمز الغرفة',
     or_join:'…أو انضمّ برمز', room:'الغرفة', invite:'رابط الدعوة', copy:'انسخ الرابط', copied:'تم النسخ!',
     lobby:'غرفة الانتظار', players:'اللاعبون', host:'المضيف', you:'أنت', waiting_host:'بانتظار أن يبدأ المضيف …',
@@ -166,11 +166,13 @@ function slfHostAddPlayer(pid, name) {
 
 function slfHostReduce(pid, a) {
   const RS = OS.rs;
+  if (a.t === '_ping') {
+    OS.lastSeen[pid] = Date.now();
+    const p = RS.players.find(x => x.id === pid); if (p && !p.connected) { p.connected = true; slfHostPush(); }
+    return;
+  }
+  if (RS.game === 'gharib') return gharibHostReduce(pid, a);
   switch (a.t) {
-    case '_ping':
-      OS.lastSeen[pid] = Date.now();
-      { const p = RS.players.find(x => x.id === pid); if (p && !p.connected) { p.connected = true; slfHostPush(); } }
-      return;
     case 'draft':
       OS.hostAnswers = OS.hostAnswers || {};
       OS.hostAnswers[pid] = a.answers || {};
@@ -243,6 +245,7 @@ function slfStartReaper() {
 /* ---------- Verbindungsaufbau ---------- */
 function slfWireCommon(net) {
   net.on('state', (rs) => { OS.rs = rs; if (state.screen !== 'online') setScreen('online'); else render(); });
+  net.on('private', (d) => { OS.myCard = d; OS.cardRevealed = false; if (state.screen === 'online') render(); });
   net.on('neterror', () => {});
 }
 async function slfHostCreate() {
@@ -250,14 +253,18 @@ async function slfHostCreate() {
   OS.busy = true; OS.error = ''; render();
   try {
     OS.role = 'host'; OS.net = new RoomNet(detectNetMode());
-    OS.net.on('join', (pid, name) => slfHostAddPlayer(pid, name));
+    OS.net.on('join', (pid, name) => {
+      slfHostAddPlayer(pid, name);
+      // Karte bei Wiederbeitritt erneut privat senden (Gharîb)
+      if (OS.rs.game === 'gharib' && OS.rs.phase === 'play' && OS.gharibCards && OS.gharibCards[pid]) OS.net.sendPrivate(pid, OS.gharibCards[pid]);
+    });
     OS.net.on('leave', (pid) => { const p = OS.rs.players.find(x => x.id === pid); if (p) { p.connected = false; slfHostPush(); } });
     OS.net.on('action', (pid, action) => slfHostReduce(pid, action));
     slfWireCommon(OS.net);
     const code = await OS.net.host();
-    OS.rs = slfInitialRS(code, OS.net.selfId, OS.name.trim());
+    OS.rs = (OS.game === 'gharib') ? gharibInitialRS(code, OS.net.selfId, OS.name.trim()) : slfInitialRS(code, OS.net.selfId, OS.name.trim());
     OS.rs.players.push({ id: OS.net.selfId, name: OS.name.trim(), connected: true });
-    OS.rs.totals[OS.net.selfId] = 0;
+    if (OS.rs.totals) OS.rs.totals[OS.net.selfId] = 0;
     slfStartReaper();
     OS.busy = false;
     OS.net.setState(OS.rs);

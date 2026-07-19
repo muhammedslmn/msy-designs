@@ -23,6 +23,14 @@ function slfCopy() {
 /* ---------- Dispatcher ---------- */
 function renderOnline() {
   if (!OS.rs) return renderOnlineEntry();
+  if (OS.rs.game === 'gharib') {
+    switch (OS.rs.phase) {
+      case 'play':   return renderGharibPlay();
+      case 'result': return renderGharibResult();
+      case 'nasiha': return renderGharibNasiha();
+      default:       return renderLobby();
+    }
+  }
   switch (OS.rs.phase) {
     case 'play':   return renderSlfPlay();
     case 'reveal': return renderSlfReveal();
@@ -34,35 +42,46 @@ function renderOnline() {
 /* ---------- Eingang: Name + Erstellen/Beitreten ---------- */
 function renderOnlineEntry() {
   if (OS.name === '') OS.name = store.get('slfname', '') || '';
+  const slft = SLF_T[state.lang] || SLF_T.de;
+  const game = OS.game || (OS.rs && OS.rs.game) || 'slf';
+  const meta = OS.joinCode
+    ? { title: slft.join, desc: '', mark: ICONS.star8 }
+    : (game === 'gharib'
+        ? { title: 'Gharîb', desc: T('game_gharib_desc'), mark: ICONS.star8 }
+        : { title: slft.title, desc: slft.desc, mark: ICONS.history });
   const s = h('section', { class: 'screen setup' });
   const wrap = h('div', { class: 'container' });
   wrap.append(h('div', { class: 'shead' },
     h('button', { class: 'backbtn', 'aria-label': T('back'), html: UI.back, onclick: () => setScreen('home') }),
-    h('div', {}, h('h1', {}, ST('title'))),
+    h('div', {}, h('h1', {}, meta.title)),
   ));
 
   wrap.append(h('div', { class: 'oe-hero' },
-    h('span', { class: 'oe-mark', html: ICONS.history, 'aria-hidden': 'true' }),
-    h('p', { class: 'oe-desc' }, ST('desc')),
+    h('span', { class: 'oe-mark', html: meta.mark, 'aria-hidden': 'true' }),
+    meta.desc ? h('p', { class: 'oe-desc' }, meta.desc) : null,
   ));
 
-  const nameInp = h('input', { type: 'text', class: 'oe-input', value: OS.name, placeholder: ST('name_ph'), maxlength: '16', autocomplete: 'off',
+  const nameInp = h('input', { type: 'text', class: 'oe-input', value: OS.name, placeholder: slft.name_ph, maxlength: '16', autocomplete: 'off',
     oninput: (e) => { OS.name = e.target.value; store.set('slfname', e.target.value); const b = document.getElementById('oe-primary'); if (b) b.disabled = !e.target.value.trim(); } });
-  wrap.append(h('div', { class: 'field' }, h('div', { class: 'label' }, ST('your_name')), nameInp));
+  wrap.append(h('div', { class: 'field' }, h('div', { class: 'label' }, slft.your_name), nameInp));
 
   if (OS.error) wrap.append(h('div', { class: 'warn', style: 'margin-bottom:.6rem' }, OS.error));
 
   if (OS.joinCode) {
     wrap.append(h('button', { id: 'oe-primary', class: 'btn btn-primary btn-lg btn-block', disabled: (OS.busy || !OS.name.trim()) ? '' : null,
-      onclick: () => slfJoin(OS.joinCode) }, icon(SLF_IC.users), OS.busy ? ST('connecting') : (ST('join') + ' · ' + OS.joinCode)));
+      onclick: () => slfJoin(OS.joinCode) }, icon(SLF_IC.users), OS.busy ? slft.connecting : (slft.join + ' · ' + OS.joinCode)));
   } else {
     wrap.append(h('button', { id: 'oe-primary', class: 'btn btn-primary btn-lg btn-block', disabled: (OS.busy || !OS.name.trim()) ? '' : null,
-      onclick: slfHostCreate }, icon(SLF_IC.users), OS.busy ? ST('connecting') : ST('create')));
-    wrap.append(h('div', { class: 'oe-or' }, ST('or_join')));
-    const codeInp = h('input', { type: 'text', class: 'oe-input', placeholder: ST('code_ph'), maxlength: '6', style: 'text-transform:uppercase;letter-spacing:.15em;font-weight:700',
+      onclick: slfHostCreate }, icon(SLF_IC.users), OS.busy ? slft.connecting : slft.create));
+    wrap.append(h('div', { class: 'oe-or' }, slft.or_join));
+    const codeInp = h('input', { type: 'text', class: 'oe-input', placeholder: slft.code_ph, maxlength: '6', style: 'text-transform:uppercase;letter-spacing:.15em;font-weight:700',
       oninput: (e) => { OS.joinTyped = e.target.value; } });
     wrap.append(h('div', { style: 'display:flex;gap:.6rem' }, codeInp,
-      h('button', { class: 'btn btn-ghost', style: 'flex:none;padding-inline:1.3rem', onclick: () => slfJoin(OS.joinTyped || '') }, ST('join'))));
+      h('button', { class: 'btn btn-ghost', style: 'flex:none;padding-inline:1.3rem', onclick: () => slfJoin(OS.joinTyped || '') }, slft.join)));
+    if (game === 'gharib') {
+      const oneDev = { de: 'Lieber auf einem Gerät (Karte weitergeben)', tr: 'Tek cihazda oyna (kartı elden ele)', en: 'Play on one device (pass the phone)', ar: 'اللعب على جهاز واحد (تمرير الهاتف)' }[state.lang] || '';
+      wrap.append(h('button', { class: 'btn btn-ghost btn-block', style: 'margin-top:.9rem', onclick: () => setScreen('setup') }, oneDev));
+    }
   }
   s.append(wrap);
   return s;
@@ -76,7 +95,7 @@ function renderLobby() {
   const wrap = h('div', { class: 'container' });
   wrap.append(h('div', { class: 'shead' },
     h('button', { class: 'backbtn', 'aria-label': T('back'), html: UI.back, onclick: slfLeaveOnline }),
-    h('div', {}, h('h1', {}, ST('lobby')), h('div', { class: 'sub' }, ST('title'))),
+    h('div', {}, h('h1', {}, ST('lobby')), h('div', { class: 'sub' }, RS.game === 'gharib' ? 'Gharîb' : ST('title'))),
   ));
 
   wrap.append(h('div', { class: 'room-card' },
@@ -102,14 +121,18 @@ function renderLobby() {
     list));
 
   if (isHost) {
-    const chips = h('div', { class: 'count-chips' });
-    [3, 5, 7, 10].forEach(n => chips.append(h('button', { class: 'chip' + (RS.settings.rounds === n ? ' is-selected' : ''),
-      onclick: () => { RS.settings.rounds = n; slfHostPush(); } }, String(n))));
-    wrap.append(h('div', { class: 'field' }, h('div', { class: 'label' }, ST('rounds')), chips));
-    const canStart = RS.players.length >= 2;
-    wrap.append(h('button', { class: 'btn btn-primary btn-lg btn-block', disabled: canStart ? null : '',
-      onclick: () => slfSend({ t: 'start', rounds: RS.settings.rounds }) }, icon(UI.play), ST('start')));
-    if (!canStart) wrap.append(h('div', { class: 'hint', style: 'text-align:center;margin-top:.6rem' }, ST('need2')));
+    if (RS.game === 'gharib') {
+      renderGharibLobbySettings(wrap, RS);
+    } else {
+      const chips = h('div', { class: 'count-chips' });
+      [3, 5, 7, 10].forEach(n => chips.append(h('button', { class: 'chip' + (RS.settings.rounds === n ? ' is-selected' : ''),
+        onclick: () => { RS.settings.rounds = n; slfHostPush(); } }, String(n))));
+      wrap.append(h('div', { class: 'field' }, h('div', { class: 'label' }, ST('rounds')), chips));
+      const canStart = RS.players.length >= 2;
+      wrap.append(h('button', { class: 'btn btn-primary btn-lg btn-block', disabled: canStart ? null : '',
+        onclick: () => slfSend({ t: 'start', rounds: RS.settings.rounds }) }, icon(UI.play), ST('start')));
+      if (!canStart) wrap.append(h('div', { class: 'hint', style: 'text-align:center;margin-top:.6rem' }, ST('need2')));
+    }
   } else {
     wrap.append(h('div', { class: 'slf-wait' }, ST('waiting_host')));
   }

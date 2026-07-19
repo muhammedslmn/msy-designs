@@ -179,11 +179,11 @@ function renderHub() {
 }
 function gameCard(which) {
   const slft = (typeof SLF_T !== 'undefined') ? (SLF_T[state.lang] || SLF_T.de) : { title: 'İsim Şehir', desc: '' };
+  const openOnline = (game) => { if (typeof OS !== 'undefined') { OS.game = game; OS.rs = null; OS.joinCode = ''; OS.error = ''; OS.role = null; OS.myCard = null; if (OS.net) { OS.net.leave(); OS.net = null; } } setScreen('online'); };
   const cfg = {
-    gharib: { cls: 'g', ico: ICONS.star8, name: h('span', {}, 'Gharîb', h('span', { class: 'gc-ar' }, ' غريب')), desc: T('game_gharib_desc'), go: () => setScreen('setup') },
+    gharib: { cls: 'g', ico: ICONS.star8, name: h('span', {}, 'Gharîb', h('span', { class: 'gc-ar' }, ' غريب')), desc: T('game_gharib_desc'), badge: 'ONLINE', go: () => openOnline('gharib') },
     quiz:   { cls: 'q', ico: ICONS.quiz,  name: T('game_quiz_name'), desc: T('game_quiz_desc'), go: () => setScreen('quiz_setup') },
-    slf:    { cls: 's', ico: ICONS.history, name: slft.title, desc: slft.desc, badge: 'ONLINE',
-              go: () => { if (typeof OS !== 'undefined') { OS.rs = null; OS.joinCode = ''; OS.error = ''; OS.role = null; if (OS.net) { OS.net.leave(); OS.net = null; } } setScreen('online'); } },
+    slf:    { cls: 's', ico: ICONS.history, name: slft.title, desc: slft.desc, badge: 'ONLINE', go: () => openOnline('slf') },
   }[which];
   return h('button', { class: 'gamecard ' + cfg.cls, onclick: cfg.go },
     h('span', { class: 'gc-ico', html: cfg.ico, 'aria-hidden': 'true' }),
@@ -438,12 +438,10 @@ function renderCardFace() {
     if (g.giveHint)
       card.append(h('div', { class: 'card-hintbox' }, h('b', {}, T('deal_hint') + ': '), g.term.h[state.lang]));
   } else {
-    card.append(
-      h('div', { class: 'card-eyebrow' }, icon(UI.eye), T('deal_your_word')),
-      h('div', { class: 'card-word' }, g.term.w[state.lang]),
-      state.config.category !== 'mixed' ? h('div', { class: 'card-cat' }, catName(g.term.cat)) : null,
-      h('div', { class: 'card-memorize' }, T('deal_memorize')),
-    );
+    card.append(h('div', { class: 'card-eyebrow' }, icon(UI.eye), T('deal_your_word')));
+    card.append(h('div', { class: 'card-word' }, g.term.w[state.lang]));
+    if (state.config.category !== 'mixed') card.append(h('div', { class: 'card-cat' }, catName(g.term.cat)));
+    card.append(h('div', { class: 'card-memorize' }, T('deal_memorize')));
   }
 
   const last = g.dealIndex >= state.config.players - 1;
