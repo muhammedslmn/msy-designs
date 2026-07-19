@@ -14,12 +14,35 @@
 const NET_NS = 'gharibv1-'; // Namensraum für Raum-IDs
 const RECONNECT_KEY = 'gharib_client';
 
-// Öffentlicher MQTT-Relay (kostenlos, ohne Konto). Für lokale Tests per
-// ?broker=ws://… überschreibbar. Host und Client nutzen denselben Relay.
-const MQTT_BROKER = (() => {
-  try { const b = new URLSearchParams(location.search).get('broker'); if (b) return b; } catch {}
-  return 'wss://broker.emqx.io:8084/mqtt';
-})();
+// Öffentliche MQTT-Relays (kostenlos, ohne Konto). Der Host probiert sie der
+// Reihe nach durch und nimmt den ersten, der antwortet; der gewählte Index
+// wandert in den Einladungslink (&b=…), damit der Gast denselben Relay nutzt.
+// So klappt es auch, wenn in einem Netz ein einzelner Relay-Port gesperrt ist.
+const MQTT_BROKERS = [
+  'wss://broker.emqx.io:8084/mqtt',
+  'wss://broker.hivemq.com:8884/mqtt',
+  'wss://test.mosquitto.org:8081/mqtt',
+];
+// Für lokale Tests per ?broker=ws://… erzwingbar (überschreibt die Liste).
+function netBrokerOverride() {
+  try { return new URLSearchParams(location.search).get('broker') || null; } catch { return null; }
+}
+// Relay-Liste, die eine Instanz durchprobiert.
+function netBrokerList(explicit) {
+  const ov = netBrokerOverride();
+  if (ov) return [ov];
+  if (explicit) return [explicit];
+  return MQTT_BROKERS.slice();
+}
+// Gast: gewählten Relay aus dem Einladungslink (&b=…) lesen, damit Host und
+// Gast garantiert denselben Relay nutzen.
+function netJoinBroker() {
+  try {
+    const b = new URLSearchParams(location.search).get('b');
+    if (b != null && b !== '') { const i = parseInt(b, 10); if (!isNaN(i) && MQTT_BROKERS[i]) return MQTT_BROKERS[i]; }
+  } catch {}
+  return null;
+}
 const MQTT_ROOT = 'ghrbv1';
 
 function netCode(n = 4) {
@@ -75,13 +98,16 @@ class LocalTransport {
    an einen Spieler über .../to/<id>. Clients umgekehrt. Nur ausgehende
    WebSocket-Verbindungen → funktioniert hinter jedem NAT (kein TURN nötig). */
 class MqttTransport {
-  constructor(code) {
+  constructor(code, explicitBroker) {
     this.code = code;
     this.cbs = {};
     this.client = null;
     this.selfId = null;
     this._ready = false;
     this._base = MQTT_ROOT + '/' + code;
+    this._brokers = netBrokerList(explicitBroker);
+    this.brokerIndex = 0;
+    this.brokerUrl = this._brokers[0];
   }
   on(ev, cb) { this.cbs[ev] = cb; return this; }
   _emit(ev, ...a) { if (this.cbs[ev]) this.cbs[ev](...a); }
@@ -89,63 +115,63 @@ class MqttTransport {
     const b = this._base;
     return { toHost: b + '/toHost', toAll: b + '/toAll', to: (id) => b + '/to/' + id };
   }
-  _connect() {
-    if (typeof mqtt === 'undefined' || !mqtt.connect) throw new Error('MQTT nicht geladen');
-    const cid = 'ghrb_' + (this.selfId || 'x') + '_' + Math.random().toString(36).slice(2, 8);
-    return mqtt.connect(MQTT_BROKER, {
-      clientId: cid, clean: true, keepalive: 30,
-      reconnectPeriod: 2500, connectTimeout: 12000,
-    });
-  }
   _payload(p) { try { return JSON.parse(typeof p === 'string' ? p : p.toString()); } catch { return null; } }
 
-  hostStart() {
+  // Verbindung zu EINEM Relay; erfüllt sich bei 'connect', sonst Fehler/Timeout.
+  _open(url) {
     return new Promise((resolve, reject) => {
-      const T = this._t(); let client, done = false, first = true;
-      try { client = this._connect(); } catch (e) { return reject(e); }
-      this.client = client;
-      const to = setTimeout(() => { if (!done) { done = true; try { client.end(true); } catch {} reject(new Error('Zeitüberschreitung beim Erstellen')); } }, 14000);
-      client.on('connect', () => {
-        const wasFirst = first; first = false;
-        client.subscribe(T.toHost, { qos: 0 }, (err) => {
-          if (err) { if (!done) { done = true; clearTimeout(to); reject(err); } return; }
-          this._ready = true;
-          if (wasFirst) { if (!done) { done = true; clearTimeout(to); resolve(); } }
-          else this._emit('reopen'); // nach Reconnect: Zustand neu senden
-        });
-      });
-      client.on('message', (topic, payload) => {
-        if (topic !== T.toHost) return;
-        const env = this._payload(payload);
-        if (!env || env._k == null) return;
-        this._emit('message', env._k, env.m);
-      });
-      client.on('error', (err) => { this._emit('neterror', err); if (!done) { done = true; clearTimeout(to); try { client.end(true); } catch {} reject(err); } });
+      if (typeof mqtt === 'undefined' || !mqtt.connect) return reject(new Error('MQTT nicht geladen'));
+      const cid = 'ghrb_' + (this.selfId || 'x') + '_' + Math.random().toString(36).slice(2, 8);
+      let settled = false;
+      const client = mqtt.connect(url, { clientId: cid, clean: true, keepalive: 30, reconnectPeriod: 2500, connectTimeout: 6000, protocolVersion: 4 });
+      const to = setTimeout(() => { if (!settled) { settled = true; try { client.end(true); } catch {} reject(new Error('timeout ' + url)); } }, 7000);
+      client.once('connect', () => { if (!settled) { settled = true; clearTimeout(to); resolve(client); } });
+      client.once('error', (err) => { if (!settled) { settled = true; clearTimeout(to); try { client.end(true); } catch {} reject(err); } });
     });
   }
-  clientStart() {
-    return new Promise((resolve, reject) => {
-      const T = this._t(); const mine = T.to(this.selfId);
-      let client, done = false, first = true;
-      try { client = this._connect(); } catch (e) { return reject(e); }
-      this.client = client;
-      const to = setTimeout(() => { if (!done) { done = true; try { client.end(true); } catch {} reject(new Error('Zeitüberschreitung beim Beitreten')); } }, 14000);
-      client.on('connect', () => {
-        const wasFirst = first; first = false;
-        client.subscribe([T.toAll, mine], { qos: 0 }, (err) => {
-          if (err) { if (!done) { done = true; clearTimeout(to); reject(err); } return; }
-          this._ready = true;
-          if (wasFirst) { if (!done) { done = true; clearTimeout(to); resolve(); } }
-          else this._emit('reopen'); // nach Reconnect: erneut beitreten → frischer Zustand
-        });
-      });
-      client.on('message', (topic, payload) => {
-        if (topic !== T.toAll && topic !== mine) return;
-        const m = this._payload(payload);
-        if (m) this._emit('message', m);
-      });
-      client.on('error', (err) => { this._emit('neterror', err); if (!done) { done = true; clearTimeout(to); try { client.end(true); } catch {} reject(err); } });
+  // Relays der Reihe nach durchprobieren, ersten erreichbaren nehmen.
+  async _openAny() {
+    let lastErr = null;
+    for (let i = 0; i < this._brokers.length; i++) {
+      try {
+        const client = await this._open(this._brokers[i]);
+        this.brokerIndex = i; this.brokerUrl = this._brokers[i];
+        return client;
+      } catch (e) { lastErr = e; }
+    }
+    throw lastErr || new Error('kein Relay erreichbar');
+  }
+
+  async hostStart() {
+    const T = this._t();
+    const client = await this._openAny();
+    this.client = client;
+    client.on('message', (topic, payload) => {
+      if (topic !== T.toHost) return;
+      const env = this._payload(payload);
+      if (!env || env._k == null) return;
+      this._emit('message', env._k, env.m);
     });
+    client.on('error', (err) => this._emit('neterror', err));
+    await new Promise((res, rej) => client.subscribe(T.toHost, { qos: 0 }, (e) => e ? rej(e) : res()));
+    this._ready = true;
+    // Reconnect (mqtt.js abonniert automatisch neu) → Zustand erneut verteilen.
+    client.on('connect', () => { client.subscribe(T.toHost, { qos: 0 }, () => this._emit('reopen')); });
+  }
+  async clientStart() {
+    const T = this._t(); const mine = T.to(this.selfId);
+    const client = await this._openAny();
+    this.client = client;
+    client.on('message', (topic, payload) => {
+      if (topic !== T.toAll && topic !== mine) return;
+      const m = this._payload(payload);
+      if (m) this._emit('message', m);
+    });
+    client.on('error', (err) => this._emit('neterror', err));
+    await new Promise((res, rej) => client.subscribe([T.toAll, mine], { qos: 0 }, (e) => e ? rej(e) : res()));
+    this._ready = true;
+    // Reconnect → erneut beitreten, damit der Host frischen Zustand schickt.
+    client.on('connect', () => { client.subscribe([T.toAll, mine], { qos: 0 }, () => this._emit('reopen')); });
   }
   broadcast(obj) { if (this.client) try { this.client.publish(this._t().toAll, JSON.stringify(obj), { qos: 0 }); } catch {} }
   sendTo(key, obj) { if (this.client) try { this.client.publish(this._t().to(key), JSON.stringify(obj), { qos: 0 }); } catch {} }
@@ -155,12 +181,14 @@ class MqttTransport {
 
 /* ---------------- RoomNet (Protokoll über dem Transport) ---------------- */
 class RoomNet {
-  constructor(mode) {
-    this.mode = mode || 'peer';
+  constructor(mode, brokerUrl) {
+    this.mode = mode || 'net';
     this.selfId = netId();
     this.isHost = false;
     this.code = null;
     this.transport = null;
+    this.brokerIndex = 0;          // gewählter Relay (für den Einladungslink)
+    this._brokerUrl = brokerUrl || null;
     this.keyToPlayer = new Map(); // Transport-Kanal → Spieler-ID (nur Host)
     this.playerToKey = new Map();
     this.handlers = { state: [], action: [], join: [], leave: [], private: [], disconnected: [], neterror: [] };
@@ -169,7 +197,7 @@ class RoomNet {
   }
   on(ev, cb) { (this.handlers[ev] || (this.handlers[ev] = [])).push(cb); return this; }
   _emit(ev, ...a) { (this.handlers[ev] || []).forEach(cb => cb(...a)); }
-  _mk(code) { return this.mode === 'local' ? new LocalTransport(code) : new MqttTransport(code); }
+  _mk(code) { return this.mode === 'local' ? new LocalTransport(code) : new MqttTransport(code, this._brokerUrl); }
 
   /* ---- Host ---- */
   async host(code) {
@@ -198,6 +226,7 @@ class RoomNet {
       }
     });
     await this.transport.hostStart();
+    if (this.transport.brokerIndex != null) this.brokerIndex = this.transport.brokerIndex;
     return this.code;
   }
   // Host: neuen Zustand setzen → an alle senden + lokal melden

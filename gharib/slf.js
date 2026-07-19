@@ -275,7 +275,7 @@ async function slfJoin(code) {
   if (!code) return;
   OS.busy = true; OS.error = ''; render();
   try {
-    OS.role = 'client'; OS.net = new RoomNet(detectNetMode());
+    OS.role = 'client'; OS.net = new RoomNet(detectNetMode(), netJoinBroker());
     slfWireCommon(OS.net);
     OS.net.on('disconnected', () => { OS.error = ST('conn_error'); render(); });
     await OS.net.join(code.toUpperCase().trim(), OS.name.trim());
