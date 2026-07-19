@@ -450,3 +450,86 @@ html[data-theme="dark"] .rule-step .n { color: #06120e; }
 .stack { display: flex; flex-direction: column; gap: .7rem; }
 .muted { color: var(--ink-3); }
 .hidden { display: none !important; }
+
+/* =================================================================
+   Hub (Spielauswahl) & Quiz — Erweiterung
+   ================================================================= */
+
+/* ---------- Hub ---------- */
+.hub { align-items: center; justify-content: center; }
+.hub-inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; padding-block: clamp(1.4rem,5vh,3rem); width: 100%; }
+.hub-title { font-family: var(--display); font-weight: 700; font-size: clamp(2.4rem,10vw,3.4rem); letter-spacing: -.02em; color: var(--ink); line-height: 1; }
+.hub-title .ar { font-family: var(--arabic); color: var(--gold); font-size: .6em; margin-inline-start: .3rem; }
+.hub-sub { color: var(--ink-2); font-size: 1rem; max-width: 32ch; }
+.gamecards { display: flex; flex-direction: column; gap: .8rem; width: 100%; max-width: 430px; margin-top: .5rem; }
+.gamecard { display: flex; align-items: center; gap: 1rem; text-align: start; width: 100%; padding: 1.1rem 1.15rem; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); transition: transform .14s var(--ease), box-shadow .2s var(--ease), border-color .2s; }
+.gamecard:hover { transform: translateY(-2px); border-color: var(--line-strong); box-shadow: var(--shadow-lg); }
+.gamecard:active { transform: translateY(0) scale(.995); }
+.gamecard .gc-ico { width: 54px; height: 54px; flex: none; display: grid; place-items: center; border-radius: 16px; }
+.gamecard.g .gc-ico { color: var(--green); background: var(--green-soft); }
+.gamecard.q .gc-ico { color: var(--gold); background: var(--gold-soft); }
+html[data-theme="dark"] .gamecard.g .gc-ico { color: var(--green-2); }
+.gamecard .gc-ico svg { width: 30px; height: 30px; }
+.gc-body { flex: 1; display: flex; flex-direction: column; gap: .18rem; min-width: 0; }
+.gc-name { font-family: var(--display); font-weight: 700; font-size: 1.22rem; color: var(--ink); }
+.gc-name .gc-ar { font-family: var(--arabic); font-weight: 700; color: var(--gold); font-size: .95em; }
+.gc-desc { color: var(--ink-3); font-size: .86rem; line-height: 1.35; }
+.gc-play { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--green); }
+.gamecard.q .gc-play { background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #2a2109; }
+html[data-theme="dark"] .gc-play { color: #06120e; }
+.gc-play svg { width: 15px; height: 15px; }
+html[dir="rtl"] .gc-play svg { transform: scaleX(-1); }
+
+/* ---------- Quiz: Frage ---------- */
+.qprogress { height: 8px; border-radius: 99px; background: var(--surface-2); border: 1px solid var(--line); overflow: hidden; margin-top: .5rem; }
+.qprogress span { display: block; height: 100%; background: linear-gradient(90deg, var(--green), var(--green-2)); border-radius: 99px; transition: width .35s var(--ease); }
+.qcard { margin-top: 1.1rem; padding: 1.3rem 1.2rem; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.qcat { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: .5rem; }
+html[lang="ar"] .qcat { letter-spacing: 0; }
+.qtext { font-family: var(--display); font-weight: 600; font-size: 1.28rem; line-height: 1.45; color: var(--ink); text-wrap: balance; }
+html[lang="ar"] .qtext { font-family: var(--arabic-ui); font-weight: 700; }
+.qoptions { display: flex; flex-direction: column; gap: .6rem; margin-top: 1rem; }
+.qopt { display: flex; align-items: center; gap: .8rem; text-align: start; padding: .9rem 1rem; border-radius: 15px; border: 1.5px solid var(--line-strong); background: var(--surface); color: var(--ink); font-weight: 500; font-size: 1.02rem; transition: border-color .15s var(--ease), background .15s, opacity .2s; -webkit-tap-highlight-color: transparent; }
+.qopt:hover:not([disabled]) { border-color: var(--green); background: var(--green-soft); }
+html[data-theme="dark"] .qopt:hover:not([disabled]) { background: var(--green-deep); }
+.qopt[disabled] { cursor: default; }
+.qletter { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border-radius: 9px; background: var(--surface-2); border: 1px solid var(--line); font-family: var(--display); font-weight: 700; font-size: .9rem; color: var(--ink-2); }
+.qopttext { flex: 1; line-height: 1.35; }
+.qmark { flex: none; display: grid; place-items: center; }
+.qmark svg { width: 22px; height: 22px; }
+.qopt.correct { border-color: var(--green); background: var(--green-soft); color: var(--green-deep); }
+.qopt.correct .qletter { background: var(--green); border-color: var(--green); color: #fff; }
+.qopt.correct .qmark { color: var(--green); }
+.qopt.wrong { border-color: var(--danger); background: color-mix(in srgb, var(--danger) 12%, transparent); }
+.qopt.wrong .qletter { background: var(--danger); border-color: var(--danger); color: #fff; }
+.qopt.wrong .qmark { color: var(--danger); }
+.qopt.dim { opacity: .5; }
+html[data-theme="dark"] .qopt.correct { color: var(--green-2); }
+html[data-theme="dark"] .qopt.correct .qletter { color: #06120e; }
+
+.qfeedback { display: flex; align-items: center; gap: .5rem; margin-top: 1.1rem; font-family: var(--display); font-weight: 700; font-size: 1.12rem; }
+.qfeedback.ok { color: var(--green); }
+html[data-theme="dark"] .qfeedback.ok { color: var(--green-2); }
+.qfeedback.no { color: var(--danger); }
+.qfeedback .fb-ic { display: grid; place-items: center; }
+.qfeedback .fb-ic svg { width: 24px; height: 24px; }
+.qexplain { margin-top: .6rem; padding: 1rem 1.1rem; border-radius: 15px; background: var(--surface-2); border: 1px solid var(--line); }
+.qexp-text { color: var(--ink-2); font-size: .98rem; line-height: 1.55; }
+.qref { margin-top: .5rem; color: var(--gold); font-weight: 700; font-size: .84rem; }
+
+/* ---------- Quiz: Anzahl-Chips ---------- */
+.count-chips { display: flex; gap: .5rem; margin-top: 1rem; }
+.chip { flex: 1; min-width: 58px; padding: .8rem .4rem; border-radius: 13px; border: 1.5px solid var(--line-strong); background: var(--surface-2); color: var(--ink); font-family: var(--display); font-weight: 700; font-size: 1.05rem; transition: .15s var(--ease); }
+.chip:hover { border-color: var(--green); }
+.chip.is-selected { border-color: var(--green); background: var(--green-soft); color: var(--green-deep); box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 14%, transparent); }
+html[data-theme="dark"] .chip.is-selected { color: var(--green-2); }
+
+/* ---------- Quiz: Ergebnis ---------- */
+.quiz-result { padding-bottom: 2rem; }
+.score-ring { width: 172px; height: 172px; margin: 1.2rem auto .3rem; border-radius: 50%; display: grid; place-items: center; position: relative; background: conic-gradient(var(--ring, var(--green)) var(--p, 50%), var(--surface-2) 0); }
+.score-ring::after { content: ""; position: absolute; inset: 13px; border-radius: 50%; background: var(--surface); box-shadow: inset 0 1px 4px rgba(0,0,0,.06); }
+.score-ring.high { --ring: var(--green); } .score-ring.mid { --ring: var(--gold); } .score-ring.low { --ring: var(--danger); }
+.score-num { position: relative; z-index: 1; font-family: var(--display); font-weight: 700; font-size: 3rem; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; }
+.score-num span { font-size: 1.2rem; color: var(--ink-3); }
+.score-msg { font-family: var(--display); font-weight: 700; font-size: 1.4rem; color: var(--ink); margin-top: .7rem; text-wrap: balance; }
+.score-sub { font-size: .95rem; margin-top: .2rem; }

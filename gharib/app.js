@@ -22,6 +22,7 @@ const UI = {
   refresh:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.3M21 4v5h-5"/></svg>',
   home:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg>',
   book:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H19v15H6a2 2 0 0 0-2 2z"/><path d="M6 19h13"/></svg>',
+  award:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.6L7 21l5-2.6L17 21l-1.5-8.4"/></svg>',
   sparkle:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/></svg>',
   corner: '<svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 22V10a6 6 0 0 1 6-6h12"/><path d="M4 14V10a6 6 0 0 1 6-6h4"/><circle cx="9" cy="9" r="1.6" fill="currentColor" stroke="none"/></svg>',
   close:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
@@ -80,6 +81,12 @@ const state = {
   game: null,
   recent: store.get('recent', []),
   timer: { remaining: TIMER_DEFAULT, running: false, id: null },
+  quizConfig: {
+    category: (store.get('quizSetup', {}).category) || 'mixed',
+    level: clampInt(store.get('quizSetup', {}).level, 1, 4, 2),
+    count: (store.get('quizSetup', {}).count) || 10,
+  },
+  quiz: null,
 };
 
 function clampInt(v, lo, hi, dflt) { v = parseInt(v, 10); if (isNaN(v)) return dflt; return Math.max(lo, Math.min(hi, v)); }
@@ -109,7 +116,10 @@ function render() {
     case 'round':  screen = renderRound(); break;
     case 'reveal': screen = renderReveal(); break;
     case 'nasiha': screen = renderNasiha(); break;
-    default:       screen = renderHome();
+    case 'quiz_setup':  screen = renderQuizSetup(); break;
+    case 'quiz_play':   screen = renderQuizPlay(); break;
+    case 'quiz_result': screen = renderQuizResult(); break;
+    default:       screen = renderHub();
   }
   root.append(screen);
 }
@@ -151,22 +161,31 @@ function renderAppbar() {
 /* ---------- Zierteiler ---------- */
 function divider() { return h('div', { class: 'divider' }, icon(UI.sparkle)); }
 
-/* ---------- Startseite ---------- */
-function renderHome() {
-  const s = h('section', { class: 'screen home' });
-  const inner = h('div', { class: 'container home-inner' },
-    h('div', { class: 'hero-mark', html: ICONS.star8 }),
-    h('h1', { class: 'hero-title' }, 'Gharîb', h('span', { class: 'ar' }, 'غريب')),
-    h('p', { class: 'hero-sub' }, T('home_sub')),
-    h('div', { class: 'hero-actions' },
-      h('button', { class: 'btn btn-primary btn-lg btn-block', onclick: () => setScreen('setup') }, icon(UI.play), T('home_play')),
-      h('button', { class: 'btn btn-ghost btn-block', onclick: openRules }, icon(UI.info), T('home_rules')),
-    ),
+/* ---------- Startseite / Hub ---------- */
+function renderHub() {
+  const s = h('section', { class: 'screen hub' });
+  const inner = h('div', { class: 'container hub-inner' },
+    h('div', { class: 'hero-mark', style: 'width:82px;height:82px', html: ICONS.star8 }),
+    h('h1', { class: 'hub-title' }, 'Gharîb', h('span', { class: 'ar' }, 'غريب')),
+    h('p', { class: 'hub-sub' }, T('hub_sub')),
+    h('div', { class: 'gamecards' }, gameCard('gharib'), gameCard('quiz')),
+    h('button', { class: 'btn btn-ghost btn-block', style: 'margin-top:.2rem', onclick: openRules }, icon(UI.info), T('home_rules')),
     divider(),
     h('p', { class: 'hero-foot' }, icon(UI.book, ''), T('home_foot')),
   );
   s.append(inner);
   return s;
+}
+function gameCard(which) {
+  const isG = which === 'gharib';
+  return h('button', { class: 'gamecard ' + (isG ? 'g' : 'q'), onclick: () => setScreen(isG ? 'setup' : 'quiz_setup') },
+    h('span', { class: 'gc-ico', html: isG ? ICONS.star8 : ICONS.quiz, 'aria-hidden': 'true' }),
+    h('span', { class: 'gc-body' },
+      h('span', { class: 'gc-name' }, isG ? h('span', {}, 'Gharîb', h('span', { class: 'gc-ar' }, ' غريب')) : T('game_quiz_name')),
+      h('span', { class: 'gc-desc' }, T(isG ? 'game_gharib_desc' : 'game_quiz_desc')),
+    ),
+    h('span', { class: 'gc-play', html: UI.play, 'aria-hidden': 'true' }),
+  );
 }
 
 /* ---------- Screen-Kopf ---------- */
@@ -572,6 +591,164 @@ function openRules() {
   requestAnimationFrame(() => overlay.classList.add('open'));
 }
 function closeModal(overlay) { overlay.classList.remove('open'); setTimeout(() => overlay.remove(), 200); }
+
+/* ======================================================================
+   BILGI YARIŞI — Wissensquiz
+   ====================================================================== */
+const QUIZ_UNIT = { de: 'Fragen', tr: 'soru', en: 'questions', ar: 'سؤالًا' };
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function quizCatName(id) { const c = QUIZ_CATEGORIES.find(x => x.id === id); return c ? c.name[state.lang] : ''; }
+function persistQuizSetup() { const c = state.quizConfig; store.set('quizSetup', { category: c.category, level: c.level, count: c.count }); }
+
+function renderQuizSetup() {
+  const c = state.quizConfig;
+  const s = h('section', { class: 'screen setup' });
+  const wrap = h('div', { class: 'container' });
+  wrap.append(screenHead('quiz_setup_title'));
+
+  /* Kategorie */
+  const grid = h('div', { class: 'cat-grid' });
+  QUIZ_CATEGORIES.forEach(cat => {
+    const count = QUIZ.filter(q => q.cat === cat.id).length;
+    grid.append(h('button', { class: 'cat' + (c.category === cat.id ? ' is-selected' : ''),
+      onclick: () => { c.category = cat.id; persistQuizSetup(); render(); } },
+      h('span', { class: 'tick', html: UI.check }),
+      h('span', { class: 'ico', html: cat.icon }),
+      h('span', { class: 'nm' }, cat.name[state.lang]),
+      h('span', { class: 'cnt' }, count + ' ' + QUIZ_UNIT[state.lang]),
+    ));
+  });
+  grid.append(h('button', { class: 'cat mixed' + (c.category === 'mixed' ? ' is-selected' : ''),
+    onclick: () => { c.category = 'mixed'; persistQuizSetup(); render(); } },
+    h('span', { class: 'ico', html: ICONS.mixed }),
+    h('span', {}, h('span', { class: 'nm' }, T('mixed_name')), h('span', { class: 'cnt', style: 'display:block' }, QUIZ.length + ' ' + QUIZ_UNIT[state.lang])),
+    h('span', { class: 'tick', html: UI.check }),
+  ));
+  wrap.append(field('category_label', 'category_hint', ICONS.quiz, grid));
+
+  /* Schwierigkeit */
+  const levels = h('div', { class: 'levels' });
+  [1, 2, 3, 4].forEach(lv => {
+    const pips = h('span', { class: 'pips' });
+    for (let i = 1; i <= 4; i++) pips.append(h('i', { class: i <= lv ? 'on' : '' }));
+    levels.append(h('button', { class: 'level' + (c.level === lv ? ' is-selected' : ''),
+      onclick: () => { c.level = lv; persistQuizSetup(); render(); } },
+      h('span', { class: 'lv' }, T('level_' + lv), pips),
+    ));
+  });
+  wrap.append(field('level_label', 'level_hint', UI.sparkle, levels));
+
+  /* Anzahl Fragen */
+  const chips = h('div', { class: 'count-chips' });
+  [5, 10, 15, 'all'].forEach(n => {
+    chips.append(h('button', { class: 'chip' + (c.count === n ? ' is-selected' : ''),
+      onclick: () => { c.count = n; persistQuizSetup(); render(); } },
+      n === 'all' ? T('quiz_all') : String(n)));
+  });
+  wrap.append(field('quiz_count_label', 'quiz_count_hint', ICONS.quiz, chips));
+
+  s.append(wrap);
+  s.append(h('div', { class: 'startbar' }, h('div', { class: 'inner' },
+    h('button', { class: 'btn btn-primary btn-lg btn-block', onclick: startQuiz }, icon(UI.play), T('quiz_start')))));
+  return s;
+}
+
+function startQuiz() {
+  const c = state.quizConfig;
+  let pool = QUIZ.filter(q => c.category === 'mixed' || q.cat === c.category);
+  const ranges = { 1: [1, 2], 2: [1, 3], 3: [2, 4], 4: [3, 4] };
+  const [lo, hi] = ranges[c.level] || [1, 4];
+  let pref = pool.filter(q => q.level >= lo && q.level <= hi);
+  const want = c.count === 'all' ? pool.length : c.count;
+  if (pref.length < Math.min(want, 4)) pref = pool;
+  const arr = shuffle(pref.slice());
+  const n = c.count === 'all' ? arr.length : Math.min(c.count, arr.length);
+  const list = arr.slice(0, n).map(q => {
+    const opts = q.o.map((o, i) => ({ o, correct: i === q.c }));
+    shuffle(opts);
+    return { q, opts };
+  });
+  state.quiz = { list, index: 0, score: 0, selected: null, answered: false };
+  persistQuizSetup();
+  setScreen('quiz_play');
+}
+
+function renderQuizPlay() {
+  const Q = state.quiz;
+  if (!Q || !Q.list.length) { return renderQuizSetup(); }
+  const item = Q.list[Q.index];
+  const lang = state.lang;
+  const s = h('section', { class: 'screen quiz' });
+  const wrap = h('div', { class: 'container' });
+
+  wrap.append(h('div', { class: 'shead' },
+    h('button', { class: 'backbtn', 'aria-label': T('back'), html: UI.back, onclick: () => setScreen('quiz_setup') }),
+    h('div', {}, h('h1', {}, T('game_quiz_name')), h('div', { class: 'sub' }, T('quiz_of', { n: Q.index + 1, t: Q.list.length }))),
+  ));
+
+  const frac = (Q.index + (Q.answered ? 1 : 0)) / Q.list.length * 100;
+  wrap.append(h('div', { class: 'qprogress' }, h('span', { style: 'width:' + frac + '%' })));
+
+  wrap.append(h('div', { class: 'qcard' },
+    h('div', { class: 'qcat' }, quizCatName(item.q.cat)),
+    h('div', { class: 'qtext' }, item.q.q[lang]),
+  ));
+
+  const opts = h('div', { class: 'qoptions' });
+  item.opts.forEach((opt, i) => {
+    let cls = 'qopt';
+    if (Q.answered) { if (opt.correct) cls += ' correct'; else if (i === Q.selected) cls += ' wrong'; else cls += ' dim'; }
+    opts.append(h('button', { class: cls, disabled: Q.answered ? '' : null,
+      onclick: () => { if (Q.answered) return; Q.answered = true; Q.selected = i; if (opt.correct) Q.score++; render(); } },
+      h('span', { class: 'qletter' }, String.fromCharCode(65 + i)),
+      h('span', { class: 'qopttext' }, opt.o[lang]),
+      Q.answered && opt.correct ? h('span', { class: 'qmark', html: UI.check }) : (Q.answered && i === Q.selected ? h('span', { class: 'qmark', html: UI.close }) : null),
+    ));
+  });
+  wrap.append(opts);
+
+  if (Q.answered) {
+    const correct = item.opts[Q.selected].correct;
+    wrap.append(h('div', { class: 'qfeedback ' + (correct ? 'ok' : 'no') },
+      h('span', { class: 'fb-ic', html: correct ? UI.check : UI.close }),
+      T(correct ? 'quiz_correct' : 'quiz_wrong')));
+    wrap.append(h('div', { class: 'qexplain' },
+      h('div', { class: 'qexp-text' }, item.q.e[lang]),
+      item.q.ref ? h('div', { class: 'qref' }, T('quiz_source') + ': ' + item.q.ref) : null));
+    const last = Q.index >= Q.list.length - 1;
+    wrap.append(h('button', { class: 'btn btn-primary btn-lg btn-block', style: 'margin-top:1.1rem',
+      onclick: () => { if (last) { setScreen('quiz_result'); } else { Q.index++; Q.answered = false; Q.selected = null; render(); window.scrollTo(0, 0); } } },
+      last ? icon(UI.award) : null, T(last ? 'quiz_to_result' : 'quiz_next')));
+  }
+
+  s.append(wrap);
+  return s;
+}
+
+function renderQuizResult() {
+  const Q = state.quiz || { list: [], score: 0 };
+  const total = Q.list.length || 1, score = Q.score;
+  const pct = score / total;
+  const tier = pct >= 0.8 ? 'high' : (pct >= 0.5 ? 'mid' : 'low');
+  const msg = pct >= 0.8 ? 'quiz_msg_high' : (pct >= 0.5 ? 'quiz_msg_mid' : 'quiz_msg_low');
+  const s = h('section', { class: 'screen quiz-result' });
+  const wrap = h('div', { class: 'container', style: 'text-align:center' });
+  wrap.append(h('div', { class: 'shead', style: 'justify-content:center' },
+    h('div', {}, h('h1', {}, T('quiz_result_title')))));
+  wrap.append(h('div', { class: 'score-ring ' + tier, style: '--p:' + Math.round(pct * 100) + '%' },
+    h('div', { class: 'score-num' }, String(score), h('span', {}, '/' + Q.list.length))));
+  wrap.append(h('div', { class: 'score-msg' }, T(msg)));
+  wrap.append(h('div', { class: 'score-sub muted' }, T('quiz_score', { s: score, t: Q.list.length })));
+  wrap.append(h('div', { class: 'stack', style: 'margin-top:1.6rem' },
+    h('button', { class: 'btn btn-primary btn-lg btn-block', onclick: startQuiz }, icon(UI.refresh), T('quiz_again')),
+    h('div', { style: 'display:flex;gap:.6rem' },
+      h('button', { class: 'btn btn-ghost btn-block', onclick: () => setScreen('quiz_setup') }, T('quiz_new')),
+      h('button', { class: 'btn btn-ghost btn-block', onclick: () => setScreen('home') }, icon(UI.home), T('nasiha_home')),
+    ),
+  ));
+  s.append(wrap);
+  return s;
+}
 
 /* ---------- Globale Interaktionen ---------- */
 document.addEventListener('click', () => { if (state.langMenuOpen) { state.langMenuOpen = false; render(); } });
