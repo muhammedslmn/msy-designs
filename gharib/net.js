@@ -1,15 +1,26 @@
 /* =================================================================
    Gharîb — Echtzeit-Schicht (Online-Räume, host-autoritativ)
    Zwei Transporte hinter EINER Schnittstelle:
-     · 'peer'  → PeerJS (echte Geräte, per Link, ohne Konto/Server)
+     · 'net'   → MQTT über WebSocket (echte Geräte, per Link, ohne Konto)
+                 Reine Relay-Verbindung: jedes Handy baut nur eine
+                 ausgehende WSS-Verbindung auf → funktioniert hinter
+                 jedem NAT/Firewall (Mobilfunk, WLAN), ohne TURN.
      · 'local' → BroadcastChannel (mehrere Tabs, für Tests/gleiches Gerät)
    Der Host hält den maßgeblichen Zustand und sendet ihn an alle.
    Private Daten (z. B. Gharîb-Karten) gehen gezielt an einen Spieler.
    ================================================================= */
 'use strict';
 
-const NET_NS = 'gharibv1-'; // Namensraum für Peer-IDs
+const NET_NS = 'gharibv1-'; // Namensraum für Raum-IDs
 const RECONNECT_KEY = 'gharib_client';
+
+// Öffentlicher MQTT-Relay (kostenlos, ohne Konto). Für lokale Tests per
+// ?broker=ws://… überschreibbar. Host und Client nutzen denselben Relay.
+const MQTT_BROKER = (() => {
+  try { const b = new URLSearchParams(location.search).get('broker'); if (b) return b; } catch {}
+  return 'wss://broker.emqx.io:8084/mqtt';
+})();
+const MQTT_ROOT = 'ghrbv1';
 
 function netCode(n = 4) {
   const A = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'; // ohne verwechselbare Zeichen
@@ -59,47 +70,87 @@ class LocalTransport {
   close() { try { this.ch.close(); } catch {} }
 }
 
-/* ---------------- Transport: PeerJS (echte Geräte) ---------------- */
-class PeerTransport {
-  constructor(code) { this.code = code; this.cbs = {}; this.conns = new Map(); this.peer = null; this.hostConn = null; }
+/* ---------------- Transport: MQTT über WebSocket (Relay, echte Geräte) ----------------
+   Host lauscht auf .../toHost, sendet an alle über .../toAll und privat
+   an einen Spieler über .../to/<id>. Clients umgekehrt. Nur ausgehende
+   WebSocket-Verbindungen → funktioniert hinter jedem NAT (kein TURN nötig). */
+class MqttTransport {
+  constructor(code) {
+    this.code = code;
+    this.cbs = {};
+    this.client = null;
+    this.selfId = null;
+    this._ready = false;
+    this._base = MQTT_ROOT + '/' + code;
+  }
   on(ev, cb) { this.cbs[ev] = cb; return this; }
   _emit(ev, ...a) { if (this.cbs[ev]) this.cbs[ev](...a); }
+  _t() {
+    const b = this._base;
+    return { toHost: b + '/toHost', toAll: b + '/toAll', to: (id) => b + '/to/' + id };
+  }
+  _connect() {
+    if (typeof mqtt === 'undefined' || !mqtt.connect) throw new Error('MQTT nicht geladen');
+    const cid = 'ghrb_' + (this.selfId || 'x') + '_' + Math.random().toString(36).slice(2, 8);
+    return mqtt.connect(MQTT_BROKER, {
+      clientId: cid, clean: true, keepalive: 30,
+      reconnectPeriod: 2500, connectTimeout: 12000,
+    });
+  }
+  _payload(p) { try { return JSON.parse(typeof p === 'string' ? p : p.toString()); } catch { return null; } }
 
   hostStart() {
     return new Promise((resolve, reject) => {
-      if (typeof Peer === 'undefined') return reject(new Error('PeerJS nicht geladen'));
-      this.peer = new Peer(NET_NS + this.code, { debug: 0 });
-      const to = setTimeout(() => reject(new Error('Zeitüberschreitung beim Erstellen')), 15000);
-      this.peer.on('open', () => { clearTimeout(to); resolve(); });
-      this.peer.on('error', (err) => { this._emit('neterror', err); if (String(err).includes('unavailable-id')) { clearTimeout(to); reject(err); } });
-      this.peer.on('connection', (conn) => {
-        conn.on('open', () => { this.conns.set(conn.peer, conn); this._emit('open', conn.peer); });
-        conn.on('data', (d) => this._emit('message', conn.peer, d));
-        conn.on('close', () => { this.conns.delete(conn.peer); this._emit('close', conn.peer); });
-        conn.on('error', () => {});
+      const T = this._t(); let client, done = false, first = true;
+      try { client = this._connect(); } catch (e) { return reject(e); }
+      this.client = client;
+      const to = setTimeout(() => { if (!done) { done = true; try { client.end(true); } catch {} reject(new Error('Zeitüberschreitung beim Erstellen')); } }, 14000);
+      client.on('connect', () => {
+        const wasFirst = first; first = false;
+        client.subscribe(T.toHost, { qos: 0 }, (err) => {
+          if (err) { if (!done) { done = true; clearTimeout(to); reject(err); } return; }
+          this._ready = true;
+          if (wasFirst) { if (!done) { done = true; clearTimeout(to); resolve(); } }
+          else this._emit('reopen'); // nach Reconnect: Zustand neu senden
+        });
       });
+      client.on('message', (topic, payload) => {
+        if (topic !== T.toHost) return;
+        const env = this._payload(payload);
+        if (!env || env._k == null) return;
+        this._emit('message', env._k, env.m);
+      });
+      client.on('error', (err) => { this._emit('neterror', err); if (!done) { done = true; clearTimeout(to); try { client.end(true); } catch {} reject(err); } });
     });
   }
   clientStart() {
     return new Promise((resolve, reject) => {
-      if (typeof Peer === 'undefined') return reject(new Error('PeerJS nicht geladen'));
-      this.peer = new Peer({ debug: 0 });
-      const to = setTimeout(() => reject(new Error('Zeitüberschreitung beim Beitreten')), 15000);
-      this.peer.on('open', () => {
-        const conn = this.peer.connect(NET_NS + this.code, { reliable: true });
-        this.hostConn = conn;
-        conn.on('open', () => { clearTimeout(to); resolve(); });
-        conn.on('data', (d) => this._emit('message', d));
-        conn.on('close', () => this._emit('disconnected'));
-        conn.on('error', (err) => { clearTimeout(to); reject(err); });
+      const T = this._t(); const mine = T.to(this.selfId);
+      let client, done = false, first = true;
+      try { client = this._connect(); } catch (e) { return reject(e); }
+      this.client = client;
+      const to = setTimeout(() => { if (!done) { done = true; try { client.end(true); } catch {} reject(new Error('Zeitüberschreitung beim Beitreten')); } }, 14000);
+      client.on('connect', () => {
+        const wasFirst = first; first = false;
+        client.subscribe([T.toAll, mine], { qos: 0 }, (err) => {
+          if (err) { if (!done) { done = true; clearTimeout(to); reject(err); } return; }
+          this._ready = true;
+          if (wasFirst) { if (!done) { done = true; clearTimeout(to); resolve(); } }
+          else this._emit('reopen'); // nach Reconnect: erneut beitreten → frischer Zustand
+        });
       });
-      this.peer.on('error', (err) => { clearTimeout(to); this._emit('neterror', err); reject(err); });
+      client.on('message', (topic, payload) => {
+        if (topic !== T.toAll && topic !== mine) return;
+        const m = this._payload(payload);
+        if (m) this._emit('message', m);
+      });
+      client.on('error', (err) => { this._emit('neterror', err); if (!done) { done = true; clearTimeout(to); try { client.end(true); } catch {} reject(err); } });
     });
   }
-  broadcast(obj) { this.conns.forEach((c) => { try { c.send(obj); } catch {} }); }
-  sendTo(key, obj) { const c = this.conns.get(key); if (c) { try { c.send(obj); } catch {} } }
-  send(obj) { if (this.hostConn) { try { this.hostConn.send(obj); } catch {} } }
-  close() { try { this.conns.forEach(c => c.close()); if (this.peer) this.peer.destroy(); } catch {} }
+  broadcast(obj) { if (this.client) try { this.client.publish(this._t().toAll, JSON.stringify(obj), { qos: 0 }); } catch {} }
+  sendTo(key, obj) { if (this.client) try { this.client.publish(this._t().to(key), JSON.stringify(obj), { qos: 0 }); } catch {} }
+  send(obj) { if (this.client) try { this.client.publish(this._t().toHost, JSON.stringify({ _k: this.selfId, m: obj }), { qos: 0 }); } catch {} }
+  close() { try { if (this.client) this.client.end(true); } catch {} }
 }
 
 /* ---------------- RoomNet (Protokoll über dem Transport) ---------------- */
@@ -118,7 +169,7 @@ class RoomNet {
   }
   on(ev, cb) { (this.handlers[ev] || (this.handlers[ev] = [])).push(cb); return this; }
   _emit(ev, ...a) { (this.handlers[ev] || []).forEach(cb => cb(...a)); }
-  _mk(code) { return this.mode === 'local' ? new LocalTransport(code) : new PeerTransport(code); }
+  _mk(code) { return this.mode === 'local' ? new LocalTransport(code) : new MqttTransport(code); }
 
   /* ---- Host ---- */
   async host(code) {
@@ -128,6 +179,8 @@ class RoomNet {
     this.transport.selfId = 'host';
     this.transport.on('neterror', (e) => this._emit('neterror', e));
     this.transport.on('open', (key) => { /* auf join warten */ });
+    // Nach einem Reconnect des Hosts: aktuellen Zustand erneut an alle senden.
+    this.transport.on('reopen', () => { if (this.lastState) this.transport.broadcast({ kind: 'state', state: this.lastState }); });
     this.transport.on('close', (key) => {
       const pid = this.keyToPlayer.get(key);
       if (pid) { this.keyToPlayer.delete(key); this.playerToKey.delete(pid); this._emit('leave', pid); }
@@ -165,6 +218,8 @@ class RoomNet {
       else if (m.kind === 'private') this._emit('private', m.data);
     });
     this.transport.on('disconnected', () => this._emit('disconnected'));
+    // Nach einem Reconnect des Clients: erneut beitreten → Host schickt frischen Zustand.
+    this.transport.on('reopen', () => { try { this.transport.send({ kind: 'join', id: this.selfId, name: this._selfName }); } catch {} });
     await this.transport.clientStart();
     this.transport.send({ kind: 'join', id: this.selfId, name });
     // Heartbeat (Präsenz)
@@ -182,12 +237,12 @@ class RoomNet {
 // Modus automatisch wählen.
 //  · ?local=1                → BroadcastChannel (Tests / gleiches Gerät)
 //  · eingebettet (Artifact)  → BroadcastChannel (externe Verbindungen dort gesperrt)
-//  · eigene Adresse (Hosting)→ PeerJS (echt geräteübergreifend, per Link)
+//  · eigene Adresse (Hosting)→ MQTT-Relay (echt geräteübergreifend, per Link)
 function detectNetMode() {
   try {
     if (new URLSearchParams(location.search).get('local')) return 'local';
     if (window.self !== window.top) return 'local';
     if (/claude\.ai|claudeusercontent|anthropic|\.usercontent\./i.test(location.hostname)) return 'local';
-    return 'peer';
-  } catch { return 'peer'; }
+    return 'net';
+  } catch { return 'net'; }
 }
