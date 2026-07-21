@@ -1220,15 +1220,24 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**Remz cümlesi:** **صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا · دُمْ طَيِّبًا زِدْ فِي تُقًى ضَعْ ظَالِمَا.** Kelimelerin **baş harfleri** on beş ihfâ harfini verir: **ص ذ ث ك ج ش ق س د ط ز ف ت ض ظ.**",
+              "**Remz cümlesi:** Nâzım, on beş ihfâ harfini kolayca ezberletmek için, **her kelimesinin baş harfi bir ihfâ harfi** olan şu iki şatırlık (bir beyitlik) güzel cümleyi kurar:",
+              "@nazm صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا · دُمْ طَيِّبًا زِدْ فِي تُقًى ضَعْ ظَالِمَا",
+              "Bu cümledeki kelimelerin baş harfleri, sırasıyla on beş ihfâ harfini verir:",
+              "@ar ص · ذ · ث · ك · ج · ش · ق · س · د · ط · ز · ف · ت · ض · ظ",
               "**Cümlenin manası (kaynaktaki açıklamayla):** \"Övgü ve kemal sahibi bir kimseyi vasfet: o, yalnız cömertlikte değil **her hâlinde cömert**, derecesi yüksek, **dâimâ güzel ahlaklı**, ince ve asildir; **günahtan uzak durur.** Sen de **takvanı artır** ve gücün yettiği hâlde **zalimi affedip bırak.**\" — Bu güzel cümle, yalnızca on beş harfi kolay ezberletmek için kurulmuştur; hüküm cümlenin manasında değil, harflerindedir."
             ],
             "de": [
-              "**Merkformel:** **صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا · دُمْ طَيِّبًا زِدْ فِي تُقًى ضَعْ ظَالِمَا.** Die **Anfangsbuchstaben** ergeben die fünfzehn Ikhfāʾ-Buchstaben: **ص ذ ث ك ج ش ق س د ط ز ف ت ض ظ.**",
+              "**Merkformel:** Um die fünfzehn Ikhfāʾ-Buchstaben leicht zu merken, bildet der Verfasser diesen schönen Zweizeiler (einen Vers), dessen **Anfangsbuchstabe jedes Wortes ein Ikhfāʾ-Buchstabe** ist:",
+              "@nazm صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا · دُمْ طَيِّبًا زِدْ فِي تُقًى ضَعْ ظَالِمَا",
+              "Die Anfangsbuchstaben dieser Wörter ergeben der Reihe nach die fünfzehn Ikhfāʾ-Buchstaben:",
+              "@ar ص · ذ · ث · ك · ج · ش · ق · س · د · ط · ز · ف · ت · ض · ظ",
               "**Bedeutung (nach der Quelle):** „Beschreibe einen des Lobes und der Vollkommenheit Würdigen: er ist nicht nur großzügig, sondern **in allem großzügig**, hohen Ranges, **stets von schönem Charakter**, fein und edel; er **meidet die Sünde.** Und du: **mehre deine Gottesfurcht** und **lass, obwohl du könntest, vom Ungerechten ab (vergib).**“ — Dieser schöne Satz dient nur dem leichten Merken der fünfzehn Buchstaben; die Regel liegt nicht im Sinn, sondern in den Buchstaben."
             ],
             "en": [
-              "**Mnemonic:** **صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا · دُمْ طَيِّبًا زِدْ فِي تُقًى ضَعْ ظَالِمَا.** The **initial letters** give the fifteen ikhfāʾ letters: **ص ذ ث ك ج ش ق س د ط ز ف ت ض ظ.**",
+              "**Mnemonic:** To memorize the fifteen ikhfāʾ letters easily, the author composes this fine two-hemistich verse, in which **the first letter of each word is an ikhfāʾ letter**:",
+              "@nazm صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا · دُمْ طَيِّبًا زِدْ فِي تُقًى ضَعْ ظَالِمَا",
+              "The initial letters of these words give, in order, the fifteen ikhfāʾ letters:",
+              "@ar ص · ذ · ث · ك · ج · ش · ق · س · د · ط · ز · ف · ت · ض · ظ",
               "**Meaning (per the source):** \"Describe one worthy of praise and perfection: he is not merely generous but **generous in every state**, of high rank, **ever of fine character**, refined and noble; he **shuns sin.** And you: **increase your taqwā** and **leave off (forgive) the wrongdoer though you are able.**\" — This fine sentence only serves to memorize the fifteen letters easily; the rule lies not in its meaning but in its letters."
             ]
           },
@@ -2210,17 +2219,26 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**Lâm-ı kameriyye (kamerî izhâr):** Lâm-ı ta'rîften sonra şu **on dört harften** biri gelirse, lâm **açıkça okunur**. Bu on dört harf, ezberlemeyi kolaylaştıran şu sözde toplanmıştır: **«اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ»** (\"Haccını iste ve onun kısır/sonuçsuz kalmasından kork\"). Cümledeki harfler: **ء ب غ ح ج ك و خ ف ع ق ي م ه.**",
+              "**Lâm-ı kameriyye (kamerî izhâr):** Lâm-ı ta'rîften sonra şu **on dört harften** biri gelirse, lâm **açıkça okunur**. Bu on dört harf, ezberlemeyi kolaylaştıran şu sözde toplanmıştır:",
+              "@ar اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ",
+              "(Manası: \"Haccını iste ve onun sonuçsuz kalmasından kork.\") Bu sözdeki kelimelerin harfleri, on dört kamerî harfi verir:",
+              "@ar ء · ب · غ · ح · ج · ك · و · خ · ف · ع · ق · ي · م · ه",
               "**\"Kamerî\" (ay ile ilgili) neden denir?** Örnek kelime **الْقَمَر** (el-kamer = ay)'dır. Nasıl gökte ayın yanında ışığı ayrı görünürse, burada da lâm **ayrı ve açık** işitilir. Yani \"el-\" takısındaki lâm net telaffuz edilir: *el-kamer* (لام okunur).",
               "**Nasıl uygulanır?** \"el-\" yazılır ve lâm **sâkin olarak açıkça** okunur, sonra kelimenin ilk harfi gelir. Aşağıdaki tabloda her kamerî harf için, bu kurala (kamerî izhâr) örnekler verilmiştir."
             ],
             "de": [
-              "**Lām qamariyya (qamarī-Iẓhār):** Folgt nach dem Artikel-Lām einer dieser **vierzehn Buchstaben**, wird das Lām **deutlich** gelesen. Sie sind in dem Merkspruch **«اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ»** versammelt. Buchstaben: **ء ب غ ح ج ك و خ ف ع ق ي م ه.**",
+              "**Lām qamariyya (qamarī-Iẓhār):** Folgt nach dem Artikel-Lām einer dieser **vierzehn Buchstaben**, wird das Lām **deutlich** gelesen. Sie sind in diesem Merkspruch versammelt:",
+              "@ar اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ",
+              "(Bedeutung: „Erstrebe deine Pilgerfahrt und fürchte, dass sie fruchtlos bleibt.“) Die Buchstaben dieses Spruchs ergeben die vierzehn qamarī-Buchstaben:",
+              "@ar ء · ب · غ · ح · ج · ك · و · خ · ف · ع · ق · ي · م · ه",
               "**Warum „qamarī“ (Mond-)?** Das Musterwort ist **الْقَمَر** (al-qamar = der Mond). Wie am Himmel neben dem Mond sein Licht gesondert erscheint, so wird hier das Lām **gesondert und deutlich** gehört: *al-qamar* (Lām hörbar).",
               "**Ausführung:** „al-“ wird geschrieben, das Lām **sākin und deutlich** gelesen, dann der erste Buchstabe des Wortes. Die Tabelle gibt für jeden qamarī-Buchstaben Beispiele dieser Regel."
             ],
             "en": [
-              "**Lām qamariyya (qamarī iẓhār):** if one of these **fourteen letters** follows the article lām, the lām is read **clearly**. They are gathered in the mnemonic **«اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ»**. Letters: **ء ب غ ح ج ك و خ ف ع ق ي م ه.**",
+              "**Lām qamariyya (qamarī iẓhār):** if one of these **fourteen letters** follows the article lām, the lām is read **clearly**. They are gathered in this mnemonic:",
+              "@ar اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ",
+              "(Meaning: \"Seek your pilgrimage and fear that it be fruitless.\") The letters of this phrase give the fourteen qamarī letters:",
+              "@ar ء · ب · غ · ح · ج · ك · و · خ · ف · ع · ق · ي · م · ه",
               "**Why \"qamarī\" (moon-)?** The model word is **الْقَمَر** (al-qamar = the moon). As the moon's light shows separately in the sky, here the lām is heard **separately and clearly**: *al-qamar* (lām audible).",
               "**Application:** \"al-\" is written, the lām read **sākin and clearly**, then the word's first letter. The table gives, for each qamarī letter, examples of this rule."
             ]
@@ -2384,17 +2402,26 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**Şemsî harflerin remzi:** **«طِبْ ثُمَّ صِلْ رَحِماً تَفُزْ ضِفْ ذَا نِعَمْ · دَعْ سُوءَ ظَنٍّ زُرْ شَرِيفاً لِلْكَرَمْ».** Kelimelerin **baş harfleri** on dört şemsî harfi verir: **ط ث ص ر ت ض ذ ن د س ظ ز ش ل.**",
+              "**Şemsî harflerin remzi:** Nâzım, on dört şemsî harfini ezberletmek için, **her kelimesinin baş harfi bir şemsî harfi** olan şu iki şatırlık cümleyi kurar:",
+              "@nazm طِبْ ثُمَّ صِلْ رَحِماً تَفُزْ ضِفْ ذَا نِعَمْ · دَعْ سُوءَ ظَنٍّ زُرْ شَرِيفاً لِلْكَرَمْ",
+              "Kelimelerin baş harfleri, sırasıyla on dört şemsî harfi verir:",
+              "@ar ط · ث · ص · ر · ت · ض · ذ · ن · د · س · ظ · ز · ش · ل",
               "**Cümlenin manası:** \"İyi ol (hoş yaşa), sonra akrabalık bağını gözet ki kurtuluşa eresin; şu nimeti ekle; kötü zannı bırak; ikram için şerefli (değerli) kimseyi ziyaret et.\" Bu güzel cümle **yalnızca on dört harfi kolay ezberletmek** içindir; hüküm cümlenin manasında değil, kelimelerin baş harflerindedir.",
               "**Nasıl uygulanır?** Bu harflerden biri \"el-\"den sonra gelince lâm okunmaz, o harf şeddeli okunur. Aşağıdaki tablo bu kurala (şemsî idğam) örnekler verir."
             ],
             "de": [
-              "**Merkzeichen der schamsī-Buchstaben:** **«طِبْ ثُمَّ صِلْ رَحِماً تَفُزْ ضِفْ ذَا نِعَمْ · دَعْ سُوءَ ظَنٍّ زُرْ شَرِيفاً لِلْكَرَمْ».** Die **Anfangsbuchstaben** ergeben die vierzehn: **ط ث ص ر ت ض ذ ن د س ظ ز ش ل.**",
+              "**Merkzeichen der schamsī-Buchstaben:** Um die vierzehn schamsī-Buchstaben zu merken, bildet der Verfasser diesen Zweizeiler, dessen **Anfangsbuchstabe jedes Wortes ein schamsī-Buchstabe** ist:",
+              "@nazm طِبْ ثُمَّ صِلْ رَحِماً تَفُزْ ضِفْ ذَا نِعَمْ · دَعْ سُوءَ ظَنٍّ زُرْ شَرِيفاً لِلْكَرَمْ",
+              "Die Anfangsbuchstaben ergeben der Reihe nach die vierzehn schamsī-Buchstaben:",
+              "@ar ط · ث · ص · ر · ت · ض · ذ · ن · د · س · ظ · ز · ش · ل",
               "**Bedeutung:** „Sei gut, dann wahre die Verwandtschaftsbande, so wirst du erfolgreich; füge diese Gnade hinzu; lass den bösen Verdacht; besuche einen Edlen um der Großzügigkeit willen.“ Dieser schöne Satz dient nur dem **leichten Merken der vierzehn Buchstaben**; die Regel liegt in den Anfangsbuchstaben, nicht im Sinn.",
               "**Ausführung:** Folgt einer dieser Buchstaben nach „al-“, wird das Lām nicht gelesen, der Buchstabe verdoppelt. Die Tabelle gibt Beispiele dieser Regel."
             ],
             "en": [
-              "**Mnemonic of the shamsī letters:** **«طِبْ ثُمَّ صِلْ رَحِماً تَفُزْ ضِفْ ذَا نِعَمْ · دَعْ سُوءَ ظَنٍّ زُرْ شَرِيفاً لِلْكَرَمْ».** The **initial letters** give the fourteen: **ط ث ص ر ت ض ذ ن د س ظ ز ش ل.**",
+              "**Mnemonic of the shamsī letters:** To memorize the fourteen shamsī letters, the author composes this two-hemistich verse, in which **the first letter of each word is a shamsī letter**:",
+              "@nazm طِبْ ثُمَّ صِلْ رَحِماً تَفُزْ ضِفْ ذَا نِعَمْ · دَعْ سُوءَ ظَنٍّ زُرْ شَرِيفاً لِلْكَرَمْ",
+              "The initial letters give, in order, the fourteen shamsī letters:",
+              "@ar ط · ث · ص · ر · ت · ض · ذ · ن · د · س · ظ · ز · ش · ل",
               "**Meaning:** \"Be good, then keep the ties of kinship and you will prosper; add this favour; leave off evil suspicion; visit a noble one for the sake of generosity.\" This fine sentence only serves to **memorize the fourteen letters** easily; the rule lies in the initial letters, not the meaning.",
               "**Application:** if one of these follows \"al-\", the lām is not read and the letter is doubled. The table gives examples of this rule."
             ]

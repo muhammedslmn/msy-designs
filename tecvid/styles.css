@@ -358,6 +358,21 @@ section.block { padding-block: clamp(2.4rem, 6vw, 4.5rem); }
 .verse-ar .sep {
   display: block; width: 46px; height: 1px; background: var(--gold); opacity: .5; margin: .6rem auto; direction: ltr;
 }
+/* Şerh içindeki ezber/remz beyti — ana nazımdan biraz küçük, çerçeveli */
+.verse-ar.sharh-nazm {
+  font-size: clamp(1.35rem, 4.2vw, 1.9rem); line-height: 1.95; font-weight: 700;
+  padding: clamp(.9rem, 2.6vw, 1.4rem) clamp(.8rem, 2.5vw, 1.5rem);
+  margin: 1rem 0; border: 1px solid var(--line); border-radius: 14px;
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--accent-soft), transparent 72%),
+    var(--card);
+}
+/* Şerh içinde tek satır ortalı Arapça (harf listeleri) */
+.sharh-arline {
+  direction: rtl; text-align: center; font-family: var(--font-ar); font-weight: 700;
+  font-size: clamp(1.25rem, 4vw, 1.7rem); line-height: 1.8; color: var(--gold);
+  letter-spacing: .04em; margin: .7rem 0 1rem; word-spacing: .12em;
+}
 
 /* body sections inside beyit */
 .beyit-body { padding: 0 clamp(1.1rem, 3vw, 1.8rem) clamp(1.1rem, 3vw, 1.8rem); }

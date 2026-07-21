@@ -37,6 +37,19 @@
       .replace(AR_RUN, '<bdi class="ar-inline">$1</bdi>');
   }
   function el(html) { var d = document.createElement("div"); d.innerHTML = html.trim(); return d.firstChild; }
+  // Şerh paragrafı: "@nazm ..." → iki şatırlık (bir beyitlik) ortalı Arapça blok;
+  // "@ar ..." → tek satır ortalı Arapça (harf listeleri için); değilse normal <p>.
+  function sharhPara(p) {
+    if (typeof p === "string" && p.indexOf("@nazm ") === 0) {
+      var parts = p.slice(6).split(" · ");
+      var inner = parts.map(function (x) { return '<span class="shatr">' + esc(x.trim()) + '</span>'; }).join('<span class="sep"></span>');
+      return '<div class="verse-ar sharh-nazm">' + inner + '</div>';
+    }
+    if (typeof p === "string" && p.indexOf("@ar ") === 0) {
+      return '<div class="sharh-arline">' + esc(p.slice(4).trim()) + '</div>';
+    }
+    return "<p>" + fmt(p) + "</p>";
+  }
   function sectionById(id) { for (var i=0;i<CONTENT.sections.length;i++) if (CONTENT.sections[i].id===id) return CONTENT.sections[i]; return null; }
 
   /* ---------- custom theme icons (SVG, emoji yerine) ---------- */
@@ -289,7 +302,7 @@
     var sharh = b.sharh && pick(b.sharh);
     if (sharh) {
       var paras = Array.isArray(sharh) ? sharh : [sharh];
-      fields += field("lbl_sharh", '<div class="sharh">'+paras.map(function(p){return "<p>"+fmt(p)+"</p>";}).join("")+'</div>');
+      fields += field("lbl_sharh", '<div class="sharh">'+paras.map(function(p){return sharhPara(p);}).join("")+'</div>');
     }
 
     // Misal tabloları
