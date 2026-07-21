@@ -62,7 +62,11 @@ window.I18N = {
     language: "Dil",
     // footer
     footer_note: "Metne sadakat · İlmî güvenilirlik · Maksimum anlaşılabilirlik · Modern sunum",
-    footer_rights: "Eğitim amaçlı hazırlanmıştır."
+    footer_rights: "Eğitim amaçlı hazırlanmıştır.",
+    chip_done: "Tam",
+    ayah_tr: "«…ve Kur'ân'ı tane tane, ağır ağır (tertîl ile) oku.»",
+    ayah_ref: "el-Müzzemmil, 4",
+    splash_hint: "Geçmek için dokun"
   },
   de: {
     appName: "Tuḥfat al-Atfāl",
@@ -107,7 +111,11 @@ window.I18N = {
     theme: "Thema",
     language: "Sprache",
     footer_note: "Texttreue · Wissenschaftliche Verlässlichkeit · Größte Verständlichkeit · Moderne Darstellung",
-    footer_rights: "Zu Bildungszwecken erstellt."
+    footer_rights: "Zu Bildungszwecken erstellt.",
+    chip_done: "Fertig",
+    ayah_tr: "„…und trage den Qurʾān wohlgeordnet (tartīl) vor.“",
+    ayah_ref: "al-Muzzammil, 4",
+    splash_hint: "Zum Überspringen tippen"
   },
   en: {
     appName: "Tuḥfat al-Aṭfāl",
@@ -152,6 +160,10 @@ window.I18N = {
     theme: "Theme",
     language: "Language",
     footer_note: "Fidelity to the text · Scholarly reliability · Maximum clarity · Modern presentation",
-    footer_rights: "Prepared for educational purposes."
+    footer_rights: "Prepared for educational purposes.",
+    chip_done: "Complete",
+    ayah_tr: "“…and recite the Qurʾān with measured recitation (tartīl).”",
+    ayah_ref: "al-Muzzammil, 4",
+    splash_hint: "Tap to skip"
   }
 };
