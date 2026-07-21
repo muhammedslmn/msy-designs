@@ -1,0 +1,14 @@
+{
+  "name": "Tuhfetü'l-Etfâl — Tecvid Nazmı Dijital Şerh",
+  "short_name": "Tuhfetü'l-Etfâl",
+  "description": "Süleyman el-Cemzûrî'nin tecvid manzumesinin çok dilli dijital şerhi.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4efe4",
+  "theme_color": "#0f5c46",
+  "lang": "tr",
+  "icons": [
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
