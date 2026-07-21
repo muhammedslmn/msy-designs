@@ -25,10 +25,16 @@
   function t(key) { return (I18N[state.lang] && I18N[state.lang][key]) || (I18N.tr[key] || key); }
   function pick(obj) { if (!obj) return null; return obj[state.lang] != null ? obj[state.lang] : (obj.tr != null ? obj.tr : null); }
   function esc(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  // Arapça harf blokları (harekeler dâhil) — çift yönlü (bidi) izolasyon için
+  var ARC = "\\u0600-\\u06FF\\u0750-\\u077F\\u08A0-\\u08FF\\uFB50-\\uFDFF\\uFE70-\\uFEFF";
+  var AR_RUN = new RegExp("([" + ARC + "]+(?:\\s+[" + ARC + "]+)*)", "g");
   function fmt(s) {
     return esc(s)
       .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
-      .replace(/\*([^*]+)\*/g, "<em>$1</em>");
+      .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+      // Her Arapça kelime/öbeğini <bdi> ile izole et: Latin sayı/işaretlerle
+      // yan yana geldiğinde harflerin ve rakamların sırası bozulmaz.
+      .replace(AR_RUN, '<bdi class="ar-inline">$1</bdi>');
   }
   function el(html) { var d = document.createElement("div"); d.innerHTML = html.trim(); return d.firstChild; }
   function sectionById(id) { for (var i=0;i<CONTENT.sections.length;i++) if (CONTENT.sections[i].id===id) return CONTENT.sections[i]; return null; }

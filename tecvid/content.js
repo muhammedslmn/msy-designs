@@ -1491,19 +1491,19 @@ window.CONTENT = {
           "sharh": {
             "tr": [
               "**Gunne nedir?** Gunne, **nûn (ن) ve mîm (م) harflerinin yapısında bulunan, dilin hiçbir müdahalesi olmadan çıkan hoş bir sestir.** Mahreci (çıkış yeri) **hışûm** yani **geniz (burun boşluğu)**dur. Bu sebeple gunne yaparken sesi burnunda hissedersin.",
-              "**Kural:** Bir mîm (مّ) veya bir nûn (نّ) **şeddeli** olduğunda, o harfin gunnesini **açıkça** (tam olarak) yapmak **vaciptir**. Şeddeli her harf aslında **iki harf** demektir: birincisi sâkin, ikincisi harekeli. Yani نّ = نْ + نَ; مّ = مْ + مَ. İçteki sâkin harf, gunnenin tam yapılmasını gerektirir.",
+              "**Kural:** Bir mîm (مّ) veya bir nûn (نّ) **şeddeli** olduğunda, o harfin gunnesini **açıkça** (tam olarak) yapmak **vaciptir**. Şeddeli her harf aslında **iki harf** demektir: birincisi sâkin, ikincisi harekeli. Yani şeddeli bir nûn (نّ) aslında **sâkin nûn + harekeli nûn**; şeddeli bir mîm (مّ) de **sâkin mîm + harekeli mîm** demektir. İçteki sâkin harf, gunnenin tam yapılmasını gerektirir.",
               "**Miktarı:** Gunne **iki hareke** (elif) miktarıdır. Bir hareke, **parmağı normal hızda açıp kapama** süresi kadardır — ne çok yavaş ne çok hızlı.",
               "**Bu harflere \"gunne harfi\" (harf-i gunne) denir**; çünkü gunne, her ne kadar başka hükümlerde de (idğam, ihfâ, iklâbda) bulunsa da, **en açık ve en tam** olarak şeddeli mîm ile şeddeli nûnda ortaya çıkar. Aşağıdaki tabloda her iki harf için, bu kuralın (şeddeli gunne) Kur'ân'dan şahitleri (delil âyetleri) verilmiştir."
             ],
             "de": [
               "**Was ist Ghunna?** Ghunna ist ein **angenehmer Laut, der im Körper der Buchstaben Nūn (ن) und Mīm (م) liegt und ohne jedes Zutun der Zunge entsteht.** Ihr Austrittsort (Machradsch) ist der **Chaischūm**, also der **Nasenraum**. Darum spürt man die Ghunna in der Nase.",
-              "**Regel:** Trägt ein Mīm (مّ) oder Nūn (نّ) ein **Schadda**, so ist es **Pflicht (wādschib)**, die Ghunna **deutlich** (vollständig) zu machen. Jeder verdoppelte Buchstabe sind eigentlich **zwei Buchstaben**: der erste sākin, der zweite bewegt. Also نّ = نْ + نَ; مّ = مْ + مَ. Das innere sākine Element verlangt die volle Ghunna.",
+              "**Regel:** Trägt ein Mīm (مّ) oder Nūn (نّ) ein **Schadda**, so ist es **Pflicht (wādschib)**, die Ghunna **deutlich** (vollständig) zu machen. Jeder verdoppelte Buchstabe sind eigentlich **zwei Buchstaben**: der erste sākin, der zweite bewegt. Ein verdoppeltes Nūn (نّ) ist also **ein sākines Nūn + ein bewegtes Nūn**; ein verdoppeltes Mīm (مّ) **ein sākines Mīm + ein bewegtes Mīm**. Das innere sākine Element verlangt die volle Ghunna.",
               "**Maß:** Die Ghunna beträgt **zwei Ḥaraka** (ein Alif). Eine Ḥaraka ist die Zeit, **einen Finger in normalem Tempo zu öffnen oder zu schließen** — weder zu langsam noch zu schnell.",
               "**Man nennt sie „Ghunna-Buchstaben“**, weil die Ghunna — obgleich sie auch in anderen Regeln (Idghām, Ikhfāʾ, Iqlāb) vorkommt — am **deutlichsten und vollsten** beim verdoppelten Mīm und Nūn hervortritt. Die Tabelle gibt für beide Buchstaben die Belege (Zeugen-Verse) aus dem Qurʾān."
             ],
             "en": [
               "**What is ghunna?** Ghunna is a **pleasant sound residing in the body of the letters nūn (ن) and mīm (م), produced with no action of the tongue.** Its exit point (makhraj) is the **khayshūm**, the **nasal cavity**. That is why you feel the ghunna in your nose.",
-              "**Rule:** When a mīm (مّ) or nūn (نّ) bears a **shadda**, it is **obligatory (wājib)** to make its ghunna **clearly** (fully). Every doubled letter is really **two letters**: the first sākin, the second vowelled. So نّ = نْ + نَ; مّ = مْ + مَ. The inner sākin element calls for the full ghunna.",
+              "**Rule:** When a mīm (مّ) or nūn (نّ) bears a **shadda**, it is **obligatory (wājib)** to make its ghunna **clearly** (fully). Every doubled letter is really **two letters**: the first sākin, the second vowelled. So a doubled nūn (نّ) is really **a sākin nūn + a vowelled nūn**; a doubled mīm (مّ) is **a sākin mīm + a vowelled mīm**. The inner sākin element calls for the full ghunna.",
               "**Measure:** the ghunna is **two ḥarakāt** (one alif). A ḥaraka is the time to **open or close a finger at a normal pace** — neither too slow nor too fast.",
               "**They are called \"ghunna letters\"** because ghunna — though it also occurs in other rulings (idghām, ikhfāʾ, iqlāb) — appears most **clearly and fully** in the doubled mīm and nūn. The table gives, for each letter, the witnesses (proof-verses) from the Qurʾān."
             ]
@@ -4232,21 +4232,55 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**Bu beyit iki tarih (sayı) remzi içerir — ebced hesabıyla:** Ebced, her Arap harfine bir sayı değeri veren eski bir sistemdir; şairler bir sözün harflerini toplayarak tarih/sayı \"düşürürler\".",
-              "**1) Beyit sayısı — «نَدٌّ بَدَا» (61):** ن(50) + د(4) + ب(2) + د(4) + ا(1) = **61.** Yani eserin toplam beyti altmış birdir. (\"Nedd bedâ\": \"bir güzel koku/inci belirdi\" gibi hoş bir anlam taşır.)",
-              "**2) Telif yılı — «بُشْرَى لِمَنْ يُتْقِنُهَا» ile işaret edilen (hicrî 1198):** ب(2) + ش(300) + ر(200) + ى(10) + ل(30) + م(40) + ن(50) + ي(10) + ت(400) + ق(100) + ن(50) + ه(5) + ا(1) = **1198.** Yani eser **hicrî 1198** (mîlâdî ~1783) yılında tamamlanmıştır. Nâzım bu tarihi, \"onu iyi öğrenene müjde\" gibi güzel bir sözle gizlemiştir."
+              "**Bu beyit iki tarih (sayı) remzi içerir — ebced hesabıyla:** Ebced, her Arap harfine bir sayı değeri veren eski bir sistemdir; şairler bir sözün harflerini toplayıp bir sayıya/tarihe \"düşürürler\" (gizlerler). Karışıklığı önlemek için, harfler ve değerleri aşağıdaki iki tabloda tek tek gösterilmiştir.",
+              "**1) Beyit sayısı — «نَدٌّ بَدَا»:** Harf değerlerinin toplamı **61**'dir; yani eserin toplam beyti altmış birdir. (\"Nedd bedâ\" ayrıca \"bir güzel koku / inci belirdi\" gibi hoş bir mana taşır.)",
+              "**2) Telif (yazılış) yılı — «بُشْرَى لِمَنْ يُتْقِنُهَا»:** Harf değerlerinin toplamı **1198**'dir; yani eser **hicrî 1198** (mîlâdî ~1783) yılında tamamlanmıştır. Nâzım yılı, \"onu iyi öğrenene müjde\" gibi güzel bir sözün içine gizlemiştir."
             ],
             "de": [
-              "**Dieser Vers enthält zwei Zahlen-Rätsel — nach dem Abdschad:** Das Abdschad gibt jedem arabischen Buchstaben einen Zahlenwert; Dichter „datieren“, indem sie die Buchstaben eines Spruchs summieren.",
-              "**1) Verszahl — «نَدٌّ بَدَا» (61):** ن(50) + د(4) + ب(2) + د(4) + ا(1) = **61.** Das Werk hat also einundsechzig Verse. („Nadd badā“ trägt einen schönen Sinn wie „ein Duft/eine Perle trat hervor“.)",
-              "**2) Abfassungsjahr — angezeigt durch «بُشْرَى لِمَنْ يُتْقِنُهَا» (1198 n. H.):** ب(2)+ش(300)+ر(200)+ى(10)+ل(30)+م(40)+ن(50)+ي(10)+ت(400)+ق(100)+ن(50)+ه(5)+ا(1) = **1198.** Das Werk wurde also **1198 n. H.** (ca. 1783 n. Chr.) vollendet. Der Verfasser verbarg das Datum in dem schönen Wort „frohe Botschaft für den, der es meistert“."
+              "**Dieser Vers enthält zwei Zahlen-Rätsel — nach dem Abdschad:** Das Abdschad gibt jedem arabischen Buchstaben einen Zahlenwert; Dichter „datieren“, indem sie die Buchstaben eines Spruchs summieren. Um Verwirrung zu vermeiden, sind die Buchstaben und ihre Werte in den zwei Tabellen unten einzeln aufgeführt.",
+              "**1) Verszahl — «نَدٌّ بَدَا»:** Die Summe der Buchstabenwerte ist **61**; das Werk hat also einundsechzig Verse. („Nadd badā“ trägt zudem einen schönen Sinn wie „ein Duft / eine Perle trat hervor“.)",
+              "**2) Abfassungsjahr — «بُشْرَى لِمَنْ يُتْقِنُهَا»:** Die Summe der Werte ist **1198**; das Werk wurde also **1198 n. H.** (ca. 1783 n. Chr.) vollendet. Der Verfasser verbarg das Jahr in dem schönen Wort „frohe Botschaft für den, der es meistert“."
             ],
             "en": [
-              "**This verse holds two number riddles — by the abjad:** the abjad gives each Arabic letter a numerical value; poets \"date\" a work by summing a phrase's letters.",
-              "**1) Verse count — «نَدٌّ بَدَا» (61):** ن(50) + د(4) + ب(2) + د(4) + ا(1) = **61.** So the work has sixty-one verses. (\"Nadd badā\" carries a pleasant sense like \"a fragrance/pearl appeared.\")",
-              "**2) Year of composition — indicated by «بُشْرَى لِمَنْ يُتْقِنُهَا» (1198 AH):** ب(2)+ش(300)+ر(200)+ى(10)+ل(30)+م(40)+ن(50)+ي(10)+ت(400)+ق(100)+ن(50)+ه(5)+ا(1) = **1198.** So the work was completed in **1198 AH** (ca. 1783 CE). The author hid the date in the fine phrase \"glad tidings for the one who masters it.\""
+              "**This verse holds two number riddles — by the abjad:** the abjad gives each Arabic letter a numerical value; poets \"date\" a work by summing a phrase's letters. To avoid confusion, the letters and their values are listed one by one in the two tables below.",
+              "**1) Verse count — «نَدٌّ بَدَا»:** the sum of the letter-values is **61**; so the work has sixty-one verses. (\"Nadd badā\" also carries a pleasant sense like \"a fragrance / a pearl appeared.\")",
+              "**2) Year of composition — «بُشْرَى لِمَنْ يُتْقِنُهَا»:** the sum of the values is **1198**; so the work was completed in **1198 AH** (ca. 1783 CE). The author hid the year in the fine phrase \"glad tidings for the one who masters it.\""
             ]
-          }
+          },
+          "tables": [
+            {
+              "label": { "tr": "Ebced hesabı 1 — «نَدٌّ بَدَا» (beyit sayısı)", "de": "Abdschad-Rechnung 1 — «نَدٌّ بَدَا» (Verszahl)", "en": "Abjad calculation 1 — «نَدٌّ بَدَا» (verse count)" },
+              "head": { "tr": ["Harf", "Ebced değeri"], "de": ["Buchstabe", "Abdschad-Wert"], "en": ["Letter", "Abjad value"] },
+              "rows": [
+                [ { "ar": "ن", "sub": { "tr": "nûn", "de": "Nūn", "en": "nūn" } }, { "tr": "50", "de": "50", "en": "50" } ],
+                [ { "ar": "د", "sub": { "tr": "dâl", "de": "Dāl", "en": "dāl" } }, { "tr": "4", "de": "4", "en": "4" } ],
+                [ { "ar": "ب", "sub": { "tr": "bâ", "de": "Bāʾ", "en": "bāʾ" } }, { "tr": "2", "de": "2", "en": "2" } ],
+                [ { "ar": "د", "sub": { "tr": "dâl", "de": "Dāl", "en": "dāl" } }, { "tr": "4", "de": "4", "en": "4" } ],
+                [ { "ar": "ا", "sub": { "tr": "elif", "de": "Alif", "en": "alif" } }, { "tr": "1", "de": "1", "en": "1" } ],
+                [ { "tr": "**Toplam**", "de": "**Summe**", "en": "**Total**" }, { "tr": "**61**", "de": "**61**", "en": "**61**" } ]
+              ]
+            },
+            {
+              "label": { "tr": "Ebced hesabı 2 — «بُشْرَى لِمَنْ يُتْقِنُهَا» (telif yılı)", "de": "Abdschad-Rechnung 2 — «بُشْرَى لِمَنْ يُتْقِنُهَا» (Abfassungsjahr)", "en": "Abjad calculation 2 — «بُشْرَى لِمَنْ يُتْقِنُهَا» (year of composition)" },
+              "head": { "tr": ["Harf", "Ebced değeri"], "de": ["Buchstabe", "Abdschad-Wert"], "en": ["Letter", "Abjad value"] },
+              "rows": [
+                [ { "ar": "ب", "sub": { "tr": "bâ", "de": "Bāʾ", "en": "bāʾ" } }, { "tr": "2", "de": "2", "en": "2" } ],
+                [ { "ar": "ش", "sub": { "tr": "şın", "de": "Schīn", "en": "shīn" } }, { "tr": "300", "de": "300", "en": "300" } ],
+                [ { "ar": "ر", "sub": { "tr": "râ", "de": "Rāʾ", "en": "rāʾ" } }, { "tr": "200", "de": "200", "en": "200" } ],
+                [ { "ar": "ى", "sub": { "tr": "yâ", "de": "Yāʾ", "en": "yāʾ" } }, { "tr": "10", "de": "10", "en": "10" } ],
+                [ { "ar": "ل", "sub": { "tr": "lâm", "de": "Lām", "en": "lām" } }, { "tr": "30", "de": "30", "en": "30" } ],
+                [ { "ar": "م", "sub": { "tr": "mîm", "de": "Mīm", "en": "mīm" } }, { "tr": "40", "de": "40", "en": "40" } ],
+                [ { "ar": "ن", "sub": { "tr": "nûn", "de": "Nūn", "en": "nūn" } }, { "tr": "50", "de": "50", "en": "50" } ],
+                [ { "ar": "ي", "sub": { "tr": "yâ", "de": "Yāʾ", "en": "yāʾ" } }, { "tr": "10", "de": "10", "en": "10" } ],
+                [ { "ar": "ت", "sub": { "tr": "tâ", "de": "Tāʾ", "en": "tāʾ" } }, { "tr": "400", "de": "400", "en": "400" } ],
+                [ { "ar": "ق", "sub": { "tr": "kâf", "de": "Qāf", "en": "qāf" } }, { "tr": "100", "de": "100", "en": "100" } ],
+                [ { "ar": "ن", "sub": { "tr": "nûn", "de": "Nūn", "en": "nūn" } }, { "tr": "50", "de": "50", "en": "50" } ],
+                [ { "ar": "ه", "sub": { "tr": "hâ", "de": "Hāʾ", "en": "hāʾ" } }, { "tr": "5", "de": "5", "en": "5" } ],
+                [ { "ar": "ا", "sub": { "tr": "elif", "de": "Alif", "en": "alif" } }, { "tr": "1", "de": "1", "en": "1" } ],
+                [ { "tr": "**Toplam**", "de": "**Summe**", "en": "**Total**" }, { "tr": "**1198**", "de": "**1198**", "en": "**1198**" } ]
+              ]
+            }
+          ]
         },
         {
           "n": 60,
@@ -4371,9 +4405,9 @@ window.CONTENT = {
             "en": "Dating by the abjad — how to read it?"
           },
           "body": {
-            "tr": "Ebced, harflere sayı değeri veren bir sistemdir; bir sözün harfleri toplanınca bir sayı/tarih çıkar. Nâzım iki yerde kullanır:\n• **Beyit sayısı «نَدٌّ بَدَا»:** ن50 + د4 + ب2 + د4 + ا1 = **61 beyit**.\n• **Telif yılı «بُشْرَى لِمَنْ يُتْقِنُهَا»:** ب2 + ش300 + ر200 + ى10 + ل30 + م40 + ن50 + ي10 + ت400 + ق100 + ن50 + ه5 + ا1 = **1198 (hicrî)**.\nBöylece nâzım, hem eserin uzunluğunu hem yazılış yılını şiirin içine zarifçe gizlemiştir.",
-            "de": "Das Abdschad gibt Buchstaben Zahlenwerte; summiert man die Buchstaben eines Spruchs, ergibt sich eine Zahl/ein Datum. Der Verfasser nutzt es zweimal:\n• **Verszahl «نَدٌّ بَدَا»:** ن50 + د4 + ب2 + د4 + ا1 = **61 Verse**.\n• **Abfassungsjahr «بُشْرَى لِمَنْ يُتْقِنُهَا»:** ب2 + ش300 + ر200 + ى10 + ل30 + م40 + ن50 + ي10 + ت400 + ق100 + ن50 + ه5 + ا1 = **1198 (n. H.)**.\nSo verbarg der Verfasser Länge und Jahr des Werks kunstvoll im Gedicht.",
-            "en": "The abjad gives letters numerical values; summing a phrase's letters yields a number/date. The author uses it twice:\n• **Verse count «نَدٌّ بَدَا»:** ن50 + د4 + ب2 + د4 + ا1 = **61 verses**.\n• **Year of composition «بُشْرَى لِمَنْ يُتْقِنُهَا»:** ب2 + ش300 + ر200 + ى10 + ل30 + م40 + ن50 + ي10 + ت400 + ق100 + ن50 + ه5 + ا1 = **1198 (AH)**.\nThus the author elegantly hid both the work's length and its year within the poem."
+            "tr": "Ebced (cümmel hesabı), her harfe bir sayı değeri veren eski bir sistemdir; bir sözün harfleri toplanınca bir sayı/tarih çıkar. Nâzım bunu iki yerde kullanır:\n• **«نَدٌّ بَدَا»** sözüyle **beyit sayısını** gizlemiştir → toplam **61**.\n• **«بُشْرَى لِمَنْ يُتْقِنُهَا»** sözüyle **telif (yazılış) yılını** gizlemiştir → toplam **1198 (hicrî)**.\nHarflerin tek tek değerleri, yukarıda 59. beyitteki iki tabloda açıkça gösterilmiştir. Böylece nâzım, hem eserin uzunluğunu hem yazılış yılını şiirin içine zarifçe yerleştirmiştir.",
+            "de": "Das Abdschad (Zahlenwert der Buchstaben) ist ein altes System; summiert man die Buchstaben eines Spruchs, ergibt sich eine Zahl/ein Datum. Der Verfasser nutzt es zweimal:\n• Mit **«نَدٌّ بَدَا»** verbirgt er die **Verszahl** → Summe **61**.\n• Mit **«بُشْرَى لِمَنْ يُتْقِنُهَا»** das **Abfassungsjahr** → Summe **1198 (n. H.)**.\nDie Einzelwerte der Buchstaben stehen deutlich in den zwei Tabellen bei Vers 59 oben. So verbarg der Verfasser Länge und Jahr des Werks kunstvoll im Gedicht.",
+            "en": "The abjad (numerical value of letters) is an old system; summing a phrase's letters yields a number/date. The author uses it twice:\n• With **«نَدٌّ بَدَا»** he hides the **verse count** → sum **61**.\n• With **«بُشْرَى لِمَنْ يُتْقِنُهَا»** the **year of composition** → sum **1198 (AH)**.\nThe individual letter-values are shown clearly in the two tables at verse 59 above. Thus the author elegantly placed both the work's length and its year within the poem."
           }
         }
       ],
