@@ -7,9 +7,13 @@
   var VERSES = window.VERSES, CONTENT = window.CONTENT, I18N = window.I18N,
       LANGS = window.LANGS, THEMES = window.THEMES;
 
+  // Storage helpers guarded for sandboxed/private contexts where localStorage may throw.
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
   var state = {
-    lang: localStorage.getItem("tuhfe-lang") || "tr",
-    theme: localStorage.getItem("tuhfe-theme") || "light"
+    lang: lsGet("tuhfe-lang") || "tr",
+    theme: lsGet("tuhfe-theme") || "light"
   };
   if (!I18N[state.lang]) state.lang = "tr";
 
@@ -30,13 +34,13 @@
   /* ---------- theme / lang ---------- */
   function applyTheme() {
     document.documentElement.setAttribute("data-theme", state.theme);
-    localStorage.setItem("tuhfe-theme", state.theme);
+    lsSet("tuhfe-theme", state.theme);
     var m = document.querySelector('meta[name="theme-color"]');
     if (m) m.setAttribute("content", state.theme === "dark" ? "#0e1512" : (state.theme === "sepia" ? "#e9ddc4" : "#f4efe4"));
   }
   function setLang(code) {
     if (!I18N[code]) return;
-    state.lang = code; localStorage.setItem("tuhfe-lang", code);
+    state.lang = code; lsSet("tuhfe-lang", code);
     var L = LANGS.filter(function(l){return l.code===code;})[0];
     document.documentElement.setAttribute("lang", code);
     document.documentElement.setAttribute("dir", (L && L.dir) || "ltr");
