@@ -387,28 +387,57 @@
   });
   window.addEventListener("resize", function () { if (currentPop) closePop(); });
 
-  /* ---------- açılış ekranı (besmele + âyet, otomatik) ---------- */
+  /* ---------- açılış ekranı (besmele + âyet, otomatik einblenden/ausblenden) ---------- */
   function showSplash() {
     var sp = document.createElement("div");
     sp.className = "splash";
     sp.setAttribute("aria-hidden", "true");
     sp.innerHTML = '<div class="splash-in">' +
-      '<div class="splash-bism">﷽</div>' +
+      '<div class="splash-bism-wrap"><span class="splash-bism">﷽</span></div>' +
       '<div class="splash-line"></div>' +
-      '<div class="splash-ayah">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</div>' +
+      '<div class="splash-ayah-wrap"><span class="splash-ayah">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</span></div>' +
       '<div class="splash-ref">'+t("ayah_ref")+'</div>' +
       '<div class="splash-hint">'+t("splash_hint")+'</div>' +
     '</div>';
     document.body.appendChild(sp);
-    try { requestAnimationFrame(function(){ sp.classList.add("show"); }); } catch(e){ sp.classList.add("show"); }
+    document.documentElement.style.overflow = "hidden"; // sayfa kaymasın
+
+    // Arapça hat dar ekrana taşmasın diye: iki aşamada (1) sığdır, (2) tam ortala.
+    function fit(wrapSel, glyphSel) {
+      try {
+        var wrap = sp.querySelector(wrapSel), g = sp.querySelector(glyphSel);
+        if (!wrap || !g) return;
+        wrap.style.transform = "";
+        var margin = Math.max(12, window.innerWidth * 0.06);
+        var avail = window.innerWidth - margin * 2;
+        var r = g.getBoundingClientRect();
+        var scale = (r.width > avail && r.width > 0) ? (avail / r.width) : 1;
+        wrap.style.transform = "scale(" + scale.toFixed(4) + ")";
+        var r2 = g.getBoundingClientRect();
+        var dx = (window.innerWidth / 2) - ((r2.left + r2.right) / 2);
+        wrap.style.transform = "translateX(" + dx.toFixed(1) + "px) scale(" + scale.toFixed(4) + ")";
+      } catch (e) {}
+    }
+    function doFit() { fit(".splash-bism-wrap", ".splash-bism"); fit(".splash-ayah-wrap", ".splash-ayah"); }
+    function reveal() {
+      sp.classList.add("show");
+      doFit();
+      try { if (document.fonts && document.fonts.ready) document.fonts.ready.then(doFit); } catch (e) {}
+      setTimeout(doFit, 350);
+    }
+    try { requestAnimationFrame(reveal); } catch (e) { reveal(); }
+
     var closed = false;
     function done() {
       if (closed) return; closed = true;
       sp.classList.add("out");
-      setTimeout(function(){ if (sp.parentNode) sp.parentNode.removeChild(sp); }, 750);
+      setTimeout(function () {
+        if (sp.parentNode) sp.parentNode.removeChild(sp);
+        document.documentElement.style.overflow = "";
+      }, 850);
     }
-    var tmr = setTimeout(done, 3000);
-    sp.addEventListener("click", function(){ clearTimeout(tmr); done(); });
+    var tmr = setTimeout(done, 4200);          // beliriş + bekleme + kayboluş
+    sp.addEventListener("click", function () { clearTimeout(tmr); done(); });
   }
 
   /* ---------- boot ---------- */
