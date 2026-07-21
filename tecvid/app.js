@@ -184,6 +184,17 @@
 
     var draftHtml = s.status === "draft" ? '<div class="draft-banner"><span>✍️</span><div><b>'+pick(s.title)+'</b> — '+t("draft_note")+'</div></div>' : '';
 
+    var prov = s.provenance && pick(s.provenance);
+    var provHtml = prov ? '<div class="provenance fade-in"><span>ℹ️</span><p>'+fmt(prov)+'</p></div>' : '';
+
+    // section-level explanatory notes (title + multi-line body)
+    var notesHtml = (s.notes && s.notes.length) ? s.notes.map(function (nt) {
+      var body = pick(nt.body) || "";
+      var paras = body.split("\n").filter(function(x){return x.trim();});
+      return '<div class="panel fade-in"><div class="panel-label"><span class="dot"></span>'+pick(nt.title)+'</div>' +
+        '<div class="sharh">'+paras.map(function(p){return "<p>"+fmt(p)+"</p>";}).join("")+'</div></div>';
+    }).join("") : '';
+
     var summary = s.summary && pick(s.summary);
     var summaryHtml = summary ? '<div class="panel summary fade-in">' +
       '<div class="panel-label"><span class="dot"></span>'+t("lbl_summary")+'</div>' +
@@ -201,7 +212,7 @@
         '<div class="reader-title"><div class="r-ar">'+s.arTitle+'</div><h2>'+pick(s.title)+'</h2></div>' +
         '<div class="reader-meta">'+t("section")+' '+s.num+' '+t("of")+' '+CONTENT.sections.length+' · '+t("beyit")+' '+s.range[0]+'–'+s.range[1]+'</div>' +
       '</div>' +
-      overviewHtml + draftHtml + beyitsHtml + summaryHtml + secNav +
+      overviewHtml + provHtml + draftHtml + beyitsHtml + notesHtml + summaryHtml + secNav +
     '</section>';
   }
 

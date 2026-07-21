@@ -279,6 +279,13 @@ section.block { padding-block: clamp(2.4rem, 6vw, 4.5rem); }
 .panel-label .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
 .overview p { color: var(--ink-soft); margin: 0; font-size: 1.02rem; }
 
+/* Provenance / transparency note */
+.provenance {
+  display: flex; gap: .7rem; align-items: flex-start; background: var(--surface-2); border: 1px dashed var(--line);
+  border-radius: var(--radius-sm); padding: .85rem 1.1rem; margin-bottom: 1.4rem; font-size: .86rem; color: var(--muted);
+}
+.provenance p { margin: 0; }
+
 /* Draft note */
 .draft-banner {
   display: flex; gap: .7rem; align-items: flex-start; background: var(--gold-soft); border: 1px solid var(--hadith-line);

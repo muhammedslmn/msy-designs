@@ -322,25 +322,170 @@ window.CONTENT = {
       arTitle: "النُّونُ السَّاكِنَةُ وَالتَّنْوِين",
       title: { tr: "Nûn-ı Sâkine ve Tenvîn", de: "Nūn Sākina und Tanwīn", en: "Nūn Sākina and Tanwīn" },
       range: [6, 16],
-      status: "draft",
+      provenance: {
+        tr: "Not: Bu bölümün açıklamaları, gönderilen PDF şerhinde yer almadığından; doğrudan nazmın kendi metnine ve tecvid ilminin üzerinde ittifak edilen yerleşik kaidelerine dayanılarak, aynı sadelik ve düzenle hazırlanmıştır. Elinizde bu bölüme ait özel bir şerh varsa, onunla değiştirebiliriz.",
+        de: "Hinweis: Da dieser Abschnitt im übermittelten PDF-Kommentar fehlt, stützen sich die Erläuterungen unmittelbar auf den Verstext selbst und auf die allgemein anerkannten Grundregeln der Tadschwīd-Wissenschaft.",
+        en: "Note: As this section is absent from the provided PDF commentary, its explanations rest directly on the verse text itself and on the settled, agreed-upon rules of the science of Tajwīd."
+      },
       overview: {
         tr: "Nazmın asıl konusuna girişidir. Sâkin nûn (نْ) ve tenvîn (ـً ـٍ ـٌ) için **dört hüküm** anlatılır: **İzhâr** (boğaz harflerinde açık okuma), **İdğâm** (gunneli/gunnesiz olarak sonraki harfe katma), **İklâb** (bâ'dan önce mîme çevirme) ve **İhfâ** (geri kalan on beş harfte gizleme). Nâzım her hükmün harflerini, remz cümleleriyle ezberlenecek şekilde sıralar.",
         de: "Der eigentliche Einstieg des Gedichts: Für das sākine Nūn und das Tanwīn werden **vier Regeln** dargelegt — **Iẓhār**, **Idghām**, **Iqlāb** und **Ikhfāʾ** — mitsamt ihren Buchstaben, in Merkformeln gefasst.",
         en: "The poem's substantive opening: for sākin nūn and tanwīn, **four rulings** are set out — **Iẓhār**, **Idghām**, **Iqlāb**, and **Ikhfāʾ** — each with its letters, cast as mnemonic phrases."
       },
       beyits: [
-        { n: 6, translation: { tr: "Sâkin nûn ve tenvîn için dört hüküm vardır; açıklamamı iyi belle." } },
-        { n: 7, translation: { tr: "Birincisi izhârdır; boğaz harflerinden önce gelir; onlar sırayla dizilmiş altı harftir, öğren." } },
-        { n: 8, translation: { tr: "(Bunlar:) hemze, sonra hâ, sonra ayn ve (noktasız ikili) hâ, sonra ğayn ve hı." } },
-        { n: 9, translation: { tr: "İkincisi idğâmdır; altı harfte gelir, 'يرملون' (yermelûn) kelimesinde toplanmış ve onlarca sabit olmuştur." } },
-        { n: 10, translation: { tr: "Fakat o iki kısımdır: bir kısmı gunne ile idğam edilir; bu da 'ينمو' (yenmû) harfleriyle bilinir." } },
-        { n: 11, translation: { tr: "Ancak (nûn ile harf) tek kelimede bulunursa idğam etme; 'دُنْيَا' ve ardından 'صِنْوَان' gibi." } },
-        { n: 12, translation: { tr: "İkinci (kısım) gunnesiz idğamdır; lâm ve râ'da olur; sonra onu tekrar et (şeddele)." } },
-        { n: 13, translation: { tr: "Üçüncüsü iklâbdır; bâ harfi yanında (nûn) mîme çevrilir, gunne ve ihfâ ile." } },
-        { n: 14, translation: { tr: "Dördüncüsü ihfâdır; (geri) kalan harfler yanında; faziletli okuyucu için vaciptir." } },
-        { n: 15, translation: { tr: "On harften sonra gelen beş (yani on beş) harfte olur; remzini bu beytin kelimelerine yerleştirdim." } },
-        { n: 16, translation: { tr: "«Sıfat sahibini övgüyle an; nice cömert, yükselen kişi vardır; temiz kal, takvanı artır, zalimi bırak.» — Bu cümlenin her kelimesinin ilk harfi, bir ihfâ harfini remzeder." } }
-      ]
+        {
+          n: 6,
+          translation: { tr: "Sâkin nûn ve tenvîn için dört hüküm vardır; açıklamamı iyi belle." },
+          sharh: {
+            tr: [
+              "**Sâkin nûn (نْ):** Harekesi olmayan, vasl ve vakıfta sabit kalan nûndur; ister isimde, ister fiilde, ister harfte bulunsun.",
+              "**Tenvîn (ـً ـٍ ـٌ):** İsmin sonuna gelen, yazıda değil fakat **okuyuşta** sabit olan, vakıfta düşen sâkin bir nûndur (iki üstün, iki esre, iki ötre ile gösterilir).",
+              "Bu ikisinin sonrasına gelen harfe göre **dört hükmü** vardır: **İzhâr · İdğâm · İklâb · İhfâ**. Nâzım şimdi bunları sırayla açıklayacaktır."
+            ]
+          }
+        },
+        {
+          n: 7,
+          translation: { tr: "Birincisi izhârdır; boğaz harflerinden önce gelir; onlar sırayla dizilmiş altı harftir, öğren." },
+          sharh: {
+            tr: [
+              "**İzhâr:** Lügatte \"açığa çıkarmak\"; ıstılahta, sâkin nûn veya tenvîni **gunne yapmadan, açıkça** kendi mahrecinden okumaktır.",
+              "**Sebebi:** Boğaz harfleri ile nûnun mahreci birbirinden **uzak** olduğu için, aralarında idğam/ihfâ gibi bir karışma olmaz; her biri açıkça okunur.",
+              "Bu sebeple ona **\"İzhâr-ı halkî\"** (boğaz izhârı) denir."
+            ]
+          }
+        },
+        {
+          n: 8,
+          translation: { tr: "(Bunlar:) hemze, sonra hâ, sonra ayn ve (noktasız ikili) hâ, sonra ğayn ve hı." },
+          sharh: {
+            tr: [
+              "İzhâr harfleri, mahreçleri boğazda olan **altı harftir**: **ء · هـ · ع · ح · غ · خ**.",
+              "Nâzım bunları boğazın dibinden ağza doğru sırayla verir: (boğaz dibi) hemze–hâ, (boğaz ortası) ayn–hâ, (boğaz ucu) ğayn–hı. \"Mühmeletân\" (noktasızlar) ifadesi, noktalı olan خ/غ'den ayırmak için ع/ح'nin noktasız oluşuna işarettir."
+            ]
+          },
+          examples: [
+            { ar: "مَنْ آمَنَ", ref: { name: "izhâr — hemze" }, tr: "\"men âmene\" — sâkin nûn + hemze" },
+            { ar: "يَنْأَوْنَ", ref: { name: "izhâr — hemze (tek kelime)" }, tr: "\"yen'evne\"" },
+            { ar: "مِنْ هَادٍ", ref: { name: "izhâr — hâ" }, tr: "\"min hâd\"" },
+            { ar: "أَنْعَمْتَ", ref: { name: "izhâr — ayn" }, tr: "\"en'amte\"" },
+            { ar: "مِنْ حَكِيمٍ", ref: { name: "izhâr — hâ" }, tr: "\"min hakîm\"" },
+            { ar: "مِنْ غِلٍّ", ref: { name: "izhâr — ğayn" }, tr: "\"min ğill\"" }
+          ]
+        },
+        {
+          n: 9,
+          translation: { tr: "İkincisi idğâmdır; altı harfte gelir, 'يرملون' (yermelûn) kelimesinde toplanmış ve onlarca sabit olmuştur." },
+          sharh: {
+            tr: [
+              "**İdğâm:** Sâkin nûn/tenvîni, sonrasındaki harfe **katarak**, iki harfi şeddeli tek harf hâline getirmektir.",
+              "İdğam harfleri altı olup **«يَرْمَلُونَ»** kelimesinde toplanmıştır: **ي · ر · م · ل · و · ن**."
+            ]
+          }
+        },
+        {
+          n: 10,
+          translation: { tr: "Fakat o iki kısımdır: bir kısmı gunne ile idğam edilir; bu da 'ينمو' (yenmû) harfleriyle bilinir." },
+          sharh: {
+            tr: [
+              "**1) Gunneli idğâm (idğâm-ı meagunne):** Dört harfte olur; bunlar **«يَنْمُو»** kelimesinde toplanmıştır: **ي · ن · م · و**. Bu harflere idğam edilirken gunne (geniz sesi) korunur."
+            ]
+          },
+          examples: [
+            { ar: "مَنْ يَقُولُ", ref: { name: "gunneli idğâm — yâ" }, tr: "\"mey yekûl\" (نْ → يّ, gunne ile)" },
+            { ar: "مِنْ نِعْمَةٍ", ref: { name: "gunneli idğâm — nûn" }, tr: "\"min ni'me\" → \"minne'me\"" },
+            { ar: "مِنْ مَاءٍ", ref: { name: "gunneli idğâm — mîm" }, tr: "\"mim mâ'\"" },
+            { ar: "مِنْ وَالٍ", ref: { name: "gunneli idğâm — vâv" }, tr: "\"miv vâl\"" }
+          ]
+        },
+        {
+          n: 11,
+          translation: { tr: "Ancak (nûn ile harf) tek kelimede bulunursa idğam etme; 'دُنْيَا' ve ardından 'صِنْوَان' gibi." },
+          sharh: {
+            tr: [
+              "**İstisna (izhâr-ı mutlak):** Sâkin nûn ile idğam harfi (و/ي) **aynı kelimede** bir arada bulunursa idğam **yapılmaz**, açıkça okunur. Aksi hâlde kelime aslından uzaklaşır, mana karışırdı.",
+              "Kur'ân'da bu, dört kelimede geçer: **دُنْيَا · صِنْوَان · قِنْوَان · بُنْيَان**."
+            ]
+          },
+          examples: [
+            { ar: "الدُّنْيَا", ref: { name: "izhâr-ı mutlak" }, tr: "\"ed-dünyâ\" — tek kelimede, idğam yok" },
+            { ar: "صِنْوَانٌ", ref: { name: "izhâr-ı mutlak" }, tr: "\"sınvân\"" }
+          ]
+        },
+        {
+          n: 12,
+          translation: { tr: "İkinci (kısım) gunnesiz idğamdır; lâm ve râ'da olur; sonra onu tekrar et (şeddele)." },
+          sharh: {
+            tr: [
+              "**2) Gunnesiz idğâm (idğâm-ı bilâ gunne):** İki harfte olur: **ل · ر**. Nûn/tenvîn bu iki harfe **gunnesiz**, tam olarak katılır (şeddelenir).",
+              "\"Kerriranneh (tekrar et)\" ifadesi, râ'nın tekrîr sıfatına yahut idğamı iyice yerleştirmeye işarettir."
+            ]
+          },
+          examples: [
+            { ar: "مِنْ لَدُنْهُ", ref: { name: "gunnesiz idğâm — lâm" }, tr: "\"mil ledunh\"" },
+            { ar: "مِنْ رَبِّهِمْ", ref: { name: "gunnesiz idğâm — râ" }, tr: "\"mir rabbihim\"" }
+          ]
+        },
+        {
+          n: 13,
+          translation: { tr: "Üçüncüsü iklâbdır; bâ harfi yanında (nûn) mîme çevrilir, gunne ve ihfâ ile." },
+          sharh: {
+            tr: [
+              "**İklâb:** Sâkin nûn veya tenvîni, **bâ (ب)** harfinden önce **mîme (م) çevirip**, gunne ile ve ihfâ hâlinde (dudakları tam kapatmadan) okumaktır.",
+              "Harfi tektir: **ب**. Mushaflarda nûnun üzerine küçük bir mîm (ﻢ) konarak gösterilir."
+            ]
+          },
+          examples: [
+            { ar: "مِنْ بَعْدِ", ref: { name: "iklâb" }, tr: "\"mimm ba'di\" (نْ → م, gunne ile)" },
+            { ar: "أَنْبِئْهُمْ", ref: { name: "iklâb (tek kelime)" }, tr: "\"embi'hum\"" },
+            { ar: "سَمِيعٌ بَصِيرٌ", ref: { name: "iklâb — tenvîn" }, tr: "\"semî'um basîr\"" }
+          ]
+        },
+        {
+          n: 14,
+          translation: { tr: "Dördüncüsü ihfâdır; (geri) kalan harfler yanında; faziletli okuyucu için vaciptir." },
+          sharh: {
+            tr: [
+              "**İhfâ:** Sâkin nûn/tenvîni; izhâr'ın açıklığı ile idğâm'ın tam katılması **arasında** bir hâlde, **gunne ile** ve dile dayanmadan gizleyerek okumaktır.",
+              "Geriye kalan (izhâr, idğâm ve iklâb harfleri dışındaki) **on beş harfte** olur ve okuyucu için vaciptir."
+            ]
+          }
+        },
+        {
+          n: 15,
+          translation: { tr: "On harften sonra gelen beş (yani on beş) harfte olur; remzini bu beytin kelimelerine yerleştirdim." },
+          sharh: {
+            tr: [
+              "İhfâ harfleri **on beştir**. Nâzım, bunların remzini bir sonraki beytin (16. beyit) kelimelerinin **ilk harflerine** yerleştirmiştir; her kelimenin baş harfi bir ihfâ harfidir."
+            ]
+          }
+        },
+        {
+          n: 16,
+          translation: { tr: "«Sıfat sahibini övgüyle an; nice cömert, yükselen kişi vardır; temiz kal, takvanı artır, zalimi bırak.» — Bu cümlenin her kelimesinin ilk harfi, bir ihfâ harfini remzeder." },
+          sharh: {
+            tr: [
+              "Beytin kelimelerinin baş harfleri, on beş ihfâ harfini verir: **ص ذ ث ك ج ش ق س د ط ز ف ت ض ظ**.",
+              "(**صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا · دُمْ طَيِّبًا زِدْ فِي تُقًى ضَعْ ظَالِمَا**)"
+            ]
+          },
+          examples: [
+            { ar: "مِنْكُمْ", ref: { name: "ihfâ — kâf" }, tr: "\"minkum\" (gunne ile, dil dişe değmeden)" },
+            { ar: "أَنْتُمْ", ref: { name: "ihfâ — tâ" }, tr: "\"entum\"" },
+            { ar: "مَنْصُورًا", ref: { name: "ihfâ — sâd" }, tr: "\"mensûrâ\"" },
+            { ar: "جَنَّاتٍ تَجْرِي", ref: { name: "ihfâ — tenvîn + tâ" }, tr: "\"cennâtin tecrî\"" }
+          ]
+        }
+      ],
+      summary: {
+        tr: [
+          "Sâkin nûn / tenvîn + **boğaz harfleri (ء ه ع ح غ خ)** → **İzhâr** (açık, gunnesiz).",
+          "+ **يرملون** → **İdğâm**: gunneli (**ينمو**: ي ن م و) / gunnesiz (**ل ر**).",
+          "İstisna: aynı kelimede (دنيا، صنوان، قنوان، بنيان) → **izhâr** (idğam yok).",
+          "+ **bâ (ب)** → **İklâb**: nûn → mîm, gunne ile.",
+          "+ **kalan 15 harf** → **İhfâ**: gunne ile gizleme (remz: *صف ذا ثنا…*)."
+        ]
+      }
     },
 
     /* ===== 3) MÎM VE NÛN MÜŞEDDEDE (17) — TAM İŞLENMİŞ ===== */
@@ -606,20 +751,104 @@ window.CONTENT = {
       arTitle: "لَامُ «أَل» وَلَامُ الْفِعْل",
       title: { tr: "Lâm-ı Ta'rîf ve Lâm-ı Fiil", de: "Lām von „al-“ und Verb-Lām", en: "Lām of \"al-\" and the Verb Lām" },
       range: [24, 29],
-      status: "draft",
       overview: {
         tr: "İki tür lâm işlenir. **Lâm-ı ta'rîf** (ال): 14 \"kamerî\" harften önce **izhâr** (kamerî lâm), 14 \"şemsî\" harften önce **idğâm** (şemsî lâm) edilir; remzleri «اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ» ve «طِبْ ثُمَّ صِلْ…» cümleleridir. **Fiil lâmı** ise her durumda **izhâr** edilir. (Şerhte ayrıca emir lâmı, isim lâmı ve \"hel/bel\" lâmı da ele alınır.)",
         de: "Zwei Arten von Lām: Das **Artikel-Lām** (ال) wird vor 14 „Mond“-Buchstaben mit **Iẓhār** (Mond-Lām), vor 14 „Sonnen“-Buchstaben mit **Idghām** (Sonnen-Lām) gelesen. Das **Verb-Lām** wird stets mit **Iẓhār** gelesen.",
         en: "Two kinds of lām: the **article lām** (ال) is read with **iẓhār** before 14 \"lunar\" letters (lunar lām) and with **idghām** before 14 \"solar\" letters (solar lām). The **verb lām** is always read with **iẓhār**."
       },
       beyits: [
-        { n: 24, translation: { tr: "Lâm-ı ta'rîfin harflerden önce iki hâli vardır; birincisi onun izhârıdır, bunu bil." } },
-        { n: 25, translation: { tr: "On dört harften önceki (hükmünü) öğren: «اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ» cümlesinden." } },
-        { n: 26, translation: { tr: "İkincisi, yine on dört harfte idğam edilmesidir; onun remzini de belle." } },
-        { n: 27, translation: { tr: "«Akrabalık bağını gözet, kurtul; nimet sahibine katıl; kötü zandan uzak dur; şerefliyi ziyaret et.» — (Bu cümle şemsî harflerin remzidir.)" } },
-        { n: 28, translation: { tr: "Birinci lâmı 'kamerî', diğer lâmı ise 'şemsî' diye isimlendir." } },
-        { n: 29, translation: { tr: "Fiil lâmını her durumda izhâr et; «قُلْ نَعَمْ», «قُلْنَا» ve «الْتَقَى» gibi örneklerde." } }
-      ]
+        {
+          n: 24,
+          translation: { tr: "Lâm-ı ta'rîfin harflerden önce iki hâli vardır; birincisi onun izhârıdır, bunu bil." },
+          sharh: {
+            tr: [
+              "**Lâm-ı ta'rîf (لْ):** Kendisinden önce, başlangıçta üstünlü okunan bir vasıl hemzesi (اَلْ) bulunan; ardından bir **isim** gelen, sâkin ve ziyade (kelimenin aslından olmayan) lâm harfidir.",
+              "Bu lâmın, sonrasındaki harfe göre **iki hâli** vardır: **1) İzhâr (kamerî)**, **2) İdğâm (şemsî)**. Nâzım önce izhâr ile başlar."
+            ]
+          }
+        },
+        {
+          n: 25,
+          translation: { tr: "On dört harften önceki (hükmünü) öğren: «اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ» cümlesinden." },
+          sharh: {
+            tr: [
+              "**İzhâr-ı kamerî:** Lâm-ı ta'rîften sonra şu **on dört harften** biri gelirse, lâm **açıkça** okunur.",
+              "Bu harfler **«اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ»** cümlesinin harflerinde toplanmıştır: **ا ب غ ح ج ك و خ ف ع ق ي م ه**."
+            ]
+          },
+          examples: [
+            { ar: "إِنَّ الْإِنْسَانَ لِرَبِّهِ لَكَنُودٌ", ref: { sura: "el-Âdiyât", ayah: 6 }, tr: "«İnsan Rabbine karşı çok nankördür.» (الْإِنْسَان — kamerî: hemze)" },
+            { ar: "الْمَالُ وَالْبَنُونَ زِينَةُ الْحَيَاةِ الدُّنْيَا", ref: { sura: "el-Kehf", ayah: 46 }, tr: "«Mal ve oğullar dünya hayatının süsüdür.» (الْمَال — kamerî: mîm)" },
+            { ar: "الَّذِي خَلَقَ الْمَوْتَ وَالْحَيَاةَ", ref: { sura: "el-Mülk", ayah: 2 }, tr: "«O ki ölümü ve hayatı yarattı.» (الْحَيَاة — kamerî: hâ)" }
+          ]
+        },
+        {
+          n: 26,
+          translation: { tr: "İkincisi, yine on dört harfte idğam edilmesidir; onun remzini de belle." },
+          sharh: {
+            tr: [
+              "**İdğâm-ı şemsî:** Lâm-ı ta'rîften sonra, izhâr harfleri **dışındaki** on dört harften biri gelirse, lâm **okunmaz**; sonraki harfe idğam edilir (o harf şeddelenir)."
+            ]
+          }
+        },
+        {
+          n: 27,
+          translation: { tr: "«Akrabalık bağını gözet, kurtul; nimet sahibine katıl; kötü zandan uzak dur; şerefliyi ziyaret et.» — (Bu cümle şemsî harflerin remzidir.)" },
+          sharh: {
+            tr: [
+              "Şemsî harfler on dörttür; her kelimenin **ilk harfi** bir şemsî harfi verir: **ط ث ص ر ت ض ذ ن د س ظ ز ش ل**.",
+              "(**طِبْ ثُمَّ صِلْ رَحِمًا تَفُزْ ضِفْ ذَا نِعَمْ · دَعْ سُوءَ ظَنٍّ زُرْ شَرِيفًا لِلْكَرَمْ**)"
+            ]
+          },
+          examples: [
+            { ar: "وَلَقَدْ كَرَّمْنَا بَنِي آدَمَ", ref: { sura: "el-İsrâ", ayah: 70 }, tr: "«…وَرَزَقْنَاهُمْ مِنَ الطَّيِّبَاتِ» (الطَّيِّبَات — şemsî: tâ, lâm okunmaz)" },
+            { ar: "قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ", ref: { sura: "el-İhlâs", ayah: 2 }, tr: "«Allah Samed'dir.» (الصَّمَد — şemsî: sâd)" },
+            { ar: "قُلْ أَعُوذُ بِرَبِّ النَّاسِ", ref: { sura: "en-Nâs", ayah: 1 }, tr: "«İnsanların Rabbine sığınırım.» (النَّاس — şemsî: nûn)" }
+          ]
+        },
+        {
+          n: 28,
+          translation: { tr: "Birinci lâmı 'kamerî', diğer lâmı ise 'şemsî' diye isimlendir." },
+          sharh: {
+            tr: [
+              "İzhâr edilen (açık okunan) birinci lâma **\"lâm-ı kameriyye\"** (ay lâmı: الْقَمَر gibi), idğam edilen (okunmayan) ikinci lâma **\"lâm-ı şemsiyye\"** (güneş lâmı: الشَّمْس gibi) denir.",
+              "İsimlendirme, تعريف'in الْقَمَر (kamer/ay) ve الشَّمْس (şems/güneş) kelimelerinden alınmıştır: birincide lâm okunur, ikincide okunmaz."
+            ]
+          }
+        },
+        {
+          n: 29,
+          translation: { tr: "Fiil lâmını her durumda izhâr et; «قُلْ نَعَمْ», «قُلْنَا» ve «الْتَقَى» gibi örneklerde." },
+          sharh: {
+            tr: [
+              "**Lâm-ı fiil:** Bir fiilin bünyesinde bulunan **aslî sâkin** lâmdır (iki sâkinin birleşmesinden kurtulmak için getirilmiş bir hareke değildir).",
+              "**Hükmü:** Her durumda **izhâr** edilir (açıkça okunur). Sadece sonrasında **lâm** veya **râ** gelirse idğam edilir; diğer bütün harflerde açıktır.",
+              "**İdğam örneği:** «قُلْ رَبِّي» (kur rabbî — lâm, râ'ya idğam) · «أَلَمْ أَقُلْ لَكُمْ» (lâm, lâm'a idğam). **İzhâr örneği:** «قُلْ نَعَمْ», «قُلْنَا», «الْتَقَى»."
+            ]
+          },
+          examples: [
+            { ar: "قُلْ نَعَمْ وَأَنْتُمْ دَاخِرُونَ", ref: { sura: "es-Sâffât", ayah: 18 }, tr: "«De ki: Evet, hem de siz zelil olarak.» (فيil lâmı + nûn → izhâr)" },
+            { ar: "أَلَمْ أَقُلْ لَكُمْ", ref: { sura: "el-Bakara", ayah: 33 }, tr: "«Size dememiş miydim?» (fiil lâmı + lâm → idğam)" }
+          ]
+        }
+      ],
+      notes: [
+        {
+          title: { tr: "Şerhteki diğer lâm türleri", de: "Weitere Lām-Arten im Kommentar", en: "Other lām types in the commentary" },
+          body: {
+            tr: "Şerh, nazımdaki iki lâma ek olarak diğer lâm çeşitlerine de değinir; hepsinin hükmü mutlak **izhâr**dır (lâm-ı ta'rîf ve —idğam durumları hariç— fiil lâmı istisna):\n\n• **Emir lâmı** (muzariyi emre çeviren ziyade lâm — لِيُنْفِقْ): mutlaka izhâr. Öncesinde ف/و/ثم yoksa, başlanırken kesre ile okunur (Arapçada sâkinle başlanmaz).\n• **İsim lâmı** (bir ismin aslından olan lâm — أَلْسِنَتُكُمْ, سَلْسَبِيلًا): kelime ortasında bulunur, her durumda izhâr.\n• **«هَلْ» ve «بَلْ» lâmı** (aslî sâkin lâm): sonrasında lâm (بَلْ لَهُمْ) veya —«بَلْ» için— râ (بَلْ رَبُّكُمْ) gelirse idğam; diğer harflerde izhâr. Bir yerde «كَلَّا بَلْ ۜ رَانَ» sekte sebebiyle özel okunur."
+          }
+        }
+      ],
+      summary: {
+        tr: [
+          "**Lâm-ı ta'rîf (ال)** + **kamerî 14 harf** (اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ) → **izhâr** (lâm okunur).",
+          "**Lâm-ı ta'rîf** + **şemsî 14 harf** → **idğâm** (lâm okunmaz, sonraki harf şeddelenir).",
+          "Birinci lâm = **kamerî**, ikinci lâm = **şemsî**.",
+          "**Fiil lâmı** → mutlak **izhâr**; yalnız **ل/ر**'de idğam.",
+          "Şerh ayrıca emir lâmı, isim lâmı ve هل/بل lâmını da açıklar."
+        ]
+      }
     },
 
     /* ===== 6) MİSLEYN, MÜTEKĀRİBEYN, MÜTECÂNİSEYN (30–34) ===== */
@@ -629,19 +858,86 @@ window.CONTENT = {
       arTitle: "الْمِثْلَانِ وَالْمُتَقَارِبَانِ وَالْمُتَجَانِسَان",
       title: { tr: "Misleyn, Mütekāribeyn, Mütecâniseyn", de: "Mithlān, Mutaqāribān, Mutadschānisān", en: "Mithlān, Mutaqāribān, Mutajānisān" },
       range: [30, 34],
-      status: "draft",
       overview: {
         tr: "İki harfin karşılaşma türleri: **Misleyn** (mahreç ve sıfatça aynı — ör. mîm+mîm), **Mütekāribeyn** (mahreçleri yakın, sıfatları farklı), **Mütecâniseyn** (mahreçleri aynı, sıfatları farklı — ör. tâ+dâl). Ayrıca birincisi sâkin olursa **sagîr (küçük) idğam**, ikisi de harekeli olursa **kebîr (büyük) idğam** adını alır.",
         de: "Arten des Zusammentreffens zweier Buchstaben: **Mithlān** (in Austrittsort und Eigenschaft gleich), **Mutaqāribān** (nahe Austrittsorte, verschiedene Eigenschaften), **Mutadschānisān** (gleicher Austrittsort, verschiedene Eigenschaften). Ist der erste sākin: **kleines** Idghām; sind beide bewegt: **großes** Idghām.",
         en: "Types of two letters meeting: **mithlān** (same exit point and quality), **mutaqāribān** (near exit points, differing qualities), **mutajānisān** (same exit point, differing qualities). If the first is sākin: **minor** idghām; if both are vowelled: **major** idghām."
       },
       beyits: [
-        { n: 30, translation: { tr: "Sıfat ve mahreçte iki harf birleşirse (aynı olursa), en uygunu onlara 'misleyn' (denmesi)dir." } },
-        { n: 31, translation: { tr: "Eğer mahreççe yakın olur, sıfatlarda ayrılırlarsa…" } },
-        { n: 32, translation: { tr: "…'mütekāribeyn' diye adlandırılırlar; yahut mahreçte birleşip sıfatta ayrılırlarsa," } },
-        { n: 33, translation: { tr: "'mütecâniseyn' (denir). Sonra, her birinin birincisi sâkin olursa 'sagîr' (küçük) diye isimlendir." } },
-        { n: 34, translation: { tr: "Yahut her ikisi de harekeli olursa 'kebîr' (büyük) de; bunu örneklerle iyi kavra." } }
-      ]
+        {
+          n: 30,
+          translation: { tr: "Sıfat ve mahreçte iki harf birleşirse (aynı olursa), en uygunu onlara 'misleyn' (denmesi)dir." },
+          sharh: {
+            tr: [
+              "**İdğâmın üç sebebi vardır:** **Temâsül** (iki harfin mahreç ve sıfatta tam aynı olması), **Tecânüs** (mahreçleri aynı, sıfatları farklı), **Tekārüb** (mahreç veya sıfatça birbirine yakın olması). İdğamın faydası, telaffuzu **kolaylaştırmak** ve **hafifletmektir**.",
+              "**Misleyn (İki Benzer):** Mahreçleri ve sıfatları **tamamen aynı** olan iki harftir (ör. **بْ + ب**, **دْ + د**, **مْ + م**).",
+              "**Hükmü:** İdğam **vaciptir** ve daima **tam idğam** olur. Mîm ve nûnda **gunne ile**, diğerlerinde gunnesiz okunur."
+            ]
+          },
+          examples: [
+            { ar: "قَدْ دَخَلُوا", ref: { name: "misleyn — dâl+dâl" }, tr: "\"kad dehalû\" (دْ + د → دّ)" },
+            { ar: "بَلْ لَهُمْ", ref: { name: "misleyn — lâm+lâm" }, tr: "\"bel lehum\"" },
+            { ar: "اضْرِبْ بِعَصَاكَ", ref: { name: "misleyn — bâ+bâ" }, tr: "\"ıdrib bi-asâke\"" }
+          ]
+        },
+        {
+          n: 31,
+          translation: { tr: "Eğer mahreççe yakın olur, sıfatlarda ayrılırlarsa…" },
+          sharh: {
+            tr: [
+              "Nâzım burada **mütekāribeyn**i tarif etmeye başlar: mahreçleri birbirine **yakın**, sıfatları ise **farklı** olan iki harf."
+            ]
+          }
+        },
+        {
+          n: 32,
+          translation: { tr: "…'mütekāribeyn' diye adlandırılırlar; yahut mahreçte birleşip sıfatta ayrılırlarsa," },
+          sharh: {
+            tr: [
+              "**Mütekāribeyn (İki Yakın):** Mahreç ve sıfatça birbirine yakın iki harftir.",
+              "**Tam idğam olarak gelenler:** nûn→lâm (مِنْ لَدُنْهُ değil; **مَنْ لَعَنَ**), nûn→râ (**مِنْ رَبِّكَ**), lâm→râ (**قُلْ رَبِّ**).",
+              "**Eksik idğam olarak gelenler (iki durumda):** nûn→vâv, nûn→yâ (bunlarda gunne kalır: **مَنْ وَلِيٍّ**, **مَنْ يَشَاءُ**).",
+              "Sonra nâzım **mütecâniseyn**e geçer: mahreçte birleşip sıfatta ayrılan iki harf."
+            ]
+          }
+        },
+        {
+          n: 33,
+          translation: { tr: "'mütecâniseyn' (denir). Sonra, her birinin birincisi sâkin olursa 'sagîr' (küçük) diye isimlendir." },
+          sharh: {
+            tr: [
+              "**Mütecâniseyn (İki Cinsdeş):** Mahreçleri **aynı**, sıfatları **farklı** olan iki harftir.",
+              "**Tam idğam örnekleri:** tâ→dâl (**أَثْقَلَتْ دَعَوَا**… → **أَثْقَلَت دّعَوَا**), dâl→tâ (**قَدْ تَبَيَّنَ** → **قَت تَبَيَّنَ**), zel→zâ (**إِذْ ظَلَمُوا**), se→zel (**يَلْهَثْ ذَٰلِكَ**), tâ→tı (**قَالَتْ طَائِفَةٌ**). **Bâ→mîm** gunne ile gelir (**ارْكَبْ مَعَنَا**).",
+              "**Eksik idğam** yalnız bir durumdadır: tı→tâ (**أَحَطْتُ**, **فَرَّطْتُمْ**) — burada tı'nın isti'lâ (kalınlık) sıfatı kalır.",
+              "**Sagîr / Kebîr:** İki harften **birincisi sâkin**, ikincisi harekeli ise idğam **sagîr (küçük)** olur; çünkü yapılan işlem azdır."
+            ]
+          },
+          examples: [
+            { ar: "وَقَالَتْ طَائِفَةٌ", ref: { sura: "Âl-i İmrân", ayah: 72 }, tr: "«Bir topluluk dedi ki…» (تْ + ط → tam idğam)" },
+            { ar: "أَحَطْتُ بِمَا لَمْ تُحِطْ بِهِ", ref: { sura: "en-Neml", ayah: 22 }, tr: "«Ben, senin kuşatamadığını kuşattım.» (طْ + ت → eksik idğam)" }
+          ]
+        },
+        {
+          n: 34,
+          translation: { tr: "Yahut her ikisi de harekeli olursa 'kebîr' (büyük) de; bunu örneklerle iyi kavra." },
+          sharh: {
+            tr: [
+              "Eğer iki harfin **ikisi de harekeli** ise idğam **kebîr (büyük)** olur; çünkü harekeliyi sâkin yapıp sonra idğam etmek gerektiğinden işlem çoktur. **Bu tür, Hafs rivayetinde bulunmaz.**",
+              "**Tam ve eksik idğam:** **Tam idğam**, idğam edilen harfin hem zâtı hem sıfatıyla tamamen kaybolmasıdır (mushafta sonraki harfe şedde konur). **Eksik idğam**, zâtı kaybolup **sıfatının kaldığı** idğamdır (şedde konmaz) — ör. tı'nın tâ'ya idğamında isti'lâ sıfatının kalması."
+            ]
+          }
+        }
+      ],
+      summary: {
+        tr: [
+          "İdğam sebepleri: **temâsül · tecânüs · tekārüb**; faydası telaffuz kolaylığı.",
+          "**Misleyn:** mahreç+sıfat aynı → **vacip, tam idğam**.",
+          "**Mütekāribeyn:** mahreç yakın, sıfat farklı (nûn→lâm/râ; lâm→râ).",
+          "**Mütecâniseyn:** mahreç aynı, sıfat farklı (tâ↔dâl, zel↔zâ, tı↔tâ…).",
+          "İlki sâkin → **sagîr**; ikisi harekeli → **kebîr** (Hafs'ta yok).",
+          "**Tam idğam** (zât+sıfat kaybolur) / **eksik idğam** (sıfat kalır)."
+        ]
+      }
     },
 
     /* ===== 7) MEDDİN KISIMLARI (35–41) ===== */
@@ -651,21 +947,98 @@ window.CONTENT = {
       arTitle: "أَقْسَامُ الْمَدّ",
       title: { tr: "Meddin Kısımları", de: "Die Arten des Madd", en: "The Types of Madd" },
       range: [35, 41],
-      status: "draft",
       overview: {
         tr: "Med (sesi uzatma) iki kısımdır: **Aslî (tabiî) med** — bir sebebe (hemze/sükûn) bağlı değildir, miktarı iki harekedir; ve **fer'î med** — hemze veya sükûn sebebiyle uzar. Med harfleri üçtür (ا، و، ي) ve «نُوحِيهَا» kelimesinde toplanır. Ayrıca **lîn harfleri** (öncesi üstünlü sâkin و ve ي) açıklanır.",
         de: "Madd (Dehnung) ist zweifach: **ursprünglicher (natürlicher) Madd** — ohne Ursache, zwei Ḥaraka lang; und **abgeleiteter Madd** — durch Hamza oder Sukūn verlängert. Die drei Madd-Buchstaben (ا، و، ي) sind im Wort «نُوحِيهَا» versammelt.",
         en: "Madd (prolongation) is of two kinds: **original (natural) madd** — with no cause, two ḥarakāt long; and **derived madd** — lengthened by a hamza or sukūn. The three madd letters (ا، و، ي) are gathered in the word «نُوحِيهَا»."
       },
       beyits: [
-        { n: 35, translation: { tr: "Med, aslî ve fer'î olmak üzere ikidir; birincisine 'tabiî' adını ver." } },
-        { n: 36, translation: { tr: "O, bir sebebe bağlı olmayan meddir; med harfleri de onsuz getirilmez (bulunmaz)." } },
-        { n: 37, translation: { tr: "Bilakis medden sonra hemze veya sükûn dışında herhangi bir harf gelirse, o tabiî med olur." } },
-        { n: 38, translation: { tr: "Diğeri fer'î meddir; hemze veya sükûn gibi bir sebebe bağlıdır." } },
-        { n: 39, translation: { tr: "Onun harfleri üçtür; onları 'وَاي' lafzında bul; onlar 'نُوحِيهَا' kelimesindedir." } },
-        { n: 40, translation: { tr: "Yâ'dan önce kesre, vâv'dan önce ötre şarttır; eliften önce ise fetha gereklidir." } },
-        { n: 41, translation: { tr: "Lîn (harfleri) ondandır: öncesi üstünlü olan sâkin yâ ve vâv'dır." } }
-      ]
+        {
+          n: 35,
+          translation: { tr: "Med, aslî ve fer'î olmak üzere ikidir; birincisine 'tabiî' adını ver." },
+          sharh: {
+            tr: [
+              "**Med:** Lügatte \"artırmak, ziyade\"; ıstılahta, sesi bir **med harfiyle uzatmaktır**. Karşıtı **kasr**: med/lîn harfini ilave uzatma yapmadan (iki hareke) okumaktır.",
+              "Med iki kısımdır: **1) Aslî (tabiî) med** ve **2) Fer'î med**. Nâzım önce tabiî medle başlar."
+            ]
+          }
+        },
+        {
+          n: 36,
+          translation: { tr: "O, bir sebebe bağlı olmayan meddir; med harfleri de onsuz getirilmez (bulunmaz)." },
+          sharh: {
+            tr: [
+              "**Tabiî (aslî) med:** Uzatılması **hemze** veya **sükûn** gibi bir sebebe bağlı olmayan meddir; med harfinin zâtı ancak onunla (o uzatmayla) tamam olur.",
+              "**\"Aslî\" denmesi:** Bütün med çeşitlerinin aslı olduğu için. **\"Tabiî\" denmesi:** Selîm tabiatlı kişinin onu ne eksiltip ne artırdığı, tam **iki hareke** okuduğu için. (Bir hareke, parmağı normal hızda açıp kapama süresidir.)"
+            ]
+          },
+          examples: [
+            { ar: "قَالَ · يَقُولُ · قِيلَ", ref: { name: "tabiî med" }, tr: "elif / vâv / yâ ile iki hareke uzatma" }
+          ]
+        },
+        {
+          n: 37,
+          translation: { tr: "Bilakis medden sonra hemze veya sükûn dışında herhangi bir harf gelirse, o tabiî med olur." },
+          sharh: {
+            tr: [
+              "Ölçü şudur: Med harfinden sonra **hemze de sükûn da yoksa**, herhangi bir harf gelirse, bu **tabiî med**dir (iki hareke).",
+              "Tabiî medin **ekleri (mülhakâtı)** da vardır ve iki hareke okunur: **Bedel/İvaz meddi** (tenvîn-i fethanın vakıfta elifle uzatılması: *عَلِيمًا* → *عَلِيمَا*), **Temkîn meddi** (*حُيِّيتُمْ*, *النَّبِيِّينَ*), **Küçük Sıla meddi** (harekeli iki harf arasındaki hâ zamiri: *إِنَّهُ كَانَ*), ve **حَيٌّ طَاهِرٌ** harflerinin sûre başlarındaki tabiî meddi."
+            ]
+          }
+        },
+        {
+          n: 38,
+          translation: { tr: "Diğeri fer'î meddir; hemze veya sükûn gibi bir sebebe bağlıdır." },
+          sharh: {
+            tr: [
+              "**Fer'î med:** Uzatılması **hemze** veya **sükûn** sebebine bağlı olan meddir. **\"Fer'î\" denmesi:** Aslî medden **türemiş** olduğu içindir. Miktarı, türüne göre 4, 5 veya 6 harekeye çıkar."
+            ]
+          }
+        },
+        {
+          n: 39,
+          translation: { tr: "Onun harfleri üçtür; onları 'وَاي' lafzında bul; onlar 'نُوحِيهَا' kelimesindedir." },
+          sharh: {
+            tr: [
+              "**Med harfleri üçtür:** **Elif (ا) · Vâv (و) · Yâ (ي)**. Bunlar hem **«وَاي»** lafzında, hem de şartlarıyla birlikte **«نُوحِيهَا»** kelimesinde toplanmıştır."
+            ]
+          }
+        },
+        {
+          n: 40,
+          translation: { tr: "Yâ'dan önce kesre, vâv'dan önce ötre şarttır; eliften önce ise fetha gereklidir." },
+          sharh: {
+            tr: [
+              "**Med harflerinin şartı** (öncesindeki harekenin cinsine uygun olması):",
+              "• **Elif**ten önce → **fetha** (üstün): *قَالَ*. • **Vâv**dan önce → **damme** (ötre): *يَقُولُ*. • **Yâ**dan önce → **kesre** (esre): *قِيلَ*.",
+              "**Not:** Elif daima med harfidir; çünkü kendisi sâkindir ve öncesi daima fethalıdır."
+            ]
+          }
+        },
+        {
+          n: 41,
+          translation: { tr: "Lîn (harfleri) ondandır: öncesi üstünlü olan sâkin yâ ve vâv'dır." },
+          sharh: {
+            tr: [
+              "**Lîn harfleri:** Öncesi **fethalı (üstünlü)** olan sâkin **vâv (و)** ve sâkin **yâ (ي)**'dir. Yumuşaklıkla, med harflerine göre daha kısa çıkar.",
+              "**Örnek:** *خَوْف* (havf), *قُرَيْش* (Kureyş), *بَيْت* (beyt)."
+            ]
+          },
+          examples: [
+            { ar: "لِإِيلَافِ قُرَيْشٍ", ref: { sura: "Kureyş", ayah: 1 }, tr: "«Kureyş'in ülfeti için…» (قُرَيْش — lîn: yâ)" },
+            { ar: "الَّذِي أَطْعَمَهُمْ مِنْ جُوعٍ وَآمَنَهُمْ مِنْ خَوْفٍ", ref: { sura: "Kureyş", ayah: 4 }, tr: "«…onları korkudan emin kıldı.» (خَوْف — lîn: vâv)" }
+          ]
+        }
+      ],
+      summary: {
+        tr: [
+          "**Med** = med harfiyle sesi uzatma; **kasr** = uzatmadan (iki hareke) okuma.",
+          "**Med harfleri:** ا (öncesi fetha) · و (öncesi damme) · ي (öncesi kesre) — *وَاي / نُوحِيهَا*.",
+          "**Tabiî med:** sebep yok → **iki hareke**; ekleri: bedel/ivaz, temkîn, küçük sıla…",
+          "**Fer'î med:** sebep **hemze** veya **sükûn** → 4/5/6 hareke.",
+          "**Lîn harfleri:** öncesi fethalı sâkin **و / ي** (*خَوْف*, *قُرَيْش*)."
+        ]
+      }
     },
 
     /* ===== 8) MEDDİN HÜKÜMLERİ (42–47) ===== */
@@ -675,20 +1048,100 @@ window.CONTENT = {
       arTitle: "أَحْكَامُ الْمَدّ",
       title: { tr: "Meddin Hükümleri", de: "Die Regeln des Madd", en: "The Rulings of Madd" },
       range: [42, 47],
-      status: "draft",
       overview: {
         tr: "Meddin üç hükmü: **Vücûb** (vâcib — muttasıl med: tek kelimede medden sonra hemze), **Cevâz** (câiz — munfasıl med: hemze ayrı kelimede; ayrıca ârız-ı sükûn ve bedel medleri) ve **Lüzûm** (lâzım — aslî sükûn medden sonra gelirse). Her biri örneklerle verilir.",
         de: "Drei Regeln des Madd: **Wudschūb** (Pflicht — Madd muttaṣil), **Dschawāz** (Erlaubnis — Madd munfaṣil, ʿāriḍ, badal) und **Luzūm** (Notwendigkeit — Madd lāzim).",
         en: "Three rulings of madd: **wujūb** (obligatory — madd muttaṣil), **jawāz** (permissible — madd munfaṣil, ʿāriḍ, badal), and **luzūm** (necessary — madd lāzim)."
       },
       beyits: [
-        { n: 42, translation: { tr: "Med için süregelen üç hüküm vardır: vücûb, cevâz ve lüzûm." } },
-        { n: 43, translation: { tr: "Vâcib olan: tek kelimede medden sonra hemze gelmesidir; buna 'muttasıl' denir." } },
-        { n: 44, translation: { tr: "Câiz olan med ve kasr: (hemze ile med) ayrı kelimelerde olursa; bu da 'munfasıl'dır." } },
-        { n: 45, translation: { tr: "Bunun benzeri, vakıf sebebiyle ârız sükûn olursa; 'تَعْلَمُونَ', 'نَسْتَعِينُ' gibi." } },
-        { n: 46, translation: { tr: "Yahut hemze medden önce gelirse; bu 'bedel'dir; 'آمَنُوا' ve 'إِيمَاناً' gibi al." } },
-        { n: 47, translation: { tr: "Lâzım olan: vasl ve vakıfta sabit, aslî sükûn medden sonra gelip uzatılırsa (olur)." } }
-      ]
+        {
+          n: 42,
+          translation: { tr: "Med için süregelen üç hüküm vardır: vücûb, cevâz ve lüzûm." },
+          sharh: {
+            tr: [
+              "Fer'î medin **üç hükmü** vardır: **1) Vücûb** (zorunluluk) → **Muttasıl med**. **2) Cevâz** (serbestlik) → **Munfasıl, Ârız ve Bedel** medleri. **3) Lüzûm** (gereklilik) → **Lâzım med**.",
+              "Adları hükümlerinden gelir: muttasılda uzatma **vacip**, munfasıl/ârız/bedelde uzatma-kısaltma **câiz**, lâzımda ise altı hareke **lâzım** (gerekli)dir."
+            ]
+          }
+        },
+        {
+          n: 43,
+          translation: { tr: "Vâcib olan: tek kelimede medden sonra hemze gelmesidir; buna 'muttasıl' denir." },
+          sharh: {
+            tr: [
+              "**Medd-i Muttasıl:** Med harfinden sonra, **aynı kelime içinde** ona bitişik bir **hemze** gelmesidir.",
+              "**\"Muttasıl (bitişik)\" denmesi:** med harfi ile hemzenin aynı kelimede birleşmesindendir. **Hükmü:** Vasılda **4 veya 5 hareke** uzatmak **vaciptir**; üzerinde vakfedilirse ârız sükûn sebebiyle 4-5-6 hareke okunabilir."
+            ]
+          },
+          examples: [
+            { ar: "وَإِلَى السَّمَاءِ كَيْفَ رُفِعَتْ", ref: { sura: "el-Ğâşiye", ayah: 18 }, tr: "«Göğe bakmazlar mı, nasıl yükseltilmiş?» (السَّمَاء — elif + hemze)" },
+            { ar: "جَاءَ · سُوءَ · جِيءَ", ref: { name: "muttasıl" }, tr: "med harfi + bitişik hemze, aynı kelimede" }
+          ]
+        },
+        {
+          n: 44,
+          translation: { tr: "Câiz olan med ve kasr: (hemze ile med) ayrı kelimelerde olursa; bu da 'munfasıl'dır." },
+          sharh: {
+            tr: [
+              "**Medd-i Munfasıl:** Med harfi bir kelimenin **sonunda**, hemze ise sonraki kelimenin **başında** olur (iki ayrı kelime).",
+              "**\"Munfasıl (ayrı)\" denmesi:** med ile hemzenin farklı kelimelerde bulunmasındandır. **Hükmü:** Uzatmak da kısaltmak da **câiz**dir; Şâtıbiyye yolunda genellikle **4 veya 5 hareke** (tavassut) okunur.",
+              "**Not:** «هَا التَّنْبِيه» (*هَا أَنْتُمْ*, *هَٰؤُلَاءِ*) ve «يَا النِّدَاء» (*يَا أَيُّهَا*) yazıda bitişik görünse de hüküm bakımından munfasıldır. **Medd-i Sıla Kübrâ** da munfasıla dâhildir (hâ zamirinden sonra hemze: *مَالَهُ أَخْلَدَهُ* değil, *عِنْدَهُ إِلَّا*)."
+            ]
+          },
+          examples: [
+            { ar: "إِنَّا أَرْسَلْنَا", ref: { sura: "Nûh", ayah: 1 }, tr: "«Biz gönderdik…» (إِنَّا + أَ — elif, sonra hemze)" },
+            { ar: "قُوا أَنْفُسَكُمْ", ref: { sura: "et-Tahrîm", ayah: 6 }, tr: "«Kendinizi koruyun.» (قُوا + أَ — vâv, sonra hemze)" }
+          ]
+        },
+        {
+          n: 45,
+          translation: { tr: "Bunun benzeri, vakıf sebebiyle ârız sükûn olursa; 'تَعْلَمُونَ', 'نَسْتَعِينُ' gibi." },
+          sharh: {
+            tr: [
+              "**Medd-i Ârız li's-Sükûn:** Med harfinden sonra, **vakıf (durma) sebebiyle** geçici (ârız) bir sükûn gelmesidir.",
+              "**Hükmü:** **2, 4 veya 6 hareke** uzatmak câizdir. **\"Ârız\" denmesi:** sükûn, durma sebebiyle sonradan ortaya çıktığı içindir.",
+              "**Medd-i Lîn li's-Sükûn:** Lîn harfinden (öncesi fethalı sâkin و/ي) sonra vakıf sebebiyle sükûn gelmesidir (*خَوْف*, *الْبَيْت*); ârız gibi 2/4/6 hareke okunur. Aynı okuyuşta ârız ile lîn eşit ölçüde tutulur."
+            ]
+          },
+          examples: [
+            { ar: "يَعْلَمُونَ · نَسْتَعِينُ · الْعَالَمِينَ", ref: { name: "ârız li's-sükûn" }, tr: "vakıfta med harfi + geçici sükûn → 2/4/6 hareke" }
+          ]
+        },
+        {
+          n: 46,
+          translation: { tr: "Yahut hemze medden önce gelirse; bu 'bedel'dir; 'آمَنُوا' ve 'إِيمَاناً' gibi al." },
+          sharh: {
+            tr: [
+              "**Medd-i Bedel:** İki hemzenin peş peşe gelip (birincisi harekeli, ikincisi sâkin), ikinci sâkin hemzenin, öncesindeki harekeye uygun bir **med harfine dönüşmesidir**.",
+              "• *أَأْمَنُوا* → **آمَنُوا** (elife), • *إِئْمَانًا* → **إِيمَانًا** (yâ'ya), • *أُؤْتُوا* → **أُوتُوا** (vâv'a).",
+              "**\"Bedel\" denmesi:** med harfinin, hemzeden **bedel** (dönüşmüş) olmasındandır. **Hükmü:** Uzatmak câizdir; ancak uygulamada **iki hareke** (tabiî med miktarı) okunur. (Hemzeden dönüşmemiş benzerlerine *şibh-i bedel* denir: *الْقُرْآن*, *مَآب*.)"
+            ]
+          },
+          examples: [
+            { ar: "إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ", ref: { sura: "el-Beyyine", ayah: 7 }, tr: "«İman edip salih amel işleyenler…» (آمَنُوا — aslı أَأْمَنُوا)" }
+          ]
+        },
+        {
+          n: 47,
+          translation: { tr: "Lâzım olan: vasl ve vakıfta sabit, aslî sükûn medden sonra gelip uzatılırsa (olur)." },
+          sharh: {
+            tr: [
+              "**Medd-i Lâzım:** Med harfinden sonra **aslî (sabit) bir sükûn** gelmesidir; bu sükûn hem vasılda hem vakıfta değişmez.",
+              "**\"Lâzım\" denmesi:** Sükûnun her hâlde sabit kalması, yahut **altı hareke** uzatmanın gerekli (lâzım) olması sebebiyledir. Ayrıntılı kısımları bir sonraki bölümdedir."
+            ]
+          }
+        }
+      ],
+      summary: {
+        tr: [
+          "**Muttasıl** (tek kelimede med+hemze) → **vacip**, 4-5 hareke.",
+          "**Munfasıl** (ayrı kelimelerde med+hemze) → **câiz**, 4-5 hareke.",
+          "**Ârız li's-sükûn** (vakıfta geçici sükûn) → **câiz**, 2-4-6 hareke.",
+          "**Lîn li's-sükûn** (vakıfta و/ي) → 2-4-6 hareke; ârızla eşit tutulur.",
+          "**Bedel** (hemze → med harfi: *آمَنُوا*) → uygulamada **2 hareke**.",
+          "**Lâzım** (aslî sabit sükûn) → **6 hareke** (sonraki bölüm)."
+        ]
+      }
     },
 
     /* ===== 9) MEDD-İ LÂZIMIN KISIMLARI (48–57) ===== */
@@ -698,24 +1151,134 @@ window.CONTENT = {
       arTitle: "أَقْسَامُ الْمَدِّ اللَّازِم",
       title: { tr: "Medd-i Lâzımın Kısımları", de: "Die Arten des Madd Lāzim", en: "The Types of Madd Lāzim" },
       range: [48, 57],
-      status: "draft",
       overview: {
         tr: "Medd-i lâzım dörttür: **Kelimî müsakkal / muhaffef** ve **harfî müsakkal / muhaffef**. Kelimîde med harfinden sonra kelimede aslî sükûn bulunur; harfîde ise sûre başlarındaki (mukattaa) harflerde med ortada olur. Harfî lâzım, sekiz harfte toplanır: «كَمْ عَسَلْ نَقَصْ»; tabiî uzayanlar ise «حَيٌّ طَاهِرٌ» lafzındadır. On dört mukattaa harfi «صِلْهُ سُحَيْراً مَنْ قَطَعْكَ» ile toplanır.",
         de: "Madd Lāzim ist vierfach: **kalimī** (schwer/leicht) und **ḥarfī** (schwer/leicht). Die acht ḥarfī-Buchstaben sind in «كَمْ عَسَلْ نَقَصْ» versammelt; die natürlich gedehnten in «حَيٌّ طَاهِرٌ». Die vierzehn Anfangsbuchstaben in «صِلْهُ سُحَيْراً مَنْ قَطَعْكَ».",
         en: "Madd lāzim is fourfold: **kalimī** (heavy/light) and **ḥarfī** (heavy/light). The eight ḥarfī letters are gathered in «كَمْ عَسَلْ نَقَصْ»; the naturally-lengthened in «حَيٌّ طَاهِرٌ». The fourteen opening letters in «صِلْهُ سُحَيْراً مَنْ قَطَعْكَ»."
       },
       beyits: [
-        { n: 48, translation: { tr: "Lâzım medin kısımları onlarca dörttür; bunlar kelimî ve harfî(dir)." } },
-        { n: 49, translation: { tr: "Her ikisi de muhaffef ve müsakkal (olur); işte bunlar dört (kısım olarak) ayrıntılanır." } },
-        { n: 50, translation: { tr: "Bir kelimede sükûn, med harfiyle bir araya gelirse, o 'kelimî' olur." } },
-        { n: 51, translation: { tr: "Yahut üç harfli (isimlerde) bulunur, medd de ortasında olursa, 'harfî' olarak belirir." } },
-        { n: 52, translation: { tr: "İdğam edilirse her ikisi de müsakkaldir; idğam edilmezse hepsi muhaffeftir." } },
-        { n: 53, translation: { tr: "Lâzım harfî, sûre başlarında bulunur; sekiz harfte toplanmıştır." } },
-        { n: 54, translation: { tr: "Onları 'كَمْ عَسَلْ نَقَصْ' harfleri toplar; 'ayn' iki vecihlidir, uzatma (tûl) daha uygundur." } },
-        { n: 55, translation: { tr: "Üç harfli olmayan (ve içinde elif bulunmayan harfin) meddi, alışılmış tabiî meddir." } },
-        { n: 56, translation: { tr: "Bu da yine sûre başlarında olur; 'حَيٌّ طَاهِرٌ' lafzında toplanmıştır." } },
-        { n: 57, translation: { tr: "On dört (mukattaa) harfini 'صِلْهُ سُحَيْراً مَنْ قَطَعْكَ' toplar; bu (görüş) meşhurdur." } }
-      ]
+        {
+          n: 48,
+          translation: { tr: "Lâzım medin kısımları onlarca dörttür; bunlar kelimî ve harfî(dir)." },
+          sharh: {
+            tr: [
+              "Medd-i lâzım, med harfinden sonra **aslî sükûnun** bulunduğu yere göre iki ana türdür: **1) Kelimî** (sükûn bir **kelimede**) ve **2) Harfî** (sükûn, sûre başı **mukattaa harfinde**)."
+            ]
+          }
+        },
+        {
+          n: 49,
+          translation: { tr: "Her ikisi de muhaffef ve müsakkal (olur); işte bunlar dört (kısım olarak) ayrıntılanır." },
+          sharh: {
+            tr: [
+              "Kelimî ve harfînin her biri, sonraki harfe **idğam edilip edilmemesine** göre ikiye ayrılır: **müsakkal (ağır — idğamlı)** ve **muhaffef (hafif — idğamsız)**. Böylece toplam **dört kısım** oluşur.",
+              "Hepsinin ortak hükmü: **altı hareke** uzatma."
+            ]
+          }
+        },
+        {
+          n: 50,
+          translation: { tr: "Bir kelimede sükûn, med harfiyle bir araya gelirse, o 'kelimî' olur." },
+          sharh: {
+            tr: [
+              "**Medd-i Lâzım Kelimî:** Med harfinden sonra, harf sayısı **üçten az olmayan bir kelimede** aslî sükûn gelmesidir.",
+              "**Müsakkal (ağır):** Sükûnlu harf sonrakine **idğam edilir** (şeddelenir) — *الضَّالِّينَ* (elif + şeddeli lâm), *الْحَاقَّة*, *أَتُحَاجُّونِّي*. **Muhaffef (hafif):** İdğam **edilmez**; Kur'ân'da yalnız bir kelimede: *آلْآنَ* (Yûnus 51, 91) — eliften sonra sâkin lâm gelir, idğam olmaz."
+            ]
+          },
+          examples: [
+            { ar: "وَلَا الضَّالِّينَ", ref: { sura: "el-Fâtiha", ayah: 7 }, tr: "«…ne de sapıtanların (yoluna).» (kelimî müsakkal: الضَّالّ)" },
+            { ar: "آلْآنَ وَقَدْ عَصَيْتَ", ref: { sura: "Yûnus", ayah: 91 }, tr: "«Şimdi mi? Oysa daha önce isyan etmiştin.» (kelimî muhaffef: آلْآن)" }
+          ]
+        },
+        {
+          n: 51,
+          translation: { tr: "Yahut üç harfli (isimlerde) bulunur, medd de ortasında olursa, 'harfî' olarak belirir." },
+          sharh: {
+            tr: [
+              "**Medd-i Lâzım Harfî:** Sûre başlarındaki **mukattaa harflerinden**, okunuşu **üç harfli** olup **ortasında med harfi**, sonrasında aslî sükûn bulunan harfte olur (ör. **لَام** = lâm–elif–mîm, ortasında elif).",
+              "**Not:** Bu harfler yazıldıkları gibi değil, **isimleriyle** okunur (ل → \"lâm\", م → \"mîm\", س → \"sîn\")."
+            ]
+          }
+        },
+        {
+          n: 52,
+          translation: { tr: "İdğam edilirse her ikisi de müsakkaldir; idğam edilmezse hepsi muhaffeftir." },
+          sharh: {
+            tr: [
+              "**Harfî müsakkal:** Med harfinden sonraki sâkin, sonrakine **idğam edilirse** — *الٓمّ* (lâm'ın sonundaki mîm, sonraki mîme idğam olur: \"lâm-mîm\"), *طٰسٓمّ* (sîn'in nûnu mîme idğam).",
+              "**Harfî muhaffef:** İdğam **edilmezse** — *الٓمٓ* içindeki \"mîm\" (Âl-i İmrân'da sonuna vasl yok), *عٓسٓقٓ*'daki \"sîn\" ve \"ayn\", *قٓ*, *نٓ* gibi. Bunlar altı hareke uzatılır fakat sonraki harfe katılmaz."
+            ]
+          },
+          examples: [
+            { ar: "الٓمّ", ref: { sura: "el-Bakara", ayah: 1 }, tr: "\"elif–lâââm–mîîm\" (lâm: harfî müsakkal, mîm→mîm idğam)" },
+            { ar: "الٓمٓصٓ", ref: { sura: "el-A'râf", ayah: 1 }, tr: "\"elif–lâââm–mîîm–sâââd\" (sâd: harfî muhaffef)" }
+          ]
+        },
+        {
+          n: 53,
+          translation: { tr: "Lâzım harfî, sûre başlarında bulunur; sekiz harfte toplanmıştır." },
+          sharh: {
+            tr: [
+              "Medd-i lâzım (harfî) ile uzatılan harfler, sûre başlarındaki mukattaalardan **sekiz** tanesidir; çünkü bunların isimleri **üç harflidir** ve ortalarında med harfi vardır."
+            ]
+          }
+        },
+        {
+          n: 54,
+          translation: { tr: "Onları 'كَمْ عَسَلْ نَقَصْ' harfleri toplar; 'ayn' iki vecihlidir, uzatma (tûl) daha uygundur." },
+          sharh: {
+            tr: [
+              "Lâzım med ile uzatılan sekiz harf **«كَمْ عَسَلْ نَقَصْ»** ifadesinde toplanmıştır: **ك م ع س ل ن ق ص**. Bunlar altı hareke uzatılır.",
+              "**İstisna — «ayn» (ع):** Meryem ve Şûrâ sûrelerinin başındaki (كهيعص / حمعسق) \"ayn\"ın ortasında med değil **lîn** harfi (yâ) vardır; bu yüzden **dört veya altı hareke** (iki vecih) câizdir; **altı hareke (tûl)** tercih edilir."
+            ]
+          }
+        },
+        {
+          n: 55,
+          translation: { tr: "Üç harfli olmayan (ve içinde elif bulunmayan harfin) meddi, alışılmış tabiî meddir." },
+          sharh: {
+            tr: [
+              "Mukattaa harflerinden **iki harfli** olanlar (isminde elif bulunan: *حا، يا، طا، ها، را*) med harfiyle bitmediğinden **tabiî med** (iki hareke) ile okunur.",
+              "**Elif (ا)** ise hiç uzatılmaz; çünkü isminde med harfi yoktur (*الٓمٓ*'deki elif gibi)."
+            ]
+          }
+        },
+        {
+          n: 56,
+          translation: { tr: "Bu da yine sûre başlarında olur; 'حَيٌّ طَاهِرٌ' lafzında toplanmıştır." },
+          sharh: {
+            tr: [
+              "Sûre başlarında **tabiî med** (iki hareke) ile okunan harfler beştir; **«حَيٌّ طَاهِرٌ»** lafzında toplanmıştır: **ح ي ط ه ر** (hâ, yâ, tâ, hâ, râ).",
+              "Bunların isimleri iki harflidir ve ikinci harf med harfidir (*حا، يا، طا، ها، را*), sonrasında sükûn yoktur; bu yüzden lâzım değil tabiî meddir."
+            ]
+          },
+          examples: [
+            { ar: "طٰهٰ", ref: { sura: "Tâhâ", ayah: 1 }, tr: "\"tâ–hâ\" (ikisi de حي طهر'den → tabiî med)" },
+            { ar: "يٰسٓ", ref: { sura: "Yâsîn", ayah: 1 }, tr: "\"yâ (tabiî) – sîn (lâzım)\"" }
+          ]
+        },
+        {
+          n: 57,
+          translation: { tr: "On dört (mukattaa) harfini 'صِلْهُ سُحَيْراً مَنْ قَطَعْكَ' toplar; bu (görüş) meşhurdur." },
+          sharh: {
+            tr: [
+              "Sûre başlarında geçen **bütün mukattaa harfleri on dörttür** ve meşhur olan **«صِلْهُ سُحَيْرًا مَنْ قَطَعْكَ»** ifadesinde toplanmıştır: **ص ل ه س ح ي ر م ن ق ط ع ك** + (elif).",
+              "Özet: bunlardan **elif** hiç uzatılmaz; **حي طهر** tabiî (2 hareke); geri kalan **كم عسل نقص** lâzım (6 hareke); **ayn** ise 4 veya 6 hareke."
+            ]
+          }
+        }
+      ],
+      summary: {
+        tr: [
+          "**Kelimî:** med + sükûn bir **kelimede** (üç+ harf). **Harfî:** mukattaa harfinde.",
+          "**Müsakkal** (idğamlı) / **Muhaffef** (idğamsız) → toplam **4 kısım**, hepsi **6 hareke**.",
+          "Kelimî muhaffefe tek örnek: *آلْآنَ* (Yûnus).",
+          "Harfî lâzım (6 hareke): **كم عسل نقص** (8 harf).",
+          "Tabiî (2 hareke): **حي طهر** (5 harf). **Elif** uzatılmaz.",
+          "**Ayn** (كهيعص / حمعسق): 4 veya 6 hareke — tûl tercih.",
+          "Bütün mukattaa harfleri 14: **صله سحيرا من قطعك**."
+        ]
+      }
     },
 
     /* ===== 10) HÂTİME (58–61) ===== */
