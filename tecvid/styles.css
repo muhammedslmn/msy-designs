@@ -188,6 +188,30 @@ section.block { padding-block: clamp(2.4rem, 6vw, 4.5rem); }
 }
 .icon-btn:hover { background: var(--surface); }
 
+/* custom theme icons */
+.seg.theme button { color: var(--muted); }
+.seg.theme button.on { color: var(--accent); }
+.th-ic { display: block; }
+
+/* ---------- Örnek tabloları ---------- */
+.tbl-intro { color: var(--ink-soft); font-size: .95rem; margin: 0 0 .8rem; }
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); -webkit-overflow-scrolling: touch; }
+.ex-table { width: 100%; border-collapse: collapse; font-size: .95rem; background: var(--surface); }
+.ex-table thead th {
+  text-align: start; font-size: .74rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft); padding: .6rem .85rem; white-space: nowrap; border-bottom: 1px solid var(--line);
+}
+.ex-table thead th:not(:first-child) { border-inline-start: 1px solid var(--line-soft); }
+.ex-table tbody td { padding: .7rem .85rem; border-bottom: 1px solid var(--line-soft); color: var(--ink-soft); vertical-align: middle; }
+.ex-table tbody td:not(:first-child) { border-inline-start: 1px solid var(--line-soft); }
+.ex-table tbody tr:last-child td { border-bottom: 0; }
+.ex-table tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55%, transparent); }
+.ex-table td.c-ar {
+  font-family: var(--font-ar); direction: rtl; text-align: right; font-size: 1.5rem; line-height: 1.9; color: var(--ink);
+  white-space: nowrap;
+}
+.ex-table td.c-ar .c-sub { display: block; font-family: var(--font-body); direction: ltr; text-align: start; font-size: .78rem; color: var(--muted); white-space: normal; margin-top: .1rem; }
+
 /* Mobile menu toggle */
 .menu-toggle { display: none; }
 

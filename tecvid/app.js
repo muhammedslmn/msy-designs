@@ -33,6 +33,40 @@
   function el(html) { var d = document.createElement("div"); d.innerHTML = html.trim(); return d.firstChild; }
   function sectionById(id) { for (var i=0;i<CONTENT.sections.length;i++) if (CONTENT.sections[i].id===id) return CONTENT.sections[i]; return null; }
 
+  /* ---------- custom theme icons (SVG, emoji yerine) ---------- */
+  function themeIcon(code) {
+    var s = '<svg class="th-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+    if (code === "light") {
+      return s + '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.4 19.6l1.6-1.6M18 6l1.6-1.6"/></svg>';
+    }
+    if (code === "dark") {
+      return s + '<path d="M20.5 14.2A8.2 8.2 0 1 1 9.8 3.5a6.4 6.4 0 0 0 10.7 10.7z"/></svg>';
+    }
+    // sepia / okuma — kitap
+    return s + '<path d="M12 6.2C10.5 5 8.3 4.6 5.8 4.6c-.7 0-1.3.05-1.8.13v13.2c.6-.09 1.2-.13 1.9-.13 2.4 0 4.5.4 6.1 1.6 1.6-1.2 3.7-1.6 6.1-1.6.7 0 1.3.04 1.9.13V4.73c-.5-.08-1.1-.13-1.8-.13-2.5 0-4.7.4-6.2 1.6z"/><path d="M12 6.2v12"/></svg>';
+  }
+
+  /* ---------- tablo oluşturucu (misaller için) ---------- */
+  // tbl: { head: {tr:[],de:[],en:[]}, rows: [ [cell, cell, ...], ... ] }
+  // cell: string  -> Arapça (RTL/Amiri)   |   {tr,de,en} -> metin   |   {ar, sub:{tr,de,en}} -> Arapça + altında küçük not
+  function tableCell(c) {
+    if (c == null) return '<td></td>';
+    if (typeof c === "string") return '<td class="c-ar">'+c+'</td>';
+    if (c.ar != null) {
+      var sub = c.sub ? pick(c.sub) : null;
+      return '<td class="c-ar">'+c.ar+(sub?'<span class="c-sub">'+esc(sub)+'</span>':'')+'</td>';
+    }
+    return '<td>'+fmt(pick(c) || "")+'</td>';
+  }
+  function renderTable(tbl) {
+    var head = tbl.head ? (pick(tbl.head) || []) : [];
+    var thead = head.length ? '<thead><tr>'+head.map(function(h){return '<th>'+esc(h)+'</th>';}).join("")+'</tr></thead>' : '';
+    var body = '<tbody>'+(tbl.rows||[]).map(function(row){
+      return '<tr>'+row.map(tableCell).join("")+'</tr>';
+    }).join("")+'</tbody>';
+    return '<div class="tbl-wrap"><table class="ex-table">'+thead+body+'</table></div>';
+  }
+
   /* ---------- theme / lang ---------- */
   function applyTheme() {
     document.documentElement.setAttribute("data-theme", state.theme);
@@ -84,7 +118,7 @@
 
     var themeSeg = '<div class="seg theme" role="group" aria-label="'+t("theme")+'">' +
       THEMES.map(function (th) {
-        return '<button data-theme="'+th.code+'" class="'+(state.theme===th.code?"on":"")+'" title="'+pick(th.label)+'"><span class="ti">'+th.icon+'</span></button>';
+        return '<button data-theme="'+th.code+'" class="'+(state.theme===th.code?"on":"")+'" title="'+pick(th.label)+'" aria-label="'+pick(th.label)+'">'+themeIcon(th.code)+'</button>';
       }).join("") + "</div>";
 
     return '' +
@@ -252,6 +286,13 @@
       fields += field("lbl_sharh", '<div class="sharh">'+paras.map(function(p){return "<p>"+fmt(p)+"</p>";}).join("")+'</div>');
     }
 
+    // Misal tabloları
+    if (b.tables && b.tables.length) {
+      b.tables.forEach(function (tbl) {
+        var label = tbl.label ? pick(tbl.label) : t("lbl_examples");
+        fields += fieldRaw(label, (tbl.intro ? '<p class="tbl-intro">'+fmt(pick(tbl.intro)||"")+'</p>' : '') + renderTable(tbl));
+      });
+    }
     if (b.examples && b.examples.length)
       fields += field("lbl_examples", b.examples.map(function(e){ return quoteBox(e, "ayah"); }).join(""));
     if (b.verses && b.verses.length)
@@ -270,6 +311,9 @@
 
   function field(labelKey, inner) {
     return '<div class="field"><div class="field-label">'+t(labelKey)+'</div>'+inner+'</div>';
+  }
+  function fieldRaw(labelText, inner) {
+    return '<div class="field"><div class="field-label">'+esc(labelText)+'</div>'+inner+'</div>';
   }
 
   function quoteBox(q, kind) {
