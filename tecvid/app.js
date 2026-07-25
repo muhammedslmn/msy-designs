@@ -8,7 +8,7 @@
   "use strict";
 
   var VERSES = window.VERSES, CONTENT = window.CONTENT, I18N = window.I18N,
-      LANGS = window.LANGS, THEMES = window.THEMES;
+      LANGS = window.LANGS, THEMES = window.THEMES, QUIZ = window.QUIZ || {};
 
   function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
@@ -212,7 +212,8 @@
       '<div class="f-orn">'+star("f-star")+'</div>' +
       '<div class="f-bism">﷽</div>' +
       '<div class="f-ayah">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</div>' +
-      '<div class="f-ayah-tr">'+t("ayah_tr")+' <span class="f-ayah-ref">'+t("ayah_ref")+'</span></div>' +
+      '<div class="f-ayah-tr">'+t("ayah_tr")+'</div>' +
+      '<div class="f-ayah-ref">'+t("ayah_ref")+'</div>' +
       '<div class="f-sep"></div>' +
       '<div class="f-note">'+t("footer_note")+'</div>' +
       '<div class="f-fine">'+CONTENT.meta.workTitleAr+' · '+t("footer_rights")+'</div>' +
@@ -237,7 +238,6 @@
       '<div class="stat"><b>61</b><span>'+t("stat_beyit")+'</span></div>' +
       '<div class="stat"><b>10</b><span>'+t("stat_bolum")+'</span></div>' +
       '<div class="stat"><b>3</b><span>'+t("stat_dil")+'</span></div>' +
-      '<div class="stat"><b>'+t("stat_kaynak_val")+'</b><span>'+t("stat_kaynak")+'</span></div>' +
     '</div>';
 
     var portals = '<div class="portals">' +
@@ -354,10 +354,10 @@
       var count = (s.range[1]-s.range[0]+1);
       return '<a class="card fade-in" data-nav="section:'+s.id+'" role="link" tabindex="0">' +
         '<div class="card-top"><div class="card-num">'+pad2(s.num)+'</div>' +
-        '<span class="chip done">✓ '+t("chip_done")+'</span></div>' +
+        '<span class="card-star">'+star()+'</span></div>' +
         '<div class="card-ar">'+s.arTitle+'</div>' +
         '<h3>'+pick(s.title)+'</h3>' +
-        '<div class="card-range">'+t("beyit")+' '+s.range[0]+'–'+s.range[1]+' · '+count+' '+t("beyits")+
+        '<div class="card-range">'+t("beyit")+' '+s.range[0]+'–'+s.range[1]+' · '+count+' '+(count===1?t("beyits_one"):t("beyits"))+
           '<span class="card-go">→</span></div>' +
       '</a>';
     }).join("");
@@ -403,6 +403,7 @@
     '</div>';
 
     var progress = Math.round(s.num / CONTENT.sections.length * 100);
+    var examHtml = examPanel(idx);
 
     return '<section class="block wrap reader">' +
       '<div class="reader-top section-top">' +
@@ -411,7 +412,7 @@
         '<div class="reader-meta">'+t("section")+' '+s.num+' '+t("of")+' '+CONTENT.sections.length+' · '+t("beyit")+' '+s.range[0]+'–'+s.range[1]+'</div>' +
         '<div class="sec-progress"><span style="width:'+progress+'%"></span></div>' +
       '</div>' +
-      overviewHtml + beyitsHtml + notesHtml + summaryHtml + secNav +
+      overviewHtml + beyitsHtml + notesHtml + summaryHtml + examHtml + secNav +
     '</section>';
   }
 
@@ -454,6 +455,76 @@
       verseHtml +
       (fields ? '<div class="beyit-body">'+fields+'</div>' : '') +
     '</article>';
+  }
+
+  /* ---------- Prüfungssimulation (kümülatif sınav) ---------- */
+  function examPanel(idx) {
+    var groups = [], total = 0, qi = 0;
+    for (var i = 0; i <= idx; i++) {
+      var sec = CONTENT.sections[i];
+      var qs = QUIZ[sec.id];
+      if (!qs || !qs.length) continue;
+      var items = qs.map(function (q) {
+        var opts = q.opts.map(function (o, oi) {
+          return '<button class="eq-opt" data-i="'+oi+'"><span class="eq-mark"></span>' +
+                 '<span class="eq-otext">'+fmt(pick(o))+'</span></button>';
+        }).join("");
+        qi++;
+        return '<div class="eq" data-correct="'+q.correct+'" data-answered="0">' +
+          '<div class="eq-q"><span class="eq-qn">'+qi+'</span><span class="eq-qt">'+fmt(pick(q.q))+'</span></div>' +
+          '<div class="eq-opts">'+opts+'</div>' +
+          '<div class="eq-why" hidden><b>'+t("exam_why")+':</b> '+fmt(pick(q.why))+'</div>' +
+        '</div>';
+      }).join("");
+      total += qs.length;
+      groups.push('<div class="exam-group"><div class="exam-glabel">'+t("exam_section_lbl")+' '+sec.num+' · '+pick(sec.title)+'</div>'+items+'</div>');
+    }
+    if (!total) return "";
+    var scope = t("exam_scope") + (idx + 1) + ' · ' + total + ' ' + t("exam_qcount");
+    return '<section class="exam" id="exam">' +
+      '<div class="exam-intro">' +
+        '<div class="exam-orn">'+star()+'</div>' +
+        '<h3>'+t("exam_title")+'</h3>' +
+        '<p class="exam-lead">'+t("exam_lead")+'</p>' +
+        '<div class="exam-scope">'+scope+'</div>' +
+        '<button class="btn btn-primary exam-start">'+t("exam_start")+' →</button>' +
+      '</div>' +
+      '<div class="exam-body">' +
+        '<div class="exam-scorebar"><div class="exam-scorenum"><span class="exam-score">0 / '+total+'</span><span class="exam-scorelbl">'+t("exam_correct")+'</span></div>' +
+          '<div class="exam-prog"><span></span></div></div>' +
+        groups.join("") +
+        '<div class="exam-result" hidden></div>' +
+        '<button class="btn btn-ghost exam-reset">'+t("exam_restart")+'</button>' +
+      '</div>' +
+    '</section>';
+  }
+  function updateExamScore(examEl) {
+    var qs = examEl.querySelectorAll(".eq");
+    var total = qs.length, answered = 0, ok = 0;
+    Array.prototype.forEach.call(qs, function (q) {
+      if (q.getAttribute("data-answered") === "1") answered++;
+      if (q.classList.contains("q-ok")) ok++;
+    });
+    var sc = examEl.querySelector(".exam-score"); if (sc) sc.textContent = ok + " / " + total;
+    var prog = examEl.querySelector(".exam-prog span"); if (prog) prog.style.width = (total ? (answered/total*100) : 0) + "%";
+    var res = examEl.querySelector(".exam-result");
+    if (res) {
+      if (answered === total && total) {
+        var pct = ok/total;
+        var msg = pct === 1 ? t("exam_result_perfect") : (pct >= 0.6 ? t("exam_result_good") : t("exam_result_more"));
+        res.innerHTML = '<b>'+ok+' / '+total+'</b> — ' + esc(msg);
+        res.hidden = false;
+      } else { res.hidden = true; }
+    }
+  }
+  function resetExam(examEl) {
+    Array.prototype.forEach.call(examEl.querySelectorAll(".eq"), function (q) {
+      q.setAttribute("data-answered", "0"); q.classList.remove("q-ok");
+      Array.prototype.forEach.call(q.querySelectorAll(".eq-opt"), function (o) { o.classList.remove("locked","correct","wrong"); });
+      var why = q.querySelector(".eq-why"); if (why) why.hidden = true;
+    });
+    updateExamScore(examEl);
+    var body = examEl.querySelector(".exam-body"); if (body) { try { body.scrollIntoView({ block:"start" }); } catch (e) {} }
   }
 
   function field(labelKey, inner) {
@@ -554,6 +625,35 @@
       mnav.addEventListener("click", function (e) {
         if (e.target === mnav || e.target.getAttribute("data-close")) mnav.classList.remove("open");
       });
+    }
+    // Sınav (Prüfungssimulation)
+    var examEl = document.getElementById("exam");
+    if (examEl) {
+      var startBtn = examEl.querySelector(".exam-start");
+      if (startBtn) startBtn.addEventListener("click", function () {
+        examEl.classList.add("started");
+        var body = examEl.querySelector(".exam-body");
+        if (body) { try { body.scrollIntoView({ block:"start" }); } catch (e) {} }
+      });
+      Array.prototype.forEach.call(examEl.querySelectorAll(".eq-opt"), function (opt) {
+        opt.addEventListener("click", function () {
+          var q = opt.closest(".eq");
+          if (!q || q.getAttribute("data-answered") === "1") return;
+          q.setAttribute("data-answered", "1");
+          var correct = parseInt(q.getAttribute("data-correct"), 10);
+          var chosen = parseInt(opt.getAttribute("data-i"), 10);
+          Array.prototype.forEach.call(q.querySelectorAll(".eq-opt"), function (o) {
+            o.classList.add("locked");
+            if (parseInt(o.getAttribute("data-i"), 10) === correct) o.classList.add("correct");
+          });
+          if (chosen !== correct) opt.classList.add("wrong");
+          if (chosen === correct) q.classList.add("q-ok");
+          var why = q.querySelector(".eq-why"); if (why) why.hidden = false;
+          updateExamScore(examEl);
+        });
+      });
+      var resetBtn = examEl.querySelector(".exam-reset");
+      if (resetBtn) resetBtn.addEventListener("click", function () { resetExam(examEl); });
     }
   }
 

@@ -1,4 +1,4 @@
-/* Tuhfetü'l-Etfâl — İçerik Verisi (otomatik üretildi, v3).
+/* Tuhfetü'l-Etfâl — İçerik Verisi (otomatik üretildi, v4).
    Kaynağa tam sadık; her alan üç dilde (tr/de/en) tamdır. */
 window.CONTENT = {
   "meta": {
@@ -31,7 +31,8 @@ window.CONTENT = {
       "body": {
         "tr": [
           "**Bu ilim neden şereflidir?** Her ilmin değeri, konusunun değerinden gelir. Tecvid ilminin konusu doğrudan **Allah'ın kelâmı (Kur'ân)** olduğundan, bunun üstünde bir şeref yoktur.",
-          "**Tecvid ne demektir?** Kelime olarak \"bir şeyi güzelleştirmek, hakkını vererek yapmak\" demektir. Terim (ıstılah) olarak: **her harfi kendi mahrecinden (çıkış yerinden) ve kendine mahsus sıfatlarıyla (özellikleriyle) okumaktır.** Bunun faydası üç şeydir: (1) harflerin doğru telaffuzu korunur, (2) okuma hataları önlenir, (3) Kur'ân, Peygamber'in (ﷺ) okuduğu şekilde okunmuş olur.",
+          "**Tecvid — Lügat (sözlük) anlamı:** \"bir şeyi güzelleştirmek, hakkını vererek yapmak\" demektir.",
+          "**Istılah (terim) anlamı:** **her harfi kendi mahrecinden (çıkış yerinden) ve kendine mahsus sıfatlarıyla (özellikleriyle) okumaktır.** Bunun faydası üç şeydir: (1) harflerin doğru telaffuzu korunur, (2) okuma hataları önlenir, (3) Kur'ân, Peygamber'in (ﷺ) okuduğu şekilde okunmuş olur.",
           "**İlmin kimliği (kısa künye):** • **Nispeti (hangi ilme bağlı):** şer'î bir ilimdir, hükümleri şeriattan gelir. • **Vâzıı (uygulama yönünden koyan):** hükümler Rasûlullah'tan (ﷺ), ondan Cebrâil'den (as), ondan Levh-i Mahfûz'dan, ondan Allah'tan alınmıştır; sonra sahabe, tâbiîn ve kıraat imamları eliyle nesilden nesile aktarılmıştır. (Kaidelerini bir ilim olarak ilk tedvin eden hakkında ihtilaf vardır: Halil b. Ahmed, Ebü'l-Esved ed-Düelî veya Hafs b. Ömer ed-Dûrî olduğu söylenir.) • **Kaynağı (istimdâdı):** Peygamber'in (ﷺ) fiilî okuyuşudur; kesintisiz bir senetle O'na ulaşır.",
           "**Hükmü (çok önemli fark):** Bu ilmi *nazarî olarak bilmek* **farz-ı kifâye**dir (bazı Müslümanların bilmesi yeterlidir). Fakat *onunla amel etmek*, yani Kur'ân'ı bu kaidelere göre okumak, okuyabilen her mükellef için **farz-ı ayndır** (herkese ayrı ayrı farzdır). Bu farziyet **kitap, sünnet ve icmâ** ile sabittir.",
           "**Kitaptan delil:** *\"…ve Kur'ân'ı tertîl ile (tane tane, ağır ağır) oku.\"* (Müzzemmil 4). Beyzâvî bunu \"onu güzelce, tecvid ile oku\" diye açıklamıştır. Hz. Ali'den (r.a.) nakledilir: *\"Tertîl; harfleri güzel çıkarmak (mahreçlere riayet) ve vakıfları (durak yerlerini) bilmektir.\"*",
@@ -39,7 +40,8 @@ window.CONTENT = {
         ],
         "de": [
           "**Warum ist diese Wissenschaft edel?** Der Wert jeder Wissenschaft folgt aus dem Wert ihres Gegenstands. Da der Gegenstand des Tadschwīd unmittelbar das **Wort Allahs (der Qurʾān)** ist, gibt es keine höhere Ehre.",
-          "**Was bedeutet Tadschwīd?** Wörtlich „etwas schön machen, in seinem vollen Recht ausführen“. Fachlich: **jeden Buchstaben aus seinem Austrittsort (Machradsch) und mit seinen eigenen Eigenschaften (Ṣifāt) auszusprechen.** Nutzen: (1) die richtige Aussprache bleibt erhalten, (2) Lesefehler werden vermieden, (3) der Qurʾān wird so gelesen, wie ihn der Prophet (ﷺ) las.",
+          "**Tadschwīd — Wörtliche Bedeutung:** „etwas schön machen, in seinem vollen Recht ausführen“.",
+          "**Fachliche Bedeutung (Iṣṭilāḥ):** **jeden Buchstaben aus seinem Austrittsort (Machradsch) und mit seinen eigenen Eigenschaften (Ṣifāt) auszusprechen.** Nutzen: (1) die richtige Aussprache bleibt erhalten, (2) Lesefehler werden vermieden, (3) der Qurʾān wird so gelesen, wie ihn der Prophet (ﷺ) las.",
           "**Kurzsteckbrief der Wissenschaft:** • **Zuordnung:** eine religionsgesetzliche Wissenschaft; ihre Regeln stammen aus der Scharīʿa. • **Ursprung (praktisch):** vom Propheten (ﷺ), von ihm über Dschibrīl (as), von der wohlverwahrten Tafel, von Allah; dann durch Gefährten, Nachfolger und die Imame der Rezitation weitergegeben. (Über den ersten Kodifizierer der Regeln gibt es Ansichten: Chalīl ibn Aḥmad, Abu-l-Aswad ad-Duʾalī oder Ḥafṣ ibn ʿUmar ad-Dūrī.) • **Quelle:** die tatsächliche Rezitation des Propheten (ﷺ), durch eine ununterbrochene Kette.",
           "**Urteil (ein wichtiger Unterschied):** Es *theoretisch zu kennen* ist **Gemeinschaftspflicht** (farḍ kifāya — es genügt, dass einige es können). Es aber *anzuwenden*, d. h. den Qurʾān danach zu lesen, ist für jeden Fähigen **individuelle Pflicht** (farḍ ʿayn — jeden Einzelnen betreffend). Belegt durch **Buch, Sunna und Konsens**.",
           "**Beleg aus dem Buch:** *„…und trage den Qurʾān mit Tartīl (bedächtig, deutlich) vor.“* (al-Muzzammil 4). Al-Baiḍāwī: „lies ihn schön, mit Tadschwīd“. Von ʿAlī (r.): *„Tartīl ist, die Buchstaben schön hervorzubringen (die Austrittsorte zu wahren) und die Pausenstellen zu kennen.“*",
@@ -47,7 +49,8 @@ window.CONTENT = {
         ],
         "en": [
           "**Why is this science noble?** Every science's worth follows from the worth of its subject. Since the subject of tajwīd is directly the **Speech of Allah (the Qurʾān)**, there is no higher honour.",
-          "**What is tajwīd?** Literally, \"to make something fine, to give it its full due.\" Technically: **to pronounce each letter from its exit point (makhraj) and with its own qualities (ṣifāt).** Benefits: (1) correct pronunciation is preserved, (2) reading errors are avoided, (3) the Qurʾān is read as the Prophet (ﷺ) read it.",
+          "**tajwīd — Literal meaning:** \"to make something fine, to give it its full due.\"",
+          "**Technical meaning (iṣṭilāḥ):** **to pronounce each letter from its exit point (makhraj) and with its own qualities (ṣifāt).** Benefits: (1) correct pronunciation is preserved, (2) reading errors are avoided, (3) the Qurʾān is read as the Prophet (ﷺ) read it.",
           "**A brief profile of the science:** • **Classification:** a legal (sharʿī) science; its rulings derive from the Sharīʿah. • **Origin (practical):** from the Prophet (ﷺ), from him via Jibrīl (as), from the Preserved Tablet, from Allah; then handed down through the Companions, Successors, and Imams of recitation. (There are views on who first codified its rules: al-Khalīl ibn Aḥmad, Abu al-Aswad al-Duʾalī, or Ḥafṣ ibn ʿUmar al-Dūrī.) • **Source:** the Prophet's (ﷺ) actual recitation, through an unbroken chain.",
           "**Ruling (an important distinction):** *Knowing* it theoretically is a **communal obligation** (farḍ kifāya — it suffices that some know it). But *applying* it — reciting the Qurʾān accordingly — is an **individual obligation** (farḍ ʿayn — upon each capable person). Established by the **Book, Sunnah, and consensus**.",
           "**Proof from the Book:** *\"…and recite the Qurʾān with tartīl (measuredly, distinctly).\"* (al-Muzzammil 4). Al-Bayḍāwī: \"read it well, with tajwīd.\" From ʿAlī (r.): *\"Tartīl is bringing out the letters beautifully (observing the exit points) and knowing the places of pause.\"*",
@@ -608,17 +611,20 @@ window.CONTENT = {
           "sharh": {
             "tr": [
               "**Önce tenvîni de tanımlayalım (6. beytin devamı):** **Tenvîn**, ismin sonuna gelen, kelimenin aslından olmayan **fazladan (zâid) bir sâkin nûndur.** Özellikleri: • **Okuyuşta vardır, yazıda yoktur** — nûn harfi olarak yazılmaz, iki üstün/iki esre/iki ötre işaretiyle gösterilir, fakat \"n\" diye okunur. • **Vakıfta (durunca) düşer.** Fetha tenvîninde durulunca **elif gibi uzatılır** (iki hareke) — *عَلِيمًا* → *عَlîmâ* gibi; ötre/esre tenvîninde ise sâkin okunur. • **Yalnız isimlerde bulunur** (fiilde tenvîn olmaz; tekit nûnuyla ona benzeyen iki yer \"şibh-i tenvîn\" diye anılır).",
-              "**İzhâr (birinci hüküm) nedir?** Sözlükte \"açığa çıkarmak, belli etmek\" demektir. Terim olarak: sâkin nûn veya tenvîni, **gunne (genizden gelen ses) yapmadan, açıkça** kendi mahrecinden (çıkış yerinden) okumaktır. (Gunnenin aslı kalır ama uzatılmaz.)",
+              "**İzhâr (birinci hüküm) — Lügat (sözlük) anlamı:** \"açığa çıkarmak, belli etmek\" demektir.",
+              "**Istılah (terim) anlamı:** sâkin nûn veya tenvîni, **gunne (genizden gelen ses) yapmadan, açıkça** kendi mahrecinden (çıkış yerinden) okumaktır. (Gunnenin aslı kalır ama uzatılmaz.)",
               "**Neden \"halkî = boğaz izhârı\" denir?** Çünkü bu altı harfin mahreci **boğazdır.** Nûnun mahreci (dil ucu) ile boğaz **birbirinden uzak** olduğundan harfler karışmaz; nûn açık ve net okunur."
             ],
             "de": [
               "**Definieren wir auch das Tanwīn (Fortsetzung von Vers 6):** Das **Tanwīn** ist ein **zusätzliches (zāʾid) vokalloses Nūn** am Ende eines Nomens, nicht zur Wurzel gehörend. Merkmale: • **In der Aussprache vorhanden, in der Schrift nicht** — kein Nūn-Buchstabe, sondern Doppel-Fatḥa/Kasra/Ḍamma, aber als „n“ gelesen. • **Beim Anhalten entfällt es.** Bei Fatḥa-Tanwīn wird beim Anhalten wie ein **Alif gedehnt** (zwei Ḥaraka) — *ʿalīman* → *ʿalīmā*; bei Ḍamma/Kasra sākin. • **Nur bei Nomen** (kein Tanwīn im Verb; zwei dem Tanwīn ähnliche Stellen mit dem Bekräftigungs-Nūn heißen „schibh at-tanwīn“).",
-              "**Was ist Iẓhār (erste Regel)?** Sprachlich „offenlegen, deutlich machen“. Fachlich: das sākine Nūn oder Tanwīn **ohne Ghunna (Nasenlaut), deutlich** aus seinem Austrittsort auszusprechen. (Die Grund-Ghunna bleibt, wird aber nicht gedehnt.)",
+              "**Iẓhār (erste Regel) — Wörtliche Bedeutung:** „offenlegen, deutlich machen“.",
+              "**Fachliche Bedeutung (Iṣṭilāḥ):** das sākine Nūn oder Tanwīn **ohne Ghunna (Nasenlaut), deutlich** aus seinem Austrittsort auszusprechen. (Die Grund-Ghunna bleibt, wird aber nicht gedehnt.)",
               "**Warum „ḥalqī = Kehl-Iẓhār“?** Weil diese sechs Buchstaben aus der **Kehle** kommen. Da der Austrittsort des Nūn (Zungenspitze) von der Kehle **weit entfernt** ist, vermischen sich die Laute nicht; das Nūn bleibt klar."
             ],
             "en": [
               "**Let us also define tanwīn (continuing verse 6):** The **tanwīn** is an **extra (zāʾid) vowelless nūn** at a noun's end, not of the root. Features: • **Present in speech, absent in writing** — not a nūn letter but a doubled fatḥa/kasra/ḍamma, yet read as \"n.\" • **Drops at a pause.** With fatḥa-tanwīn, on pausing it is **lengthened like an alif** (two ḥarakāt) — *ʿalīman* → *ʿalīmā*; with ḍamma/kasra it becomes sākin. • **Only in nouns** (no tanwīn in a verb; two places resembling tanwīn with the emphatic nūn are called \"shibh al-tanwīn\").",
-              "**What is iẓhār (the first ruling)?** Literally \"to make clear, to disclose.\" Technically: to pronounce the sākin nūn or tanwīn **without ghunna (nasal sound), clearly** from its exit point. (The base ghunna remains but is not prolonged.)",
+              "**iẓhār (the first ruling) — Literal meaning:** \"to make clear, to disclose.\"",
+              "**Technical meaning (iṣṭilāḥ):** to pronounce the sākin nūn or tanwīn **without ghunna (nasal sound), clearly** from its exit point. (The base ghunna remains but is not prolonged.)",
               "**Why \"ḥalqī = throat iẓhār\"?** Because these six letters issue from the **throat.** Since the nūn's exit point (tongue-tip) is **far** from the throat, the sounds do not blend; the nūn stays clear."
             ]
           }
@@ -781,19 +787,22 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**İdğâm (ikinci hüküm) nedir?** Sözlükte \"bir şeyi başka bir şeye katmak, sokmak, birleştirmek\" demektir. Terim olarak: sâkin bir harfi, kendinden sonraki harekeli harfe **katıp**, ikisini **şeddeli tek harf** hâline getirmektir.",
+              "**İdğâm (ikinci hüküm) — Lügat (sözlük) anlamı:** \"bir şeyi başka bir şeye katmak, sokmak, birleştirmek\" demektir.",
+              "**Istılah (terim) anlamı:** sâkin bir harfi, kendinden sonraki harekeli harfe **katıp**, ikisini **şeddeli tek harf** hâline getirmektir.",
               "**Harfleri altıdır** ve **«يَرْمَلُونَ»** (ye-ra-mim-lâm-vâv-nûn) kelimesinde toplanmıştır: **ي · ر · م · ل · و · ن.** Bu idğam **yalnız iki kelime arasında** olur (aynı kelimede olmaz).",
               "**Nasıl uygulanır? (iki durum):** • İki harf **aynı ise** (nûn + nûn gibi) birinci doğrudan ikinciye katılır. • İki harf **farklı ise** önce nûn/tenvîn, ikinci harfin **cinsine çevrilir**, sonra ona katılır. Örnek olarak: *مِنْ وَالٍ*'de nûn önce vâva çevrilir, sonra vâva katılır → \"mivvâl\" okunur.",
               "**Bu altı harf iki gruba ayrılır** (10 ve 12. beyitlerde): **gunneli** idğam (ي ن م و) ve **gunnesiz** idğam (ل ر)."
             ],
             "de": [
-              "**Was ist Idghām (zweite Regel)?** Sprachlich „etwas in etwas einfügen, verschmelzen“. Fachlich: einen sākinen Buchstaben in den folgenden bewegten **einzufügen**, sodass beide **ein verdoppelter Buchstabe** werden.",
+              "**Idghām (zweite Regel) — Wörtliche Bedeutung:** „etwas in etwas einfügen, verschmelzen“.",
+              "**Fachliche Bedeutung (Iṣṭilāḥ):** einen sākinen Buchstaben in den folgenden bewegten **einzufügen**, sodass beide **ein verdoppelter Buchstabe** werden.",
               "**Sechs Buchstaben**, versammelt in **«يَرْمَلُونَ»** (Yāʾ-Rāʾ-Mīm-Lām-Wāw-Nūn): **ي · ر · م · ل · و · ن.** Dieses Idghām gilt **nur zwischen zwei Wörtern** (nicht im selben Wort).",
               "**Ausführung (zwei Fälle):** • Sind beide **gleich** (Nūn + Nūn), geht der erste direkt in den zweiten über. • Sind sie **verschieden**, wird das Nūn/Tanwīn zuerst in die **Art** des zweiten überführt, dann eingefügt. Z. B. bei *min wāl* wird das Nūn erst zum Wāw, dann eingefügt → „miwwāl“.",
               "**Diese sechs teilen sich (Verse 10 und 12):** Idghām **mit Ghunna** (ي ن م و) und **ohne Ghunna** (ل ر)."
             ],
             "en": [
-              "**What is idghām (the second ruling)?** Literally \"to insert one thing into another, to merge.\" Technically: to **insert** a sākin letter into the following vowelled letter so both become **one doubled letter**.",
+              "**idghām (the second ruling) — Literal meaning:** \"to insert one thing into another, to merge.\"",
+              "**Technical meaning (iṣṭilāḥ):** to **insert** a sākin letter into the following vowelled letter so both become **one doubled letter**.",
               "**Six letters**, gathered in **«يَرْمَلُونَ»** (yāʾ-rāʾ-mīm-lām-wāw-nūn): **ي · ر · م · ل · و · ن.** This idghām applies **only between two words** (not within one word).",
               "**Application (two cases):** • If both are **identical** (nūn + nūn), the first passes directly into the second. • If **different**, the nūn/tanwīn is first converted to the **kind** of the second, then inserted. E.g. in *min wāl*, the nūn first becomes a wāw, then merges → \"miwwāl.\"",
               "**These six split (verses 10 and 12):** idghām **with ghunna** (ي ن م و) and **without ghunna** (ل ر)."
@@ -1081,17 +1090,20 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**İklâb (üçüncü hüküm) nedir?** Sözlükte \"bir şeyi başka bir şeye çevirmek, döndürmek\" demektir. Terim olarak: sâkin nûn veya tenvîni, **bâ (ب)** harfinden önce **gizli bir mîme (م) çevirip**, gunne ile okumaktır.",
+              "**İklâb (üçüncü hüküm) — Lügat (sözlük) anlamı:** \"bir şeyi başka bir şeye çevirmek, döndürmek\" demektir.",
+              "**Istılah (terim) anlamı:** sâkin nûn veya tenvîni, **bâ (ب)** harfinden önce **gizli bir mîme (م) çevirip**, gunne ile okumaktır.",
               "**Harfi tektir: ب (bâ).** **Nasıl uygulanır?** İki dudak hafifçe birbirine yaklaştırılır, **tam kapatılmadan çok küçük bir açıklık** bırakılır; böylece nûn/tenvîn sesi mîme döner ve gunne (geniz sesi) korunur. Doğru miktar ancak **hocadan (telakkî ile)** öğrenilir.",
               "**Mushaftaki işareti:** Nûnun üzerine küçük bir **mîm (ﻢ)** konularak gösterilir. Aşağıdaki tablo, iklâbın tek kelimede, iki kelimede ve tenvînle örneklerini verir."
             ],
             "de": [
-              "**Was ist Iqlāb (dritte Regel)?** Sprachlich „etwas umwandeln, umdrehen“. Fachlich: das sākine Nūn oder Tanwīn vor dem **Bāʾ (ب)** in ein **verborgenes Mīm (م)** zu verwandeln, mit Ghunna.",
+              "**Iqlāb (dritte Regel) — Wörtliche Bedeutung:** „etwas umwandeln, umdrehen“.",
+              "**Fachliche Bedeutung (Iṣṭilāḥ):** das sākine Nūn oder Tanwīn vor dem **Bāʾ (ب)** in ein **verborgenes Mīm (م)** zu verwandeln, mit Ghunna.",
               "**Ein Buchstabe: ب (Bāʾ).** **Ausführung:** Die Lippen nähern sich leicht, mit einem **winzigen Spalt, ohne ganz zu schließen**; so wird der Nūn-/Tanwīn-Laut zum Mīm, die Ghunna bleibt. Das rechte Maß lernt man nur **beim Lehrer (Talaqqī)**.",
               "**Zeichen im Muṣḥaf:** ein kleines **Mīm (ﻢ)** über dem Nūn. Die Tabelle gibt Beispiele in einem Wort, in zwei Wörtern und mit Tanwīn."
             ],
             "en": [
-              "**What is iqlāb (the third ruling)?** Literally \"to convert, to turn.\" Technically: to turn the sākin nūn or tanwīn, before the **bāʾ (ب)**, into a **hidden mīm (م)**, with ghunna.",
+              "**iqlāb (the third ruling) — Literal meaning:** \"to convert, to turn.\"",
+              "**Technical meaning (iṣṭilāḥ):** to turn the sākin nūn or tanwīn, before the **bāʾ (ب)**, into a **hidden mīm (م)**, with ghunna.",
               "**One letter: ب (bāʾ).** **Application:** the lips draw lightly together, with a **tiny gap, not fully closing**; thus the nūn/tanwīn sound becomes a mīm and the ghunna is kept. The right measure is learned only **from a teacher (talaqqī)**.",
               "**Sign in the muṣḥaf:** a small **mīm (ﻢ)** above the nūn. The table gives examples in one word, in two words, and with tanwīn."
             ]
@@ -1173,19 +1185,22 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**İhfâ (dördüncü hüküm) nedir?** Sözlükte \"gizlemek, örtmek\" demektir. Terim olarak: sâkin nûn/tenvîni, **izhârın (açıklık) ile idğâmın (tam katma) arasında** bir hâlde, **gunne (geniz sesi) ile** ve dil hiçbir yere tam değmeden **gizleyerek** okumaktır. Şedde yapılmaz.",
+              "**İhfâ (dördüncü hüküm) — Lügat (sözlük) anlamı:** \"gizlemek, örtmek\" demektir.",
+              "**Istılah (terim) anlamı:** sâkin nûn/tenvîni, **izhârın (açıklık) ile idğâmın (tam katma) arasında** bir hâlde, **gunne (geniz sesi) ile** ve dil hiçbir yere tam değmeden **gizleyerek** okumaktır. Şedde yapılmaz.",
               "**Harfleri kaç? (basit hesap):** İzhâr 6 + İdğâm 6 + İklâb 1 = 13 harf. Arap alfabesi 28 harftir; 28 − 13 = **15 harf** geriye kalır. İşte ihfâ bu **on beş harfte** yapılır. (Harfler bir sonraki beytin remzinde toplanmıştır.)",
               "**Nasıl uygulanır?** Dil, ihfâ harfinin mahrecine **yaklaştırılır ama değdirilmez**; nûn/tenvîn sesi o harfin sesine karıştırılır ve gunne yapılır.",
               "**Önemli incelik — gunnenin kalınlığı/inceliği:** Nûndan sonra **kalın (müfahham) bir harf** gelirse gunne **kalın**; **ince (murakkak) bir harf** gelirse gunne **ince** okunur. Örnek olarak: *مَنْ ذَا* (ذ ince → gunne ince); *يَنْظُرُونَ* (ظ kalın → gunne kalın)."
             ],
             "de": [
-              "**Was ist Ikhfāʾ (vierte Regel)?** Sprachlich „verbergen, verdecken“. Fachlich: das sākine Nūn/Tanwīn **zwischen der Deutlichkeit des Iẓhār und dem vollen Verschmelzen des Idghām**, **mit Ghunna** und ohne die Zunge irgendwo ganz aufzusetzen, **verborgen** zu lesen. Keine Verdopplung.",
+              "**Ikhfāʾ (vierte Regel) — Wörtliche Bedeutung:** „verbergen, verdecken“.",
+              "**Fachliche Bedeutung (Iṣṭilāḥ):** das sākine Nūn/Tanwīn **zwischen der Deutlichkeit des Iẓhār und dem vollen Verschmelzen des Idghām**, **mit Ghunna** und ohne die Zunge irgendwo ganz aufzusetzen, **verborgen** zu lesen. Keine Verdopplung.",
               "**Wie viele Buchstaben? (einfache Rechnung):** Iẓhār 6 + Idghām 6 + Iqlāb 1 = 13. Das Alphabet hat 28; 28 − 13 = **15**. Das Ikhfāʾ gilt bei diesen **fünfzehn Buchstaben**. (Sie stehen in der Merkformel des nächsten Verses.)",
               "**Ausführung:** Die Zunge **nähert** sich dem Austrittsort des Ikhfāʾ-Buchstabens, **ohne** ihn zu berühren; der Nūn-/Tanwīn-Laut wird mit dem des Buchstabens vermischt, mit Ghunna.",
               "**Feinheit — dunkle/helle Ghunna:** Folgt ein **dunkler (mufachcham) Buchstabe**, ist die Ghunna **dunkel**; folgt ein **heller (muraqqaq)**, ist sie **hell**. Z. B. *man dhā* (ذ hell → helle Ghunna); *yanẓurūn* (ظ dunkel → dunkle Ghunna)."
             ],
             "en": [
-              "**What is ikhfāʾ (the fourth ruling)?** Literally \"to conceal, to cover.\" Technically: to read the sākin nūn/tanwīn **between the clarity of iẓhār and the full merging of idghām**, **with ghunna** and without the tongue fully touching anywhere — **concealed**. No doubling.",
+              "**ikhfāʾ (the fourth ruling) — Literal meaning:** \"to conceal, to cover.\"",
+              "**Technical meaning (iṣṭilāḥ):** to read the sākin nūn/tanwīn **between the clarity of iẓhār and the full merging of idghām**, **with ghunna** and without the tongue fully touching anywhere — **concealed**. No doubling.",
               "**How many letters? (simple count):** iẓhār 6 + idghām 6 + iqlāb 1 = 13. The alphabet has 28; 28 − 13 = **15**. Ikhfāʾ applies to these **fifteen letters**. (They are in the next verse's mnemonic.)",
               "**Application:** the tongue **approaches** the ikhfāʾ letter's exit point **without** touching it; the nūn/tanwīn sound is blended with the letter's, with ghunna.",
               "**Fine point — dark/light ghunna:** if a **dark (mufakhkham) letter** follows, the ghunna is **dark**; if a **light (muraqqaq)** one, it is **light**. E.g. *man dhā* (ذ light → light ghunna); *yanẓurūn* (ظ dark → dark ghunna)."
@@ -1753,17 +1768,20 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**İhfâ-i şefevî (birinci hüküm):** Sözlükte \"örtmek, gizlemek\" demektir. Terim olarak: sâkin mîmin, **bâ (ب)** harfinden önce **gizlenerek, tam gunne (geniz sesi) ile ve şeddesiz** okunmasıdır.",
+              "**İhfâ-i şefevî (birinci hüküm) — Lügat (sözlük) anlamı:** \"örtmek, gizlemek\" demektir.",
+              "**Istılah (terim) anlamı:** sâkin mîmin, **bâ (ب)** harfinden önce **gizlenerek, tam gunne (geniz sesi) ile ve şeddesiz** okunmasıdır.",
               "**Harfi tektir: ب (bâ).** **Nasıl uygulanır?** İki dudak **tam kapatılmaz**; aralarında **çok küçük bir açıklık** bırakılır (tercih edilen görüşe göre dudaklar neredeyse kapanacak gibidir) ve gunne yapılır. Doğru ölçü ancak **hocadan (telakkî ile)** öğrenilir.",
               "**\"Şefevî\" (dudaksal) neden denir?** Çünkü hem gizlenen **mîm** hem de yanındaki **bâ** dudaklardan çıkar. **Nerede bulunur?** İhfâ-i şefevî **yalnız iki kelime arasında** olur (mîm birinci kelimenin sonunda, bâ ikinci kelimenin başında). Aşağıdaki tablo, bu kurala (ihfâ-i şefevî) Kur'ân'dan şahitler verir."
             ],
             "de": [
-              "**Ikhfāʾ schafawī (erste Regel):** sprachlich „verbergen, verdecken“. Fachlich: das sākine Mīm vor dem **Bāʾ (ب)** **verborgen, mit voller Ghunna und ohne Verdopplung** zu lesen.",
+              "**Ikhfāʾ schafawī (erste Regel) — Wörtliche Bedeutung:** „verbergen, verdecken“.",
+              "**Fachliche Bedeutung (Iṣṭilāḥ):** das sākine Mīm vor dem **Bāʾ (ب)** **verborgen, mit voller Ghunna und ohne Verdopplung** zu lesen.",
               "**Ein Buchstabe: ب (Bāʾ).** **Ausführung:** Die Lippen werden **nicht ganz geschlossen**; ein **winziger Spalt** bleibt (nach der vorgezogenen Ansicht fast geschlossen), dazu Ghunna. Das rechte Maß lernt man nur **beim Lehrer (Talaqqī)**.",
               "**Warum „schafawī“ (labial)?** Weil sowohl das verborgene **Mīm** als auch das **Bāʾ** aus den Lippen kommen. **Wo?** Ikhfāʾ schafawī gibt es **nur zwischen zwei Wörtern** (Mīm am Ende des ersten, Bāʾ am Anfang des zweiten). Die Tabelle gibt Belege dieser Regel."
             ],
             "en": [
-              "**Ikhfāʾ shafawī (the first ruling):** literally \"to conceal, to cover.\" Technically: to read the sākin mīm before the **bāʾ (ب)** **concealed, with full ghunna and without doubling**.",
+              "**Ikhfāʾ shafawī (the first ruling) — Literal meaning:** \"to conceal, to cover.\"",
+              "**Technical meaning (iṣṭilāḥ):** to read the sākin mīm before the **bāʾ (ب)** **concealed, with full ghunna and without doubling**.",
               "**One letter: ب (bāʾ).** **Application:** the lips are **not fully closed**; a **tiny gap** remains (on the preferred view, almost closed), with ghunna. The right measure is learned only **from a teacher (talaqqī)**.",
               "**Why \"shafawī\" (labial)?** Because both the concealed **mīm** and the **bāʾ** issue from the lips. **Where?** Ikhfāʾ shafawī occurs **only between two words** (mīm at the end of the first, bāʾ at the start of the second). The table gives witnesses of this rule."
             ]
@@ -1845,17 +1863,20 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**İdğâm-ı misleyn-i sagîr (ikinci hüküm):** Sözlükte \"katma, birleştirme\" demektir. Terim olarak: **sâkin mîmin**, kendisi gibi **harekeli bir mîme katılıp**, ikisinin **şeddeli tek bir mîm** olmasıdır (gunne ile).",
+              "**İdğâm-ı misleyn-i sagîr (ikinci hüküm) — Lügat (sözlük) anlamı:** \"katma, birleştirme\" demektir.",
+              "**Istılah (terim) anlamı:** **sâkin mîmin**, kendisi gibi **harekeli bir mîme katılıp**, ikisinin **şeddeli tek bir mîm** olmasıdır (gunne ile).",
               "**Harfi tektir: م (mîm).** **\"Misleyn\" (iki benzer) neden denir?** Çünkü idğam, **birbirinin tıpatıp aynı** iki harf (mîm + mîm) arasında olur.",
               "**\"Sagîr\" (küçük) neden denir?** Çünkü bu idğamda **yapılan iş azdır**: birinci harf sâkin, ikincisi harekelidir; sâkin mîm doğrudan harekeli mîme katılıverir. (İki harfin de harekeli olduğu \"idğâm-ı kebîr\" ise daha çok işlem gerektirir; o, Hafs rivayetinde bulunmaz.) Aşağıdaki tablo bu kurala (idğâm-ı misleyn) şahitler verir."
             ],
             "de": [
-              "**Idghām al-Mithlayn aṣ-ṣaghīr (zweite Regel):** sprachlich „einfügen, verschmelzen“. Fachlich: das **sākine Mīm** in ein gleichartiges **bewegtes Mīm einzufügen**, sodass beide **ein verdoppeltes Mīm** werden (mit Ghunna).",
+              "**Idghām al-Mithlayn aṣ-ṣaghīr (zweite Regel) — Wörtliche Bedeutung:** „einfügen, verschmelzen“.",
+              "**Fachliche Bedeutung (Iṣṭilāḥ):** das **sākine Mīm** in ein gleichartiges **bewegtes Mīm einzufügen**, sodass beide **ein verdoppeltes Mīm** werden (mit Ghunna).",
               "**Ein Buchstabe: م (Mīm).** **Warum „Mithlayn“ (zwei Gleiche)?** Weil das Idghām zwischen zwei **völlig gleichen** Buchstaben (Mīm + Mīm) geschieht.",
               "**Warum „ṣaghīr“ (klein)?** Weil die **Arbeit gering** ist: der erste Buchstabe ist sākin, der zweite bewegt; das sākine Mīm geht direkt in das bewegte über. (Das „große Idghām“, bei dem beide bewegt sind, verlangt mehr Aufwand; es kommt in der Ḥafṣ-Überlieferung nicht vor.) Die Tabelle gibt Belege dieser Regel."
             ],
             "en": [
-              "**Idghām al-mithlayn al-ṣaghīr (the second ruling):** literally \"insertion, merging.\" Technically: to insert the **sākin mīm** into a like **vowelled mīm**, so both become **one doubled mīm** (with ghunna).",
+              "**Idghām al-mithlayn al-ṣaghīr (the second ruling) — Literal meaning:** \"insertion, merging.\"",
+              "**Technical meaning (iṣṭilāḥ):** to insert the **sākin mīm** into a like **vowelled mīm**, so both become **one doubled mīm** (with ghunna).",
               "**One letter: م (mīm).** **Why \"mithlayn\" (two likes)?** Because the idghām is between two **exactly identical** letters (mīm + mīm).",
               "**Why \"ṣaghīr\" (small)?** Because the **work is little**: the first letter is sākin, the second vowelled; the sākin mīm passes straight into the vowelled one. (The \"great idghām,\" where both are vowelled, needs more work; it does not occur in the Ḥafṣ transmission.) The table gives witnesses of this rule."
             ]
@@ -1937,17 +1958,20 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**İzhâr-ı şefevî (üçüncü hüküm):** Sözlükte \"açığa çıkarmak\" demektir. Terim olarak: sâkin mîmi, ardından gelen harfle, **gunne yapmadan açıkça** kendi mahrecinden (dudaklardan) okumaktır.",
+              "**İzhâr-ı şefevî (üçüncü hüküm) — Lügat (sözlük) anlamı:** \"açığa çıkarmak\" demektir.",
+              "**Istılah (terim) anlamı:** sâkin mîmi, ardından gelen harfle, **gunne yapmadan açıkça** kendi mahrecinden (dudaklardan) okumaktır.",
               "**Harfleri kaçtır? (basit hesap):** Arap alfabesi 28 harftir. İhfâ 1 (bâ) + İdğâm 1 (mîm) = 2 harf çıkar; **geriye 26 harf** kalır. İzhâr-ı şefevî işte bu **26 harfte** yapılır.",
               "**Nasıl uygulanır?** İki dudak, mîmi çıkarmak için **hafifçe kapanıp açılır** (uzatma/mubalağa yapılmaz); gunne **uzatılmaz**, yalnız aslî gunnenin varlığı korunur. Mushafta izhâr edilen mîmin üzerine küçük bir **hâ başı (ﺣ)** işareti konur. Aşağıdaki tablo bu kurala (izhâr-ı şefevî) örnekler verir."
             ],
             "de": [
-              "**Iẓhār schafawī (dritte Regel):** sprachlich „offenlegen“. Fachlich: das sākine Mīm mit dem folgenden Buchstaben **ohne Ghunna, deutlich** aus seinem Austrittsort (den Lippen) zu lesen.",
+              "**Iẓhār schafawī (dritte Regel) — Wörtliche Bedeutung:** „offenlegen“.",
+              "**Fachliche Bedeutung (Iṣṭilāḥ):** das sākine Mīm mit dem folgenden Buchstaben **ohne Ghunna, deutlich** aus seinem Austrittsort (den Lippen) zu lesen.",
               "**Wie viele Buchstaben? (einfache Rechnung):** Das Alphabet hat 28. Ikhfāʾ 1 (Bāʾ) + Idghām 1 (Mīm) = 2 gehen ab; es **bleiben 26**. Iẓhār schafawī gilt bei diesen **26 Buchstaben**.",
               "**Ausführung:** Die Lippen schließen und öffnen sich **leicht** zum Mīm (keine Übertreibung); die Ghunna wird **nicht gedehnt**, nur die Grund-Ghunna bleibt. Im Muṣḥaf steht über dem deutlich gelesenen Mīm ein kleiner **Ḥāʾ-Kopf (ﺣ)**. Die Tabelle gibt Beispiele dieser Regel."
             ],
             "en": [
-              "**Iẓhār shafawī (the third ruling):** literally \"to disclose.\" Technically: to read the sākin mīm with the following letter **without ghunna, clearly** from its exit point (the lips).",
+              "**Iẓhār shafawī (the third ruling) — Literal meaning:** \"to disclose.\"",
+              "**Technical meaning (iṣṭilāḥ):** to read the sākin mīm with the following letter **without ghunna, clearly** from its exit point (the lips).",
               "**How many letters? (simple count):** the alphabet has 28. Ikhfāʾ 1 (bāʾ) + idghām 1 (mīm) = 2 are removed; **26 remain**. Iẓhār shafawī applies to these **26 letters**.",
               "**Application:** the lips **lightly** close and open for the mīm (no exaggeration); the ghunna is **not prolonged**, only the base ghunna remains. In the muṣḥaf a small **ḥāʾ-head (ﺣ)** is placed over the clearly-read mīm. The table gives examples of this rule."
             ]
@@ -3164,17 +3188,20 @@ window.CONTENT = {
           ],
           "sharh": {
             "tr": [
-              "**Medd nedir?** Sözlükte \"ziyade, artırma\" demektir. Terim olarak: **sesi bir med harfiyle uzatmaktır.** Karşıtı **kasr**dır: med harfini fazladan uzatmadan, olduğu gibi (iki hareke) okumak.",
+              "**Medd — Lügat (sözlük) anlamı:** \"ziyade, artırma\" demektir.",
+              "**Istılah (terim) anlamı:** **sesi bir med harfiyle uzatmaktır.** Karşıtı **kasr**dır: med harfini fazladan uzatmadan, olduğu gibi (iki hareke) okumak.",
               "**Med harfleri üçtür:** **elif (ا), vâv (و), yâ (ي).** Bu üç harf **«وَاي»** (vây) lafzında toplanır.",
               "**Med ikiye ayrılır:** • **Aslî (tabiî) med** — bu beyitle başlıyor; sonraki iki beyit tanımlar. • **Fer'î med** — 38. beyitle gelir. Nâzım ilkine \"tabiî\" (doğal) der; çünkü selim tabiatlı (doğru okuyuşlu) kimse onu ne eksiltir ne artırır, hep iki hareke okur."
             ],
             "de": [
-              "**Was ist Madd?** Sprachlich „Zunahme, Verlängerung“. Fachlich: **das Dehnen des Lautes mit einem Madd-Buchstaben.** Gegenteil ist **Qaṣr**: den Madd-Buchstaben ohne zusätzliche Dehnung (zwei Ḥaraka) lesen.",
+              "**Madd — Wörtliche Bedeutung:** „Zunahme, Verlängerung“.",
+              "**Fachliche Bedeutung (Iṣṭilāḥ):** **das Dehnen des Lautes mit einem Madd-Buchstaben.** Gegenteil ist **Qaṣr**: den Madd-Buchstaben ohne zusätzliche Dehnung (zwei Ḥaraka) lesen.",
               "**Drei Madd-Buchstaben:** **Alif (ا), Wāw (و), Yāʾ (ي).** Sie sind im Wort **«وَاي»** (wāy) versammelt.",
               "**Madd teilt sich in zwei:** • **Aṣlī (natürliches) Madd** — beginnt mit diesem Vers; die nächsten zwei definieren. • **Farʿī Madd** — ab Vers 38. Der Verfasser nennt das erste „ṭabīʿī“ (natürlich), weil ein Rechtgesinnter (richtig Lesender) es weder kürzt noch dehnt, stets zwei Ḥaraka."
             ],
             "en": [
-              "**What is madd?** Literally \"increase, extension.\" Technically: **prolonging the sound with a madd letter.** Its opposite is **qaṣr**: reading the madd letter with no extra lengthening (two ḥarakāt).",
+              "**madd — Literal meaning:** \"increase, extension.\"",
+              "**Technical meaning (iṣṭilāḥ):** **prolonging the sound with a madd letter.** Its opposite is **qaṣr**: reading the madd letter with no extra lengthening (two ḥarakāt).",
               "**Three madd letters:** **alif (ا), wāw (و), yāʾ (ي).** They are gathered in the word **«وَاي»** (wāy).",
               "**Madd divides in two:** • **Aṣlī (natural) madd** — begins with this verse; the next two define it. • **Farʿī madd** — from verse 38. The author calls the first \"ṭabīʿī\" (natural), because one of sound nature (correct in reading) neither shortens nor lengthens it, always two ḥarakāt."
             ]
@@ -4276,35 +4303,343 @@ window.CONTENT = {
           },
           "tables": [
             {
-              "label": { "tr": "Ebced hesabı 1 — «نَدٌّ بَدَا» (beyit sayısı)", "de": "Abdschad-Rechnung 1 — «نَدٌّ بَدَا» (Verszahl)", "en": "Abjad calculation 1 — «نَدٌّ بَدَا» (verse count)" },
-              "head": { "tr": ["Harf", "Ebced değeri"], "de": ["Buchstabe", "Abdschad-Wert"], "en": ["Letter", "Abjad value"] },
+              "label": {
+                "tr": "Ebced hesabı 1 — «نَدٌّ بَدَا» (beyit sayısı)",
+                "de": "Abdschad-Rechnung 1 — «نَدٌّ بَدَا» (Verszahl)",
+                "en": "Abjad calculation 1 — «نَدٌّ بَدَا» (verse count)"
+              },
+              "head": {
+                "tr": [
+                  "Harf",
+                  "Ebced değeri"
+                ],
+                "de": [
+                  "Buchstabe",
+                  "Abdschad-Wert"
+                ],
+                "en": [
+                  "Letter",
+                  "Abjad value"
+                ]
+              },
               "rows": [
-                [ { "ar": "ن", "sub": { "tr": "nûn", "de": "Nūn", "en": "nūn" } }, { "tr": "50", "de": "50", "en": "50" } ],
-                [ { "ar": "د", "sub": { "tr": "dâl", "de": "Dāl", "en": "dāl" } }, { "tr": "4", "de": "4", "en": "4" } ],
-                [ { "ar": "ب", "sub": { "tr": "bâ", "de": "Bāʾ", "en": "bāʾ" } }, { "tr": "2", "de": "2", "en": "2" } ],
-                [ { "ar": "د", "sub": { "tr": "dâl", "de": "Dāl", "en": "dāl" } }, { "tr": "4", "de": "4", "en": "4" } ],
-                [ { "ar": "ا", "sub": { "tr": "elif", "de": "Alif", "en": "alif" } }, { "tr": "1", "de": "1", "en": "1" } ],
-                [ { "tr": "**Toplam**", "de": "**Summe**", "en": "**Total**" }, { "tr": "**61**", "de": "**61**", "en": "**61**" } ]
+                [
+                  {
+                    "ar": "ن",
+                    "sub": {
+                      "tr": "nûn",
+                      "de": "Nūn",
+                      "en": "nūn"
+                    }
+                  },
+                  {
+                    "tr": "50",
+                    "de": "50",
+                    "en": "50"
+                  }
+                ],
+                [
+                  {
+                    "ar": "د",
+                    "sub": {
+                      "tr": "dâl",
+                      "de": "Dāl",
+                      "en": "dāl"
+                    }
+                  },
+                  {
+                    "tr": "4",
+                    "de": "4",
+                    "en": "4"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ب",
+                    "sub": {
+                      "tr": "bâ",
+                      "de": "Bāʾ",
+                      "en": "bāʾ"
+                    }
+                  },
+                  {
+                    "tr": "2",
+                    "de": "2",
+                    "en": "2"
+                  }
+                ],
+                [
+                  {
+                    "ar": "د",
+                    "sub": {
+                      "tr": "dâl",
+                      "de": "Dāl",
+                      "en": "dāl"
+                    }
+                  },
+                  {
+                    "tr": "4",
+                    "de": "4",
+                    "en": "4"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ا",
+                    "sub": {
+                      "tr": "elif",
+                      "de": "Alif",
+                      "en": "alif"
+                    }
+                  },
+                  {
+                    "tr": "1",
+                    "de": "1",
+                    "en": "1"
+                  }
+                ],
+                [
+                  {
+                    "tr": "**Toplam**",
+                    "de": "**Summe**",
+                    "en": "**Total**"
+                  },
+                  {
+                    "tr": "**61**",
+                    "de": "**61**",
+                    "en": "**61**"
+                  }
+                ]
               ]
             },
             {
-              "label": { "tr": "Ebced hesabı 2 — «بُشْرَى لِمَنْ يُتْقِنُهَا» (telif yılı)", "de": "Abdschad-Rechnung 2 — «بُشْرَى لِمَنْ يُتْقِنُهَا» (Abfassungsjahr)", "en": "Abjad calculation 2 — «بُشْرَى لِمَنْ يُتْقِنُهَا» (year of composition)" },
-              "head": { "tr": ["Harf", "Ebced değeri"], "de": ["Buchstabe", "Abdschad-Wert"], "en": ["Letter", "Abjad value"] },
+              "label": {
+                "tr": "Ebced hesabı 2 — «بُشْرَى لِمَنْ يُتْقِنُهَا» (telif yılı)",
+                "de": "Abdschad-Rechnung 2 — «بُشْرَى لِمَنْ يُتْقِنُهَا» (Abfassungsjahr)",
+                "en": "Abjad calculation 2 — «بُشْرَى لِمَنْ يُتْقِنُهَا» (year of composition)"
+              },
+              "head": {
+                "tr": [
+                  "Harf",
+                  "Ebced değeri"
+                ],
+                "de": [
+                  "Buchstabe",
+                  "Abdschad-Wert"
+                ],
+                "en": [
+                  "Letter",
+                  "Abjad value"
+                ]
+              },
               "rows": [
-                [ { "ar": "ب", "sub": { "tr": "bâ", "de": "Bāʾ", "en": "bāʾ" } }, { "tr": "2", "de": "2", "en": "2" } ],
-                [ { "ar": "ش", "sub": { "tr": "şın", "de": "Schīn", "en": "shīn" } }, { "tr": "300", "de": "300", "en": "300" } ],
-                [ { "ar": "ر", "sub": { "tr": "râ", "de": "Rāʾ", "en": "rāʾ" } }, { "tr": "200", "de": "200", "en": "200" } ],
-                [ { "ar": "ى", "sub": { "tr": "yâ", "de": "Yāʾ", "en": "yāʾ" } }, { "tr": "10", "de": "10", "en": "10" } ],
-                [ { "ar": "ل", "sub": { "tr": "lâm", "de": "Lām", "en": "lām" } }, { "tr": "30", "de": "30", "en": "30" } ],
-                [ { "ar": "م", "sub": { "tr": "mîm", "de": "Mīm", "en": "mīm" } }, { "tr": "40", "de": "40", "en": "40" } ],
-                [ { "ar": "ن", "sub": { "tr": "nûn", "de": "Nūn", "en": "nūn" } }, { "tr": "50", "de": "50", "en": "50" } ],
-                [ { "ar": "ي", "sub": { "tr": "yâ", "de": "Yāʾ", "en": "yāʾ" } }, { "tr": "10", "de": "10", "en": "10" } ],
-                [ { "ar": "ت", "sub": { "tr": "tâ", "de": "Tāʾ", "en": "tāʾ" } }, { "tr": "400", "de": "400", "en": "400" } ],
-                [ { "ar": "ق", "sub": { "tr": "kâf", "de": "Qāf", "en": "qāf" } }, { "tr": "100", "de": "100", "en": "100" } ],
-                [ { "ar": "ن", "sub": { "tr": "nûn", "de": "Nūn", "en": "nūn" } }, { "tr": "50", "de": "50", "en": "50" } ],
-                [ { "ar": "ه", "sub": { "tr": "hâ", "de": "Hāʾ", "en": "hāʾ" } }, { "tr": "5", "de": "5", "en": "5" } ],
-                [ { "ar": "ا", "sub": { "tr": "elif", "de": "Alif", "en": "alif" } }, { "tr": "1", "de": "1", "en": "1" } ],
-                [ { "tr": "**Toplam**", "de": "**Summe**", "en": "**Total**" }, { "tr": "**1198**", "de": "**1198**", "en": "**1198**" } ]
+                [
+                  {
+                    "ar": "ب",
+                    "sub": {
+                      "tr": "bâ",
+                      "de": "Bāʾ",
+                      "en": "bāʾ"
+                    }
+                  },
+                  {
+                    "tr": "2",
+                    "de": "2",
+                    "en": "2"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ش",
+                    "sub": {
+                      "tr": "şın",
+                      "de": "Schīn",
+                      "en": "shīn"
+                    }
+                  },
+                  {
+                    "tr": "300",
+                    "de": "300",
+                    "en": "300"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ر",
+                    "sub": {
+                      "tr": "râ",
+                      "de": "Rāʾ",
+                      "en": "rāʾ"
+                    }
+                  },
+                  {
+                    "tr": "200",
+                    "de": "200",
+                    "en": "200"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ى",
+                    "sub": {
+                      "tr": "yâ",
+                      "de": "Yāʾ",
+                      "en": "yāʾ"
+                    }
+                  },
+                  {
+                    "tr": "10",
+                    "de": "10",
+                    "en": "10"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ل",
+                    "sub": {
+                      "tr": "lâm",
+                      "de": "Lām",
+                      "en": "lām"
+                    }
+                  },
+                  {
+                    "tr": "30",
+                    "de": "30",
+                    "en": "30"
+                  }
+                ],
+                [
+                  {
+                    "ar": "م",
+                    "sub": {
+                      "tr": "mîm",
+                      "de": "Mīm",
+                      "en": "mīm"
+                    }
+                  },
+                  {
+                    "tr": "40",
+                    "de": "40",
+                    "en": "40"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ن",
+                    "sub": {
+                      "tr": "nûn",
+                      "de": "Nūn",
+                      "en": "nūn"
+                    }
+                  },
+                  {
+                    "tr": "50",
+                    "de": "50",
+                    "en": "50"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ي",
+                    "sub": {
+                      "tr": "yâ",
+                      "de": "Yāʾ",
+                      "en": "yāʾ"
+                    }
+                  },
+                  {
+                    "tr": "10",
+                    "de": "10",
+                    "en": "10"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ت",
+                    "sub": {
+                      "tr": "tâ",
+                      "de": "Tāʾ",
+                      "en": "tāʾ"
+                    }
+                  },
+                  {
+                    "tr": "400",
+                    "de": "400",
+                    "en": "400"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ق",
+                    "sub": {
+                      "tr": "kâf",
+                      "de": "Qāf",
+                      "en": "qāf"
+                    }
+                  },
+                  {
+                    "tr": "100",
+                    "de": "100",
+                    "en": "100"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ن",
+                    "sub": {
+                      "tr": "nûn",
+                      "de": "Nūn",
+                      "en": "nūn"
+                    }
+                  },
+                  {
+                    "tr": "50",
+                    "de": "50",
+                    "en": "50"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ه",
+                    "sub": {
+                      "tr": "hâ",
+                      "de": "Hāʾ",
+                      "en": "hāʾ"
+                    }
+                  },
+                  {
+                    "tr": "5",
+                    "de": "5",
+                    "en": "5"
+                  }
+                ],
+                [
+                  {
+                    "ar": "ا",
+                    "sub": {
+                      "tr": "elif",
+                      "de": "Alif",
+                      "en": "alif"
+                    }
+                  },
+                  {
+                    "tr": "1",
+                    "de": "1",
+                    "en": "1"
+                  }
+                ],
+                [
+                  {
+                    "tr": "**Toplam**",
+                    "de": "**Summe**",
+                    "en": "**Total**"
+                  },
+                  {
+                    "tr": "**1198**",
+                    "de": "**1198**",
+                    "en": "**1198**"
+                  }
+                ]
               ]
             }
           ]
