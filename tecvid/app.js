@@ -71,23 +71,13 @@
   }
 
   /* ---------- Hidayah markası (davet sayfası kimliği) ---------- */
-  function hidayahLogo(kind) {
-    // kind "light": açık zeminde okunan koyu yazılı logo · "dark": koyu zeminde beyaz yazılı logo
-    var src = kind === "dark" ? window.HIDAYAH_LOGO : (window.HIDAYAH_LOGO_DARK || window.HIDAYAH_LOGO);
-    var cls = kind === "dark" ? "hb-logo hb-logo-onDark" : "hb-logo hb-logo-onLight";
-    if (src) return '<img class="' + cls + '" src="' + src + '" alt="Hidayah" loading="lazy" />';
-    return '<span class="hb-word">HIDAYAH</span>';
-  }
+  // Her yerde orijinal (beyaz yazılı) logo; hem açılış hem koyu footer paneli koyu zeminlidir.
   function hidayahBrand(variant) {
-    if (variant === "splash") {
-      // splash koyu (zümrüt) zemin → daima beyaz yazılı logo, arka plan/rozet yok
-      var s = window.HIDAYAH_LOGO ? '<img class="hb-logo" src="' + window.HIDAYAH_LOGO + '" alt="Hidayah" loading="lazy" />' : '<span class="hb-word">HIDAYAH</span>';
-      return '<div class="hidayah-brand hb-splash">' + s +
-        '<span class="hb-by">' + t("brand_by") + '</span></div>';
-    }
-    // footer: arka plan yok, sadece logo; temaya göre koyu/açık varyant CSS ile seçilir
-    return '<div class="hidayah-brand hb-footer">' +
-      hidayahLogo("light") + hidayahLogo("dark") +
+    var logo = window.HIDAYAH_LOGO
+      ? '<img class="hb-logo" src="' + window.HIDAYAH_LOGO + '" alt="Hidayah" loading="lazy" />'
+      : '<span class="hb-word">HIDAYAH</span>';
+    var cls = variant === "splash" ? "hb-splash" : "hb-footer";
+    return '<div class="hidayah-brand ' + cls + '">' + logo +
       '<span class="hb-by">' + t("brand_by") + '</span></div>';
   }
 

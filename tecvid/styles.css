@@ -368,16 +368,18 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 .btn-ghost:hover{ border-color:var(--accent); color:var(--accent-ink); }
 
 /* ---------- Footer ---------- */
-.footer{ margin-top:clamp(2rem,6vw,4rem); border-top:1px solid var(--line); background:var(--canvas-2); }
-.footer-in{ text-align:center; padding-block:clamp(2rem,5vw,3.4rem); display:flex; flex-direction:column; align-items:center; gap:.3rem; }
-.f-orn{ width:36px; height:36px; margin-bottom:.6rem; }
-.f-bism{ font-family:var(--font-ar); font-size:1.7rem; color:var(--gold); line-height:1; }
-.f-ayah{ font-family:var(--font-ar); direction:rtl; font-size:clamp(1.4rem,4vw,1.9rem); font-weight:700; color:var(--accent); line-height:1.9; }
-.f-ayah-tr{ font-size:.88rem; color:var(--ink-soft); max-width:46ch; }
-.f-ayah-ref{ display:block; margin-top:.35rem; font-size:.8rem; color:var(--gold); font-weight:700; letter-spacing:.02em; }
-.f-sep{ width:60px; height:1px; background:var(--line); margin:.8rem 0; }
-.f-note{ font-family:var(--font-display); font-weight:600; color:var(--ink); font-size:1.02rem; }
-.f-fine{ font-size:.78rem; color:var(--muted); }
+/* footer: açılış (splash) ile bütünlük — koyu zümrüt kapanış paneli */
+.footer{ margin-top:clamp(2rem,6vw,4rem); border-top:1px solid rgba(255,255,255,.07);
+  background:linear-gradient(165deg,#0e3a2c 0%,#07201a 100%); }
+.footer-in{ text-align:center; padding-block:clamp(2.6rem,5vw,3.8rem); display:flex; flex-direction:column; align-items:center; gap:.3rem; }
+.f-orn{ width:36px; height:36px; margin-bottom:.6rem; color:#d9b968; }
+.f-bism{ font-family:var(--font-ar); font-size:1.7rem; color:#e6c46f; line-height:1; }
+.f-ayah{ font-family:var(--font-ar); direction:rtl; font-size:clamp(1.4rem,4vw,1.9rem); font-weight:700; color:#f5ecd6; line-height:1.9; }
+.f-ayah-tr{ font-size:.88rem; color:rgba(245,236,214,.72); max-width:46ch; }
+.f-ayah-ref{ display:block; margin-top:.35rem; font-size:.8rem; color:#e6c46f; font-weight:700; letter-spacing:.02em; }
+.f-sep{ width:60px; height:1px; background:rgba(255,255,255,.16); margin:.8rem 0; }
+.f-note{ font-family:var(--font-display); font-weight:600; color:#f5ecd6; font-size:1.02rem; }
+.f-fine{ font-size:.78rem; color:rgba(245,236,214,.6); }
 
 /* ---------- Popover ---------- */
 .popover{ position:absolute; z-index:80; min-width:180px; max-width:260px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm); box-shadow:var(--shadow-lg); padding:.9rem 1rem; animation:pop .18s var(--ease) both; }
@@ -414,14 +416,11 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 .hb-splash{ margin-top:1.7rem; }
 .hb-splash .hb-logo{ width:min(196px,50vw); filter:drop-shadow(0 3px 14px #0007); opacity:0; animation:spRise 1s var(--ease) 1.55s both; }
 .hb-splash .hb-by{ font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:#f5ecd6aa; opacity:0; animation:spFade 1s var(--ease) 1.95s both; }
-/* footer: arka plan/rozet YOK — sadece logo; temaya göre koyu/açık yazılı varyant */
-.hb-footer{ margin-top:1.25rem; gap:.6rem; }
-.hb-footer .hb-logo{ width:170px; }
-.hb-footer .hb-logo-onDark{ display:none; }   /* varsayılan açık/sepya tema → koyu yazılı logo */
-.hb-footer .hb-logo-onLight{ display:block; }
-[data-theme="dark"] .hb-footer .hb-logo-onLight{ display:none; }
-[data-theme="dark"] .hb-footer .hb-logo-onDark{ display:block; }
-.hb-footer .hb-by{ font-size:.74rem; letter-spacing:.11em; text-transform:uppercase; color:var(--muted); }
+/* footer: koyu panel üzerinde orijinal (beyaz yazılı) logo — açılıştaki gibi, kutu yok */
+.hb-footer{ margin-top:1.35rem; gap:.6rem; }
+.hb-footer .hb-logo{ width:186px; filter:drop-shadow(0 3px 12px rgba(0,0,0,.4)); }
+.hb-footer .hb-word{ color:#f5ecd6; font-size:1.5rem; }
+.hb-footer .hb-by{ font-size:.74rem; letter-spacing:.11em; text-transform:uppercase; color:rgba(245,236,214,.6); }
 
 /* ---------- Prüfungssimulation (sınav) ---------- */
 .exam{
