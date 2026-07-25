@@ -415,24 +415,16 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 .hb-splash .hb-logo{ width:min(184px,48vw); filter:drop-shadow(0 3px 14px #0007); opacity:0; animation:spRise 1s var(--ease) 1.55s both; }
 .hb-splash .hb-word{ color:#f5ecd6; }
 
-/* footer — logo ORİJİNAL (rengi hiç değişmez); arkasına gece-göğü zemin kartı.
-   Zemin lacivert (siyah/yeşil değil), yıldız dokusu + yumuşak yükseklik. */
+/* footer — logo ORİJİNAL (rengi hiç değişmez); arkasına SADE, düz lacivert
+   zemin (siyah/yeşil değil, yıldız/gradyan yok), temiz köşe + ince gölge. */
 .hb-footer{ margin-top:clamp(1.1rem,3vw,1.5rem); }
 .hb-logo-card{
   display:inline-flex; align-items:center; justify-content:center;
-  padding:1rem 1.5rem; border-radius:16px;
-  background:
-    radial-gradient(1.6px 1.6px at 18% 26%, rgba(255,255,255,.75), transparent 60%),
-    radial-gradient(1.2px 1.2px at 74% 20%, rgba(255,255,255,.55), transparent 60%),
-    radial-gradient(1.1px 1.1px at 40% 70%, rgba(255,255,255,.5), transparent 60%),
-    radial-gradient(1.4px 1.4px at 86% 62%, rgba(255,255,255,.6), transparent 60%),
-    radial-gradient(1px 1px at 58% 40%, rgba(255,255,255,.45), transparent 60%),
-    radial-gradient(1.2px 1.2px at 30% 52%, rgba(255,255,255,.4), transparent 60%),
-    radial-gradient(ellipse 120% 100% at 50% 24%, #29397a 0%, #182655 48%, #0e1838 100%);
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 10px 30px rgba(9,14,38,.30), inset 0 1px 0 rgba(255,255,255,.09);
+  padding:.95rem 1.5rem; border-radius:14px;
+  background:#15224a;
+  box-shadow:0 6px 18px rgba(12,18,44,.22);
 }
-.hb-footer .hb-logo{ width:118px; filter:drop-shadow(0 2px 9px rgba(0,0,0,.38)); }
+.hb-footer .hb-logo{ width:118px; }
 .hb-footer .hb-word{ color:#f5ecd6; font-size:1.2rem; }
 
 /* ---------- Prüfungssimulation (sınav) ---------- */
