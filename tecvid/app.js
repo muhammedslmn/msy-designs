@@ -70,6 +70,21 @@
       '<circle cx="50" cy="50" r="6.5" fill="currentColor"/></svg>';
   }
 
+  /* ---------- Hidayah markası (davet sayfası kimliği) ---------- */
+  function hidayahLogo() {
+    if (window.HIDAYAH_LOGO) return '<img class="hb-logo" src="' + window.HIDAYAH_LOGO + '" alt="Hidayah" loading="lazy" />';
+    return '<span class="hb-word">HIDAYAH</span>';
+  }
+  function hidayahBrand(variant) {
+    if (variant === "splash") {
+      return '<div class="hidayah-brand hb-splash">' + hidayahLogo() +
+        '<span class="hb-by">' + t("brand_by") + '</span></div>';
+    }
+    return '<div class="hidayah-brand hb-footer">' +
+      '<span class="hb-badge">' + hidayahLogo() + '</span>' +
+      '<span class="hb-by">' + t("brand_by") + '</span></div>';
+  }
+
   /* ---------- tema ikonları (SVG) ---------- */
   function themeIcon(code) {
     var s = '<svg class="th-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
@@ -216,7 +231,8 @@
       '<div class="f-ayah-ref">'+t("ayah_ref")+'</div>' +
       '<div class="f-sep"></div>' +
       '<div class="f-note">'+t("footer_note")+'</div>' +
-      '<div class="f-fine">'+CONTENT.meta.workTitleAr+' · '+t("footer_rights")+'</div>' +
+      '<div class="f-fine">'+CONTENT.meta.workTitleAr+' · '+pick(CONTENT.meta.author)+'</div>' +
+      hidayahBrand("footer") +
     '</div></footer>';
   }
 
@@ -697,6 +713,7 @@
       '<div class="splash-line"></div>' +
       '<div class="splash-ayah-wrap"><span class="splash-ayah">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</span></div>' +
       '<div class="splash-ref">'+t("ayah_ref")+'</div>' +
+      hidayahBrand("splash") +
       '<div class="splash-hint">'+t("splash_hint")+'</div>' +
     '</div>';
     document.body.appendChild(sp);
@@ -735,7 +752,7 @@
         document.documentElement.style.overflow = "";
       }, 850);
     }
-    var tmr = setTimeout(done, 4200);
+    var tmr = setTimeout(done, 4800);
     sp.addEventListener("click", function () { clearTimeout(tmr); done(); });
   }
 

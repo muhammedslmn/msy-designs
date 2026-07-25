@@ -1,5 +1,4 @@
-/* Tuhfetü'l-Etfâl — İçerik Verisi (otomatik üretildi, v4).
-   Kaynağa tam sadık; her alan üç dilde (tr/de/en) tamdır. */
+/* Tuhfetü'l-Etfâl — İçerik Verisi (otomatik üretildi, v5). Kaynağa tam sadık; her alan üç dilde (tr/de/en) tamdır. Misaller harekeli Arapça + latin. */
 window.CONTENT = {
   "meta": {
     "workTitle": {
@@ -590,14 +589,14 @@ window.CONTENT = {
             "de": [
               "Dieser Vers ist der **Einleitungsvers**; er nennt, dass es für sākines Nūn und Tanwīn vier Regeln gibt. Unterscheiden wir die beiden gut:",
               "**1) Was ist das sākine Nūn (نْ)?** Ein Nūn ohne Vokal (Fatḥa/Kasra/Ḍamma), das in **Schrift** und **Aussprache** fest ist, und sowohl in **Waṣl** (verbindendem Weiterlesen) als auch in **Waqf** (beim Anhalten) unverändert bleibt. Es kann in Nomen, Verb oder Partikel stehen. **Wichtig:** Es ist ursprünglich sākin — nicht das Nūn, das *nachträglich* bewegt wird, um zwei Vokallose zu trennen.",
-              "**Zwei Arten:** • **Ursprüngliches Nūn** — Wurzelbuchstabe des Wortes (z. B. das Nūn in *anʿamta*). • **Hinzugekommenes (ʿāriḍ) Nūn** — nicht zur Wurzel gehörend (z. B. das Nūn von „min“ in *mina-l-dschinna*). Beide unterliegen, wenn sākin, denselben vier Regeln.",
-              "**Eine Feinheit — treffen zwei Vokallose aufeinander:** Im Arabischen können zwei sākine Buchstaben nicht nacheinander gelesen werden. Folgt dem sākinen Nūn ein **Verbindungs-Hamza** (Hamzat al-waṣl, am Wortanfang, das beim Übergang nicht gesprochen wird), wird das Nūn bewegt: • Regel: mit **Kasra** — wie *mani-htadā*. • Ausnahme: bei der Präposition „**min**“ mit **Fatḥa** — wie *mina-l-dschinna*."
+              "**Zwei Arten:** • **Ursprüngliches Nūn** — Wurzelbuchstabe des Wortes (z. B. das Nūn in **أَنْعَمْتَ** (anʿamta)). • **Hinzugekommenes (ʿāriḍ) Nūn** — nicht zur Wurzel gehörend (z. B. das Nūn von „min“ in **مِنَ الْجِنَّةِ** (mina-l-dschinna)). Beide unterliegen, wenn sākin, denselben vier Regeln.",
+              "**Eine Feinheit — treffen zwei Vokallose aufeinander:** Im Arabischen können zwei sākine Buchstaben nicht nacheinander gelesen werden. Folgt dem sākinen Nūn ein **Verbindungs-Hamza** (Hamzat al-waṣl, am Wortanfang, das beim Übergang nicht gesprochen wird), wird das Nūn bewegt: • Regel: mit **Kasra** — wie **مَنِ اهْتَدَى** (mani-htadā). • Ausnahme: bei der Präposition „**min**“ mit **Fatḥa** — wie **مِنَ الْجِنَّةِ** (mina-l-dschinna)."
             ],
             "en": [
               "This verse is the **opening verse**; it states that the sākin nūn and tanwīn have four rulings. Let us distinguish the two well:",
               "**1) What is the sākin nūn (نْ)?** A nūn without a vowel (fatḥa/kasra/ḍamma), fixed in both **writing** and **pronunciation**, unchanging in both **waṣl** (connecting to the next word) and **waqf** (pausing). It may occur in a noun, verb, or particle. **Important:** it is originally sākin — not the nūn that is *subsequently* vowelled to separate two sākins.",
-              "**Two kinds:** • **Original nūn** — a root letter of the word (e.g. the nūn in *anʿamta*). • **Adventitious (ʿāriḍ) nūn** — not of the root (e.g. the nūn of \"min\" in *mina-l-jinna*). Both, when sākin, take the same four rulings.",
-              "**A subtlety — when two sākins meet:** In Arabic two sākin letters cannot be read consecutively. If a **connecting hamza** (hamzat al-waṣl, at a word's start, unspoken in transition) follows the sākin nūn, the nūn is vowelled: • Rule: with **kasra** — as in *mani-htadā*. • Exception: with the preposition \"**min**,\" with **fatḥa** — as in *mina-l-jinna*."
+              "**Two kinds:** • **Original nūn** — a root letter of the word (e.g. the nūn in **أَنْعَمْتَ** (anʿamta)). • **Adventitious (ʿāriḍ) nūn** — not of the root (e.g. the nūn of \"min\" in **مِنَ الْجِنَّةِ** (mina-l-jinna)). Both, when sākin, take the same four rulings.",
+              "**A subtlety — when two sākins meet:** In Arabic two sākin letters cannot be read consecutively. If a **connecting hamza** (hamzat al-waṣl, at a word's start, unspoken in transition) follows the sākin nūn, the nūn is vowelled: • Rule: with **kasra** — as in **مَنِ اهْتَدَى** (mani-htadā). • Exception: with the preposition \"**min**,\" with **fatḥa** — as in **مِنَ الْجِنَّةِ** (mina-l-jinna)."
             ]
           }
         },
@@ -610,19 +609,19 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**Önce tenvîni de tanımlayalım (6. beytin devamı):** **Tenvîn**, ismin sonuna gelen, kelimenin aslından olmayan **fazladan (zâid) bir sâkin nûndur.** Özellikleri: • **Okuyuşta vardır, yazıda yoktur** — nûn harfi olarak yazılmaz, iki üstün/iki esre/iki ötre işaretiyle gösterilir, fakat \"n\" diye okunur. • **Vakıfta (durunca) düşer.** Fetha tenvîninde durulunca **elif gibi uzatılır** (iki hareke) — *عَلِيمًا* → *عَlîmâ* gibi; ötre/esre tenvîninde ise sâkin okunur. • **Yalnız isimlerde bulunur** (fiilde tenvîn olmaz; tekit nûnuyla ona benzeyen iki yer \"şibh-i tenvîn\" diye anılır).",
+              "**Önce tenvîni de tanımlayalım (6. beytin devamı):** **Tenvîn**, ismin sonuna gelen, kelimenin aslından olmayan **fazladan (zâid) bir sâkin nûndur.** Özellikleri: • **Okuyuşta vardır, yazıda yoktur** — nûn harfi olarak yazılmaz, iki üstün/iki esre/iki ötre işaretiyle gösterilir, fakat \"n\" diye okunur. • **Vakıfta (durunca) düşer.** Fetha tenvîninde durulunca **elif gibi uzatılır** (iki hareke) — **عَلِيمًا** (ʿalīman) → **عَلِيمَا** (ʿalīmā) gibi; ötre/esre tenvîninde ise sâkin okunur. • **Yalnız isimlerde bulunur** (fiilde tenvîn olmaz; tekit nûnuyla ona benzeyen iki yer \"şibh-i tenvîn\" diye anılır).",
               "**İzhâr (birinci hüküm) — Lügat (sözlük) anlamı:** \"açığa çıkarmak, belli etmek\" demektir.",
               "**Istılah (terim) anlamı:** sâkin nûn veya tenvîni, **gunne (genizden gelen ses) yapmadan, açıkça** kendi mahrecinden (çıkış yerinden) okumaktır. (Gunnenin aslı kalır ama uzatılmaz.)",
               "**Neden \"halkî = boğaz izhârı\" denir?** Çünkü bu altı harfin mahreci **boğazdır.** Nûnun mahreci (dil ucu) ile boğaz **birbirinden uzak** olduğundan harfler karışmaz; nûn açık ve net okunur."
             ],
             "de": [
-              "**Definieren wir auch das Tanwīn (Fortsetzung von Vers 6):** Das **Tanwīn** ist ein **zusätzliches (zāʾid) vokalloses Nūn** am Ende eines Nomens, nicht zur Wurzel gehörend. Merkmale: • **In der Aussprache vorhanden, in der Schrift nicht** — kein Nūn-Buchstabe, sondern Doppel-Fatḥa/Kasra/Ḍamma, aber als „n“ gelesen. • **Beim Anhalten entfällt es.** Bei Fatḥa-Tanwīn wird beim Anhalten wie ein **Alif gedehnt** (zwei Ḥaraka) — *ʿalīman* → *ʿalīmā*; bei Ḍamma/Kasra sākin. • **Nur bei Nomen** (kein Tanwīn im Verb; zwei dem Tanwīn ähnliche Stellen mit dem Bekräftigungs-Nūn heißen „schibh at-tanwīn“).",
+              "**Definieren wir auch das Tanwīn (Fortsetzung von Vers 6):** Das **Tanwīn** ist ein **zusätzliches (zāʾid) vokalloses Nūn** am Ende eines Nomens, nicht zur Wurzel gehörend. Merkmale: • **In der Aussprache vorhanden, in der Schrift nicht** — kein Nūn-Buchstabe, sondern Doppel-Fatḥa/Kasra/Ḍamma, aber als „n“ gelesen. • **Beim Anhalten entfällt es.** Bei Fatḥa-Tanwīn wird beim Anhalten wie ein **Alif gedehnt** (zwei Ḥaraka) — **عَلِيمًا** (ʿalīman) → **عَلِيمَا** (ʿalīmā); bei Ḍamma/Kasra sākin. • **Nur bei Nomen** (kein Tanwīn im Verb; zwei dem Tanwīn ähnliche Stellen mit dem Bekräftigungs-Nūn heißen „schibh at-tanwīn“).",
               "**Iẓhār (erste Regel) — Wörtliche Bedeutung:** „offenlegen, deutlich machen“.",
               "**Fachliche Bedeutung (Iṣṭilāḥ):** das sākine Nūn oder Tanwīn **ohne Ghunna (Nasenlaut), deutlich** aus seinem Austrittsort auszusprechen. (Die Grund-Ghunna bleibt, wird aber nicht gedehnt.)",
               "**Warum „ḥalqī = Kehl-Iẓhār“?** Weil diese sechs Buchstaben aus der **Kehle** kommen. Da der Austrittsort des Nūn (Zungenspitze) von der Kehle **weit entfernt** ist, vermischen sich die Laute nicht; das Nūn bleibt klar."
             ],
             "en": [
-              "**Let us also define tanwīn (continuing verse 6):** The **tanwīn** is an **extra (zāʾid) vowelless nūn** at a noun's end, not of the root. Features: • **Present in speech, absent in writing** — not a nūn letter but a doubled fatḥa/kasra/ḍamma, yet read as \"n.\" • **Drops at a pause.** With fatḥa-tanwīn, on pausing it is **lengthened like an alif** (two ḥarakāt) — *ʿalīman* → *ʿalīmā*; with ḍamma/kasra it becomes sākin. • **Only in nouns** (no tanwīn in a verb; two places resembling tanwīn with the emphatic nūn are called \"shibh al-tanwīn\").",
+              "**Let us also define tanwīn (continuing verse 6):** The **tanwīn** is an **extra (zāʾid) vowelless nūn** at a noun's end, not of the root. Features: • **Present in speech, absent in writing** — not a nūn letter but a doubled fatḥa/kasra/ḍamma, yet read as \"n.\" • **Drops at a pause.** With fatḥa-tanwīn, on pausing it is **lengthened like an alif** (two ḥarakāt) — **عَلِيمًا** (ʿalīman) → **عَلِيمَا** (ʿalīmā); with ḍamma/kasra it becomes sākin. • **Only in nouns** (no tanwīn in a verb; two places resembling tanwīn with the emphatic nūn are called \"shibh al-tanwīn\").",
               "**iẓhār (the first ruling) — Literal meaning:** \"to make clear, to disclose.\"",
               "**Technical meaning (iṣṭilāḥ):** to pronounce the sākin nūn or tanwīn **without ghunna (nasal sound), clearly** from its exit point. (The base ghunna remains but is not prolonged.)",
               "**Why \"ḥalqī = throat iẓhār\"?** Because these six letters issue from the **throat.** Since the nūn's exit point (tongue-tip) is **far** from the throat, the sounds do not blend; the nūn stays clear."
@@ -797,14 +796,14 @@ window.CONTENT = {
               "**Idghām (zweite Regel) — Wörtliche Bedeutung:** „etwas in etwas einfügen, verschmelzen“.",
               "**Fachliche Bedeutung (Iṣṭilāḥ):** einen sākinen Buchstaben in den folgenden bewegten **einzufügen**, sodass beide **ein verdoppelter Buchstabe** werden.",
               "**Sechs Buchstaben**, versammelt in **«يَرْمَلُونَ»** (Yāʾ-Rāʾ-Mīm-Lām-Wāw-Nūn): **ي · ر · م · ل · و · ن.** Dieses Idghām gilt **nur zwischen zwei Wörtern** (nicht im selben Wort).",
-              "**Ausführung (zwei Fälle):** • Sind beide **gleich** (Nūn + Nūn), geht der erste direkt in den zweiten über. • Sind sie **verschieden**, wird das Nūn/Tanwīn zuerst in die **Art** des zweiten überführt, dann eingefügt. Z. B. bei *min wāl* wird das Nūn erst zum Wāw, dann eingefügt → „miwwāl“.",
+              "**Ausführung (zwei Fälle):** • Sind beide **gleich** (Nūn + Nūn), geht der erste direkt in den zweiten über. • Sind sie **verschieden**, wird das Nūn/Tanwīn zuerst in die **Art** des zweiten überführt, dann eingefügt. Z. B. bei **مِنْ وَالٍ** (min wāl) wird das Nūn erst zum Wāw, dann eingefügt → „miwwāl“.",
               "**Diese sechs teilen sich (Verse 10 und 12):** Idghām **mit Ghunna** (ي ن م و) und **ohne Ghunna** (ل ر)."
             ],
             "en": [
               "**idghām (the second ruling) — Literal meaning:** \"to insert one thing into another, to merge.\"",
               "**Technical meaning (iṣṭilāḥ):** to **insert** a sākin letter into the following vowelled letter so both become **one doubled letter**.",
               "**Six letters**, gathered in **«يَرْمَلُونَ»** (yāʾ-rāʾ-mīm-lām-wāw-nūn): **ي · ر · م · ل · و · ن.** This idghām applies **only between two words** (not within one word).",
-              "**Application (two cases):** • If both are **identical** (nūn + nūn), the first passes directly into the second. • If **different**, the nūn/tanwīn is first converted to the **kind** of the second, then inserted. E.g. in *min wāl*, the nūn first becomes a wāw, then merges → \"miwwāl.\"",
+              "**Application (two cases):** • If both are **identical** (nūn + nūn), the first passes directly into the second. • If **different**, the nūn/tanwīn is first converted to the **kind** of the second, then inserted. E.g. in **مِنْ وَالٍ** (min wāl), the nūn first becomes a wāw, then merges → \"miwwāl.\"",
               "**These six split (verses 10 and 12):** idghām **with ghunna** (ي ن م و) and **without ghunna** (ل ر)."
             ]
           }
@@ -823,11 +822,11 @@ window.CONTENT = {
             ],
             "de": [
               "**Teil 1 — Idghām mit Ghunna (maʿa ghunna):** ein Idghām mit „Ghunna“ (Nasenlaut, im Maß von zwei Ḥaraka). Vier Buchstaben, versammelt in **«يَنْمُو»** (Yāʾ-Nūn-Mīm-Wāw): **ي · ن · م · و.**",
-              "**Wie gelesen?** Beim Verschmelzen kommt der **Laut aus der Nase**, der Buchstabe wird verdoppelt gelesen. Z. B. *man yaqūl* → „may-yaqūl“ (mit Ghunna). Die Tabelle zeigt jeden Buchstaben mit Beispielen der Regel „Idghām mit Ghunna“."
+              "**Wie gelesen?** Beim Verschmelzen kommt der **Laut aus der Nase**, der Buchstabe wird verdoppelt gelesen. Z. B. **مَنْ يَقُولُ** (man yaqūl) → „may-yaqūl“ (mit Ghunna). Die Tabelle zeigt jeden Buchstaben mit Beispielen der Regel „Idghām mit Ghunna“."
             ],
             "en": [
               "**Part 1 — Idghām with ghunna (maʿa ghunna):** an idghām done with \"ghunna\" (a nasal sound held for two ḥarakāt). Four letters, gathered in **«يَنْمُو»** (yāʾ-nūn-mīm-wāw): **ي · ن · م · و.**",
-              "**How read?** When merging, the **sound comes from the nose** and the letter is read doubled. E.g. *man yaqūl* → \"may-yaqūl\" (with ghunna). The table shows each letter with examples of the \"idghām with ghunna\" rule."
+              "**How read?** When merging, the **sound comes from the nose** and the letter is read doubled. E.g. **مَنْ يَقُولُ** (man yaqūl) → \"may-yaqūl\" (with ghunna). The table shows each letter with examples of the \"idghām with ghunna\" rule."
             ]
           },
           "tables": [
@@ -979,12 +978,12 @@ window.CONTENT = {
             ],
             "de": [
               "**Teil 2 — Idghām ohne Ghunna (bilā ghunna):** ein **vollständiges** Verschmelzen ohne Ghunna. Zwei Buchstaben: **ل (Lām) · ر (Rāʾ)** (auch als „رل“).",
-              "**Wie gelesen?** Das Nūn/Tanwīn geht ohne jeden Nasenlaut direkt in diese zwei über, der Buchstabe wird verdoppelt. Z. B. *min rabbihim* → „mir-rabbihim“; *min ladunhu* → „mil-ladunh“.",
+              "**Wie gelesen?** Das Nūn/Tanwīn geht ohne jeden Nasenlaut direkt in diese zwei über, der Buchstabe wird verdoppelt. Z. B. **مِنْ رَبِّهِمْ** (min rabbihim) → „mir-rabbihim“; **مِنْ لَدُنْهُ** (min ladunhu) → „mil-ladunh“.",
               "**Was heißt „karrirannah (wiederhole es)“?** Es verweist auf die „**Takrīr**“-Eigenschaft des Rāʾ (das leichte Vibrieren der Zunge) bzw. mahnt, das Idghām gut zu festigen. (Übertriebenes Takrīr ist ein Fehler; eine Vibration genügt.)"
             ],
             "en": [
               "**Part 2 — Idghām without ghunna (bilā ghunna):** a **complete** merging without ghunna. Two letters: **ل (lām) · ر (rāʾ)** (also \"رل\").",
-              "**How read?** The nūn/tanwīn passes directly, with no nasal sound, into these two, and the letter is doubled. E.g. *min rabbihim* → \"mir-rabbihim\"; *min ladunhu* → \"mil-ladunh.\"",
+              "**How read?** The nūn/tanwīn passes directly, with no nasal sound, into these two, and the letter is doubled. E.g. **مِنْ رَبِّهِمْ** (min rabbihim) → \"mir-rabbihim\"; **مِنْ لَدُنْهُ** (min ladunhu) → \"mil-ladunh.\"",
               "**What does \"karrirannah (repeat it)\" mean?** It points to the \"**takrīr**\" quality of the rāʾ (a slight vibration of the tongue) or reminds one to settle the idghām firmly. (Excessive takrīr is a fault; one vibration suffices.)"
             ]
           },
@@ -2182,8 +2181,8 @@ window.CONTENT = {
             {
               "ar": "لِلاَمِ أَلْ",
               "tr": "\"el\" lâmına (لْ)",
-              "de": "dem Lām von „al“",
-              "en": "for the lām of \"al\""
+              "de": "dem Lām von „al“ (لْ)",
+              "en": "for the lām of \"al\" (لْ)"
             },
             {
               "ar": "حَالاَنِ",
@@ -2421,8 +2420,8 @@ window.CONTENT = {
           "n": 27,
           "translation": {
             "tr": "«طب ثم صل رحماً تفز ضف ذا نعم · دع سوء ظن زر شريفاً للكرم» — bu sözün her kelimesinin ilk harfi bir şemsî harfi remzeder.",
-            "de": "«ṭib thumma ṣil raḥiman tafuz ḍif dhā niʿam · daʿ sūʾa ẓannin zur scharīfan li-l-karam» — der Anfangsbuchstabe jedes Wortes steht für einen schamsī-Buchstaben.",
-            "en": "«ṭib thumma ṣil raḥiman tafuz ḍif dhā niʿam · daʿ sūʾa ẓannin zur sharīfan li-l-karam» — each word's first letter denotes a shamsī letter."
+            "de": "«طب ثم صل رحماً تفز ضف ذا نعم · دع سوء ظن زر شريفاً للكرم» (ṭib thumma ṣil raḥiman tafuz ḍif dhā niʿam · daʿ sūʾa ẓannin zur scharīfan li-l-karam) — der Anfangsbuchstabe jedes Wortes steht für einen schamsī-Buchstaben.",
+            "en": "«طب ثم صل رحماً تفز ضف ذا نعم · دع سوء ظن زر شريفاً للكرم» (ṭib thumma ṣil raḥiman tafuz ḍif dhā niʿam · daʿ sūʾa ẓannin zur sharīfan li-l-karam) — each word's first letter denotes a shamsī letter."
           },
           "sharh": {
             "tr": [
@@ -2588,12 +2587,12 @@ window.CONTENT = {
               "**Kolay hatırlatma:** İki örnek kelimenin kendisi zaten kuralı gösterir. **الْقَمَر** dersen lâmı **duyarsın** (kamerî); **الشَّمْس** dersen lâmı **duymazsın** (şemsî). Bu iki kelime, harfleri hatırlamasan bile hükmü ayırt etmene yeter."
             ],
             "de": [
-              "**Benennung:** Der Verfasser benennt die zwei Zustände: • **„qamarī-Lām“** = das mit Iẓhār deutlich gelesene Lām (Beispiel *al-qamar*). • **„schamsī-Lām“** = das verschmolzene, nicht gelesene Lām (Beispiel *asch-schams*).",
-              "**Leichte Merkhilfe:** Die zwei Musterwörter zeigen die Regel selbst. Sagst du **al-qamar**, **hörst** du das Lām (qamarī); sagst du **asch-schams**, **hörst** du es nicht (schamsī). Diese zwei Wörter genügen zur Unterscheidung, auch ohne die Buchstaben auswendig zu wissen."
+              "**Benennung:** Der Verfasser benennt die zwei Zustände: • **„qamarī-Lām“** = das mit Iẓhār deutlich gelesene Lām (Beispiel **الْقَمَر** (al-qamar)). • **„schamsī-Lām“** = das verschmolzene, nicht gelesene Lām (Beispiel **الشَّمْس** (asch-schams)).",
+              "**Leichte Merkhilfe:** Die zwei Musterwörter zeigen die Regel selbst. Sagst du **الْقَمَر** (al-qamar), **hörst** du das Lām (qamarī); sagst du **الشَّمْس** (asch-schams), **hörst** du es nicht (schamsī). Diese zwei Wörter genügen zur Unterscheidung, auch ohne die Buchstaben auswendig zu wissen."
             ],
             "en": [
-              "**Naming:** the author names the two states: • **\"qamarī lām\"** = the lām read clearly with iẓhār (example *al-qamar*). • **\"shamsī lām\"** = the merged, unread lām (example *al-shams*).",
-              "**Easy reminder:** the two model words show the rule themselves. Say **al-qamar** and you **hear** the lām (qamarī); say **al-shams** and you do **not** (shamsī). These two words suffice to tell them apart, even without memorizing the letters."
+              "**Naming:** the author names the two states: • **\"qamarī lām\"** = the lām read clearly with iẓhār (example **الْقَمَر** (al-qamar)). • **\"shamsī lām\"** = the merged, unread lām (example **الشَّمْس** (al-shams)).",
+              "**Easy reminder:** the two model words show the rule themselves. Say **الْقَمَر** (al-qamar) and you **hear** the lām (qamarī); say **الشَّمْس** (al-shams) and you do **not** (shamsī). These two words suffice to tell them apart, even without memorizing the letters."
             ]
           }
         },
@@ -2649,14 +2648,14 @@ window.CONTENT = {
           "**Artikel-Lām** („al-“ الْ): macht ein Wort bestimmt.",
           "+ **14 qamarī (ابغ حجك وخف عقيمه)** → **Iẓhār**: Lām DEUTLICH (*al-qamar*).",
           "+ **14 schamsī (طب ثم صل…)** → **Idghām**: Lām STUMM, Folgebuchstabe verdoppelt (*asch-schams*).",
-          "Merke: *al-qamar* Lām hörbar (qamarī) · *asch-schams* Lām unhörbar (schamsī).",
+          "Merke: **الْقَمَر** (al-qamar) Lām hörbar (qamarī) · **الشَّمْس** (asch-schams) Lām unhörbar (schamsī).",
           "**Verb-Lām:** ursprüngliches sākines Lām → **Iẓhār** (*qul naʿam*); nur vor **ل und ر** → **Idghām** (*qur-rabbi*)."
         ],
         "en": [
           "**Article lām** (\"al-\" الْ): makes a word definite.",
           "+ **14 qamarī (ابغ حجك وخف عقيمه)** → **iẓhār**: lām CLEAR (*al-qamar*).",
           "+ **14 shamsī (طب ثم صل…)** → **idghām**: lām SILENT, next letter doubled (*al-shams*).",
-          "Remember: *al-qamar* lām audible (qamarī) · *al-shams* lām inaudible (shamsī).",
+          "Remember: **الْقَمَر** (al-qamar) lām audible (qamarī) · **الشَّمْس** (al-shams) lām inaudible (shamsī).",
           "**Verb lām:** original sākin lām → **iẓhār** (*qul naʿam*); only before **ل and ر** → **idghām** (*qur-rabbi*)."
         ]
       }
@@ -2735,14 +2734,14 @@ window.CONTENT = {
             "de": [
               "**Zuerst zwei Grundbegriffe:** • **Machradsch** = der **Austrittsort** des Buchstabens in Mund/Kehle. • **Ṣifa** = die **Eigenschaft** an diesem Ort (dunkel-hell, gehemmt-fließend, Zischen, Vibration). Jeder Buchstabe hat einen Machradsch und mehrere Ṣifāt.",
               "**Was sind Mithlān (zwei Gleiche)?** Zwei Buchstaben, deren Name, Machradsch und Ṣifāt **völlig gleich** sind — also **derselbe Buchstabe** nacheinander (ب + ب, م + م, ن + ن).",
-              "**Regel:** Treffen zwei gleiche Buchstaben aufeinander, ist das **Idghām Pflicht** und stets **vollständig** (der erste löst sich spurlos im zweiten). Z. B. *man naschāʾu* (Nūn+Nūn), *bal lahum* (Lām+Lām), *rabiḥat tidschāratuhum* (Tāʾ+Tāʾ).",
-              "**Wichtige Ausnahme:** Ist einer der beiden ein **Madd-Buchstabe** (Dehnungs-Alif/-Wāw/-Yāʾ), so wird **nicht** verschmolzen; denn sein Machradsch ist anders (Dschauf = Mundraum). Z. B. *iṣbirū wa-ṣābirū* (erstes Wāw Madd → kein Idghām); *alladhī yuwaswisu* (erstes Yāʾ Madd → kein Idghām)."
+              "**Regel:** Treffen zwei gleiche Buchstaben aufeinander, ist das **Idghām Pflicht** und stets **vollständig** (der erste löst sich spurlos im zweiten). Z. B. **مَنْ نَّشَاءُ** (man naschāʾu) (Nūn+Nūn), **بَل لَّهُمْ** (bal lahum) (Lām+Lām), **رَبِحَت تِّجَارَتُهُمْ** (rabiḥat tidschāratuhum) (Tāʾ+Tāʾ).",
+              "**Wichtige Ausnahme:** Ist einer der beiden ein **Madd-Buchstabe** (Dehnungs-Alif/-Wāw/-Yāʾ), so wird **nicht** verschmolzen; denn sein Machradsch ist anders (Dschauf = Mundraum). Z. B. **اصْبِرُوا وَصَابِرُوا** (iṣbirū wa-ṣābirū) (erstes Wāw Madd → kein Idghām); **الَّذِي يُوَسْوِسُ** (alladhī yuwaswisu) (erstes Yāʾ Madd → kein Idghām)."
             ],
             "en": [
               "**First, two basic terms:** • **Makhraj** = the letter's **exit point** in the mouth/throat. • **Ṣifa** = its **quality** at that point (dark-light, obstructed-flowing, whistling, vibration). Each letter has one makhraj and several ṣifāt.",
               "**What are mithlān (two likes)?** Two letters whose name, makhraj, and ṣifāt are **completely the same** — i.e. **the same letter** in succession (ب + ب, م + م, ن + ن).",
-              "**Ruling:** when two identical letters meet, idghām is **obligatory** and always **complete** (the first dissolves into the second without a trace). E.g. *man nashāʾu* (nūn+nūn), *bal lahum* (lām+lām), *rabiḥat tijāratuhum* (tāʾ+tāʾ).",
-              "**Important exception:** if one of the two is a **madd letter** (a lengthening alif/wāw/yāʾ), there is **no** merging; for its makhraj differs (jawf = the mouth cavity). E.g. *iṣbirū wa-ṣābirū* (first wāw is madd → no idghām); *alladhī yuwaswisu* (first yāʾ is madd → no idghām)."
+              "**Ruling:** when two identical letters meet, idghām is **obligatory** and always **complete** (the first dissolves into the second without a trace). E.g. **مَنْ نَّشَاءُ** (man nashāʾu) (nūn+nūn), **بَل لَّهُمْ** (bal lahum) (lām+lām), **رَبِحَت تِّجَارَتُهُمْ** (rabiḥat tijāratuhum) (tāʾ+tāʾ).",
+              "**Important exception:** if one of the two is a **madd letter** (a lengthening alif/wāw/yāʾ), there is **no** merging; for its makhraj differs (jawf = the mouth cavity). E.g. **اصْبِرُوا وَصَابِرُوا** (iṣbirū wa-ṣābirū) (first wāw is madd → no idghām); **الَّذِي يُوَسْوِسُ** (alladhī yuwaswisu) (first yāʾ is madd → no idghām)."
             ]
           },
           "tables": [
@@ -2853,13 +2852,13 @@ window.CONTENT = {
             ],
             "de": [
               "**Was sind Mutaqāribān (zwei Nahe)?** Zwei Buchstaben, deren Machradsch (mitunter auch Ṣifāt) **einander nah** sind — nicht gleich, aber benachbart.",
-              "**Drei nahe Paare mit vollständigem Idghām:** • **Nūn → Lām** (z. B. *min ladunhu*), • **Nūn → Rāʾ** (z. B. *min rabbika*), • **Lām → Rāʾ** (z. B. *qul rabbi*). Hier geht der erste vollständig in den zweiten über.",
-              "**Zwei Paare mit unvollständigem (nāqiṣ) Idghām:** • **Nūn → Wāw** (z. B. *min waliyyin*), • **Nūn → Yāʾ** (z. B. *man yaschāʾu*). Hier geht das Nūn über, doch seine **Ghunna bleibt** (darum „unvollständig“). — Diese zwei entsprechen dem **Idghām mit Ghunna** aus dem Nūn-Kapitel; beide Sichtweisen sind richtig."
+              "**Drei nahe Paare mit vollständigem Idghām:** • **Nūn → Lām** (z. B. **مِنْ لَدُنْهُ** (min ladunhu)), • **Nūn → Rāʾ** (z. B. **مِنْ رَبِّكَ** (min rabbika)), • **Lām → Rāʾ** (z. B. **قُلْ رَبِّ** (qul rabbi)). Hier geht der erste vollständig in den zweiten über.",
+              "**Zwei Paare mit unvollständigem (nāqiṣ) Idghām:** • **Nūn → Wāw** (z. B. **مِنْ وَلِيٍّ** (min waliyyin)), • **Nūn → Yāʾ** (z. B. **مَنْ يَشَاءُ** (man yaschāʾu)). Hier geht das Nūn über, doch seine **Ghunna bleibt** (darum „unvollständig“). — Diese zwei entsprechen dem **Idghām mit Ghunna** aus dem Nūn-Kapitel; beide Sichtweisen sind richtig."
             ],
             "en": [
               "**What are mutaqāribān (two near ones)?** Two letters whose makhraj (sometimes also ṣifāt) are **near each other** — not the same, but neighbouring.",
-              "**Three near pairs with complete idghām:** • **nūn → lām** (e.g. *min ladunhu*), • **nūn → rāʾ** (e.g. *min rabbika*), • **lām → rāʾ** (e.g. *qul rabbi*). Here the first passes fully into the second.",
-              "**Two pairs with incomplete (nāqiṣ) idghām:** • **nūn → wāw** (e.g. *min waliyyin*), • **nūn → yāʾ** (e.g. *man yashāʾu*). Here the nūn passes over, but its **ghunna remains** (hence \"incomplete\"). — These two are the same as the **idghām with ghunna** from the nūn chapter; both views are correct."
+              "**Three near pairs with complete idghām:** • **nūn → lām** (e.g. **مِنْ لَدُنْهُ** (min ladunhu)), • **nūn → rāʾ** (e.g. **مِنْ رَبِّكَ** (min rabbika)), • **lām → rāʾ** (e.g. **قُلْ رَبِّ** (qul rabbi)). Here the first passes fully into the second.",
+              "**Two pairs with incomplete (nāqiṣ) idghām:** • **nūn → wāw** (e.g. **مِنْ وَلِيٍّ** (min waliyyin)), • **nūn → yāʾ** (e.g. **مَنْ يَشَاءُ** (man yashāʾu)). Here the nūn passes over, but its **ghunna remains** (hence \"incomplete\"). — These two are the same as the **idghām with ghunna** from the nūn chapter; both views are correct."
             ]
           }
         },
@@ -2900,12 +2899,12 @@ window.CONTENT = {
             ],
             "de": [
               "**Was sind Mutadschānisān (Gleichgattige)?** Zwei Buchstaben mit **gleichem** Machradsch und **verschiedener** Ṣifa. Es gibt Gruppen aus demselben Austrittsort: • **ت د ط** (Zungenspitze + Zahnwurzeln), • **ث ذ ظ** (Zungenspitze + Zahnkanten), • **ب م** (Lippen). Treffen zwei verschiedene daraus zusammen, sind es Mutadschānisān.",
-              "**Beispiele vollständigen Idghāms (gleicher Machradsch):** • **Tāʾ → Dāl:** *athqalat-daʿawā*. • **Dāl → Tāʾ:** *ʿabadtum*. • **Thāʾ → Dhāl:** *yalhath-dhālika*. • **Dhāl → Ẓāʾ:** *idh-ẓalamū*. • **Tāʾ → Ṭāʾ:** *āmanat-ṭāʾifa*. • **Bāʾ → Mīm (mit Ghunna):** *irkab-maʿanā*.",
+              "**Beispiele vollständigen Idghāms (gleicher Machradsch):** • **Tāʾ → Dāl:** **أَثْقَلَت دَّعَوَا** (athqalat-daʿawā). • **Dāl → Tāʾ:** **عَبَدْتُّمْ** (ʿabadtum). • **Thāʾ → Dhāl:** **يَلْهَث ذَّلِكَ** (yalhath-dhālika). • **Dhāl → Ẓāʾ:** **إِذ ظَّلَمُوا** (idh-ẓalamū). • **Tāʾ → Ṭāʾ:** **فَآمَنَت طَّائِفَةٌ** (āmanat-ṭāʾifa). • **Bāʾ → Mīm (mit Ghunna):** **ارْكَب مَّعَنَا** (irkab-maʿanā).",
               "**Was ist „ṣaghīr“ (kleines Idghām)?** Ist der **erste sākin, der zweite bewegt**, heißt das Idghām „ṣaghīr“. Grund: die Arbeit ist gering (Sākin in Bewegtes einfügen ist leicht). Alle Beispiele dieses Abschnitts sind ṣaghīr."
             ],
             "en": [
               "**What are mutajānisān (same-genus letters)?** Two letters with the **same** makhraj and **different** ṣifa. There are groups from one exit point: • **ت د ط** (tongue-tip + tooth roots), • **ث ذ ظ** (tongue-tip + tooth edges), • **ب م** (lips). When two different ones from these meet, they are mutajānisān.",
-              "**Examples of complete idghām (same makhraj):** • **tāʾ → dāl:** *athqalat-daʿawā*. • **dāl → tāʾ:** *ʿabadtum*. • **thāʾ → dhāl:** *yalhath-dhālika*. • **dhāl → ẓāʾ:** *idh-ẓalamū*. • **tāʾ → ṭāʾ:** *āmanat-ṭāʾifa*. • **bāʾ → mīm (with ghunna):** *irkab-maʿanā*.",
+              "**Examples of complete idghām (same makhraj):** • **tāʾ → dāl:** **أَثْقَلَت دَّعَوَا** (athqalat-daʿawā). • **dāl → tāʾ:** **عَبَدْتُّمْ** (ʿabadtum). • **thāʾ → dhāl:** **يَلْهَث ذَّلِكَ** (yalhath-dhālika). • **dhāl → ẓāʾ:** **إِذ ظَّلَمُوا** (idh-ẓalamū). • **tāʾ → ṭāʾ:** **فَآمَنَت طَّائِفَةٌ** (āmanat-ṭāʾifa). • **bāʾ → mīm (with ghunna):** **ارْكَب مَّعَنَا** (irkab-maʿanā).",
               "**What is \"ṣaghīr\" (small idghām)?** If the **first is sākin, the second vowelled**, the idghām is called \"ṣaghīr.\" Reason: the work is little (inserting a sākin into a vowelled one is easy). Every example in this section is ṣaghīr."
             ]
           },
@@ -3049,12 +3048,12 @@ window.CONTENT = {
             ],
             "de": [
               "**Was ist „kabīr“ (großes Idghām)?** Sind **beide** Buchstaben bewegt, heißt das Idghām „kabīr“. Grund: Man muss erst den ersten sākin machen, dann verschmelzen; die **Arbeit ist groß** (daher „groß“).",
-              "**Wichtig — Qirāʾa-Notiz:** Das kabīr-Idghām kommt in der von uns gelesenen **Ḥafṣ- (ʿan ʿĀṣim) Überlieferung nicht vor.** In manchen anderen Lesarten schon; z. B. wird in *mā salakakum* das erste (bewegte) Kāf ins zweite eingefügt. Das dient dem Begriff; in Ḥafṣ wird es nicht angewandt.",
+              "**Wichtig — Qirāʾa-Notiz:** Das kabīr-Idghām kommt in der von uns gelesenen **Ḥafṣ- (ʿan ʿĀṣim) Überlieferung nicht vor.** In manchen anderen Lesarten schon; z. B. wird in **مَا سَلَكَكُمْ** (mā salakakum) das erste (bewegte) Kāf ins zweite eingefügt. Das dient dem Begriff; in Ḥafṣ wird es nicht angewandt.",
               "**Zusammenfassung — jeder der drei Typen wird durch zwei weitere Maße bestimmt:** (1) **ṣaghīr** (erster sākin) / **kabīr** (beide bewegt); (2) **vollständig** (Buchstabe löst sich ganz) / **nāqiṣ** (Ṣifa bleibt). Die nächste Notiz zeigt den Unterschied „vollständig“ vs. „nāqiṣ“ an Beispielen."
             ],
             "en": [
               "**What is \"kabīr\" (great idghām)?** If **both** letters are vowelled, the idghām is called \"kabīr.\" Reason: one must first make the first sākin, then merge; the **work is great** (hence \"great\").",
-              "**Important — qirāʾa note:** the kabīr idghām does **not occur in the Ḥafṣ (ʿan ʿĀṣim) transmission** that we recite. It does in some other readings; e.g. in *mā salakakum* the first (vowelled) kāf merges into the second. This is to know the term; it is not applied in Ḥafṣ.",
+              "**Important — qirāʾa note:** the kabīr idghām does **not occur in the Ḥafṣ (ʿan ʿĀṣim) transmission** that we recite. It does in some other readings; e.g. in **مَا سَلَكَكُمْ** (mā salakakum) the first (vowelled) kāf merges into the second. This is to know the term; it is not applied in Ḥafṣ.",
               "**Summary — each of the three types is further qualified by two measures:** (1) **ṣaghīr** (first sākin) / **kabīr** (both vowelled); (2) **complete** (the letter fully dissolves) / **nāqiṣ** (its ṣifa remains). The next note shows \"complete\" vs \"nāqiṣ\" with examples."
             ]
           }
@@ -3081,8 +3080,8 @@ window.CONTENT = {
           },
           "body": {
             "tr": "• **Tam idğam:** Birinci harf, ikincinin içinde **hem zâtı hem sıfatıyla tamamen erir**; geriye hiçbir iz kalmaz. Mushafta ikinci harfin üzerine **şedde** konur. Örnek olarak: *فَآمَنَت طَّائِفَةٌ* (tâ, tı içinde tamamen kaybolur).\n• **Eksik (nâkıs) idğam:** Birinci harfin **zâtı kaybolur ama bir sıfatı kalır**. Mushafta ikinci harfe **şedde konmaz**. Örnek olarak: *أَحَطتُ بِمَا* (tı → tâ: tı'nın mahreci gider, ama isti'lâ [dilin arkaya-yukarı kalkması, kalınlık] sıfatı kalır). Ayrıca nûn → vâv/yâ da eksiktir; çünkü nûnun **gunnesi kalır**.",
-            "de": "• **Vollständiges Idghām:** Der erste Buchstabe **löst sich mit Wesen und Ṣifa ganz** im zweiten auf; keine Spur bleibt. Im Muṣḥaf trägt der zweite ein **Schadda**. Z. B. *āmanat-ṭāʾifa* (Tāʾ verschwindet ganz im Ṭāʾ).\n• **Unvollständiges (nāqiṣ) Idghām:** Das **Wesen** des ersten verschwindet, doch **eine Ṣifa bleibt**. Im Muṣḥaf **kein Schadda**. Z. B. *aḥaṭtu* (Ṭāʾ → Tāʾ: der Machradsch geht, doch die Istiʿlāʾ-Ṣifa [Hebung/Dunkelheit] bleibt). Auch Nūn → Wāw/Yāʾ ist nāqiṣ, weil die **Ghunna des Nūn bleibt**.",
-            "en": "• **Complete idghām:** the first letter **dissolves with its essence and ṣifa entirely** into the second; no trace remains. In the muṣḥaf the second bears a **shadda**. E.g. *āmanat-ṭāʾifa* (the tāʾ vanishes completely into the ṭāʾ).\n• **Incomplete (nāqiṣ) idghām:** the first's **essence** vanishes, but **one ṣifa remains**. In the muṣḥaf, **no shadda**. E.g. *aḥaṭtu* (ṭāʾ → tāʾ: the makhraj goes, but the istiʿlāʾ ṣifa [raising/darkness] stays). Also nūn → wāw/yāʾ is nāqiṣ, because the **nūn's ghunna remains**."
+            "de": "• **Vollständiges Idghām:** Der erste Buchstabe **löst sich mit Wesen und Ṣifa ganz** im zweiten auf; keine Spur bleibt. Im Muṣḥaf trägt der zweite ein **Schadda**. Z. B. **فَآمَنَت طَّائِفَةٌ** (āmanat-ṭāʾifa) (Tāʾ verschwindet ganz im Ṭāʾ).\n• **Unvollständiges (nāqiṣ) Idghām:** Das **Wesen** des ersten verschwindet, doch **eine Ṣifa bleibt**. Im Muṣḥaf **kein Schadda**. Z. B. **أَحَطتُ** (aḥaṭtu) (Ṭāʾ → Tāʾ: der Machradsch geht, doch die Istiʿlāʾ-Ṣifa [Hebung/Dunkelheit] bleibt). Auch Nūn → Wāw/Yāʾ ist nāqiṣ, weil die **Ghunna des Nūn bleibt**.",
+            "en": "• **Complete idghām:** the first letter **dissolves with its essence and ṣifa entirely** into the second; no trace remains. In the muṣḥaf the second bears a **shadda**. E.g. **فَآمَنَت طَّائِفَةٌ** (āmanat-ṭāʾifa) (the tāʾ vanishes completely into the ṭāʾ).\n• **Incomplete (nāqiṣ) idghām:** the first's **essence** vanishes, but **one ṣifa remains**. In the muṣḥaf, **no shadda**. E.g. **أَحَطتُ** (aḥaṭtu) (ṭāʾ → tāʾ: the makhraj goes, but the istiʿlāʾ ṣifa [raising/darkness] stays). Also nūn → wāw/yāʾ is nāqiṣ, because the **nūn's ghunna remains**."
           }
         }
       ],
@@ -3247,12 +3246,12 @@ window.CONTENT = {
             ],
             "de": [
               "**Praktische Regel (leichtes Erkennen des natürlichen Madd):** Ist das, was nach einem Madd-Buchstaben folgt, **kein Hamza (ء)** und folgt dem Madd-Buchstaben **kein sākiner Buchstabe** (kein Sukūn), so ist das Madd **natürlich** und wird zwei Ḥaraka gelesen.",
-              "**Z. B.:** *qāla*, *yaqūlu*, *qīla* — nach den Dehnungsbuchstaben steht weder Hamza noch Sukūn; alle sind natürliches Madd, zwei Ḥaraka.",
+              "**Z. B.:** **قَالَ** (qāla), **يَقُولُ** (yaqūlu), **قِيلَ** (qīla) — nach den Dehnungsbuchstaben steht weder Hamza noch Sukūn; alle sind natürliches Madd, zwei Ḥaraka.",
               "**Kurz:** Kein Grund (kein Hamza/Sukūn) → natürliches Madd. Ein Grund → farʿī Madd (nächster Vers)."
             ],
             "en": [
               "**Practical rule (an easy way to recognize the natural madd):** if what follows a madd letter is **not a hamza (ء)** and the madd letter is **not followed by a sākin letter** (no sukūn), then the madd is **natural** and read two ḥarakāt.",
-              "**E.g.:** *qāla*, *yaqūlu*, *qīla* — after the lengthening letters there is neither hamza nor sukūn; all are natural madd, two ḥarakāt.",
+              "**E.g.:** **قَالَ** (qāla), **يَقُولُ** (yaqūlu), **قِيلَ** (qīla) — after the lengthening letters there is neither hamza nor sukūn; all are natural madd, two ḥarakāt.",
               "**In short:** no cause (no hamza/sukūn) → natural madd. A cause → farʿī madd (next verse)."
             ]
           }
@@ -3318,11 +3317,11 @@ window.CONTENT = {
             ],
             "de": [
               "**Bedingungen der Madd-Buchstaben (damit ein Buchstabe als „Madd-Buchstabe“ gilt):** • **Alif (ا)**: davor **Fatḥa** — *qāla*. Da das Alif stets sākin und mit Fatḥa davor ist, ist es **immer** Madd-Buchstabe. • **Wāw (و)**: sākin und davor **Ḍamma** — *yaqūlu*. • **Yāʾ (ي)**: sākin und davor **Kasra** — *qīla*.",
-              "**Warum ist die Bedingung wichtig? (Wāw/Yāʾ mit falschem Vokal davor ist kein Madd):** Passt der vorige Vokal nicht, ist das Wāw/Yāʾ kein Madd-, sondern ein normaler (bewegter) Buchstabe. Z. B. das Wāw in *chawf* hat davor Fatḥa → kein Madd, sondern **Līn** (nächster Vers). Die Tabelle fasst die drei Madd-Buchstaben mit Bedingungen und Beispielen zusammen."
+              "**Warum ist die Bedingung wichtig? (Wāw/Yāʾ mit falschem Vokal davor ist kein Madd):** Passt der vorige Vokal nicht, ist das Wāw/Yāʾ kein Madd-, sondern ein normaler (bewegter) Buchstabe. Z. B. das Wāw in **خَوْف** (chawf) hat davor Fatḥa → kein Madd, sondern **Līn** (nächster Vers). Die Tabelle fasst die drei Madd-Buchstaben mit Bedingungen und Beispielen zusammen."
             ],
             "en": [
               "**Conditions of the madd letters (for a letter to count as a \"madd letter\"):** • **Alif (ا)**: preceded by **fatḥa** — *qāla*. Since the alif is always sākin with fatḥa before it, it is **always** a madd letter. • **Wāw (و)**: sākin and preceded by **ḍamma** — *yaqūlu*. • **Yāʾ (ي)**: sākin and preceded by **kasra** — *qīla*.",
-              "**Why does the condition matter? (a wāw/yāʾ with the wrong vowel before it is not madd):** if the preceding vowel does not match, the wāw/yāʾ is not a madd but an ordinary (vowelled) letter. E.g. the wāw in *khawf* has fatḥa before it → not madd but **līn** (next verse). The table summarizes the three madd letters with conditions and examples."
+              "**Why does the condition matter? (a wāw/yāʾ with the wrong vowel before it is not madd):** if the preceding vowel does not match, the wāw/yāʾ is not a madd but an ordinary (vowelled) letter. E.g. the wāw in **خَوْف** (khawf) has fatḥa before it → not madd but **līn** (next verse). The table summarizes the three madd letters with conditions and examples."
             ]
           },
           "tables": [
@@ -3418,12 +3417,12 @@ window.CONTENT = {
             "de": [
               "**Was sind Līn-Buchstaben?** „Līn“ (Weichheit): das **sākine Wāw (وْ) und Yāʾ (يْ) mit Fatḥa davor.** Z. B. *chawf* (Furcht), *Quraysch*, *al-bayt* (das Haus).",
               "**Unterschied zum Madd (wichtig):** Vor dem Madd-Wāw steht **Ḍamma**, vor dem Madd-Yāʾ **Kasra**; vor den Līn-Buchstaben aber **Fatḥa**. Darum werden Līn-Buchstaben normal nicht gedehnt; nur **beim Anhalten (Waqf), wenn ein Sukūn ʿāriḍ entsteht**, werden sie gedehnt (Madd al-Līn — Vers 45 und später).",
-              "**Kurz drei Begriffe zusammen:** • *qāla* — Madd (Alif, davor Fatḥa). • *yaqūlu* — Madd (Wāw, davor Ḍamma). • *chawf* — Līn (Wāw, davor Fatḥa). Die ersten zwei sind natürliches Madd; das dritte ein Līn-Buchstabe."
+              "**Kurz drei Begriffe zusammen:** • **قَالَ** (qāla) — Madd (Alif, davor Fatḥa). • **يَقُولُ** (yaqūlu) — Madd (Wāw, davor Ḍamma). • **خَوْف** (chawf) — Līn (Wāw, davor Fatḥa). Die ersten zwei sind natürliches Madd; das dritte ein Līn-Buchstabe."
             ],
             "en": [
               "**What are līn letters?** \"Līn\" (softness): the **sākin wāw (وْ) and yāʾ (يْ) with fatḥa before them.** E.g. *khawf* (fear), *Quraysh*, *al-bayt* (the house).",
               "**Difference from madd (important):** the madd wāw is preceded by **ḍamma**, the madd yāʾ by **kasra**; but the līn letters by **fatḥa**. So līn letters are not normally lengthened; only **on pausing (waqf), when an ʿāriḍ sukūn arises**, are they lengthened (madd al-līn — verse 45 and later).",
-              "**In short, three notions together:** • *qāla* — madd (alif, fatḥa before). • *yaqūlu* — madd (wāw, ḍamma before). • *khawf* — līn (wāw, fatḥa before). The first two are natural madd; the third is a līn letter."
+              "**In short, three notions together:** • **قَالَ** (qāla) — madd (alif, fatḥa before). • **يَقُولُ** (yaqūlu) — madd (wāw, ḍamma before). • **خَوْف** (khawf) — līn (wāw, fatḥa before). The first two are natural madd; the third is a līn letter."
             ]
           }
         }
@@ -3556,12 +3555,12 @@ window.CONTENT = {
             "de": [
               "**Madd muttaṣil (verbundenes Madd) — Wudschūb-Regel:** Es entsteht, wenn nach einem Madd-Buchstaben **im selben Wort** ein anschließendes **Hamza (ء)** kommt. „Muttaṣil“ (verbunden) heißt es, weil Madd-Buchstabe und Hamza **im selben Wort zusammentreffen**.",
               "**Regel:** Über das natürliche hinaus zu dehnen ist **Pflicht**; Kürzen unzulässig. Maß: **im Waṣl (Weiterlesen) 4 oder 5 Ḥaraka.** (Beim Anhalten am Hamza sind wegen des ʿāriḍ-Sukūn auch 4–5–6 erlaubt.)",
-              "**Beispiele (mit welchem Madd-Buchstaben):** • Alif + Hamza: *dschāʾa*, *as-samāʾi*. • Wāw + Hamza: *sūʾun*, *as-sūʾa*. • Yāʾ + Hamza: *dschīʾa*, *tafīʾa*. In allen sind Madd-Buchstabe und Hamza in **einem Wort**."
+              "**Beispiele (mit welchem Madd-Buchstaben):** • Alif + Hamza: **جَاءَ** (dschāʾa), **السَّمَاءِ** (as-samāʾi). • Wāw + Hamza: **سُوءٌ** (sūʾun), **السُّوءَ** (as-sūʾa). • Yāʾ + Hamza: **جِيءَ** (dschīʾa), **تَفِيءَ** (tafīʾa). In allen sind Madd-Buchstabe und Hamza in **einem Wort**."
             ],
             "en": [
               "**Madd muttaṣil (connected madd) — the wujūb ruling:** it arises when, after a madd letter, a joined **hamza (ء)** comes **in the same word**. It is called \"muttaṣil\" (connected) because the madd letter and hamza **meet in the same word**.",
               "**Ruling:** lengthening beyond the natural is **obligatory**; shortening impermissible. Measure: **in waṣl (continuing) 4 or 5 ḥarakāt.** (Pausing on the hamza, 4–5–6 are also permitted because of the ʿāriḍ sukūn.)",
-              "**Examples (with which madd letter):** • alif + hamza: *jāʾa*, *as-samāʾi*. • wāw + hamza: *sūʾun*, *as-sūʾa*. • yāʾ + hamza: *jīʾa*, *tafīʾa*. In all, the madd letter and hamza are within **one word**."
+              "**Examples (with which madd letter):** • alif + hamza: **جَاءَ** (jāʾa), **السَّمَاءِ** (as-samāʾi). • wāw + hamza: **سُوءٌ** (sūʾun), **السُّوءَ** (as-sūʾa). • yāʾ + hamza: **جِيءَ** (jīʾa), **تَفِيءَ** (tafīʾa). In all, the madd letter and hamza are within **one word**."
             ]
           }
         },
@@ -3581,12 +3580,12 @@ window.CONTENT = {
             "de": [
               "**Madd munfaṣil (getrenntes Madd) — Dschawāz-Regel:** Es entsteht, wenn der Madd-Buchstabe **am Ende eines Wortes** und das Hamza **am Anfang des nächsten** steht. „Munfaṣil“ (getrennt) heißt es, weil Madd-Buchstabe und Hamza in **zwei verschiedenen Wörtern** stehen.",
               "**Regel:** Dehnen wie Kürzen ist **erlaubt**. Auf dem Schāṭibiyya-Weg (gängige Praxis) **4 oder 5 Ḥaraka**; das nennt man „Tawassuṭ al-munfaṣil“. (Auf manchen Wegen sind auch 2 Ḥaraka/Qaṣr erlaubt.)",
-              "**Beispiele:** • Alif: *innā arsalnā*, *yā ayyuhā*. • Wāw: *qū anfusakum*. • Yāʾ: *fī anfusikum*. In jedem steht der Dehnungsbuchstabe am Ende des **ersten** Wortes, das Hamza am Anfang des **zweiten**."
+              "**Beispiele:** • Alif: **إِنَّا أَرْسَلْنَا** (innā arsalnā), **يَا أَيُّهَا** (yā ayyuhā). • Wāw: **قُوا أَنْفُسَكُمْ** (qū anfusakum). • Yāʾ: **فِي أَنْفُسِكُمْ** (fī anfusikum). In jedem steht der Dehnungsbuchstabe am Ende des **ersten** Wortes, das Hamza am Anfang des **zweiten**."
             ],
             "en": [
               "**Madd munfaṣil (separated madd) — the jawāz ruling:** it arises when the madd letter is **at a word's end** and the hamza **at the start of the next word**. It is called \"munfaṣil\" (separated) because the madd letter and hamza are in **two different words**.",
               "**Ruling:** both lengthening and shortening are **permitted**. On the Shāṭibiyya path (common practice) **4 or 5 ḥarakāt**; called \"tawassuṭ al-munfaṣil.\" (On some paths 2 ḥarakāt/qaṣr are also permitted.)",
-              "**Examples:** • alif: *innā arsalnā*, *yā ayyuhā*. • wāw: *qū anfusakum*. • yāʾ: *fī anfusikum*. In each, the lengthening letter is at the end of the **first** word, the hamza at the start of the **second**."
+              "**Examples:** • alif: **إِنَّا أَرْسَلْنَا** (innā arsalnā), **يَا أَيُّهَا** (yā ayyuhā). • wāw: **قُوا أَنْفُسَكُمْ** (qū anfusakum). • yāʾ: **فِي أَنْفُسِكُمْ** (fī anfusikum). In each, the lengthening letter is at the end of the **first** word, the hamza at the start of the **second**."
             ]
           }
         },
@@ -3606,12 +3605,12 @@ window.CONTENT = {
             "de": [
               "**Madd ʿāriḍ li-s-sukūn (Madd des vorübergehenden Sukūn) — Dschawāz-Regel:** Der Buchstabe nach dem Madd-Buchstaben ist eigentlich **bewegt**, wird aber beim **Anhalten (Waqf)** sākin. Dieses **vorübergehende (ʿāriḍ) Sukūn** erzeugt das Madd.",
               "**Warum „ʿāriḍ“ (vorübergehend)?** Weil das Sukūn nicht zum Wort gehört; es entsteht **nur beim Anhalten**. Beim Weiterlesen (Waṣl) verschwindet es, das Madd wird wieder natürlich.",
-              "**Regel:** beim Anhalten **2, 4 oder 6 Ḥaraka** erlaubt (der Leser wählt eines, hält es aber in einer Sitzung durch). Beispiele: *taʿlamūn*, *nastaʿīn*, *al-ʿālamīn*, *al-bayān*. **Notiz — Madd al-Līn ʿāriḍ:** Steht statt des Dehnungsbuchstabens ein **Līn-Buchstabe** (wie *chawf*) und wird beim Anhalten sākin, so ebenso 2–4–6 Ḥaraka (Madd al-Līn)."
+              "**Regel:** beim Anhalten **2, 4 oder 6 Ḥaraka** erlaubt (der Leser wählt eines, hält es aber in einer Sitzung durch). Beispiele: **تَعْلَمُونَ** (taʿlamūn), **نَسْتَعِينُ** (nastaʿīn), **الْعَالَمِينَ** (al-ʿālamīn), **الْبَيَان** (al-bayān). **Notiz — Madd al-Līn ʿāriḍ:** Steht statt des Dehnungsbuchstabens ein **Līn-Buchstabe** (wie **خَوْف** (chawf)) und wird beim Anhalten sākin, so ebenso 2–4–6 Ḥaraka (Madd al-Līn)."
             ],
             "en": [
               "**Madd ʿāriḍ li-s-sukūn (madd of the temporary sukūn) — the jawāz ruling:** the letter after the madd letter is originally **vowelled**, but on **pausing (waqf)** becomes sākin. This **temporary (ʿāriḍ) sukūn** produces the madd.",
               "**Why \"ʿāriḍ\" (temporary)?** Because the sukūn is not part of the word; it arises **only on pausing**. If one continues (waṣl) it vanishes and the madd returns to natural.",
-              "**Ruling:** on pausing, **2, 4, or 6 ḥarakāt** are permitted (the reciter picks one but keeps it consistent in a sitting). Examples: *taʿlamūn*, *nastaʿīn*, *al-ʿālamīn*, *al-bayān*. **Note — madd al-līn ʿāriḍ:** if instead of the lengthening letter there is a **līn letter** (like *khawf*) that becomes sākin on pausing, likewise 2–4–6 ḥarakāt (madd al-līn)."
+              "**Ruling:** on pausing, **2, 4, or 6 ḥarakāt** are permitted (the reciter picks one but keeps it consistent in a sitting). Examples: **تَعْلَمُونَ** (taʿlamūn), **نَسْتَعِينُ** (nastaʿīn), **الْعَالَمِينَ** (al-ʿālamīn), **الْبَيَان** (al-bayān). **Note — madd al-līn ʿāriḍ:** if instead of the lengthening letter there is a **līn letter** (like **خَوْف** (khawf)) that becomes sākin on pausing, likewise 2–4–6 ḥarakāt (madd al-līn)."
             ]
           }
         },
@@ -3631,12 +3630,12 @@ window.CONTENT = {
             "de": [
               "**Madd al-badal (badal = ersetztes Madd) — Dschawāz-Regel:** Während bei den anderen drei das Hamza/Sukūn **nach** dem Madd-Buchstaben kommt, steht beim Badal das **Hamza vor dem Madd-Buchstaben** (umgekehrte Reihenfolge).",
               "**Was heißt „badal“ (ersetzt)? (der Wortursprung):** Ursprünglich stehen **zwei Hamza** hintereinander: das erste bewegt, das zweite sākin. Zur Erleichterung wird **das zweite sākine Hamza in einen zum vorigen Vokal passenden Madd-Buchstaben verwandelt (badal = an seiner Stelle).** • *āmanū* aus **أَأْمَنُوا** → zweites Hamza wegen Fatḥa zum **Alif**. • *īmānan* aus **إِئْمَاناً** → wegen Kasra zum **Yāʾ**. • *ūtū* aus **أُؤْتُوا** → wegen Ḍamma zum **Wāw**.",
-              "**Regel:** Dehnen ist erlaubt, doch **in der Praxis zwei Ḥaraka** (natürliches Maß). **Schibh al-badal (badal-ähnlich):** Stellen, wo der Madd-Buchstabe nicht aus einem Hamza entstand, aber wie Badal aussehen; z. B. *al-qurʾān*, *ʿabqarī* — ebenfalls zwei Ḥaraka."
+              "**Regel:** Dehnen ist erlaubt, doch **in der Praxis zwei Ḥaraka** (natürliches Maß). **Schibh al-badal (badal-ähnlich):** Stellen, wo der Madd-Buchstabe nicht aus einem Hamza entstand, aber wie Badal aussehen; z. B. **الْقُرْآن** (al-qurʾān), **عَبْقَرِيّ** (ʿabqarī) — ebenfalls zwei Ḥaraka."
             ],
             "en": [
               "**Madd al-badal (badal = substituted madd) — the jawāz ruling:** whereas in the other three the hamza/sukūn comes **after** the madd letter, in badal the **hamza comes before the madd letter** (reversed order).",
               "**What does \"badal\" (substituted) mean? (the word's origin):** originally there are **two hamzas** in succession: the first vowelled, the second sākin. To ease reading, **the second sākin hamza is turned into a madd letter matching the preceding vowel (badal = in its place).** • *āmanū* from **أَأْمَنُوا** → the second hamza, due to fatḥa, became **alif**. • *īmānan* from **إِئْمَاناً** → due to kasra, became **yāʾ**. • *ūtū* from **أُؤْتُوا** → due to ḍamma, became **wāw**.",
-              "**Ruling:** lengthening is permitted, but **in practice two ḥarakāt** (natural measure). **Shibh al-badal (badal-like):** places where the madd letter did not come from a hamza but resembles badal; e.g. *al-qurʾān*, *ʿabqarī* — also two ḥarakāt."
+              "**Ruling:** lengthening is permitted, but **in practice two ḥarakāt** (natural measure). **Shibh al-badal (badal-like):** places where the madd letter did not come from a hamza but resembles badal; e.g. **الْقُرْآن** (al-qurʾān), **عَبْقَرِيّ** (ʿabqarī) — also two ḥarakāt."
             ]
           }
         },
@@ -3675,8 +3674,8 @@ window.CONTENT = {
           },
           "body": {
             "tr": "Fer'î medi tanımak için sor: **sebep hemze mi, sükûn mu? nerede?**\n• **Muttasıl** (vücûb): med + hemze **aynı kelimede** → **4-5 hareke** (vakıfta 6'ya kadar). Örnek: *جَاءَ*.\n• **Munfasıl** (cevâz): med + hemze **iki kelimede** → **4-5 hareke** (bazı tariklerde 2). Örnek: *يَا أَيُّهَا*.\n• **Ârız li's-sükûn** (cevâz): vakıfta **geçici sükûn** → **2-4-6 hareke**. Örnek: *الْعَالَمِينْ* (vakıf).\n• **Bedel** (cevâz): **hemze medden önce** → **2 hareke**. Örnek: *آمَنُوا*.\n• **Lâzım** (lüzûm): med + **aslî (sabit) sükûn** → **6 hareke** (tek seçenek). Örnek: *الضَّالِّينَ*.",
-            "de": "Zum Erkennen des farʿī Madd frage: **Grund Hamza oder Sukūn? wo?**\n• **Muttaṣil** (Wudschūb): Madd + Hamza **im selben Wort** → **4–5 Ḥaraka** (Waqf bis 6). Bsp.: *dschāʾa*.\n• **Munfaṣil** (Dschawāz): Madd + Hamza **in zwei Wörtern** → **4–5 Ḥaraka** (manche Wege 2). Bsp.: *yā ayyuhā*.\n• **ʿĀriḍ li-s-sukūn** (Dschawāz): beim Anhalten **vorübergehendes Sukūn** → **2–4–6 Ḥaraka**. Bsp.: *al-ʿālamīn* (Waqf).\n• **Badal** (Dschawāz): **Hamza vor dem Madd** → **2 Ḥaraka**. Bsp.: *āmanū*.\n• **Lāzim** (Luzūm): Madd + **ursprüngliches (festes) Sukūn** → **6 Ḥaraka** (einzige Option). Bsp.: *aḍ-ḍāllīn*.",
-            "en": "To recognize the farʿī madd ask: **cause hamza or sukūn? where?**\n• **Muttaṣil** (wujūb): madd + hamza **in the same word** → **4–5 ḥarakāt** (up to 6 in waqf). Ex.: *jāʾa*.\n• **Munfaṣil** (jawāz): madd + hamza **in two words** → **4–5 ḥarakāt** (2 on some paths). Ex.: *yā ayyuhā*.\n• **ʿĀriḍ li-s-sukūn** (jawāz): a **temporary sukūn** on pausing → **2–4–6 ḥarakāt**. Ex.: *al-ʿālamīn* (waqf).\n• **Badal** (jawāz): **hamza before the madd** → **2 ḥarakāt**. Ex.: *āmanū*.\n• **Lāzim** (luzūm): madd + **original (fixed) sukūn** → **6 ḥarakāt** (only option). Ex.: *aḍ-ḍāllīn*."
+            "de": "Zum Erkennen des farʿī Madd frage: **Grund Hamza oder Sukūn? wo?**\n• **Muttaṣil** (Wudschūb): Madd + Hamza **im selben Wort** → **4–5 Ḥaraka** (Waqf bis 6). Bsp.: **جَاءَ** (dschāʾa).\n• **Munfaṣil** (Dschawāz): Madd + Hamza **in zwei Wörtern** → **4–5 Ḥaraka** (manche Wege 2). Bsp.: **يَا أَيُّهَا** (yā ayyuhā).\n• **ʿĀriḍ li-s-sukūn** (Dschawāz): beim Anhalten **vorübergehendes Sukūn** → **2–4–6 Ḥaraka**. Bsp.: **الْعَالَمِينْ** (al-ʿālamīn) (Waqf).\n• **Badal** (Dschawāz): **Hamza vor dem Madd** → **2 Ḥaraka**. Bsp.: **آمَنُوا** (āmanū).\n• **Lāzim** (Luzūm): Madd + **ursprüngliches (festes) Sukūn** → **6 Ḥaraka** (einzige Option). Bsp.: **الضَّالِّينَ** (aḍ-ḍāllīn).",
+            "en": "To recognize the farʿī madd ask: **cause hamza or sukūn? where?**\n• **Muttaṣil** (wujūb): madd + hamza **in the same word** → **4–5 ḥarakāt** (up to 6 in waqf). Ex.: **جَاءَ** (jāʾa).\n• **Munfaṣil** (jawāz): madd + hamza **in two words** → **4–5 ḥarakāt** (2 on some paths). Ex.: **يَا أَيُّهَا** (yā ayyuhā).\n• **ʿĀriḍ li-s-sukūn** (jawāz): a **temporary sukūn** on pausing → **2–4–6 ḥarakāt**. Ex.: **الْعَالَمِينْ** (al-ʿālamīn) (waqf).\n• **Badal** (jawāz): **hamza before the madd** → **2 ḥarakāt**. Ex.: **آمَنُوا** (āmanū).\n• **Lāzim** (luzūm): madd + **original (fixed) sukūn** → **6 ḥarakāt** (only option). Ex.: **الضَّالِّينَ** (aḍ-ḍāllīn)."
           }
         }
       ],
@@ -3830,12 +3829,12 @@ window.CONTENT = {
             "de": [
               "**Definition des Madd lāzim kalimī:** Ein **ursprüngliches (festes) Sukūn** nach dem Madd-Buchstaben in einem **Wort**, dessen Buchstabenzahl **nicht unter drei** liegt.",
               "**Wie erkennt man es? (Schritt für Schritt):** (1) Finde einen Dehnungsbuchstaben. (2) Ist der **unmittelbar folgende Buchstabe sākin** und dieses Sukūn in Waṣl-Waqf **stets fest**? (3) Ist es ein **Wort**? Dreimal „ja“ → Madd lāzim kalimī; dehne **sechs Ḥaraka**.",
-              "**Z. B.:** *aḍ-ḍāllīn* — Alif (Madd) + dann verdoppeltes Lām (sākines Lām + bewegtes Lām). Da das sākine Lām eingefügt wird, ist es **kalimī muthaqqal**. Als Schluss der Fātiḥa in jedem Gebet das vertrauteste Beispiel."
+              "**Z. B.:** **الضَّالِّينَ** (aḍ-ḍāllīn) — Alif (Madd) + dann verdoppeltes Lām (sākines Lām + bewegtes Lām). Da das sākine Lām eingefügt wird, ist es **kalimī muthaqqal**. Als Schluss der Fātiḥa in jedem Gebet das vertrauteste Beispiel."
             ],
             "en": [
               "**Definition of madd lāzim kalimī:** an **original (fixed) sukūn** after the madd letter, within a **word** whose letter count is **not below three**.",
               "**How to recognize it (step by step):** (1) Find a lengthening letter. (2) Is the **immediately following letter sākin** and this sukūn **always fixed** in waṣl and waqf? (3) Is it a **word**? Three \"yes\" → madd lāzim kalimī; lengthen **six ḥarakāt**.",
-              "**E.g.:** *aḍ-ḍāllīn* — alif (madd) + then a doubled lām (sākin lām + vowelled lām). Since the sākin lām is merged, it is **kalimī muthaqqal**. As the close of al-Fātiḥa in every prayer, the most familiar example."
+              "**E.g.:** **الضَّالِّينَ** (aḍ-ḍāllīn) — alif (madd) + then a doubled lām (sākin lām + vowelled lām). Since the sākin lām is merged, it is **kalimī muthaqqal**. As the close of al-Fātiḥa in every prayer, the most familiar example."
             ]
           }
         },
@@ -3879,12 +3878,12 @@ window.CONTENT = {
             ],
             "de": [
               "**Muthaqqal / muchaffaf (letztes Maß):** Man sieht, ob der Sākin nach dem Madd-Buchstaben in den folgenden **eingefügt** wird: • **Wird eingefügt → muthaqqal** (schwer): der folgende Buchstabe verdoppelt. • **Wird nicht eingefügt → muchaffaf** (leicht): der Sākin deutlich.",
-              "**Kalimī-Beispiele:** • **kalimī muthaqqal:** *aḍ-ḍāllīn* (Lām in Lām), *al-ḥāqqa* (verdoppeltes Qāf). • **kalimī muchaffaf:** *āl-āna* (Yūnus 51 und 91) — Alif (Madd) + sākines Lām, kein Idghām. Das ist das **einzige Beispiel** für kalimī muchaffaf im Qurʾān.",
+              "**Kalimī-Beispiele:** • **kalimī muthaqqal:** **الضَّالِّينَ** (aḍ-ḍāllīn) (Lām in Lām), **الْحَاقَّة** (al-ḥāqqa) (verdoppeltes Qāf). • **kalimī muchaffaf:** **آلْآنَ** (āl-āna) (Yūnus 51 und 91) — Alif (Madd) + sākines Lām, kein Idghām. Das ist das **einzige Beispiel** für kalimī muchaffaf im Qurʾān.",
               "**Ḥarfī-Beispiele:** • **ḥarfī muthaqqal:** in *الٓمّٓ* wird das sākine Mīm am Ende von „lām“ ins folgende „mīm“ eingefügt → „lām-mīm“. • **ḥarfī muchaffaf:** das „mīm“ in *الٓمٓ* — kein Idghām nach dem sākinen Mīm, deutlich gelesen. **Zusatznotiz (Madd al-farq):** Ein kalimī-Lāzim mit Hamza vor dem Madd-Buchstaben heißt „Madd al-farq“ (z. B. *āldhakarayni*, *āllāhu*); der Name, weil es **Aussage- und Fragesatz unterscheidet**."
             ],
             "en": [
               "**Muthaqqal / mukhaffaf (the final measure):** one checks whether the sākin after the madd letter is **merged** into the next: • **merged → muthaqqal** (heavy): the following letter is doubled. • **not merged → mukhaffaf** (light): the sākin is read clearly.",
-              "**Kalimī examples:** • **kalimī muthaqqal:** *aḍ-ḍāllīn* (lām into lām), *al-ḥāqqa* (doubled qāf). • **kalimī mukhaffaf:** *āl-āna* (Yūnus 51 and 91) — alif (madd) + sākin lām, no idghām. This is the **only example** of kalimī mukhaffaf in the Qurʾān.",
+              "**Kalimī examples:** • **kalimī muthaqqal:** **الضَّالِّينَ** (aḍ-ḍāllīn) (lām into lām), **الْحَاقَّة** (al-ḥāqqa) (doubled qāf). • **kalimī mukhaffaf:** **آلْآنَ** (āl-āna) (Yūnus 51 and 91) — alif (madd) + sākin lām, no idghām. This is the **only example** of kalimī mukhaffaf in the Qurʾān.",
               "**Ḥarfī examples:** • **ḥarfī muthaqqal:** in *الٓمّٓ* the sākin mīm ending \"lām\" merges into the following \"mīm\" → \"lām-mīm.\" • **ḥarfī mukhaffaf:** the \"mīm\" in *الٓمٓ* — no idghām after the sākin mīm, read clearly. **Extra note (madd al-farq):** a kalimī lāzim with a hamza before the madd letter is called \"madd al-farq\" (e.g. *āldhakarayni*, *āllāhu*); named so because it **distinguishes a statement from a question**."
             ]
           },
@@ -4191,14 +4190,14 @@ window.CONTENT = {
         "de": [
           "**Madd lāzim** (ursprüngliches Sukūn, stets 6 Ḥaraka) hat vier Arten — zwei Fragen:",
           "**Wo?** im Wort → **kalimī** (*aḍ-ḍāllīn*) · im Muqaṭṭaʿa → **ḥarfī** (*الٓمّٓ*).",
-          "**Idghām?** ja → **muthaqqal** · nein → **muchaffaf** (kalimī muchaffaf nur: *āl-āna*).",
+          "**Idghām?** ja → **muthaqqal** · nein → **muchaffaf** (kalimī muchaffaf nur: **آلْآنَ** (āl-āna)).",
           "**Muqaṭṭaʿa (14):** *كم عسل نقص* (8) → **6 Ḥaraka**; *حي طهر* (5) → **2 Ḥaraka**; *Alif* → nicht. *ع* zwei Lesarten (4/6, Länge bevorzugt).",
           "Alle: **صله سحيرا من قطعك**. Hamza vor dem Madd → **Madd al-farq** (*āllāhu*)."
         ],
         "en": [
           "**Madd lāzim** (original sukūn, always 6 ḥarakāt) has four types — two questions:",
           "**Where?** in a word → **kalimī** (*aḍ-ḍāllīn*) · in a muqaṭṭaʿa → **ḥarfī** (*الٓمّٓ*).",
-          "**Idghām?** yes → **muthaqqal** · no → **mukhaffaf** (kalimī mukhaffaf only: *āl-āna*).",
+          "**Idghām?** yes → **muthaqqal** · no → **mukhaffaf** (kalimī mukhaffaf only: **آلْآنَ** (āl-āna)).",
           "**Muqaṭṭaʿa (14):** *كم عسل نقص* (8) → **6 ḥarakāt**; *حي طهر* (5) → **2 ḥarakāt**; *alif* → none. *ع* two readings (4/6, length preferred).",
           "All: **صله سحيرا من قطعك**. Hamza before the madd → **madd al-farq** (*āllāhu*)."
         ]
