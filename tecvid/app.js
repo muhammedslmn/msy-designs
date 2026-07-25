@@ -83,12 +83,8 @@
       // açılış koyu zemin → logo doğrudan görünür
       return '<div class="hidayah-brand hb-splash">' + hidayahImg() + '</div>';
     }
-    // footer → soluk watermark (2 tonlu asset), zeminsiz, yazısız, küçük
-    var wm = window.HIDAYAH_WM
-      ? '<img class="hb-logo" src="' + window.HIDAYAH_WM + '" alt="Hidayah" loading="lazy" />'
-      : hidayahImg();
-    return '<div class="hidayah-brand hb-footer"><span class="hb-mark" aria-label="Hidayah">' +
-      wm + '</span></div>';
+    // footer → açılıştaki gibi gerçek logo (koyu zeminde), kutu/yazı yok
+    return '<div class="hidayah-brand hb-footer">' + hidayahImg() + '</div>';
   }
 
   /* ---------- tema ikonları (SVG) ---------- */
