@@ -414,12 +414,13 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 .hb-splash{ margin-top:1.7rem; }
 .hb-splash .hb-logo{ width:min(196px,50vw); filter:drop-shadow(0 3px 14px #0007); opacity:0; animation:spRise 1s var(--ease) 1.55s both; }
 .hb-splash .hb-by{ font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:#f5ecd6aa; opacity:0; animation:spFade 1s var(--ease) 1.95s both; }
-/* footer: parşömen üstünde okunması için koyu rozet */
+/* footer: arka plan/rozet YOK — sadece logo; temaya göre koyu/açık yazılı varyant */
 .hb-footer{ margin-top:1.25rem; gap:.6rem; }
-.hb-badge{ display:inline-flex; align-items:center; justify-content:center; padding:.72rem 1.25rem; border-radius:16px;
-  background:linear-gradient(158deg,#12352b,#08221c); box-shadow:0 10px 26px -12px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.08); }
-.hb-badge .hb-logo{ width:158px; }
-.hb-badge .hb-word{ color:#f5ecd6; font-size:1.4rem; }
+.hb-footer .hb-logo{ width:170px; }
+.hb-footer .hb-logo-onDark{ display:none; }   /* varsayılan açık/sepya tema → koyu yazılı logo */
+.hb-footer .hb-logo-onLight{ display:block; }
+[data-theme="dark"] .hb-footer .hb-logo-onLight{ display:none; }
+[data-theme="dark"] .hb-footer .hb-logo-onDark{ display:block; }
 .hb-footer .hb-by{ font-size:.74rem; letter-spacing:.11em; text-transform:uppercase; color:var(--muted); }
 
 /* ---------- Prüfungssimulation (sınav) ---------- */
