@@ -368,18 +368,16 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 .btn-ghost:hover{ border-color:var(--accent); color:var(--accent-ink); }
 
 /* ---------- Footer ---------- */
-/* footer: açılış (splash) ile aynı koyu zümrüt zemin — logo aynen orada göründüğü gibi */
-.footer{ margin-top:clamp(2rem,6vw,4rem); border-top:1px solid rgba(255,255,255,.07);
-  background:linear-gradient(160deg,var(--accent-ink) 0%,#063427 100%); }
-.footer-in{ text-align:center; padding-block:clamp(2.4rem,5vw,3.6rem); display:flex; flex-direction:column; align-items:center; gap:.3rem; }
-.f-orn{ width:36px; height:36px; margin-bottom:.6rem; color:var(--gold-2); }
-.f-bism{ font-family:var(--font-ar); font-size:1.7rem; color:var(--gold-2); line-height:1; }
-.f-ayah{ font-family:var(--font-ar); direction:rtl; font-size:clamp(1.4rem,4vw,1.9rem); font-weight:700; color:#f5ecd6; line-height:1.9; }
-.f-ayah-tr{ font-size:.88rem; color:rgba(245,236,214,.72); max-width:46ch; }
-.f-ayah-ref{ display:block; margin-top:.35rem; font-size:.8rem; color:var(--gold-2); font-weight:700; letter-spacing:.02em; }
-.f-sep{ width:60px; height:1px; background:rgba(255,255,255,.16); margin:.8rem 0; }
-.f-note{ font-family:var(--font-display); font-weight:600; color:#f5ecd6; font-size:1.02rem; }
-.f-fine{ font-size:.78rem; color:rgba(245,236,214,.6); }
+.footer{ margin-top:clamp(2rem,6vw,4rem); border-top:1px solid var(--line); background:var(--canvas-2); }
+.footer-in{ text-align:center; padding-block:clamp(2rem,5vw,3.4rem); display:flex; flex-direction:column; align-items:center; gap:.3rem; }
+.f-orn{ width:36px; height:36px; margin-bottom:.6rem; }
+.f-bism{ font-family:var(--font-ar); font-size:1.7rem; color:var(--gold); line-height:1; }
+.f-ayah{ font-family:var(--font-ar); direction:rtl; font-size:clamp(1.4rem,4vw,1.9rem); font-weight:700; color:var(--accent); line-height:1.9; }
+.f-ayah-tr{ font-size:.88rem; color:var(--ink-soft); max-width:46ch; }
+.f-ayah-ref{ display:block; margin-top:.35rem; font-size:.8rem; color:var(--gold); font-weight:700; letter-spacing:.02em; }
+.f-sep{ width:60px; height:1px; background:var(--line); margin:.8rem 0; }
+.f-note{ font-family:var(--font-display); font-weight:600; color:var(--ink); font-size:1.02rem; }
+.f-fine{ font-size:.78rem; color:var(--muted); }
 
 /* ---------- Popover ---------- */
 .popover{ position:absolute; z-index:80; min-width:180px; max-width:260px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm); box-shadow:var(--shadow-lg); padding:.9rem 1rem; animation:pop .18s var(--ease) both; }
@@ -417,10 +415,10 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 .hb-splash .hb-logo{ width:min(184px,48vw); filter:drop-shadow(0 3px 14px #0007); opacity:0; animation:spRise 1s var(--ease) 1.55s both; }
 .hb-splash .hb-word{ color:#f5ecd6; }
 
-/* footer — açılıştaki gibi gerçek logo (beyaz yazı + ay), koyu zeminde, kutu/yazı yok, küçük */
-.hb-footer{ margin-top:clamp(1rem,3vw,1.5rem); }
-.hb-footer .hb-logo{ width:122px; filter:drop-shadow(0 3px 12px rgba(0,0,0,.4)); }
-.hb-footer .hb-word{ color:#f5ecd6; font-size:1.3rem; }
+/* footer — logo olduğu gibi, küçük, kutu/zemin yok */
+.hb-footer{ margin-top:clamp(1rem,3vw,1.4rem); }
+.hb-footer .hb-logo{ width:104px; }
+.hb-footer .hb-word{ color:var(--ink); font-size:1.2rem; }
 
 /* ---------- Prüfungssimulation (sınav) ---------- */
 .exam{
