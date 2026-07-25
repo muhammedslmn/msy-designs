@@ -70,14 +70,27 @@
       '<circle cx="50" cy="50" r="6.5" fill="currentColor"/></svg>';
   }
 
-  /* ---------- Hidayah markası (davet sayfası kimliği) ---------- */
-  // Her yerde orijinal (beyaz yazılı) logo; hem açılış hem koyu footer paneli koyu zeminlidir.
-  function hidayahBrand(variant) {
-    var logo = window.HIDAYAH_LOGO
+  /* ---------- Hidayah markası (davet sayfası kimliği) ----------
+     Her yerde gerçek foto logo. Beyaz yazılı olduğu için açık zeminlerde
+     küçük siyah bir zemin (pill) üzerinde gösterilir; açılışta koyu zemin var. */
+  function hidayahImg() {
+    return window.HIDAYAH_LOGO
       ? '<img class="hb-logo" src="' + window.HIDAYAH_LOGO + '" alt="Hidayah" loading="lazy" />'
       : '<span class="hb-word">HIDAYAH</span>';
-    var cls = variant === "splash" ? "hb-splash" : "hb-footer";
-    return '<div class="hidayah-brand ' + cls + '">' + logo +
+  }
+  function hidayahBrand(variant) {
+    if (variant === "splash") {
+      // açılış koyu zemin → logo doğrudan, pill yok
+      return '<div class="hidayah-brand hb-splash">' + hidayahImg() +
+        '<span class="hb-by">' + t("brand_by") + '</span></div>';
+    }
+    if (variant === "head") {
+      // header (her zaman görünür) → küçük siyah pill üzerinde logo
+      return '<div class="hidayah-brand hb-head"><span class="hb-pill" title="' + t("brand_by") + '" aria-label="Hidayah">' +
+        hidayahImg() + '</span></div>';
+    }
+    // footer → küçük siyah pill üzerinde logo + künye
+    return '<div class="hidayah-brand hb-footer"><span class="hb-pill">' + hidayahImg() + '</span>' +
       '<span class="hb-by">' + t("brand_by") + '</span></div>';
   }
 
@@ -198,7 +211,7 @@
         '<span class="brand-txt"><b>'+t("appName")+'</b><span>'+t("appTag")+'</span></span>' +
       '</a>' +
       '<nav class="nav">'+navHtml+'</nav>' +
-      '<div class="controls">'+langSeg+themeSeg+
+      '<div class="controls">'+hidayahBrand("head")+langSeg+themeSeg+
         '<button class="icon-btn menu-toggle" aria-label="Menu" id="menuBtn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>' +
       '</div>' +
     '</div></header>' +
