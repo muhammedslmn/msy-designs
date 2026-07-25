@@ -83,8 +83,12 @@
       // açılış koyu zemin → logo doğrudan görünür
       return '<div class="hidayah-brand hb-splash">' + hidayahImg() + '</div>';
     }
-    // footer → açılıştaki gibi gerçek logo (koyu zeminde), kutu/yazı yok
-    return '<div class="hidayah-brand hb-footer">' + hidayahImg() + '</div>';
+    // footer → logo ORİJİNAL kalır; arkasına gece-göğü zemin kartı
+    return (
+      '<div class="hidayah-brand hb-footer">' +
+      '<div class="hb-logo-card">' + hidayahImg() + "</div>" +
+      "</div>"
+    );
   }
 
   /* ---------- tema ikonları (SVG) ---------- */
