@@ -457,7 +457,7 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 }
 .hb-footer .hb-logo{ width:92px; }
 .hb-footer .hb-word{ color:#f5ecd6; font-size:1.05rem; }
-.hb-caption{ margin-top:.55rem; font-family:var(--font-ar); direction:rtl; font-size:1.15rem; color:var(--gold); line-height:1; }
+.hb-caption{ margin-top:.9rem; font-family:var(--font-ar); direction:rtl; font-size:.9rem; color:var(--gold); line-height:1; }
 
 /* footer ders çıkarımı + başa dön */
 .f-take{ max-width:52ch; color:var(--ink-soft); font-size:.92rem; line-height:1.7; }
