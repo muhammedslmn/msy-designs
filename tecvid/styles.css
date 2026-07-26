@@ -419,7 +419,7 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 .pv-note b{ color:var(--accent-ink); }
 
 /* ---------- Splash ---------- */
-.splash{ position:fixed; inset:0; z-index:200; display:grid; place-items:center; background:linear-gradient(160deg,var(--accent-ink),#06342780 60%),var(--accent-ink); opacity:0; transition:opacity .8s var(--ease); }
+.splash{ position:fixed; inset:0; z-index:200; display:grid; place-items:center; background:linear-gradient(160deg,var(--accent-ink),#06342780 60%),var(--accent-ink); opacity:1; transition:opacity .8s var(--ease); }
 .splash.show{ opacity:1; }
 .splash.out{ opacity:0; }
 .splash-in{ text-align:center; color:#f5ecd6; padding:2rem; max-width:100vw; }
@@ -457,12 +457,12 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 }
 .hb-footer .hb-logo{ width:92px; }
 .hb-footer .hb-word{ color:#f5ecd6; font-size:1.05rem; }
-.hb-caption{ margin-top:.9rem; font-family:var(--font-ar); direction:rtl; font-size:.9rem; color:var(--gold); line-height:1; }
+.hb-caption{ margin-top:1.3rem; font-family:var(--font-ar); direction:rtl; font-size:.78rem; color:var(--gold); line-height:1; }
 
 /* footer ders çıkarımı + başa dön */
 .f-take{ max-width:52ch; color:var(--ink-soft); font-size:.92rem; line-height:1.7; }
 .to-top{
-  margin-top:1.5rem; display:inline-flex; align-items:center; gap:.4rem;
+  margin-top:1rem; display:inline-flex; align-items:center; gap:.4rem;
   padding:.5rem 1.05rem; border:1px solid var(--line); border-radius:999px;
   background:var(--surface); color:var(--ink-soft); font-size:.82rem; font-weight:700;
   box-shadow:var(--shadow-sm); transition:all var(--tr);

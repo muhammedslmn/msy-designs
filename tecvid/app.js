@@ -237,7 +237,7 @@
   function footer() {
     return '<footer class="footer"><div class="wrap footer-in">' +
       '<div class="f-orn">'+star("f-star")+'</div>' +
-      '<div class="f-ayah">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ<br>وَإِنَّا لَهُ لَحَافِظُونَ</div>' +
+      '<div class="f-ayah">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ</div>' +
       '<div class="f-ayah-tr">'+t("foot_ayah_tr")+'</div>' +
       '<div class="f-ayah-ref">'+t("foot_ayah_ref")+'</div>' +
       '<div class="f-sep"></div>' +
