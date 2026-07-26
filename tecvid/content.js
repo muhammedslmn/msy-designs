@@ -1,4 +1,4 @@
-/* Tuhfetü'l-Etfâl — İçerik Verisi (otomatik üretildi, v5). Kaynağa tam sadık; her alan üç dilde (tr/de/en) tamdır. Misaller harekeli Arapça + latin. */
+/* Tuhfetü'l-Etfâl — İçerik Verisi (otomatik üretildi, v6). Kaynağa tam sadık; her alan üç dilde (tr/de/en) tamdır. Misaller harekeli Arapça + latin. Her beyitte kelime kelime çözüm (words). */
 window.CONTENT = {
   "meta": {
     "workTitle": {
@@ -601,7 +601,92 @@ window.CONTENT = {
               "**What they share and how they differ:** The four rulings (Iẓhār, Idghām, Iqlāb, Ikhfāʾ) apply to both. The difference: the **sākin nūn** is both written (rasman) and pronounced in every case (lafẓan); the **tanwīn** is only pronounced and drops in writing and at a pause.",
               "**When two sākins meet (iltiqāʾ as-sākinayn):** In Arabic two sākin letters cannot be pronounced consecutively. If a **connecting hamza** (hamzat al-waṣl — the word-initial hamza that is not sounded in transition) follows the sākin nūn or the tanwīn, the sākin sound is **temporarily (ʿāriḍan)** given a vowel: • **Sākin nūn → generally kasra:** *مَنِ اهْتَدَى* (mani-htadā), *عَنِ الَّذِينَ* (ʿani-lladhīna); only the preposition *مِنْ* takes **fatḥa:** *مِنَ الْجِنَّةِ* (mina-l-jinna). • **Tanwīn → always kasra:** whatever its vowel, the nūn of the tanwīn is read with kasra."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "لِلنُّونِ",
+              "tr": "nûn için",
+              "de": "für das Nūn",
+              "en": "for the nūn",
+              "note": {
+                "tr": "لِـ ön eki: '...için' + النون.",
+                "de": "Präfix li-: 'für' + an-nūn.",
+                "en": "Prefix li-: 'for' + al-nūn."
+              }
+            },
+            {
+              "ar": "إِنْ",
+              "tr": "eğer, şayet",
+              "de": "wenn",
+              "en": "if",
+              "note": {
+                "tr": "Şart edatı.",
+                "de": "Bedingungspartikel.",
+                "en": "Conditional particle."
+              }
+            },
+            {
+              "ar": "تَسْكُنْ",
+              "tr": "sâkin olursa",
+              "de": "sākin wird",
+              "en": "becomes sākin",
+              "note": {
+                "tr": "Muzâri fiil (meczûm); harekesiz/cezimli hâl.",
+                "de": "Apokopat-Verb; vokallos.",
+                "en": "Jussive verb; the vowelless state."
+              }
+            },
+            {
+              "ar": "وَلِلتَّنْوِينِ",
+              "tr": "ve tenvîn için",
+              "de": "und für das Tanwīn",
+              "en": "and for the tanwīn",
+              "note": {
+                "tr": "وَ (ve) + لِـ (için) + tenvîn (iki üstün/esre/ötre).",
+                "de": "wa (und) + li (für) + Tanwīn.",
+                "en": "wa (and) + li (for) + tanwīn (double vowel ending)."
+              }
+            },
+            {
+              "ar": "أَرْبَعُ",
+              "tr": "dört",
+              "de": "vier",
+              "en": "four"
+            },
+            {
+              "ar": "أَحْكَامٍ",
+              "tr": "hüküm(ler)",
+              "de": "Regeln",
+              "en": "rulings",
+              "note": {
+                "tr": "حُكْم'ün çoğulu.",
+                "de": "Plural von ḥukm.",
+                "en": "Plural of ḥukm."
+              }
+            },
+            {
+              "ar": "فَخُذْ",
+              "tr": "öyleyse al (belle)",
+              "de": "so nimm (auf)",
+              "en": "so take (grasp)",
+              "note": {
+                "tr": "فَـ + emir fiili (خُذْ = al).",
+                "de": "fa + Imperativ (khudh = nimm).",
+                "en": "fa + imperative (khudh = take)."
+              }
+            },
+            {
+              "ar": "تَبْيِينِي",
+              "tr": "açıklamamı",
+              "de": "meine Erklärung",
+              "en": "my explanation",
+              "note": {
+                "tr": "tebyîn (açıklama) + -î (benim).",
+                "de": "tabyīn (Erklärung) + -ī (mein).",
+                "en": "tabyīn (clarification) + -ī (my)."
+              }
+            }
+          ]
         },
         {
           "n": 7,
@@ -626,7 +711,87 @@ window.CONTENT = {
               "**Technical meaning (iṣṭilāḥ):** to pronounce the sākin nūn or tanwīn **without ghunna (nasal sound), clearly** from its exit point. (The base ghunna remains but is not prolonged.)",
               "**Why \"ḥalqī = throat iẓhār\"?** Because these six letters issue from the **throat.** Since the nūn's exit point (tongue-tip) is **far** from the throat, the sounds do not blend; the nūn stays clear."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "فَالأَوَّلُ",
+              "tr": "birincisi",
+              "de": "das erste",
+              "en": "the first",
+              "note": {
+                "tr": "فَـ (ise) + الأول.",
+                "de": "fa + al-awwal.",
+                "en": "fa + al-awwal."
+              }
+            },
+            {
+              "ar": "الإظْهَارُ",
+              "tr": "izhâr",
+              "de": "Iẓhār",
+              "en": "iẓhār",
+              "note": {
+                "tr": "Nûn/tenvînin açıkça okunması.",
+                "de": "Deutliche Aussprache.",
+                "en": "Clear pronunciation."
+              }
+            },
+            {
+              "ar": "قَبْلَ",
+              "tr": "önce",
+              "de": "vor",
+              "en": "before"
+            },
+            {
+              "ar": "أَحْرُفِ",
+              "tr": "harfler(inden)",
+              "de": "Buchstaben",
+              "en": "letters",
+              "note": {
+                "tr": "حَرْف'in çoğulu (cem-i kıllet); لِلْحَلْقِ ile izâfe.",
+                "de": "Plural von ḥarf; Iḍāfa mit li-l-ḥalq.",
+                "en": "Plural of ḥarf; iḍāfa with li-l-ḥalq."
+              }
+            },
+            {
+              "ar": "لِلْحَلْقِ",
+              "tr": "boğaza ait, boğazın",
+              "de": "der Kehle",
+              "en": "of the throat",
+              "note": {
+                "tr": "لِـ + halk (boğaz) mahreci.",
+                "de": "li- + Kehle (ḥalq-Machradsch).",
+                "en": "li- + throat (ḥalq articulation point)."
+              }
+            },
+            {
+              "ar": "سِتٌّ",
+              "tr": "altı",
+              "de": "sechs",
+              "en": "six"
+            },
+            {
+              "ar": "رُتِّبَتْ",
+              "tr": "dizilmiş, sıralanmıştır",
+              "de": "sind geordnet",
+              "en": "are arranged",
+              "note": {
+                "tr": "Meçhul (edilgen) fiil.",
+                "de": "Passivverb.",
+                "en": "Passive verb."
+              }
+            },
+            {
+              "ar": "فَلتَعْرِفِ",
+              "tr": "öyleyse öğren, bil",
+              "de": "so lerne sie",
+              "en": "so learn them",
+              "note": {
+                "tr": "فَـ + lâm-ı emir + muzâri (emir).",
+                "de": "fa + Imperativ-Lām + Verb.",
+                "en": "fa + imperative lām + verb."
+              }
+            }
+          ]
         },
         {
           "n": 8,
@@ -775,6 +940,77 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "هَمْزٌ",
+              "tr": "hemze",
+              "de": "Hamza",
+              "en": "hamza",
+              "note": {
+                "tr": "1. izhâr (boğaz) harfi.",
+                "de": "1. Iẓhār-Buchstabe.",
+                "en": "1st iẓhār letter."
+              }
+            },
+            {
+              "ar": "فَهَاءٌ",
+              "tr": "sonra hâ",
+              "de": "dann Hāʾ",
+              "en": "then hāʾ",
+              "note": {
+                "tr": "فَـ (sonra) + هـ.",
+                "de": "fa (dann) + hāʾ.",
+                "en": "fa (then) + hāʾ."
+              }
+            },
+            {
+              "ar": "ثُمَّ",
+              "tr": "sonra",
+              "de": "dann",
+              "en": "then"
+            },
+            {
+              "ar": "عَيْنٌ",
+              "tr": "ayn",
+              "de": "ʿAyn",
+              "en": "ʿayn"
+            },
+            {
+              "ar": "حَاءُ",
+              "tr": "hâ (noktasız)",
+              "de": "Ḥāʾ",
+              "en": "ḥāʾ"
+            },
+            {
+              "ar": "مُهْمَلَتَانِ",
+              "tr": "noktasız ikili (ayn ve hâ)",
+              "de": "die zwei punktlosen",
+              "en": "the two undotted ones",
+              "note": {
+                "tr": "Tesniye; ع ve ح'nin noktasız oluşunu belirtir (خ/غ'den ayırt).",
+                "de": "Dual; ʿayn und ḥāʾ sind punktlos (Unterscheidung zu ghayn/khāʾ).",
+                "en": "Dual; ʿayn and ḥāʾ are undotted (vs. dotted ghayn/khāʾ)."
+              }
+            },
+            {
+              "ar": "ثُمَّ",
+              "tr": "sonra",
+              "de": "dann",
+              "en": "then"
+            },
+            {
+              "ar": "غَيْنٌ",
+              "tr": "ğayn",
+              "de": "Ghayn",
+              "en": "ghayn"
+            },
+            {
+              "ar": "خَاءُ",
+              "tr": "hı",
+              "de": "Chāʾ",
+              "en": "khāʾ"
+            }
           ]
         },
         {
@@ -806,7 +1042,103 @@ window.CONTENT = {
               "**Application (two cases):** • If both are **identical** (nūn + nūn), the first passes directly into the second. • If **different**, the nūn/tanwīn is first converted to the **kind** of the second, then inserted. E.g. in **مِنْ وَالٍ** (min wāl), the nūn first becomes a wāw, then merges → \"miwwāl.\"",
               "**These six split (verses 10 and 12):** idghām **with ghunna** (ي ن م و) and **without ghunna** (ل ر)."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "والثّانِ",
+              "tr": "ikincisi",
+              "de": "das zweite",
+              "en": "the second",
+              "note": {
+                "tr": "وَ + الثاني.",
+                "de": "wa + ath-thānī.",
+                "en": "wa + al-thānī."
+              }
+            },
+            {
+              "ar": "إِدْغَامٌ",
+              "tr": "idğâm",
+              "de": "Idghām",
+              "en": "idghām",
+              "note": {
+                "tr": "Nûnu sonraki harfe katıp şeddeleme.",
+                "de": "Verschmelzung ins Folgende.",
+                "en": "Merging into the next letter."
+              }
+            },
+            {
+              "ar": "بِستَّةٍ",
+              "tr": "altı (harf) ile",
+              "de": "bei sechs",
+              "en": "with six",
+              "note": {
+                "tr": "بِـ (ile) + altı harf.",
+                "de": "bi- (mit) + sechs.",
+                "en": "bi- (with) + six."
+              }
+            },
+            {
+              "ar": "أَتَتْ",
+              "tr": "geldi, gelir",
+              "de": "tritt ein",
+              "en": "comes",
+              "note": {
+                "tr": "Muzâri/mâzî fiil (müennes).",
+                "de": "Verb (fem.).",
+                "en": "Verb (fem.)."
+              }
+            },
+            {
+              "ar": "فِي",
+              "tr": "-de, içinde",
+              "de": "in",
+              "en": "in"
+            },
+            {
+              "ar": "يَرْمَلُونَ",
+              "tr": "koşarlar (mnemonik)",
+              "de": "sie traben (Merkwort)",
+              "en": "they trot (mnemonic)",
+              "note": {
+                "tr": "6 idğâm harfini toplayan taşıyıcı kelime: ي ر م ل و ن.",
+                "de": "Merkwort für die 6 Idghām-Buchstaben: y r m l w n.",
+                "en": "Carrier word for the 6 idghām letters: y r m l w n."
+              }
+            },
+            {
+              "ar": "عِنْدَهُمْ",
+              "tr": "onlarca, onların yanında",
+              "de": "bei ihnen",
+              "en": "with them",
+              "note": {
+                "tr": "Âlimlere/kurrâya göre.",
+                "de": "Nach den Gelehrten.",
+                "en": "According to the scholars."
+              }
+            },
+            {
+              "ar": "قَدْ",
+              "tr": "muhakkak, gerçekten",
+              "de": "gewiss",
+              "en": "indeed",
+              "note": {
+                "tr": "Tahkik (pekiştirme) edatı.",
+                "de": "Bekräftigungspartikel.",
+                "en": "Emphatic particle."
+              }
+            },
+            {
+              "ar": "ثَبَتَتْ",
+              "tr": "sabit olmuştur",
+              "de": "ist festgestellt",
+              "en": "is established",
+              "note": {
+                "tr": "Mâzî fiil (müennes).",
+                "de": "Perfektverb (fem.).",
+                "en": "Perfect verb (fem.)."
+              }
+            }
+          ]
         },
         {
           "n": 10,
@@ -936,6 +1268,86 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "لَكِنَّهَا",
+              "tr": "fakat o",
+              "de": "doch es",
+              "en": "but it",
+              "note": {
+                "tr": "لَكِنَّ (fakat) + هَا (o = idğâm).",
+                "de": "lākinna (doch) + hā (es).",
+                "en": "lākinna (but) + hā (it)."
+              }
+            },
+            {
+              "ar": "قِسْمَانِ",
+              "tr": "iki kısım(dır)",
+              "de": "zweiteilig",
+              "en": "two kinds",
+              "note": {
+                "tr": "Tesniye (ikil).",
+                "de": "Dual.",
+                "en": "Dual."
+              }
+            },
+            {
+              "ar": "قِسْمٌ",
+              "tr": "bir kısım",
+              "de": "ein Teil",
+              "en": "one part"
+            },
+            {
+              "ar": "يُدْغَمَا",
+              "tr": "idğam edilir",
+              "de": "wird verschmolzen",
+              "en": "is merged",
+              "note": {
+                "tr": "Meçhul fiil; sondaki elif vezin/med için.",
+                "de": "Passiv; End-Alif metrisch.",
+                "en": "Passive verb; final alif for metre."
+              }
+            },
+            {
+              "ar": "فِيهِ",
+              "tr": "onda, kendisinde",
+              "de": "darin",
+              "en": "in it"
+            },
+            {
+              "ar": "بِغُنّةٍ",
+              "tr": "gunne ile",
+              "de": "mit Ghunna",
+              "en": "with ghunna",
+              "note": {
+                "tr": "بِـ (ile) + gunne (genizden ses).",
+                "de": "bi- (mit) + Ghunna (Nasalklang).",
+                "en": "bi- (with) + ghunna (nasalization)."
+              }
+            },
+            {
+              "ar": "بِيَنْمُو",
+              "tr": "«ينمو» (yenmû) ile",
+              "de": "durch «yanmū»",
+              "en": "by «yanmū»",
+              "note": {
+                "tr": "بِـ + taşıyıcı kelime (lafzen 'büyür'); 4 gunneli idğâm harfini toplar: ي ن م و.",
+                "de": "bi- + Merkwort (wörtl. 'es wächst') für die 4 Idghām-bi-ghunna-Buchstaben: y n m w.",
+                "en": "bi- + carrier word (lit. 'it grows') for the 4 idghām-with-ghunna letters: y n m w."
+              }
+            },
+            {
+              "ar": "عُلِمَا",
+              "tr": "bilinir",
+              "de": "ist bekannt",
+              "en": "is known",
+              "note": {
+                "tr": "Meçhul fiil; sondaki elif vezin/med için.",
+                "de": "Passiv; End-Alif metrisch.",
+                "en": "Passive verb; final alif for metre."
+              }
+            }
           ]
         },
         {
@@ -961,7 +1373,109 @@ window.CONTENT = {
               "**Reason:** merging here would move the word from its root and **confuse it with a doubled (two-letter) different word**, corrupting the meaning. (If *dunyā* were merged it would become *diyyā*, *ṣinwān* → *ṣiwwān*.)",
               "**In the Qurʾān, only four words:** **دُنْيَا · صِنْوَان · قِنْوَان · بُنْيَان.** It is called \"**iẓhār muṭlaq**\" (unrestricted iẓhār)."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "إِلاَّ",
+              "tr": "ancak, ...istisna",
+              "de": "außer, doch",
+              "en": "except, but",
+              "note": {
+                "tr": "İstisnâ edatı.",
+                "de": "Ausnahmepartikel.",
+                "en": "Exception particle."
+              }
+            },
+            {
+              "ar": "إِذَا",
+              "tr": "...dığında, ...ise",
+              "de": "wenn",
+              "en": "when, if"
+            },
+            {
+              "ar": "كَانَا",
+              "tr": "ikisi olursa, bulunursa",
+              "de": "beide stehen",
+              "en": "both are",
+              "note": {
+                "tr": "كان fiili, tesniye (nûn ile harf).",
+                "de": "kāna, Dual (Nūn und Buchstabe).",
+                "en": "kāna, dual (the nūn and the letter)."
+              }
+            },
+            {
+              "ar": "بِكِلْمَةٍ",
+              "tr": "tek kelimede",
+              "de": "in einem Wort",
+              "en": "in one word",
+              "note": {
+                "tr": "بِـ (-de) + kelime.",
+                "de": "bi- (in) + Wort.",
+                "en": "bi- (in) + word."
+              }
+            },
+            {
+              "ar": "فَلاَ",
+              "tr": "o hâlde ...ma",
+              "de": "dann nicht",
+              "en": "then do not",
+              "note": {
+                "tr": "فَـ + لا (nehiy: olumsuz emir).",
+                "de": "fa + lā (Verneinung des Befehls).",
+                "en": "fa + lā (negative command)."
+              }
+            },
+            {
+              "ar": "تُدْغِمْ",
+              "tr": "idğam etme",
+              "de": "verschmilz",
+              "en": "merge",
+              "note": {
+                "tr": "Meczûm muzâri; فَلاَ ile nehiy (idğam etme).",
+                "de": "Apokopat; mit fa-lā verneint.",
+                "en": "Jussive; negated by fa-lā."
+              }
+            },
+            {
+              "ar": "كَدُنْيَا",
+              "tr": "«دُنْيَا» (dünya) gibi",
+              "de": "wie «dunyā» (Welt)",
+              "en": "as in «dunyā» (world)",
+              "note": {
+                "tr": "كَـ (gibi) + istisnâ örneği: nûn ile yâ tek kelimede → izhâr, idğam yok.",
+                "de": "ka- (wie) + Ausnahmebeispiel: Nūn und Yāʾ in einem Wort → Iẓhār.",
+                "en": "ka- (like) + exception example: nūn and yāʾ in one word → iẓhār, no idghām."
+              }
+            },
+            {
+              "ar": "ثُمَّ",
+              "tr": "sonra, ardından",
+              "de": "dann",
+              "en": "then"
+            },
+            {
+              "ar": "صِنْوَانٌ",
+              "tr": "«صِنْوَان» (aynı kökten hurmalar)",
+              "de": "«ṣinwān» (Zwillingspalmen)",
+              "en": "«ṣinwān» (twin palm trees)",
+              "note": {
+                "tr": "İstisnâ örneği: nûn ile vâv tek kelimede → izhâr, idğam yok.",
+                "de": "Ausnahmebeispiel: Nūn und Wāw in einem Wort → Iẓhār.",
+                "en": "Exception example: nūn and wāw in one word → iẓhār, no idghām."
+              }
+            },
+            {
+              "ar": "تَلاَ",
+              "tr": "ardından geldi, takip etti",
+              "de": "folgte",
+              "en": "followed",
+              "note": {
+                "tr": "Mâzî fiil; sondaki elif vezin için.",
+                "de": "Perfektverb; End-Alif metrisch.",
+                "en": "Perfect verb; final alif for metre."
+              }
+            }
+          ]
         },
         {
           "n": 12,
@@ -1078,6 +1592,92 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "وَالثَّانِ",
+              "tr": "ve ikincisi",
+              "de": "und das zweite",
+              "en": "and the second",
+              "note": {
+                "tr": "İdğâmın ikinci kısmı.",
+                "de": "Der zweite Teil des Idghām.",
+                "en": "The second kind of idghām."
+              }
+            },
+            {
+              "ar": "إِدْغَامٌ",
+              "tr": "idğâmdır",
+              "de": "ist Idghām",
+              "en": "is idghām",
+              "note": {
+                "tr": "Bir harfi diğerine katmak.",
+                "de": "Verschmelzung zweier Buchstaben.",
+                "en": "Merging one letter into another."
+              }
+            },
+            {
+              "ar": "بِغَيْرِ",
+              "tr": "-siz, olmaksızın",
+              "de": "ohne",
+              "en": "without"
+            },
+            {
+              "ar": "غُنَّةْ",
+              "tr": "ğunne",
+              "de": "Ghunna",
+              "en": "ghunna",
+              "note": {
+                "tr": "Genizden gelen ses.",
+                "de": "Nasallaut.",
+                "en": "Nasalization."
+              }
+            },
+            {
+              "ar": "في",
+              "tr": "-de",
+              "de": "bei",
+              "en": "at"
+            },
+            {
+              "ar": "اللاَّمِ",
+              "tr": "lâm('da)",
+              "de": "beim Lām",
+              "en": "the lām",
+              "note": {
+                "tr": "İdğâm-bilâ-ğunnenin iki harfinden biri.",
+                "de": "Einer der beiden Idghām-bilā-ghunna-Buchstaben.",
+                "en": "One of the two idğâm-bilâ-ğunne letters."
+              }
+            },
+            {
+              "ar": "وَالرَّا",
+              "tr": "ve râ('da)",
+              "de": "und beim Rāʾ",
+              "en": "and the rāʾ",
+              "note": {
+                "tr": "İdğâm-bilâ-ğunnenin ikinci harfi.",
+                "de": "Der zweite Idghām-bilā-ghunna-Buchstabe.",
+                "en": "The second idğâm-bilâ-ğunne letter."
+              }
+            },
+            {
+              "ar": "ثُمَّ",
+              "tr": "sonra",
+              "de": "dann",
+              "en": "then"
+            },
+            {
+              "ar": "كَرّرَنَّهْ",
+              "tr": "onu tekrarla (şeddele)",
+              "de": "wiederhole (verdopple) es",
+              "en": "repeat (double) it",
+              "note": {
+                "tr": "Te'kid nûnlu emir fiili.",
+                "de": "Imperativ mit Nūn at-taʾkīd.",
+                "en": "Imperative with emphatic nūn."
+              }
+            }
           ]
         },
         {
@@ -1173,6 +1773,76 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "وَّالثَالثُ",
+              "tr": "üçüncüsü",
+              "de": "das dritte",
+              "en": "the third"
+            },
+            {
+              "ar": "الإِقْلاَبُ",
+              "tr": "iklâbdır",
+              "de": "ist Iqlāb",
+              "en": "is iqlāb",
+              "note": {
+                "tr": "Nûnu mîme çevirmek.",
+                "de": "Umwandlung des Nūn in Mīm.",
+                "en": "Turning the nūn into a mīm."
+              }
+            },
+            {
+              "ar": "عِنْدَ",
+              "tr": "yanında",
+              "de": "bei",
+              "en": "at"
+            },
+            {
+              "ar": "الْبَاءِ",
+              "tr": "bâ (harfi)",
+              "de": "dem Bāʾ",
+              "en": "the bāʾ",
+              "note": {
+                "tr": "İklâbın tek harfi.",
+                "de": "Der einzige Iqlāb-Buchstabe.",
+                "en": "The sole iklâb letter."
+              }
+            },
+            {
+              "ar": "مِيماً",
+              "tr": "mîm(e)",
+              "de": "in ein Mīm",
+              "en": "into a mīm",
+              "note": {
+                "tr": "Sâkin nûn/tenvîn mîme dönüşür.",
+                "de": "Sākines Nūn/Tanwīn wird zu Mīm.",
+                "en": "Sākin nūn/tanwīn becomes mīm."
+              }
+            },
+            {
+              "ar": "بِغُنَّةٍ",
+              "tr": "gunne ile",
+              "de": "mit Ghunna",
+              "en": "with ghunna"
+            },
+            {
+              "ar": "مَعَ",
+              "tr": "ile beraber",
+              "de": "zusammen mit",
+              "en": "along with"
+            },
+            {
+              "ar": "الإِخْفَاءِ",
+              "tr": "ihfâ",
+              "de": "Ikhfāʾ",
+              "en": "ikhfāʾ",
+              "note": {
+                "tr": "Gizli okuma.",
+                "de": "Verdecktes Aussprechen.",
+                "en": "Concealed pronunciation."
+              }
+            }
           ]
         },
         {
@@ -1204,7 +1874,72 @@ window.CONTENT = {
               "**Application:** the tongue **approaches** the ikhfāʾ letter's exit point **without** touching it; the nūn/tanwīn sound is blended with the letter's, with ghunna.",
               "**Fine point — dark/light ghunna:** if a **dark (mufakhkham) letter** follows, the ghunna is **dark**; if a **light (muraqqaq)** one, it is **light**. E.g. *man dhā* (ذ light → light ghunna); *yanẓurūn* (ظ dark → dark ghunna)."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَالرَّابِعُ",
+              "tr": "dördüncüsü",
+              "de": "das vierte",
+              "en": "the fourth"
+            },
+            {
+              "ar": "الإِخْفَاءُ",
+              "tr": "ihfâdır",
+              "de": "ist Ikhfāʾ",
+              "en": "is ikhfāʾ",
+              "note": {
+                "tr": "İzhâr ile idğâm arası okuyuş.",
+                "de": "Zwischen Iẓhār und Idghām.",
+                "en": "Between iẓhār and idghām."
+              }
+            },
+            {
+              "ar": "عِنْدَ",
+              "tr": "yanında",
+              "de": "bei",
+              "en": "with"
+            },
+            {
+              "ar": "الفاضِلِ",
+              "tr": "(geri) kalan (harfler)",
+              "de": "den übrigen",
+              "en": "the remaining",
+              "note": {
+                "tr": "«fadale» kökünden: geriye kalan harfler.",
+                "de": "Von faḍala: die verbleibenden Buchstaben.",
+                "en": "From faḍala: the leftover letters."
+              }
+            },
+            {
+              "ar": "مِنَ",
+              "tr": "-den",
+              "de": "von",
+              "en": "of"
+            },
+            {
+              "ar": "الحُرُوفِ",
+              "tr": "harfler",
+              "de": "den Buchstaben",
+              "en": "the letters"
+            },
+            {
+              "ar": "وَاجِبٌ",
+              "tr": "vaciptir",
+              "de": "ist Pflicht",
+              "en": "is obligatory"
+            },
+            {
+              "ar": "لِلْفَاضِلِ",
+              "tr": "faziletli (okuyucu) için",
+              "de": "für den Vortrefflichen",
+              "en": "for the excellent one",
+              "note": {
+                "tr": "Tecnîs: yukarıdaki الفاضل ile aynı yazılış, farklı mana.",
+                "de": "Tadschnīs: gleiche Schreibung wie oben, andere Bedeutung.",
+                "en": "Tajnīs: same spelling as above, different sense."
+              }
+            }
+          ]
         },
         {
           "n": 15,
@@ -1223,7 +1958,111 @@ window.CONTENT = {
             "en": [
               "The author gives the number of ikhfāʾ letters (**fifteen**) poetically as \"five after ten.\" He placed their **mnemonic** in the **initial letters of the words** of the next verse (16): each word's first letter is an ikhfāʾ letter."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "في",
+              "tr": "-de",
+              "de": "bei",
+              "en": "with"
+            },
+            {
+              "ar": "خَمْسَةٍ",
+              "tr": "beş",
+              "de": "fünf",
+              "en": "five",
+              "note": {
+                "tr": "On ile birlikte on beş ihfâ harfi.",
+                "de": "Mit zehn zusammen fünfzehn Ikhfāʾ-Buchstaben.",
+                "en": "With ten, the fifteen ihfâ letters."
+              }
+            },
+            {
+              "ar": "مِنْ",
+              "tr": "-den",
+              "de": "von",
+              "en": "from"
+            },
+            {
+              "ar": "بَعْدِ",
+              "tr": "sonra",
+              "de": "nach",
+              "en": "after"
+            },
+            {
+              "ar": "عَشْرٍ",
+              "tr": "on",
+              "de": "zehn",
+              "en": "ten",
+              "note": {
+                "tr": "Ondan sonra beş = on beş harf.",
+                "de": "Fünf nach zehn = fünfzehn.",
+                "en": "Five after ten = fifteen."
+              }
+            },
+            {
+              "ar": "رَمْزُهَا",
+              "tr": "onun remzi",
+              "de": "ihr Merkzeichen",
+              "en": "their mnemonic",
+              "note": {
+                "tr": "İhfâ harflerinin şifresi.",
+                "de": "Chiffre der Ikhfāʾ-Buchstaben.",
+                "en": "Cipher of the ihfâ letters."
+              }
+            },
+            {
+              "ar": "فِي",
+              "tr": "içinde",
+              "de": "in",
+              "en": "in"
+            },
+            {
+              "ar": "كِلْمِ",
+              "tr": "kelimelerine",
+              "de": "die Wörter",
+              "en": "the words of",
+              "note": {
+                "tr": "«kelimât»ın şiirdeki kısaltılmış hâli.",
+                "de": "Poetische Kurzform von kalimāt.",
+                "en": "Poetic short form of kalimāt."
+              }
+            },
+            {
+              "ar": "هذَا",
+              "tr": "bu",
+              "de": "dieses",
+              "en": "this"
+            },
+            {
+              "ar": "البَيْتِ",
+              "tr": "beytin",
+              "de": "Verses",
+              "en": "verse"
+            },
+            {
+              "ar": "قَدْ",
+              "tr": "muhakkak",
+              "de": "gewiss",
+              "en": "indeed",
+              "note": {
+                "tr": "Tahkîk (pekiştirme) edatı.",
+                "de": "Bekräftigungspartikel.",
+                "en": "Emphatic particle."
+              }
+            },
+            {
+              "ar": "ضَمَّنْتُهَا",
+              "tr": "onları yerleştirdim",
+              "de": "habe ich hineingelegt",
+              "en": "I placed them within",
+              "note": {
+                "tr": "Birinci şahıs mâzî fiil.",
+                "de": "Verb im Perfekt, 1. Person.",
+                "en": "First-person perfect verb."
+              }
+            }
+          ]
         },
         {
           "n": 16,
@@ -1377,6 +2216,173 @@ window.CONTENT = {
                   }
                 ]
               ]
+            }
+          ],
+          "words": [
+            {
+              "ar": "صِفْ",
+              "tr": "vasfet, nitele",
+              "de": "beschreibe",
+              "en": "describe",
+              "note": {
+                "tr": "ص ihfâ harfini remzeder.",
+                "de": "Steht für den Ikhfāʾ-Buchstaben ṣād (ص).",
+                "en": "Carries the ihfâ letter ṣād (ص)."
+              }
+            },
+            {
+              "ar": "ذَا",
+              "tr": "sahibini",
+              "de": "den Besitzer von",
+              "en": "the possessor of",
+              "note": {
+                "tr": "ذ ihfâ harfini remzeder.",
+                "de": "Steht für Dhāl (ذ).",
+                "en": "Carries dhāl (ذ)."
+              }
+            },
+            {
+              "ar": "ثَنَا",
+              "tr": "övgü, sena",
+              "de": "Lob",
+              "en": "praise",
+              "note": {
+                "tr": "ث ihfâ harfini remzeder.",
+                "de": "Steht für Thāʾ (ث).",
+                "en": "Carries thāʾ (ث)."
+              }
+            },
+            {
+              "ar": "كَمْ",
+              "tr": "nice",
+              "de": "wie mancher",
+              "en": "how many a",
+              "note": {
+                "tr": "ك ihfâ harfini remzeder.",
+                "de": "Steht für Kāf (ك).",
+                "en": "Carries kāf (ك)."
+              }
+            },
+            {
+              "ar": "جَادَ",
+              "tr": "cömertlik etti",
+              "de": "war großzügig",
+              "en": "was generous",
+              "note": {
+                "tr": "ج ihfâ harfini remzeder.",
+                "de": "Steht für Dschīm (ج).",
+                "en": "Carries jīm (ج)."
+              }
+            },
+            {
+              "ar": "شَخْصٌ",
+              "tr": "kişi, şahıs",
+              "de": "eine Person",
+              "en": "a person",
+              "note": {
+                "tr": "ش ihfâ harfini remzeder.",
+                "de": "Steht für Schīn (ش).",
+                "en": "Carries shīn (ش)."
+              }
+            },
+            {
+              "ar": "قَدْ",
+              "tr": "muhakkak",
+              "de": "gewiss",
+              "en": "indeed",
+              "note": {
+                "tr": "ق ihfâ harfini remzeder.",
+                "de": "Steht für Qāf (ق).",
+                "en": "Carries qāf (ق)."
+              }
+            },
+            {
+              "ar": "سمَا",
+              "tr": "yükseldi",
+              "de": "stieg empor",
+              "en": "rose high",
+              "note": {
+                "tr": "س ihfâ harfini remzeder.",
+                "de": "Steht für Sīn (س).",
+                "en": "Carries sīn (س)."
+              }
+            },
+            {
+              "ar": "دُمْ",
+              "tr": "(temiz) kal, devam et",
+              "de": "bleibe",
+              "en": "stay, remain",
+              "note": {
+                "tr": "د ihfâ harfini remzeder.",
+                "de": "Steht für Dāl (د).",
+                "en": "Carries dāl (د)."
+              }
+            },
+            {
+              "ar": "طَيّباً",
+              "tr": "temiz olarak",
+              "de": "rein",
+              "en": "pure",
+              "note": {
+                "tr": "ط ihfâ harfini remzeder.",
+                "de": "Steht für Ṭāʾ (ط).",
+                "en": "Carries ṭāʾ (ط)."
+              }
+            },
+            {
+              "ar": "زِدْ",
+              "tr": "artır, ziyade et",
+              "de": "mehre",
+              "en": "increase",
+              "note": {
+                "tr": "ز ihfâ harfini remzeder.",
+                "de": "Steht für Zāy (ز).",
+                "en": "Carries zāy (ز)."
+              }
+            },
+            {
+              "ar": "فِي",
+              "tr": "-de, hususunda",
+              "de": "in",
+              "en": "in",
+              "note": {
+                "tr": "ف ihfâ harfini remzeder.",
+                "de": "Steht für Fāʾ (ف).",
+                "en": "Carries fāʾ (ف)."
+              }
+            },
+            {
+              "ar": "تُقىً",
+              "tr": "takva",
+              "de": "Gottesfurcht",
+              "en": "taqwā, piety",
+              "note": {
+                "tr": "ت ihfâ harfini remzeder.",
+                "de": "Steht für Tāʾ (ت).",
+                "en": "Carries tāʾ (ت)."
+              }
+            },
+            {
+              "ar": "ضَعْ",
+              "tr": "bırak, terk et",
+              "de": "lass",
+              "en": "leave, set aside",
+              "note": {
+                "tr": "ض ihfâ harfini remzeder.",
+                "de": "Steht für Ḍād (ض).",
+                "en": "Carries ḍād (ض)."
+              }
+            },
+            {
+              "ar": "ظَالِمَا",
+              "tr": "zalimi",
+              "de": "den Ungerechten",
+              "en": "the wrongdoer",
+              "note": {
+                "tr": "ظ ihfâ harfini remzeder.",
+                "de": "Steht für Ẓāʾ (ظ).",
+                "en": "Carries ẓāʾ (ظ)."
+              }
             }
           ]
         }
@@ -1756,7 +2762,62 @@ window.CONTENT = {
               "**The \"collision\" image:** when two letters meet, they either change each other's sound (\"collision\") or pass unchanged (\"no collision\"). For the sākin mīm: • a **mīm** follows → the sounds **merge** (idghām — collision). • a **bāʾ** follows → the mīm turns into a **nasal sound** and is concealed (ikhfāʾ — collision). • **another letter** follows → the mīm is read **clearly**, the two stay separate (iẓhār — no collision).",
               "**The three names:** • **ikhfāʾ shafawī** (labial ikhfāʾ), • **idghām al-mithlayn al-ṣaghīr** (small like-letter idghām), • **iẓhār shafawī** (labial iẓhār). It is called \"shafawī\" (labial) because the mīm's exit point is the **lips**. The next three verses explain each in turn."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "أَحْكَامُهَا",
+              "tr": "onun hükümleri",
+              "de": "ihre Regeln",
+              "en": "its rulings",
+              "note": {
+                "tr": "«hâ» zamiri mîm sâkineye râcidir.",
+                "de": "Das Suffix «-hā» verweist auf das mīm sākine.",
+                "en": "The suffix «-hā» refers to the mīm sākine."
+              }
+            },
+            {
+              "ar": "ثَلاَثَةٌ",
+              "tr": "üçtür",
+              "de": "drei",
+              "en": "three"
+            },
+            {
+              "ar": "لِمَنْ",
+              "tr": "kimse için",
+              "de": "für den, der",
+              "en": "for one who"
+            },
+            {
+              "ar": "ضَبَطْ",
+              "tr": "iyi kavrayan, zaptaden",
+              "de": "erfasst",
+              "en": "grasps (it) well"
+            },
+            {
+              "ar": "إِخْفَاءٌ",
+              "tr": "ihfâ",
+              "de": "Ikhfāʾ",
+              "en": "ikhfāʾ"
+            },
+            {
+              "ar": "ادْغَامٌ",
+              "tr": "idğâm",
+              "de": "Idghām",
+              "en": "idghām"
+            },
+            {
+              "ar": "وَإِظْهَارٌ",
+              "tr": "ve izhâr",
+              "de": "und Iẓhār",
+              "en": "and iẓhār"
+            },
+            {
+              "ar": "فَقَطْ",
+              "tr": "sadece",
+              "de": "nur",
+              "en": "only"
+            }
+          ]
         },
         {
           "n": 20,
@@ -1850,6 +2911,60 @@ window.CONTENT = {
                   }
                 ]
               ]
+            }
+          ],
+          "words": [
+            {
+              "ar": "فَالأَوَّلُ",
+              "tr": "birincisi",
+              "de": "das erste",
+              "en": "the first"
+            },
+            {
+              "ar": "الإِخْفَاءُ",
+              "tr": "ihfâdır",
+              "de": "ist Ikhfāʾ",
+              "en": "is ikhfāʾ"
+            },
+            {
+              "ar": "عِنْدَ",
+              "tr": "yanında",
+              "de": "bei",
+              "en": "at"
+            },
+            {
+              "ar": "الْبَاءِ",
+              "tr": "bâ harfi",
+              "de": "dem Bāʾ",
+              "en": "the bāʾ"
+            },
+            {
+              "ar": "وَسَمِّهِ",
+              "tr": "ve onu isimlendir",
+              "de": "und nenne es",
+              "en": "and name it",
+              "note": {
+                "tr": "Emir fiili.",
+                "de": "Imperativ.",
+                "en": "Imperative verb."
+              }
+            },
+            {
+              "ar": "الشَّفْوِىَّ",
+              "tr": "şefevî (dudaksal)",
+              "de": "schafawī (labial)",
+              "en": "shafawī (labial)",
+              "note": {
+                "tr": "Tecvîd terimi: ihfâ-ı şefevî.",
+                "de": "Tadschwīd-Begriff: Ikhfāʾ schafawī.",
+                "en": "Tajwīd term: ikhfāʾ shafawī."
+              }
+            },
+            {
+              "ar": "لِلْقُرَّاءِ",
+              "tr": "okuyucular için",
+              "de": "für die Rezitierenden",
+              "en": "for the reciters"
             }
           ]
         },
@@ -1945,6 +3060,77 @@ window.CONTENT = {
                   }
                 ]
               ]
+            }
+          ],
+          "words": [
+            {
+              "ar": "وَالثّانِ",
+              "tr": "ikincisi",
+              "de": "das zweite",
+              "en": "the second"
+            },
+            {
+              "ar": "إِدْغَامٌ",
+              "tr": "idğâmdır",
+              "de": "ist Idghām",
+              "en": "is idghām"
+            },
+            {
+              "ar": "بِمِثْلِهَا",
+              "tr": "benzeriyle (mîmle)",
+              "de": "mit seinesgleichen (Mīm)",
+              "en": "with its like (mīm)",
+              "note": {
+                "tr": "İdğâm-ı mislî: mîmin mîme.",
+                "de": "Idghām mithlī: mīm in mīm.",
+                "en": "Idghām mithlī: mīm into mīm."
+              }
+            },
+            {
+              "ar": "أَتَى",
+              "tr": "gelir",
+              "de": "kommt",
+              "en": "comes"
+            },
+            {
+              "ar": "وَسَمِّ",
+              "tr": "ve isimlendir, de",
+              "de": "und nenne",
+              "en": "and call it",
+              "note": {
+                "tr": "Emir fiili.",
+                "de": "Imperativ.",
+                "en": "Imperative verb."
+              }
+            },
+            {
+              "ar": "إدغاماً",
+              "tr": "idğâm (olarak)",
+              "de": "Idghām",
+              "en": "idghām"
+            },
+            {
+              "ar": "صَغِيراً",
+              "tr": "küçük",
+              "de": "klein",
+              "en": "small",
+              "note": {
+                "tr": "İdğâm-ı sagîr.",
+                "de": "Idghām ṣaghīr.",
+                "en": "Idghām ṣaghīr."
+              }
+            },
+            {
+              "ar": "يَا",
+              "tr": "ey (nidâ)",
+              "de": "o (Anrede)",
+              "en": "O (vocative)"
+            },
+            {
+              "ar": "فَتَى",
+              "tr": "genç",
+              "de": "junger Mann",
+              "en": "youth"
             }
           ]
         },
@@ -2082,6 +3268,66 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "وَالثَّالِثُ",
+              "tr": "üçüncüsü",
+              "de": "das dritte",
+              "en": "the third"
+            },
+            {
+              "ar": "الإِظْهَارُ",
+              "tr": "izhârdır",
+              "de": "ist Iẓhār",
+              "en": "is iẓhār"
+            },
+            {
+              "ar": "فِى",
+              "tr": "-de",
+              "de": "bei",
+              "en": "with"
+            },
+            {
+              "ar": "الْبَقِيَّةْ",
+              "tr": "geri kalan(lar)",
+              "de": "den übrigen",
+              "en": "the remaining"
+            },
+            {
+              "ar": "مِنْ",
+              "tr": "-den",
+              "de": "von",
+              "en": "of"
+            },
+            {
+              "ar": "أَحْرُفٍ",
+              "tr": "harfler",
+              "de": "Buchstaben",
+              "en": "letters"
+            },
+            {
+              "ar": "وَسَمِّهَا",
+              "tr": "ve ona da de",
+              "de": "und nenne es",
+              "en": "and name it",
+              "note": {
+                "tr": "Emir fiili.",
+                "de": "Imperativ.",
+                "en": "Imperative verb."
+              }
+            },
+            {
+              "ar": "شَفْوِيَّهْ",
+              "tr": "şefevî (dudaksal)",
+              "de": "schafawī (labial)",
+              "en": "shafawī (labial)",
+              "note": {
+                "tr": "Tecvîd terimi: izhâr-ı şefevî.",
+                "de": "Tadschwīd-Begriff: Iẓhār schafawī.",
+                "en": "Tajwīd term: iẓhār shafawī."
+              }
+            }
           ]
         },
         {
@@ -2110,7 +3356,83 @@ window.CONTENT = {
               "**2) At fāʾ (ف) — reason: nearness of makhraj.** The mīm from the lips, the fāʾ from the **lower lip + upper front teeth**; their exit points are **near**. Read fast, the mīm may again \"vanish.\" Correct: the mīm **clear and short**, then the fāʾ. E.g. *hum fitya* — do not conceal the mīm.",
               "**In short:** the mīm must be read clearly from the lips; despite the nearness of wāw/fāʾ it must not be concealed with ghunna. This is the most critical point of iẓhār shafawī."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَاحْذَرْ",
+              "tr": "ve sakın",
+              "de": "und hüte dich",
+              "en": "and beware",
+              "note": {
+                "tr": "Emir fiili.",
+                "de": "Imperativ.",
+                "en": "Imperative verb."
+              }
+            },
+            {
+              "ar": "لَدَى",
+              "tr": "yanında",
+              "de": "bei",
+              "en": "at"
+            },
+            {
+              "ar": "وَاوٍ",
+              "tr": "vâv",
+              "de": "Wāw",
+              "en": "wāw"
+            },
+            {
+              "ar": "وَفَا",
+              "tr": "ve fâ",
+              "de": "und Fāʾ",
+              "en": "and fāʾ"
+            },
+            {
+              "ar": "أَنْ",
+              "tr": "-mesinden (ki)",
+              "de": "dass",
+              "en": "that"
+            },
+            {
+              "ar": "تَخْتَفىِ",
+              "tr": "gizlenmesi (mîmin)",
+              "de": "(das Mīm) verborgen wird",
+              "en": "(the mīm) be concealed",
+              "note": {
+                "tr": "Mîmi bu iki harfte ihfâ etmekten sakındırır.",
+                "de": "Warnt davor, das Mīm bei beiden zu verbergen.",
+                "en": "Warns against concealing the mīm at these two."
+              }
+            },
+            {
+              "ar": "لِقُرْبِهَا",
+              "tr": "yakınlıkları sebebiyle",
+              "de": "wegen ihrer Nähe",
+              "en": "because of their nearness"
+            },
+            {
+              "ar": "وَلِاتحادِ",
+              "tr": "ve (mahreç) birliği sebebiyle",
+              "de": "und wegen der (Machradsch-)Einheit",
+              "en": "and because of the (makhraj) unity",
+              "note": {
+                "tr": "Vâv ile mîmin mahreç birliği.",
+                "de": "Machradsch-Einheit von Wāw und Mīm.",
+                "en": "Shared makhraj of wāw and mīm."
+              }
+            },
+            {
+              "ar": "فَاعْرِفِ",
+              "tr": "artık bil",
+              "de": "so wisse",
+              "en": "so know",
+              "note": {
+                "tr": "Emir fiili.",
+                "de": "Imperativ.",
+                "en": "Imperative verb."
+              }
+            }
+          ]
         }
       ],
       "notes": [
@@ -2389,6 +3711,104 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "قَبْلَ",
+              "tr": "önce",
+              "de": "vor",
+              "en": "before"
+            },
+            {
+              "ar": "ارْبَعٍ",
+              "tr": "dört",
+              "de": "vier",
+              "en": "four"
+            },
+            {
+              "ar": "مَعْ",
+              "tr": "ile, beraber",
+              "de": "mit, zusammen mit",
+              "en": "together with",
+              "note": {
+                "tr": "«مع» (maʿa) — burada dörde on ekler: on dört.",
+                "de": "«maʿa» — addiert Zehn zu Vier: vierzehn.",
+                "en": "«maʿa» — adds ten to four: fourteen."
+              }
+            },
+            {
+              "ar": "عَشْرَةٍ",
+              "tr": "on",
+              "de": "zehn",
+              "en": "ten"
+            },
+            {
+              "ar": "خُذْ",
+              "tr": "al",
+              "de": "nimm",
+              "en": "take",
+              "note": {
+                "tr": "Emir fiili.",
+                "de": "Imperativ.",
+                "en": "Imperative verb."
+              }
+            },
+            {
+              "ar": "عِلْمَهُ",
+              "tr": "onun bilgisini",
+              "de": "sein Wissen",
+              "en": "its knowledge"
+            },
+            {
+              "ar": "مِنْ",
+              "tr": "-den, -dan",
+              "de": "aus, von",
+              "en": "from"
+            },
+            {
+              "ar": "إِبْغِ",
+              "tr": "iste, arzu et",
+              "de": "begehre, erstrebe",
+              "en": "seek, desire",
+              "note": {
+                "tr": "Kameriyye (izhâr) harflerinden ا, ب, غ'yı remzeder.",
+                "de": "Steht für die Qamarī-(Iẓhār-)Buchstaben ʾalif, bāʾ, ghayn.",
+                "en": "Denotes the qamarī (iẓhār) letters ʾalif, bāʾ, ghayn."
+              }
+            },
+            {
+              "ar": "حَجَّكَ",
+              "tr": "haccını",
+              "de": "deine Pilgerfahrt",
+              "en": "your pilgrimage",
+              "note": {
+                "tr": "Kameriyye harfleri ح, ج, ك'yı remzeder.",
+                "de": "Steht für die Qamarī-Buchstaben ḥāʾ, jīm, kāf.",
+                "en": "Denotes the qamarī letters ḥāʾ, jīm, kāf."
+              }
+            },
+            {
+              "ar": "وَخَفْ",
+              "tr": "ve kork",
+              "de": "und fürchte",
+              "en": "and fear",
+              "note": {
+                "tr": "Kameriyye harfleri و, خ, ف'yı remzeder (وَ = ve).",
+                "de": "Steht für die Qamarī-Buchstaben wāw, khāʾ, fāʾ (wa = und).",
+                "en": "Denotes the qamarī letters wāw, khāʾ, fāʾ (wa = and)."
+              }
+            },
+            {
+              "ar": "عَقِيمَهُ",
+              "tr": "onun kısırını",
+              "de": "seine Unfruchtbarkeit",
+              "en": "its barren one",
+              "note": {
+                "tr": "Kameriyye harfleri ع, ق, ي, م, ه'yı remzeder.",
+                "de": "Steht für die Qamarī-Buchstaben ʿayn, qāf, yāʾ, mīm, hāʾ.",
+                "en": "Denotes the qamarī letters ʿayn, qāf, yāʾ, mīm, hāʾ."
+              }
+            }
           ]
         },
         {
@@ -2414,7 +3834,67 @@ window.CONTENT = {
               "**How many? (simple count):** 28 minus 14 qamarī = **14 shamsī**. Their mnemonic is in the next verse.",
               "**Why \"shamsī\" (sun-)?** The model word is **الشَّمْس** (al-shams = the sun). As the sun swallows a star's light, here the lām **vanishes**, unheard: *al-shams* (lām not read, shīn doubled). Application: \"al-\" is written but the lām not read at all; the next letter is **doubled**."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "ثَانِيهِمَا",
+              "tr": "ikincisi (o ikisinin)",
+              "de": "der zweite von beiden",
+              "en": "the second of the two"
+            },
+            {
+              "ar": "إِدْغَامُهَا",
+              "tr": "onun idğam edilmesi",
+              "de": "ihre Verschmelzung (Idghām)",
+              "en": "its merging (idghām)"
+            },
+            {
+              "ar": "فى",
+              "tr": "-de, içinde",
+              "de": "bei, in",
+              "en": "with, in"
+            },
+            {
+              "ar": "أَرْبَعِ",
+              "tr": "dört",
+              "de": "vier",
+              "en": "four"
+            },
+            {
+              "ar": "وَعَشْرَةٍ",
+              "tr": "ve on",
+              "de": "und zehn",
+              "en": "and ten",
+              "note": {
+                "tr": "Dört ile birlikte on dört eder.",
+                "de": "Mit Vier zusammen: vierzehn.",
+                "en": "With four: fourteen."
+              }
+            },
+            {
+              "ar": "أَيْضاً",
+              "tr": "ayrıca, keza",
+              "de": "ebenfalls, auch",
+              "en": "also"
+            },
+            {
+              "ar": "وَرَمْزَهَا",
+              "tr": "ve onun remzini",
+              "de": "und ihr Merkzeichen",
+              "en": "and its mnemonic"
+            },
+            {
+              "ar": "فَعِ",
+              "tr": "belle, ezberle",
+              "de": "so behalte, präge ein",
+              "en": "so keep, retain",
+              "note": {
+                "tr": "«عِ» — «وعى» (bellemek) fiilinin emri; فَ = artık.",
+                "de": "«ʿi» — Imperativ von «waʿā» (behalten); fa = so.",
+                "en": "«ʿi» — imperative of «waʿā» (to retain); fa = so."
+              }
+            }
+          ]
         },
         {
           "n": 27,
@@ -2572,6 +4052,162 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "طِبْ",
+              "tr": "iyi/hoş ol",
+              "de": "sei gut, sei rein",
+              "en": "be good, be pure",
+              "note": {
+                "tr": "Şemsî (idğâm) harf ط'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben ṭāʾ.",
+                "en": "Denotes the shamsī letter ṭāʾ."
+              }
+            },
+            {
+              "ar": "ثُمَّ",
+              "tr": "sonra",
+              "de": "dann",
+              "en": "then",
+              "note": {
+                "tr": "Şemsî harf ث'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben thāʾ.",
+                "en": "Denotes the shamsī letter thāʾ."
+              }
+            },
+            {
+              "ar": "صِلْ",
+              "tr": "(akrabayı) gözet, birleştir",
+              "de": "pflege, verbinde",
+              "en": "join, maintain",
+              "note": {
+                "tr": "Şemsî harf ص'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben ṣād.",
+                "en": "Denotes the shamsī letter ṣād."
+              }
+            },
+            {
+              "ar": "رَحِماً",
+              "tr": "akrabalık bağını",
+              "de": "die Verwandtschaft",
+              "en": "kinship",
+              "note": {
+                "tr": "Şemsî harf ر'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben rāʾ.",
+                "en": "Denotes the shamsī letter rāʾ."
+              }
+            },
+            {
+              "ar": "تَفُزْ",
+              "tr": "kurtuluşa erersin",
+              "de": "du wirst Erfolg haben",
+              "en": "you will succeed",
+              "note": {
+                "tr": "Şemsî harf ت'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben tāʾ.",
+                "en": "Denotes the shamsī letter tāʾ."
+              }
+            },
+            {
+              "ar": "ضِفْ",
+              "tr": "misafir et, ekle",
+              "de": "beherberge, füge hinzu",
+              "en": "host, add",
+              "note": {
+                "tr": "Şemsî harf ض'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben ḍād.",
+                "en": "Denotes the shamsī letter ḍād."
+              }
+            },
+            {
+              "ar": "ذَا",
+              "tr": "sahibi (olan)",
+              "de": "Besitzer von",
+              "en": "possessor of",
+              "note": {
+                "tr": "Şemsî harf ذ'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben dhāl.",
+                "en": "Denotes the shamsī letter dhāl."
+              }
+            },
+            {
+              "ar": "نِعَمْ",
+              "tr": "nimetler",
+              "de": "Gnadengaben",
+              "en": "blessings",
+              "note": {
+                "tr": "Şemsî harf ن'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben nūn.",
+                "en": "Denotes the shamsī letter nūn."
+              }
+            },
+            {
+              "ar": "دَعْ",
+              "tr": "bırak, terk et",
+              "de": "lass ab von",
+              "en": "leave off",
+              "note": {
+                "tr": "Şemsî harf د'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben dāl.",
+                "en": "Denotes the shamsī letter dāl."
+              }
+            },
+            {
+              "ar": "سُوءَ",
+              "tr": "kötülüğünü",
+              "de": "das Böse von",
+              "en": "the evil of",
+              "note": {
+                "tr": "Şemsî harf س'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben sīn.",
+                "en": "Denotes the shamsī letter sīn."
+              }
+            },
+            {
+              "ar": "ظَنٍ",
+              "tr": "zan",
+              "de": "Verdacht",
+              "en": "suspicion",
+              "note": {
+                "tr": "Şemsî harf ظ'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben ẓāʾ.",
+                "en": "Denotes the shamsī letter ẓāʾ."
+              }
+            },
+            {
+              "ar": "زُرْ",
+              "tr": "ziyaret et",
+              "de": "besuche",
+              "en": "visit",
+              "note": {
+                "tr": "Şemsî harf ز'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben zāy.",
+                "en": "Denotes the shamsī letter zāy."
+              }
+            },
+            {
+              "ar": "شَرِيفَاً",
+              "tr": "şerefli (kişiyi)",
+              "de": "einen Edlen",
+              "en": "a noble one",
+              "note": {
+                "tr": "Şemsî harf ش'yı remzeder.",
+                "de": "Steht für den schamsī-Buchstaben shīn.",
+                "en": "Denotes the shamsī letter shīn."
+              }
+            },
+            {
+              "ar": "لِلْكَرَم",
+              "tr": "kerem/cömertlik için",
+              "de": "um der Großzügigkeit willen",
+              "en": "for generosity's sake",
+              "note": {
+                "tr": "Şemsî harf ل'yı remzeder (لِ = için).",
+                "de": "Steht für den schamsī-Buchstaben lām (li = für).",
+                "en": "Denotes the shamsī letter lām (li = for)."
+              }
+            }
           ]
         },
         {
@@ -2594,7 +4230,67 @@ window.CONTENT = {
               "**Naming:** the author names the two states: • **\"qamarī lām\"** = the lām read clearly with iẓhār (example **الْقَمَر** (al-qamar)). • **\"shamsī lām\"** = the merged, unread lām (example **الشَّمْس** (al-shams)).",
               "**Easy reminder:** the two model words show the rule themselves. Say **الْقَمَر** (al-qamar) and you **hear** the lām (qamarī); say **الشَّمْس** (al-shams) and you do **not** (shamsī). These two words suffice to tell them apart, even without memorizing the letters."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَاللاَّمَ",
+              "tr": "ve lâmı",
+              "de": "und das Lām",
+              "en": "and the lām",
+              "note": {
+                "tr": "Lâm-ı ta'rîfin ilki: kameriyye.",
+                "de": "Das erste Lām des Artikels: qamarī.",
+                "en": "The first lām of the article: qamarī."
+              }
+            },
+            {
+              "ar": "الاُولَى",
+              "tr": "birinci",
+              "de": "das erste",
+              "en": "the first"
+            },
+            {
+              "ar": "سَمِّهَا",
+              "tr": "onu adlandır",
+              "de": "nenne es",
+              "en": "name it",
+              "note": {
+                "tr": "Emir + zamir.",
+                "de": "Imperativ mit Objektpronomen.",
+                "en": "Imperative with object pronoun."
+              }
+            },
+            {
+              "ar": "قَمْرِيَّهْ",
+              "tr": "kameriyye",
+              "de": "qamarī (lunar)",
+              "en": "qamarī (lunar)"
+            },
+            {
+              "ar": "وَاللاَّمَ",
+              "tr": "ve lâmı",
+              "de": "und das Lām",
+              "en": "and the lām"
+            },
+            {
+              "ar": "الاُخْرىَ",
+              "tr": "diğer, ikinci",
+              "de": "das andere",
+              "en": "the other"
+            },
+            {
+              "ar": "سَمِّهَا",
+              "tr": "onu adlandır",
+              "de": "nenne es",
+              "en": "name it"
+            },
+            {
+              "ar": "شَمْسِيَّهْ",
+              "tr": "şemsiyye",
+              "de": "schamsī (solar)",
+              "en": "shamsī (solar)"
+            }
+          ]
         },
         {
           "n": 29,
@@ -2619,7 +4315,84 @@ window.CONTENT = {
               "**Base ruling — iẓhār (clear):** the verb lām is, as a rule, read **clearly**. The author gives three examples: *qul naʿam* (\"say: yes\"), *qulnā* (\"we said\"), *iltaqā* (\"he met\"). Whether the lām is at the **word's end** (قُلْ) or in the **middle** (الْتَقَى), the iẓhār is the same — this is what \"muṭlaqan\" (unrestricted) means.",
               "**The only exception — idghām:** if a **lām (ل)** or **rāʾ (ر)** follows the verb lām, it is not made clear but **merged**. E.g. *qul rabbi* → \"qur-rabbi\"; *qul lakum* → \"qullakum.\" Apart from these two, the verb lām is always clear."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وأظْهِرَنَّ",
+              "tr": "ve izhâr et, açıkça oku",
+              "de": "und sprich deutlich aus (Iẓhār)",
+              "en": "and pronounce clearly (iẓhār)",
+              "note": {
+                "tr": "Te'kîd nûnuyla emir.",
+                "de": "Imperativ mit Nūn der Verstärkung.",
+                "en": "Imperative with emphatic nūn."
+              }
+            },
+            {
+              "ar": "لاَمَ",
+              "tr": "lâmını",
+              "de": "das Lām von",
+              "en": "the lām of"
+            },
+            {
+              "ar": "فِعْلٍ",
+              "tr": "fiil",
+              "de": "eines Verbs",
+              "en": "a verb",
+              "note": {
+                "tr": "Lâm-ı fiil kastediliyor.",
+                "de": "Gemeint ist das Verb-Lām.",
+                "en": "The verb lām is meant."
+              }
+            },
+            {
+              "ar": "مُطْلَقاً",
+              "tr": "mutlak olarak, her hâlde",
+              "de": "uneingeschränkt, in jedem Fall",
+              "en": "absolutely, in all cases"
+            },
+            {
+              "ar": "فى",
+              "tr": "-de, gibi",
+              "de": "in, wie in",
+              "en": "in, as in"
+            },
+            {
+              "ar": "نَحْوِ",
+              "tr": "gibi, örneğinde",
+              "de": "dergleichen wie",
+              "en": "the likes of"
+            },
+            {
+              "ar": "قُلْ",
+              "tr": "de, söyle",
+              "de": "sag",
+              "en": "say",
+              "note": {
+                "tr": "Sâkin lâm-ı fiil izhâr edilir.",
+                "de": "Das sākine Verb-Lām wird deutlich gesprochen.",
+                "en": "The sākin verb lām is pronounced clearly."
+              }
+            },
+            {
+              "ar": "نَعَمْ",
+              "tr": "evet",
+              "de": "ja",
+              "en": "yes"
+            },
+            {
+              "ar": "وَقُلْنَا",
+              "tr": "ve dedik",
+              "de": "und wir sagten",
+              "en": "and we said"
+            },
+            {
+              "ar": "وَالْتَقَى",
+              "tr": "ve karşılaştı, buluştu",
+              "de": "und es traf zusammen",
+              "en": "and it met"
+            }
+          ]
         }
       ],
       "notes": [
@@ -2860,7 +4633,87 @@ window.CONTENT = {
               "**Three near pairs with complete idghām:** • **nūn → lām** (e.g. **مِنْ لَدُنْهُ** (min ladunhu)), • **nūn → rāʾ** (e.g. **مِنْ رَبِّكَ** (min rabbika)), • **lām → rāʾ** (e.g. **قُلْ رَبِّ** (qul rabbi)). Here the first passes fully into the second.",
               "**Two pairs with incomplete (nāqiṣ) idghām:** • **nūn → wāw** (e.g. **مِنْ وَلِيٍّ** (min waliyyin)), • **nūn → yāʾ** (e.g. **مَنْ يَشَاءُ** (man yashāʾu)). Here the nūn passes over, but its **ghunna remains** (hence \"incomplete\"). — These two are the same as the **idghām with ghunna** from the nūn chapter; both views are correct."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَإِنْ",
+              "tr": "ve eğer",
+              "de": "und wenn",
+              "en": "and if"
+            },
+            {
+              "ar": "يَكُونَا",
+              "tr": "ikisi olurlarsa",
+              "de": "sie beide sind",
+              "en": "the two are",
+              "note": {
+                "tr": "Tesniye (ikil) fiil.",
+                "de": "Dualverb.",
+                "en": "Dual verb."
+              }
+            },
+            {
+              "ar": "مَخْرَجاً",
+              "tr": "mahreç bakımından",
+              "de": "im Machradsch",
+              "en": "in makhraj",
+              "note": {
+                "tr": "Mahreç: harfin çıkış yeri; temyîz.",
+                "de": "Machradsch: Artikulationsort; Tamyīz.",
+                "en": "Makhraj: articulation point; tamyīz."
+              }
+            },
+            {
+              "ar": "تَقَارَبَا",
+              "tr": "birbirine yakınlaşırlarsa",
+              "de": "sie nähern sich einander",
+              "en": "they draw near",
+              "note": {
+                "tr": "Tesniye (ikil) fiil.",
+                "de": "Dualverb.",
+                "en": "Dual verb."
+              }
+            },
+            {
+              "ar": "وَفي",
+              "tr": "ve ...de",
+              "de": "und in",
+              "en": "and in"
+            },
+            {
+              "ar": "الصِّفَاتِ",
+              "tr": "sıfatlarda",
+              "de": "in den Ṣifāt",
+              "en": "in the qualities",
+              "note": {
+                "tr": "Sıfat: harfin nitelikleri (tecvîd terimi).",
+                "de": "Ṣifāt: Eigenschaften der Buchstaben.",
+                "en": "Ṣifāt: letters' qualities (tajwīd term)."
+              }
+            },
+            {
+              "ar": "اخْتَلَفَا",
+              "tr": "farklılaşırlarsa",
+              "de": "sie unterscheiden sich",
+              "en": "they differ",
+              "note": {
+                "tr": "Tesniye (ikil) fiil.",
+                "de": "Dualverb.",
+                "en": "Dual verb."
+              }
+            },
+            {
+              "ar": "يُلَقَّبَا",
+              "tr": "adlandırılırlar",
+              "de": "sie werden genannt",
+              "en": "they are named",
+              "note": {
+                "tr": "Meçhul (edilgen) tesniye fiil.",
+                "de": "Passiv, Dual.",
+                "en": "Passive dual verb."
+              }
+            }
+          ]
         },
         {
           "n": 32,
@@ -2882,7 +4735,83 @@ window.CONTENT = {
               "This verse completes the previous verse's sentence and leads into the **third type**: if two letters **agree in makhraj** but differ in **ṣifa**, they are called (named at the start of the next verse) **mutajānisān**.",
               "**Thus the three cases become clear (makhraj/ṣifa grid):** • makhraj same + ṣifa same → **mithlān**. • makhraj same + ṣifa different → **mutajānisān**. • makhraj near (+ ṣifa different) → **mutaqāribān**. The only difference is whether makhraj and ṣifa are \"same, near, or different.\""
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "مُتْقَارِبَيْنِ",
+              "tr": "mütekāribeyn (birbirine yakın iki harf)",
+              "de": "Mutaqāribān (zwei Nahe)",
+              "en": "mutaqāribān (two near ones)",
+              "note": {
+                "tr": "Tecvîd terimi.",
+                "de": "Tadschwīd-Begriff.",
+                "en": "Tajwīd term."
+              }
+            },
+            {
+              "ar": "أَوْ",
+              "tr": "yahut",
+              "de": "oder",
+              "en": "or"
+            },
+            {
+              "ar": "يَكُونَا",
+              "tr": "ikisi olurlarsa",
+              "de": "sie beide sind",
+              "en": "the two are",
+              "note": {
+                "tr": "Tesniye (ikil) fiil.",
+                "de": "Dualverb.",
+                "en": "Dual verb."
+              }
+            },
+            {
+              "ar": "اتَّفَقَا",
+              "tr": "birleşirlerse",
+              "de": "sie stimmen überein",
+              "en": "they agree",
+              "note": {
+                "tr": "Tesniye (ikil) fiil.",
+                "de": "Dualverb.",
+                "en": "Dual verb."
+              }
+            },
+            {
+              "ar": "فِي",
+              "tr": "...de",
+              "de": "in",
+              "en": "in"
+            },
+            {
+              "ar": "مَخْرَجٍ",
+              "tr": "mahreçte",
+              "de": "im Machradsch",
+              "en": "in makhraj"
+            },
+            {
+              "ar": "دُونَ",
+              "tr": "...dışında, olmaksızın",
+              "de": "ohne, nicht in",
+              "en": "without, not in"
+            },
+            {
+              "ar": "الصِّفَاتِ",
+              "tr": "sıfatlarda",
+              "de": "in den Ṣifāt",
+              "en": "in the qualities"
+            },
+            {
+              "ar": "حُقِّقَا",
+              "tr": "tahkik edilmiştir",
+              "de": "es ist festgestellt",
+              "en": "it is established",
+              "note": {
+                "tr": "Meçhul (edilgen) fiil.",
+                "de": "Passivverb.",
+                "en": "Passive verb."
+              }
+            }
+          ]
         },
         {
           "n": 33,
@@ -3031,6 +4960,76 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "بِالْمُتَجَانِسَيْنِ",
+              "tr": "mütecâniseyn (cinsdaş iki harf) diye",
+              "de": "als Mutadschānisān (Gleichgattige)",
+              "en": "as mutajānisān (same-genus letters)",
+              "note": {
+                "tr": "Tecvîd terimi; önceki «yulakkabâ»ya bağlıdır.",
+                "de": "Tadschwīd-Begriff; bezogen auf „yulaqqabā“.",
+                "en": "Tajwīd term; governed by \"yulaqqabā.\""
+              }
+            },
+            {
+              "ar": "ثُمَّ",
+              "tr": "sonra",
+              "de": "dann",
+              "en": "then"
+            },
+            {
+              "ar": "إِنْ",
+              "tr": "eğer",
+              "de": "wenn",
+              "en": "if"
+            },
+            {
+              "ar": "سَكَنْ",
+              "tr": "sâkin olursa",
+              "de": "sākin ist",
+              "en": "is sākin (unvowelled)",
+              "note": {
+                "tr": "Sâkin: harekesiz harf.",
+                "de": "Sākin: vokalloser Buchstabe.",
+                "en": "Sākin: vowelless letter."
+              }
+            },
+            {
+              "ar": "أَوَّلُ",
+              "tr": "ilki",
+              "de": "der erste",
+              "en": "the first"
+            },
+            {
+              "ar": "كُلٍّ",
+              "tr": "her (çiftin)",
+              "de": "jedes (Paares)",
+              "en": "of each (pair)"
+            },
+            {
+              "ar": "فَالصَّغِيرَ",
+              "tr": "o zaman «sagîr» (küçük) diye",
+              "de": "so „ṣaghīr“ (klein)",
+              "en": "then \"ṣaghīr\" (small)",
+              "note": {
+                "tr": "İdğâm-ı sagîr terimi.",
+                "de": "Idghām ṣaghīr.",
+                "en": "The small idghām."
+              }
+            },
+            {
+              "ar": "سَمِّيَنْ",
+              "tr": "adlandır, de",
+              "de": "nenne (es)",
+              "en": "call/name (it)",
+              "note": {
+                "tr": "Te'kîd nûnlu emir.",
+                "de": "Imperativ mit Nūn at-taʾkīd.",
+                "en": "Imperative with nūn of emphasis."
+              }
+            }
           ]
         },
         {
@@ -3056,7 +5055,99 @@ window.CONTENT = {
               "**Important — qirāʾa note:** the kabīr idghām does **not occur in the Ḥafṣ (ʿan ʿĀṣim) transmission** that we recite. It does in some other readings; e.g. in **مَا سَلَكَكُمْ** (mā salakakum) the first (vowelled) kāf merges into the second. This is to know the term; it is not applied in Ḥafṣ.",
               "**Summary — each of the three types is further qualified by two measures:** (1) **ṣaghīr** (first sākin) / **kabīr** (both vowelled); (2) **complete** (the letter fully dissolves) / **nāqiṣ** (its ṣifa remains). The next note shows \"complete\" vs \"nāqiṣ\" with examples."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "أَوْ",
+              "tr": "yahut",
+              "de": "oder",
+              "en": "or"
+            },
+            {
+              "ar": "حُرِّكَ",
+              "tr": "harekeli olursa",
+              "de": "vokalisiert wird",
+              "en": "is vowelled",
+              "note": {
+                "tr": "Meçhul (edilgen) fiil; harekeli = üzerinde hareke bulunan.",
+                "de": "Passiv; bewegt = mit Vokal.",
+                "en": "Passive verb; vowelled = bearing a ḥaraka."
+              }
+            },
+            {
+              "ar": "الْحَرْفَانِ",
+              "tr": "iki harf",
+              "de": "die zwei Buchstaben",
+              "en": "the two letters",
+              "note": {
+                "tr": "Tesniye (ikil).",
+                "de": "Dual.",
+                "en": "Dual."
+              }
+            },
+            {
+              "ar": "فى",
+              "tr": "...de",
+              "de": "in",
+              "en": "in"
+            },
+            {
+              "ar": "كُلٍّ",
+              "tr": "her (çift)",
+              "de": "jedem (Paar)",
+              "en": "each (pair)"
+            },
+            {
+              "ar": "فَقُلْ",
+              "tr": "o hâlde de",
+              "de": "so sage",
+              "en": "then say",
+              "note": {
+                "tr": "Emir fiil.",
+                "de": "Imperativ.",
+                "en": "Imperative."
+              }
+            },
+            {
+              "ar": "كُلٌّ",
+              "tr": "hepsi, her biri",
+              "de": "alle, jedes",
+              "en": "all, each"
+            },
+            {
+              "ar": "كَبِيرٌ",
+              "tr": "«kebîr» (büyük)",
+              "de": "„kabīr“ (groß)",
+              "en": "\"kabīr\" (great)",
+              "note": {
+                "tr": "İdğâm-ı kebîr terimi.",
+                "de": "Idghām kabīr.",
+                "en": "The great idghām."
+              }
+            },
+            {
+              "ar": "وافْهَمَنْهُ",
+              "tr": "ve onu iyice anla",
+              "de": "und begreife es",
+              "en": "and understand it",
+              "note": {
+                "tr": "Te'kîd nûnlu emir + zamir.",
+                "de": "Imperativ mit Nūn at-taʾkīd + Pronomen.",
+                "en": "Imperative with nūn of emphasis + pronoun."
+              }
+            },
+            {
+              "ar": "بِالْمُثُلْ",
+              "tr": "örneklerle",
+              "de": "an Beispielen",
+              "en": "by examples",
+              "note": {
+                "tr": "«el-müsül»: emsile/örnekler.",
+                "de": "al-muthul: Beispiele.",
+                "en": "al-muthul: examples."
+              }
+            }
+          ]
         }
       ],
       "notes": [
@@ -3229,7 +5320,84 @@ window.CONTENT = {
               "**What does \"the madd letters do not come to be without it\" mean?** The madd letter (lengthening alif/wāw/yāʾ) **already carries within itself** this natural lengthening. So if there is a lengthening letter, the two-ḥaraka madd **necessarily** exists. Hence it is the **origin** of all madds.",
               "**Measure:** **two ḥarakāt.** A ḥaraka is opening/closing a finger at a moderate pace."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "مَا",
+              "tr": "o (şey)",
+              "de": "das (was)",
+              "en": "that which"
+            },
+            {
+              "ar": "لاَ",
+              "tr": "yok, olmayan",
+              "de": "kein",
+              "en": "no"
+            },
+            {
+              "ar": "تَوَقُّفٌ",
+              "tr": "bağlı olma, tevakkuf",
+              "de": "Abhängigkeit",
+              "en": "dependence",
+              "note": {
+                "tr": "Medd-i tabiî: uzaması bir sebebe bağlı değildir.",
+                "de": "Madd tabiʿī: die Dehnung hängt von keinem Grund ab.",
+                "en": "Natural madd: its lengthening depends on no cause."
+              }
+            },
+            {
+              "ar": "لَهُ",
+              "tr": "onun (için)",
+              "de": "für es",
+              "en": "for it"
+            },
+            {
+              "ar": "عَلى",
+              "tr": "…e (bağlı)",
+              "de": "von",
+              "en": "upon"
+            },
+            {
+              "ar": "سَبَبْ",
+              "tr": "sebep",
+              "de": "Grund",
+              "en": "cause",
+              "note": {
+                "tr": "Fer'î meddin gerektirdiği sebep (hemze/sükûn).",
+                "de": "Der Grund, den das farʿī-Madd erfordert (Hamza/Sukūn).",
+                "en": "The cause required by farʿī madd (hamza/sukūn)."
+              }
+            },
+            {
+              "ar": "وَلا",
+              "tr": "ve …maz",
+              "de": "und nicht",
+              "en": "and not"
+            },
+            {
+              "ar": "بِدُونِهِ",
+              "tr": "onsuz",
+              "de": "ohne es",
+              "en": "without it"
+            },
+            {
+              "ar": "الْحُروفُ",
+              "tr": "harfler (med harfleri)",
+              "de": "die (Madd-)Buchstaben",
+              "en": "the (madd) letters",
+              "note": {
+                "tr": "Med harfleri: و ا ي.",
+                "de": "Madd-Buchstaben: و ا ي.",
+                "en": "The madd letters: و ا ي."
+              }
+            },
+            {
+              "ar": "تُجْتَلَبْ",
+              "tr": "meydana getirilir",
+              "de": "werden hervorgebracht",
+              "en": "are brought about"
+            }
+          ]
         },
         {
           "n": 37,
@@ -3254,7 +5422,101 @@ window.CONTENT = {
               "**E.g.:** **قَالَ** (qāla), **يَقُولُ** (yaqūlu), **قِيلَ** (qīla) — after the lengthening letters there is neither hamza nor sukūn; all are natural madd, two ḥarakāt.",
               "**In short:** no cause (no hamza/sukūn) → natural madd. A cause → farʿī madd (next verse)."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "بلْ",
+              "tr": "bilakis, aksine",
+              "de": "vielmehr",
+              "en": "rather"
+            },
+            {
+              "ar": "أَىُّ",
+              "tr": "herhangi (bir)",
+              "de": "irgendein",
+              "en": "any"
+            },
+            {
+              "ar": "حَرْفٍ",
+              "tr": "harf",
+              "de": "Buchstabe",
+              "en": "letter"
+            },
+            {
+              "ar": "غَيْرِ",
+              "tr": "…dışında, başka",
+              "de": "außer",
+              "en": "other than"
+            },
+            {
+              "ar": "هَمْزٍ",
+              "tr": "hemze",
+              "de": "Hamza",
+              "en": "hamza",
+              "note": {
+                "tr": "Fer'î meddin sebeplerinden biri.",
+                "de": "Einer der Gründe des farʿī-Madd.",
+                "en": "One of the causes of farʿī madd."
+              }
+            },
+            {
+              "ar": "أَوْ",
+              "tr": "veya",
+              "de": "oder",
+              "en": "or"
+            },
+            {
+              "ar": "سُكُونْ",
+              "tr": "sükûn",
+              "de": "Sukūn",
+              "en": "sukūn",
+              "note": {
+                "tr": "Fer'î meddin diğer sebebi.",
+                "de": "Der andere Grund des farʿī-Madd.",
+                "en": "The other cause of farʿī madd."
+              }
+            },
+            {
+              "ar": "جَا",
+              "tr": "gelirse, gelen",
+              "de": "kommt",
+              "en": "comes",
+              "note": {
+                "tr": "جَاءَ fiilinin kısaltılmış hâli.",
+                "de": "Verkürzte Form von جَاءَ.",
+                "en": "Shortened form of جَاءَ."
+              }
+            },
+            {
+              "ar": "بَعْدَ",
+              "tr": "sonra",
+              "de": "nach",
+              "en": "after"
+            },
+            {
+              "ar": "مَدٍّ",
+              "tr": "med (harfi)",
+              "de": "Madd",
+              "en": "madd (letter)"
+            },
+            {
+              "ar": "فَالطَّبِيعىَّ",
+              "tr": "o hâlde tabiî (med)",
+              "de": "dann das natürliche (Madd)",
+              "en": "then the natural (madd)",
+              "note": {
+                "tr": "Medd-i tabiî (aslî).",
+                "de": "Madd tabiʿī (aṣlī).",
+                "en": "Natural (aṣlī) madd."
+              }
+            },
+            {
+              "ar": "يَكُونْ",
+              "tr": "olur",
+              "de": "ist, wird",
+              "en": "it is"
+            }
+          ]
         },
         {
           "n": 38,
@@ -3279,7 +5541,78 @@ window.CONTENT = {
               "**Two causes:** • **Hamza (ء)** — a hamza after the madd letter. • **Sukūn** — a sākin letter after the madd letter. This sukūn is either **original (fixed)** or **ʿāriḍ (arising on pausing)**.",
               "**These two causes produce, in the next chapter (verses 42–57), the three madd rulings:** wujūb (muttaṣil), jawāz (munfaṣil, ʿāriḍ, badal), and luzūm (lāzim)."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَالآخَرُ",
+              "tr": "diğeri",
+              "de": "das andere",
+              "en": "the other"
+            },
+            {
+              "ar": "الْفَرْعِىُّ",
+              "tr": "fer'î (med)",
+              "de": "das farʿī (Madd)",
+              "en": "the farʿī (madd)",
+              "note": {
+                "tr": "Medd-i fer'î: bir sebebe bağlı med.",
+                "de": "Madd farʿī: von einem Grund abhängiges Madd.",
+                "en": "Farʿī madd: a madd depending on a cause."
+              }
+            },
+            {
+              "ar": "مَوْقُوفٌ",
+              "tr": "bağlı, mevkuf",
+              "de": "abhängig",
+              "en": "dependent"
+            },
+            {
+              "ar": "عَلى",
+              "tr": "…e",
+              "de": "von",
+              "en": "upon"
+            },
+            {
+              "ar": "سَبَبْ",
+              "tr": "sebep",
+              "de": "Grund",
+              "en": "cause",
+              "note": {
+                "tr": "Sebeb: hemze veya sükûn.",
+                "de": "Sebeb: Hamza oder Sukūn.",
+                "en": "Cause: hamza or sukūn."
+              }
+            },
+            {
+              "ar": "كَهَمْزٍ",
+              "tr": "hemze gibi",
+              "de": "wie Hamza",
+              "en": "like hamza"
+            },
+            {
+              "ar": "أَوْ",
+              "tr": "veya",
+              "de": "oder",
+              "en": "or"
+            },
+            {
+              "ar": "سُكُونٍ",
+              "tr": "sükûn",
+              "de": "Sukūn",
+              "en": "sukūn"
+            },
+            {
+              "ar": "مُسْجَلاً",
+              "tr": "sabit kılınmış, yazılı",
+              "de": "festgelegt",
+              "en": "established",
+              "note": {
+                "tr": "Sabit (yazılı) sükûn kastediliyor.",
+                "de": "Gemeint ist ein festgelegtes (geschriebenes) Sukūn.",
+                "en": "A fixed (written) sukūn is meant."
+              }
+            }
+          ]
         },
         {
           "n": 39,
@@ -3301,7 +5634,83 @@ window.CONTENT = {
               "**Three madd letters:** **alif (ا), wāw (و), yāʾ (ي).** The author gathers them twice: briefly in the word **«وَاي»** (wāy), and with their conditions in the word **«نُوحِيهَا»** (nūḥīhā = \"we reveal it\").",
               "**Why \"nūḥīhā\"? (because it holds all three conditions):** • **نُو**: before the wāw a **ḍamma** (u) → madd wāw. • **حِي**: before the yāʾ a **kasra** (i) → madd yāʾ. • **هَا**: before the alif a **fatḥa** (a) → madd alif. This single word thus shows the three madd letters **with their correct conditions**."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "حُرُوفُهُ",
+              "tr": "onun harfleri",
+              "de": "seine Buchstaben",
+              "en": "its letters",
+              "note": {
+                "tr": "Med harfleri kastediliyor.",
+                "de": "Gemeint sind die Madd-Buchstaben.",
+                "en": "The madd letters are meant."
+              }
+            },
+            {
+              "ar": "ثَلاَثَةٌ",
+              "tr": "üçtür",
+              "de": "drei",
+              "en": "three"
+            },
+            {
+              "ar": "فَعِيهَا",
+              "tr": "onları koru, belle",
+              "de": "so bewahre sie",
+              "en": "so keep them",
+              "note": {
+                "tr": "وَعَى'den emir fiil.",
+                "de": "Imperativ von وَعَى.",
+                "en": "Imperative of وَعَى."
+              }
+            },
+            {
+              "ar": "في",
+              "tr": "…de, içinde",
+              "de": "in",
+              "en": "in"
+            },
+            {
+              "ar": "لَفْظِ",
+              "tr": "lafzında, sözünde",
+              "de": "im Wort",
+              "en": "in the word"
+            },
+            {
+              "ar": "وَاىٍ",
+              "tr": "«vây»",
+              "de": "«wāy»",
+              "en": "«wāy»",
+              "note": {
+                "tr": "و ا ي med harflerini içeren lafız.",
+                "de": "Wort, das die Madd-Buchstaben و ا ي enthält.",
+                "en": "Mnemonic word holding the madd letters و ا ي."
+              }
+            },
+            {
+              "ar": "وَهْىَ",
+              "tr": "ve onlar",
+              "de": "und sie",
+              "en": "and they"
+            },
+            {
+              "ar": "في",
+              "tr": "…de",
+              "de": "in",
+              "en": "in"
+            },
+            {
+              "ar": "نُوحِيهَا",
+              "tr": "«nûhîhâ»",
+              "de": "«nūḥīhā»",
+              "en": "«nūḥīhā»",
+              "note": {
+                "tr": "Üç med harfini de barındıran kelime.",
+                "de": "Wort, das alle drei Madd-Buchstaben enthält.",
+                "en": "Word containing all three madd letters."
+              }
+            }
+          ]
         },
         {
           "n": 40,
@@ -3399,6 +5808,79 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "وَالكَسْرُ",
+              "tr": "esre (kesra)",
+              "de": "die Kasra",
+              "en": "the kasra"
+            },
+            {
+              "ar": "قَبْلَ",
+              "tr": "…den önce",
+              "de": "vor",
+              "en": "before"
+            },
+            {
+              "ar": "الْيَا",
+              "tr": "yâ (harfi)",
+              "de": "das Yāʾ",
+              "en": "the yāʾ"
+            },
+            {
+              "ar": "وَقَبْلَ",
+              "tr": "ve …den önce",
+              "de": "und vor",
+              "en": "and before"
+            },
+            {
+              "ar": "الْواوِ",
+              "tr": "vâv (harfi)",
+              "de": "das Wāw",
+              "en": "the wāw"
+            },
+            {
+              "ar": "ضَمْ",
+              "tr": "ötre (damme)",
+              "de": "Ḍamma",
+              "en": "ḍamma"
+            },
+            {
+              "ar": "شَرْطٌ",
+              "tr": "şarttır",
+              "de": "Bedingung",
+              "en": "a condition",
+              "note": {
+                "tr": "Med harfi ile önceki harekenin uyumu şarttır.",
+                "de": "Der Einklang von Madd-Buchstabe und vorigem Vokal ist Bedingung.",
+                "en": "The madd letter must agree with the preceding vowel."
+              }
+            },
+            {
+              "ar": "وَفَتْحٌ",
+              "tr": "ve fetha (üstün)",
+              "de": "und Fatḥa",
+              "en": "and fatḥa"
+            },
+            {
+              "ar": "قَبْلَ",
+              "tr": "…den önce",
+              "de": "vor",
+              "en": "before"
+            },
+            {
+              "ar": "أَلْفٍ",
+              "tr": "elif",
+              "de": "Alif",
+              "en": "alif"
+            },
+            {
+              "ar": "يُلْتَزَمْ",
+              "tr": "gereklidir, lâzımdır",
+              "de": "ist erforderlich",
+              "en": "is required"
+            }
           ]
         },
         {
@@ -3424,7 +5906,74 @@ window.CONTENT = {
               "**Difference from madd (important):** the madd wāw is preceded by **ḍamma**, the madd yāʾ by **kasra**; but the līn letters by **fatḥa**. So līn letters are not normally lengthened; only **on pausing (waqf), when an ʿāriḍ sukūn arises**, are they lengthened (madd al-līn — verse 45 and later).",
               "**In short, three notions together:** • **قَالَ** (qāla) — madd (alif, fatḥa before). • **يَقُولُ** (yaqūlu) — madd (wāw, ḍamma before). • **خَوْف** (khawf) — līn (wāw, fatḥa before). The first two are natural madd; the third is a līn letter."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَاللِّينُ",
+              "tr": "lîn (harfleri)",
+              "de": "die Līn-(Buchstaben)",
+              "en": "the līn (letters)",
+              "note": {
+                "tr": "Lîn harfleri: sâkin و ve ي, öncesi fethalı.",
+                "de": "Līn-Buchstaben: sākines و und ي mit vorangehender Fatḥa.",
+                "en": "Līn letters: sākin و and ي preceded by fatḥa."
+              }
+            },
+            {
+              "ar": "مِنْهَا",
+              "tr": "bunlardandır",
+              "de": "von diesen",
+              "en": "of these"
+            },
+            {
+              "ar": "الْيَا",
+              "tr": "yâ",
+              "de": "das Yāʾ",
+              "en": "the yāʾ"
+            },
+            {
+              "ar": "وَوَاوٌ",
+              "tr": "ve vâv",
+              "de": "und Wāw",
+              "en": "and wāw"
+            },
+            {
+              "ar": "سُكِنَا",
+              "tr": "sâkin kılınmış",
+              "de": "sākin gemacht",
+              "en": "made sākin"
+            },
+            {
+              "ar": "إِنِ",
+              "tr": "eğer, …şartıyla",
+              "de": "wenn, sofern",
+              "en": "if, provided"
+            },
+            {
+              "ar": "انْفِتَاحٌ",
+              "tr": "fetha (üstün) bulunması",
+              "de": "eine Fatḥa (Öffnung)",
+              "en": "a fatḥa (opening)"
+            },
+            {
+              "ar": "قَبْلَ",
+              "tr": "önce",
+              "de": "vor",
+              "en": "before"
+            },
+            {
+              "ar": "كُلٍّ",
+              "tr": "her biri(nden)",
+              "de": "jedem",
+              "en": "each"
+            },
+            {
+              "ar": "أُعْلِنَا",
+              "tr": "ilân edilmiştir",
+              "de": "ist verkündet",
+              "en": "is declared"
+            }
+          ]
         }
       ],
       "summary": {
@@ -3562,7 +6111,100 @@ window.CONTENT = {
               "**Ruling:** lengthening beyond the natural is **obligatory**; shortening impermissible. Measure: **in waṣl (continuing) 4 or 5 ḥarakāt.** (Pausing on the hamza, 4–5–6 are also permitted because of the ʿāriḍ sukūn.)",
               "**Examples (with which madd letter):** • alif + hamza: **جَاءَ** (jāʾa), **السَّمَاءِ** (as-samāʾi). • wāw + hamza: **سُوءٌ** (sūʾun), **السُّوءَ** (as-sūʾa). • yāʾ + hamza: **جِيءَ** (jīʾa), **تَفِيءَ** (tafīʾa). In all, the madd letter and hamza are within **one word**."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "فَوَاجِبٌ",
+              "tr": "işte vaciptir",
+              "de": "so ist es Pflicht",
+              "en": "then it is obligatory",
+              "note": {
+                "tr": "فَ bağlacı + vâcib (medd-i vâcib).",
+                "de": "Fā-Konjunktion + wādschib.",
+                "en": "Connective fā + wājib."
+              }
+            },
+            {
+              "ar": "إِنْ",
+              "tr": "eğer",
+              "de": "wenn",
+              "en": "if"
+            },
+            {
+              "ar": "جَاءَ",
+              "tr": "gelirse",
+              "de": "kommt",
+              "en": "comes",
+              "note": {
+                "tr": "Mâzî fiil, şart cümlesi.",
+                "de": "Perfektverb im Bedingungssatz.",
+                "en": "Perfect verb, conditional."
+              }
+            },
+            {
+              "ar": "هَمْزٌ",
+              "tr": "bir hemze",
+              "de": "ein Hamza",
+              "en": "a hamza",
+              "note": {
+                "tr": "Medd-i fer'înin sebebi.",
+                "de": "Ursache des farʿī-Madd.",
+                "en": "The cause of the farʿī madd."
+              }
+            },
+            {
+              "ar": "بَعْدَ",
+              "tr": "sonra",
+              "de": "nach",
+              "en": "after"
+            },
+            {
+              "ar": "مَدْ",
+              "tr": "med (harfi)",
+              "de": "Madd(-Buchstabe)",
+              "en": "madd (letter)"
+            },
+            {
+              "ar": "فِي",
+              "tr": "içinde",
+              "de": "in",
+              "en": "within"
+            },
+            {
+              "ar": "كِلْمَةٍ",
+              "tr": "bir kelime",
+              "de": "einem Wort",
+              "en": "a word"
+            },
+            {
+              "ar": "وَذَا",
+              "tr": "ve bu",
+              "de": "und dies",
+              "en": "and this"
+            },
+            {
+              "ar": "بِمُتَّصْلْ",
+              "tr": "muttasıl (bitişik) diye",
+              "de": "als muttaṣil (verbunden)",
+              "en": "as muttaṣil (connected)",
+              "note": {
+                "tr": "Tecvîd terimi: medd-i muttasıl.",
+                "de": "Tadschwīd-Begriff: Madd muttaṣil.",
+                "en": "Tajwid term: madd muttaṣil."
+              }
+            },
+            {
+              "ar": "يُعَدْ",
+              "tr": "sayılır",
+              "de": "wird gezählt",
+              "en": "is counted",
+              "note": {
+                "tr": "Meçhul muzâri fiil.",
+                "de": "Passiv-Präsens.",
+                "en": "Passive imperfect."
+              }
+            }
+          ]
         },
         {
           "n": 44,
@@ -3587,7 +6229,78 @@ window.CONTENT = {
               "**Ruling:** both lengthening and shortening are **permitted**. On the Shāṭibiyya path (common practice) **4 or 5 ḥarakāt**; called \"tawassuṭ al-munfaṣil.\" (On some paths 2 ḥarakāt/qaṣr are also permitted.)",
               "**Examples:** • alif: **إِنَّا أَرْسَلْنَا** (innā arsalnā), **يَا أَيُّهَا** (yā ayyuhā). • wāw: **قُوا أَنْفُسَكُمْ** (qū anfusakum). • yāʾ: **فِي أَنْفُسِكُمْ** (fī anfusikum). In each, the lengthening letter is at the end of the **first** word, the hamza at the start of the **second**."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَجَائزٌ",
+              "tr": "ve câizdir",
+              "de": "und erlaubt ist",
+              "en": "and permitted is",
+              "note": {
+                "tr": "İsm-i fâil; medd-i câiz.",
+                "de": "Partizip Aktiv; Madd dschāʾiz.",
+                "en": "Active participle; madd jāʾiz."
+              }
+            },
+            {
+              "ar": "مَدٌّ",
+              "tr": "med (uzatma)",
+              "de": "Dehnen",
+              "en": "lengthening"
+            },
+            {
+              "ar": "وَقَصْرٌ",
+              "tr": "ve kasr (kısaltma)",
+              "de": "und Kürzen",
+              "en": "and shortening"
+            },
+            {
+              "ar": "إِنْ",
+              "tr": "eğer",
+              "de": "wenn",
+              "en": "if"
+            },
+            {
+              "ar": "فُصِل",
+              "tr": "ayrılmışsa",
+              "de": "getrennt ist",
+              "en": "is separated",
+              "note": {
+                "tr": "Meçhul mâzî fiil.",
+                "de": "Passiv-Perfekt.",
+                "en": "Passive perfect verb."
+              }
+            },
+            {
+              "ar": "كُلٌّ",
+              "tr": "her biri",
+              "de": "jedes",
+              "en": "each"
+            },
+            {
+              "ar": "بِكِلْمَةٍ",
+              "tr": "bir kelimede",
+              "de": "in einem Wort",
+              "en": "in a word"
+            },
+            {
+              "ar": "وَهَذَا",
+              "tr": "ve işte bu",
+              "de": "und dies",
+              "en": "and this"
+            },
+            {
+              "ar": "المُنْفَصِلْ",
+              "tr": "munfasıl (ayrık)",
+              "de": "das munfaṣil (getrennt)",
+              "en": "the munfaṣil (separated)",
+              "note": {
+                "tr": "Tecvîd terimi: medd-i munfasıl.",
+                "de": "Tadschwīd-Begriff: Madd munfaṣil.",
+                "en": "Tajwid term: madd munfaṣil."
+              }
+            }
+          ]
         },
         {
           "n": 45,
@@ -3612,7 +6325,77 @@ window.CONTENT = {
               "**Why \"ʿāriḍ\" (temporary)?** Because the sukūn is not part of the word; it arises **only on pausing**. If one continues (waṣl) it vanishes and the madd returns to natural.",
               "**Ruling:** on pausing, **2, 4, or 6 ḥarakāt** are permitted (the reciter picks one but keeps it consistent in a sitting). Examples: **تَعْلَمُونَ** (taʿlamūn), **نَسْتَعِينُ** (nastaʿīn), **الْعَالَمِينَ** (al-ʿālamīn), **الْبَيَان** (al-bayān). **Note — madd al-līn ʿāriḍ:** if instead of the lengthening letter there is a **līn letter** (like **خَوْف** (khawf)) that becomes sākin on pausing, likewise 2–4–6 ḥarakāt (madd al-līn)."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَمِثْلُ",
+              "tr": "ve benzeri",
+              "de": "und dergleichen",
+              "en": "and likewise"
+            },
+            {
+              "ar": "ذَا",
+              "tr": "bunun",
+              "de": "davon",
+              "en": "of this"
+            },
+            {
+              "ar": "إِنْ",
+              "tr": "eğer",
+              "de": "wenn",
+              "en": "if"
+            },
+            {
+              "ar": "عَرَضَ",
+              "tr": "ârız olursa",
+              "de": "eintritt",
+              "en": "occurs incidentally",
+              "note": {
+                "tr": "Ârızî (geçici) sükûn.",
+                "de": "ʿāriḍ (vorübergehend).",
+                "en": "ʿāriḍ (temporary)."
+              }
+            },
+            {
+              "ar": "السُّكُونُ",
+              "tr": "sükûn",
+              "de": "das Sukūn",
+              "en": "the sukūn"
+            },
+            {
+              "ar": "وَقْفَاً",
+              "tr": "vakıf (durma) sebebiyle",
+              "de": "durch Waqf (Anhalten)",
+              "en": "through waqf (pausing)",
+              "note": {
+                "tr": "Hâl (durum bildirir).",
+                "de": "Ḥāl-Akkusativ.",
+                "en": "Circumstantial accusative."
+              }
+            },
+            {
+              "ar": "كَتَعْلَمُونَ",
+              "tr": "«تَعْلَمُونَ» gibi",
+              "de": "wie «taʿlamūna»",
+              "en": "as in «taʿlamūna»",
+              "note": {
+                "tr": "Örnek kelime.",
+                "de": "Beispielwort.",
+                "en": "Example word."
+              }
+            },
+            {
+              "ar": "نَسْتَعِينُ",
+              "tr": "«نَسْتَعِينُ»",
+              "de": "«nastaʿīnu»",
+              "en": "«nastaʿīnu»",
+              "note": {
+                "tr": "Örnek kelime.",
+                "de": "Beispielwort.",
+                "en": "Example word."
+              }
+            }
+          ]
         },
         {
           "n": 46,
@@ -3637,7 +6420,94 @@ window.CONTENT = {
               "**What does \"badal\" (substituted) mean? (the word's origin):** originally there are **two hamzas** in succession: the first vowelled, the second sākin. To ease reading, **the second sākin hamza is turned into a madd letter matching the preceding vowel (badal = in its place).** • *āmanū* from **أَأْمَنُوا** → the second hamza, due to fatḥa, became **alif**. • *īmānan* from **إِئْمَاناً** → due to kasra, became **yāʾ**. • *ūtū* from **أُؤْتُوا** → due to ḍamma, became **wāw**.",
               "**Ruling:** lengthening is permitted, but **in practice two ḥarakāt** (natural measure). **Shibh al-badal (badal-like):** places where the madd letter did not come from a hamza but resembles badal; e.g. **الْقُرْآن** (al-qurʾān), **عَبْقَرِيّ** (ʿabqarī) — also two ḥarakāt."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "أَوْ",
+              "tr": "yahut",
+              "de": "oder",
+              "en": "or"
+            },
+            {
+              "ar": "قُدِّمَ",
+              "tr": "önce gelirse",
+              "de": "vorangestellt wird",
+              "en": "is placed before",
+              "note": {
+                "tr": "Meçhul mâzî fiil.",
+                "de": "Passiv-Perfekt.",
+                "en": "Passive perfect verb."
+              }
+            },
+            {
+              "ar": "الْهَمْزُ",
+              "tr": "hemze",
+              "de": "das Hamza",
+              "en": "the hamza"
+            },
+            {
+              "ar": "عَلَى",
+              "tr": "önce, üzerine",
+              "de": "vor",
+              "en": "before"
+            },
+            {
+              "ar": "المَدِّ",
+              "tr": "med (harfi)",
+              "de": "dem Madd(-Buchstaben)",
+              "en": "the madd (letter)"
+            },
+            {
+              "ar": "وَذَا",
+              "tr": "ve bu",
+              "de": "und dies",
+              "en": "and this"
+            },
+            {
+              "ar": "بَدَلْ",
+              "tr": "bedeldir",
+              "de": "ist badal",
+              "en": "is badal",
+              "note": {
+                "tr": "Tecvîd terimi: medd-i bedel.",
+                "de": "Tadschwīd-Begriff: Madd badal.",
+                "en": "Tajwid term: madd badal."
+              }
+            },
+            {
+              "ar": "كَآمَنُوا",
+              "tr": "«آمَنُوا» gibi",
+              "de": "wie «āmanū»",
+              "en": "as in «āmanū»",
+              "note": {
+                "tr": "Örnek kelime.",
+                "de": "Beispielwort.",
+                "en": "Example word."
+              }
+            },
+            {
+              "ar": "وَإِيَماناً",
+              "tr": "ve «إِيمَاناً»",
+              "de": "und «īmānan»",
+              "en": "and «īmānan»",
+              "note": {
+                "tr": "Örnek kelime.",
+                "de": "Beispielwort.",
+                "en": "Example word."
+              }
+            },
+            {
+              "ar": "خُذَا",
+              "tr": "al (öğren)",
+              "de": "nimm",
+              "en": "take",
+              "note": {
+                "tr": "Emir fiili (kafiye için elifli).",
+                "de": "Imperativ (Alif fürs Reim).",
+                "en": "Imperative (alif for rhyme)."
+              }
+            }
+          ]
         },
         {
           "n": 47,
@@ -3662,7 +6532,83 @@ window.CONTENT = {
               "**Difference from ʿāriḍ (a critical distinction):** • the **ʿāriḍ sukūn** arises only on **pausing** and vanishes on continuing → jawāz (2–4–6 free). • the **lāzim sukūn** is **always** present (written, permanent) → luzūm (**always 6 ḥarakāt**, the only option).",
               "**Ruling:** lengthening **six ḥarakāt** is **necessary**; this is the only reading. It is called \"lāzim\" (necessary) for two reasons: (1) the sukūn is **fixed** in waṣl/waqf, (2) the six-ḥaraka lengthening is **necessary**. The kinds of this madd are treated in detail in the next section (verses 48–57)."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَلاَزِمٌ",
+              "tr": "ve lâzımdır",
+              "de": "und es ist lāzim",
+              "en": "and it is lāzim",
+              "note": {
+                "tr": "Tecvîd terimi: medd-i lâzım.",
+                "de": "Tadschwīd-Begriff: Madd lāzim.",
+                "en": "Tajwid term: madd lāzim."
+              }
+            },
+            {
+              "ar": "إِنِ",
+              "tr": "eğer",
+              "de": "wenn",
+              "en": "if"
+            },
+            {
+              "ar": "السُّكُونُ",
+              "tr": "sükûn",
+              "de": "das Sukūn",
+              "en": "the sukūn"
+            },
+            {
+              "ar": "أُصِّلاَ",
+              "tr": "aslî (sabit) kılınmışsa",
+              "de": "als ursprünglich gilt",
+              "en": "is established as original",
+              "note": {
+                "tr": "Meçhul mâzî fiil; aslî sükûn.",
+                "de": "Passiv-Perfekt; ursprüngliches Sukūn.",
+                "en": "Passive perfect; original sukūn."
+              }
+            },
+            {
+              "ar": "وَصْلاَ",
+              "tr": "vasılda",
+              "de": "in Waṣl",
+              "en": "in waṣl",
+              "note": {
+                "tr": "Hâl (durum bildirir).",
+                "de": "Ḥāl-Akkusativ.",
+                "en": "Circumstantial accusative."
+              }
+            },
+            {
+              "ar": "وَوَقْفاً",
+              "tr": "ve vakıfta",
+              "de": "und in Waqf",
+              "en": "and in waqf"
+            },
+            {
+              "ar": "بَعْدَ",
+              "tr": "sonra",
+              "de": "nach",
+              "en": "after"
+            },
+            {
+              "ar": "مَدٍّ",
+              "tr": "bir med (harfi)",
+              "de": "einem Madd(-Buchstaben)",
+              "en": "a madd (letter)"
+            },
+            {
+              "ar": "طُوّلاَ",
+              "tr": "uzatılır",
+              "de": "wird gedehnt",
+              "en": "is lengthened",
+              "note": {
+                "tr": "Meçhul mâzî fiil.",
+                "de": "Passiv-Perfekt.",
+                "en": "Passive perfect verb."
+              }
+            }
+          ]
         }
       ],
       "notes": [
@@ -3811,7 +6757,70 @@ window.CONTENT = {
               "**Second distinction (muthaqqal / mukhaffaf):** both kalimī and ḥarfī split in two: • **Muthaqqal (heavy):** the sākin after the madd letter is **merged** into the next (read doubled). \"Heavy\" because idghām and shadda weigh on the reading. • **Mukhaffaf (light):** that sākin is **not** merged (read clearly). \"Light\" because there is no shadda.",
               "**Thus four types arise:** (1) kalimī **muthaqqal**, (2) kalimī **mukhaffaf**, (3) ḥarfī **muthaqqal**, (4) ḥarfī **mukhaffaf**. The next two verses first define kalimī and ḥarfī, then the muthaqqal/mukhaffaf split. **In common:** in all four the measure is **six ḥarakāt**."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "كِلاَهُمَا",
+              "tr": "her ikisi de",
+              "de": "beide",
+              "en": "both of them",
+              "note": {
+                "tr": "İkil zamir: kelimî ve harfî kastedilir.",
+                "de": "Dualpronomen: kalimī und ḥarfī gemeint.",
+                "en": "Dual pronoun: kalimī and ḥarfī intended."
+              }
+            },
+            {
+              "ar": "مُخَفَّفٌ",
+              "tr": "muhaffef (hafif)",
+              "de": "muchaffaf (leicht)",
+              "en": "mukhaffaf (light)",
+              "note": {
+                "tr": "Tecvid terimi: idğamsız, hafif med.",
+                "de": "Tadschwīd-Begriff: ohne Idghām, leicht.",
+                "en": "Tajwid term: without idghām, light."
+              }
+            },
+            {
+              "ar": "مُثَقَّلُ",
+              "tr": "müsakkal (ağır)",
+              "de": "muthaqqal (schwer)",
+              "en": "muthaqqal (heavy)",
+              "note": {
+                "tr": "Tecvid terimi: idğamlı, ağır med.",
+                "de": "Tadschwīd-Begriff: mit Idghām, schwer.",
+                "en": "Tajwid term: with idghām, heavy."
+              }
+            },
+            {
+              "ar": "فَهَذِهِ",
+              "tr": "işte bunlar",
+              "de": "das sind",
+              "en": "these are",
+              "note": {
+                "tr": "فَ + هَذِهِ (işaret ismi).",
+                "de": "fa + Demonstrativum.",
+                "en": "fa + demonstrative."
+              }
+            },
+            {
+              "ar": "أَرْبَعَةٌ",
+              "tr": "dört (kısım)",
+              "de": "vier",
+              "en": "four"
+            },
+            {
+              "ar": "تُفَصَّلُ",
+              "tr": "ayrıntılandırılır",
+              "de": "werden erläutert",
+              "en": "are detailed",
+              "note": {
+                "tr": "Meçhul (edilgen) fiil.",
+                "de": "Passivverb.",
+                "en": "Passive verb."
+              }
+            }
+          ]
         },
         {
           "n": 50,
@@ -3836,7 +6845,99 @@ window.CONTENT = {
               "**How to recognize it (step by step):** (1) Find a lengthening letter. (2) Is the **immediately following letter sākin** and this sukūn **always fixed** in waṣl and waqf? (3) Is it a **word**? Three \"yes\" → madd lāzim kalimī; lengthen **six ḥarakāt**.",
               "**E.g.:** **الضَّالِّينَ** (aḍ-ḍāllīn) — alif (madd) + then a doubled lām (sākin lām + vowelled lām). Since the sākin lām is merged, it is **kalimī muthaqqal**. As the close of al-Fātiḥa in every prayer, the most familiar example."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "فَإِنْ",
+              "tr": "eğer",
+              "de": "wenn",
+              "en": "if",
+              "note": {
+                "tr": "فَ + إِنْ (şart edatı).",
+                "de": "fa + Konditionalpartikel.",
+                "en": "fa + conditional particle."
+              }
+            },
+            {
+              "ar": "بِكِلْمَةٍ",
+              "tr": "bir kelimede",
+              "de": "in einem Wort",
+              "en": "in a word",
+              "note": {
+                "tr": "بِ + كِلْمَةٍ.",
+                "de": "bi + Wort.",
+                "en": "bi + word."
+              }
+            },
+            {
+              "ar": "سُكُونٌ",
+              "tr": "bir sükûn",
+              "de": "ein Sukūn",
+              "en": "a sukūn",
+              "note": {
+                "tr": "Aslî (lâzım) sükûn.",
+                "de": "Ursprüngliches (lāzim) Sukūn.",
+                "en": "Original (lāzim) sukūn."
+              }
+            },
+            {
+              "ar": "اجْتَمَعْ",
+              "tr": "toplanırsa",
+              "de": "sich sammelt",
+              "en": "gathers"
+            },
+            {
+              "ar": "مَعْ",
+              "tr": "ile birlikte",
+              "de": "zusammen mit",
+              "en": "together with"
+            },
+            {
+              "ar": "حَرْفِ",
+              "tr": "harfi",
+              "de": "Buchstabe",
+              "en": "letter of"
+            },
+            {
+              "ar": "مَدٍّ",
+              "tr": "med",
+              "de": "Madd",
+              "en": "madd",
+              "note": {
+                "tr": "حَرْفِ مَدٍّ = med harfi.",
+                "de": "ḥarf madd = Madd-Buchstabe.",
+                "en": "ḥarf madd = madd letter."
+              }
+            },
+            {
+              "ar": "فَهْوَ",
+              "tr": "o (dur)",
+              "de": "so ist es",
+              "en": "so it (is)",
+              "note": {
+                "tr": "فَ + هُوَ.",
+                "de": "fa + huwa.",
+                "en": "fa + huwa."
+              }
+            },
+            {
+              "ar": "كِلْمِيٌّ",
+              "tr": "kelimî (kelime meddi)",
+              "de": "kalimī (Wort-Madd)",
+              "en": "kalimī (word madd)",
+              "note": {
+                "tr": "Medd-i lâzım kelimî.",
+                "de": "Madd-i lāzim kalimī.",
+                "en": "Madd-i lāzim kalimī."
+              }
+            },
+            {
+              "ar": "وَقَعْ",
+              "tr": "vaki olur, olur",
+              "de": "tritt ein",
+              "en": "occurs"
+            }
+          ]
         },
         {
           "n": 51,
@@ -3861,7 +6962,83 @@ window.CONTENT = {
               "**What does that mean? (with an example):** some muqaṭṭaʿa letters are pronounced with **three sounds**, their middle a lengthening letter: • **ل** → \"**lām**\": middle alif (madd), end sākin mīm. • **م** → \"**mīm**\": middle yāʾ (madd), end sākin mīm. • **س** → \"**sīn**\": middle yāʾ (madd), end sākin nūn. These are read **six ḥarakāt**.",
               "**Careful — look at pronunciation, not spelling:** *الٓمٓ* is written three-lettered but read separately: *alif · lām · mīm*. \"alif\" is a two-letter spelling (no madd) → not lengthened; \"lām\" and \"mīm\" are three-letter → six ḥarakāt. The next verses give, by mnemonic, which letters belong here."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "أَوْ",
+              "tr": "yahut",
+              "de": "oder",
+              "en": "or"
+            },
+            {
+              "ar": "فِي",
+              "tr": "...de",
+              "de": "in",
+              "en": "in"
+            },
+            {
+              "ar": "ثُلاَثِيِّ",
+              "tr": "üç harfli olan",
+              "de": "dreibuchstabig",
+              "en": "three-lettered",
+              "note": {
+                "tr": "Heceleniş bakımından üç harfli (mukattaa harfi).",
+                "de": "In der Buchstabierung dreibuchstabig (Muqaṭṭaʿa-Buchstabe).",
+                "en": "Three-lettered in spelling (muqaṭṭaʿa letter)."
+              }
+            },
+            {
+              "ar": "الْحُروفِ",
+              "tr": "harfler",
+              "de": "der Buchstaben",
+              "en": "of letters",
+              "note": {
+                "tr": "ثُلاثيّ الحروف = harfleri üç olan.",
+                "de": "thulāthī al-ḥurūf = mit drei Buchstaben.",
+                "en": "thulāthī al-ḥurūf = of three letters."
+              }
+            },
+            {
+              "ar": "وُجِدَا",
+              "tr": "bulunursa",
+              "de": "sich findet",
+              "en": "is found"
+            },
+            {
+              "ar": "وَالْمَدُّ",
+              "tr": "ve med",
+              "de": "und das Madd",
+              "en": "and the madd",
+              "note": {
+                "tr": "وَ + الْمَدُّ.",
+                "de": "wa + al-madd.",
+                "en": "wa + al-madd."
+              }
+            },
+            {
+              "ar": "وَسْطُهُ",
+              "tr": "onun ortası",
+              "de": "seine Mitte",
+              "en": "its middle"
+            },
+            {
+              "ar": "فَحَرْفِيٌّ",
+              "tr": "o harfî (harf meddi)",
+              "de": "so ḥarfī (Buchstaben-Madd)",
+              "en": "then ḥarfī (letter madd)",
+              "note": {
+                "tr": "فَ + حَرْفِيٌّ; medd-i lâzım harfî.",
+                "de": "fa + ḥarfī; Madd-i lāzim ḥarfī.",
+                "en": "fa + ḥarfī; madd-i lāzim ḥarfī."
+              }
+            },
+            {
+              "ar": "بَدَا",
+              "tr": "ortaya çıkar",
+              "de": "zeigt sich",
+              "en": "appears"
+            }
+          ]
         },
         {
           "n": 52,
@@ -3966,6 +7143,92 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "كِلاَهُمَا",
+              "tr": "ikisi de",
+              "de": "beide",
+              "en": "both",
+              "note": {
+                "tr": "İkil zamir: kelimî ve harfî.",
+                "de": "Dualpronomen: kalimī und ḥarfī.",
+                "en": "Dual pronoun: kalimī and ḥarfī."
+              }
+            },
+            {
+              "ar": "مُثَقَّلٌ",
+              "tr": "müsakkal (ağır)",
+              "de": "muthaqqal (schwer)",
+              "en": "muthaqqal (heavy)",
+              "note": {
+                "tr": "Tecvid terimi: idğamlı med.",
+                "de": "Tadschwīd-Begriff: Madd mit Idghām.",
+                "en": "Tajwid term: madd with idghām."
+              }
+            },
+            {
+              "ar": "إِنْ",
+              "tr": "eğer",
+              "de": "wenn",
+              "en": "if"
+            },
+            {
+              "ar": "أُدْغِمَا",
+              "tr": "idğam edilirse",
+              "de": "verschmolzen wird",
+              "en": "merging occurs",
+              "note": {
+                "tr": "Meçhul (edilgen) fiil.",
+                "de": "Passivverb.",
+                "en": "Passive verb."
+              }
+            },
+            {
+              "ar": "مُخَفَّفٌ",
+              "tr": "muhaffef (hafif)",
+              "de": "muchaffaf (leicht)",
+              "en": "mukhaffaf (light)",
+              "note": {
+                "tr": "Tecvid terimi: idğamsız med.",
+                "de": "Tadschwīd-Begriff: Madd ohne Idghām.",
+                "en": "Tajwid term: madd without idghām."
+              }
+            },
+            {
+              "ar": "كُلُّ",
+              "tr": "her biri",
+              "de": "jedes",
+              "en": "each"
+            },
+            {
+              "ar": "إِذَا",
+              "tr": "...dığında",
+              "de": "wenn",
+              "en": "when"
+            },
+            {
+              "ar": "لَمْ",
+              "tr": "...maz (olumsuzluk)",
+              "de": "nicht",
+              "en": "not",
+              "note": {
+                "tr": "لَمْ + muzâri: geçmiş olumsuz cezm.",
+                "de": "lam + Präsens: verneinte Vergangenheit.",
+                "en": "lam + imperfect: negated past."
+              }
+            },
+            {
+              "ar": "يُدْغَمَا",
+              "tr": "idğam edilmezse",
+              "de": "verschmolzen wird",
+              "en": "is merged",
+              "note": {
+                "tr": "لم يدغم = idğam edilmedi (edilgen).",
+                "de": "lam yudgham = wird nicht verschmolzen (Passiv).",
+                "en": "lam yudgham = is not merged (passive)."
+              }
+            }
           ]
         },
         {
@@ -3991,7 +7254,72 @@ window.CONTENT = {
               "**In how many?** The muqaṭṭaʿa letters lengthened six ḥarakāt (three-letter spelling, middle madd, end fixed sukūn) are **eight**. Their mnemonic is given in the next verse.",
               "**Reminder:** there are 14 muqaṭṭaʿa letters in total (verse 57); not all are read six ḥarakāt. Some 6 (this verse), some 2 (verses 55–56), one (alif) not at all."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَاللاَّزِمُ",
+              "tr": "ve lâzım (med)",
+              "de": "und das Lāzim",
+              "en": "and the lāzim",
+              "note": {
+                "tr": "وَ + اللاَّزِمُ; medd-i lâzım.",
+                "de": "wa + al-lāzim; Madd-i lāzim.",
+                "en": "wa + al-lāzim; madd-i lāzim."
+              }
+            },
+            {
+              "ar": "الْحَرْفِيُّ",
+              "tr": "harfî",
+              "de": "das ḥarfī",
+              "en": "the ḥarfī",
+              "note": {
+                "tr": "Lâzım-ı harfî: harflerde olan lâzım med.",
+                "de": "Lāzim ḥarfī: bei Buchstaben.",
+                "en": "Lāzim ḥarfī: occurring in letters."
+              }
+            },
+            {
+              "ar": "أَوَّلَ",
+              "tr": "başında",
+              "de": "am Anfang",
+              "en": "at the opening of"
+            },
+            {
+              "ar": "السُّوَرْ",
+              "tr": "sûreler",
+              "de": "der Suren",
+              "en": "the sūras"
+            },
+            {
+              "ar": "وُجُودُهُ",
+              "tr": "onun bulunuşu, varlığı",
+              "de": "sein Vorkommen",
+              "en": "its occurrence"
+            },
+            {
+              "ar": "وَفِي",
+              "tr": "ve ...de",
+              "de": "und in",
+              "en": "and in",
+              "note": {
+                "tr": "وَ + فِي.",
+                "de": "wa + fī.",
+                "en": "wa + fī."
+              }
+            },
+            {
+              "ar": "ثَمَانٍ",
+              "tr": "sekiz (harf)",
+              "de": "acht",
+              "en": "eight"
+            },
+            {
+              "ar": "انحَصَرْ",
+              "tr": "sınırlıdır, toplanmıştır",
+              "de": "ist beschränkt",
+              "en": "is confined"
+            }
+          ]
         },
         {
           "n": 54,
@@ -4016,7 +7344,104 @@ window.CONTENT = {
               "**Why these? (shared feature):** each spelling is three-lettered, **middle a madd letter**, end a **fixed sukūn**: *kāf* (كَافْ), *mīm* (مِيمْ), *sīn* (سِينْ), *lām* (لَامْ), *nūn* (نُونْ), *qāf* (قَافْ), *ṣād* (صَادْ).",
               "**The \"ʿayn\" (ع) exception — two readings:** \"ʿayn\" opens *Maryam* (كٓهٰيٰعٓصٓ) and *al-Shūrā* (عٓسٓقٓ). Its spelling *ʿayn* (عَيْنْ) has a **līn letter (yāʾ) in the middle**, not a madd. So both **4 ḥarakāt** (being līn) and **6 ḥarakāt** (resembling lāzim) are permitted; the author prefers the **length (six)**."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "يَجْمَعُهَا",
+              "tr": "onları toplar",
+              "de": "es versammelt sie",
+              "en": "it gathers them",
+              "note": {
+                "tr": "Muzâri fiil + zamir; harfî lâzım harflerini kasteder.",
+                "de": "Präsensverb mit Objektpronomen; meint die ḥarfī-Lāzim-Buchstaben.",
+                "en": "Imperfect verb + pronoun; refers to the ḥarfī lāzim letters."
+              }
+            },
+            {
+              "ar": "حُرُوفُ",
+              "tr": "harfleri",
+              "de": "die Buchstaben von",
+              "en": "the letters of"
+            },
+            {
+              "ar": "كَمْ",
+              "tr": "«kem»",
+              "de": "«kam»",
+              "en": "«kam»",
+              "note": {
+                "tr": "Remz kelimesi; kâf ve mîm harflerini toplar (medd-i lâzım harfî).",
+                "de": "Merkwort; steht für Kāf und Mīm (ḥarfī-Lāzim).",
+                "en": "Mnemonic word; denotes kāf and mīm (ḥarfī lāzim)."
+              }
+            },
+            {
+              "ar": "عَسَلْ",
+              "tr": "«asel» (bal)",
+              "de": "«ʿasal» (Honig)",
+              "en": "«ʿasal» (honey)",
+              "note": {
+                "tr": "Remz: ayn, sîn, lâm harflerini gösterir.",
+                "de": "Merkwort: ʿAyn, Sīn, Lām.",
+                "en": "Mnemonic: ʿayn, sīn, lām."
+              }
+            },
+            {
+              "ar": "نَقَصْ",
+              "tr": "«nekas» (eksildi)",
+              "de": "«naqaṣ» (er nahm ab)",
+              "en": "«naqaṣ» (it decreased)",
+              "note": {
+                "tr": "Remz: nûn, kâf (kaf), sâd harflerini gösterir; toplam sekiz harf.",
+                "de": "Merkwort: Nūn, Qāf, Ṣād; insgesamt acht Buchstaben.",
+                "en": "Mnemonic: nūn, qāf, ṣād; eight letters in all."
+              }
+            },
+            {
+              "ar": "وَعَيْنُ",
+              "tr": "ve ayn (harfi)",
+              "de": "und das ʿAyn",
+              "en": "and the ʿayn",
+              "note": {
+                "tr": "«عين» diye hecelenir; ortası lîn olduğundan istisnaî durumu vardır.",
+                "de": "Buchstabiert «ʿayn»; hat wegen des Līn in der Mitte eine Sonderstellung.",
+                "en": "Spelled «ʿayn»; exceptional because its middle is a līn letter."
+              }
+            },
+            {
+              "ar": "ذُو",
+              "tr": "sahibi",
+              "de": "Besitzer von",
+              "en": "possessor of"
+            },
+            {
+              "ar": "وَجْهَيْنِ",
+              "tr": "iki vecih (okuyuş)",
+              "de": "zweier Lesarten",
+              "en": "two aspects (readings)",
+              "note": {
+                "tr": "Tûl (6 hareke) veya tavassut (4 hareke).",
+                "de": "Länge (6 Ḥaraka) oder Mitte (4 Ḥaraka).",
+                "en": "Length (6 ḥarakāt) or medium (4 ḥarakāt)."
+              }
+            },
+            {
+              "ar": "والطُّولُ",
+              "tr": "ve tûl (uzatma)",
+              "de": "und die Länge",
+              "en": "and the length",
+              "note": {
+                "tr": "Altı hareke miktarı uzatma.",
+                "de": "Dehnung von sechs Ḥaraka.",
+                "en": "Lengthening of six ḥarakāt."
+              }
+            },
+            {
+              "ar": "أَخَصْ",
+              "tr": "daha uygun (evlâ)",
+              "de": "vorzüglicher",
+              "en": "more preferable"
+            }
+          ]
         },
         {
           "n": 55,
@@ -4041,7 +7466,79 @@ window.CONTENT = {
               "**Which letters? (mnemonic in the next verse):** the \"ḥayy ṭahr\" group: **ح · ي · ط · ه · ر.** Each read with two sounds: *ḥā* (حَا), *yā* (يَا), *ṭā* (طَا), *hā* (هَا), *rā* (رَا) — a letter + alif (madd), no third sākin.",
               "**Third group — not lengthened at all: alif (ا).** The spelling \"alif\" contains no madd letter; so an alif at a sūra's opening (e.g. in *الٓمٓ*) is not lengthened at all."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَمَا",
+              "tr": "ve ne ki, olan",
+              "de": "und was",
+              "en": "and what"
+            },
+            {
+              "ar": "سِوَى",
+              "tr": "dışındaki",
+              "de": "außer, jenseits von",
+              "en": "other than"
+            },
+            {
+              "ar": "الْحَرْفِ",
+              "tr": "harf",
+              "de": "der Buchstabe",
+              "en": "the letter"
+            },
+            {
+              "ar": "الثُّلاَثِي",
+              "tr": "üç harfli (heceleniş)",
+              "de": "dreibuchstabige",
+              "en": "three-lettered",
+              "note": {
+                "tr": "Sülâsî: ismi üç harfle yazılan mukattaa harfi.",
+                "de": "Thulāthī: ein Muqaṭṭaʿa-Buchstabe, dreibuchstabig buchstabiert.",
+                "en": "Thulāthī: a muqaṭṭaʿa letter spelled with three letters."
+              }
+            },
+            {
+              "ar": "لاَ",
+              "tr": "değil",
+              "de": "nicht",
+              "en": "not"
+            },
+            {
+              "ar": "أَلِفْ",
+              "tr": "elif",
+              "de": "das Alif",
+              "en": "the alif"
+            },
+            {
+              "ar": "فَمَدُّهُ",
+              "tr": "onun meddi",
+              "de": "dessen Madd",
+              "en": "its madd"
+            },
+            {
+              "ar": "مَدٌّ",
+              "tr": "med",
+              "de": "ein Madd",
+              "en": "a madd"
+            },
+            {
+              "ar": "طَبِيعِيٌّ",
+              "tr": "tabiî",
+              "de": "natürliches",
+              "en": "natural"
+            },
+            {
+              "ar": "أُلِفْ",
+              "tr": "bilinir (ülfet edilmiş)",
+              "de": "ist bekannt",
+              "en": "is known",
+              "note": {
+                "tr": "Meçhul fiil (ulife).",
+                "de": "Passivverb.",
+                "en": "Passive verb."
+              }
+            }
+          ]
         },
         {
           "n": 56,
@@ -4151,6 +7648,84 @@ window.CONTENT = {
                 ]
               ]
             }
+          ],
+          "words": [
+            {
+              "ar": "وَذَاكَ",
+              "tr": "ve bu da, o da",
+              "de": "und dies",
+              "en": "and that"
+            },
+            {
+              "ar": "أَيْضاً",
+              "tr": "ayrıca, keza",
+              "de": "ebenfalls",
+              "en": "also"
+            },
+            {
+              "ar": "فِي",
+              "tr": "-de",
+              "de": "in",
+              "en": "in"
+            },
+            {
+              "ar": "فَوَاتِحِ",
+              "tr": "başları (fâtihaları)",
+              "de": "die Anfänge von",
+              "en": "the openings of"
+            },
+            {
+              "ar": "السُّوَرْ",
+              "tr": "sûreler",
+              "de": "der Suren",
+              "en": "the sūras"
+            },
+            {
+              "ar": "فِي",
+              "tr": "-de",
+              "de": "in",
+              "en": "in"
+            },
+            {
+              "ar": "لَفْظِ",
+              "tr": "lafzı, sözü",
+              "de": "dem Wort von",
+              "en": "the phrase of"
+            },
+            {
+              "ar": "حَيٌّ",
+              "tr": "«hayyun» (diri)",
+              "de": "«ḥayyun» (lebendig)",
+              "en": "«ḥayyun» (living)",
+              "note": {
+                "tr": "Remz: hâ ve yâ harflerini toplar (tabiî med okunanlar).",
+                "de": "Merkwort: Ḥāʾ und Yāʾ (natürlich gedehnt).",
+                "en": "Mnemonic: ḥāʾ and yāʾ (read as natural madd)."
+              }
+            },
+            {
+              "ar": "طَاهِرٌ",
+              "tr": "«tâhir» (temiz)",
+              "de": "«ṭāhir» (rein)",
+              "en": "«ṭāhir» (pure)",
+              "note": {
+                "tr": "Remz: tı, elif, hâ, râ harflerini toplar.",
+                "de": "Merkwort: Ṭāʾ, Alif, Hāʾ, Rāʾ.",
+                "en": "Mnemonic: ṭāʾ, alif, hāʾ, rāʾ."
+              }
+            },
+            {
+              "ar": "قَدِ",
+              "tr": "muhakkak (tahkik edatı)",
+              "de": "gewiss",
+              "en": "indeed"
+            },
+            {
+              "ar": "انْحَصَرْ",
+              "tr": "sınırlanmıştır, toplanmıştır",
+              "de": "ist beschränkt",
+              "en": "is confined"
+            }
           ]
         },
         {
@@ -4176,7 +7751,89 @@ window.CONTENT = {
               "**Thus the three parts come together:** of these fourteen — **eight** (كم عسل نقص) six ḥarakāt, **five** (حي طهر) two ḥarakāt, **one** (alif) not lengthened. Recall too that one letter (ع) has two readings.",
               "**A fine literary touch:** the author builds the gathering sentence with a moral sense (\"keep the bond with the one who cut you off\"); but the purpose is again only the **easy memorizing of the letters**."
             ]
-          }
+          },
+          "words": [
+            {
+              "ar": "وَيَجْمَعُ",
+              "tr": "ve toplar",
+              "de": "und es versammelt",
+              "en": "and it gathers"
+            },
+            {
+              "ar": "الْفَوَاتِحَ",
+              "tr": "fetihleri (sûre başı harfleri)",
+              "de": "die Anfangsbuchstaben",
+              "en": "the opening letters"
+            },
+            {
+              "ar": "الأَرْبَعْ",
+              "tr": "dört",
+              "de": "vier",
+              "en": "four"
+            },
+            {
+              "ar": "عَشَرْ",
+              "tr": "on (on dört)",
+              "de": "zehn (vierzehn)",
+              "en": "ten (fourteen)"
+            },
+            {
+              "ar": "صِلْهُ",
+              "tr": "«sılhu» (onu ulaştır)",
+              "de": "«ṣilhu» (verbinde es)",
+              "en": "«ṣilhu» (join it)",
+              "note": {
+                "tr": "Remz: sâd, lâm, hâ harflerini toplar.",
+                "de": "Merkwort: Ṣād, Lām, Hāʾ.",
+                "en": "Mnemonic: ṣād, lām, hāʾ."
+              }
+            },
+            {
+              "ar": "سُحَيْراً",
+              "tr": "«suhayran» (seher vakti)",
+              "de": "«suḥayran» (kurz vor Morgengrauen)",
+              "en": "«suḥayran» (just before dawn)",
+              "note": {
+                "tr": "Remz: sîn, hâ, yâ, râ harflerini toplar.",
+                "de": "Merkwort: Sīn, Ḥāʾ, Yāʾ, Rāʾ.",
+                "en": "Mnemonic: sīn, ḥāʾ, yāʾ, rāʾ."
+              }
+            },
+            {
+              "ar": "مَنْ",
+              "tr": "«men» (kim)",
+              "de": "«man» (wer)",
+              "en": "«man» (who)",
+              "note": {
+                "tr": "Remz: mîm ve nûn harflerini toplar.",
+                "de": "Merkwort: Mīm und Nūn.",
+                "en": "Mnemonic: mīm and nūn."
+              }
+            },
+            {
+              "ar": "قَطَعْكَ",
+              "tr": "«kata'ke» (seni kesti)",
+              "de": "«qaṭaʿka» (er trennte dich)",
+              "en": "«qaṭaʿka» (it cut you)",
+              "note": {
+                "tr": "Remz: kâf (kaf), tı, ayn, kâf harflerini toplar; toplam on dört harf.",
+                "de": "Merkwort: Qāf, Ṭāʾ, ʿAyn, Kāf; insgesamt vierzehn Buchstaben.",
+                "en": "Mnemonic: qāf, ṭāʾ, ʿayn, kāf; fourteen letters in all."
+              }
+            },
+            {
+              "ar": "ذَا",
+              "tr": "bu",
+              "de": "dies",
+              "en": "this"
+            },
+            {
+              "ar": "اشْتَهَرْ",
+              "tr": "meşhur olmuştur",
+              "de": "ist berühmt geworden",
+              "en": "has become well-known"
+            }
+          ]
         }
       ],
       "summary": {
@@ -4640,6 +8297,87 @@ window.CONTENT = {
                   }
                 ]
               ]
+            }
+          ],
+          "words": [
+            {
+              "ar": "أَبْيَاتُهُ",
+              "tr": "onun beyitleri",
+              "de": "seine Verse",
+              "en": "its verses"
+            },
+            {
+              "ar": "نَدٌّ",
+              "tr": "«nedd» (öd ağacı, güzel koku)",
+              "de": "«nadd» (Duftholz)",
+              "en": "«nadd» (fragrant aloewood)",
+              "note": {
+                "tr": "Ebced kelimesi; beyit sayısını verir.",
+                "de": "Abdschad-Chronogramm; ergibt die Verszahl.",
+                "en": "Abjad chronogram; yields the number of verses."
+              }
+            },
+            {
+              "ar": "بَداَ",
+              "tr": "ortaya çıktı",
+              "de": "trat hervor",
+              "en": "appeared",
+              "note": {
+                "tr": "«نَدٌّ بَدَا» ibaresi beyit adedine işaret eder.",
+                "de": "Der Ausdruck «nadd badā» verweist auf die Verszahl.",
+                "en": "The phrase «nadd badā» points to the verse count."
+              }
+            },
+            {
+              "ar": "لِذِى",
+              "tr": "sahibi için",
+              "de": "für den Besitzer von",
+              "en": "for the possessor of"
+            },
+            {
+              "ar": "النُّهَى",
+              "tr": "akıl",
+              "de": "des Verstandes",
+              "en": "intellect",
+              "note": {
+                "tr": "«ذي النُّهى» = akıl sahibi.",
+                "de": "«dhū al-nuhā» = der Verständige.",
+                "en": "«dhū al-nuhā» = the discerning one."
+              }
+            },
+            {
+              "ar": "تَارِيخُها",
+              "tr": "onun tarihi",
+              "de": "sein Datum",
+              "en": "its date"
+            },
+            {
+              "ar": "بُشْرَى",
+              "tr": "«büşrâ» (müjde)",
+              "de": "«bushrā» (frohe Botschaft)",
+              "en": "«bushrā» (glad tidings)",
+              "note": {
+                "tr": "Ebced ile telif tarihini verir.",
+                "de": "Abdschad-Chronogramm für das Abfassungsjahr.",
+                "en": "Abjad chronogram giving the year of composition."
+              }
+            },
+            {
+              "ar": "لِمَنْ",
+              "tr": "kimse için",
+              "de": "für den, der",
+              "en": "for the one who"
+            },
+            {
+              "ar": "يُتْقِنُهَا",
+              "tr": "onu iyi öğrenir (itkān eder)",
+              "de": "es meistert",
+              "en": "masters it",
+              "note": {
+                "tr": "Muzâri fiil + zamir.",
+                "de": "Präsensverb mit Objektpronomen.",
+                "en": "Imperfect verb + pronoun."
+              }
             }
           ]
         },

@@ -3,7 +3,7 @@
    Çevrimdışı kullanım: tüm uygulama varlıklarını önbelleğe alır; sonraki
    açılışlarda internet olmadan da çalışır. "cache-first" + çalışma anı önbelleği.
    ============================================================================= */
-var CACHE = "tuhfe-cache-v4";
+var CACHE = "tuhfe-cache-v5";
 
 var CORE = [
   "./",
@@ -14,7 +14,7 @@ var CORE = [
   "./brand.js?v=6",
   "./verses.js?v=1",
   "./i18n.js?v=5",
-  "./content.js?v=5",
+  "./content.js?v=6",
   "./quiz.js?v=1",
   "./app.js?v=15",
   "./fonts/amiri-400.woff2",
