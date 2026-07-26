@@ -263,20 +263,27 @@
   }
 
   /* ---------- Beyit arama / hızlı geçiş ---------- */
+  // Aksan/hareke duyarsız arama: "Nun" → "Nûn", "ferazi" → "ferâzî".
+  // NFD ile birleşik işaretleri (â î û ā ī ū ṣ ḥ ş ç ü ö ğ …) ayırıp siler.
+  function foldSearch(s) {
+    s = (s == null ? "" : String(s));
+    try { s = s.normalize("NFD").replace(/[̀-ͯ]/g, ""); } catch (e) {}
+    return s.toLowerCase().replace(/ı/g, "i").replace(/[ʾʿʼ'`´]/g, "");
+  }
   function searchOverlay() {
     var groups = CONTENT.sections.map(function (s) {
       var rows = s.beyits.map(function (b) {
         var tr = (b.translation && pick(b.translation)) || "";
         tr = tr.replace(/\*\*/g, "").replace(/\*/g, "").trim();
         var snip = tr.length > 70 ? tr.slice(0, 70).trim() + "…" : tr;
-        var hay = (b.n + " " + tr + " " + pick(s.title) + " " + s.arTitle).toLowerCase();
+        var hay = foldSearch(b.n + " " + tr + " " + pick(s.title) + " " + s.arTitle);
         return '<button class="sr-row" data-nav="section:'+s.id+'@'+b.n+'" data-hay="'+esc(hay)+'">' +
           '<span class="sr-n">'+b.n+'</span>' +
           '<span class="sr-tx">'+esc(snip)+'</span>' +
           '<span class="sr-go">→</span>' +
         '</button>';
       }).join("");
-      return '<section class="sr-group" data-sec="'+esc((pick(s.title)+" "+s.arTitle).toLowerCase())+'">' +
+      return '<section class="sr-group" data-sec="'+esc(foldSearch(pick(s.title)+" "+s.arTitle))+'">' +
         '<button class="sr-head" data-nav="section:'+s.id+'">' +
           '<span class="sr-h-num">'+pad2(s.num)+'</span>' +
           '<span class="sr-h-tx"><b>'+esc(pick(s.title))+'</b><small>'+t("beyit")+' '+s.range[0]+'–'+s.range[1]+'</small></span>' +
@@ -300,16 +307,18 @@
   }
   function filterSearch(q) {
     var body = document.getElementById("searchBody"); if (!body) return;
-    q = (q || "").trim().toLowerCase();
+    q = foldSearch((q || "").trim());
+    var toks = q ? q.split(/\s+/) : [];
+    function hit(hay) { for (var i = 0; i < toks.length; i++) { if (hay.indexOf(toks[i]) < 0) return false; } return true; }
     var groups = body.querySelectorAll(".sr-group");
     var anyVisible = false;
     Array.prototype.forEach.call(groups, function (g) {
       var secHay = g.getAttribute("data-sec") || "";
-      var secMatch = q && secHay.indexOf(q) >= 0;
+      var secMatch = q && hit(secHay);
       var rows = g.querySelectorAll(".sr-row");
       var visRows = 0;
       Array.prototype.forEach.call(rows, function (r) {
-        var show = !q || secMatch || (r.getAttribute("data-hay") || "").indexOf(q) >= 0;
+        var show = !q || secMatch || hit(r.getAttribute("data-hay") || "");
         r.style.display = show ? "" : "none";
         if (show) visRows++;
       });
