@@ -881,7 +881,7 @@ window.CONTENT = {
                   },
                   "مِنْ نِعْمَةٍ",
                   {
-                    "tr": "min-ni'me → \"minne'me\"",
+                    "tr": "min-ni'me → \"minni'me\"",
                     "de": "→ „minniʿma“",
                     "en": "→ \"minniʿma\""
                   }
