@@ -184,6 +184,45 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 .mn-block .seg.lang button{ flex:1; }
 .mn-block .seg.theme button{ flex:1; }
 
+/* ---------- Beyit arama (hızlı geçiş) ---------- */
+#searchBtn{ display:grid; }
+.search-ov{
+  position:fixed; inset:0; z-index:70; background:var(--shade);
+  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  opacity:0; pointer-events:none; transition:opacity var(--tr);
+  display:grid; place-items:start center; padding:clamp(.6rem,3vw,2.4rem);
+}
+.search-ov.open{ opacity:1; pointer-events:auto; }
+.search-sheet{
+  width:100%; max-width:640px; max-height:88vh; display:flex; flex-direction:column;
+  background:var(--surface); border:1px solid var(--line); border-radius:18px; overflow:hidden;
+  box-shadow:var(--shadow-lg); transform:translateY(-10px) scale(.985); transition:transform var(--tr);
+}
+.search-ov.open .search-sheet{ transform:none; }
+.search-top{ display:flex; align-items:center; gap:.6rem; padding:.75rem; border-bottom:1px solid var(--line); }
+.search-field{ flex:1; display:flex; align-items:center; gap:.6rem; padding:.58rem .85rem; border-radius:12px; background:var(--canvas-2); border:1px solid var(--line); color:var(--muted); }
+.search-field svg{ flex:0 0 auto; }
+.search-field input{ flex:1; border:none; background:none; outline:none; color:var(--ink); font-size:1rem; font-family:inherit; min-width:0; }
+.search-top .icon-btn{ display:grid; width:40px; height:40px; flex:0 0 auto; }
+.search-hint{ padding:.5rem .95rem; font-size:.77rem; color:var(--muted); border-bottom:1px solid var(--line-soft); }
+.search-body{ overflow-y:auto; padding:.5rem; -webkit-overflow-scrolling:touch; }
+.sr-group{ margin-bottom:.3rem; }
+.sr-head{ width:100%; display:flex; align-items:center; gap:.7rem; text-align:start; padding:.55rem .65rem; border-radius:12px; position:sticky; top:0; background:var(--surface); z-index:1; }
+.sr-head:hover{ background:var(--accent-soft); }
+.sr-h-num{ flex:0 0 auto; width:2rem; height:2rem; display:grid; place-items:center; border-radius:9px; background:var(--accent); color:#fff; font-weight:700; font-size:.8rem; font-variant-numeric:tabular-nums; }
+.sr-h-tx{ flex:1; min-width:0; display:flex; flex-direction:column; line-height:1.2; overflow:hidden; }
+.sr-h-tx b{ font-family:var(--font-display); font-weight:600; font-size:1rem; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sr-h-tx small{ color:var(--muted); font-size:.73rem; margin-top:.12rem; }
+.sr-h-ar{ flex:0 0 auto; font-family:var(--font-ar); font-size:1.15rem; color:var(--gold); }
+.sr-rows{ display:flex; flex-direction:column; gap:2px; padding:.15rem 0 .3rem; }
+.sr-row{ width:100%; display:flex; align-items:center; gap:.7rem; text-align:start; padding:.48rem .65rem .48rem 1rem; border-radius:10px; color:var(--ink-soft); }
+.sr-row:hover{ background:var(--canvas-2); color:var(--ink); }
+.sr-n{ flex:0 0 auto; min-width:1.9rem; height:1.55rem; display:grid; place-items:center; border-radius:7px; background:var(--surface-2); border:1px solid var(--line); color:var(--accent-ink); font-weight:700; font-size:.77rem; font-variant-numeric:tabular-nums; }
+.sr-tx{ flex:1; font-size:.85rem; line-height:1.4; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+.sr-go{ flex:0 0 auto; color:var(--muted); opacity:0; transition:opacity var(--tr); }
+.sr-row:hover .sr-go{ opacity:1; }
+.search-empty{ padding:2.2rem 1rem; text-align:center; color:var(--muted); }
+
 /* ---------- Hero ---------- */
 .hero{ position:relative; overflow:hidden; padding-block:clamp(2.6rem,7vw,5rem) clamp(1.4rem,4vw,2.6rem); }
 .hero-bg{
@@ -291,6 +330,25 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 .sharh strong{ color:var(--ink); font-weight:700; }
 .sharh strong:first-child{ color:var(--accent-ink); }
 .overview p{ margin:0; }
+
+/* ---------- Satır içi sıralamalar → dikey, okunaklı liste ---------- */
+.prose-enum{ list-style:none; margin:.75rem 0 1rem; padding:0; display:flex; flex-direction:column; gap:.55rem; }
+.prose-enum:last-child{ margin-bottom:0; }
+.prose-enum li{ position:relative; padding-left:1.95rem; line-height:1.72; }
+.prose-enum.dot li::before{
+  content:""; position:absolute; left:.4rem; top:.62em;
+  width:.44rem; height:.44rem; border-radius:50%; background:var(--gold); box-shadow:0 0 0 3px var(--gold-soft);
+}
+.prose-enum.num li{ padding-left:2.35rem; }
+.prose-enum.num .en-n{
+  position:absolute; left:0; top:.02em; min-width:1.7rem; height:1.7rem;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:.82rem; color:var(--accent-ink);
+  background:var(--accent-soft); border-radius:8px; font-variant-numeric:tabular-nums;
+}
+.prose-enum.num .en-t{ display:block; }
+.prose-enum .en-t > strong:first-child,
+.prose-enum.dot li > strong:first-child{ color:var(--accent-ink); }
 
 /* ---------- Cards (şerh index) ---------- */
 .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:clamp(.9rem,2vw,1.3rem); }

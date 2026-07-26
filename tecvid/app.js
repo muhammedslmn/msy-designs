@@ -49,6 +49,45 @@
     if (typeof p === "string" && p.indexOf("@ar ") === 0) {
       return '<div class="sharh-arline">' + esc(p.slice(4).trim()) + '</div>';
     }
+    return renderProse(p);
+  }
+
+  // Satır içi sıralamaları ("1) … 2) …", "(1) … (2) …", "• … • …") dikey,
+  // okunaklı bir listeye çevirir. Sıralama yoksa normal <p> döner.
+  function renderProse(p) {
+    if (typeof p !== "string") return "<p>" + fmt(p) + "</p>";
+
+    // madde işaretli liste (•)
+    var bi = p.indexOf("•");
+    if (bi >= 0) {
+      var lead = p.slice(0, bi).trim();
+      var items = p.slice(bi + 1).split("•").map(function (x) {
+        return x.trim().replace(/^[—–-]\s*/, "");
+      }).filter(Boolean);
+      if (items.length >= 2) {
+        var out = lead ? "<p>" + fmt(lead) + "</p>" : "";
+        out += '<ul class="prose-enum dot">';
+        for (var i = 0; i < items.length; i++) out += "<li>" + fmt(items[i]) + "</li>";
+        return out + "</ul>";
+      }
+    }
+
+    // numaralı liste: "1) …", "(1) …" veya kalın "**1) …:**" biçimleri.
+    // Kalın "**" işareti sayının önündeyse madde metnine geri eklenir (çift korunur).
+    var arr = p.split(/(?:^|\s)(\*\*)?\(?([1-9])\)\s/);
+    if (arr.length >= 7 && String(arr[2]) === "1") {
+      var lead2 = (arr[0] || "").trim();
+      var out2 = lead2 ? "<p>" + fmt(lead2) + "</p>" : "";
+      out2 += '<ul class="prose-enum num">';
+      for (var j = 1; j + 2 < arr.length; j += 3) {
+        var bold = arr[j] || "";
+        var n = String(arr[j + 1]);
+        var txt = (bold + String(arr[j + 2] || "")).trim().replace(/[;,]\s*$/, "");
+        out2 += '<li><span class="en-n">' + n + ')</span><span class="en-t">' + fmt(txt) + "</span></li>";
+      }
+      return out2 + "</ul>";
+    }
+
     return "<p>" + fmt(p) + "</p>";
   }
   function sectionById(id) { for (var i=0;i<CONTENT.sections.length;i++) if (CONTENT.sections[i].id===id) return CONTENT.sections[i]; return null; }
@@ -215,10 +254,71 @@
       '</a>' +
       '<nav class="nav">'+navHtml+'</nav>' +
       '<div class="controls">'+langSeg+themeSeg+
+        '<button class="icon-btn" id="searchBtn" aria-label="'+t("search")+'" title="'+t("search")+'"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5 16.7 16.7"/></svg></button>' +
         '<button class="icon-btn menu-toggle" aria-label="Menu" id="menuBtn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>' +
       '</div>' +
     '</div></header>' +
-    mobileNav(navItems, langSeg, themeSeg);
+    mobileNav(navItems, langSeg, themeSeg) +
+    searchOverlay();
+  }
+
+  /* ---------- Beyit arama / hızlı geçiş ---------- */
+  function searchOverlay() {
+    var groups = CONTENT.sections.map(function (s) {
+      var rows = s.beyits.map(function (b) {
+        var tr = (b.translation && pick(b.translation)) || "";
+        tr = tr.replace(/\*\*/g, "").replace(/\*/g, "").trim();
+        var snip = tr.length > 70 ? tr.slice(0, 70).trim() + "…" : tr;
+        var hay = (b.n + " " + tr + " " + pick(s.title) + " " + s.arTitle).toLowerCase();
+        return '<button class="sr-row" data-nav="section:'+s.id+'@'+b.n+'" data-hay="'+esc(hay)+'">' +
+          '<span class="sr-n">'+b.n+'</span>' +
+          '<span class="sr-tx">'+esc(snip)+'</span>' +
+          '<span class="sr-go">→</span>' +
+        '</button>';
+      }).join("");
+      return '<section class="sr-group" data-sec="'+esc((pick(s.title)+" "+s.arTitle).toLowerCase())+'">' +
+        '<button class="sr-head" data-nav="section:'+s.id+'">' +
+          '<span class="sr-h-num">'+pad2(s.num)+'</span>' +
+          '<span class="sr-h-tx"><b>'+esc(pick(s.title))+'</b><small>'+t("beyit")+' '+s.range[0]+'–'+s.range[1]+'</small></span>' +
+          '<span class="sr-h-ar">'+s.arTitle+'</span>' +
+        '</button>' +
+        '<div class="sr-rows">'+rows+'</div>' +
+      '</section>';
+    }).join("");
+    return '<div class="search-ov" id="searchOverlay"><div class="search-sheet">' +
+      '<div class="search-top">' +
+        '<div class="search-field">' +
+          '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5 16.7 16.7"/></svg>' +
+          '<input id="searchInput" type="search" inputmode="search" autocomplete="off" placeholder="'+t("search_ph")+'" aria-label="'+t("search")+'" />' +
+        '</div>' +
+        '<button class="icon-btn" data-close-search="1" aria-label="'+t("close")+'">✕</button>' +
+      '</div>' +
+      '<div class="search-hint">'+t("search_hint")+'</div>' +
+      '<div class="search-body" id="searchBody">'+groups+'</div>' +
+      '<div class="search-empty" id="searchEmpty" hidden>'+t("search_empty")+'</div>' +
+    '</div></div>';
+  }
+  function filterSearch(q) {
+    var body = document.getElementById("searchBody"); if (!body) return;
+    q = (q || "").trim().toLowerCase();
+    var groups = body.querySelectorAll(".sr-group");
+    var anyVisible = false;
+    Array.prototype.forEach.call(groups, function (g) {
+      var secHay = g.getAttribute("data-sec") || "";
+      var secMatch = q && secHay.indexOf(q) >= 0;
+      var rows = g.querySelectorAll(".sr-row");
+      var visRows = 0;
+      Array.prototype.forEach.call(rows, function (r) {
+        var show = !q || secMatch || (r.getAttribute("data-hay") || "").indexOf(q) >= 0;
+        r.style.display = show ? "" : "none";
+        if (show) visRows++;
+      });
+      var showGroup = !q || visRows > 0 || secMatch;
+      g.style.display = showGroup ? "" : "none";
+      if (showGroup) anyVisible = true;
+    });
+    var empty = document.getElementById("searchEmpty");
+    if (empty) empty.hidden = anyVisible;
   }
 
   function mobileNav(navItems, langSeg, themeSeg) {
@@ -318,7 +418,7 @@
         '<div class="panel-label"><span class="dot"></span>'+pick(node.title)+'</div>' +
         (node.arabic ? '<div class="quote-box hadith"><div class="quote-ar">'+node.arabic+'</div>'+
             '<div class="quote-meta"><span class="quote-ref">'+t("lbl_source")+': '+pick(node.source)+'</span></div></div>' : '') +
-        '<div class="sharh">'+paras.map(function(p){return "<p>"+fmt(p)+"</p>";}).join("")+'</div>' +
+        '<div class="sharh">'+paras.map(function(p){return renderProse(p);}).join("")+'</div>' +
       '</div>';
     }
     return '<section class="block wrap reader">' +
@@ -415,7 +515,7 @@
     var overview = pick(s.overview);
     var overviewHtml = overview ? '<div class="panel overview fade-in">' +
       '<div class="panel-label"><span class="dot"></span>'+t("lbl_overview")+'</div>' +
-      '<p>'+fmt(overview)+'</p></div>' : '';
+      renderProse(overview)+'</div>' : '';
 
     var notesHtml = (s.notes && s.notes.length) ? s.notes.map(function (nt) {
       var body = pick(nt.body) || "";
@@ -663,6 +763,23 @@
         if (e.target === mnav || e.target.getAttribute("data-close")) mnav.classList.remove("open");
       });
     }
+    // Beyit arama
+    var searchBtn = document.getElementById("searchBtn");
+    var searchOv = document.getElementById("searchOverlay");
+    if (searchBtn && searchOv) {
+      searchBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (mnav) mnav.classList.remove("open");
+        searchOv.classList.add("open");
+        var inp = document.getElementById("searchInput");
+        if (inp) { inp.value = ""; filterSearch(""); setTimeout(function () { try { inp.focus(); } catch (e) {} }, 40); }
+      });
+      searchOv.addEventListener("click", function (e) {
+        if (e.target === searchOv || (e.target.getAttribute && e.target.getAttribute("data-close-search"))) searchOv.classList.remove("open");
+      });
+      var sinp = document.getElementById("searchInput");
+      if (sinp) sinp.addEventListener("input", function () { filterSearch(sinp.value); });
+    }
     // Sınav (Prüfungssimulation)
     var examEl = document.getElementById("exam");
     if (examEl) {
@@ -706,6 +823,7 @@
     if (link) {
       e.preventDefault();
       var mnav = document.getElementById("mobileNav"); if (mnav) mnav.classList.remove("open");
+      var sov = document.getElementById("searchOverlay"); if (sov) sov.classList.remove("open");
       nav(link.getAttribute("data-nav"));
       return true;
     }
@@ -720,6 +838,9 @@
       e.preventDefault(); nav(e.target.getAttribute("data-nav"));
     }
     if (e.key === "Escape" && currentPop) closePop();
+    if (e.key === "Escape") {
+      var sov = document.getElementById("searchOverlay"); if (sov) sov.classList.remove("open");
+    }
   });
   window.addEventListener("resize", function () { if (currentPop) closePop(); });
 
