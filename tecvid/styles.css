@@ -68,6 +68,36 @@
   --shadow-md:0 5px 16px rgba(60,45,15,.1),0 16px 40px rgba(60,45,15,.08);
   --shadow-lg:0 12px 34px rgba(60,45,15,.14),0 34px 70px rgba(60,45,15,.12);
 }
+:root[data-theme="rose"] {
+  --canvas:#f6e7e6; --canvas-2:#efd7d7;
+  --surface:#fdf4f2; --surface-2:#f8e8e6;
+  --ink:#3a2328; --ink-soft:#5e424b; --muted:#977079;
+  --line:#eccdcc; --line-soft:#f3dcda;
+  --accent:#9d2b4e; --accent-ink:#7f1f3e; --accent-soft:#f6dbe2;
+  --gold:#a97f2e; --gold-2:#c69a41; --gold-soft:#f3e4d1;
+  --wrong:#b4472f; --wrong-soft:#f6ded5;
+  --ayah-bg:#f7e1e5; --ayah-line:#e6b8c3;
+  --hadith-bg:#f8ead4; --hadith-line:#ecd2a6;
+  --shade:rgba(58,35,40,.5); --glow:rgba(157,43,78,.14);
+  --shadow-sm:0 1px 2px rgba(70,25,35,.06),0 3px 10px rgba(70,25,35,.06);
+  --shadow-md:0 5px 16px rgba(70,25,35,.09),0 16px 40px rgba(70,25,35,.08);
+  --shadow-lg:0 12px 34px rgba(70,25,35,.13),0 34px 70px rgba(70,25,35,.11);
+}
+:root[data-theme="night"] {
+  --canvas:#0a0f20; --canvas-2:#070b18;
+  --surface:#111a33; --surface-2:#182347;
+  --ink:#e9ecfa; --ink-soft:#b9c1de; --muted:#7e87a8;
+  --line:#26325a; --line-soft:#1b2547;
+  --accent:#54cbbe; --accent-ink:#7fe0d4; --accent-soft:#10243a;
+  --gold:#dcb968; --gold-2:#eecf88; --gold-soft:#201d34;
+  --wrong:#f09b7d; --wrong-soft:#34202e;
+  --ayah-bg:#101c3a; --ayah-line:#2b3d6e;
+  --hadith-bg:#1b1b32; --hadith-line:#3a3766;
+  --shade:rgba(0,0,0,.72); --glow:rgba(84,203,190,.22);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.42),0 3px 10px rgba(0,0,0,.36);
+  --shadow-md:0 6px 20px rgba(0,0,0,.48),0 18px 44px rgba(0,0,0,.42);
+  --shadow-lg:0 14px 40px rgba(0,0,0,.56),0 38px 74px rgba(0,0,0,.56);
+}
 
 /* ---------- Reset ---------- */
 *,*::before,*::after{ box-sizing:border-box; }
@@ -152,6 +182,7 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 .mn-lbl{ display:block; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:.45rem; font-weight:700; }
 .mn-block .seg{ width:100%; }
 .mn-block .seg.lang button{ flex:1; }
+.mn-block .seg.theme button{ flex:1; }
 
 /* ---------- Hero ---------- */
 .hero{ position:relative; overflow:hidden; padding-block:clamp(2.6rem,7vw,5rem) clamp(1.4rem,4vw,2.6rem); }
@@ -412,7 +443,7 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 
 /* splash (koyu zemin) — logo tam görünür */
 .hb-splash{ margin-top:1.7rem; }
-.hb-splash .hb-logo{ width:min(150px,40vw); filter:drop-shadow(0 3px 14px #0007); opacity:0; animation:spRise 1s var(--ease) 1.55s both; }
+.hb-splash .hb-logo{ width:min(120px,33vw); filter:drop-shadow(0 3px 14px #0007); opacity:0; animation:spRise 1s var(--ease) 1.55s both; }
 .hb-splash .hb-word{ color:#f5ecd6; }
 
 /* footer — logo ORİJİNAL (rengi hiç değişmez); arkasına SADE siyah zemin,
@@ -426,6 +457,24 @@ bdi.ar-inline{ unicode-bidi:isolate; font-family:var(--font-ar); font-size:1.06e
 }
 .hb-footer .hb-logo{ width:92px; }
 .hb-footer .hb-word{ color:#f5ecd6; font-size:1.05rem; }
+.hb-caption{ margin-top:.55rem; font-family:var(--font-ar); direction:rtl; font-size:1.15rem; color:var(--gold); line-height:1; }
+
+/* footer ders çıkarımı + başa dön */
+.f-take{ max-width:52ch; color:var(--ink-soft); font-size:.92rem; line-height:1.7; }
+.to-top{
+  margin-top:1.5rem; display:inline-flex; align-items:center; gap:.4rem;
+  padding:.5rem 1.05rem; border:1px solid var(--line); border-radius:999px;
+  background:var(--surface); color:var(--ink-soft); font-size:.82rem; font-weight:700;
+  box-shadow:var(--shadow-sm); transition:all var(--tr);
+}
+.to-top:hover{ color:var(--accent-ink); border-color:var(--accent); transform:translateY(-2px); }
+.to-top svg{ display:block; }
+
+/* ana sayfa hero hadîsi */
+.hero-hadith{ margin-top:1.15rem; max-width:52ch; margin-inline:auto; }
+.hh-ar{ font-family:var(--font-ar); direction:rtl; font-weight:700; color:var(--accent); font-size:clamp(1.35rem,4.4vw,2rem); line-height:1.95; }
+.hh-tr{ color:var(--ink-soft); font-size:clamp(1rem,2.1vw,1.14rem); margin-top:.45rem; }
+.hh-src{ display:inline-block; margin-top:.5rem; font-size:.8rem; font-weight:700; letter-spacing:.05em; color:var(--gold); text-transform:uppercase; }
 
 /* ---------- Prüfungssimulation (sınav) ---------- */
 .exam{

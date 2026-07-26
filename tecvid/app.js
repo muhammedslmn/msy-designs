@@ -83,10 +83,11 @@
       // açılış koyu zemin → logo doğrudan görünür
       return '<div class="hidayah-brand hb-splash">' + hidayahImg() + '</div>';
     }
-    // footer → logo ORİJİNAL kalır; arkasına gece-göğü zemin kartı
+    // footer → logo ORİJİNAL kalır (siyah zemin kartı); altında yalnız Arapça başlık
     return (
       '<div class="hidayah-brand hb-footer">' +
       '<div class="hb-logo-card">' + hidayahImg() + "</div>" +
+      '<div class="hb-caption">تُحْفَةُ الْأَطْفَالِ</div>' +
       "</div>"
     );
   }
@@ -96,6 +97,8 @@
     var s = '<svg class="th-ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
     if (code === "light") return s + '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.4 19.6l1.6-1.6M18 6l1.6-1.6"/></svg>';
     if (code === "dark") return s + '<path d="M20.5 14.2A8.2 8.2 0 1 1 9.8 3.5a6.4 6.4 0 0 0 10.7 10.7z"/></svg>';
+    if (code === "night") return s + '<path d="M20.5 14.2A8.2 8.2 0 1 1 9.8 3.5a6.4 6.4 0 0 0 10.7 10.7z"/><path d="M16.4 3.1l.7 1.7 1.7.7-1.7.7-.7 1.7-.7-1.7-1.7-.7 1.7-.7z"/></svg>';
+    if (code === "rose") return s + '<circle cx="12" cy="8.4" r="2.7"/><circle cx="7.9" cy="12.7" r="2.7"/><circle cx="16.1" cy="12.7" r="2.7"/><circle cx="12" cy="15.4" r="2.7"/></svg>';
     return s + '<path d="M12 6.2C10.5 5 8.3 4.6 5.8 4.6c-.7 0-1.3.05-1.8.13v13.2c.6-.09 1.2-.13 1.9-.13 2.4 0 4.5.4 6.1 1.6 1.6-1.2 3.7-1.6 6.1-1.6.7 0 1.3.04 1.9.13V4.73c-.5-.08-1.1-.13-1.8-.13-2.5 0-4.7.4-6.2 1.6z"/><path d="M12 6.2v12"/></svg>';
   }
 
@@ -123,7 +126,10 @@
     document.documentElement.setAttribute("data-theme", state.theme);
     lsSet("tuhfe-theme", state.theme);
     var m = document.querySelector('meta[name="theme-color"]');
-    if (m) m.setAttribute("content", state.theme === "dark" ? "#0b1512" : (state.theme === "sepia" ? "#e6dabf" : "#f4efe4"));
+    if (m) {
+      var tc = { dark:"#0b1512", night:"#0a0f20", sepia:"#e6dabf", rose:"#f2e2e2" }[state.theme] || "#f4efe4";
+      m.setAttribute("content", tc);
+    }
   }
   function setLang(code) {
     if (!I18N[code]) return;
@@ -231,14 +237,16 @@
   function footer() {
     return '<footer class="footer"><div class="wrap footer-in">' +
       '<div class="f-orn">'+star("f-star")+'</div>' +
-      '<div class="f-bism">﷽</div>' +
-      '<div class="f-ayah">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</div>' +
-      '<div class="f-ayah-tr">'+t("ayah_tr")+'</div>' +
-      '<div class="f-ayah-ref">'+t("ayah_ref")+'</div>' +
+      '<div class="f-ayah">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ</div>' +
+      '<div class="f-ayah-tr">'+t("foot_ayah_tr")+'</div>' +
+      '<div class="f-ayah-ref">'+t("foot_ayah_ref")+'</div>' +
       '<div class="f-sep"></div>' +
-      '<div class="f-note">'+t("footer_note")+'</div>' +
-      '<div class="f-fine">'+CONTENT.meta.workTitleAr+' · '+pick(CONTENT.meta.author)+'</div>' +
+      '<div class="f-take">'+t("foot_takeaway")+'</div>' +
       hidayahBrand("footer") +
+      '<button type="button" class="to-top" id="toTop" aria-label="'+t("to_top_hint")+'">' +
+        '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>' +
+        '<span>'+t("to_top_hint")+'</span>' +
+      '</button>' +
     '</div></footer>';
   }
 
@@ -279,16 +287,18 @@
       '<div class="hero-bg" aria-hidden="true"></div>' +
       '<div class="wrap hero-in">' +
         '<div class="hero-orn">'+star("hero-star")+'</div>' +
-        '<span class="kicker">'+t("hero_kicker")+'</span>' +
         '<h1 class="hero-title">'+t("hero_title")+'</h1>' +
         '<div class="hero-ar">'+CONTENT.meta.workTitleAr+'</div>' +
         '<div class="hero-bism">﷽</div>' +
-        '<p class="hero-sub">'+t("hero_sub")+'</p>' +
+        '<div class="hero-hadith">' +
+          '<div class="hh-ar">خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</div>' +
+          '<div class="hh-tr">'+t("hero_hadith_tr")+'</div>' +
+          '<div class="hh-src">'+t("hero_hadith_src")+'</div>' +
+        '</div>' +
       '</div>' +
     '</section>' +
 
     '<section class="block wrap portals-wrap">' +
-      '<div class="sec-head center"><h2>'+t("portal_title")+'</h2><p>'+t("portal_sub")+'</p></div>' +
       portals + stats +
     '</section>' +
     why;
@@ -633,6 +643,11 @@
         if (chip.classList.contains("open")) { closePop(); return; }
         openPop(chip);
       });
+    });
+    var toTop = document.getElementById("toTop");
+    if (toTop) toTop.addEventListener("click", function () {
+      try { window.scrollTo({ top: 0, behavior: "smooth" }); }
+      catch (e) { window.scrollTo(0, 0); }
     });
     var tg = document.getElementById("transToggle");
     if (tg) tg.addEventListener("click", function () {

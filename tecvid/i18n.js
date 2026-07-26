@@ -9,9 +9,11 @@ window.LANGS = [
 ];
 
 window.THEMES = [
-  { code: "light",  label: { tr: "Açık",   de: "Hell",   en: "Light"  } },
-  { code: "dark",   label: { tr: "Koyu",   de: "Dunkel", en: "Dark"   } },
-  { code: "sepia",  label: { tr: "Okuma",  de: "Lesen",  en: "Reading"} }
+  { code: "light",  label: { tr: "Açık",   de: "Hell",    en: "Light"  } },
+  { code: "sepia",  label: { tr: "Okuma",  de: "Lesen",   en: "Reading"} },
+  { code: "rose",   label: { tr: "Gül",    de: "Rosé",    en: "Rose"   } },
+  { code: "dark",   label: { tr: "Koyu",   de: "Dunkel",  en: "Dark"   } },
+  { code: "night",  label: { tr: "Gece",   de: "Nacht",   en: "Night"  } }
 ];
 
 window.I18N = {
@@ -118,6 +120,14 @@ window.I18N = {
     chip_done: "Tam",
     ayah_tr: "«…ve Kur'ân'ı tane tane, ağır ağır (tertîl ile) oku.»",
     ayah_ref: "el-Müzzemmil, 4",
+    // ana sayfa hadîsi
+    hero_hadith_tr: "«Sizin en hayırlınız, Kur'ân'ı öğrenen ve öğretendir.»",
+    hero_hadith_src: "Buhârî",
+    // footer âyeti + ders çıkarımı
+    foot_ayah_tr: "«Şüphesiz o zikri (Kur'ân'ı) biz indirdik; onu koruyacak olan da elbette biziz.»",
+    foot_ayah_ref: "el-Hicr, 9",
+    foot_takeaway: "Kur'ân'ın korunması; her harfin hakkını doğru edâ ile vererek bu ilmi öğrenip yaşatmakla da sürer.",
+    to_top_hint: "Başa dön",
     splash_hint: "Geçmek için dokun"
   },
 
@@ -212,6 +222,12 @@ window.I18N = {
     chip_done: "Fertig",
     ayah_tr: "„…und trage den Qurʾān wohlgeordnet (tartīl) vor.“",
     ayah_ref: "al-Muzzammil, 4",
+    hero_hadith_tr: "„Die Besten von euch sind jene, die den Qurʾān lernen und ihn lehren.“",
+    hero_hadith_src: "al-Buchārī",
+    foot_ayah_tr: "„Wahrlich, Wir sind es, die die Ermahnung (den Qurʾān) herabgesandt haben, und Wir werden gewiss über ihn wachen.“",
+    foot_ayah_ref: "al-Hidschr, 9",
+    foot_takeaway: "Die Bewahrung des Qurʾān lebt auch darin fort, dass wir diese Wissenschaft lernen und weitergeben — und jedem Buchstaben sein Recht geben.",
+    to_top_hint: "Nach oben",
     splash_hint: "Zum Überspringen tippen"
   },
 
@@ -306,6 +322,12 @@ window.I18N = {
     chip_done: "Complete",
     ayah_tr: "“…and recite the Qurʾān with measured recitation (tartīl).”",
     ayah_ref: "al-Muzzammil, 4",
+    hero_hadith_tr: "“The best of you are those who learn the Qurʾān and teach it.”",
+    hero_hadith_src: "al-Bukhārī",
+    foot_ayah_tr: "“Indeed, it is We who sent down the Reminder, and indeed, We will be its guardian.”",
+    foot_ayah_ref: "al-Hijr, 9",
+    foot_takeaway: "The preservation of the Qurʾān lives on as we learn and pass on this science — giving every letter its due right.",
+    to_top_hint: "Back to top",
     splash_hint: "Tap to skip"
   }
 };
