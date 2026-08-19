@@ -186,7 +186,7 @@ def home(lang):
 </section>''' % {"eb": t(lang, "base.eyebrow"), "title": t(lang, "base.title"),
                  "text": t(lang, "base.text"),
                  "ayah": ayah("﴿فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ﴾",
-                              "&bdquo;So fragt die Leute der Ermahnung, wenn ihr nicht wisst.&ldquo;",
+                              "&bdquo;Wenn ihr es nicht wisst, dann fragt die Leute des Gedenkens (die über das Wissen der Offenbarung verfügen).&ldquo;",
                               "Surat an-Nahl, 16:43"),
                  "href": u(lang, "ueber-uns.html") + "#grundlage", "cta": t(lang, "base.cta")})
 
@@ -388,6 +388,18 @@ def teaching(lang):
 <section class="section section--hairline">
   <div class="container">
     <div class="split">
+      <p class="eyebrow">Unterrichtssprache</p>
+      <div><p class="lead" style="max-width:54ch">Du wählst selbst, in welcher Sprache du
+      unterrichtet werden möchtest: <strong>Deutsch</strong>, <strong>Türkisch</strong> oder
+      <strong>Arabisch</strong>. Der Unterricht wird vollständig in der von dir gewählten Sprache
+      gehalten.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--hairline">
+  <div class="container">
+    <div class="split">
       <p class="eyebrow">%(l_price)s</p>
       <div><p class="lead" style="max-width:52ch">%(pricetext)s</p></div>
     </div>
@@ -413,7 +425,7 @@ def teaching(lang):
                 <input class="input" id="u-mail" name="email" type="email" required autocomplete="email"></div>
             </div>
             <div class="form-grid">
-              <div class="field"><label for="u-alter">Alter <span class="dim">(%(opt)s)</span></label>
+              <div class="field"><label for="u-alter">Alter</label>
                 <input class="input" id="u-alter" name="alter" type="text" inputmode="numeric"></div>
               <div class="field"><label for="u-ort">Wohnort und Land</label>
                 <input class="input" id="u-ort" name="ort" type="text" required></div>
@@ -422,7 +434,7 @@ def teaching(lang):
 
           <fieldset class="fs">
             <legend class="fs__legend">2 &middot; Dein Ziel</legend>
-            %(f_fach)s
+            <div class="form-grid">%(f_fach)s%(f_sprache)s</div>
             <div class="field">
               <label for="u-ziel">Warum möchtest du das lernen?</label>
               <textarea class="textarea" id="u-ziel" name="ziel" required
@@ -469,6 +481,7 @@ def teaching(lang):
         "l_form": t(lang, "teach.form"),
         "f_name": t(lang, "f.name"), "f_mail": t(lang, "f.email"), "opt": t(lang, "c.optional"),
         "f_fach": sel("fach", "Was möchtest du lernen?", TEACHING["subjects"]),
+        "f_sprache": sel("sprache", "In welcher Sprache?", TEACHING["languages"]),
         "f_level": sel("vorkenntnisse", "Deine Vorkenntnisse", TEACHING["levels"]),
         "f_ar": sel("arabisch", "Kannst du arabische Schrift lesen?", TEACHING["arabic"]),
         "f_zeit": sel("zeit", "Zeit pro Woche", TEACHING["time"]),
@@ -527,9 +540,10 @@ def about(lang):
       Sie sollte letztlich auch zu Allah führen und den Menschen zeigen, was der Islam ist, wofür er
       steht und wozu er den Menschen ruft.</p>
       %(ay_dawah)s
-      <p>Genau daraus entwickelte sich unser Weg: Dawah zu machen, islamisches Wissen weiterzugeben,
-      Missverständnisse aufzuklären und dort zu helfen, wo wir mit unseren Möglichkeiten helfen
-      können.</p>
+      <p>Genau daraus entwickelte sich unser Weg: <strong>Emru bil maruf, nehyu anil munker</strong>
+      &ndash; zum Rechten aufzurufen und vom Verwerflichen abzuhalten &ndash;, islamisches Wissen
+      weiterzugeben, Missverständnisse aufzuklären und dort zu helfen, wo wir mit unseren
+      Möglichkeiten helfen können.</p>
       <p>Ein weiterer Grund für die Entstehung von Hidayah war die Art und Weise, wie islamisches
       Wissen heute verbreitet wird. Durch soziale Medien kann nahezu jeder über religiöse Themen
       sprechen. Dadurch wird Wissen teilweise ohne ausreichende Grundlagen weitergegeben, Aussagen
@@ -547,7 +561,7 @@ def about(lang):
       die Aussage Allahs:</p>
       %(ay_name)s
       <p>Der Name soll uns zuerst selbst daran erinnern, dass Rechtleitung allein von Allah kommt.
-      Wissen, Dawah und unsere eigenen Bemühungen sind lediglich Mittel. Niemand kann einem Herzen
+      Wissen, Emru bil maruf nehyu anil munker und unsere eigenen Bemühungen sind lediglich Mittel. Niemand kann einem Herzen
       die Rechtleitung geben außer Allah.</p>
       <p>Hidayah soll deshalb nicht um Personen aufgebaut sein. Unser Ziel ist es, Menschen zum Islam,
       zum Wissen und letztlich zu Allah zu führen &ndash; und gleichzeitig selbst auf diesem Weg
@@ -694,7 +708,7 @@ def qa(lang):
     <div class="split">
       <p class="eyebrow">%(eb)s</p>
       <div>
-        <h1 class="balance" style="max-width:15ch">Stelle deine islamische Frage</h1>
+        <h1 class="balance" style="max-width:15ch">Stelle deine Frage</h1>
         <p class="lead" style="margin-top:1.5rem">%(text)s Der Dienst ist kostenlos.</p>
       </div>
     </div>
@@ -814,35 +828,39 @@ COURSE_FACTS = [
      "die wichtigsten Belege auf einem Blatt."),
     ("Dein Tempo",
      "Dauerhafter Zugang. Du siehst deinen Fortschritt und machst dort weiter, wo du aufgehört hast."),
-    ("Zwei Sprachen",
-     "Deutsch und Türkisch sind getrennte Kurse. Beim Kauf wählst du selbst, ob du in Euro oder in "
-     "Türkischer Lira bezahlst."),
+    ("Sprache und Beitrag",
+     "Die Kurse werden auf Deutsch gehalten. Der Beitrag ist in Euro angegeben und wird in Euro "
+     "bezahlt."),
 ]
+
+
+def course_card(c, lang):
+    foot = " &middot; ".join(x for x in [
+        "%d Lektionen" % c["lessons"] if c.get("lessons") else "",
+        "%d Stunden" % c["hours"] if c.get("hours") else ""] if x)
+    return '''<a class="card" href="%(url)s">
+      <span class="tag tag--quiet" style="align-self:flex-start;margin-bottom:.9rem">%(level)s</span>
+      <h3 class="card__title">%(title)s</h3><p class="card__text">%(sum)s</p>
+      <div class="card__foot" style="display:flex;align-items:baseline;justify-content:space-between;
+        gap:1rem"><span class="dim" style="font-size:.86rem">%(foot)s</span>
+        <span style="font-family:var(--ff-display);font-size:1.3rem;font-weight:600;
+          color:var(--accent)">%(price)s&nbsp;&euro;</span></div>
+    </a>''' % {"url": u("de", "kurse/%s.html" % c["slug"]), "level": c.get("level", ""),
+                "title": c["title"], "sum": c["summary"], "foot": foot, "price": c["price_eur"]}
 
 
 def courses(lang):
     listing = ""
     if COURSES:
-        by_lang = {}
-        for c in COURSES:
-            by_lang.setdefault(c["lang_label"], []).append(c)
-        blocks = []
-        if len(by_lang) > 1:
-            for label, items in by_lang.items():
-                blocks.append('<div class="section-head" style="margin-top:2.5rem">'
-                              '<p class="eyebrow">%s</p></div><div class="grid grid--3">%s</div>'
-                              % (label, "".join(course_card(c, lang) for c in items)))
-        else:
-            blocks.append('<div class="grid grid--3">%s</div>'
-                          % "".join(course_card(c, lang) for c in COURSES))
+        blocks = ['<div class="grid grid--3">%s</div>'
+                  % "".join(course_card(c, lang) for c in COURSES)]
         packs = ""
         if len(COURSES) >= 2 and PACKAGES:
             cards = "".join('''<div class="card">
-              <span class="tag tag--quiet" style="align-self:flex-start;margin-bottom:.9rem">%s</span>
               <h3 class="card__title">%s</h3><p class="card__text">%s</p>
               <div class="card__foot"><span style="font-family:var(--ff-display);font-size:1.4rem;
                 font-weight:600;color:var(--accent)">%s&nbsp;&euro;</span></div></div>'''
-                            % (p["lang_label"], p["title"], p["note"], p["price_eur"])
+                            % (p["title"], p["note"], p["price_eur"])
                             for p in PACKAGES)
             packs = ('<div class="section-head" style="margin-top:3rem">'
                      '<p class="eyebrow">Pakete</p></div><div class="grid grid--2">%s</div>' % cards)
@@ -984,7 +1002,7 @@ def contact(lang):
         Zusammenarbeit. <strong>Religiöse Fragen</strong> stelle bitte über das dafür vorgesehene
         Formular, <strong>Unterrichtsanfragen</strong> über die Bewerbung.</p>
         <div class="btn-row" style="margin-top:1.6rem;gap:1.6rem">
-          <a class="link" href="%(qa)s">Islamische Frage stellen <span class="arw">&rarr;</span></a>
+          <a class="link" href="%(qa)s">Frage stellen <span class="arw">&rarr;</span></a>
           <a class="link" href="%(teach)s">Zum Unterricht bewerben <span class="arw">&rarr;</span></a>
         </div>
       </div>
@@ -1056,7 +1074,7 @@ def course_page(c, lang):
 <section class="section" style="padding-bottom:0">
   <div class="container-narrow">
     %(crumbs)s
-    <span class="tag">%(clang)s</span>
+    <span class="tag">%(level)s</span>
     <h1 class="balance">%(title)s</h1>
     <p class="lead" style="margin-top:1.5rem">%(sum)s</p>
   </div>
@@ -1076,9 +1094,9 @@ def course_page(c, lang):
   </div>
 </section>''' % {
         "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)),
-                                (t(lang, "nav.courses"), u(lang, "unterricht.html")),
+                                (t(lang, "nav.courses"), u(lang, "kurse.html")),
                                 (c["title"], None)]),
-        "clang": "Kurssprache: %s" % c["lang_label"], "title": c["title"], "sum": c["summary"],
+        "level": c.get("level", ""), "title": c["title"], "sum": c["summary"],
         "video": video_block(c.get("intro_video", ""), c["title"]),
         "goal": c["goal"], "aud": ul("audience"), "pre": ul("prereq"), "learn": ul("learn"),
         "curr": curr, "mat": ul("materials"),

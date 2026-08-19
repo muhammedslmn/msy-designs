@@ -97,8 +97,20 @@
 <section class="section section--hairline">
   <div class="container">
     <div class="split">
+      <p class="eyebrow">Unterrichtssprache</p>
+      <div><p class="lead" style="max-width:54ch">Du wählst selbst, in welcher Sprache du
+      unterrichtet werden möchtest: <strong>Deutsch</strong>, <strong>Türkisch</strong> oder
+      <strong>Arabisch</strong>. Der Unterricht wird vollständig in der von dir gewählten Sprache
+      gehalten.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--hairline">
+  <div class="container">
+    <div class="split">
       <p class="eyebrow">About the fee</p>
-      <div><p class="lead" style="max-width:52ch">Teaching is paid. The amount depends on subject, scope and frequency – we settle it together in the personal conversation, not before.</p></div>
+      <div><p class="lead" style="max-width:52ch">Teaching is paid. The amount depends on subject, scope and frequency – we settle it together in the personal conversation, not before. Payment is in euro only.</p></div>
     </div>
   </div>
 </section>
@@ -122,7 +134,7 @@
                 <input class="input" id="u-mail" name="email" type="email" required autocomplete="email"></div>
             </div>
             <div class="form-grid">
-              <div class="field"><label for="u-alter">Alter <span class="dim">(optional)</span></label>
+              <div class="field"><label for="u-alter">Alter</label>
                 <input class="input" id="u-alter" name="alter" type="text" inputmode="numeric"></div>
               <div class="field"><label for="u-ort">Wohnort und Land</label>
                 <input class="input" id="u-ort" name="ort" type="text" required></div>
@@ -131,10 +143,13 @@
 
           <fieldset class="fs">
             <legend class="fs__legend">2 &middot; Dein Ziel</legend>
-            <div class="field">
+            <div class="form-grid"><div class="field">
       <label for="u-fach">Was möchtest du lernen?</label>
       <select class="select" id="u-fach" name="fach" required><option value="Arabische Sprache">Arabische Sprache</option><option value="Quran & Tajwid">Quran & Tajwid</option><option value="Aqidah">Aqidah</option><option value="Fiqh">Fiqh</option><option value="Hadith">Hadith</option><option value="Sirah">Sirah</option><option value="Etwas anderes">Etwas anderes</option></select>
-    </div>
+    </div><div class="field">
+      <label for="u-sprache">In welcher Sprache?</label>
+      <select class="select" id="u-sprache" name="sprache" required><option value="Deutsch">Deutsch</option><option value="Türkisch">Türkisch</option><option value="Arabisch">Arabisch</option></select>
+    </div></div>
             <div class="field">
               <label for="u-ziel">Warum möchtest du das lernen?</label>
               <textarea class="textarea" id="u-ziel" name="ziel" required

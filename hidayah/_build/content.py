@@ -9,7 +9,7 @@ vorliegen. Was nicht eingetragen ist, erscheint auf der Website auch nicht.
 SITE = {
     "name": "Hidayah",
     "slogan": "Auf der Suche nach Licht in einer Welt voller Dunkelheit.",
-    "tagline": "Islamisches Wissen. Dawah. Orientierung.",
+    "tagline": "Islamisches Wissen. Emru bil maruf, nehyu anil munker. Orientierung.",
     "url": "https://hidayah.de",
     "email": "salam@hidayah.de",
     "instagram": "https://instagram.com/hidayah",
@@ -74,6 +74,8 @@ TEACHING = {
     ],
     "subjects": ["Arabische Sprache", "Quran & Tajwid", "Aqidah", "Fiqh",
                  "Hadith", "Sirah", "Etwas anderes"],
+    # Unterrichtssprache. Der Bewerber waehlt selbst; unterrichtet wird in der gewaehlten Sprache.
+    "languages": ["Deutsch", "Türkisch", "Arabisch"],
     "levels": ["Keine Vorkenntnisse", "Grundlagen vorhanden", "Fortgeschritten"],
     "arabic": ["Ja, flüssig", "Mit Mühe", "Nein, noch nicht"],
     "time": ["1–2 Stunden pro Woche", "3–4 Stunden pro Woche", "5 Stunden pro Woche oder mehr"],
@@ -96,8 +98,8 @@ NEWS = []
 NEWS_KINDS = ["Einladung", "Unterricht", "Ankündigung"]
 
 # ---------------------------------------------------------------- Frage & Antwort
-QA_CATEGORIES = ["Aqidah", "Fiqh", "Gebet", "Fasten", "Ehe & Familie", "Handel", "Dawah",
-                 "Allgemeine islamische Fragen"]
+QA_CATEGORIES = ["Aqidah", "Fiqh", "Gebet", "Fasten", "Ehe & Familie", "Handel",
+                 "Emru bil maruf, nehyu anil munker", "Allgemeine islamische Fragen"]
 
 # Oeffentlich veroeffentlichte, anonymisierte Antworten.
 # Leer = kein oeffentliches Archiv, das Frageformular bleibt bestehen.

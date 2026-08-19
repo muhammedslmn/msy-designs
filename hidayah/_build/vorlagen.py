@@ -66,7 +66,6 @@ ARTIKEL_VORLAGE = {
 KURS_VORLAGE = {
     "slug": "arabische-grammatik",
     "title": "Arabische Grammatik",
-    "lang": "de", "lang_label": "Deutsch",
     "level": "Grundstufe",
     "lessons": 18, "hours": 14,
     "price_eur": 89,
@@ -87,7 +86,7 @@ KURS_VORLAGE = {
 # ---------------------------------------------------------------- Paket
 # Nach PACKAGES. Erscheint erst, wenn mindestens zwei Kurse vorhanden sind.
 PAKET_VORLAGE = {
-    "slug": "paket-de", "title": "Deutsches Gesamtpaket", "lang_label": "Deutsch",
+    "slug": "paket-grundlagen", "title": "Gesamtpaket Grundlagen",
     "price_eur": 199,
     "includes": ["arabische-grammatik"],   # slugs aus COURSES
     "note": "Was das Paket enthält und wie lange der Zugang gilt.",

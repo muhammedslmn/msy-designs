@@ -112,6 +112,11 @@ Es sind **zwei getrennte Bereiche**:
 - **Kurse** — fertig aufgezeichnete Kurse zum Kauf. Erscheinen, sobald Einträge in `COURSES`
   stehen; bis dahin erklärt die Seite nur den Aufbau.
 
+**Sprache und Beitrag:** Kurse gibt es **nur auf Deutsch**. Der Privatunterricht wird dagegen in
+**Deutsch, Türkisch oder Arabisch** gehalten — der Bewerber wählt die Sprache selbst im Formular
+(Liste `languages` in `TEACHING`). Abgerechnet wird überall **ausschließlich in Euro**
+(`price_eur`).
+
 ### Neuigkeiten
 
 Einladungen, Unterrichtsankündigungen und Mitteilungen kommen in `NEWS` in `content.py`.
@@ -123,7 +128,8 @@ Muster in `_build/vorlagen.py`.
 Der Unterrichtsbereich bildet euren Ablauf ab: **Bewerbung → Prüfung → Gespräch → Programm**.
 
 Die Bewerbung fragt ab: Name, E-Mail, Alter, Wohnort, gewünschtes Fach, Beweggrund,
-Vorkenntnisse, ob arabische Schrift gelesen werden kann, bereits Gelerntes und bei wem,
+Vorkenntnisse, gewünschte Unterrichtssprache, ob arabische Schrift gelesen werden kann,
+bereits Gelerntes und bei wem,
 Zeitbudget pro Woche, bevorzugtes Gesprächsmedium (FaceTime, Telefon, WhatsApp) und
 Erreichbarkeit.
 
@@ -162,7 +168,7 @@ Farben stehen gebündelt am Anfang von `assets/css/hidayah.css` unter `1 · Farb
 In lateinischer Schrift **nur normale Buchstaben**, keine wissenschaftlichen Sonderzeichen:
 
 Tawhid · Aqidah · Shirk · Bidah · Hadith · Fiqh · Sunnah · Sahabah · Sheykh · Shuyukh ·
-Ijazat · Salaf as-Salih · Ahl as-Sunnah wa-l-Jamaah · Quran · Dawah · al-Bukhari ·
+Ijazat · Salaf as-Salih · Ahl as-Sunnah wa-l-Jamaah · Quran · al-Bukhari ·
 at-Tirmidhi · Abu Dawud
 
 Arabische Originaltexte bleiben in arabischer Schrift.
