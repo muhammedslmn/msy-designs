@@ -541,7 +541,7 @@ def about(lang):
       steht und wozu er den Menschen ruft.</p>
       %(ay_dawah)s
       <p>Genau daraus entwickelte sich unser Weg: <strong>Emru bil maruf, nehyu anil munker</strong>
-      &ndash; zum Rechten aufzurufen und vom Verwerflichen abzuhalten &ndash;, islamisches Wissen
+      &ndash; das Gute gebieten und das Verwerfliche verbieten &ndash;, islamisches Wissen
       weiterzugeben, Missverständnisse aufzuklären und dort zu helfen, wo wir mit unseren
       Möglichkeiten helfen können.</p>
       <p>Ein weiterer Grund für die Entstehung von Hidayah war die Art und Weise, wie islamisches
