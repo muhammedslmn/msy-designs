@@ -516,6 +516,23 @@
     });
   });
 
+  /* ---------------------------------------------------------- Lesefortschritt */
+  (function progress() {
+    var bar = $('[data-progress]');
+    if (!bar) return;
+    var body = $('.article-body') || $('.prose');
+    if (!body) return;
+    function update() {
+      var r = body.getBoundingClientRect();
+      var total = r.height - window.innerHeight;
+      var done = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : (r.top < 0 ? 1 : 0);
+      bar.style.width = (done * 100).toFixed(2) + '%';
+    }
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+  }());
+
   /* ---------------------------------------------------------- Kleinkram */
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 

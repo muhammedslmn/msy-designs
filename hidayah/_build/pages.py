@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """Baut die Koerper (body) aller Seiten.
 
-Grundregel: Es wird nichts angezeigt, wofuer es keine Inhalte gibt.
-Jeder Abschnitt prueft seine Datenquelle und entfaellt, wenn sie leer ist.
+Grundregel: Die Hauptbereiche stehen fest. Einzelne Beitraege darin erscheinen
+erst, wenn sie eingetragen sind — nichts wird als Platzhalter vorgetaeuscht.
 """
 import re
-from content import (SITE, SERIES, TOPICS, MADHAHIB, ARTICLES, COURSES, PACKAGES,
-                     QA_CATEGORIES, QA_PUBLIC, TEAM)
+from content import (SITE, SERIES, ARTICLES, TEACHING, COURSES, PACKAGES,
+                     QA_CATEGORIES, QA_PUBLIC, TEAM, ayah)
 from layout import t, u, ICON
 
 MONTHS = {"de": ["Januar","Februar","März","April","Mai","Juni","Juli","August",
@@ -17,9 +17,7 @@ MONTHS = {"de": ["Januar","Februar","März","April","Mai","Juni","Juli","August"
                  "Eylül","Ekim","Kasım","Aralık"],
           "ar": ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس",
                  "سبتمبر","أكتوبر","نوفمبر","ديسمبر"]}
-SERIES_MAP = {k: (n, d) for k, n, d in SERIES}
-TOPIC_MAP = dict(TOPICS)
-MADH_MAP = dict(MADHAHIB)
+SERIES_BY_KEY = {s["key"]: s for s in SERIES}
 
 
 def fdate(iso, lang="de"):
@@ -32,14 +30,12 @@ def sorted_articles():
     return sorted(ARTICLES, key=lambda a: a["date"], reverse=True)
 
 
+def author_of(a):
+    return a.get("author") or SERIES_BY_KEY[a["series"]]["author"]
+
+
 def used_series():
-    """Nur Reihen, die tatsaechlich Artikel enthalten."""
-    return [(k, n, d) for k, n, d in SERIES if any(a["series"] == k for a in ARTICLES)]
-
-
-def used_topics():
-    """Nur Themen, die tatsaechlich vergeben sind."""
-    return [(k, n) for k, n in TOPICS if any(k in a["topics"] for a in ARTICLES)]
+    return [s for s in SERIES if any(a["series"] == s["key"] for a in ARTICLES)]
 
 
 # ------------------------------------------------------------------ Bausteine
@@ -50,7 +46,7 @@ def crumbs(lang, items):
 
 
 def entry(a, lang):
-    """Eine Zeile im Artikelverzeichnis."""
+    s = SERIES_BY_KEY[a["series"]]
     return '''<a class="entry" href="%(href)s">
   <div class="entry__meta"><span class="entry__cat">%(cat)s</span><span>%(date)s</span>
     <span>%(min)d %(minlbl)s</span></div>
@@ -58,35 +54,16 @@ def entry(a, lang):
     <h3 class="entry__title">%(title)s</h3>
     <p class="entry__excerpt">%(sum)s</p>
   </div>
-</a>''' % {"href": u("de", "artikel/%s.html" % a["slug"]),
-            "cat": SERIES_MAP[a["series"]][0], "date": fdate(a["date"], lang),
-            "min": a["reading"], "minlbl": t(lang, "c.min"),
+</a>''' % {"href": u("de", "artikel/%s.html" % a["slug"]), "cat": s["name"],
+            "date": fdate(a["date"], lang), "min": a["reading"], "minlbl": t(lang, "c.min"),
             "title": a["title"], "sum": a["summary"]}
 
 
-def course_card(c, lang):
-    return '''<a class="card" href="%(href)s">
-  <span class="tag tag--quiet" style="align-self:flex-start;margin-bottom:.9rem">%(lang)s</span>
-  <h3 class="card__title">%(title)s</h3>
-  <p class="card__text">%(sum)s</p>
-  <div class="card__foot" style="display:flex;align-items:baseline;justify-content:space-between;gap:1rem">
-    <span style="font-family:var(--ff-display);font-size:1.3rem;font-weight:600;color:var(--accent)">
-      %(eur)s&nbsp;&euro;</span>
-    <span class="dim" style="font-size:.85rem">%(les)d %(leslbl)s</span>
-  </div>
-</a>''' % {"href": u("de", "kurse/%s.html" % c["slug"]), "lang": c["lang_label"],
-            "title": c["title"], "sum": c["summary"], "eur": c["price_eur"],
-            "les": c["lessons"], "leslbl": "Lektionen" if lang != "tr" else "ders"}
-
-
 def video_block(url, caption):
-    """Nur echte Videos. Ohne URL entsteht kein Platzhalter."""
     if not url:
         return ""
-    return ('<div style="margin-block:2.5rem;border-radius:var(--r);overflow:hidden;'
-            'border:1px solid var(--line);aspect-ratio:16/9">'
-            '<iframe src="%s" title="%s" loading="lazy" allowfullscreen '
-            'style="width:100%%;height:100%%;border:0"></iframe></div>' % (url, caption))
+    return ('<div class="video"><iframe src="%s" title="%s" loading="lazy" allowfullscreen></iframe></div>'
+            % (url, caption))
 
 
 def lang_notice(lang):
@@ -94,6 +71,13 @@ def lang_notice(lang):
         return ""
     return ('<div class="notice" style="margin-bottom:2.5rem">%s<div>%s</div></div>'
             % (ICON["info"], t(lang, "c.langnote")))
+
+
+def steps_block(items):
+    return '<ol class="steps">%s</ol>' % "".join(
+        '<li class="step"><span class="step__num">%02d</span>'
+        '<div><h3 class="step__title">%s</h3><p class="step__text">%s</p></div></li>'
+        % (i + 1, title, text) for i, (title, text) in enumerate(items))
 
 
 # ------------------------------------------------------------------ Startseite
@@ -106,18 +90,17 @@ def home(lang):
          width="1400" height="476" fetchpriority="high">
     <h1 class="hero__slogan display-xl balance">%(slogan)s</h1>
     <p class="hero__sub">%(sub)s</p>
-    <div class="btn-row">%(cta)s</div>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="%(qa)s">%(cta1)s</a>
+      <a class="btn btn--quiet" href="%(about)s">%(cta2)s</a>
+    </div>
     <p class="hero__seal">%(seal)s</p>
   </div>
-</section>''' % {
-        "slogan": t(lang, "slogan"), "sub": t(lang, "hero.sub"),
-        "cta": ('<a class="btn btn--primary" href="%s">%s</a>' % (u(lang, "artikel.html"), t(lang, "hero.cta1"))
-                if ARTICLES else "") +
-               '<a class="btn btn--quiet" href="%s">%s</a>' % (u(lang, "frage-antwort.html"), t(lang, "hero.cta2")),
-        "seal": "Quran &amp; Sunnah" if lang != "ar" else "القرآن والسنة",
-    }]
+</section>''' % {"slogan": t(lang, "slogan"), "sub": t(lang, "hero.sub"),
+                 "qa": u(lang, "frage-antwort.html"), "cta1": t(lang, "hero.cta2"),
+                 "about": u(lang, "ueber-uns.html"), "cta2": t(lang, "who.cta"),
+                 "seal": "Quran &amp; Sunnah" if lang != "ar" else "القرآن والسنة"}]
 
-    # Wer wir sind
     out.append('''
 <section class="section reveal">
   <div class="container">
@@ -139,36 +122,30 @@ def home(lang):
                  "p1": t(lang, "who.p1"), "p2": t(lang, "who.p2"),
                  "href": u(lang, "ueber-uns.html"), "cta": t(lang, "who.cta")})
 
-    # Optionales Vorstellungsvideo
     if SITE.get("intro_video"):
         out.append('<section class="section reveal"><div class="container-narrow">'
                    '<p class="eyebrow">%s</p><h2>%s</h2>%s</div></section>'
                    % (t(lang, "video.eyebrow"), t(lang, "video.title"),
                       video_block(SITE["intro_video"], t(lang, "video.title"))))
 
-    # Bereiche — nur, was es gibt
-    areas = []
-    if ARTICLES:
-        areas.append((t(lang, "areas.k.title"), t(lang, "areas.k.text"), u(lang, "artikel.html")))
-    areas.append((t(lang, "areas.q.title"), t(lang, "areas.q.text"), u(lang, "frage-antwort.html")))
-    if COURSES:
-        areas.append((t(lang, "areas.c.title"), t(lang, "areas.c.text"), u(lang, "kurse.html")))
-    if len(areas) > 1:
-        rows = "".join('''<a class="area" href="%s">
+    areas = [(t(lang, "areas.k.title"), t(lang, "areas.k.text"), u(lang, "artikel.html")),
+             (t(lang, "areas.q.title"), t(lang, "areas.q.text"), u(lang, "frage-antwort.html")),
+             (t(lang, "areas.c.title"), t(lang, "areas.c.text"), u(lang, "unterricht.html"))]
+    rows = "".join('''<a class="area" href="%s">
       <span class="area__num">%02d</span>
       <div><h3 class="area__title">%s</h3><p class="area__text">%s</p></div>
       <span class="area__go">%s</span>
     </a>''' % (href, i + 1, title, text, ICON["arrow"])
-                       for i, (title, text, href) in enumerate(areas))
-        out.append('''
-<section class="section reveal">
+                   for i, (title, text, href) in enumerate(areas))
+    out.append('''
+<section class="section section--hairline reveal">
   <div class="container">
     <div class="section-head"><p class="eyebrow">%s</p><h2 class="balance">%s</h2></div>
     <div class="areas">%s</div>
   </div>
-</section>''' % (t(lang, "areas.eyebrow"), t(lang, "areas.title"), rows))
+</section>''' % (t(lang, "areas.eyebrow"),
+                 t(lang, "areas.title3") if len(areas) == 3 else t(lang, "areas.title2"), rows))
 
-    # Neueste Artikel
     if ARTICLES:
         latest = sorted_articles()[:3]
         more = ('<a class="link" href="%s">%s <span class="arw">&rarr;</span></a>'
@@ -179,28 +156,34 @@ def home(lang):
     <div class="section-head section-head--split">
       <div><p class="eyebrow">%s</p><h2>%s</h2></div>%s
     </div>
-    %s
-    <div class="index">%s</div>
+    %s<div class="index">%s</div>
   </div>
 </section>''' % (t(lang, "latest.eyebrow"), t(lang, "latest.title"), more,
                  lang_notice(lang), "".join(entry(a, lang) for a in latest)))
 
-    # Empfohlene Kurse
-    if COURSES:
-        more = ('<a class="link" href="%s">%s <span class="arw">&rarr;</span></a>'
-                % (u(lang, "kurse.html"), t(lang, "rec.all"))) if len(COURSES) > 3 else ""
-        out.append('''
-<section class="section reveal">
+    # Unsere Grundlage — kurz, mit einem Beleg
+    out.append('''
+<section class="section section--hairline reveal">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div><p class="eyebrow">%s</p><h2>%s</h2></div>%s
+    <div class="split">
+      <p class="eyebrow">%(eb)s</p>
+      <div>
+        <h2 class="balance" style="max-width:18ch">%(title)s</h2>
+        <p class="lead" style="margin-top:1.5rem">%(text)s</p>
+        %(ayah)s
+        <div class="btn-row" style="margin-top:1.6rem">
+          <a class="link" href="%(href)s">%(cta)s <span class="arw">&rarr;</span></a>
+        </div>
+      </div>
     </div>
-    <div class="grid grid--3">%s</div>
   </div>
-</section>''' % (t(lang, "rec.eyebrow"), t(lang, "rec.title"), more,
-                 "".join(course_card(c, lang) for c in COURSES[:3])))
+</section>''' % {"eb": t(lang, "base.eyebrow"), "title": t(lang, "base.title"),
+                 "text": t(lang, "base.text"),
+                 "ayah": ayah("﴿فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ﴾",
+                              "&bdquo;So fragt die Leute der Ermahnung, wenn ihr nicht wisst.&ldquo;",
+                              "Surat an-Nahl, 16:43"),
+                 "href": u(lang, "ueber-uns.html") + "#grundlage", "cta": t(lang, "base.cta")})
 
-    # Newsletter
     out.append('''
 <section class="section--tight reveal">
   <div class="container">
@@ -221,37 +204,309 @@ def home(lang):
     return "".join(out)
 
 
+# ------------------------------------------------------------------ Wissensarchiv
+def archive(lang):
+    """Zeigt die feste Struktur der Reihen. Artikel erscheinen, sobald es welche gibt."""
+    reihen = "".join('''<div class="rail">
+      <span class="rail__num">%02d</span>
+      <div class="rail__body">
+        <h3 class="rail__title">%s</h3>
+        <p class="rail__text">%s</p>
+      </div>
+      <div class="rail__by"><span class="rail__bylabel">%s</span><span class="rail__name">%s</span></div>
+    </div>''' % (i + 1, s["name"], s["desc"], t(lang, "c.by"), s["author"])
+                     for i, s in enumerate(SERIES))
+
+    listing = ""
+    arts = sorted_articles()
+    if arts:
+        used = used_series()
+        filters = ""
+        if len(used) >= 2:
+            chips = ('<button class="chip" type="button" data-filter="all" aria-pressed="true">%s</button>'
+                     % t(lang, "c.all"))
+            chips += "".join('<button class="chip" type="button" data-filter="series:%s" aria-pressed="false">%s</button>'
+                             % (s["key"], s["name"]) for s in used)
+            filters = '<div class="filters" data-filters>%s</div>' % chips
+        rows = "".join('<div data-keys="series:%s">%s</div>' % (a["series"], entry(a, lang))
+                       for a in arts)
+        listing = '''
+<section class="section section--hairline">
+  <div class="container">
+    %s%s<div class="index" data-article-list>%s</div>
+    <p class="search-empty" data-empty hidden>%s</p>
+  </div>
+</section>''' % (lang_notice(lang), filters, rows, t(lang, "search.empty"))
+    else:
+        listing = ('<section class="section--tight"><div class="container">'
+                   '<p class="dim" style="font-size:.92rem">%s</p></div></section>'
+                   % t(lang, "arch.empty"))
+
+    return '''
+<section class="section" style="padding-bottom:0">
+  <div class="container">
+    %(crumbs)s
+    <div class="split">
+      <p class="eyebrow">%(eb)s</p>
+      <div>
+        <h1 class="balance" style="max-width:13ch">%(h1)s</h1>
+        <p class="lead" style="margin-top:1.5rem">%(lead)s</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">%(eb2)s</p>
+      <h2 class="balance" style="max-width:18ch">%(h2)s</h2>
+      <p class="lead" style="margin-top:1.2rem">%(text)s</p></div>
+    <div class="rails">%(reihen)s</div>
+  </div>
+</section>
+%(listing)s''' % {
+        "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)), (t(lang, "nav.knowledge"), None)]),
+        "eb": t(lang, "arch.eyebrow"), "h1": t(lang, "areas.k.title"),
+        "lead": t(lang, "areas.k.text"), "eb2": t(lang, "arch.eyebrow2"),
+        "h2": t(lang, "arch.title"), "text": t(lang, "arch.text"),
+        "reihen": reihen, "listing": listing,
+    }
+
+
+# ------------------------------------------------------------------ Artikelseite
+def article_page(a, lang):
+    heads = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', a["body"], re.S)
+    toc = ""
+    if len(heads) >= 2:
+        toc = ('<nav class="toc" aria-label="%s"><p class="toc__title">%s</p><ol>%s</ol></nav>'
+               % (t(lang, "c.toc"), t(lang, "c.toc"),
+                  "".join('<li><a href="#%s">%s</a></li>' % (i, re.sub("<[^>]+>", "", h))
+                          for i, h in heads)))
+    src = ""
+    if a.get("sources"):
+        src = ('<section class="sources"><h2>%s</h2><ol>%s</ol></section>'
+               % (t(lang, "c.sources"), "".join("<li>%s</li>" % x for x in a["sources"])))
+
+    rel = [x for x in ARTICLES if x["slug"] != a["slug"] and x["series"] == a["series"]][:3]
+    related = ""
+    if rel:
+        related = ('<section class="section section--hairline"><div class="container-narrow">'
+                   '<h2 style="font-size:1.4rem;margin-bottom:1.5rem">%s</h2>'
+                   '<div class="index">%s</div></div></section>'
+                   % (t(lang, "c.related"), "".join(entry(r, lang) for r in rel)))
+
+    s = SERIES_BY_KEY[a["series"]]
+    return '''
+<div class="progress-bar" data-progress aria-hidden="true"></div>
+<article class="article-head">
+  <div class="container-narrow">
+    %(crumbs)s
+    <span class="tag">%(series)s</span>
+    <h1 class="balance">%(title)s</h1>
+    <p class="article-summary">%(sum)s</p>
+    <div class="article-meta">
+      <span>%(by)s <strong>%(author)s</strong></span><span>%(date)s</span>
+      <span>%(min)d %(minlbl)s</span>
+    </div>
+  </div>
+</article>
+
+<section class="section" style="padding-top:2rem">
+  <div class="container">
+    <div class="article-layout">
+      <aside class="article-aside">%(toc)s</aside>
+      <div class="article-body">
+        %(video)s
+        <div class="prose prose--numbered">%(body)s</div>
+        %(src)s
+        <div class="share">
+          <span>%(share)s</span>
+          <a href="#" data-share="whatsapp" rel="noopener" target="_blank">WhatsApp</a>
+          <a href="#" data-share="telegram" rel="noopener" target="_blank">Telegram</a>
+          <a href="#" data-share="x" rel="noopener" target="_blank">X</a>
+          <button type="button" data-share="copy">%(copy)s</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+%(related)s''' % {
+        "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)),
+                                (t(lang, "nav.knowledge"), u(lang, "artikel.html")),
+                                (a["title"], None)]),
+        "series": s["name"], "title": a["title"], "sum": a["summary"],
+        "by": t(lang, "c.by"), "author": author_of(a), "date": fdate(a["date"], lang),
+        "min": a["reading"], "minlbl": t(lang, "c.min"),
+        "toc": toc, "video": video_block(a.get("video", ""), a["title"]),
+        "body": a["body"], "src": src, "share": t(lang, "c.share"),
+        "copy": t(lang, "c.copy"), "related": related,
+    }
+
+
+# ------------------------------------------------------------------ Unterricht
+def teaching(lang):
+    sel = lambda name, label, opts, req=True: '''<div class="field">
+      <label for="u-%s">%s</label>
+      <select class="select" id="u-%s" name="%s"%s>%s</select>
+    </div>''' % (name, label, name, name, " required" if req else "",
+                 "".join('<option value="%s">%s</option>' % (o, o) for o in opts))
+
+    courses_block = ""
+    if COURSES:
+        cards = "".join('''<a class="card" href="%s">
+          <span class="tag tag--quiet" style="align-self:flex-start;margin-bottom:.9rem">%s</span>
+          <h3 class="card__title">%s</h3><p class="card__text">%s</p></a>'''
+                        % (u("de", "kurse/%s.html" % c["slug"]), c["lang_label"], c["title"], c["summary"])
+                        for c in COURSES)
+        courses_block = ('<section class="section section--hairline"><div class="container">'
+                         '<div class="section-head"><p class="eyebrow">%s</p>'
+                         '<h2>Aufgezeichnete Kurse</h2></div>'
+                         '<div class="grid grid--3">%s</div></div></section>'
+                         % (t(lang, "rec.eyebrow"), cards))
+
+    return '''
+<section class="section" style="padding-bottom:0">
+  <div class="container">
+    %(crumbs)s
+    <div class="split">
+      <p class="eyebrow">%(eb)s</p>
+      <div>
+        <h1 class="balance" style="max-width:15ch">%(h1)s</h1>
+        <p class="lead" style="margin-top:1.5rem">%(lead)s</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <p class="eyebrow">%(l_steps)s</p>
+      <div>%(steps)s</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--hairline">
+  <div class="container">
+    <div class="split">
+      <p class="eyebrow">%(l_price)s</p>
+      <div><p class="lead" style="max-width:52ch">%(pricetext)s</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--hairline">
+  <div class="container">
+    <div class="split">
+      <p class="eyebrow">%(l_form)s</p>
+      <div>
+        <h2 class="balance" style="max-width:16ch;margin-bottom:.9rem">Stell dich kurz vor</h2>
+        <p class="lead" style="margin-bottom:2.5rem">Je genauer wir deinen Stand kennen, desto besser
+        können wir einschätzen, womit du anfangen solltest.</p>
+
+        <form data-form="unterricht" novalidate>
+          <fieldset class="fs">
+            <legend class="fs__legend">1 &middot; Über dich</legend>
+            <div class="form-grid">
+              <div class="field"><label for="u-name">%(f_name)s</label>
+                <input class="input" id="u-name" name="name" type="text" required autocomplete="name"></div>
+              <div class="field"><label for="u-mail">%(f_mail)s</label>
+                <input class="input" id="u-mail" name="email" type="email" required autocomplete="email"></div>
+            </div>
+            <div class="form-grid">
+              <div class="field"><label for="u-alter">Alter <span class="dim">(%(opt)s)</span></label>
+                <input class="input" id="u-alter" name="alter" type="text" inputmode="numeric"></div>
+              <div class="field"><label for="u-ort">Wohnort und Land</label>
+                <input class="input" id="u-ort" name="ort" type="text" required></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs">
+            <legend class="fs__legend">2 &middot; Dein Ziel</legend>
+            %(f_fach)s
+            <div class="field">
+              <label for="u-ziel">Warum möchtest du das lernen?</label>
+              <textarea class="textarea" id="u-ziel" name="ziel" required
+                placeholder="Was möchtest du erreichen? Was ist dein Beweggrund?"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs">
+            <legend class="fs__legend">3 &middot; Dein Stand</legend>
+            <div class="form-grid">%(f_level)s%(f_ar)s</div>
+            <div class="field">
+              <label for="u-gelernt">Hast du bereits etwas gelesen oder gelernt?</label>
+              <textarea class="textarea" id="u-gelernt" name="gelernt"
+                placeholder="Welche Bücher, welche Fächer, bei wem und über welchen Zeitraum? Wenn noch nichts: schreib einfach „noch nichts&#8220;."></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs">
+            <legend class="fs__legend">4 &middot; Organisatorisches</legend>
+            <div class="form-grid">%(f_zeit)s%(f_med)s</div>
+            <div class="field">
+              <label for="u-zeiten">Wann bist du gut erreichbar? <span class="dim">(%(opt)s)</span></label>
+              <input class="input" id="u-zeiten" name="erreichbarkeit" type="text"
+                placeholder="z. B. werktags ab 18 Uhr">
+            </div>
+          </fieldset>
+
+          <div class="field" style="margin-top:1.5rem">
+            <label class="check"><input type="checkbox" required><span>%(consent)s</span></label>
+          </div>
+          <button class="btn btn--primary" type="submit">Bewerbung absenden</button>
+          <p class="form-status" data-status></p>
+          <p class="form-note">Wir melden uns bei jeder Bewerbung zurück. Wenn es passt, vereinbaren
+          wir ein persönliches Gespräch – erst danach steht ein Programm und ein Beitrag fest.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+%(courses)s''' % {
+        "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)), (t(lang, "nav.courses"), None)]),
+        "eb": t(lang, "teach.eyebrow"), "h1": t(lang, "teach.title"), "lead": t(lang, "teach.lead"),
+        "l_steps": t(lang, "teach.steps"), "steps": steps_block(TEACHING["steps"]),
+        "l_price": t(lang, "teach.price"), "pricetext": t(lang, "teach.pricetext"),
+        "l_form": t(lang, "teach.form"),
+        "f_name": t(lang, "f.name"), "f_mail": t(lang, "f.email"), "opt": t(lang, "c.optional"),
+        "f_fach": sel("fach", "Was möchtest du lernen?", TEACHING["subjects"]),
+        "f_level": sel("vorkenntnisse", "Deine Vorkenntnisse", TEACHING["levels"]),
+        "f_ar": sel("arabisch", "Kannst du arabische Schrift lesen?", TEACHING["arabic"]),
+        "f_zeit": sel("zeit", "Zeit pro Woche", TEACHING["time"]),
+        "f_med": sel("medium", "Gespräch bevorzugt über", TEACHING["media"]),
+        "consent": t(lang, "f.consent"), "courses": courses_block,
+    }
+
+
 # ------------------------------------------------------------------ Über uns
 def about(lang):
-    def q(ar, de, src, kind=""):
-        cls = "ayah ayah--hadith" if kind == "hadith" else "ayah"
-        return ('<figure class="%s"><p class="ayah__ar" lang="ar" dir="rtl">%s</p>'
-                '<p class="ayah__de">%s</p><figcaption class="ayah__src">%s</figcaption></figure>'
-                % (cls, ar, de, src))
-
     team = "".join('''<div class="card">
       <div class="member__mono">%s</div>
       <p class="member__role">%s</p>
       <h3 class="card__title" style="margin-bottom:.5rem">%s</h3>
       <p class="card__text">%s</p>
-      <ul class="member__list">%s</ul>
-    </div>''' % (m["initials"], m["role"], m["name"], m["bio"],
-                 "".join("<li>%s</li>" % f for f in m["focus"])) for m in TEAM)
+    </div>''' % (m["initials"], m["role"], m["name"], m["bio"]) for m in TEAM)
 
     return '''
 <section class="section" style="padding-bottom:0">
-  <div class="container-narrow">
+  <div class="container">
     %(crumbs)s
-    <p class="eyebrow">%(eb)s</p>
-    <h1 class="balance">%(title)s</h1>
-    <p class="lead" style="margin-top:1.6rem">%(intro)s</p>
-    %(notice)s
+    <div class="split">
+      <p class="eyebrow">%(eb)s</p>
+      <div>
+        <h1 class="balance" style="max-width:15ch">%(title)s</h1>
+        <p class="lead" style="margin-top:1.5rem">%(intro)s</p>
+        %(notice)s
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container-narrow">
-    <article class="prose">
+    <article class="prose prose--numbered">
       <h2 id="entstehung">Entstehung von Hidayah</h2>
       <p>Hidayah entstand im Oktober 2024 nach Gesprächen und Beratungen zwischen drei Brüdern sowie
       mit unseren Lehrern und Shuyukh. Dahinter stand die gemeinsame Überzeugung, dass es notwendig
@@ -260,25 +515,20 @@ def about(lang):
       Muslime zu leisten.</p>
       <p>Eine wichtige Rolle spielten dabei auch die Ereignisse in Gaza. Hidayah entstand jedoch nicht
       lediglich als emotionale Reaktion darauf. Was dort geschah, war vielmehr eine Erinnerung an eine
-      Realität, die nicht erst mit Gaza begonnen hat und auch nicht mit Gaza enden wird. Muslime wurden
-      zu verschiedenen Zeiten geprüft, unterdrückt und aufgrund ihres Glaubens bekämpft.</p>
+      Realität, die nicht erst mit Gaza begonnen hat und auch nicht mit Gaza enden wird.</p>
       <p>Für uns stellte sich deshalb nicht nur die Frage, was gerade geschieht, sondern vielmehr:
       Was bedeutet es eigentlich, Muslim zu sein? Was verlangt der Islam von uns? Warum halten wir
       trotz Prüfungen und Schwierigkeiten an diesem Weg fest?</p>
-      <p>In dieser Zeit gingen viele Menschen auf die Straße, Organisationen veranstalteten
-      Demonstrationen und zahlreiche Stimmen machten auf das Leid in Gaza aufmerksam. Wir stellten
-      jedoch gleichzeitig fest, dass der Islam selbst oftmals kaum erklärt oder repräsentiert wurde.</p>
-      <p>Für uns war deshalb klar: <strong>Wenn ein Muslim für eine islamische Angelegenheit spricht,
-      sollte seine Botschaft nicht bei einem politischen oder gesellschaftlichen Thema enden.</strong>
-      Sie sollte letztlich auch zu Allah führen und den Menschen zeigen, was der Islam ist, wofür er
-      steht und wozu er den Menschen ruft.</p>
-      <p>Daraus entwickelte sich unser Weg: Dawah zu machen, islamisches Wissen weiterzugeben,
-      Missverständnisse aufzuklären und dort zu helfen, wo wir mit unseren Möglichkeiten helfen können.</p>
-      <p>Ein weiterer Grund für die Entstehung von Hidayah war die Art und Weise, wie islamisches
-      Wissen heute verbreitet wird. Durch soziale Medien kann nahezu jeder über religiöse Themen
-      sprechen. Dadurch wird Wissen teilweise ohne ausreichende Grundlagen weitergegeben, Aussagen
-      werden aus ihrem Zusammenhang gerissen und komplexe Fragen werden von Menschen behandelt, denen
-      die notwendigen Grundlagen fehlen.</p>
+      <p>In dieser Zeit gingen viele Menschen auf die Straße und zahlreiche Stimmen machten auf das
+      Leid aufmerksam. Wir stellten jedoch gleichzeitig fest, dass der Islam selbst oftmals kaum
+      erklärt oder repräsentiert wurde. Für uns war deshalb klar: <strong>Wenn ein Muslim für eine
+      islamische Angelegenheit spricht, sollte seine Botschaft nicht bei einem politischen oder
+      gesellschaftlichen Thema enden.</strong> Sie sollte letztlich zu Allah führen und den Menschen
+      zeigen, was der Islam ist und wozu er ruft.</p>
+      <p>Ein weiterer Grund war die Art und Weise, wie islamisches Wissen heute verbreitet wird. Durch
+      soziale Medien kann nahezu jeder über religiöse Themen sprechen. Dadurch wird Wissen teilweise
+      ohne ausreichende Grundlagen weitergegeben, Aussagen werden aus ihrem Zusammenhang gerissen und
+      komplexe Fragen von Menschen behandelt, denen die notwendigen Grundlagen fehlen.</p>
       <p>Nach mehreren Jahren des Lernens, dem Begleiten unserer Lehrer und dem Erhalt von Ijazat
       entstand deshalb &ndash; gemeinsam mit unseren Lehrern und Shuyukh &ndash; der Entschluss, selbst
       Verantwortung zu übernehmen und das Gelernte auf zugängliche und zugleich fundierte Weise
@@ -315,8 +565,8 @@ def about(lang):
       <p>In der Aqidah folgen wir dem Weg von Ahl as-Sunnah wa-l-Jamaah, wie ihn die Sahabah und die
       Salaf verstanden und überliefert haben. Im Fiqh erkennen und respektieren wir die vier bekannten
       Rechtsschulen:</p>
-      <p style="font-family:var(--ff-display);font-size:1.2rem;color:var(--accent);text-align:center;
-      padding:1.3rem 0;border-block:1px solid var(--line);letter-spacing:.02em">%(madh)s</p>
+      <p class="madhahib">Hanafi &nbsp;&middot;&nbsp; Maliki &nbsp;&middot;&nbsp; Shafii
+      &nbsp;&middot;&nbsp; Hanbali</p>
       <p>Anerkannte Meinungsverschiedenheiten behandeln wir mit Wissen, Gerechtigkeit und Respekt.
       Unser Ziel ist nicht, einen neuen Weg zu schaffen oder den Islam nach eigenen Vorstellungen zu
       formen. <strong>Unser Ziel ist es, dem zu folgen, was bereits vorgegeben wurde.</strong></p>
@@ -329,10 +579,10 @@ def about(lang):
     <div class="split">
       <p class="eyebrow">Unser Team</p>
       <div>
-        <h2 class="balance" style="max-width:15ch">Drei Brüder, ein gemeinsamer Weg</h2>
-        <p class="lead" style="margin-top:1.4rem">Die jeweiligen Aufgaben und Themenbereiche richten
-        sich nach dem Wissensstand und den Schwerpunkten des Einzelnen. Die Personen sollen sichtbar
-        sein &ndash; Hidayah wird jedoch nicht um einzelne Personen aufgebaut.</p>
+        <h2 class="balance" style="max-width:15ch">Drei Brüder, drei Bereiche</h2>
+        <p class="lead" style="margin-top:1.4rem">Jeder betreut den Bereich, der seinem Wissensstand
+        und Schwerpunkt entspricht. Die Personen sollen sichtbar sein &ndash; Hidayah wird jedoch
+        nicht um einzelne Personen aufgebaut.</p>
         <div class="grid grid--3" style="margin-top:2.5rem">%(team)s</div>
       </div>
     </div>
@@ -341,351 +591,121 @@ def about(lang):
         "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)), (t(lang, "nav.about"), None)]),
         "eb": t(lang, "nav.about"), "title": t(lang, "who.title"), "intro": t(lang, "who.p1"),
         "notice": lang_notice(lang),
-        "ay1": q("﴿وَقَالُوا الْحَمْدُ لِلّٰهِ الَّذِي هَدَانَا لِهٰذَا وَمَا كُنَّا لِنَهْتَدِيَ لَوْلَا أَنْ هَدَانَا اللّٰهُ﴾",
-                 "&bdquo;Und sie werden sagen: Alles Lob gebührt Allah, Der uns hierher rechtgeleitet "
-                 "hat. Wir hätten niemals die Rechtleitung gefunden, wenn Allah uns nicht rechtgeleitet "
-                 "hätte.&ldquo;", "Surat al-Araf, 7:43"),
-        "ay2": q("﴿وَالسَّابِقُونَ الْأَوَّلُونَ مِنَ الْمُهَاجِرِينَ وَالْأَنْصَارِ وَالَّذِينَ اتَّبَعُوهُمْ بِإِحْسَانٍ رَضِيَ اللَّهُ عَنْهُمْ وَرَضُوا عَنْهُ﴾",
-                 "&bdquo;Die ersten Vorausgeeilten von den Muhajirun und den Ansar und diejenigen, die "
-                 "ihnen in guter Weise folgen &ndash; Allah ist mit ihnen zufrieden und sie sind mit Ihm "
-                 "zufrieden.&ldquo;", "Surat at-Tawbah, 9:100"),
-        "ay3": q("﴿إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ﴾",
-                 "&bdquo;Allah fürchten von Seinen Dienern wahrhaftig die Gelehrten.&ldquo;",
-                 "Surat Fatir, 35:28"),
-        "hd": q("«إِنَّ الْعُلَمَاءَ وَرَثَةُ الْأَنْبِيَاءِ»",
-                "&bdquo;Wahrlich, die Gelehrten sind die Erben der Propheten.&ldquo;",
-                "Abu Dawud, Nr. 3641; at-Tirmidhi, Nr. 2682", "hadith"),
-        "madh": " &nbsp;&middot;&nbsp; ".join(n for _, n in MADHAHIB),
+        "ay1": ayah("﴿وَقَالُوا الْحَمْدُ لِلّٰهِ الَّذِي هَدَانَا لِهٰذَا وَمَا كُنَّا لِنَهْتَدِيَ لَوْلَا أَنْ هَدَانَا اللّٰهُ﴾",
+                    "&bdquo;Und sie werden sagen: Alles Lob gebührt Allah, Der uns hierher rechtgeleitet "
+                    "hat. Wir hätten niemals die Rechtleitung gefunden, wenn Allah uns nicht "
+                    "rechtgeleitet hätte.&ldquo;", "Surat al-Araf, 7:43"),
+        "ay2": ayah("﴿وَالسَّابِقُونَ الْأَوَّلُونَ مِنَ الْمُهَاجِرِينَ وَالْأَنْصَارِ وَالَّذِينَ اتَّبَعُوهُمْ بِإِحْسَانٍ رَضِيَ اللَّهُ عَنْهُمْ وَرَضُوا عَنْهُ﴾",
+                    "&bdquo;Die ersten Vorausgeeilten von den Muhajirun und den Ansar und diejenigen, "
+                    "die ihnen in guter Weise folgen &ndash; Allah ist mit ihnen zufrieden und sie sind "
+                    "mit Ihm zufrieden.&ldquo;", "Surat at-Tawbah, 9:100"),
+        "ay3": ayah("﴿إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ﴾",
+                    "&bdquo;Allah fürchten von Seinen Dienern wahrhaftig die Gelehrten.&ldquo;",
+                    "Surat Fatir, 35:28"),
+        "hd": ayah("«إِنَّ الْعُلَمَاءَ وَرَثَةُ الْأَنْبِيَاءِ»",
+                   "&bdquo;Wahrlich, die Gelehrten sind die Erben der Propheten.&ldquo;",
+                   "Abu Dawud, Nr. 3641; at-Tirmidhi, Nr. 2682", "hadith"),
         "team": team,
-    }
-
-
-# ------------------------------------------------------------------ Artikelverzeichnis
-def articles_index(lang):
-    arts = sorted_articles()
-    if not arts:
-        return ""
-
-    # Filter nur, wenn es wirklich etwas zu filtern gibt
-    ser = used_series()
-    tops = [(k, n) for k, n in used_topics()
-            if sum(1 for a in arts if k in a["topics"]) >= 2]
-    options = []
-    if len(ser) >= 2:
-        options += [("series:" + k, n) for k, n, _ in ser]
-    if len(tops) >= 2:
-        options += [("topic:" + k, n) for k, n in tops]
-    filters = ""
-    if options:
-        chips = '<button class="chip" type="button" data-filter="all" aria-pressed="true">%s</button>' % t(lang, "c.all")
-        chips += "".join('<button class="chip" type="button" data-filter="%s" aria-pressed="false">%s</button>'
-                         % (v, n) for v, n in options)
-        filters = '<div class="filters" data-filters>%s</div>' % chips
-
-    rows = "".join('<div data-keys="%s">%s</div>'
-                   % (" ".join(["series:" + a["series"]] + ["topic:" + x for x in a["topics"]]),
-                      entry(a, lang)) for a in arts)
-
-    return '''
-<section class="section" style="padding-bottom:0">
-  <div class="container">
-    %(crumbs)s
-    <div class="split">
-      <p class="eyebrow">%(eb)s</p>
-      <div>
-        <h1 class="balance" style="max-width:14ch">%(title)s</h1>
-        <p class="lead" style="margin-top:1.5rem">%(text)s</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    %(notice)s%(filters)s
-    <div class="index" data-article-list>%(rows)s</div>
-    <p class="search-empty" data-empty hidden>%(empty)s</p>
-  </div>
-</section>''' % {
-        "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)), (t(lang, "nav.knowledge"), None)]),
-        "eb": t(lang, "latest.eyebrow"), "title": t(lang, "areas.k.title"),
-        "text": t(lang, "areas.k.text"), "notice": lang_notice(lang),
-        "filters": filters, "rows": rows, "empty": t(lang, "search.empty"),
-    }
-
-
-# ------------------------------------------------------------------ Artikelseite
-def article_page(a, lang):
-    heads = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', a["body"], re.S)
-    toc = ""
-    if len(heads) >= 3:
-        toc = ('<nav class="toc" aria-label="%s"><p class="toc__title">%s</p><ol>%s</ol></nav>'
-               % (t(lang, "c.toc"), t(lang, "c.toc"),
-                  "".join('<li><a href="#%s">%s</a></li>' % (i, re.sub("<[^>]+>", "", h))
-                          for i, h in heads)))
-    src = ""
-    if a.get("sources"):
-        src = ('<section class="sources"><h2>%s</h2><ol>%s</ol></section>'
-               % (t(lang, "c.sources"), "".join("<li>%s</li>" % s for s in a["sources"])))
-
-    rel = [x for x in ARTICLES if x["slug"] != a["slug"]
-           and (x["series"] == a["series"] or set(x["topics"]) & set(a["topics"]))][:3]
-    related = ""
-    if rel:
-        related = ('<section class="section section--hairline"><div class="container-narrow">'
-                   '<h2 style="font-size:1.4rem;margin-bottom:1.5rem">%s</h2>'
-                   '<div class="index">%s</div></div></section>'
-                   % (t(lang, "c.related"), "".join(entry(r, lang) for r in rel)))
-
-    tags = "".join('<span class="tag tag--quiet">%s</span>' % TOPIC_MAP[x] for x in a["topics"])
-    if a.get("madhhab"):
-        tags += "".join('<span class="tag tag--quiet">%s</span>' % MADH_MAP[m] for m in a["madhhab"])
-
-    return '''
-<article class="article-head">
-  <div class="container-narrow">
-    %(crumbs)s
-    <div style="display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem">
-      <span class="tag">%(series)s</span>%(tags)s</div>
-    <h1 class="balance">%(title)s</h1>
-    <p class="article-summary">%(sum)s</p>
-    <div class="article-meta">
-      <span>%(by)s %(author)s</span><span>%(date)s</span><span>%(min)d %(minlbl)s</span>
-    </div>
-  </div>
-</article>
-
-<section class="section" style="padding-top:2.5rem">
-  <div class="container-narrow">
-    %(video)s%(toc)s
-    <div class="prose">%(body)s</div>
-    %(src)s
-    <div class="share">
-      <span>%(share)s</span>
-      <a href="#" data-share="whatsapp" rel="noopener" target="_blank">WhatsApp</a>
-      <a href="#" data-share="telegram" rel="noopener" target="_blank">Telegram</a>
-      <a href="#" data-share="x" rel="noopener" target="_blank">X</a>
-      <button type="button" data-share="copy">%(copy)s</button>
-    </div>
-  </div>
-</section>
-%(related)s''' % {
-        "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)),
-                                (t(lang, "nav.knowledge"), u(lang, "artikel.html")),
-                                (a["title"], None)]),
-        "series": SERIES_MAP[a["series"]][0], "tags": tags, "title": a["title"],
-        "sum": a["summary"], "by": t(lang, "c.by"), "author": a["author"],
-        "date": fdate(a["date"], lang), "min": a["reading"], "minlbl": t(lang, "c.min"),
-        "video": video_block(a.get("video", ""), a["title"]), "toc": toc, "body": a["body"],
-        "src": src, "share": t(lang, "c.share"), "copy": t(lang, "c.copy"), "related": related,
-    }
-
-
-# ------------------------------------------------------------------ Kurse
-def courses(lang):
-    """Wird nur gebaut, wenn Kurse vorhanden sind."""
-    by_lang = {}
-    for c in COURSES:
-        by_lang.setdefault(c["lang_label"], []).append(c)
-
-    blocks = []
-    if len(by_lang) > 1:
-        for label, items in by_lang.items():
-            blocks.append('<section class="section section--hairline"><div class="container">'
-                          '<div class="section-head"><p class="eyebrow">%s</p></div>'
-                          '<div class="grid grid--3">%s</div></div></section>'
-                          % (label, "".join(course_card(c, lang) for c in items)))
-    else:
-        blocks.append('<section class="section"><div class="container"><div class="grid grid--3">%s</div>'
-                      "</div></section>" % "".join(course_card(c, lang) for c in COURSES))
-
-    if len(COURSES) >= 2 and PACKAGES:
-        packs = "".join('''<div class="card">
-          <span class="tag tag--quiet" style="align-self:flex-start;margin-bottom:.9rem">%s</span>
-          <h3 class="card__title">%s</h3><p class="card__text">%s</p>
-          <ul class="member__list" style="margin-top:1rem">%s</ul>
-          <div class="card__foot"><span style="font-family:var(--ff-display);font-size:1.4rem;
-            font-weight:600;color:var(--accent)">%s&nbsp;&euro;</span></div>
-        </div>''' % (p["lang_label"], p["title"], p["note"],
-                     "".join("<li>%s</li>" % next(c["title"] for c in COURSES if c["slug"] == s)
-                             for s in p["includes"] if any(c["slug"] == s for c in COURSES)),
-                     p["price_eur"]) for p in PACKAGES)
-        blocks.append('<section class="section section--hairline"><div class="container">'
-                      '<div class="section-head"><p class="eyebrow">Pakete</p>'
-                      "<h2>Komplettpakete</h2></div>"
-                      '<div class="grid grid--2">%s</div></div></section>' % packs)
-
-    return '''
-<section class="section" style="padding-bottom:0">
-  <div class="container">
-    %(crumbs)s
-    <div class="split">
-      <p class="eyebrow">%(eb)s</p>
-      <div>
-        <h1 class="balance" style="max-width:14ch">Hidayah Kurse</h1>
-        <p class="lead" style="margin-top:1.5rem">Strukturiertes islamisches Wissen &ndash; Schritt für
-        Schritt. Jeder Kurs wird vollständig aufgenommen und vorbereitet, bevor er freigeschaltet wird.</p>
-      </div>
-    </div>
-  </div>
-</section>
-%(blocks)s''' % {
-        "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)), (t(lang, "nav.courses"), None)]),
-        "eb": t(lang, "rec.eyebrow"), "blocks": "".join(blocks),
-    }
-
-
-def course_page(c, lang):
-    curr = "".join('''<details%s style="border-bottom:1px solid var(--line)">
-      <summary style="cursor:pointer;padding:1rem 0;font-weight:600;list-style:none;
-        display:flex;gap:.9rem;align-items:center">
-        <span class="dim" style="font-size:.8rem;font-weight:700">%02d</span>%s</summary>
-      <div style="padding:0 0 1.2rem 2.1rem;color:var(--ink-2);font-size:.95rem">
-        <ul style="margin:0;padding-inline-start:1.1rem">%s</ul></div>
-    </details>''' % (" open" if i == 0 else "", i + 1, title,
-                     "".join("<li>%s</li>" % x for x in items))
-                   for i, (title, items, _free) in enumerate(c["curriculum"]))
-
-    def ul(key):
-        return "".join("<li>%s</li>" % x for x in c[key])
-
-    return '''
-<section class="section" style="padding-bottom:0">
-  <div class="container-narrow">
-    %(crumbs)s
-    <div style="display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem">
-      <span class="tag">%(clang)s</span><span class="tag tag--quiet">%(level)s</span></div>
-    <h1 class="balance">%(title)s</h1>
-    <p class="lead" style="margin-top:1.5rem">%(sum)s</p>
-    <div class="btn-row">
-      <span style="font-family:var(--ff-display);font-size:1.6rem;font-weight:600;color:var(--accent)">
-        %(eur)s&nbsp;&euro;</span>
-      <button class="btn btn--primary" type="button" data-checkout="%(slug)s">Kurs freischalten</button>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top:2.5rem">
-  <div class="container-narrow">
-    %(video)s
-    <div class="prose">
-      <h2>Kursziel</h2><p>%(goal)s</p>
-      <h2>Für wen ist dieser Kurs?</h2><ul>%(aud)s</ul>
-      <h2>Voraussetzungen</h2><ul>%(pre)s</ul>
-      <h2>Was wirst du lernen?</h2><ul>%(learn)s</ul>
-      <h2>Kursinhalt</h2>
-    </div>
-    <div style="border-top:1px solid var(--line);margin-top:1.2rem">%(curr)s</div>
-    <div class="prose" style="margin-top:2.5rem">
-      <h2>Enthalten</h2><ul>%(mat)s</ul>
-      <p class="dim" style="font-size:.9rem">%(les)d Lektionen &middot; ca. %(hrs)d Stunden &middot;
-      Dozent: %(teach)s &middot; Unterrichtssprache: %(clang)s</p>
-    </div>
-  </div>
-</section>''' % {
-        "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)),
-                                (t(lang, "nav.courses"), u(lang, "kurse.html")), (c["title"], None)]),
-        "clang": "Kurssprache: %s" % c["lang_label"], "level": c["level"], "title": c["title"],
-        "sum": c["summary"], "eur": c["price_eur"], "slug": c["slug"],
-        "video": video_block(c.get("intro_video", ""), c["title"]),
-        "goal": c["goal"], "aud": ul("audience"), "pre": ul("prereq"), "learn": ul("learn"),
-        "curr": curr, "mat": ul("materials"), "les": c["lessons"], "hrs": c["hours"],
-        "teach": c["teacher"],
     }
 
 
 # ------------------------------------------------------------------ Frage & Antwort
 def qa(lang):
     cats = "".join('<option value="%s">%s</option>' % (c, c) for c in QA_CATEGORIES)
+    steps = steps_block([
+        ("Eingegangen", "Deine Frage ist bei uns und wird gesichtet."),
+        ("In Bearbeitung", "Wir recherchieren und prüfen die Quellen."),
+        ("Beantwortet", "Du erhältst die Antwort per E-Mail."),
+    ])
 
-    archive = ""
+    archive_block = ""
     if QA_PUBLIC:
-        seen = []
-        for q in QA_PUBLIC:
-            if q["cat"] not in seen:
-                seen.append(q["cat"])
-        filters = ""
-        if len(seen) >= 2:
-            chips = ('<button class="chip" type="button" data-filter="all" aria-pressed="true">%s</button>'
-                     % t(lang, "c.all"))
-            chips += "".join('<button class="chip" type="button" data-filter="topic:%s" aria-pressed="false">%s</button>'
-                             % (c.lower().replace(" ", "-"), c) for c in seen)
-            filters = '<div class="filters" data-filters>%s</div>' % chips
-        items = "".join('''<div data-keys="topic:%s">
-          <details class="entry" style="display:block">
+        items = "".join('''<details class="entry" style="display:block">
             <summary style="list-style:none;cursor:pointer;display:flex;gap:1rem;align-items:flex-start">
               <span class="tag" style="flex:0 0 auto;margin-top:.2rem">%s</span>
-              <span class="entry__title" style="font-size:1.1rem">%s</span>
-            </summary>
+              <span class="entry__title" style="font-size:1.1rem">%s</span></summary>
             <div class="prose" style="margin-top:1rem;font-size:1rem;max-width:none">
               <p>%s</p><p class="dim" style="font-size:.82rem">%s</p></div>
-          </details></div>''' % (q["cat"].lower().replace(" ", "-"), q["cat"], q["q"], q["a"],
-                                 fdate(q["date"], lang)) for q in QA_PUBLIC)
-        archive = '''
-<section class="section section--hairline">
-  <div class="container">
-    <div class="section-head"><p class="eyebrow">Öffentliches Archiv</p>
-      <h2>Bereits beantwortete Fragen</h2></div>
-    %s<div class="index" data-article-list>%s</div>
-    <p class="search-empty" data-empty hidden>%s</p>
-  </div>
-</section>''' % (filters, items, t(lang, "search.empty"))
+          </details>''' % (q["cat"], q["q"], q["a"], fdate(q["date"], lang)) for q in QA_PUBLIC)
+        archive_block = ('<section class="section section--hairline"><div class="container">'
+                         '<div class="section-head"><p class="eyebrow">Öffentliches Archiv</p>'
+                         '<h2>Bereits beantwortete Fragen</h2></div>'
+                         '<div class="index">%s</div></div></section>' % items)
 
     return '''
 <section class="section" style="padding-bottom:0">
-  <div class="container-narrow">
+  <div class="container">
     %(crumbs)s
-    <p class="eyebrow">%(eb)s</p>
-    <h1 class="balance" style="max-width:16ch">Stelle deine islamische Frage</h1>
-    <p class="lead" style="margin-top:1.5rem">%(text)s Der Dienst ist kostenlos. Persönliche
-    Angelegenheiten werden ausschließlich privat beantwortet.</p>
+    <div class="split">
+      <p class="eyebrow">%(eb)s</p>
+      <div>
+        <h1 class="balance" style="max-width:15ch">Stelle deine islamische Frage</h1>
+        <p class="lead" style="margin-top:1.5rem">%(text)s Der Dienst ist kostenlos. Persönliche
+        Angelegenheiten werden ausschließlich privat beantwortet.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container-narrow">
-    <form data-form="frage" novalidate>
-      <div class="form-grid">
-        <div class="field">
-          <label for="q-name">%(f_name)s <span class="dim">(%(opt)s)</span></label>
-          <input class="input" id="q-name" name="name" type="text" autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="q-mail">%(f_mail)s</label>
-          <input class="input" id="q-mail" name="email" type="email" required autocomplete="email">
-          <span class="hint">Wir benachrichtigen dich, sobald deine Antwort vorliegt.</span>
-        </div>
+  <div class="container">
+    <div class="split">
+      <p class="eyebrow">Ablauf</p>
+      <div>%(steps)s</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--hairline">
+  <div class="container">
+    <div class="split">
+      <p class="eyebrow">Formular</p>
+      <div>
+        <form data-form="frage" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="q-name">%(f_name)s <span class="dim">(%(opt)s)</span></label>
+              <input class="input" id="q-name" name="name" type="text" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="q-mail">%(f_mail)s</label>
+              <input class="input" id="q-mail" name="email" type="email" required autocomplete="email">
+              <span class="hint">Wir benachrichtigen dich, sobald deine Antwort vorliegt.</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="q-cat">%(f_cat)s</label>
+            <select class="select" id="q-cat" name="kategorie">%(cats)s</select>
+          </div>
+          <div class="field">
+            <label for="q-text">Deine Frage</label>
+            <textarea class="textarea" id="q-text" name="frage" required
+              placeholder="Beschreibe deine Situation so genau wie nötig – das hilft uns, präzise zu antworten."></textarea>
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" name="privat" value="ja">
+              <span>Diese Frage betrifft eine persönliche Situation und soll <strong>nicht</strong>
+              veröffentlicht werden.</span></label>
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" required><span>%(consent)s</span></label>
+          </div>
+          <button class="btn btn--primary" type="submit">Frage absenden</button>
+          <p class="form-status" data-status></p>
+          <p class="form-note">Nützliche Antworten veröffentlichen wir gegebenenfalls
+          <strong>anonymisiert</strong>, damit andere davon profitieren. Persönliche Daten werden
+          dabei niemals gezeigt.</p>
+        </form>
       </div>
-      <div class="field">
-        <label for="q-cat">%(f_cat)s</label>
-        <select class="select" id="q-cat" name="kategorie">%(cats)s</select>
-      </div>
-      <div class="field">
-        <label for="q-text">Deine Frage</label>
-        <textarea class="textarea" id="q-text" name="frage" required
-          placeholder="Beschreibe deine Situation so genau wie nötig – das hilft uns, präzise zu antworten."></textarea>
-      </div>
-      <div class="field">
-        <label class="check"><input type="checkbox" name="privat" value="ja">
-          <span>Diese Frage betrifft eine persönliche Situation und soll <strong>nicht</strong>
-          veröffentlicht werden.</span></label>
-      </div>
-      <div class="field">
-        <label class="check"><input type="checkbox" required><span>%(consent)s</span></label>
-      </div>
-      <button class="btn btn--primary" type="submit">Frage absenden</button>
-      <p class="form-status" data-status></p>
-      <p class="form-note">Nützliche Antworten veröffentlichen wir gegebenenfalls
-      <strong>anonymisiert</strong>, damit andere davon profitieren. Persönliche Daten werden dabei
-      niemals gezeigt. Deine Antwort erhältst du per E-Mail.</p>
-    </form>
+    </div>
   </div>
 </section>
 %(archive)s''' % {
         "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)), (t(lang, "nav.qa"), None)]),
-        "eb": t(lang, "nav.qa"), "text": t(lang, "areas.q.text"), "cats": cats,
-        "f_name": t(lang, "f.name"), "f_mail": t(lang, "f.email"), "f_cat": t(lang, "f.category"),
-        "opt": t(lang, "c.optional"), "consent": t(lang, "f.consent"), "archive": archive,
+        "eb": t(lang, "nav.qa"), "text": t(lang, "areas.q.text"), "steps": steps,
+        "cats": cats, "f_name": t(lang, "f.name"), "f_mail": t(lang, "f.email"),
+        "f_cat": t(lang, "f.category"), "opt": t(lang, "c.optional"),
+        "consent": t(lang, "f.consent"), "archive": archive_block,
     }
 
 
@@ -693,15 +713,20 @@ def qa(lang):
 def contact(lang):
     return '''
 <section class="section" style="padding-bottom:0">
-  <div class="container-narrow">
+  <div class="container">
     %(crumbs)s
-    <p class="eyebrow">%(eb)s</p>
-    <h1 class="balance" style="max-width:12ch">Schreib uns</h1>
-    <p class="lead" style="margin-top:1.5rem">Für Anliegen rund um Hidayah oder eine Zusammenarbeit.
-    <strong>Religiöse Fragen</strong> stelle bitte über das dafür vorgesehene Formular &ndash; dort
-    werden sie strukturiert bearbeitet und beantwortet.</p>
-    <div class="btn-row" style="margin-top:1.6rem">
-      <a class="link" href="%(qa)s">Islamische Frage stellen <span class="arw">&rarr;</span></a>
+    <div class="split">
+      <p class="eyebrow">%(eb)s</p>
+      <div>
+        <h1 class="balance" style="max-width:11ch">Schreib uns</h1>
+        <p class="lead" style="margin-top:1.5rem">Für Anliegen rund um Hidayah oder eine
+        Zusammenarbeit. <strong>Religiöse Fragen</strong> stelle bitte über das dafür vorgesehene
+        Formular, <strong>Unterrichtsanfragen</strong> über die Bewerbung.</p>
+        <div class="btn-row" style="margin-top:1.6rem;gap:1.6rem">
+          <a class="link" href="%(qa)s">Islamische Frage stellen <span class="arw">&rarr;</span></a>
+          <a class="link" href="%(teach)s">Zum Unterricht bewerben <span class="arw">&rarr;</span></a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -710,7 +735,7 @@ def contact(lang):
   <div class="container">
     <div class="split">
       <p class="eyebrow">Formular</p>
-      <div style="display:grid;gap:2.5rem;grid-template-columns:1fr" data-contact-grid>
+      <div class="contact-grid">
         <form data-form="kontakt" novalidate>
           <div class="form-grid">
             <div class="field"><label for="k-name">%(f_name)s</label>
@@ -730,7 +755,7 @@ def contact(lang):
         <div class="stack">
           <div>
             <p class="eyebrow">Direkt</p>
-            <p class="muted">E-Mail: <a class="link" href="mailto:%(mail)s">%(mail)s</a></p>
+            <p class="muted"><a class="link" href="mailto:%(mail)s">%(mail)s</a></p>
           </div>
           <div>
             <p class="eyebrow">%(social)s</p>
@@ -747,12 +772,55 @@ def contact(lang):
 </section>''' % {
         "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)), (t(lang, "nav.contact"), None)]),
         "eb": t(lang, "nav.contact"), "qa": u(lang, "frage-antwort.html"),
+        "teach": u(lang, "unterricht.html"),
         "f_name": t(lang, "f.name"), "f_mail": t(lang, "f.email"),
         "f_subj": t(lang, "f.subject"), "f_msg": t(lang, "f.message"),
         "consent": t(lang, "f.consent"), "send": t(lang, "f.send"),
         "mail": SITE["email"], "social": t(lang, "foot.social"),
         "ig": SITE["instagram"], "yt": SITE["youtube"], "x": SITE["x"],
         "i_ig": ICON["ig"], "i_yt": ICON["yt"], "i_x": ICON["x"],
+    }
+
+
+# ------------------------------------------------------------------ Kurs (aufgezeichnet)
+def course_page(c, lang):
+    curr = "".join('''<details class="acc__item"%s>
+      <summary class="acc__sum"><span class="acc__num">%02d</span>%s</summary>
+      <div class="acc__body"><ul>%s</ul></div>
+    </details>''' % (" open" if i == 0 else "", i + 1, title,
+                     "".join("<li>%s</li>" % x for x in items))
+                   for i, (title, items, _f) in enumerate(c["curriculum"]))
+    ul = lambda k: "".join("<li>%s</li>" % x for x in c[k])
+    return '''
+<section class="section" style="padding-bottom:0">
+  <div class="container-narrow">
+    %(crumbs)s
+    <span class="tag">%(clang)s</span>
+    <h1 class="balance">%(title)s</h1>
+    <p class="lead" style="margin-top:1.5rem">%(sum)s</p>
+  </div>
+</section>
+<section class="section" style="padding-top:2rem">
+  <div class="container-narrow">
+    %(video)s
+    <div class="prose prose--numbered">
+      <h2>Kursziel</h2><p>%(goal)s</p>
+      <h2>Für wen ist dieser Kurs?</h2><ul>%(aud)s</ul>
+      <h2>Voraussetzungen</h2><ul>%(pre)s</ul>
+      <h2>Was wirst du lernen?</h2><ul>%(learn)s</ul>
+    </div>
+    <h2 style="font-size:1.4rem;margin:2.5rem 0 1rem">Kursinhalt</h2>
+    <div class="acc">%(curr)s</div>
+    <div class="prose" style="margin-top:2.5rem"><h2>Enthalten</h2><ul>%(mat)s</ul></div>
+  </div>
+</section>''' % {
+        "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)),
+                                (t(lang, "nav.courses"), u(lang, "unterricht.html")),
+                                (c["title"], None)]),
+        "clang": "Kurssprache: %s" % c["lang_label"], "title": c["title"], "sum": c["summary"],
+        "video": video_block(c.get("intro_video", ""), c["title"]),
+        "goal": c["goal"], "aud": ul("audience"), "pre": ul("prereq"), "learn": ul("learn"),
+        "curr": curr, "mat": ul("materials"),
     }
 
 
@@ -785,13 +853,13 @@ verarbeitet (IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp). Rech
 Art. 6 Abs. 1 lit. f DSGVO. [Hosting-Anbieter und Auftragsverarbeitungsvertrag hier eintragen.]</p>
 <h2>3. Cookies und lokale Speicherung</h2>
 <p>Wir setzen ausschließlich technisch notwendige Speicherung ein: deine Sprachwahl, deine gewählte
-Darstellung (hell, dunkel, Akzentfarbe) und die Bestätigung des Cookie-Hinweises. Es findet kein
-Tracking, keine Reichweitenmessung durch Dritte und keine Werbung statt.</p>
-<h2>4. Kontakt- und Frageformular</h2>
-<p>Wenn du uns eine Nachricht oder eine islamische Frage sendest, verarbeiten wir die von dir
-angegebenen Daten zur Bearbeitung deiner Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw.
-lit. a DSGVO. Eine Veröffentlichung deiner Frage erfolgt ausschließlich <strong>anonymisiert</strong>
-und nur, wenn du dem nicht widersprochen hast.</p>
+Darstellung und die Bestätigung des Cookie-Hinweises. Es findet kein Tracking, keine
+Reichweitenmessung durch Dritte und keine Werbung statt.</p>
+<h2>4. Kontakt-, Frage- und Bewerbungsformular</h2>
+<p>Wenn du uns eine Nachricht, eine islamische Frage oder eine Unterrichtsbewerbung sendest,
+verarbeiten wir die von dir angegebenen Daten zur Bearbeitung deines Anliegens. Rechtsgrundlage ist
+Art. 6 Abs. 1 lit. b bzw. lit. a DSGVO. Eine Veröffentlichung deiner Frage erfolgt ausschließlich
+<strong>anonymisiert</strong> und nur, wenn du dem nicht widersprochen hast.</p>
 <h2>5. Newsletter</h2>
 <p>Der Newsletter wird im Double-Opt-in-Verfahren versendet. Deine Einwilligung kannst du jederzeit
 über den Abmeldelink in jeder E-Mail widerrufen.</p>
@@ -804,19 +872,20 @@ ist oder gesetzliche Aufbewahrungsfristen bestehen.</p>''',
 
 "agb": '''
 <h2>1. Geltungsbereich</h2>
-<p>Diese Bedingungen gelten für alle Verträge über digitale Inhalte, die über diese Website zwischen
-Hidayah und Verbrauchern bzw. Unternehmern geschlossen werden.</p>
-<h2>2. Vertragsgegenstand</h2>
-<p>Gegenstand sind digitale Inhalte, insbesondere Videokurse und begleitende Materialien.</p>
-<h2>3. Vertragsschluss</h2>
-<p>Die Darstellung der Kurse stellt kein bindendes Angebot dar. Mit dem Abschluss des Bestellvorgangs
-gibst du ein verbindliches Angebot ab. Der Vertrag kommt mit unserer Bestätigung in Textform zustande.</p>
-<h2>4. Preise, Währung und Zahlung</h2>
-<p>Alle Preise sind Endpreise. Du kannst beim Kauf zwischen den verfügbaren Währungen wählen; der
-tatsächlich belastete Betrag richtet sich nach dem gewählten Zahlungsmittel.</p>
-<h2>5. Nutzungsrechte</h2>
-<p>Du erhältst ein einfaches, nicht übertragbares Recht zur persönlichen Nutzung der erworbenen
-Inhalte. Weitergabe, Vervielfältigung oder öffentliche Zugänglichmachung sind nicht gestattet.</p>
+<p>Diese Bedingungen gelten für Verträge über Unterrichtsleistungen und digitale Inhalte, die über
+diese Website zwischen Hidayah und Verbrauchern bzw. Unternehmern geschlossen werden.</p>
+<h2>2. Zustandekommen des Unterrichtsvertrags</h2>
+<p>Die Bewerbung über das Formular ist noch kein Vertragsangebot. Ein Vertrag kommt erst zustande,
+nachdem ein persönliches Gespräch stattgefunden hat, Umfang und Beitrag festgelegt wurden und beide
+Seiten dies in Textform bestätigt haben.</p>
+<h2>3. Beitrag und Zahlung</h2>
+<p>Der Beitrag richtet sich nach Fach, Umfang und Häufigkeit und wird individuell vereinbart. Die
+Zahlungsmodalitäten werden bei Vertragsschluss festgelegt.</p>
+<h2>4. Terminabsagen</h2>
+<p>Vereinbarte Termine können bis 24 Stunden vorher kostenfrei abgesagt oder verschoben werden.</p>
+<h2>5. Nutzungsrechte an Materialien</h2>
+<p>Unterrichtsmaterialien dürfen ausschließlich persönlich genutzt werden. Weitergabe,
+Vervielfältigung oder öffentliche Zugänglichmachung sind nicht gestattet.</p>
 <h2>6. Gewährleistung und Haftung</h2>
 <p>Es gelten die gesetzlichen Bestimmungen. Für Schäden haften wir nur bei Vorsatz und grober
 Fahrlässigkeit sowie bei Verletzung wesentlicher Vertragspflichten.</p>
@@ -826,29 +895,28 @@ Aufenthaltsstaates des Verbrauchers.</p>''',
 
 "widerruf": '''
 <h2>Widerrufsrecht</h2>
-<p>Du hast das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.
-Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.</p>
+<p>Du hast das Recht, binnen vierzehn Tagen ohne Angabe von Gründen einen geschlossenen Vertrag zu
+widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.</p>
 <p>Um dein Widerrufsrecht auszuüben, musst du uns mittels einer eindeutigen Erklärung (z. B. per
 E-Mail an salam@hidayah.de) über deinen Entschluss informieren.</p>
 <h2>Folgen des Widerrufs</h2>
-<p>Wenn du diesen Vertrag widerrufst, erstatten wir dir alle Zahlungen unverzüglich und spätestens
-binnen vierzehn Tagen ab Eingang deiner Mitteilung zurück.</p>
-<h2>Vorzeitiges Erlöschen bei digitalen Inhalten</h2>
-<p>Das Widerrufsrecht erlischt vorzeitig, wenn wir mit der Ausführung begonnen haben, nachdem du
-<strong>ausdrücklich zugestimmt</strong> hast, dass wir vor Ablauf der Widerrufsfrist beginnen, und
-du deine <strong>Kenntnis vom Verlust des Widerrufsrechts</strong> bestätigt hast.</p>
+<p>Wenn du widerrufst, erstatten wir dir alle Zahlungen unverzüglich und spätestens binnen vierzehn
+Tagen ab Eingang deiner Mitteilung zurück.</p>
+<h2>Vorzeitiges Erlöschen</h2>
+<p>Bei Dienstleistungen erlischt das Widerrufsrecht, wenn wir die Leistung vollständig erbracht haben
+und du vor Beginn ausdrücklich zugestimmt und deine Kenntnis vom Verlust des Widerrufsrechts
+bestätigt hast. Bei digitalen Inhalten gilt dies entsprechend.</p>
 <h2>Muster-Widerrufsformular</h2>
 <p>An Hidayah, [Anschrift], salam@hidayah.de:<br>
-Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf der folgenden digitalen
-Inhalte: ____________<br>Bestellt am: ____________<br>Name: ____________<br>
-Anschrift: ____________<br>Datum: ____________</p>'''}
+Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über: ____________<br>
+Bestellt am: ____________<br>Name: ____________<br>Anschrift: ____________<br>
+Datum: ____________</p>'''}
 
 
 def legal(lang, kind):
     warn = ('<div class="notice" style="margin-bottom:2.5rem">%s<div><strong>Diese Seite ist eine '
             "Vorlage.</strong> Vor der Veröffentlichung muss sie an die tatsächlich verwendete "
-            "technische und geschäftliche Struktur angepasst und rechtlich geprüft werden."
-            "</div></div>" % ICON["info"])
+            "Struktur angepasst und rechtlich geprüft werden.</div></div>" % ICON["info"])
     return '''
 <section class="section">
   <div class="container-narrow">
@@ -863,15 +931,14 @@ def legal(lang, kind):
 
 def notfound(lang):
     return '''
-<section class="section" style="min-height:58vh;display:grid;place-items:center;text-align:center">
+<section class="section" style="min-height:56vh;display:grid;place-items:center;text-align:center">
   <div class="container-narrow">
     <p class="eyebrow" style="justify-content:center">404</p>
     <h1 class="balance">Diese Seite gibt es nicht</h1>
     <p class="lead" style="margin:1.5rem auto 0">Vielleicht wurde sie verschoben oder der Link ist
-    nicht mehr aktuell. Nutze die Suche oder starte von vorne.</p>
+    nicht mehr aktuell.</p>
     <div class="btn-row" style="justify-content:center">
       <a class="btn btn--primary" href="%s">%s</a>
-      <button class="btn btn--quiet" type="button" data-search-open>%s</button>
     </div>
   </div>
-</section>''' % (u(lang), t(lang, "nav.home"), t(lang, "nav.search"))
+</section>''' % (u(lang), t(lang, "nav.home"))

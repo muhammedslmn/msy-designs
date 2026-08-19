@@ -30,6 +30,24 @@ T = {
 "de": {
  "dir":"ltr","locale":"de_DE",
  "slogan":"Auf der Suche nach Licht in einer Welt voller Dunkelheit.",
+ "arch.eyebrow2":"Aufbau",
+ "areas.title2":"Zwei Wege, hier weiterzukommen",
+ "areas.title3":"Drei Wege, hier weiterzukommen",
+ "base.eyebrow":"Unsere Grundlage",
+ "base.title":"Wissen wird von seinen Leuten genommen",
+ "base.text":"Unsere Grundlage sind der Quran und die authentische Sunnah des Gesandten Allahs &#65018; nach dem Verständnis der Sahabah und der rechtschaffenen frühen Generationen – as-Salaf as-Salih.",
+ "base.cta":"Unsere Grundlage im Detail",
+ "arch.eyebrow":"Wissensarchiv",
+ "arch.title":"Drei Reihen, drei Verantwortliche",
+ "arch.text":"Jede Reihe wird von einem festen Verantwortlichen betreut. So bleibt nachvollziehbar, wer für welchen Bereich einsteht.",
+ "arch.empty":"Die ersten Beiträge werden derzeit vorbereitet.",
+ "teach.eyebrow":"Unterricht",
+ "teach.title":"Persönlicher Unterricht bei Hidayah",
+ "teach.lead":"Wir unterrichten nicht nach Schema, sondern nach deinem Stand. Deshalb steht am Anfang kein Warenkorb, sondern ein Gespräch.",
+ "teach.steps":"So läuft es ab",
+ "teach.form":"Bewerbung",
+ "teach.price":"Zum Beitrag",
+ "teach.pricetext":"Der Unterricht ist kostenpflichtig. Wie hoch der Beitrag ausfällt, hängt von Fach, Umfang und Häufigkeit ab – das legen wir gemeinsam im persönlichen Gespräch fest, nicht vorher.",
  "nav.appearance":"Darstellung",
  "theme.mode":"Modus",
  "theme.auto":"Automatisch",
@@ -43,7 +61,7 @@ T = {
  "hero.cta2":"Frage stellen",
  "areas.eyebrow":"Bereiche",
  "nav.home":"Startseite","nav.about":"Über uns","nav.knowledge":"Artikel",
- "nav.qa":"Frage &amp; Antwort","nav.courses":"Kurse","nav.contact":"Kontakt",
+ "nav.qa":"Frage &amp; Antwort","nav.courses":"Unterricht","nav.contact":"Kontakt",
  "nav.search":"Suche","nav.account":"Mein Konto","nav.language":"Sprache",
  "skip":"Zum Inhalt springen","menu":"Menü","close":"Schließen",
 
@@ -63,7 +81,7 @@ T = {
  "areas.eyebrow":"Unsere Bereiche","areas.title":"Drei Wege, hier weiterzukommen",
  "areas.k.title":"Artikel","areas.k.text":"Islamische Artikel, Erklärungen, Begriffe, Fiqh-Fragen und Antworten auf verbreitete Zweifel.","areas.k.cta":"Artikel entdecken",
  "areas.q.title":"Frage &amp; Antwort","areas.q.text":"Stelle deine islamische Frage und erhalte eine fundierte Antwort auf Grundlage islamischer Quellen.","areas.q.cta":"Frage stellen",
- "areas.c.title":"Kurse","areas.c.text":"Strukturierte islamische Kurse in deutscher und türkischer Sprache.","areas.c.cta":"Kurse ansehen",
+ "areas.c.title":"Unterricht","areas.c.text":"Persönlicher Einzelunterricht, abgestimmt auf deinen Stand – nach Bewerbung und Gespräch.","areas.c.cta":"Unterricht ansehen",
 
  "latest.eyebrow":"Wissensarchiv","latest.title":"Neueste Artikel","latest.all":"Alle Artikel ansehen",
  "rec.eyebrow":"Medrese","rec.title":"Empfohlene Kurse","rec.all":"Alle Kurse ansehen",
@@ -102,6 +120,24 @@ T = {
 "en": {
  "dir":"ltr","locale":"en_US",
  "slogan":"In search of light in a world full of darkness.",
+ "arch.eyebrow2":"Structure",
+ "areas.title2":"Two ways to go further here",
+ "areas.title3":"Three ways to go further here",
+ "base.eyebrow":"Our foundation",
+ "base.title":"Knowledge is taken from its people",
+ "base.text":"Our foundation is the Quran and the authentic Sunnah of the Messenger of Allah &#65018; as understood by the Sahabah and the righteous early generations – as-Salaf as-Salih.",
+ "base.cta":"Our foundation in detail",
+ "arch.eyebrow":"Knowledge archive",
+ "arch.title":"Three series, three people responsible",
+ "arch.text":"Each series is looked after by one person. That way it stays clear who stands behind which area.",
+ "arch.empty":"The first contributions are being prepared.",
+ "teach.eyebrow":"Teaching",
+ "teach.title":"Personal teaching at Hidayah",
+ "teach.lead":"We do not teach by template but according to your level. That is why this starts with a conversation, not a shopping cart.",
+ "teach.steps":"How it works",
+ "teach.form":"Application",
+ "teach.price":"About the fee",
+ "teach.pricetext":"Teaching is paid. The amount depends on subject, scope and frequency – we settle it together in the personal conversation, not before.",
  "nav.appearance":"Appearance",
  "theme.mode":"Mode",
  "theme.auto":"System",
@@ -115,7 +151,7 @@ T = {
  "hero.cta2":"Ask a question",
  "areas.eyebrow":"Areas",
  "nav.home":"Home","nav.about":"About us","nav.knowledge":"Articles",
- "nav.qa":"Q &amp; A","nav.courses":"Courses","nav.contact":"Contact",
+ "nav.qa":"Q &amp; A","nav.courses":"Teaching","nav.contact":"Contact",
  "nav.search":"Search","nav.account":"My account","nav.language":"Language",
  "skip":"Skip to content","menu":"Menu","close":"Close",
  "hero.sub":"<strong>Islamic knowledge. Dawah. Orientation.</strong><br>Grounded in the Quran and the authentic Sunnah.",
@@ -131,7 +167,7 @@ T = {
  "areas.eyebrow":"Our areas","areas.title":"Three ways to go further here",
  "areas.k.title":"Articles","areas.k.text":"Islamic articles, explanations, terminology, questions of Fiqh and answers to widespread doubts.","areas.k.cta":"Discover articles",
  "areas.q.title":"Q &amp; A","areas.q.text":"Ask your Islamic question and receive a well-founded answer based on Islamic sources.","areas.q.cta":"Ask a question",
- "areas.c.title":"Courses","areas.c.text":"Structured Islamic courses in German and Turkish.","areas.c.cta":"View courses",
+ "areas.c.title":"Teaching","areas.c.text":"Personal one-to-one teaching, matched to your level – after application and conversation.","areas.c.cta":"View teaching",
  "latest.eyebrow":"Knowledge archive","latest.title":"Latest articles","latest.all":"View all articles",
  "rec.eyebrow":"Madrasah","rec.title":"Recommended courses","rec.all":"View all courses",
  "news.title":"Stay up to date","news.text":"New articles, videos, courses and announcements – no pop-ups, no advertising.",
@@ -162,6 +198,24 @@ T = {
 "tr": {
  "dir":"ltr","locale":"tr_TR",
  "slogan":"Karanlıkla dolu bir dünyada nûr arayışında.",
+ "arch.eyebrow2":"Yapı",
+ "areas.title2":"Burada ilerlemenin iki yolu",
+ "areas.title3":"Burada ilerlemenin üç yolu",
+ "base.eyebrow":"Dayanağımız",
+ "base.title":"İlim ehlinden alınır",
+ "base.text":"Dayanağımız Kurân ve Allah Resûlü&#65018;nün sahih sünnetidir; sahabenin ve salih ilk nesillerin – Selef-i Salihîn'in – anlayışı üzere.",
+ "base.cta":"Dayanağımızın ayrıntısı",
+ "arch.eyebrow":"İlim arşivi",
+ "arch.title":"Üç seri, üç sorumlu",
+ "arch.text":"Her seriyi sabit bir sorumlu yürütür. Böylece hangi alanın arkasında kimin durduğu belli olur.",
+ "arch.empty":"İlk yazılar hazırlanıyor.",
+ "teach.eyebrow":"Ders",
+ "teach.title":"Hidayah'ta birebir ders",
+ "teach.lead":"Kalıba göre değil, senin seviyene göre ders veriyoruz. Bu yüzden başlangıçta sepet değil, bir görüşme var.",
+ "teach.steps":"Nasıl işliyor",
+ "teach.form":"Başvuru",
+ "teach.price":"Ücret hakkında",
+ "teach.pricetext":"Ders ücretlidir. Tutar; ders, kapsam ve sıklığa göre değişir – bunu önceden değil, görüşmede birlikte belirleriz.",
  "nav.appearance":"Görünüm",
  "theme.mode":"Mod",
  "theme.auto":"Otomatik",
@@ -175,7 +229,7 @@ T = {
  "hero.cta2":"Soru sor",
  "areas.eyebrow":"Bölümler",
  "nav.home":"Ana sayfa","nav.about":"Hakkımızda","nav.knowledge":"Makaleler",
- "nav.qa":"Soru &amp; Cevap","nav.courses":"Dersler","nav.contact":"İletişim",
+ "nav.qa":"Soru &amp; Cevap","nav.courses":"Ders","nav.contact":"İletişim",
  "nav.search":"Ara","nav.account":"Hesabım","nav.language":"Dil",
  "skip":"İçeriğe geç","menu":"Menü","close":"Kapat",
  "hero.sub":"<strong>İslami ilim. Davet. İstikamet.</strong><br>Kurân ve sahih sünnet temelinde.",
@@ -191,7 +245,7 @@ T = {
  "areas.eyebrow":"Bölümlerimiz","areas.title":"Burada ilerlemenin üç yolu",
  "areas.k.title":"Makaleler","areas.k.text":"İslami makaleler, açıklamalar, kavramlar, fıkhi meseleler ve yaygın şüphelere cevaplar.","areas.k.cta":"Makaleleri keşfet",
  "areas.q.title":"Soru &amp; Cevap","areas.q.text":"İslami sorunu sor, İslami kaynaklara dayalı sağlam bir cevap al.","areas.q.cta":"Soru sor",
- "areas.c.title":"Dersler","areas.c.text":"Almanca ve Türkçe yapılandırılmış İslami dersler.","areas.c.cta":"Dersleri gör",
+ "areas.c.title":"Ders","areas.c.text":"Seviyene göre birebir özel ders – başvuru ve görüşmeden sonra.","areas.c.cta":"Dersi gör",
  "latest.eyebrow":"İlim arşivi","latest.title":"Yeni makaleler","latest.all":"Tüm makaleler",
  "rec.eyebrow":"Medrese","rec.title":"Önerilen dersler","rec.all":"Tüm dersler",
  "news.title":"Haberdar ol","news.text":"Yeni makaleler, videolar, dersler ve duyurular – pop-up yok, reklam yok.",
@@ -222,6 +276,24 @@ T = {
 "ar": {
  "dir":"rtl","locale":"ar_AR",
  "slogan":"في بحثٍ عن النور في عالمٍ يملؤه الظلام.",
+ "arch.eyebrow2":"البنية",
+ "areas.title2":"طريقان للمضي قدمًا",
+ "areas.title3":"ثلاثة طرق للمضي قدمًا",
+ "base.eyebrow":"أساسنا",
+ "base.title":"العلم يؤخذ عن أهله",
+ "base.text":"أساسنا القرآن والسنة الصحيحة لرسول الله &#65018; بفهم الصحابة والقرون الأولى الصالحة — السلف الصالح.",
+ "base.cta":"تفصيل أساسنا",
+ "arch.eyebrow":"أرشيف العلم",
+ "arch.title":"ثلاث سلاسل، ثلاثة مسؤولين",
+ "arch.text":"لكل سلسلة مسؤول ثابت، فيبقى واضحًا من يقف خلف كل باب.",
+ "arch.empty":"يجري إعداد أولى المشاركات.",
+ "teach.eyebrow":"الدروس",
+ "teach.title":"دروس فردية مع هداية",
+ "teach.lead":"لا نُدرّس بقالب جاهز بل حسب مستواك. لذلك تبدأ الرحلة بمقابلة لا بسلة شراء.",
+ "teach.steps":"كيف تسير",
+ "teach.form":"التقديم",
+ "teach.price":"عن الأجر",
+ "teach.pricetext":"الدروس بأجر. ويتحدد المبلغ حسب المادة والحجم والوتيرة — نتفق عليه معًا في المقابلة الشخصية لا قبلها.",
  "nav.appearance":"المظهر",
  "theme.mode":"الوضع",
  "theme.auto":"تلقائي",
@@ -235,7 +307,7 @@ T = {
  "hero.cta2":"اطرح سؤالًا",
  "areas.eyebrow":"الأقسام",
  "nav.home":"الرئيسية","nav.about":"من نحن","nav.knowledge":"المقالات",
- "nav.qa":"سؤال وجواب","nav.courses":"الدورات","nav.contact":"تواصل",
+ "nav.qa":"سؤال وجواب","nav.courses":"الدروس","nav.contact":"تواصل",
  "nav.search":"بحث","nav.account":"حسابي","nav.language":"اللغة",
  "skip":"تخطَّ إلى المحتوى","menu":"القائمة","close":"إغلاق",
  "hero.sub":"<strong>علم شرعي. دعوة. هداية.</strong><br>على أساس القرآن والسنة الصحيحة.",
@@ -251,7 +323,7 @@ T = {
  "areas.eyebrow":"أقسامنا","areas.title":"ثلاثة طرق للمضي قدمًا",
  "areas.k.title":"المقالات","areas.k.text":"مقالات وشروح ومصطلحات ومسائل فقهية وردود على الشبهات المنتشرة.","areas.k.cta":"تصفّح المقالات",
  "areas.q.title":"سؤال وجواب","areas.q.text":"اطرح سؤالك الشرعي واحصل على جواب مؤصَّل من المصادر الشرعية.","areas.q.cta":"اطرح سؤالًا",
- "areas.c.title":"الدورات","areas.c.text":"دورات شرعية منظَّمة باللغتين الألمانية والتركية.","areas.c.cta":"شاهد الدورات",
+ "areas.c.title":"الدروس","areas.c.text":"دروس فردية مخصَّصة حسب مستواك — بعد التقديم والمقابلة.","areas.c.cta":"شاهد الدروس",
  "latest.eyebrow":"أرشيف العلم","latest.title":"أحدث المقالات","latest.all":"كل المقالات",
  "rec.eyebrow":"المدرسة","rec.title":"دورات مختارة","rec.all":"كل الدورات",
  "news.title":"ابقَ على اطّلاع","news.text":"مقالات وفيديوهات ودورات وإعلانات جديدة — بلا نوافذ منبثقة وبلا إعلانات.",
@@ -293,17 +365,24 @@ def u(lang, path=""):
 
 
 # ---------------------------------------------------------------- Navigation
+# Die Hauptbereiche der Plattform stehen fest. Einzelne Beitraege darin
+# erscheinen erst, wenn sie eingetragen sind.
+NAV = [("nav.home", ""),
+       ("nav.about", "ueber-uns.html"),
+       ("nav.knowledge", "artikel.html"),
+       ("nav.qa", "frage-antwort.html"),
+       ("nav.courses", "unterricht.html"),
+       ("nav.contact", "kontakt.html")]
+
+
 def nav_items(lang):
-    """Nur Bereiche, fuer die es tatsaechlich Inhalte gibt."""
-    from content import ARTICLES, COURSES
-    items = []
-    if ARTICLES:
-        items.append(("nav.knowledge", "artikel.html"))
-    items.append(("nav.qa", "frage-antwort.html"))     # Dienst, immer erreichbar
-    if COURSES:
-        items.append(("nav.courses", "kurse.html"))
-    items += [("nav.about", "ueber-uns.html"), ("nav.contact", "kontakt.html")]
-    return items
+    return NAV
+
+
+def has_search_content():
+    """Suche nur anbieten, wenn es etwas zu finden gibt."""
+    from content import ARTICLES, COURSES, QA_PUBLIC
+    return bool(ARTICLES or COURSES or QA_PUBLIC)
 
 
 ACCENTS = ["smaragd", "indigo", "messing", "tinte"]
@@ -343,7 +422,7 @@ def header(lang, active):
     <a class="nav__logo" href="%(home)s" aria-label="Hidayah">%(logo)s</a>
     <div class="nav__links">%(links)s</div>
     <div class="nav__tools">
-      <button class="icon-btn" type="button" data-search-open aria-label="%(search)s">%(i_search)s</button>
+      %(searchbtn)s
       <div class="pop" data-pop aria-expanded="false">
         <button class="icon-btn" type="button" aria-haspopup="true" aria-label="%(appearance)s">%(i_sun)s</button>
         <div class="pop__menu">
@@ -379,6 +458,8 @@ def header(lang, active):
         "skip": t(lang, "skip"), "menu": t(lang, "menu"), "close": t(lang, "close"),
         "home": u(lang), "logo": logo(lang, "", 360, True), "logo_s": logo(lang, "", 360),
         "links": links, "search": t(lang, "nav.search"),
+        "searchbtn": ('<button class="icon-btn" type="button" data-search-open aria-label="%s">%s</button>'
+                      % (t(lang, "nav.search"), ICON["search"])) if has_search_content() else "",
         "appearance": t(lang, "nav.appearance"), "mode": t(lang, "theme.mode"),
         "accent": t(lang, "theme.accent"), "language": t(lang, "nav.language"),
         "modes": modes,
@@ -443,7 +524,7 @@ def footer(lang):
 
 
 def overlays(lang):
-    return '''<div class="search-overlay" data-search aria-hidden="true">
+    search = '''<div class="search-overlay" data-search aria-hidden="true">
   <div class="search-box">
     <div class="search-input-wrap">%(icon)s
       <input class="search-input" type="search" data-search-input placeholder="%(ph)s"
@@ -455,8 +536,11 @@ def overlays(lang):
       <p class="search-empty">%(start)s</p>
     </div>
   </div>
-</div>
-<div class="cookie" data-cookie role="dialog" aria-label="%(ctitle)s">
+</div>''' % {
+        "icon": ICON["search"], "ph": t(lang, "search.ph"), "label": t(lang, "nav.search"),
+        "close": t(lang, "search.close"), "start": t(lang, "search.start"),
+    } if has_search_content() else ""
+    return search + '''<div class="cookie" data-cookie role="dialog" aria-label="%(ctitle)s">
   <p>%(ctext)s</p>
   <div class="btn-row">
     <button class="btn btn--primary btn--sm" type="button" data-cookie-ok>%(cok)s</button>

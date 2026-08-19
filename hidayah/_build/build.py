@@ -10,7 +10,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 OUT = os.path.abspath(os.path.join(HERE, ".."))
 
-from content import (SITE, ARTICLES, COURSES, PACKAGES, TOPICS, SERIES, QA_PUBLIC)
+from content import (SITE, ARTICLES, COURSES, PACKAGES, SERIES, QA_PUBLIC)
 from layout import LANGS, page, u, t
 import pages as P
 
@@ -47,25 +47,23 @@ for lang, _lname, _code in LANGS:
         desc=t(lang, "slogan") + " " + strip(t(lang, "hero.sub")),
         body=P.home(lang)))
 
-    if ARTICLES:
-        write(pre + "artikel.html", page(
-            lang=lang, slug="artikel.html", title=t(lang, "nav.knowledge"), active="nav.knowledge",
-            desc=strip(t(lang, "areas.k.text")), body=P.articles_index(lang)))
-
-    write(pre + "frage-antwort.html", page(
-        lang=lang, slug="frage-antwort.html", title=strip(t(lang, "nav.qa")), active="nav.qa",
-        desc=strip(t(lang, "areas.q.text")), body=P.qa(lang)))
-
-    if COURSES:
-        write(pre + "kurse.html", page(
-            lang=lang, slug="kurse.html", title=t(lang, "nav.courses"), active="nav.courses",
-            desc="Strukturierte islamische Kurse von Hidayah.", body=P.courses(lang)))
-
     write(pre + "ueber-uns.html", page(
         lang=lang, slug="ueber-uns.html", title=t(lang, "nav.about"), active="nav.about",
         desc="Wie Hidayah entstand, warum der Name Hidayah gewaehlt wurde, unsere Mission, "
              "unsere Grundlage und unser Team.",
         body=P.about(lang)))
+
+    write(pre + "artikel.html", page(
+        lang=lang, slug="artikel.html", title=t(lang, "nav.knowledge"), active="nav.knowledge",
+        desc=strip(t(lang, "areas.k.text")), body=P.archive(lang)))
+
+    write(pre + "frage-antwort.html", page(
+        lang=lang, slug="frage-antwort.html", title=strip(t(lang, "nav.qa")), active="nav.qa",
+        desc=strip(t(lang, "areas.q.text")), body=P.qa(lang)))
+
+    write(pre + "unterricht.html", page(
+        lang=lang, slug="unterricht.html", title=t(lang, "nav.courses"), active="nav.courses",
+        desc=strip(t(lang, "teach.lead")), body=P.teaching(lang)))
 
     write(pre + "kontakt.html", page(
         lang=lang, slug="kontakt.html", title=t(lang, "nav.contact"), active="nav.contact",
@@ -86,7 +84,7 @@ for a in ARTICLES:
     ld = json.dumps({
         "@context": "https://schema.org", "@type": "Article",
         "headline": a["title"], "description": strip(a["summary"]),
-        "author": {"@type": "Person", "name": a["author"]},
+        "author": {"@type": "Person", "name": P.author_of(a)},
         "publisher": {"@type": "Organization", "name": "Hidayah",
                       "logo": {"@type": "ImageObject", "url": SITE["url"] + "/assets/img/icon-512.png"}},
         "datePublished": a["date"],
@@ -116,50 +114,19 @@ write("assets/js/config.js",
       "window.HIDAYAH_FORM_ENDPOINT=%s;\n" % json.dumps(SITE["form_endpoint"]))
 
 # ------------------------------------------------------------------ Suchindex
-ALIASES = {
-    "aqidah": "aqida aqide akide aqeedah عقيدة glaube glaubenslehre",
-    "tawhid": "tauhid tevhid tawheed توحيد einheit einzigkeit",
-    "shirk": "sirk schirk شرك beigesellung goetzendienst",
-    "iman": "imaan eman ايمان glaube",
-    "fiqh": "fikih fikh فقه recht rechtsfragen",
-    "taharah": "tahara taharet طهارة reinheit wudu wudhu abdest",
-    "salah": "salat namaz gebet صلاة salaah",
-    "zakah": "zakat zekat زكاة abgabe",
-    "sawm": "saum oruc oruç صوم fasten ramadan",
-    "hajj": "hac hadsch حج pilgerfahrt",
-    "hadith": "hadis حديث ueberlieferung",
-    "quran": "koran kuran قرآن",
-    "sirah": "sira siyer سيرة prophetenbiografie",
-    "dawah": "dava davet dawa دعوة einladung",
-    "bidah": "bida bidat بدعة neuerung",
-    "sunnah": "sunna sünnet سنة",
-    "tazkiyah": "tezkiye تزكية herzensreinigung",
-    "ehe": "nikah nikaah heirat evlilik",
-    "handel": "muamalat ticaret riba zins",
-    "familie": "aile eltern kinder",
-    "geschichte": "tarih history",
-}
-SERIES_NAME = {k: n for k, n, _ in SERIES}
-TOPIC_NAME = dict(TOPICS)
-
+SERIES_NAME = {x["key"]: x["name"] for x in SERIES}
 index = []
 for a in ARTICLES:
-    kw = " ".join(ALIASES.get(x, "") + " " + TOPIC_NAME[x] for x in a["topics"])
     index.append({"g": "articles", "t": a["title"], "u": "/artikel/%s.html" % a["slug"],
                   "s": SERIES_NAME[a["series"]],
-                  "k": strip(a["summary"]) + " " + kw + " " + a["author"]})
+                  "k": strip(a["summary"]) + " " + P.author_of(a)})
 for c in COURSES:
     index.append({"g": "courses", "t": c["title"], "u": "/kurse/%s.html" % c["slug"],
                   "s": "%s · %s Lektionen" % (c["lang_label"], c["lessons"]),
-                  "k": strip(c["summary"]) + " " + " ".join(c["topics"]) + " " + c["teacher"]})
+                  "k": strip(c["summary"]) + " " + c["teacher"]})
 for q in QA_PUBLIC:
     index.append({"g": "qa", "t": q["q"], "u": "/frage-antwort.html", "s": q["cat"],
                   "k": strip(q["a"])})
-# Begriffe nur, wenn es dazu auch Artikel gibt
-for key, name in TOPICS:
-    if any(key in a["topics"] for a in ARTICLES):
-        index.append({"g": "terms", "t": name, "u": "/artikel.html",
-                      "s": "Begriff", "k": ALIASES.get(key, "") + " " + key})
 
 write("assets/js/search-index.js",
       "window.HIDAYAH_INDEX=%s;\n" % json.dumps(index, ensure_ascii=False, separators=(",", ":")))
@@ -167,16 +134,9 @@ write("assets/js/search-index.js",
 # ------------------------------------------------------------------ Meta-Dateien
 urls = []
 for lang, _n, _c in LANGS:
-    slugs = [""]
-    if ARTICLES:
-        slugs.append("artikel.html")
-    slugs.append("frage-antwort.html")
-    if COURSES:
-        slugs.append("kurse.html")
-    slugs += ["ueber-uns.html", "kontakt.html", "impressum.html", "datenschutz.html",
-              "agb.html", "widerruf.html"]
-    for s in slugs:
-        urls.append((u(lang, s), "1.0" if s == "" else "0.7"))
+    for sl in ("", "ueber-uns.html", "artikel.html", "frage-antwort.html", "unterricht.html",
+               "kontakt.html", "impressum.html", "datenschutz.html", "agb.html", "widerruf.html"):
+        urls.append((u(lang, sl), "1.0" if sl == "" else "0.7"))
 for a in ARTICLES:
     urls.append(("/artikel/%s.html" % a["slug"], "0.8"))
 for c in COURSES:
@@ -225,11 +185,11 @@ write("_headers", """/*
 """)
 
 # Alte Adressen weiterleiten
-red = ["/wissen.html  /artikel.html  301", "/wissen/*  /artikel/:splat  301",
-       "/konto.html  /  301"]
-if not COURSES:
-    red.append("/kurse.html  /  301")
-red.append("/*  /404.html  404")
+red = ["/wissen.html  /artikel.html  301",
+       "/wissen/*  /artikel/:splat  301",
+       "/kurse.html  /unterricht.html  301",
+       "/konto.html  /  301",
+       "/*  /404.html  404"]
 write("_redirects", "\n".join(red) + "\n")
 
 print("Erstellt: %d Dateien" % len(written))
