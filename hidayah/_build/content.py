@@ -94,13 +94,17 @@ QA_PUBLIC = []
 
 # ---------------------------------------------------------------- Team
 TEAM = [
-    {"name": "A. Sirac", "initials": "AS", "role": "Islamische Terminologie",
-     "bio": "Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften und hat "
-            "bei verschiedenen Lehrern Unterricht genommen."},
-    {"name": "S. Eslem", "initials": "SE", "role": "Islamische Rechtsurteile",
+    {"name": "A. Sirac", "initials": "AS",
+     "bio": "Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften und hat bei "
+            "verschiedenen Lehrern Unterricht genommen. Darüber hinaus ist er der Verantwortliche "
+            "für organisatorische Angelegenheiten und die Planung der gemeinsamen Arbeit."},
+    {"name": "S. Eslem", "initials": "SE",
      "bio": "Hat einen mehrjährigen strukturierten Studienweg in verschiedenen islamischen "
-            "Wissenschaften absolviert und Ijazat von verschiedenen Lehrern erhalten."},
-    {"name": "M. Selman", "initials": "MS", "role": "Aufklärung von Zweifeln zum Islam",
-     "bio": "Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften und "
-            "verantwortet die technische und organisatorische Seite von Hidayah."},
+            "Wissenschaften absolviert und Ijazat von verschiedenen Lehrern erhalten. Er übernimmt "
+            "die wissenschaftliche Recherche und prüft die Ergebnisse, bevor sie veröffentlicht "
+            "werden."},
+    {"name": "M. Selman", "initials": "MS",
+     "bio": "Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften, hat den "
+            "Quran auswendig gelernt und widmet sich insbesondere dem Quran-Unterricht, dem Tafsir "
+            "sowie der Vermittlung von Tajwid und korrekter Rezitation."},
 ]

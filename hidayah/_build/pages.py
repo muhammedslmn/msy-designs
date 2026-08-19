@@ -484,10 +484,9 @@ def teaching(lang):
 def about(lang):
     team = "".join('''<div class="card">
       <div class="member__mono">%s</div>
-      <p class="member__role">%s</p>
-      <h3 class="card__title" style="margin-bottom:.5rem">%s</h3>
+      <h3 class="card__title" style="margin-bottom:.6rem">%s</h3>
       <p class="card__text">%s</p>
-    </div>''' % (m["initials"], m["role"], m["name"], m["bio"]) for m in TEAM)
+    </div>''' % (m["initials"], m["name"], m["bio"]) for m in TEAM)
 
     return '''
 <section class="section" style="padding-bottom:0">

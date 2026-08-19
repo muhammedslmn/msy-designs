@@ -36,7 +36,7 @@
     <a class="nav__logo" href="/ar/" aria-label="Hidayah"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" fetchpriority="high"></a>
     <div class="nav__links"><a href="/ar/">الرئيسية</a><a href="/ar/ueber-uns.html" aria-current="page">من نحن</a><a href="/ar/artikel.html">المقالات</a><a href="/ar/frage-antwort.html">سؤال وجواب</a><a href="/ar/unterricht.html">الدروس</a><a href="/ar/kontakt.html">تواصل</a></div>
     <div class="nav__tools">
-      
+      <button class="icon-btn" type="button" data-search-open aria-label="بحث"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
       <div class="pop" data-pop aria-expanded="false">
         <button class="icon-btn" type="button" aria-haspopup="true" aria-label="المظهر"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg></button>
         <div class="pop__menu">
@@ -166,19 +166,16 @@
         nicht um einzelne Personen aufgebaut.</p>
         <div class="grid grid--3" style="margin-top:2.5rem"><div class="card">
       <div class="member__mono">AS</div>
-      <p class="member__role">Islamische Terminologie</p>
-      <h3 class="card__title" style="margin-bottom:.5rem">A. Sirac</h3>
-      <p class="card__text">Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften und hat bei verschiedenen Lehrern Unterricht genommen.</p>
+      <h3 class="card__title" style="margin-bottom:.6rem">A. Sirac</h3>
+      <p class="card__text">Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften und hat bei verschiedenen Lehrern Unterricht genommen. Darüber hinaus ist er der Verantwortliche für organisatorische Angelegenheiten und die Planung der gemeinsamen Arbeit.</p>
     </div><div class="card">
       <div class="member__mono">SE</div>
-      <p class="member__role">Islamische Rechtsurteile</p>
-      <h3 class="card__title" style="margin-bottom:.5rem">S. Eslem</h3>
-      <p class="card__text">Hat einen mehrjährigen strukturierten Studienweg in verschiedenen islamischen Wissenschaften absolviert und Ijazat von verschiedenen Lehrern erhalten.</p>
+      <h3 class="card__title" style="margin-bottom:.6rem">S. Eslem</h3>
+      <p class="card__text">Hat einen mehrjährigen strukturierten Studienweg in verschiedenen islamischen Wissenschaften absolviert und Ijazat von verschiedenen Lehrern erhalten. Er übernimmt die wissenschaftliche Recherche und prüft die Ergebnisse, bevor sie veröffentlicht werden.</p>
     </div><div class="card">
       <div class="member__mono">MS</div>
-      <p class="member__role">Aufklärung von Zweifeln zum Islam</p>
-      <h3 class="card__title" style="margin-bottom:.5rem">M. Selman</h3>
-      <p class="card__text">Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften und verantwortet die technische und organisatorische Seite von Hidayah.</p>
+      <h3 class="card__title" style="margin-bottom:.6rem">M. Selman</h3>
+      <p class="card__text">Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften, hat den Quran auswendig gelernt und widmet sich insbesondere dem Quran-Unterricht, dem Tafsir sowie der Vermittlung von Tajwid und korrekter Rezitation.</p>
     </div></div>
       </div>
     </div>
@@ -212,7 +209,19 @@
     </div>
   </div>
 </footer>
-<div class="cookie" data-cookie role="dialog" aria-label="ملفات تعريف الارتباط">
+<div class="search-overlay" data-search aria-hidden="true">
+  <div class="search-box">
+    <div class="search-input-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input class="search-input" type="search" data-search-input placeholder="ابحث في المقالات والدورات والمصطلحات …"
+             aria-label="بحث" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="search-meta"><span data-search-count></span>
+      <span><kbd>Esc</kbd> إغلاق</span></div>
+    <div class="search-results" data-search-results>
+      <p class="search-empty">لم يُنشر أي محتوى بعد. ستجد أولى المقالات هنا فور توفّرها.</p>
+    </div>
+  </div>
+</div><div class="cookie" data-cookie role="dialog" aria-label="ملفات تعريف الارتباط">
   <p>نستخدم فقط ما هو ضروري تقنيًا لعمل الموقع — مثل حفظ اختيارك للغة. بلا إعلانات وبلا تتبّع.</p>
   <div class="btn-row">
     <button class="btn btn--primary btn--sm" type="button" data-cookie-ok>فهمت</button>

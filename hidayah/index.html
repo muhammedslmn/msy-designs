@@ -42,7 +42,7 @@
     <a class="nav__logo" href="/" aria-label="Hidayah"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" fetchpriority="high"></a>
     <div class="nav__links"><a href="/" aria-current="page">Startseite</a><a href="/ueber-uns.html">Über uns</a><a href="/artikel.html">Artikel</a><a href="/frage-antwort.html">Frage &amp; Antwort</a><a href="/unterricht.html">Unterricht</a><a href="/kontakt.html">Kontakt</a></div>
     <div class="nav__tools">
-      
+      <button class="icon-btn" type="button" data-search-open aria-label="Suche"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
       <div class="pop" data-pop aria-expanded="false">
         <button class="icon-btn" type="button" aria-haspopup="true" aria-label="Darstellung"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg></button>
         <div class="pop__menu">
@@ -183,7 +183,19 @@
     </div>
   </div>
 </footer>
-<div class="cookie" data-cookie role="dialog" aria-label="Cookies">
+<div class="search-overlay" data-search aria-hidden="true">
+  <div class="search-box">
+    <div class="search-input-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input class="search-input" type="search" data-search-input placeholder="Suche nach Artikeln, Kursen, Begriffen …"
+             aria-label="Suche" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="search-meta"><span data-search-count></span>
+      <span><kbd>Esc</kbd> Schließen</span></div>
+    <div class="search-results" data-search-results>
+      <p class="search-empty">Es sind noch keine Inhalte veröffentlicht. Sobald die ersten Artikel vorliegen, findest du sie hier.</p>
+    </div>
+  </div>
+</div><div class="cookie" data-cookie role="dialog" aria-label="Cookies">
   <p>Wir verwenden nur technisch notwendige Cookies, damit die Seite funktioniert – etwa für deine Sprachwahl. Es findet keine Werbung und kein Tracking statt.</p>
   <div class="btn-row">
     <button class="btn btn--primary btn--sm" type="button" data-cookie-ok>Verstanden</button>

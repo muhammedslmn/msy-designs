@@ -30,6 +30,7 @@ T = {
 "de": {
  "dir":"ltr","locale":"de_DE",
  "slogan":"Auf der Suche nach Licht in einer Welt voller Dunkelheit.",
+ "search.none":"Es sind noch keine Inhalte veröffentlicht. Sobald die ersten Artikel vorliegen, findest du sie hier.",
  "arch.eyebrow2":"Aufbau",
  "areas.title2":"Zwei Wege, hier weiterzukommen",
  "areas.title3":"Drei Wege, hier weiterzukommen",
@@ -120,6 +121,7 @@ T = {
 "en": {
  "dir":"ltr","locale":"en_US",
  "slogan":"In search of light in a world full of darkness.",
+ "search.none":"No content has been published yet. As soon as the first articles are available you will find them here.",
  "arch.eyebrow2":"Structure",
  "areas.title2":"Two ways to go further here",
  "areas.title3":"Three ways to go further here",
@@ -198,6 +200,7 @@ T = {
 "tr": {
  "dir":"ltr","locale":"tr_TR",
  "slogan":"Karanlıkla dolu bir dünyada nûr arayışında.",
+ "search.none":"Henüz içerik yayınlanmadı. İlk makaleler hazır olduğunda burada bulacaksın.",
  "arch.eyebrow2":"Yapı",
  "areas.title2":"Burada ilerlemenin iki yolu",
  "areas.title3":"Burada ilerlemenin üç yolu",
@@ -276,6 +279,7 @@ T = {
 "ar": {
  "dir":"rtl","locale":"ar_AR",
  "slogan":"في بحثٍ عن النور في عالمٍ يملؤه الظلام.",
+ "search.none":"لم يُنشر أي محتوى بعد. ستجد أولى المقالات هنا فور توفّرها.",
  "arch.eyebrow2":"البنية",
  "areas.title2":"طريقان للمضي قدمًا",
  "areas.title3":"ثلاثة طرق للمضي قدمًا",
@@ -458,8 +462,8 @@ def header(lang, active):
         "skip": t(lang, "skip"), "menu": t(lang, "menu"), "close": t(lang, "close"),
         "home": u(lang), "logo": logo(lang, "", 360, True), "logo_s": logo(lang, "", 360),
         "links": links, "search": t(lang, "nav.search"),
-        "searchbtn": ('<button class="icon-btn" type="button" data-search-open aria-label="%s">%s</button>'
-                      % (t(lang, "nav.search"), ICON["search"])) if has_search_content() else "",
+        "searchbtn": '<button class="icon-btn" type="button" data-search-open aria-label="%s">%s</button>'
+                     % (t(lang, "nav.search"), ICON["search"]),
         "appearance": t(lang, "nav.appearance"), "mode": t(lang, "theme.mode"),
         "accent": t(lang, "theme.accent"), "language": t(lang, "nav.language"),
         "modes": modes,
@@ -538,8 +542,8 @@ def overlays(lang):
   </div>
 </div>''' % {
         "icon": ICON["search"], "ph": t(lang, "search.ph"), "label": t(lang, "nav.search"),
-        "close": t(lang, "search.close"), "start": t(lang, "search.start"),
-    } if has_search_content() else ""
+        "close": t(lang, "search.close"), "start": t(lang, "search.start") if has_search_content() else t(lang, "search.none"),
+    }
     return search + '''<div class="cookie" data-cookie role="dialog" aria-label="%(ctitle)s">
   <p>%(ctext)s</p>
   <div class="btn-row">
@@ -548,7 +552,7 @@ def overlays(lang):
   </div>
 </div>''' % {
         "icon": ICON["search"], "ph": t(lang, "search.ph"), "label": t(lang, "nav.search"),
-        "close": t(lang, "search.close"), "start": t(lang, "search.start"),
+        "close": t(lang, "search.close"), "start": t(lang, "search.start") if has_search_content() else t(lang, "search.none"),
         "ctitle": t(lang, "cookie.title"), "ctext": t(lang, "cookie.text"),
         "cok": t(lang, "cookie.ok"), "cmore": t(lang, "cookie.more"),
         "privacy": u(lang, "datenschutz.html"),

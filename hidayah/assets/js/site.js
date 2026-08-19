@@ -311,6 +311,12 @@
   var START_TEXT = '';
   function runSearch(qRaw) {
     if (!searchOut) return;
+    // Noch keine Inhalte hinterlegt -> Hinweis statt Fehlanzeige
+    if (!prep().length) {
+      searchOut.innerHTML = '<p class="search-empty">' + esc(START_TEXT) + '</p>';
+      if (searchCount) searchCount.textContent = '';
+      return;
+    }
     var q = Fuzzy.base(qRaw);
     if (q.length < 2) {
       searchOut.innerHTML = '<p class="search-empty">' + esc(START_TEXT) + '</p>';
