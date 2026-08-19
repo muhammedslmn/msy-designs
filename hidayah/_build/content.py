@@ -9,7 +9,7 @@ vorliegen. Was nicht eingetragen ist, erscheint auf der Website auch nicht.
 SITE = {
     "name": "Hidayah",
     "slogan": "Auf der Suche nach Licht in einer Welt voller Dunkelheit.",
-    "tagline": "Islamisches Wissen. Emru bil maruf, nehyu anil munker. Orientierung.",
+    "tagline": "Islamisches Wissen. Das Gute gebieten und das Verwerfliche verbieten. Orientierung.",
     "url": "https://hidayah.de",
     "email": "salam@hidayah.de",
     "instagram": "https://instagram.com/hidayah",
@@ -99,7 +99,8 @@ NEWS_KINDS = ["Einladung", "Unterricht", "Ankündigung"]
 
 # ---------------------------------------------------------------- Frage & Antwort
 QA_CATEGORIES = ["Aqidah", "Fiqh", "Gebet", "Fasten", "Ehe & Familie", "Handel",
-                 "Emru bil maruf, nehyu anil munker", "Allgemeine islamische Fragen"]
+                 "Das Gute gebieten und das Verwerfliche verbieten",
+                 "Allgemeine islamische Fragen"]
 
 # Oeffentlich veroeffentlichte, anonymisierte Antworten.
 # Leer = kein oeffentliches Archiv, das Frageformular bleibt bestehen.

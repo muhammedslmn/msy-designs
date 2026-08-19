@@ -540,10 +540,9 @@ def about(lang):
       Sie sollte letztlich auch zu Allah führen und den Menschen zeigen, was der Islam ist, wofür er
       steht und wozu er den Menschen ruft.</p>
       %(ay_dawah)s
-      <p>Genau daraus entwickelte sich unser Weg: <strong>Emru bil maruf, nehyu anil munker</strong>
-      &ndash; das Gute gebieten und das Verwerfliche verbieten &ndash;, islamisches Wissen
-      weiterzugeben, Missverständnisse aufzuklären und dort zu helfen, wo wir mit unseren
-      Möglichkeiten helfen können.</p>
+      <p>Genau daraus entwickelte sich unser Weg: <strong>das Gute zu gebieten und das Verwerfliche
+      zu verbieten</strong>, islamisches Wissen weiterzugeben, Missverständnisse aufzuklären und
+      dort zu helfen, wo wir mit unseren Möglichkeiten helfen können.</p>
       <p>Ein weiterer Grund für die Entstehung von Hidayah war die Art und Weise, wie islamisches
       Wissen heute verbreitet wird. Durch soziale Medien kann nahezu jeder über religiöse Themen
       sprechen. Dadurch wird Wissen teilweise ohne ausreichende Grundlagen weitergegeben, Aussagen
@@ -561,7 +560,8 @@ def about(lang):
       die Aussage Allahs:</p>
       %(ay_name)s
       <p>Der Name soll uns zuerst selbst daran erinnern, dass Rechtleitung allein von Allah kommt.
-      Wissen, Emru bil maruf nehyu anil munker und unsere eigenen Bemühungen sind lediglich Mittel. Niemand kann einem Herzen
+      Wissen, das Gute zu gebieten, das Verwerfliche zu verbieten und alle unsere eigenen
+      Bemühungen sind lediglich Mittel. Niemand kann einem Herzen
       die Rechtleitung geben außer Allah.</p>
       <p>Hidayah soll deshalb nicht um Personen aufgebaut sein. Unser Ziel ist es, Menschen zum Islam,
       zum Wissen und letztlich zu Allah zu führen &ndash; und gleichzeitig selbst auf diesem Weg
