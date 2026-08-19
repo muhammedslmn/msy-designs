@@ -1,3 +1,5 @@
-/wissen/  /wissen.html  301
-/kurse/  /kurse.html  301
+/wissen.html  /artikel.html  301
+/wissen/*  /artikel/:splat  301
+/konto.html  /  301
+/kurse.html  /  301
 /*  /404.html  404

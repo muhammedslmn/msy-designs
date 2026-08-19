@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Widerrufsbelehrung — Hidayah</title>
 <meta name="description" content="Rechtliche Informationen zu Hidayah.">
-<meta name="theme-color" content="#05060a">
+<meta name="theme-color" content="#FBFAF6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090C11" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://hidayah.de/en/widerruf.html">
 <link rel="alternate" hreflang="de" href="https://hidayah.de/widerruf.html"><link rel="alternate" hreflang="en" href="https://hidayah.de/en/widerruf.html"><link rel="alternate" hreflang="tr" href="https://hidayah.de/tr/widerruf.html"><link rel="alternate" hreflang="ar" href="https://hidayah.de/ar/widerruf.html"><link rel="alternate" hreflang="x-default" href="https://hidayah.de/">
 <meta property="og:type" content="website">
@@ -24,39 +25,49 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+<script src="/assets/js/theme.js"></script>
 <link rel="stylesheet" href="/assets/css/hidayah.css">
 </head>
 <body data-lang="en">
 
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" id="siteHeader">
+<header class="site-header night" id="siteHeader">
   <nav class="nav container" aria-label="Menu">
-    <a class="nav__logo" href="/en/" aria-label="Hidayah">
-      <img src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" fetchpriority="high">
-    </a>
-    <div class="nav__links"><a href="/en/">Home</a><a href="/en/ueber-uns.html">About us</a><a href="/en/wissen.html">Knowledge</a><a href="/en/frage-antwort.html">Q &amp; A</a><a href="/en/kurse.html">Courses</a><a href="/en/kontakt.html">Contact</a></div>
+    <a class="nav__logo" href="/en/" aria-label="Hidayah"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" fetchpriority="high"></a>
+    <div class="nav__links"><a href="/en/artikel.html">Articles</a><a href="/en/frage-antwort.html">Q &amp; A</a><a href="/en/ueber-uns.html">About us</a><a href="/en/kontakt.html">Contact</a></div>
     <div class="nav__tools">
       <button class="icon-btn" type="button" data-search-open aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
-      <a class="icon-btn" href="/en/konto.html" aria-label="My account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></a>
-      <div class="lang" data-lang-switch aria-expanded="false">
-        <button class="icon-btn icon-btn--wide" type="button" aria-haspopup="listbox" aria-label="Language">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><span class="lang__code">EN</span>
+      <div class="pop" data-pop aria-expanded="false">
+        <button class="icon-btn" type="button" aria-haspopup="true" aria-label="Appearance"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg></button>
+        <div class="pop__menu">
+          <p class="pop__label">Mode</p>
+          <div role="listbox" data-theme-group><button class="pop__item" type="button" data-theme-set="auto" role="option" aria-selected="false">System</button><button class="pop__item" type="button" data-theme-set="light" role="option" aria-selected="false">Light</button><button class="pop__item" type="button" data-theme-set="dark" role="option" aria-selected="false">Dark</button></div>
+          <div class="pop__sep"></div>
+          <p class="pop__label">Accent colour</p>
+          <div class="swatches" role="listbox" data-accent-group><button class="swatch" type="button" data-accent-set="smaragd" data-set="smaragd" aria-selected="false" title="Emerald" aria-label="Emerald"></button><button class="swatch" type="button" data-accent-set="indigo" data-set="indigo" aria-selected="false" title="Indigo" aria-label="Indigo"></button><button class="swatch" type="button" data-accent-set="messing" data-set="messing" aria-selected="false" title="Brass" aria-label="Brass"></button><button class="swatch" type="button" data-accent-set="tinte" data-set="tinte" aria-selected="false" title="Ink" aria-label="Ink"></button></div>
+        </div>
+      </div>
+      <div class="pop" data-pop aria-expanded="false">
+        <button class="icon-btn icon-btn--wide" type="button" aria-haspopup="true" aria-label="Language">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><span class="pop__code">EN</span>
         </button>
-        <div class="lang__menu" role="listbox"><button type="button" data-lang="de" role="option" aria-selected="false"><span>Deutsch</span><span class="lang__code">DE</span></button><button type="button" data-lang="en" role="option" aria-selected="true"><span>English</span><span class="lang__code">EN</span></button><button type="button" data-lang="tr" role="option" aria-selected="false"><span>Turkce</span><span class="lang__code">TR</span></button><button type="button" data-lang="ar" role="option" aria-selected="false"><span>العربية</span><span class="lang__code">AR</span></button></div>
+        <div class="pop__menu" role="listbox"><button class="pop__item" type="button" data-lang="de" role="option" aria-selected="false"><span>Deutsch</span><span class="pop__code">DE</span></button><button class="pop__item" type="button" data-lang="en" role="option" aria-selected="true"><span>English</span><span class="pop__code">EN</span></button><button class="pop__item" type="button" data-lang="tr" role="option" aria-selected="false"><span>Turkce</span><span class="pop__code">TR</span></button><button class="pop__item" type="button" data-lang="ar" role="option" aria-selected="false"><span>العربية</span><span class="pop__code">AR</span></button></div>
       </div>
       <button class="icon-btn nav__burger" type="button" data-drawer-open aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </nav>
 </header>
-<div class="drawer" data-drawer aria-hidden="true">
-  <div class="drawer__top">
-    <img src="/assets/img/logo-360.webp" alt="Hidayah" style="height:26px;width:auto">
+<div class="drawer night" data-drawer aria-hidden="true">
+  <div class="drawer__top"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy">
     <button class="icon-btn" type="button" data-drawer-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
-  <div class="drawer__links"><a href="/en/">Home</a><a href="/en/ueber-uns.html">About us</a><a href="/en/wissen.html">Knowledge</a><a href="/en/frage-antwort.html">Q &amp; A</a><a href="/en/kurse.html">Courses</a><a href="/en/kontakt.html">Contact</a>
-    <a href="/en/konto.html">My account</a>
+  <div class="drawer__links"><a href="/en/artikel.html">Articles</a><a href="/en/frage-antwort.html">Q &amp; A</a><a href="/en/ueber-uns.html">About us</a><a href="/en/kontakt.html">Contact</a></div>
+  <div class="drawer__foot">
+    <div><p class="pop__label" style="padding-inline:0">Mode</p>
+      <div class="pill-row" data-theme-group><button type="button" data-theme-set="auto" aria-selected="false">System</button><button type="button" data-theme-set="light" aria-selected="false">Light</button><button type="button" data-theme-set="dark" aria-selected="false">Dark</button></div></div>
+    <div><p class="pop__label" style="padding-inline:0">Language</p>
+      <div class="pill-row"><button type="button" data-lang="de" aria-selected="false">DE</button><button type="button" data-lang="en" aria-selected="true">EN</button><button type="button" data-lang="tr" aria-selected="false">TR</button><button type="button" data-lang="ar" aria-selected="false">AR</button></div></div>
   </div>
-  <div class="drawer__foot"><button type="button" data-lang="de" aria-selected="false">DE</button><button type="button" data-lang="en" aria-selected="true">EN</button><button type="button" data-lang="tr" aria-selected="false">TR</button><button type="button" data-lang="ar" aria-selected="false">AR</button></div>
 </div>
 <main id="main">
 
@@ -64,11 +75,7 @@
   <div class="container-narrow">
     <nav class="crumbs" aria-label="Breadcrumb"><span><a href="/en/">Home</a></span><span>Widerrufsbelehrung</span></nav>
     <h1 style="margin-bottom:2rem">Widerrufsbelehrung</h1>
-    <div class="notice" style="margin-bottom:2.5rem"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
-      <div><strong>Diese Seite ist eine Vorlage.</strong> Vor der Veröffentlichung muss sie an die
-      tatsächlich verwendete technische und geschäftliche Struktur angepasst und rechtlich geprüft
-      werden &ndash; insbesondere zu Anbieterkennzeichnung, Zahlungsdienstleistern, Hosting,
-      Nutzerkonten und digitalen Inhalten.</div></div>
+    <div class="notice" style="margin-bottom:2.5rem"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><div><strong>Diese Seite ist eine Vorlage.</strong> Vor der Veröffentlichung muss sie an die tatsächlich verwendete technische und geschäftliche Struktur angepasst und rechtlich geprüft werden.</div></div>
     <div class="prose">
 <h2>Widerrufsrecht</h2>
 <p>Du hast das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.
@@ -78,11 +85,10 @@ E-Mail an salam@hidayah.de) über deinen Entschluss informieren.</p>
 <h2>Folgen des Widerrufs</h2>
 <p>Wenn du diesen Vertrag widerrufst, erstatten wir dir alle Zahlungen unverzüglich und spätestens
 binnen vierzehn Tagen ab Eingang deiner Mitteilung zurück.</p>
-<h2>Vorzeitiges Erlöschen des Widerrufsrechts bei digitalen Inhalten</h2>
+<h2>Vorzeitiges Erlöschen bei digitalen Inhalten</h2>
 <p>Das Widerrufsrecht erlischt vorzeitig, wenn wir mit der Ausführung begonnen haben, nachdem du
 <strong>ausdrücklich zugestimmt</strong> hast, dass wir vor Ablauf der Widerrufsfrist beginnen, und
-du deine <strong>Kenntnis vom Verlust des Widerrufsrechts</strong> bestätigt hast. Diese Zustimmung
-wird im Bestellvorgang gesondert abgefragt.</p>
+du deine <strong>Kenntnis vom Verlust des Widerrufsrechts</strong> bestätigt hast.</p>
 <h2>Muster-Widerrufsformular</h2>
 <p>An Hidayah, [Anschrift], salam@hidayah.de:<br>
 Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf der folgenden digitalen
@@ -91,27 +97,16 @@ Anschrift: ____________<br>Datum: ____________</p></div>
   </div>
 </section>
 </main>
-<footer class="site-footer">
+<footer class="site-footer night">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy">
-        <p>In search of light in a world full of darkness.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Content</h4>
-        <a href="/en/wissen.html">Knowledge</a>
-        <a href="/en/kurse.html">Courses</a>
-        <a href="/en/frage-antwort.html">Q &amp; A</a>
-      </div>
-      <div class="footer-col">
-        <h4>Hidayah</h4>
+      <div class="footer-brand"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy"><p>In search of light in a world full of darkness.</p></div>
+      <div class="footer-col"><h4>Content</h4><a href="/en/artikel.html">Articles</a><a href="/en/frage-antwort.html">Q &amp; A</a></div>
+      <div class="footer-col"><h4>Hidayah</h4>
         <a href="/en/ueber-uns.html">About us</a>
         <a href="/en/kontakt.html">Contact</a>
-        <a href="/en/konto.html">My account</a>
       </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
+      <div class="footer-col"><h4>Legal</h4>
         <a href="/en/impressum.html">Imprint</a>
         <a href="/en/datenschutz.html">Privacy policy</a>
         <a href="/en/agb.html">Terms</a>
@@ -146,7 +141,7 @@ Anschrift: ____________<br>Datum: ____________</p></div>
   <p>We only use technically necessary cookies so the site works – for example to remember your language. No advertising, no tracking.</p>
   <div class="btn-row">
     <button class="btn btn--primary btn--sm" type="button" data-cookie-ok>Understood</button>
-    <a class="btn btn--ghost btn--sm" href="/en/datenschutz.html">Privacy</a>
+    <a class="btn btn--quiet btn--sm" href="/en/datenschutz.html">Privacy</a>
   </div>
 </div>
 <script src="/assets/js/config.js" defer></script>

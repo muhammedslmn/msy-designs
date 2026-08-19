@@ -12,12 +12,12 @@
 
   var TXT = {
     de: { copied:'Kopiert', soon:'Diese Funktion braucht noch einen Server. Der Bezahl- und Kursbereich wird gerade eingerichtet — melde dich zum Newsletter an, dann erfährst du es zuerst.',
-          sending:'Wird gesendet …', ok:'Ǧazāk Allāhu ḫayran. Deine Nachricht ist bei uns angekommen.',
+          sending:'Wird gesendet …', ok:'Jazak Allahu khayran. Deine Nachricht ist bei uns angekommen.',
           err:'Das hat leider nicht geklappt. Schreib uns gerne direkt an salam@hidayah.de.',
           nocfg:'Das Formular ist noch nicht mit einem E-Mail-Dienst verbunden. Trage in _build/content.py deine Formspree-ID ein und baue die Seite neu.',
           results:'Treffer', empty:'Keine Treffer. Versuche es mit einem anderen Begriff.' },
     en: { copied:'Copied', soon:'This feature still needs a server. Payments and the course area are being set up — subscribe to the newsletter to hear first.',
-          sending:'Sending …', ok:'Ǧazāk Allāhu ḫayran. Your message has reached us.',
+          sending:'Sending …', ok:'Jazak Allahu khayran. Your message has reached us.',
           err:'That did not work. Please write to us at salam@hidayah.de.',
           nocfg:'The form is not connected to an email service yet. Add your Formspree ID in _build/content.py and rebuild.',
           results:'results', empty:'No results. Try a different term.' },
@@ -86,7 +86,7 @@
     var p = location.pathname.replace(/^\/(en|tr|ar)(?=\/|$)/, '');
     if (!p) p = '/';
     if (lang !== 'de') {
-      if (/^\/wissen\/.+/.test(p)) p = '/wissen.html';
+      if (/^\/artikel\/.+/.test(p)) p = '/artikel.html';
       else if (/^\/kurse\/.+/.test(p)) p = '/kurse.html';
     }
     if (p === '/index.html') p = '/';
@@ -100,16 +100,64 @@
   $$('button[data-lang]').forEach(function (b) {
     b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
   });
-  var langWrap = $('[data-lang-switch]');
-  if (langWrap) {
-    var trigger = $('button', langWrap);
+  /* ---------------------------------------------------------- Aufklappmenues */
+  var pops = $$('[data-pop]');
+  pops.forEach(function (pop) {
+    var trigger = pop.querySelector('button');
+    if (!trigger) return;
     trigger.addEventListener('click', function (e) {
       e.stopPropagation();
-      langWrap.setAttribute('aria-expanded',
-        langWrap.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+      var open = pop.getAttribute('aria-expanded') === 'true';
+      pops.forEach(function (p) { p.setAttribute('aria-expanded', 'false'); });
+      pop.setAttribute('aria-expanded', open ? 'false' : 'true');
     });
-    document.addEventListener('click', function () { langWrap.setAttribute('aria-expanded', 'false'); });
-  }
+    pop.addEventListener('click', function (e) { e.stopPropagation(); });
+  });
+  document.addEventListener('click', function () {
+    pops.forEach(function (p) { p.setAttribute('aria-expanded', 'false'); });
+  });
+
+  /* ---------------------------------------------------------- Darstellung */
+  (function appearance() {
+    var root = document.documentElement;
+    function readTheme() {
+      var v = root.getAttribute('data-theme');
+      return (v === 'light' || v === 'dark') ? v : 'auto';
+    }
+    function readAccent() { return root.getAttribute('data-accent') || 'smaragd'; }
+
+    function markTheme() {
+      var cur = readTheme();
+      $$('[data-theme-set]').forEach(function (b) {
+        b.setAttribute('aria-selected', b.getAttribute('data-theme-set') === cur ? 'true' : 'false');
+      });
+    }
+    function markAccent() {
+      var cur = readAccent();
+      $$('[data-accent-set]').forEach(function (b) {
+        b.setAttribute('aria-selected', b.getAttribute('data-accent-set') === cur ? 'true' : 'false');
+      });
+    }
+
+    $$('[data-theme-set]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var v = b.getAttribute('data-theme-set');
+        if (v === 'auto') root.removeAttribute('data-theme');
+        else root.setAttribute('data-theme', v);
+        try { localStorage.setItem('hidayah:theme', v); } catch (e) {}
+        markTheme();
+      });
+    });
+    $$('[data-accent-set]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var v = b.getAttribute('data-accent-set');
+        root.setAttribute('data-accent', v);
+        try { localStorage.setItem('hidayah:accent', v); } catch (e) {}
+        markAccent();
+      });
+    });
+    markTheme(); markAccent();
+  }());
 
   /* ---------------------------------------------------------- Cookie */
   (function cookie() {
@@ -150,10 +198,10 @@
   /* ---------------------------------------------------------- Fuzzy-Helfer */
   var Fuzzy = (function () {
     var MAP = {
-      'ā':'a','á':'a','à':'a','â':'a','ä':'a','ạ':'a','ʾ':'','ʿ':'','ʼ':'','’':'',
-      'ī':'i','í':'i','ì':'i','î':'i','ū':'u','ú':'u','ù':'u','û':'u','ü':'u','ö':'o','ō':'o',
-      'ē':'e','é':'e','è':'e','ê':'e','ḥ':'h','ḫ':'h','ḍ':'d','ḏ':'d','ṣ':'s','š':'s','ş':'s',
-      'ṭ':'t','ṯ':'t','ẓ':'z','ġ':'g','ğ':'g','ǧ':'g','ç':'c','ı':'i','ñ':'n','ß':'ss'
+      'a':'a','á':'a','à':'a','â':'a','ä':'a','ạ':'a','':'','':'','':'','’':'',
+      'i':'i','í':'i','ì':'i','î':'i','u':'u','ú':'u','ù':'u','û':'u','ü':'u','ö':'o','o':'o',
+      'e':'e','é':'e','è':'e','ê':'e','h':'h','kh':'h','d':'d','dh':'d','s':'s','sh':'s','ş':'s',
+      't':'t','th':'t','z':'z','gh':'g','ğ':'g','j':'g','ç':'c','ı':'i','ñ':'n','ß':'ss'
     };
     function base(s) {
       s = String(s).toLowerCase();

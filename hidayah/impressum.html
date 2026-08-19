@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Impressum — Hidayah</title>
 <meta name="description" content="Rechtliche Informationen zu Hidayah.">
-<meta name="theme-color" content="#05060a">
+<meta name="theme-color" content="#FBFAF6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090C11" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://hidayah.de/impressum.html">
 <link rel="alternate" hreflang="de" href="https://hidayah.de/impressum.html"><link rel="alternate" hreflang="en" href="https://hidayah.de/en/impressum.html"><link rel="alternate" hreflang="tr" href="https://hidayah.de/tr/impressum.html"><link rel="alternate" hreflang="ar" href="https://hidayah.de/ar/impressum.html"><link rel="alternate" hreflang="x-default" href="https://hidayah.de/">
 <meta property="og:type" content="website">
@@ -24,39 +25,49 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+<script src="/assets/js/theme.js"></script>
 <link rel="stylesheet" href="/assets/css/hidayah.css">
 </head>
 <body data-lang="de">
 
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
-<header class="site-header" id="siteHeader">
+<header class="site-header night" id="siteHeader">
   <nav class="nav container" aria-label="Menü">
-    <a class="nav__logo" href="/" aria-label="Hidayah">
-      <img src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" fetchpriority="high">
-    </a>
-    <div class="nav__links"><a href="/">Startseite</a><a href="/ueber-uns.html">Über uns</a><a href="/wissen.html">Wissen</a><a href="/frage-antwort.html">Frage &amp; Antwort</a><a href="/kurse.html">Kurse</a><a href="/kontakt.html">Kontakt</a></div>
+    <a class="nav__logo" href="/" aria-label="Hidayah"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" fetchpriority="high"></a>
+    <div class="nav__links"><a href="/artikel.html">Artikel</a><a href="/frage-antwort.html">Frage &amp; Antwort</a><a href="/ueber-uns.html">Über uns</a><a href="/kontakt.html">Kontakt</a></div>
     <div class="nav__tools">
       <button class="icon-btn" type="button" data-search-open aria-label="Suche"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
-      <a class="icon-btn" href="/konto.html" aria-label="Mein Konto"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></a>
-      <div class="lang" data-lang-switch aria-expanded="false">
-        <button class="icon-btn icon-btn--wide" type="button" aria-haspopup="listbox" aria-label="Sprache">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><span class="lang__code">DE</span>
+      <div class="pop" data-pop aria-expanded="false">
+        <button class="icon-btn" type="button" aria-haspopup="true" aria-label="Darstellung"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg></button>
+        <div class="pop__menu">
+          <p class="pop__label">Modus</p>
+          <div role="listbox" data-theme-group><button class="pop__item" type="button" data-theme-set="auto" role="option" aria-selected="false">Automatisch</button><button class="pop__item" type="button" data-theme-set="light" role="option" aria-selected="false">Hell</button><button class="pop__item" type="button" data-theme-set="dark" role="option" aria-selected="false">Dunkel</button></div>
+          <div class="pop__sep"></div>
+          <p class="pop__label">Akzentfarbe</p>
+          <div class="swatches" role="listbox" data-accent-group><button class="swatch" type="button" data-accent-set="smaragd" data-set="smaragd" aria-selected="false" title="Smaragd" aria-label="Smaragd"></button><button class="swatch" type="button" data-accent-set="indigo" data-set="indigo" aria-selected="false" title="Indigo" aria-label="Indigo"></button><button class="swatch" type="button" data-accent-set="messing" data-set="messing" aria-selected="false" title="Messing" aria-label="Messing"></button><button class="swatch" type="button" data-accent-set="tinte" data-set="tinte" aria-selected="false" title="Tinte" aria-label="Tinte"></button></div>
+        </div>
+      </div>
+      <div class="pop" data-pop aria-expanded="false">
+        <button class="icon-btn icon-btn--wide" type="button" aria-haspopup="true" aria-label="Sprache">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><span class="pop__code">DE</span>
         </button>
-        <div class="lang__menu" role="listbox"><button type="button" data-lang="de" role="option" aria-selected="true"><span>Deutsch</span><span class="lang__code">DE</span></button><button type="button" data-lang="en" role="option" aria-selected="false"><span>English</span><span class="lang__code">EN</span></button><button type="button" data-lang="tr" role="option" aria-selected="false"><span>Turkce</span><span class="lang__code">TR</span></button><button type="button" data-lang="ar" role="option" aria-selected="false"><span>العربية</span><span class="lang__code">AR</span></button></div>
+        <div class="pop__menu" role="listbox"><button class="pop__item" type="button" data-lang="de" role="option" aria-selected="true"><span>Deutsch</span><span class="pop__code">DE</span></button><button class="pop__item" type="button" data-lang="en" role="option" aria-selected="false"><span>English</span><span class="pop__code">EN</span></button><button class="pop__item" type="button" data-lang="tr" role="option" aria-selected="false"><span>Turkce</span><span class="pop__code">TR</span></button><button class="pop__item" type="button" data-lang="ar" role="option" aria-selected="false"><span>العربية</span><span class="pop__code">AR</span></button></div>
       </div>
       <button class="icon-btn nav__burger" type="button" data-drawer-open aria-label="Menü"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </nav>
 </header>
-<div class="drawer" data-drawer aria-hidden="true">
-  <div class="drawer__top">
-    <img src="/assets/img/logo-360.webp" alt="Hidayah" style="height:26px;width:auto">
+<div class="drawer night" data-drawer aria-hidden="true">
+  <div class="drawer__top"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy">
     <button class="icon-btn" type="button" data-drawer-close aria-label="Schließen"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
-  <div class="drawer__links"><a href="/">Startseite</a><a href="/ueber-uns.html">Über uns</a><a href="/wissen.html">Wissen</a><a href="/frage-antwort.html">Frage &amp; Antwort</a><a href="/kurse.html">Kurse</a><a href="/kontakt.html">Kontakt</a>
-    <a href="/konto.html">Mein Konto</a>
+  <div class="drawer__links"><a href="/artikel.html">Artikel</a><a href="/frage-antwort.html">Frage &amp; Antwort</a><a href="/ueber-uns.html">Über uns</a><a href="/kontakt.html">Kontakt</a></div>
+  <div class="drawer__foot">
+    <div><p class="pop__label" style="padding-inline:0">Modus</p>
+      <div class="pill-row" data-theme-group><button type="button" data-theme-set="auto" aria-selected="false">Automatisch</button><button type="button" data-theme-set="light" aria-selected="false">Hell</button><button type="button" data-theme-set="dark" aria-selected="false">Dunkel</button></div></div>
+    <div><p class="pop__label" style="padding-inline:0">Sprache</p>
+      <div class="pill-row"><button type="button" data-lang="de" aria-selected="true">DE</button><button type="button" data-lang="en" aria-selected="false">EN</button><button type="button" data-lang="tr" aria-selected="false">TR</button><button type="button" data-lang="ar" aria-selected="false">AR</button></div></div>
   </div>
-  <div class="drawer__foot"><button type="button" data-lang="de" aria-selected="true">DE</button><button type="button" data-lang="en" aria-selected="false">EN</button><button type="button" data-lang="tr" aria-selected="false">TR</button><button type="button" data-lang="ar" aria-selected="false">AR</button></div>
 </div>
 <main id="main">
 
@@ -64,50 +75,33 @@
   <div class="container-narrow">
     <nav class="crumbs" aria-label="Breadcrumb"><span><a href="/">Startseite</a></span><span>Impressum</span></nav>
     <h1 style="margin-bottom:2rem">Impressum</h1>
-    <div class="notice" style="margin-bottom:2.5rem"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
-      <div><strong>Diese Seite ist eine Vorlage.</strong> Vor der Veröffentlichung muss sie an die
-      tatsächlich verwendete technische und geschäftliche Struktur angepasst und rechtlich geprüft
-      werden &ndash; insbesondere zu Anbieterkennzeichnung, Zahlungsdienstleistern, Hosting,
-      Nutzerkonten und digitalen Inhalten.</div></div>
+    <div class="notice" style="margin-bottom:2.5rem"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><div><strong>Diese Seite ist eine Vorlage.</strong> Vor der Veröffentlichung muss sie an die tatsächlich verwendete technische und geschäftliche Struktur angepasst und rechtlich geprüft werden.</div></div>
     <div class="prose">
 <h2>Angaben gemäß § 5 DDG</h2>
 <p>Hidayah<br>[Straße und Hausnummer]<br>[PLZ Ort]<br>Deutschland</p>
 <h2>Vertreten durch</h2><p>[Vor- und Nachname der verantwortlichen Person]</p>
-<h2>Kontakt</h2><p>E-Mail: salam@hidayah.de<br>Telefon: [wird ergänzt]</p>
-<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-<p>[Vor- und Nachname]<br>[Anschrift]</p>
-<h2>Umsatzsteuer-Identifikationsnummer</h2><p>[falls vorhanden]</p>
+<h2>Kontakt</h2><p>E-Mail: salam@hidayah.de</p>
+<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2><p>[Vor- und Nachname]<br>[Anschrift]</p>
 <h2>Streitschlichtung</h2>
-<p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit. Wir sind
-nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
-Verbraucherschlichtungsstelle teilzunehmen.</p>
+<p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit. Wir sind nicht
+bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+teilzunehmen.</p>
 <h2>Bildnachweis</h2>
 <p>Logo und Mondaufnahme: Hidayah. Schriftarten: Clash Display und Satoshi (Indian Type Foundry,
 Fontshare-Lizenz), Amiri und Cairo (SIL Open Font License).</p></div>
   </div>
 </section>
 </main>
-<footer class="site-footer">
+<footer class="site-footer night">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy">
-        <p>Auf der Suche nach Licht in einer Welt voller Dunkelheit.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Inhalte</h4>
-        <a href="/wissen.html">Wissen</a>
-        <a href="/kurse.html">Kurse</a>
-        <a href="/frage-antwort.html">Frage &amp; Antwort</a>
-      </div>
-      <div class="footer-col">
-        <h4>Hidayah</h4>
+      <div class="footer-brand"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy"><p>Auf der Suche nach Licht in einer Welt voller Dunkelheit.</p></div>
+      <div class="footer-col"><h4>Inhalte</h4><a href="/artikel.html">Artikel</a><a href="/frage-antwort.html">Frage &amp; Antwort</a></div>
+      <div class="footer-col"><h4>Hidayah</h4>
         <a href="/ueber-uns.html">Über uns</a>
         <a href="/kontakt.html">Kontakt</a>
-        <a href="/konto.html">Mein Konto</a>
       </div>
-      <div class="footer-col">
-        <h4>Rechtliches</h4>
+      <div class="footer-col"><h4>Rechtliches</h4>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutzerklärung</a>
         <a href="/agb.html">AGB</a>
@@ -142,7 +136,7 @@ Fontshare-Lizenz), Amiri und Cairo (SIL Open Font License).</p></div>
   <p>Wir verwenden nur technisch notwendige Cookies, damit die Seite funktioniert – etwa für deine Sprachwahl. Es findet keine Werbung und kein Tracking statt.</p>
   <div class="btn-row">
     <button class="btn btn--primary btn--sm" type="button" data-cookie-ok>Verstanden</button>
-    <a class="btn btn--ghost btn--sm" href="/datenschutz.html">Datenschutz</a>
+    <a class="btn btn--quiet btn--sm" href="/datenschutz.html">Datenschutz</a>
   </div>
 </div>
 <script src="/assets/js/config.js" defer></script>

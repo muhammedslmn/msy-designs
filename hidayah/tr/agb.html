@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>AGB — Hidayah</title>
+<title>Allgemeine Geschäftsbedingungen — Hidayah</title>
 <meta name="description" content="Rechtliche Informationen zu Hidayah.">
-<meta name="theme-color" content="#05060a">
+<meta name="theme-color" content="#FBFAF6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090C11" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://hidayah.de/tr/agb.html">
 <link rel="alternate" hreflang="de" href="https://hidayah.de/agb.html"><link rel="alternate" hreflang="en" href="https://hidayah.de/en/agb.html"><link rel="alternate" hreflang="tr" href="https://hidayah.de/tr/agb.html"><link rel="alternate" hreflang="ar" href="https://hidayah.de/ar/agb.html"><link rel="alternate" hreflang="x-default" href="https://hidayah.de/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hidayah">
 <meta property="og:locale" content="tr_TR">
-<meta property="og:title" content="AGB — Hidayah">
+<meta property="og:title" content="Allgemeine Geschäftsbedingungen — Hidayah">
 <meta property="og:description" content="Rechtliche Informationen zu Hidayah.">
 <meta property="og:url" content="https://hidayah.de/tr/agb.html">
 <meta property="og:image" content="https://hidayah.de/assets/img/og-image.jpg">
@@ -24,39 +25,49 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+<script src="/assets/js/theme.js"></script>
 <link rel="stylesheet" href="/assets/css/hidayah.css">
 </head>
 <body data-lang="tr">
 
 <a class="skip-link" href="#main">İçeriğe geç</a>
-<header class="site-header" id="siteHeader">
+<header class="site-header night" id="siteHeader">
   <nav class="nav container" aria-label="Menü">
-    <a class="nav__logo" href="/tr/" aria-label="Hidayah">
-      <img src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" fetchpriority="high">
-    </a>
-    <div class="nav__links"><a href="/tr/">Ana sayfa</a><a href="/tr/ueber-uns.html">Hakkımızda</a><a href="/tr/wissen.html">İlim</a><a href="/tr/frage-antwort.html">Soru &amp; Cevap</a><a href="/tr/kurse.html">Dersler</a><a href="/tr/kontakt.html">İletişim</a></div>
+    <a class="nav__logo" href="/tr/" aria-label="Hidayah"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" fetchpriority="high"></a>
+    <div class="nav__links"><a href="/tr/artikel.html">Makaleler</a><a href="/tr/frage-antwort.html">Soru &amp; Cevap</a><a href="/tr/ueber-uns.html">Hakkımızda</a><a href="/tr/kontakt.html">İletişim</a></div>
     <div class="nav__tools">
       <button class="icon-btn" type="button" data-search-open aria-label="Ara"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
-      <a class="icon-btn" href="/tr/konto.html" aria-label="Hesabım"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></a>
-      <div class="lang" data-lang-switch aria-expanded="false">
-        <button class="icon-btn icon-btn--wide" type="button" aria-haspopup="listbox" aria-label="Dil">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><span class="lang__code">TR</span>
+      <div class="pop" data-pop aria-expanded="false">
+        <button class="icon-btn" type="button" aria-haspopup="true" aria-label="Görünüm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg></button>
+        <div class="pop__menu">
+          <p class="pop__label">Mod</p>
+          <div role="listbox" data-theme-group><button class="pop__item" type="button" data-theme-set="auto" role="option" aria-selected="false">Otomatik</button><button class="pop__item" type="button" data-theme-set="light" role="option" aria-selected="false">Açık</button><button class="pop__item" type="button" data-theme-set="dark" role="option" aria-selected="false">Koyu</button></div>
+          <div class="pop__sep"></div>
+          <p class="pop__label">Vurgu rengi</p>
+          <div class="swatches" role="listbox" data-accent-group><button class="swatch" type="button" data-accent-set="smaragd" data-set="smaragd" aria-selected="false" title="Zümrüt" aria-label="Zümrüt"></button><button class="swatch" type="button" data-accent-set="indigo" data-set="indigo" aria-selected="false" title="Çivit" aria-label="Çivit"></button><button class="swatch" type="button" data-accent-set="messing" data-set="messing" aria-selected="false" title="Pirinç" aria-label="Pirinç"></button><button class="swatch" type="button" data-accent-set="tinte" data-set="tinte" aria-selected="false" title="Mürekkep" aria-label="Mürekkep"></button></div>
+        </div>
+      </div>
+      <div class="pop" data-pop aria-expanded="false">
+        <button class="icon-btn icon-btn--wide" type="button" aria-haspopup="true" aria-label="Dil">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><span class="pop__code">TR</span>
         </button>
-        <div class="lang__menu" role="listbox"><button type="button" data-lang="de" role="option" aria-selected="false"><span>Deutsch</span><span class="lang__code">DE</span></button><button type="button" data-lang="en" role="option" aria-selected="false"><span>English</span><span class="lang__code">EN</span></button><button type="button" data-lang="tr" role="option" aria-selected="true"><span>Turkce</span><span class="lang__code">TR</span></button><button type="button" data-lang="ar" role="option" aria-selected="false"><span>العربية</span><span class="lang__code">AR</span></button></div>
+        <div class="pop__menu" role="listbox"><button class="pop__item" type="button" data-lang="de" role="option" aria-selected="false"><span>Deutsch</span><span class="pop__code">DE</span></button><button class="pop__item" type="button" data-lang="en" role="option" aria-selected="false"><span>English</span><span class="pop__code">EN</span></button><button class="pop__item" type="button" data-lang="tr" role="option" aria-selected="true"><span>Turkce</span><span class="pop__code">TR</span></button><button class="pop__item" type="button" data-lang="ar" role="option" aria-selected="false"><span>العربية</span><span class="pop__code">AR</span></button></div>
       </div>
       <button class="icon-btn nav__burger" type="button" data-drawer-open aria-label="Menü"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </nav>
 </header>
-<div class="drawer" data-drawer aria-hidden="true">
-  <div class="drawer__top">
-    <img src="/assets/img/logo-360.webp" alt="Hidayah" style="height:26px;width:auto">
+<div class="drawer night" data-drawer aria-hidden="true">
+  <div class="drawer__top"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy">
     <button class="icon-btn" type="button" data-drawer-close aria-label="Kapat"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
-  <div class="drawer__links"><a href="/tr/">Ana sayfa</a><a href="/tr/ueber-uns.html">Hakkımızda</a><a href="/tr/wissen.html">İlim</a><a href="/tr/frage-antwort.html">Soru &amp; Cevap</a><a href="/tr/kurse.html">Dersler</a><a href="/tr/kontakt.html">İletişim</a>
-    <a href="/tr/konto.html">Hesabım</a>
+  <div class="drawer__links"><a href="/tr/artikel.html">Makaleler</a><a href="/tr/frage-antwort.html">Soru &amp; Cevap</a><a href="/tr/ueber-uns.html">Hakkımızda</a><a href="/tr/kontakt.html">İletişim</a></div>
+  <div class="drawer__foot">
+    <div><p class="pop__label" style="padding-inline:0">Mod</p>
+      <div class="pill-row" data-theme-group><button type="button" data-theme-set="auto" aria-selected="false">Otomatik</button><button type="button" data-theme-set="light" aria-selected="false">Açık</button><button type="button" data-theme-set="dark" aria-selected="false">Koyu</button></div></div>
+    <div><p class="pop__label" style="padding-inline:0">Dil</p>
+      <div class="pill-row"><button type="button" data-lang="de" aria-selected="false">DE</button><button type="button" data-lang="en" aria-selected="false">EN</button><button type="button" data-lang="tr" aria-selected="true">TR</button><button type="button" data-lang="ar" aria-selected="false">AR</button></div></div>
   </div>
-  <div class="drawer__foot"><button type="button" data-lang="de" aria-selected="false">DE</button><button type="button" data-lang="en" aria-selected="false">EN</button><button type="button" data-lang="tr" aria-selected="true">TR</button><button type="button" data-lang="ar" aria-selected="false">AR</button></div>
 </div>
 <main id="main">
 
@@ -64,64 +75,41 @@
   <div class="container-narrow">
     <nav class="crumbs" aria-label="Breadcrumb"><span><a href="/tr/">Ana sayfa</a></span><span>Allgemeine Geschäftsbedingungen</span></nav>
     <h1 style="margin-bottom:2rem">Allgemeine Geschäftsbedingungen</h1>
-    <div class="notice" style="margin-bottom:2.5rem"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
-      <div><strong>Diese Seite ist eine Vorlage.</strong> Vor der Veröffentlichung muss sie an die
-      tatsächlich verwendete technische und geschäftliche Struktur angepasst und rechtlich geprüft
-      werden &ndash; insbesondere zu Anbieterkennzeichnung, Zahlungsdienstleistern, Hosting,
-      Nutzerkonten und digitalen Inhalten.</div></div>
+    <div class="notice" style="margin-bottom:2.5rem"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><div><strong>Diese Seite ist eine Vorlage.</strong> Vor der Veröffentlichung muss sie an die tatsächlich verwendete technische und geschäftliche Struktur angepasst und rechtlich geprüft werden.</div></div>
     <div class="prose">
 <h2>1. Geltungsbereich</h2>
 <p>Diese Bedingungen gelten für alle Verträge über digitale Inhalte, die über diese Website zwischen
 Hidayah und Verbrauchern bzw. Unternehmern geschlossen werden.</p>
 <h2>2. Vertragsgegenstand</h2>
-<p>Gegenstand sind digitale Inhalte, insbesondere Videokurse, begleitende PDF-Materialien und der
-Zugang zu diesen Inhalten über ein persönliches Nutzerkonto.</p>
+<p>Gegenstand sind digitale Inhalte, insbesondere Videokurse und begleitende Materialien.</p>
 <h2>3. Vertragsschluss</h2>
-<p>Die Darstellung der Kurse stellt kein bindendes Angebot dar. Mit dem Abschluss des
-Bestellvorgangs gibst du ein verbindliches Angebot ab. Der Vertrag kommt mit unserer
-Bestätigung in Textform zustande.</p>
+<p>Die Darstellung der Kurse stellt kein bindendes Angebot dar. Mit dem Abschluss des Bestellvorgangs
+gibst du ein verbindliches Angebot ab. Der Vertrag kommt mit unserer Bestätigung in Textform zustande.</p>
 <h2>4. Preise, Währung und Zahlung</h2>
-<p>Alle Preise sind Endpreise. Du kannst beim Kauf zwischen den verfügbaren Währungen (Euro oder
-Türkische Lira) wählen; der tatsächlich belastete Betrag richtet sich nach dem gewählten
-Zahlungsmittel und dem Zahlungsdienstleister.</p>
+<p>Alle Preise sind Endpreise. Du kannst beim Kauf zwischen den verfügbaren Währungen wählen; der
+tatsächlich belastete Betrag richtet sich nach dem gewählten Zahlungsmittel.</p>
 <h2>5. Nutzungsrechte</h2>
 <p>Du erhältst ein einfaches, nicht übertragbares Recht zur persönlichen Nutzung der erworbenen
-Inhalte. Die Weitergabe, Vervielfältigung, öffentliche Zugänglichmachung oder Weiterveräußerung
-der Inhalte ist nicht gestattet. Zugangsdaten dürfen nicht an Dritte weitergegeben werden.</p>
-<h2>6. Verfügbarkeit</h2>
-<p>Der Zugang zu gekauften Kursen wird dauerhaft bereitgestellt, mindestens jedoch für die bei
-Kaufabschluss angegebene Dauer. Kurzfristige Unterbrechungen aus technischen Gründen bleiben
-vorbehalten.</p>
-<h2>7. Gewährleistung und Haftung</h2>
+Inhalte. Weitergabe, Vervielfältigung oder öffentliche Zugänglichmachung sind nicht gestattet.</p>
+<h2>6. Gewährleistung und Haftung</h2>
 <p>Es gelten die gesetzlichen Bestimmungen. Für Schäden haften wir nur bei Vorsatz und grober
 Fahrlässigkeit sowie bei Verletzung wesentlicher Vertragspflichten.</p>
-<h2>8. Schlussbestimmungen</h2>
+<h2>7. Schlussbestimmungen</h2>
 <p>Es gilt deutsches Recht unter Wahrung der zwingenden Verbraucherschutzvorschriften des
 Aufenthaltsstaates des Verbrauchers.</p></div>
   </div>
 </section>
 </main>
-<footer class="site-footer">
+<footer class="site-footer night">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy">
-        <p>Karanlıkla dolu bir dünyada nûr arayışında.</p>
-      </div>
-      <div class="footer-col">
-        <h4>İçerik</h4>
-        <a href="/tr/wissen.html">İlim</a>
-        <a href="/tr/kurse.html">Dersler</a>
-        <a href="/tr/frage-antwort.html">Soru &amp; Cevap</a>
-      </div>
-      <div class="footer-col">
-        <h4>Hidayah</h4>
+      <div class="footer-brand"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy"><p>Karanlıkla dolu bir dünyada nûr arayışında.</p></div>
+      <div class="footer-col"><h4>İçerik</h4><a href="/tr/artikel.html">Makaleler</a><a href="/tr/frage-antwort.html">Soru &amp; Cevap</a></div>
+      <div class="footer-col"><h4>Hidayah</h4>
         <a href="/tr/ueber-uns.html">Hakkımızda</a>
         <a href="/tr/kontakt.html">İletişim</a>
-        <a href="/tr/konto.html">Hesabım</a>
       </div>
-      <div class="footer-col">
-        <h4>Hukuki</h4>
+      <div class="footer-col"><h4>Hukuki</h4>
         <a href="/tr/impressum.html">Künye</a>
         <a href="/tr/datenschutz.html">Gizlilik politikası</a>
         <a href="/tr/agb.html">Şartlar</a>
@@ -156,7 +144,7 @@ Aufenthaltsstaates des Verbrauchers.</p></div>
   <p>Sadece sitenin çalışması için teknik olarak gerekli çerezleri kullanıyoruz – örneğin dil tercihin için. Reklam ve takip yok.</p>
   <div class="btn-row">
     <button class="btn btn--primary btn--sm" type="button" data-cookie-ok>Anladım</button>
-    <a class="btn btn--ghost btn--sm" href="/tr/datenschutz.html">Gizlilik</a>
+    <a class="btn btn--quiet btn--sm" href="/tr/datenschutz.html">Gizlilik</a>
   </div>
 </div>
 <script src="/assets/js/config.js" defer></script>

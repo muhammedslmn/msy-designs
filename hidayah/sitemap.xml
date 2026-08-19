@@ -1,57 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://hidayah.de/</loc><lastmod>2026-08-19</lastmod><priority>1.0</priority></url>
-  <url><loc>https://hidayah.de/ueber-uns.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/wissen.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://hidayah.de/artikel.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/frage-antwort.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/kurse.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://hidayah.de/ueber-uns.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/kontakt.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/konto.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/impressum.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/datenschutz.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/agb.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/widerruf.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/en/</loc><lastmod>2026-08-19</lastmod><priority>1.0</priority></url>
-  <url><loc>https://hidayah.de/en/ueber-uns.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/en/wissen.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://hidayah.de/en/artikel.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/en/frage-antwort.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/en/kurse.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://hidayah.de/en/ueber-uns.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/en/kontakt.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/en/konto.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/en/impressum.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/en/datenschutz.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/en/agb.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/en/widerruf.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/tr/</loc><lastmod>2026-08-19</lastmod><priority>1.0</priority></url>
-  <url><loc>https://hidayah.de/tr/ueber-uns.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/tr/wissen.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://hidayah.de/tr/artikel.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/tr/frage-antwort.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/tr/kurse.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://hidayah.de/tr/ueber-uns.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/tr/kontakt.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/tr/konto.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/tr/impressum.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/tr/datenschutz.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/tr/agb.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/tr/widerruf.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/ar/</loc><lastmod>2026-08-19</lastmod><priority>1.0</priority></url>
-  <url><loc>https://hidayah.de/ar/ueber-uns.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/ar/wissen.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://hidayah.de/ar/artikel.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/ar/frage-antwort.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/ar/kurse.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://hidayah.de/ar/ueber-uns.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/ar/kontakt.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/ar/konto.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/ar/impressum.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/ar/datenschutz.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/ar/agb.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://hidayah.de/ar/widerruf.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
-  <url><loc>https://hidayah.de/wissen/was-bedeutet-tawhid.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://hidayah.de/wissen/was-ist-shirk.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://hidayah.de/wissen/was-ist-bidah.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://hidayah.de/wissen/blut-und-wudu.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://hidayah.de/wissen/wurde-der-islam-mit-dem-schwert-verbreitet.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://hidayah.de/wissen/wissen-von-seinen-leuten-nehmen.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://hidayah.de/kurse/arabische-grammatik-de.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://hidayah.de/kurse/arapca-gramer-tr.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://hidayah.de/kurse/aqidah-grundlagen-de.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://hidayah.de/kurse/tajwid-de.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://hidayah.de/artikel/was-bedeutet-tawhid.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://hidayah.de/artikel/was-ist-shirk.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://hidayah.de/artikel/was-ist-bidah.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://hidayah.de/artikel/blut-und-wudu.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://hidayah.de/artikel/wurde-der-islam-mit-dem-schwert-verbreitet.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://hidayah.de/artikel/wissen-von-seinen-leuten-nehmen.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
 </urlset>

@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Hakkımızda — Hidayah</title>
 <meta name="description" content="Wie Hidayah entstand, warum der Name Hidayah gewaehlt wurde, unsere Mission, unsere Grundlage und unser Team.">
-<meta name="theme-color" content="#05060a">
+<meta name="theme-color" content="#FBFAF6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090C11" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://hidayah.de/tr/ueber-uns.html">
 <link rel="alternate" hreflang="de" href="https://hidayah.de/ueber-uns.html"><link rel="alternate" hreflang="en" href="https://hidayah.de/en/ueber-uns.html"><link rel="alternate" hreflang="tr" href="https://hidayah.de/tr/ueber-uns.html"><link rel="alternate" hreflang="ar" href="https://hidayah.de/ar/ueber-uns.html"><link rel="alternate" hreflang="x-default" href="https://hidayah.de/">
 <meta property="og:type" content="website">
@@ -24,39 +25,49 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+<script src="/assets/js/theme.js"></script>
 <link rel="stylesheet" href="/assets/css/hidayah.css">
 </head>
 <body data-lang="tr">
 
 <a class="skip-link" href="#main">İçeriğe geç</a>
-<header class="site-header" id="siteHeader">
+<header class="site-header night" id="siteHeader">
   <nav class="nav container" aria-label="Menü">
-    <a class="nav__logo" href="/tr/" aria-label="Hidayah">
-      <img src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" fetchpriority="high">
-    </a>
-    <div class="nav__links"><a href="/tr/">Ana sayfa</a><a href="/tr/ueber-uns.html" aria-current="page">Hakkımızda</a><a href="/tr/wissen.html">İlim</a><a href="/tr/frage-antwort.html">Soru &amp; Cevap</a><a href="/tr/kurse.html">Dersler</a><a href="/tr/kontakt.html">İletişim</a></div>
+    <a class="nav__logo" href="/tr/" aria-label="Hidayah"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" fetchpriority="high"></a>
+    <div class="nav__links"><a href="/tr/artikel.html">Makaleler</a><a href="/tr/frage-antwort.html">Soru &amp; Cevap</a><a href="/tr/ueber-uns.html" aria-current="page">Hakkımızda</a><a href="/tr/kontakt.html">İletişim</a></div>
     <div class="nav__tools">
       <button class="icon-btn" type="button" data-search-open aria-label="Ara"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
-      <a class="icon-btn" href="/tr/konto.html" aria-label="Hesabım"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></a>
-      <div class="lang" data-lang-switch aria-expanded="false">
-        <button class="icon-btn icon-btn--wide" type="button" aria-haspopup="listbox" aria-label="Dil">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><span class="lang__code">TR</span>
+      <div class="pop" data-pop aria-expanded="false">
+        <button class="icon-btn" type="button" aria-haspopup="true" aria-label="Görünüm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg></button>
+        <div class="pop__menu">
+          <p class="pop__label">Mod</p>
+          <div role="listbox" data-theme-group><button class="pop__item" type="button" data-theme-set="auto" role="option" aria-selected="false">Otomatik</button><button class="pop__item" type="button" data-theme-set="light" role="option" aria-selected="false">Açık</button><button class="pop__item" type="button" data-theme-set="dark" role="option" aria-selected="false">Koyu</button></div>
+          <div class="pop__sep"></div>
+          <p class="pop__label">Vurgu rengi</p>
+          <div class="swatches" role="listbox" data-accent-group><button class="swatch" type="button" data-accent-set="smaragd" data-set="smaragd" aria-selected="false" title="Zümrüt" aria-label="Zümrüt"></button><button class="swatch" type="button" data-accent-set="indigo" data-set="indigo" aria-selected="false" title="Çivit" aria-label="Çivit"></button><button class="swatch" type="button" data-accent-set="messing" data-set="messing" aria-selected="false" title="Pirinç" aria-label="Pirinç"></button><button class="swatch" type="button" data-accent-set="tinte" data-set="tinte" aria-selected="false" title="Mürekkep" aria-label="Mürekkep"></button></div>
+        </div>
+      </div>
+      <div class="pop" data-pop aria-expanded="false">
+        <button class="icon-btn icon-btn--wide" type="button" aria-haspopup="true" aria-label="Dil">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg><span class="pop__code">TR</span>
         </button>
-        <div class="lang__menu" role="listbox"><button type="button" data-lang="de" role="option" aria-selected="false"><span>Deutsch</span><span class="lang__code">DE</span></button><button type="button" data-lang="en" role="option" aria-selected="false"><span>English</span><span class="lang__code">EN</span></button><button type="button" data-lang="tr" role="option" aria-selected="true"><span>Turkce</span><span class="lang__code">TR</span></button><button type="button" data-lang="ar" role="option" aria-selected="false"><span>العربية</span><span class="lang__code">AR</span></button></div>
+        <div class="pop__menu" role="listbox"><button class="pop__item" type="button" data-lang="de" role="option" aria-selected="false"><span>Deutsch</span><span class="pop__code">DE</span></button><button class="pop__item" type="button" data-lang="en" role="option" aria-selected="false"><span>English</span><span class="pop__code">EN</span></button><button class="pop__item" type="button" data-lang="tr" role="option" aria-selected="true"><span>Turkce</span><span class="pop__code">TR</span></button><button class="pop__item" type="button" data-lang="ar" role="option" aria-selected="false"><span>العربية</span><span class="pop__code">AR</span></button></div>
       </div>
       <button class="icon-btn nav__burger" type="button" data-drawer-open aria-label="Menü"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </nav>
 </header>
-<div class="drawer" data-drawer aria-hidden="true">
-  <div class="drawer__top">
-    <img src="/assets/img/logo-360.webp" alt="Hidayah" style="height:26px;width:auto">
+<div class="drawer night" data-drawer aria-hidden="true">
+  <div class="drawer__top"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy">
     <button class="icon-btn" type="button" data-drawer-close aria-label="Kapat"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
-  <div class="drawer__links"><a href="/tr/">Ana sayfa</a><a href="/tr/ueber-uns.html" aria-current="page">Hakkımızda</a><a href="/tr/wissen.html">İlim</a><a href="/tr/frage-antwort.html">Soru &amp; Cevap</a><a href="/tr/kurse.html">Dersler</a><a href="/tr/kontakt.html">İletişim</a>
-    <a href="/tr/konto.html">Hesabım</a>
+  <div class="drawer__links"><a href="/tr/artikel.html">Makaleler</a><a href="/tr/frage-antwort.html">Soru &amp; Cevap</a><a href="/tr/ueber-uns.html" aria-current="page">Hakkımızda</a><a href="/tr/kontakt.html">İletişim</a></div>
+  <div class="drawer__foot">
+    <div><p class="pop__label" style="padding-inline:0">Mod</p>
+      <div class="pill-row" data-theme-group><button type="button" data-theme-set="auto" aria-selected="false">Otomatik</button><button type="button" data-theme-set="light" aria-selected="false">Açık</button><button type="button" data-theme-set="dark" aria-selected="false">Koyu</button></div></div>
+    <div><p class="pop__label" style="padding-inline:0">Dil</p>
+      <div class="pill-row"><button type="button" data-lang="de" aria-selected="false">DE</button><button type="button" data-lang="en" aria-selected="false">EN</button><button type="button" data-lang="tr" aria-selected="true">TR</button><button type="button" data-lang="ar" aria-selected="false">AR</button></div></div>
   </div>
-  <div class="drawer__foot"><button type="button" data-lang="de" aria-selected="false">DE</button><button type="button" data-lang="en" aria-selected="false">EN</button><button type="button" data-lang="tr" aria-selected="true">TR</button><button type="button" data-lang="ar" aria-selected="false">AR</button></div>
 </div>
 <main id="main">
 
@@ -64,10 +75,9 @@
   <div class="container-narrow">
     <nav class="crumbs" aria-label="Breadcrumb"><span><a href="/tr/">Ana sayfa</a></span><span>Hakkımızda</span></nav>
     <p class="eyebrow">Hakkımızda</p>
-    <h1>Bize emanet edileni aktarmak</h1>
-    <p class="lead" style="margin-top:1.5rem">Hidayah, öğrenilen İslami ilmi sadece kendimize saklamayıp aktarma ve böylece imkânlarımız ölçüsünde İslam'a ve Müslümanlara hizmet etme arzusundan doğdu.</p>
-    <div class="notice" style="margin-bottom:2rem"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
-      <div>İçerikler şu anda Almanca yayınlanıyor. Çeviriler devam ediyor.</div></div>
+    <h1 class="balance">Bize emanet edileni aktarmak</h1>
+    <p class="lead" style="margin-top:1.6rem">Hidayah, öğrenilen İslami ilmi sadece kendimize saklamayıp aktarma ve böylece imkânlarımız ölçüsünde İslam'a ve Müslümanlara hizmet etme arzusundan doğdu.</p>
+    <div class="notice" style="margin-bottom:2.5rem"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><div>İçerikler şu anda Almanca yayınlanıyor. Çeviriler devam ediyor.</div></div>
   </div>
 </section>
 
@@ -76,8 +86,8 @@
     <article class="prose">
       <h2 id="entstehung">Entstehung von Hidayah</h2>
       <p>Hidayah entstand im Oktober 2024 nach Gesprächen und Beratungen zwischen drei Brüdern sowie
-      mit unseren Lehrern und Šuyūḫ. Dahinter stand die gemeinsame Überzeugung, dass es notwendig ist,
-      das Gelernte nicht nur für sich selbst zu bewahren, sondern damit nach außen zu treten und
+      mit unseren Lehrern und Shuyukh. Dahinter stand die gemeinsame Überzeugung, dass es notwendig
+      ist, das Gelernte nicht nur für sich selbst zu bewahren, sondern damit nach außen zu treten und
       &ndash; entsprechend den eigenen Möglichkeiten &ndash; einen Beitrag für den Islam und die
       Muslime zu leisten.</p>
       <p>Eine wichtige Rolle spielten dabei auch die Ereignisse in Gaza. Hidayah entstand jedoch nicht
@@ -94,24 +104,24 @@
       sollte seine Botschaft nicht bei einem politischen oder gesellschaftlichen Thema enden.</strong>
       Sie sollte letztlich auch zu Allah führen und den Menschen zeigen, was der Islam ist, wofür er
       steht und wozu er den Menschen ruft.</p>
-      <p>Daraus entwickelte sich unser Weg: Daʿwah zu machen, islamisches Wissen weiterzugeben,
+      <p>Daraus entwickelte sich unser Weg: Dawah zu machen, islamisches Wissen weiterzugeben,
       Missverständnisse aufzuklären und dort zu helfen, wo wir mit unseren Möglichkeiten helfen können.</p>
       <p>Ein weiterer Grund für die Entstehung von Hidayah war die Art und Weise, wie islamisches
       Wissen heute verbreitet wird. Durch soziale Medien kann nahezu jeder über religiöse Themen
       sprechen. Dadurch wird Wissen teilweise ohne ausreichende Grundlagen weitergegeben, Aussagen
       werden aus ihrem Zusammenhang gerissen und komplexe Fragen werden von Menschen behandelt, denen
       die notwendigen Grundlagen fehlen.</p>
-      <p>Nach mehreren Jahren des Lernens, dem Begleiten unserer Lehrer und dem Erhalt von Iǧāzāt
-      entstand deshalb &ndash; gemeinsam mit unseren Lehrern und Šuyūḫ &ndash; der Entschluss, selbst
+      <p>Nach mehreren Jahren des Lernens, dem Begleiten unserer Lehrer und dem Erhalt von Ijazat
+      entstand deshalb &ndash; gemeinsam mit unseren Lehrern und Shuyukh &ndash; der Entschluss, selbst
       Verantwortung zu übernehmen und das Gelernte auf zugängliche und zugleich fundierte Weise
       weiterzugeben.</p>
 
       <h2 id="name">Warum der Name &bdquo;Hidayah&ldquo;?</h2>
       <p>Hidayah bedeutet: <strong>Rechtleitung</strong>. Einer der Verse, die bei der Wahl dieses
       Namens eine besondere Bedeutung hatten, ist die Aussage Allahs:</p>
-      <figure class="ayah"><p class="ayah__ar" lang="ar" dir="rtl">﴿وَقَالُوا الْحَمْدُ لِلّٰهِ الَّذِي هَدَانَا لِهٰذَا وَمَا كُنَّا لِنَهْتَدِيَ لَوْلَا أَنْ هَدَانَا اللّٰهُ﴾</p><p class="ayah__de">&bdquo;Und sie werden sagen: Alles Lob gebührt Allah, Der uns hierher rechtgeleitet hat. Wir hätten niemals die Rechtleitung gefunden, wenn Allah uns nicht rechtgeleitet hätte.&ldquo;</p><figcaption class="ayah__src">Sūrat al-Aʿrāf, 7:43</figcaption></figure>
+      <figure class="ayah"><p class="ayah__ar" lang="ar" dir="rtl">﴿وَقَالُوا الْحَمْدُ لِلّٰهِ الَّذِي هَدَانَا لِهٰذَا وَمَا كُنَّا لِنَهْتَدِيَ لَوْلَا أَنْ هَدَانَا اللّٰهُ﴾</p><p class="ayah__de">&bdquo;Und sie werden sagen: Alles Lob gebührt Allah, Der uns hierher rechtgeleitet hat. Wir hätten niemals die Rechtleitung gefunden, wenn Allah uns nicht rechtgeleitet hätte.&ldquo;</p><figcaption class="ayah__src">Surat al-Araf, 7:43</figcaption></figure>
       <p>Der Name soll zuerst uns selbst daran erinnern, dass Rechtleitung allein von Allah kommt.
-      Wissen, Daʿwah und die eigenen Bemühungen sind lediglich Mittel. Niemand kann einem Herzen die
+      Wissen, Dawah und die eigenen Bemühungen sind lediglich Mittel. Niemand kann einem Herzen die
       Rechtleitung geben außer Allah.</p>
       <p>Hidayah soll deshalb nicht um Personen aufgebaut sein. Unser Ziel ist es, Menschen zum Islam,
       zum Wissen und letztlich zu Allah zu führen und gleichzeitig selbst auf diesem Weg standhaft zu
@@ -119,25 +129,26 @@
       Dunkelheit.</em></p>
 
       <h2 id="mission">Unsere Mission</h2>
-      <p>Unsere Mission ist es, die Menschen zum Tawḥīd &ndash; zur alleinigen Anbetung Allahs &ndash;
+      <p>Unsere Mission ist es, die Menschen zum Tawhid &ndash; zur alleinigen Anbetung Allahs &ndash;
       aufzurufen, den Islam auf Grundlage authentischen Wissens zu vermitteln und Muslime darin zu
       stärken, ihren Glauben zu verstehen, zu leben und darin standhaft zu bleiben.</p>
 
       <h2 id="grundlage">Unsere Grundlage</h2>
-      <p>Unsere Grundlage sind der Qurʾān und die authentische Sunnah des Gesandten Allahs ﷺ nach dem
-      Verständnis der Ṣaḥābah und der rechtschaffenen frühen Generationen &ndash; as-Salaf aṣ-Ṣāliḥ.</p>
-      <figure class="ayah"><p class="ayah__ar" lang="ar" dir="rtl">﴿وَالسَّابِقُونَ الْأَوَّلُونَ مِنَ الْمُهَاجِرِينَ وَالْأَنْصَارِ وَالَّذِينَ اتَّبَعُوهُمْ بِإِحْسَانٍ رَضِيَ اللَّهُ عَنْهُمْ وَرَضُوا عَنْهُ﴾</p><p class="ayah__de">&bdquo;Die ersten Vorausgeeilten von den Muhāǧirūn und den Anṣār und diejenigen, die ihnen in guter Weise folgen &ndash; Allah ist mit ihnen zufrieden und sie sind mit Ihm zufrieden.&ldquo;</p><figcaption class="ayah__src">Sūrat at-Tawbah, 9:100</figcaption></figure>
-      <p>Islamisches Wissen bedeutet für uns deshalb nicht, Qurʾān und Sunnah nach persönlichen
+      <p>Unsere Grundlage sind der Quran und die authentische Sunnah des Gesandten Allahs &#65018;
+      nach dem Verständnis der Sahabah und der rechtschaffenen frühen Generationen
+      &ndash; as-Salaf as-Salih.</p>
+      <figure class="ayah"><p class="ayah__ar" lang="ar" dir="rtl">﴿وَالسَّابِقُونَ الْأَوَّلُونَ مِنَ الْمُهَاجِرِينَ وَالْأَنْصَارِ وَالَّذِينَ اتَّبَعُوهُمْ بِإِحْسَانٍ رَضِيَ اللَّهُ عَنْهُمْ وَرَضُوا عَنْهُ﴾</p><p class="ayah__de">&bdquo;Die ersten Vorausgeeilten von den Muhajirun und den Ansar und diejenigen, die ihnen in guter Weise folgen &ndash; Allah ist mit ihnen zufrieden und sie sind mit Ihm zufrieden.&ldquo;</p><figcaption class="ayah__src">Surat at-Tawbah, 9:100</figcaption></figure>
+      <p>Islamisches Wissen bedeutet für uns deshalb nicht, Quran und Sunnah nach persönlichen
       Vorstellungen auszulegen. <strong>Wissen wird von seinen Leuten genommen.</strong></p>
-      <figure class="ayah"><p class="ayah__ar" lang="ar" dir="rtl">﴿إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ﴾</p><p class="ayah__de">&bdquo;Allah fürchten von Seinen Dienern wahrhaftig die Gelehrten.&ldquo;</p><figcaption class="ayah__src">Sūrat Fāṭir, 35:28</figcaption></figure>
-      <figure class="ayah hadith"><p class="ayah__ar" lang="ar" dir="rtl">«إِنَّ الْعُلَمَاءَ وَرَثَةُ الْأَنْبِيَاءِ»</p><p class="ayah__de">&bdquo;Wahrlich, die Gelehrten sind die Erben der Propheten.&ldquo;</p><figcaption class="ayah__src">Abū Dāwūd, Nr. 3641; at-Tirmiḏī, Nr. 2682</figcaption></figure>
+      <figure class="ayah"><p class="ayah__ar" lang="ar" dir="rtl">﴿إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ﴾</p><p class="ayah__de">&bdquo;Allah fürchten von Seinen Dienern wahrhaftig die Gelehrten.&ldquo;</p><figcaption class="ayah__src">Surat Fatir, 35:28</figcaption></figure>
+      <figure class="ayah ayah--hadith"><p class="ayah__ar" lang="ar" dir="rtl">«إِنَّ الْعُلَمَاءَ وَرَثَةُ الْأَنْبِيَاءِ»</p><p class="ayah__de">&bdquo;Wahrlich, die Gelehrten sind die Erben der Propheten.&ldquo;</p><figcaption class="ayah__src">Abu Dawud, Nr. 3641; at-Tirmidhi, Nr. 2682</figcaption></figure>
       <p>Daher gehören die Rückkehr zu den Gelehrten, das Lernen bei ihnen und ein fundierter
       wissenschaftlicher Weg zu den Grundlagen unserer Arbeit.</p>
-      <p>In der ʿAqīdah folgen wir dem Weg von Ahl as-Sunnah wa-l-Ǧamāʿah, wie ihn die Ṣaḥābah und die
+      <p>In der Aqidah folgen wir dem Weg von Ahl as-Sunnah wa-l-Jamaah, wie ihn die Sahabah und die
       Salaf verstanden und überliefert haben. Im Fiqh erkennen und respektieren wir die vier bekannten
       Rechtsschulen:</p>
-      <p style="font-family:var(--ff-display);font-size:1.2rem;color:var(--moon);text-align:center;
-      padding:1.2rem 0;border-block:1px solid var(--line)">Ḥanafī &nbsp;|&nbsp; Mālikī &nbsp;|&nbsp; Šāfiʿī &nbsp;|&nbsp; Ḥanbalī</p>
+      <p style="font-family:var(--ff-display);font-size:1.2rem;color:var(--accent);text-align:center;
+      padding:1.3rem 0;border-block:1px solid var(--line);letter-spacing:.02em">Hanafi &nbsp;&middot;&nbsp; Maliki &nbsp;&middot;&nbsp; Shafii &nbsp;&middot;&nbsp; Hanbali</p>
       <p>Anerkannte Meinungsverschiedenheiten behandeln wir mit Wissen, Gerechtigkeit und Respekt.
       Unser Ziel ist nicht, einen neuen Weg zu schaffen oder den Islam nach eigenen Vorstellungen zu
       formen. <strong>Unser Ziel ist es, dem zu folgen, was bereits vorgegeben wurde.</strong></p>
@@ -145,66 +156,49 @@
   </div>
 </section>
 
-<section class="section" style="padding-top:0">
+<section class="section section--hairline">
   <div class="container">
-    <div class="section-head"><p class="eyebrow">Unser Team</p>
-      <h2>Drei Brüder, ein gemeinsamer Weg</h2>
-      <p class="lead" style="margin-top:1rem">Die jeweiligen Aufgaben und Themenbereiche richten sich
-      nach dem Wissensstand und den Schwerpunkten des Einzelnen. Die Personen sollen sichtbar sein &ndash;
-      Hidayah wird jedoch nicht um einzelne Personen aufgebaut.</p></div>
-    <div class="grid grid--3"><div class="card member">
-      <div class="member__avatar">AS</div>
-      <p class="member__role">Daʿwah & Inhalte</p>
+    <div class="split">
+      <p class="eyebrow">Unser Team</p>
+      <div>
+        <h2 class="balance" style="max-width:15ch">Drei Brüder, ein gemeinsamer Weg</h2>
+        <p class="lead" style="margin-top:1.4rem">Die jeweiligen Aufgaben und Themenbereiche richten
+        sich nach dem Wissensstand und den Schwerpunkten des Einzelnen. Die Personen sollen sichtbar
+        sein &ndash; Hidayah wird jedoch nicht um einzelne Personen aufgebaut.</p>
+        <div class="grid grid--3" style="margin-top:2.5rem"><div class="card">
+      <div class="member__mono">AS</div>
+      <p class="member__role">Dawah & Inhalte</p>
       <h3 class="card__title" style="margin-bottom:.5rem">A. Sirac</h3>
       <p class="card__text">Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften und hat bei verschiedenen Lehrern Unterricht genommen.</p>
-      <ul class="member__list"><li>Sīrah und islamische Geschichte</li><li>Aufklärung von Zweifeln</li><li>Tajwīd</li></ul>
-    </div><div class="card member">
-      <div class="member__avatar">SE</div>
-      <p class="member__role">Unterricht & Fatwā-Recherche</p>
+      <ul class="member__list"><li>Sirah und islamische Geschichte</li><li>Aufklärung von Zweifeln</li><li>Tajwid</li></ul>
+    </div><div class="card">
+      <div class="member__mono">SE</div>
+      <p class="member__role">Unterricht & Fatwa-Recherche</p>
       <h3 class="card__title" style="margin-bottom:.5rem">S. Eslem</h3>
-      <p class="card__text">Hat einen mehrjährigen strukturierten Studienweg in verschiedenen islamischen Wissenschaften absolviert und Iǧāzāt von verschiedenen Lehrern erhalten.</p>
-      <ul class="member__list"><li>ʿAqīdah</li><li>Fiqh und Uṣūl al-Fiqh</li><li>Arabische Sprache</li></ul>
-    </div><div class="card member">
-      <div class="member__avatar">MS</div>
+      <p class="card__text">Hat einen mehrjährigen strukturierten Studienweg in verschiedenen islamischen Wissenschaften absolviert und Ijazat von verschiedenen Lehrern erhalten.</p>
+      <ul class="member__list"><li>Aqidah</li><li>Fiqh und Usul al-Fiqh</li><li>Arabische Sprache</li></ul>
+    </div><div class="card">
+      <div class="member__mono">MS</div>
       <p class="member__role">Plattform & Organisation</p>
       <h3 class="card__title" style="margin-bottom:.5rem">M. Selman</h3>
       <p class="card__text">Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften und verantwortet die technische und organisatorische Seite von Hidayah.</p>
-      <ul class="member__list"><li>Wissensarchiv und Struktur</li><li>Digitale Daʿwah</li><li>Kursproduktion</li></ul>
+      <ul class="member__list"><li>Wissensarchiv und Struktur</li><li>Digitale Dawah</li><li>Kursproduktion</li></ul>
     </div></div>
-  </div>
-</section>
-
-<section class="section--tight" style="padding-bottom:4rem">
-  <div class="container-narrow" style="text-align:center">
-    <p class="lead" style="margin-inline:auto">Du hast eine Frage zu Hidayah oder zu einem islamischen Thema?</p>
-    <div class="btn-row" style="justify-content:center">
-      <a class="btn btn--primary" href="/tr/frage-antwort.html">Soru sor</a>
-      <a class="btn btn--ghost" href="/tr/kontakt.html">İletişim</a>
+      </div>
     </div>
   </div>
 </section>
 </main>
-<footer class="site-footer">
+<footer class="site-footer night">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy">
-        <p>Karanlıkla dolu bir dünyada nûr arayışında.</p>
-      </div>
-      <div class="footer-col">
-        <h4>İçerik</h4>
-        <a href="/tr/wissen.html">İlim</a>
-        <a href="/tr/kurse.html">Dersler</a>
-        <a href="/tr/frage-antwort.html">Soru &amp; Cevap</a>
-      </div>
-      <div class="footer-col">
-        <h4>Hidayah</h4>
+      <div class="footer-brand"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy"><p>Karanlıkla dolu bir dünyada nûr arayışında.</p></div>
+      <div class="footer-col"><h4>İçerik</h4><a href="/tr/artikel.html">Makaleler</a><a href="/tr/frage-antwort.html">Soru &amp; Cevap</a></div>
+      <div class="footer-col"><h4>Hidayah</h4>
         <a href="/tr/ueber-uns.html">Hakkımızda</a>
         <a href="/tr/kontakt.html">İletişim</a>
-        <a href="/tr/konto.html">Hesabım</a>
       </div>
-      <div class="footer-col">
-        <h4>Hukuki</h4>
+      <div class="footer-col"><h4>Hukuki</h4>
         <a href="/tr/impressum.html">Künye</a>
         <a href="/tr/datenschutz.html">Gizlilik politikası</a>
         <a href="/tr/agb.html">Şartlar</a>
@@ -239,7 +233,7 @@
   <p>Sadece sitenin çalışması için teknik olarak gerekli çerezleri kullanıyoruz – örneğin dil tercihin için. Reklam ve takip yok.</p>
   <div class="btn-row">
     <button class="btn btn--primary btn--sm" type="button" data-cookie-ok>Anladım</button>
-    <a class="btn btn--ghost btn--sm" href="/tr/datenschutz.html">Gizlilik</a>
+    <a class="btn btn--quiet btn--sm" href="/tr/datenschutz.html">Gizlilik</a>
   </div>
 </div>
 <script src="/assets/js/config.js" defer></script>
