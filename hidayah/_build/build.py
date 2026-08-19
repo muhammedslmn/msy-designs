@@ -118,7 +118,7 @@ SERIES_NAME = {x["key"]: x["name"] for x in SERIES}
 index = []
 for a in ARTICLES:
     index.append({"g": "articles", "t": a["title"], "u": "/artikel/%s.html" % a["slug"],
-                  "s": SERIES_NAME[a["series"]],
+                  "s": SERIES_NAME.get(a.get("series"), "Artikel"),
                   "k": strip(a["summary"]) + " " + P.author_of(a)})
 for c in COURSES:
     index.append({"g": "courses", "t": c["title"], "u": "/kurse/%s.html" % c["slug"],

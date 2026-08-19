@@ -28,22 +28,23 @@ SERIES = [
     {
         "key": "terminologie",
         "name": "Islamische Terminologie",
-        "author": "A. Sirac",
         "desc": "Zentrale Begriffe des Islam – erklärt, eingeordnet und belegt.",
     },
     {
         "key": "rechtsurteile",
         "name": "Islamische Rechtsurteile",
-        "author": "S. Eslem",
         "desc": "Fragen des Fiqh auf Grundlage anerkannter Quellen und Gelehrter.",
     },
     {
         "key": "zweifel",
         "name": "Aufklärung von Zweifeln zum Islam",
-        "author": "M. Selman",
         "desc": "Antworten auf Behauptungen, Missverständnisse und mediale Darstellungen.",
     },
 ]
+
+# Beitraege erscheinen unter diesem Namen, solange im Artikel kein eigener
+# Autor eingetragen ist.
+DEFAULT_AUTHOR = "Hidayah"
 
 
 def ayah(ar, de, src, kind=""):
@@ -55,8 +56,9 @@ def ayah(ar, de, src, kind=""):
 
 
 # ---------------------------------------------------------------- Artikel
-# Leer = im Wissensarchiv steht die Struktur der drei Reihen, es wird aber
-# keine Artikelliste angezeigt. Aufbau eines Eintrags siehe _build/vorlagen.py
+# Ein Artikel kann einer Reihe zugeordnet werden ("series"), muss es aber
+# nicht — allgemeine Beitraege lassen das Feld einfach weg.
+# Aufbau eines Eintrags siehe _build/vorlagen.py
 ARTICLES = []
 
 # ---------------------------------------------------------------- Unterricht
@@ -100,9 +102,8 @@ TEAM = [
             "für organisatorische Angelegenheiten und die Planung der gemeinsamen Arbeit."},
     {"name": "S. Eslem", "initials": "SE",
      "bio": "Hat einen mehrjährigen strukturierten Studienweg in verschiedenen islamischen "
-            "Wissenschaften absolviert und Ijazat von verschiedenen Lehrern erhalten. Er übernimmt "
-            "die wissenschaftliche Recherche und prüft die Ergebnisse, bevor sie veröffentlicht "
-            "werden."},
+            "Wissenschaften absolviert und Ijazat von verschiedenen Lehrern erhalten. Zudem "
+            "befasst er sich mit Recherche, Quellenprüfung und inhaltlicher Kontrolle."},
     {"name": "M. Selman", "initials": "MS",
      "bio": "Beschäftigt sich seit mehreren Jahren mit den islamischen Wissenschaften, hat den "
             "Quran auswendig gelernt und widmet sich insbesondere dem Quran-Unterricht, dem Tafsir "

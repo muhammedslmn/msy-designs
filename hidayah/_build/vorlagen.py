@@ -7,16 +7,18 @@ erscheint danach automatisch in Navigation, Startseite, Suche und Sitemap.
 """
 
 # ---------------------------------------------------------------- Artikel
-# Nach ARTICLES in content.py. Der Autor kommt automatisch aus der Reihe:
-#   terminologie  -> A. Sirac
-#   rechtsurteile -> S. Eslem
-#   zweifel       -> M. Selman
+# Nach ARTICLES in content.py.
+# "series" ist freiwillig: gehoert der Beitrag zu einer der drei Reihen, wird
+# der Schluessel eingetragen; ein allgemeiner Beitrag laesst das Feld weg.
+# "author" ist ebenfalls freiwillig – ohne Eintrag erscheint der Beitrag unter
+# "Hidayah". Soll ein Name genannt werden, wird er hier eingetragen.
 # Ein Inhaltsverzeichnis erscheint automatisch ab zwei <h2 id="…">.
 # Die Abschnitte werden automatisch durchnummeriert (01, 02, 03 …).
 ARTIKEL_VORLAGE = {
     "slug": "mein-artikel",           # ergibt /artikel/mein-artikel.html
     "title": "Titel des Artikels",
-    "series": "terminologie",         # terminologie | rechtsurteile | zweifel
+    "series": "terminologie",         # optional: terminologie | rechtsurteile | zweifel
+    # "author": "S. Eslem",           # optional, sonst erscheint "Hidayah"
     "date": "2026-01-15",
     "reading": 8,                     # Lesezeit in Minuten
     "video": "",                      # Video-URL -> Videobereich erscheint automatisch

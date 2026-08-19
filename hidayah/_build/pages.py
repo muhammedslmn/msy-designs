@@ -5,8 +5,8 @@ Grundregel: Die Hauptbereiche stehen fest. Einzelne Beitraege darin erscheinen
 erst, wenn sie eingetragen sind — nichts wird als Platzhalter vorgetaeuscht.
 """
 import re
-from content import (SITE, SERIES, ARTICLES, TEACHING, COURSES, PACKAGES,
-                     QA_CATEGORIES, QA_PUBLIC, TEAM, ayah)
+from content import (SITE, SERIES, DEFAULT_AUTHOR, ARTICLES, TEACHING, COURSES,
+                     PACKAGES, QA_CATEGORIES, QA_PUBLIC, TEAM, ayah)
 from layout import t, u, ICON
 
 MONTHS = {"de": ["Januar","Februar","März","April","Mai","Juni","Juli","August",
@@ -31,11 +31,17 @@ def sorted_articles():
 
 
 def author_of(a):
-    return a.get("author") or SERIES_BY_KEY[a["series"]]["author"]
+    """Beitraege erscheinen unter Hidayah, sofern kein Autor eingetragen ist."""
+    return a.get("author") or DEFAULT_AUTHOR
 
 
 def used_series():
-    return [s for s in SERIES if any(a["series"] == s["key"] for a in ARTICLES)]
+    return [s for s in SERIES if any(a.get("series") == s["key"] for a in ARTICLES)]
+
+
+def has_loose_articles():
+    """Artikel ohne Reihe — allgemeine Beitraege."""
+    return any(not a.get("series") for a in ARTICLES)
 
 
 # ------------------------------------------------------------------ Bausteine
@@ -46,15 +52,16 @@ def crumbs(lang, items):
 
 
 def entry(a, lang):
-    s = SERIES_BY_KEY[a["series"]]
+    cat = ('<span class="entry__cat">%s</span>' % SERIES_BY_KEY[a["series"]]["name"]
+           if a.get("series") else "")
     return '''<a class="entry" href="%(href)s">
-  <div class="entry__meta"><span class="entry__cat">%(cat)s</span><span>%(date)s</span>
+  <div class="entry__meta">%(cat)s<span>%(date)s</span>
     <span>%(min)d %(minlbl)s</span></div>
   <div>
     <h3 class="entry__title">%(title)s</h3>
     <p class="entry__excerpt">%(sum)s</p>
   </div>
-</a>''' % {"href": u("de", "artikel/%s.html" % a["slug"]), "cat": s["name"],
+</a>''' % {"href": u("de", "artikel/%s.html" % a["slug"]), "cat": cat,
             "date": fdate(a["date"], lang), "min": a["reading"], "minlbl": t(lang, "c.min"),
             "title": a["title"], "sum": a["summary"]}
 
@@ -204,39 +211,42 @@ def home(lang):
     return "".join(out)
 
 
-# ------------------------------------------------------------------ Wissensarchiv
+# ------------------------------------------------------------------ Artikel
 def archive(lang):
-    """Zeigt die feste Struktur der Reihen. Artikel erscheinen, sobald es welche gibt."""
+    """Allgemeiner Artikelbereich. Darin die wiederkehrenden Reihen."""
     reihen = "".join('''<div class="rail">
       <span class="rail__num">%02d</span>
       <div class="rail__body">
         <h3 class="rail__title">%s</h3>
         <p class="rail__text">%s</p>
       </div>
-      <div class="rail__by"><span class="rail__bylabel">%s</span><span class="rail__name">%s</span></div>
-    </div>''' % (i + 1, s["name"], s["desc"], t(lang, "c.by"), s["author"])
-                     for i, s in enumerate(SERIES))
+    </div>''' % (i + 1, r["name"], r["desc"]) for i, r in enumerate(SERIES))
 
-    listing = ""
     arts = sorted_articles()
     if arts:
         used = used_series()
+        loose = has_loose_articles()
+        options = [("series:" + r["key"], r["name"]) for r in used]
+        if loose and used:
+            options.append(("series:frei", t(lang, "arch.other")))
         filters = ""
-        if len(used) >= 2:
+        if len(options) >= 2:
             chips = ('<button class="chip" type="button" data-filter="all" aria-pressed="true">%s</button>'
                      % t(lang, "c.all"))
-            chips += "".join('<button class="chip" type="button" data-filter="series:%s" aria-pressed="false">%s</button>'
-                             % (s["key"], s["name"]) for s in used)
+            chips += "".join('<button class="chip" type="button" data-filter="%s" aria-pressed="false">%s</button>'
+                             % (v, n) for v, n in options)
             filters = '<div class="filters" data-filters>%s</div>' % chips
-        rows = "".join('<div data-keys="series:%s">%s</div>' % (a["series"], entry(a, lang))
-                       for a in arts)
+        rows = "".join('<div data-keys="series:%s">%s</div>'
+                       % (a.get("series") or "frei", entry(a, lang)) for a in arts)
         listing = '''
 <section class="section section--hairline">
   <div class="container">
+    <div class="section-head"><p class="eyebrow">%s</p><h2>%s</h2></div>
     %s%s<div class="index" data-article-list>%s</div>
     <p class="search-empty" data-empty hidden>%s</p>
   </div>
-</section>''' % (lang_notice(lang), filters, rows, t(lang, "search.empty"))
+</section>''' % (t(lang, "arch.all.eyebrow"), t(lang, "arch.all.title"),
+                 lang_notice(lang), filters, rows, t(lang, "search.empty"))
     else:
         listing = ('<section class="section--tight"><div class="container">'
                    '<p class="dim" style="font-size:.92rem">%s</p></div></section>'
@@ -259,7 +269,7 @@ def archive(lang):
 <section class="section">
   <div class="container">
     <div class="section-head"><p class="eyebrow">%(eb2)s</p>
-      <h2 class="balance" style="max-width:18ch">%(h2)s</h2>
+      <h2 class="balance" style="max-width:16ch">%(h2)s</h2>
       <p class="lead" style="margin-top:1.2rem">%(text)s</p></div>
     <div class="rails">%(reihen)s</div>
   </div>
@@ -267,7 +277,7 @@ def archive(lang):
 %(listing)s''' % {
         "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)), (t(lang, "nav.knowledge"), None)]),
         "eb": t(lang, "arch.eyebrow"), "h1": t(lang, "areas.k.title"),
-        "lead": t(lang, "areas.k.text"), "eb2": t(lang, "arch.eyebrow2"),
+        "lead": t(lang, "arch.lead"), "eb2": t(lang, "arch.eyebrow2"),
         "h2": t(lang, "arch.title"), "text": t(lang, "arch.text"),
         "reihen": reihen, "listing": listing,
     }
@@ -287,7 +297,8 @@ def article_page(a, lang):
         src = ('<section class="sources"><h2>%s</h2><ol>%s</ol></section>'
                % (t(lang, "c.sources"), "".join("<li>%s</li>" % x for x in a["sources"])))
 
-    rel = [x for x in ARTICLES if x["slug"] != a["slug"] and x["series"] == a["series"]][:3]
+    rel = [x for x in ARTICLES if x["slug"] != a["slug"]
+           and x.get("series") == a.get("series")][:3]
     related = ""
     if rel:
         related = ('<section class="section section--hairline"><div class="container-narrow">'
@@ -295,13 +306,14 @@ def article_page(a, lang):
                    '<div class="index">%s</div></div></section>'
                    % (t(lang, "c.related"), "".join(entry(r, lang) for r in rel)))
 
-    s = SERIES_BY_KEY[a["series"]]
+    tag = ('<span class="tag">%s</span>' % SERIES_BY_KEY[a["series"]]["name"]
+           if a.get("series") else "")
     return '''
 <div class="progress-bar" data-progress aria-hidden="true"></div>
 <article class="article-head">
   <div class="container-narrow">
     %(crumbs)s
-    <span class="tag">%(series)s</span>
+    %(series)s
     <h1 class="balance">%(title)s</h1>
     <p class="article-summary">%(sum)s</p>
     <div class="article-meta">
@@ -334,7 +346,7 @@ def article_page(a, lang):
         "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)),
                                 (t(lang, "nav.knowledge"), u(lang, "artikel.html")),
                                 (a["title"], None)]),
-        "series": s["name"], "title": a["title"], "sum": a["summary"],
+        "series": tag, "title": a["title"], "sum": a["summary"],
         "by": t(lang, "c.by"), "author": author_of(a), "date": fdate(a["date"], lang),
         "min": a["reading"], "minlbl": t(lang, "c.min"),
         "toc": toc, "video": video_block(a.get("video", ""), a["title"]),
@@ -512,58 +524,71 @@ def about(lang):
       ist, das Gelernte nicht nur für sich selbst zu bewahren, sondern damit nach außen zu treten und
       &ndash; entsprechend den eigenen Möglichkeiten &ndash; einen Beitrag für den Islam und die
       Muslime zu leisten.</p>
-      <p>Eine wichtige Rolle spielten dabei auch die Ereignisse in Gaza. Hidayah entstand jedoch nicht
-      lediglich als emotionale Reaktion darauf. Was dort geschah, war vielmehr eine Erinnerung an eine
-      Realität, die nicht erst mit Gaza begonnen hat und auch nicht mit Gaza enden wird.</p>
-      <p>Für uns stellte sich deshalb nicht nur die Frage, was gerade geschieht, sondern vielmehr:
-      Was bedeutet es eigentlich, Muslim zu sein? Was verlangt der Islam von uns? Warum halten wir
-      trotz Prüfungen und Schwierigkeiten an diesem Weg fest?</p>
-      <p>In dieser Zeit gingen viele Menschen auf die Straße und zahlreiche Stimmen machten auf das
-      Leid aufmerksam. Wir stellten jedoch gleichzeitig fest, dass der Islam selbst oftmals kaum
-      erklärt oder repräsentiert wurde. Für uns war deshalb klar: <strong>Wenn ein Muslim für eine
-      islamische Angelegenheit spricht, sollte seine Botschaft nicht bei einem politischen oder
-      gesellschaftlichen Thema enden.</strong> Sie sollte letztlich zu Allah führen und den Menschen
-      zeigen, was der Islam ist und wozu er ruft.</p>
-      <p>Ein weiterer Grund war die Art und Weise, wie islamisches Wissen heute verbreitet wird. Durch
-      soziale Medien kann nahezu jeder über religiöse Themen sprechen. Dadurch wird Wissen teilweise
-      ohne ausreichende Grundlagen weitergegeben, Aussagen werden aus ihrem Zusammenhang gerissen und
-      komplexe Fragen von Menschen behandelt, denen die notwendigen Grundlagen fehlen.</p>
+      <p>Eine wichtige Rolle spielten dabei auch die Ereignisse in Gaza. Doch Hidayah entstand nicht
+      einfach als emotionale Reaktion auf Gaza.</p>
+      <p>Was dort geschah, war für uns vielmehr eine Erinnerung an eine Realität, die nicht erst mit
+      Gaza begonnen hat und auch nicht mit Gaza enden wird. Seit jeher wurden Muslime geprüft,
+      unterdrückt und aufgrund ihres Glaubens bekämpft. Die entscheidende Frage war für uns deshalb
+      nicht nur, was gerade geschieht, sondern auch: Was bedeutet es eigentlich, Muslim zu sein? Was
+      verlangt der Islam von uns? Und warum halten wir trotz Prüfungen, Widerstand und
+      Schwierigkeiten an diesem Weg fest?</p>
+      %(ay_pruefung)s
+      <p>In dieser Zeit gingen viele Menschen auf die Straße, Organisationen veranstalteten
+      Demonstrationen und zahlreiche Stimmen machten auf das Leid in Gaza aufmerksam. Das hatte
+      zweifellos seine Berechtigung. Wir sahen jedoch gleichzeitig, dass der Islam selbst dabei
+      oftmals kaum erklärt oder repräsentiert wurde.</p>
+      <p>Für uns war deshalb klar: <strong>Wenn ein Muslim für eine islamische Angelegenheit spricht,
+      sollte seine Botschaft nicht bei einem politischen oder gesellschaftlichen Thema enden.</strong>
+      Sie sollte letztlich auch zu Allah führen und den Menschen zeigen, was der Islam ist, wofür er
+      steht und wozu er den Menschen ruft.</p>
+      %(ay_dawah)s
+      <p>Genau daraus entwickelte sich unser Weg: Dawah zu machen, islamisches Wissen weiterzugeben,
+      Missverständnisse aufzuklären und dort zu helfen, wo wir mit unseren Möglichkeiten helfen
+      können.</p>
+      <p>Ein weiterer Grund für die Entstehung von Hidayah war die Art und Weise, wie islamisches
+      Wissen heute verbreitet wird. Durch soziale Medien kann nahezu jeder über religiöse Themen
+      sprechen. Dadurch wird Wissen teilweise ohne ausreichende Grundlagen weitergegeben, Aussagen
+      werden aus ihrem Zusammenhang gerissen und komplexe Fragen von Menschen behandelt, denen die
+      notwendige Qualifikation fehlt.</p>
+      %(hd_wissen)s
       <p>Nach mehreren Jahren des Lernens, dem Begleiten unserer Lehrer und dem Erhalt von Ijazat
-      entstand deshalb &ndash; gemeinsam mit unseren Lehrern und Shuyukh &ndash; der Entschluss, selbst
-      Verantwortung zu übernehmen und das Gelernte auf zugängliche und zugleich fundierte Weise
-      weiterzugeben.</p>
+      entstand deshalb &ndash; gemeinsam mit unseren Lehrern und Shuyukh &ndash; der Entschluss,
+      selbst Verantwortung zu übernehmen und das Gelernte auf eine zugängliche und zugleich fundierte
+      Weise weiterzugeben.</p>
 
       <h2 id="name">Warum der Name &bdquo;Hidayah&ldquo;?</h2>
-      <p>Hidayah bedeutet: <strong>Rechtleitung</strong>. Einer der Verse, die bei der Wahl dieses
-      Namens eine besondere Bedeutung hatten, ist die Aussage Allahs:</p>
-      %(ay1)s
-      <p>Der Name soll zuerst uns selbst daran erinnern, dass Rechtleitung allein von Allah kommt.
-      Wissen, Dawah und die eigenen Bemühungen sind lediglich Mittel. Niemand kann einem Herzen die
-      Rechtleitung geben außer Allah.</p>
+      <p>Hidayah bedeutet <strong>Rechtleitung</strong>.</p>
+      <p>Einer der Verse, die bei der Wahl dieses Namens eine besondere Bedeutung für uns hatten, ist
+      die Aussage Allahs:</p>
+      %(ay_name)s
+      <p>Der Name soll uns zuerst selbst daran erinnern, dass Rechtleitung allein von Allah kommt.
+      Wissen, Dawah und unsere eigenen Bemühungen sind lediglich Mittel. Niemand kann einem Herzen
+      die Rechtleitung geben außer Allah.</p>
       <p>Hidayah soll deshalb nicht um Personen aufgebaut sein. Unser Ziel ist es, Menschen zum Islam,
-      zum Wissen und letztlich zu Allah zu führen und gleichzeitig selbst auf diesem Weg standhaft zu
-      bleiben. Denn auch wir sind weiterhin: <em>Auf der Suche nach Licht in einer Welt voller
-      Dunkelheit.</em></p>
+      zum Wissen und letztlich zu Allah zu führen &ndash; und gleichzeitig selbst auf diesem Weg
+      standhaft zu bleiben. Denn auch wir sind weiterhin:</p>
+      <p class="pull">Auf der Suche nach Licht in einer Welt voller Dunkelheit.</p>
 
       <h2 id="mission">Unsere Mission</h2>
-      <p>Unsere Mission ist es, die Menschen zum Tawhid &ndash; zur alleinigen Anbetung Allahs &ndash;
-      aufzurufen, den Islam auf Grundlage authentischen Wissens zu vermitteln und Muslime darin zu
-      stärken, ihren Glauben zu verstehen, zu leben und darin standhaft zu bleiben.</p>
+      <p>Unsere Mission ist es, die Menschen zum Tawhid &ndash; zur alleinigen Anbetung Allahs
+      &ndash; aufzurufen, den Islam auf Grundlage authentischen Wissens zu vermitteln und Muslime
+      darin zu stärken, ihren Glauben zu verstehen, zu leben und darin standhaft zu bleiben.</p>
+      %(ay_mission)s
 
       <h2 id="grundlage">Unsere Grundlage</h2>
       <p>Unsere Grundlage sind der Quran und die authentische Sunnah des Gesandten Allahs &#65018;
-      nach dem Verständnis der Sahabah und der rechtschaffenen frühen Generationen
-      &ndash; as-Salaf as-Salih.</p>
-      %(ay2)s
+      nach dem Verständnis der Sahabah und der rechtschaffenen frühen Generationen &ndash;
+      as-Salaf as-Salih.</p>
+      %(ay_salaf)s
       <p>Islamisches Wissen bedeutet für uns deshalb nicht, Quran und Sunnah nach persönlichen
       Vorstellungen auszulegen. <strong>Wissen wird von seinen Leuten genommen.</strong></p>
-      %(ay3)s
-      %(hd)s
+      %(ay_ulama)s
+      %(hd_erben)s
       <p>Daher gehören die Rückkehr zu den Gelehrten, das Lernen bei ihnen und ein fundierter
       wissenschaftlicher Weg zu den Grundlagen unserer Arbeit.</p>
       <p>In der Aqidah folgen wir dem Weg von Ahl as-Sunnah wa-l-Jamaah, wie ihn die Sahabah und die
-      Salaf verstanden und überliefert haben. Im Fiqh erkennen und respektieren wir die vier bekannten
-      Rechtsschulen:</p>
+      Salaf verstanden und überliefert haben. Im Fiqh erkennen und respektieren wir die vier
+      bekannten Rechtsschulen:</p>
       <p class="madhahib">Hanafi &nbsp;&middot;&nbsp; Maliki &nbsp;&middot;&nbsp; Shafii
       &nbsp;&middot;&nbsp; Hanbali</p>
       <p>Anerkannte Meinungsverschiedenheiten behandeln wir mit Wissen, Gerechtigkeit und Respekt.
@@ -577,33 +602,63 @@ def about(lang):
   <div class="container">
     <div class="split">
       <p class="eyebrow">Unser Team</p>
-      <div>
-        <h2 class="balance" style="max-width:15ch">Drei Brüder, drei Bereiche</h2>
-        <p class="lead" style="margin-top:1.4rem">Jeder betreut den Bereich, der seinem Wissensstand
-        und Schwerpunkt entspricht. Die Personen sollen sichtbar sein &ndash; Hidayah wird jedoch
-        nicht um einzelne Personen aufgebaut.</p>
-        <div class="grid grid--3" style="margin-top:2.5rem">%(team)s</div>
-      </div>
+      <div class="grid grid--3">%(team)s</div>
     </div>
   </div>
 </section>''' % {
         "crumbs": crumbs(lang, [(t(lang, "nav.home"), u(lang)), (t(lang, "nav.about"), None)]),
         "eb": t(lang, "nav.about"), "title": t(lang, "who.title"), "intro": t(lang, "who.p1"),
         "notice": lang_notice(lang),
-        "ay1": ayah("﴿وَقَالُوا الْحَمْدُ لِلّٰهِ الَّذِي هَدَانَا لِهٰذَا وَمَا كُنَّا لِنَهْتَدِيَ لَوْلَا أَنْ هَدَانَا اللّٰهُ﴾",
-                    "&bdquo;Und sie werden sagen: Alles Lob gebührt Allah, Der uns hierher rechtgeleitet "
-                    "hat. Wir hätten niemals die Rechtleitung gefunden, wenn Allah uns nicht "
-                    "rechtgeleitet hätte.&ldquo;", "Surat al-Araf, 7:43"),
-        "ay2": ayah("﴿وَالسَّابِقُونَ الْأَوَّلُونَ مِنَ الْمُهَاجِرِينَ وَالْأَنْصَارِ وَالَّذِينَ اتَّبَعُوهُمْ بِإِحْسَانٍ رَضِيَ اللَّهُ عَنْهُمْ وَرَضُوا عَنْهُ﴾",
-                    "&bdquo;Die ersten Vorausgeeilten von den Muhajirun und den Ansar und diejenigen, "
-                    "die ihnen in guter Weise folgen &ndash; Allah ist mit ihnen zufrieden und sie sind "
-                    "mit Ihm zufrieden.&ldquo;", "Surat at-Tawbah, 9:100"),
-        "ay3": ayah("﴿إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ﴾",
-                    "&bdquo;Allah fürchten von Seinen Dienern wahrhaftig die Gelehrten.&ldquo;",
-                    "Surat Fatir, 35:28"),
-        "hd": ayah("«إِنَّ الْعُلَمَاءَ وَرَثَةُ الْأَنْبِيَاءِ»",
-                   "&bdquo;Wahrlich, die Gelehrten sind die Erben der Propheten.&ldquo;",
-                   "Abu Dawud, Nr. 3641; at-Tirmidhi, Nr. 2682", "hadith"),
+
+        "ay_pruefung": ayah(
+            "﴿أَحَسِبَ النَّاسُ أَن يُتْرَكُوا أَن يَقُولُوا آمَنَّا وَهُمْ لَا يُفْتَنُونَ﴾",
+            "&bdquo;Meinen die Menschen, sie würden in Ruhe gelassen, weil sie sagen: Wir glauben, "
+            "ohne dass sie geprüft werden?&ldquo;", "Surat al-Ankabut, 29:2"),
+
+        "ay_dawah": ayah(
+            "﴿قُلْ هَٰذِهِ سَبِيلِي أَدْعُو إِلَى اللَّهِ ۚ عَلَىٰ بَصِيرَةٍ أَنَا وَمَنِ اتَّبَعَنِي﴾",
+            "&bdquo;Sag: Das ist mein Weg. Ich rufe zu Allah aufgrund eines klaren Beweises, ich und "
+            "wer mir folgt.&ldquo;", "Surat Yusuf, 12:108"),
+
+        "hd_wissen": ayah(
+            "«إِنَّ اللَّهَ لَا يَقْبِضُ الْعِلْمَ انْتِزَاعًا يَنْتَزِعُهُ مِنَ الْعِبَادِ، وَلَٰكِنْ يَقْبِضُ "
+            "الْعِلْمَ بِقَبْضِ الْعُلَمَاءِ، حَتَّىٰ إِذَا لَمْ يُبْقِ عَالِمًا اتَّخَذَ النَّاسُ رُءُوسًا جُهَّالًا، "
+            "فَسُئِلُوا فَأَفْتَوْا بِغَيْرِ عِلْمٍ، فَضَلُّوا وَأَضَلُّوا»",
+            "&bdquo;Allah nimmt das Wissen nicht fort, indem Er es den Menschen entreißt, sondern Er "
+            "nimmt das Wissen fort, indem Er die Gelehrten zu sich nimmt. Bleibt schließlich kein "
+            "Gelehrter mehr übrig, nehmen sich die Menschen unwissende Vorsteher. Diese werden "
+            "gefragt und geben Auskunft ohne Wissen &ndash; so gehen sie selbst in die Irre und "
+            "führen andere in die Irre.&ldquo;",
+            "al-Bukhari, Nr. 100; Muslim, Nr. 2673", "hadith"),
+
+        "ay_name": ayah(
+            "﴿وَقَالُوا الْحَمْدُ لِلّٰهِ الَّذِي هَدَانَا لِهٰذَا وَمَا كُنَّا لِنَهْتَدِيَ لَوْلَا أَنْ هَدَانَا اللّٰهُ﴾",
+            "&bdquo;Und sie werden sagen: Alles Lob gebührt Allah, Der uns hierher rechtgeleitet hat. "
+            "Wir hätten niemals die Rechtleitung gefunden, wenn Allah uns nicht rechtgeleitet "
+            "hätte.&ldquo;", "Surat al-Araf, 7:43"),
+
+        "ay_mission": ayah(
+            "﴿وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ﴾",
+            "&bdquo;Und Ich habe die Jinn und die Menschen nur erschaffen, damit sie Mir "
+            "dienen.&ldquo;", "Surat adh-Dhariyat, 51:56"),
+
+        "ay_salaf": ayah(
+            "﴿وَالسَّابِقُونَ الْأَوَّلُونَ مِنَ الْمُهَاجِرِينَ وَالْأَنْصَارِ وَالَّذِينَ اتَّبَعُوهُم بِإِحْسَانٍ "
+            "رَّضِيَ اللَّهُ عَنْهُمْ وَرَضُوا عَنْهُ﴾",
+            "&bdquo;Die ersten Vorausgeeilten von den Muhajirun und den Ansar und diejenigen, die "
+            "ihnen in guter Weise folgen &ndash; Allah ist mit ihnen zufrieden und sie sind mit Ihm "
+            "zufrieden.&ldquo;", "Surat at-Tawbah, 9:100"),
+
+        "ay_ulama": ayah(
+            "﴿إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ﴾",
+            "&bdquo;Allah fürchten von Seinen Dienern wahrhaftig die Gelehrten.&ldquo;",
+            "Surat Fatir, 35:28"),
+
+        "hd_erben": ayah(
+            "«إِنَّ الْعُلَمَاءَ وَرَثَةُ الْأَنْبِيَاءِ»",
+            "&bdquo;Wahrlich, die Gelehrten sind die Erben der Propheten.&ldquo;",
+            "Abu Dawud, Nr. 3641; at-Tirmidhi, Nr. 2682", "hadith"),
+
         "team": team,
     }
 

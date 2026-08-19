@@ -23,16 +23,20 @@ sobald ihr sie liefert.
 
 Startseite · Über uns · Artikel · Frage & Antwort · Unterricht · Kontakt
 
-**Die drei Reihen des Wissensarchivs** stehen fest, jede mit ihrem Verantwortlichen:
+**Die drei Reihen** ordnen wiederkehrende Beitragsformate:
 
-| Reihe | Verantwortlich | Schlüssel in `content.py` |
-|---|---|---|
-| Islamische Terminologie | A. Sirac | `terminologie` |
-| Islamische Rechtsurteile | S. Eslem | `rechtsurteile` |
-| Aufklärung von Zweifeln zum Islam | M. Selman | `zweifel` |
+| Reihe | Schlüssel in `content.py` |
+|---|---|
+| Islamische Terminologie | `terminologie` |
+| Islamische Rechtsurteile | `rechtsurteile` |
+| Aufklärung von Zweifeln zum Islam | `zweifel` |
 
-Ein Artikel bekommt nur **eine** Reihe zugewiesen. Der Autor ergibt sich automatisch daraus —
-es werden keine zusätzlichen Themen oder Kategorien pro Artikel vergeben.
+**Artikel ist der allgemeine Bereich.** Ein Beitrag kann einer Reihe zugeordnet werden, muss es
+aber nicht — Beiträge zu anderen Themen lassen das Feld `series` einfach weg und erscheinen
+trotzdem im Verzeichnis.
+
+**Beiträge erscheinen unter „Hidayah".** Soll bei einem bestimmten Beitrag ein Name genannt
+werden, wird `"author"` im Artikel eingetragen. Sonst bleibt es bei Hidayah.
 
 ---
 
@@ -63,7 +67,8 @@ Eintrag in `ARTICLES` in `_build/content.py` — Muster steht in `_build/vorlage
 {
     "slug": "mein-artikel",          # ergibt /artikel/mein-artikel.html
     "title": "Titel des Artikels",
-    "series": "terminologie",        # terminologie | rechtsurteile | zweifel
+    "series": "terminologie",        # optional: terminologie | rechtsurteile | zweifel
+    # "author": "S. Eslem",          # optional, sonst erscheint "Hidayah"
     "date": "2026-01-15",
     "reading": 8,
     "video": "",                     # Video-URL -> Videobereich erscheint automatisch

@@ -869,3 +869,11 @@ kbd{font-family:var(--ff-body);font-size:.7rem;padding:.15rem .45rem;border-radi
 .ayah{position:relative}
 .ayah__src{display:inline-flex;align-items:center;gap:.5rem}
 .ayah__src::before{content:"";width:14px;height:1px;background:currentColor;opacity:.7}
+
+/* Hervorgehobener Satz im Fliesstext */
+.pull{
+  font-family:var(--ff-display);font-size:clamp(1.2rem,1.05rem + .85vw,1.65rem);
+  font-weight:500;line-height:1.32;letter-spacing:-.015em;color:var(--ink);
+  border-inline-start:2px solid var(--accent);padding-inline-start:1.4rem;
+  margin-block:2.2rem;max-width:24ch;
+}
