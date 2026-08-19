@@ -10,7 +10,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 OUT = os.path.abspath(os.path.join(HERE, ".."))
 
-from content import (SITE, ARTICLES, COURSES, PACKAGES, SERIES, QA_PUBLIC)
+from content import (SITE, ARTICLES, COURSES, PACKAGES, SERIES, QA_PUBLIC, NEWS)
 from layout import LANGS, page, u, t
 import pages as P
 
@@ -33,7 +33,7 @@ def strip(html):
 # Alte Ausgabe entfernen, damit geloeschte Inhalte keine Seiten hinterlassen
 for d in ("artikel", "kurse", "wissen", "en", "tr", "ar"):
     shutil.rmtree(os.path.join(OUT, d), ignore_errors=True)
-for f in ("konto.html", "wissen.html", "kurse.html"):
+for f in ("wissen.html",):
     p = os.path.join(OUT, f)
     if os.path.exists(p):
         os.remove(p)
@@ -44,7 +44,7 @@ for lang, _lname, _code in LANGS:
 
     write(pre + "index.html", page(
         lang=lang, slug="", title="Hidayah", active="nav.home", with_intro=True,
-        desc=t(lang, "slogan") + " " + strip(t(lang, "hero.sub")),
+        desc=t(lang, "slogan") + " " + t(lang, "meta.desc"),
         body=P.home(lang)))
 
     write(pre + "ueber-uns.html", page(
@@ -62,8 +62,21 @@ for lang, _lname, _code in LANGS:
         desc=strip(t(lang, "areas.q.text")), body=P.qa(lang)))
 
     write(pre + "unterricht.html", page(
-        lang=lang, slug="unterricht.html", title=t(lang, "nav.courses"), active="nav.courses",
+        lang=lang, slug="unterricht.html", title=t(lang, "nav.teaching"), active="nav.teaching",
         desc=strip(t(lang, "teach.lead")), body=P.teaching(lang)))
+
+    write(pre + "kurse.html", page(
+        lang=lang, slug="kurse.html", title=t(lang, "nav.courses"), active="nav.courses",
+        desc="Strukturiertes islamisches Wissen, Schritt fuer Schritt - aufgezeichnete Kurse von Hidayah.",
+        body=P.courses(lang)))
+
+    write(pre + "neuigkeiten.html", page(
+        lang=lang, slug="neuigkeiten.html", title=t(lang, "news.h1"), active="nav.news",
+        desc=strip(t(lang, "news.lead")), body=P.news(lang)))
+
+    write(pre + "konto.html", page(
+        lang=lang, slug="konto.html", title=t(lang, "nav.account"),
+        desc="Gekaufte Kurse, Lernfortschritt und eigene Fragen.", body=P.account(lang)))
 
     write(pre + "kontakt.html", page(
         lang=lang, slug="kontakt.html", title=t(lang, "nav.contact"), active="nav.contact",
@@ -135,7 +148,8 @@ write("assets/js/search-index.js",
 urls = []
 for lang, _n, _c in LANGS:
     for sl in ("", "ueber-uns.html", "artikel.html", "frage-antwort.html", "unterricht.html",
-               "kontakt.html", "impressum.html", "datenschutz.html", "agb.html", "widerruf.html"):
+               "kurse.html", "neuigkeiten.html", "kontakt.html", "impressum.html",
+               "datenschutz.html", "agb.html", "widerruf.html"):
         urls.append((u(lang, sl), "1.0" if sl == "" else "0.7"))
 for a in ARTICLES:
     urls.append(("/artikel/%s.html" % a["slug"], "0.8"))
@@ -187,8 +201,6 @@ write("_headers", """/*
 # Alte Adressen weiterleiten
 red = ["/wissen.html  /artikel.html  301",
        "/wissen/*  /artikel/:splat  301",
-       "/kurse.html  /unterricht.html  301",
-       "/konto.html  /  301",
        "/*  /404.html  404"]
 write("_redirects", "\n".join(red) + "\n")
 

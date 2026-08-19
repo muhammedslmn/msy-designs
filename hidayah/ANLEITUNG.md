@@ -21,7 +21,10 @@ sobald ihr sie liefert.
 
 **Hauptbereiche** (feste Navigation, in dieser Reihenfolge):
 
-Startseite · Über uns · Artikel · Frage & Antwort · Unterricht · Kontakt
+Startseite · Über uns · Artikel · Frage & Antwort · Privatunterricht · Kurse ·
+Neuigkeiten · Kontakt
+
+Dazu im Kopfbereich: Suche, Konto, Darstellung und Sprache.
 
 **Die drei Reihen** ordnen wiederkehrende Beitragsformate:
 
@@ -48,7 +51,8 @@ Was nicht eingetragen ist, erscheint auch nicht. Das ist fest im Generator veran
 |---|---|
 | `ARTICLES` | Kein Artikelverzeichnis, kein Startseiten-Block, keine Suche |
 | `QA_PUBLIC` | Kein öffentliches Antwortarchiv (das Frageformular bleibt) |
-| `COURSES` | Kein Abschnitt „Aufgezeichnete Kurse" auf der Unterrichtsseite |
+| `COURSES` | Auf der Kursseite erscheint nur der Aufbau, keine Kursliste |
+| `NEWS` | Auf der Neuigkeiten-Seite steht ein kurzer Hinweis statt einer Liste |
 | `PACKAGES` | Kein Paketbereich (erscheint erst ab zwei Kursen) |
 | `SITE["intro_video"]` | Kein Videobereich auf der Startseite |
 | `"video"` im Artikel | Kein Videobereich im Artikel |
@@ -98,7 +102,23 @@ Quran- oder Hadith-Block im `body`:
 
 ---
 
-## 4. Unterricht
+## 4. Privatunterricht und Kurse
+
+Es sind **zwei getrennte Bereiche**:
+
+- **Privatunterricht** — Einzelunterricht auf Anfrage. Ablauf: Bewerbung → Prüfung → Gespräch
+  per FaceTime oder Telefon → individuelles Programm. Der Beitrag wird ausdrücklich **erst im
+  Gespräch** festgelegt.
+- **Kurse** — fertig aufgezeichnete Kurse zum Kauf. Erscheinen, sobald Einträge in `COURSES`
+  stehen; bis dahin erklärt die Seite nur den Aufbau.
+
+### Neuigkeiten
+
+Einladungen, Unterrichtsankündigungen und Mitteilungen kommen in `NEWS` in `content.py`.
+Jeder Eintrag hat Datum, Art (`Einladung`, `Unterricht`, `Ankündigung`), Titel und Text.
+Muster in `_build/vorlagen.py`.
+
+### Details zum Privatunterricht
 
 Der Unterrichtsbereich bildet euren Ablauf ab: **Bewerbung → Prüfung → Gespräch → Programm**.
 

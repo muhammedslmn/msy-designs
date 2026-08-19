@@ -102,3 +102,17 @@ ANTWORT_VORLAGE = {
          "oder <em>Kursives</em>.",
     "date": "2026-01-15",
 }
+
+
+# ---------------------------------------------------------------- Neuigkeit
+# Nach NEWS in content.py. Einladungen, Unterrichtsankuendigungen, Mitteilungen.
+# Der Eintrag erscheint vollstaendig in der Liste – eine eigene Seite braucht
+# es dafuer nicht.
+NEUIGKEIT_VORLAGE = {
+    "date": "2026-02-14",
+    "kind": "Einladung",              # Einladung | Unterricht | Ankündigung
+    "title": "Titel der Mitteilung",
+    "body": """<p>Der Text der Mitteilung. HTML ist erlaubt, etwa
+    <strong>Hervorhebungen</strong> oder <a href="/kurse.html">Verweise</a>.</p>
+    <p>Ein zweiter Absatz, falls noetig.</p>""",
+}

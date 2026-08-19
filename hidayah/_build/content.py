@@ -86,6 +86,15 @@ TEACHING = {
 COURSES = []
 PACKAGES = []
 
+# ---------------------------------------------------------------- Neuigkeiten
+# Einladungen, Unterrichtsankuendigungen und Mitteilungen.
+# Leer = der Bereich erscheint mit einem kurzen Hinweis, ohne Liste.
+# Aufbau eines Eintrags siehe _build/vorlagen.py
+NEWS = []
+
+# Art der Mitteilung. Erscheint als kleine Marke ueber dem Titel.
+NEWS_KINDS = ["Einladung", "Unterricht", "Ankündigung"]
+
 # ---------------------------------------------------------------- Frage & Antwort
 QA_CATEGORIES = ["Aqidah", "Fiqh", "Gebet", "Fasten", "Ehe & Familie", "Handel", "Dawah",
                  "Allgemeine islamische Fragen"]
