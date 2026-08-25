@@ -1691,19 +1691,19 @@ window.CONTENT = {
             "tr": [
               "**İklâb (üçüncü hüküm) — Lügat (sözlük) anlamı:** \"bir şeyi başka bir şeye çevirmek, döndürmek\" demektir.",
               "**Istılah (terim) anlamı:** sâkin nûn veya tenvîni, **bâ (ب)** harfinden önce **gizli bir mîme (م) çevirip**, gunne ile okumaktır.",
-              "**Harfi tektir: ب (bâ).** **Nasıl uygulanır?** İki dudak hafifçe birbirine yaklaştırılır, **tam kapatılmadan çok küçük bir açıklık** bırakılır; böylece nûn/tenvîn sesi mîme döner ve gunne (geniz sesi) korunur. Doğru miktar ancak **hocadan (telakkî ile)** öğrenilir.",
+              "**Harfi tektir: ب (bâ).** **Nasıl uygulanır?** Sâkin nûn ya da tenvîn, bâ'dan önce **doğrudan mîme (م) çevrilir** — 'nûnu hafifçe açık bırakma' gibi bir ara adım **yoktur**; ses tam olarak mîm olur. Bu mîm **gunne ile** ve **ihfâ-i şefevî** (dudak ihfâsı) ile okunur; çünkü mîm, kendisinden sonra **bâ** gelince gizlenerek (dudaklar tam bastırılmadan) söylenen bir harftir. Kısacası: nûn açık kalmaz, **mîme dönüşür**; ihfâ, o mîmin bâ önündeki hâlidir. Doğru gunne miktarı ancak **hocadan (telakkî ile)** öğrenilir.",
               "**Mushaftaki işareti:** Nûnun üzerine küçük bir **mîm (ﻢ)** konularak gösterilir. Aşağıdaki tablo, iklâbın tek kelimede, iki kelimede ve tenvînle örneklerini verir."
             ],
             "de": [
               "**Iqlāb (dritte Regel) — Wörtliche Bedeutung:** „etwas umwandeln, umdrehen“.",
               "**Fachliche Bedeutung (Iṣṭilāḥ):** das sākine Nūn oder Tanwīn vor dem **Bāʾ (ب)** in ein **verborgenes Mīm (م)** zu verwandeln, mit Ghunna.",
-              "**Ein Buchstabe: ب (Bāʾ).** **Ausführung:** Die Lippen nähern sich leicht, mit einem **winzigen Spalt, ohne ganz zu schließen**; so wird der Nūn-/Tanwīn-Laut zum Mīm, die Ghunna bleibt. Das rechte Maß lernt man nur **beim Lehrer (Talaqqī)**.",
+              "**Ein Buchstabe: ب (Bāʾ).** **Ausführung:** Das sākine Nūn/Tanwīn wird vor dem Bāʾ **direkt in ein Mīm (م) verwandelt** — es gibt **keinen** Zwischenschritt „das Nūn leicht offen lassen“; der Laut wird ganz zum Mīm. Dieses Mīm wird **mit Ghunna** und als **Ikhfāʾ schafawī** (Lippen-Ikhfāʾ) gesprochen, denn ein Mīm vor dem Bāʾ wird verborgen (die Lippen ohne vollen Druck genähert). Kurz: Das Nūn bleibt nicht offen, es **wird zum Mīm**; das Ikhfāʾ ist der Zustand dieses Mīm vor dem Bāʾ. Das rechte Ghunna-Maß lernt man nur **beim Lehrer (Talaqqī)**.",
               "**Zeichen im Muṣḥaf:** ein kleines **Mīm (ﻢ)** über dem Nūn. Die Tabelle gibt Beispiele in einem Wort, in zwei Wörtern und mit Tanwīn."
             ],
             "en": [
               "**iqlāb (the third ruling) — Literal meaning:** \"to convert, to turn.\"",
               "**Technical meaning (iṣṭilāḥ):** to turn the sākin nūn or tanwīn, before the **bāʾ (ب)**, into a **hidden mīm (م)**, with ghunna.",
-              "**One letter: ب (bāʾ).** **Application:** the lips draw lightly together, with a **tiny gap, not fully closing**; thus the nūn/tanwīn sound becomes a mīm and the ghunna is kept. The right measure is learned only **from a teacher (talaqqī)**.",
+              "**One letter: ب (bāʾ).** **Application:** before the bāʾ the sākin nūn/tanwīn is **converted directly into a mīm (م)** — there is **no** in-between step of 'leaving the nūn slightly open'; the sound becomes fully a mīm. This mīm is pronounced **with ghunna** and as **ikhfāʾ shafawī** (labial ikhfāʾ), because a mīm before the bāʾ is concealed (the lips brought near without full pressure). In short: the nūn does not stay open, it **becomes a mīm**; the ikhfāʾ is that mīm's state before the bāʾ. The correct amount of ghunna is learned only **from a teacher (talaqqī)**.",
               "**Sign in the muṣḥaf:** a small **mīm (ﻢ)** above the nūn. The table gives examples in one word, in two words, and with tanwīn."
             ]
           },
