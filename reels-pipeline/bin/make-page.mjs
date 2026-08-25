@@ -40,7 +40,7 @@ const S = [
   { t: 0, d: 17.26, kind: 'hero' },
   { t: 17.26, d: 17.60, kind: 'text', eyebrow: 'Einordnung',
     h: 'Der Begriff im Zentrum',
-    p: ['Nachdem wir uns in den vergangenen Videos mit dem Tauhid und der Bedeutung des Glaubensbekenntnisses <em>La ilaha illa Allah</em> beschäftigt haben, wollen wir nun einen Begriff näher betrachten, der im Zentrum dieser gewaltigen Aussage steht.'] },
+    p: ['Nachdem wir uns in den vergangenen Videos mit dem Tawhid und der Bedeutung des Glaubensbekenntnisses <em>La ilaha illa Allah</em> beschäftigt haben, wollen wir nun einen Begriff näher betrachten, der im Zentrum dieser gewaltigen Aussage steht.'] },
 
   { t: 34.86, d: 17.49, kind: 'word', eyebrow: 'Das Wort',
     ar: 'الإله', translit: 'al-Ilah',
@@ -108,7 +108,7 @@ const S = [
     cite: 'Scheich al-Islam Ibn Taymiyya' },
 
   { t: 228.0, d: 14.80, kind: 'quote',
-    q: 'Wer einem Geschöpf etwas davon zukommen lässt, beeinträchtigt damit die <em>Aufrichtigkeit</em> des Glaubensbekenntnisses des Tauhid.',
+    q: 'Wer einem Geschöpf etwas davon zukommen lässt, beeinträchtigt damit die <em>Aufrichtigkeit</em> des Glaubensbekenntnisses des Tawhid.',
     cite: 'Hafidh Ibn Rajab al-Hanbali' },
 
   { t: 242.8, d: 15.71, kind: 'table', eyebrow: 'Im Quran',
@@ -160,7 +160,7 @@ const para = (s) => (s.p || []).map((x) => `<p class="lead">${x}</p>`).join('');
 
 const BODY = {
   hero: () => `
-    <p class="eyebrow">Tauhid</p>
+    <p class="eyebrow">Tawhid</p>
     <h1>Was bedeutet <em>Ilah</em>?</h1>
     <p class="lead">Ein Begriff im Zentrum des Glaubensbekenntnisses - sprachlich, und in der islamischen Fachsprache.</p>
     <button class="start" id="start" type="button">
