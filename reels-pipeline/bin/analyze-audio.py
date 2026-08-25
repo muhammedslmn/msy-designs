@@ -17,9 +17,19 @@ NOISE_DB = -32
 
 
 def duration(path):
+    """Decode to find the real length.
+
+    A VBR mp3's header duration can be badly wrong - this recording claims
+    5:00 and actually runs 5:28 - and trusting it drifts the whole timeline.
+    """
+    p = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-f", "null", "-"],
+                       capture_output=True, text=True)
+    stamps = re.findall(r"time=(\d+):(\d\d):(\d\d\.\d+)", p.stderr)
+    if stamps:
+        h, m, sec = stamps[-1]
+        return int(h) * 3600 + int(m) * 60 + float(sec)
     out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
-                          "-of", "default=nw=1:nk=1", str(path)],
-                         capture_output=True, text=True)
+                          "-of", "default=nw=1:nk=1", str(path)], capture_output=True, text=True)
     return float(out.stdout.strip())
 
 
