@@ -1,0 +1,35 @@
+{
+  "out": "reel-demo.mp4",
+  "voice": "tr",
+  "lines": [
+    { "text": "Reels'de ilk üç saniye her şeyi belirler.",
+      "scene": { "type": "title", "kicker": "Reels 101", "headline": "İLK *3 SANİYE*", "sub": "Videonun kaderi burada belli oluyor.", "art": "clock" } },
+
+    { "text": "İzleyicilerin yüzde yetmişi ilk üç saniyede kaydırıp geçiyor.",
+      "scene": { "type": "stat", "kicker": "Kayıp", "value": "%70", "cap": "izleyici ilk _3 saniyede_ kaydırıp geçiyor.", "bg": "dark" } },
+
+    { "text": "Peki iyi bir açılış nasıl olur? Üç tip açılış var.",
+      "scene": { "type": "art", "kicker": "Soru", "headline": "PEKİ *NASIL* AÇMALI?", "art": "question", "sub": "Üç tip açılış var — ve tutunma oranları çok farklı." } },
+
+    { "text": "İşte üç açılış tipinin ortalama tutunma oranları.",
+      "scene": { "type": "table", "title": "AÇILIŞ *TİPLERİ*",
+        "head": ["Açılış tipi", "Tutunma", "Zorluk"],
+        "rows": [["Soru sorma", "%64|num good", "Kolay"], ["Sonucu önce ver", "%58|num good", "Orta"], ["Yavaş giriş", "%21|num bad", "Kolay"]],
+        "note": "Kaynak: örnek veri — kendi hesabında test et." } },
+
+    { "text": "Soru sorarak başlamak en yüksek tutunmayı sağlıyor.",
+      "scene": { "type": "art", "headline": "*SORU* KAZANIYOR", "art": "chartUp", "sub": "Beyin cevapsız soruyu sevmez — izlemeye devam eder." } },
+
+    { "text": "Şimdi uygulamaya geçelim. Üç basit adım.",
+      "scene": { "type": "steps", "kicker": "Uygulama", "headline": "3 ADIMDA *AÇILIŞ*",
+        "items": ["+İlk cümleyi *soru* yap", "+İlk kareye büyük yazı koy", "+Tek bir fikir anlat, dağılma"] } },
+
+    { "text": "Bunu yap, şunu yapma. Fark çok net.",
+      "scene": { "type": "vs", "headline": "YAP / *YAPMA*",
+        "left": { "title": "Yapma", "items": ["Merhaba arkadaşlar", "30 saniye giriş müziği", "Aynı videoda 5 konu"] },
+        "right": { "title": "Yap", "items": ["Direkt soruyla gir", "İlk karede büyük yazı", "Tek konu, net sonuç"] } } },
+
+    { "text": "Her videoda tek bir fikir anlat. Hepsi bu kadar.",
+      "scene": { "type": "title", "kicker": "Özet", "headline": "TEK VİDEO, *TEK FİKİR*", "sub": "Kaydet, bir sonraki Reels'te dene.", "art": "bulb", "bg": "accent" } }
+  ]
+}

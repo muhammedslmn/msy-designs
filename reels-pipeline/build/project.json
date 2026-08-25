@@ -1,0 +1,114 @@
+{
+  "out": "reel-demo.mp4",
+  "audio": "build/demo-audio.wav",
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "Reels 101",
+      "headline": "İLK *3 SANİYE*",
+      "sub": "Videonun kaderi burada belli oluyor.",
+      "art": "clock",
+      "start": 0.0,
+      "end": 4.061
+    },
+    {
+      "type": "stat",
+      "kicker": "Kayıp",
+      "value": "%70",
+      "cap": "izleyici ilk _3 saniyede_ kaydırıp geçiyor.",
+      "bg": "dark",
+      "start": 4.061,
+      "end": 9.453
+    },
+    {
+      "type": "art",
+      "kicker": "Soru",
+      "headline": "PEKİ *NASIL* AÇMALI?",
+      "art": "question",
+      "sub": "Üç tip açılış var — ve tutunma oranları çok farklı.",
+      "start": 9.453,
+      "end": 14.645
+    },
+    {
+      "type": "table",
+      "title": "AÇILIŞ *TİPLERİ*",
+      "head": [
+        "Açılış tipi",
+        "Tutunma",
+        "Zorluk"
+      ],
+      "rows": [
+        [
+          "Soru sorma",
+          "%64|num good",
+          "Kolay"
+        ],
+        [
+          "Sonucu önce ver",
+          "%58|num good",
+          "Orta"
+        ],
+        [
+          "Yavaş giriş",
+          "%21|num bad",
+          "Kolay"
+        ]
+      ],
+      "note": "Kaynak: örnek veri — kendi hesabında test et.",
+      "start": 14.645,
+      "end": 19.145
+    },
+    {
+      "type": "art",
+      "headline": "*SORU* KAZANIYOR",
+      "art": "chartUp",
+      "sub": "Beyin cevapsız soruyu sevmez — izlemeye devam eder.",
+      "start": 19.145,
+      "end": 23.818
+    },
+    {
+      "type": "steps",
+      "kicker": "Uygulama",
+      "headline": "3 ADIMDA *AÇILIŞ*",
+      "items": [
+        "+İlk cümleyi *soru* yap",
+        "+İlk kareye büyük yazı koy",
+        "+Tek bir fikir anlat, dağılma"
+      ],
+      "start": 23.818,
+      "end": 28.194
+    },
+    {
+      "type": "vs",
+      "headline": "YAP / *YAPMA*",
+      "left": {
+        "title": "Yapma",
+        "items": [
+          "Merhaba arkadaşlar",
+          "30 saniye giriş müziği",
+          "Aynı videoda 5 konu"
+        ]
+      },
+      "right": {
+        "title": "Yap",
+        "items": [
+          "Direkt soruyla gir",
+          "İlk karede büyük yazı",
+          "Tek konu, net sonuç"
+        ]
+      },
+      "start": 28.194,
+      "end": 32.189
+    },
+    {
+      "type": "title",
+      "kicker": "Özet",
+      "headline": "TEK VİDEO, *TEK FİKİR*",
+      "sub": "Kaydet, bir sonraki Reels'te dene.",
+      "art": "bulb",
+      "bg": "accent",
+      "start": 32.189,
+      "end": 37.103
+    }
+  ]
+}

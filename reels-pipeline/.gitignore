@@ -1,0 +1,9 @@
+node_modules/
+build/frames/
+build/clips/
+build/tts/
+build/tts-list.txt
+build/chk*.png
+build/contact.png
+src/fonts.css
+build/demo-audio.wav
