@@ -381,8 +381,8 @@
 
     var portals = '<div class="portals">' +
       portalCard("intro", "التَّجْوِيد", "entry_tecvid_title", "entry_tecvid_sub", "entry_tecvid_cta", t("home_intro_title"), "p-tecvid") +
-      portalCard("nazm", "النَّظْم", "entry_nazm_title", "entry_nazm_sub", "entry_nazm_cta", "61 "+t("beyit"), "p-nazm") +
-      portalCard("sherh", "الشَّرْح", "entry_sherh_title", "entry_sherh_sub", "entry_sherh_cta", "10 "+t("section"), "p-sherh") +
+      portalCard("nazm", "النَّظْم", "entry_nazm_title", "entry_nazm_sub", "entry_nazm_cta", "61 "+t("beyits"), "p-nazm") +
+      portalCard("sherh", "الشَّرْح", "entry_sherh_title", "entry_sherh_sub", "entry_sherh_cta", "10 "+t("stat_bolum"), "p-sherh") +
     '</div>';
 
     var why = '<section class="block wrap why">' +

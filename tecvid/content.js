@@ -3,7 +3,7 @@ window.CONTENT = {
   "meta": {
     "workTitle": {
       "tr": "Tuhfetü'l-Etfâl",
-      "de": "Tuhfat al-Atfāl",
+      "de": "Tuḥfat al-Aṭfāl",
       "en": "Tuḥfat al-Aṭfāl"
     },
     "workTitleAr": "تُحْفَةُ الْأَطْفَالِ",
@@ -582,21 +582,21 @@ window.CONTENT = {
           "sharh": {
             "tr": [
               "Bu beyit, konunun **giriş beytidir**; sâkin nûn ile tenvînin **dört ortak hükmü** (izhâr, idğâm, iklâb, ihfâ) bulunduğunu bildirir. Bu bölümün iki konusu olan **sâkin nûn** ile **tenvîn**i önce tanıyalım:",
-              "**Sâkin nûn (نْ) nedir?** Üzerinde hareke (üstün-esre-ötre) **bulunmayan** (خالية من الحركة); hem **yazıda** hem **okuyuşta** sabit olan, hem **vasılda** (bağlayarak okurken) hem **vakıfta** (durunca) **sâkin kalan** nûndur. Yani aslen (kendiliğinden) sâkindir. İsimde (*الْإِنْسَان*), fiilde (*أَنْعَمْتَ*) ve harfte (*مِنْ، عَنْ، مَنْ*) bulunur; kelimenin ortasında da sonunda da olabilir.",
-              "**Tenvîn (ـًـ ـٍـ ـٌـ) nedir?** İsmin sonuna gelen, kelimenin aslından olmayan **fazladan (zâid) bir sâkin nûndur.** Özellikleri: • **Okuyuşta vardır, yazıda yoktur** — nûn harfi olarak yazılmaz; iki üstün / iki esre / iki ötre işaretiyle gösterilir, fakat \"n\" diye okunur. • **Vakıfta (durunca) düşer:** fetha tenvîninde durulunca **elif gibi uzatılır** (*عَلِيمًا* ʿalīman → *عَلِيمَا* ʿalīmā); ötre ve esre tenvîninde ise sâkin okunur. • **Yalnız isimlerde bulunur** — fiilde tenvîn olmaz; yalnızca tekit nûnuyla ona benzeyen iki yer (*لَنَسْفَعًا*, *لَيَكُونًا*) \"şibh-i tenvîn / tenvîne benzeyen nûn\" diye anılır.",
+              "**Sâkin nûn (نْ) nedir?** Üzerinde hareke (üstün-esre-ötre) **bulunmayan** (خالية من الحركة); hem **yazıda** hem **okuyuşta** sabit olan, hem **vasılda** (bağlayarak okurken) hem **vakıfta** (durunca) **sâkin kalan** nûndur. Yani aslen (kendiliğinden) sâkindir. İsimde (*الْإِنْسَان*), fiilde (*أَنْعَمْتَ*) ve harfte (*مِنْ، عَنْ*) bulunur; kelimenin ortasında da sonunda da olabilir.",
+              "**Tenvîn (ـًـ ـٍـ ـٌـ) nedir?** İsmin sonuna gelen, kelimenin aslından olmayan **fazladan (zâid) bir sâkin nûndur.** Özellikleri: • **Okuyuşta vardır, yazıda yoktur** — nûn harfi olarak yazılmaz; iki üstün / iki esre / iki ötre işaretiyle gösterilir, fakat \"n\" diye okunur. • **Vakıfta (durunca) düşer:** fetha tenvîninde durulunca **elif gibi uzatılır** (*عَلِيمًا* ʿalīman → *عَلِيمَا* ʿalīmā); ötre ve esre tenvîninde ise sâkin okunur. • **Yalnız isimlerde bulunur** — fiilde tenvîn olmaz. Kur'ân'da iki yer (*لَنَسْفَعًا*, *لَيَكُونًا*) yazılışta tenvîne benzese de aslında tenvîn değil **tekit nûnu**dur; bu yüzden 'tenvîne benzeyen nûn (şibh-i tenvîn)' denir.",
               "**İkisinin ortak ve ayrı yönü:** Dört hüküm (izhâr, idğâm, iklâb, ihfâ) her ikisinde de ortaktır. Fark şudur: **sâkin nûn** hem yazılır (*rasmen*) hem her hâlde okunur (*lafzen*); **tenvîn** ise yalnız okunur, yazıda ve vakıfta düşer.",
               "**İki sâkinin karşılaşması (iltikā-i sâkineyn):** Arapçada iki sâkin harf peş peşe okunamaz. Sâkin nûndan veya tenvînden sonra **hemze-i vasl** (kelime başındaki, geçişte okunmayan hemze) gelirse, sâkin **geçici olarak (ârızî)** harekelenir: • **Sâkin nûnda → genelde kesra (esre):** *مَنِ اهْتَدَى* (menihtedâ), *عَنِ الَّذِينَ* (anillezîne); yalnız *مِنْ* harf-i cerrinde **fetha (üstün):** *مِنَ الْجِنَّةِ* (minel-cinne). • **Tenvînde → her zaman kesra:** harekesi ne olursa olsun tenvînin nûnu esre ile okunur."
             ],
             "de": [
               "Dieser Vers ist der **Einleitungsvers**; er nennt, dass sākines Nūn und Tanwīn **vier gemeinsame Regeln** (Iẓhār, Idghām, Iqlāb, Ikhfāʾ) haben. Lernen wir zunächst die beiden Themen dieses Abschnitts — das **sākine Nūn** und das **Tanwīn** — kennen:",
-              "**Was ist das sākine Nūn (نْ)?** Ein Nūn **ohne Vokal** (Fatḥa/Kasra/Ḍamma; خالية من الحركة), das in **Schrift** und **Aussprache** fest ist und sowohl in **Waṣl** (verbindendem Weiterlesen) als auch in **Waqf** (beim Anhalten) **sākin bleibt** — es ist also von sich aus (ursprünglich) sākin. Es steht in Nomen (*الْإِنْسَان*), Verb (*أَنْعَمْتَ*) und Partikel (*مِنْ، عَنْ، مَنْ*); es kann in der Wortmitte oder am Wortende vorkommen.",
+              "**Was ist das sākine Nūn (نْ)?** Ein Nūn **ohne Vokal** (Fatḥa/Kasra/Ḍamma; خالية من الحركة), das in **Schrift** und **Aussprache** fest ist und sowohl in **Waṣl** (verbindendem Weiterlesen) als auch in **Waqf** (beim Anhalten) **sākin bleibt** — es ist also von sich aus (ursprünglich) sākin. Es steht in Nomen (*الْإِنْسَان*), Verb (*أَنْعَمْتَ*) und Partikel (*مِنْ، عَنْ*); es kann in der Wortmitte oder am Wortende vorkommen.",
               "**Was ist das Tanwīn (ـًـ ـٍـ ـٌـ)?** Ein **zusätzliches (zāʾid) vokalloses Nūn** am Ende eines Nomens, nicht zur Wurzel gehörend. Merkmale: • **In der Aussprache vorhanden, in der Schrift nicht** — kein Nūn-Buchstabe, sondern Doppel-Fatḥa/Kasra/Ḍamma, aber als „n“ gelesen. • **Beim Anhalten (Waqf) entfällt es:** Bei Fatḥa-Tanwīn wird beim Anhalten wie ein **Alif gedehnt** (*عَلِيمًا* ʿalīman → *عَلِيمَا* ʿalīmā); bei Ḍamma und Kasra wird es sākin gelesen. • **Nur bei Nomen** — im Verb gibt es kein Tanwīn; nur zwei mit dem Bekräftigungs-Nūn ihm ähnelnde Stellen (*لَنَسْفَعًا*, *لَيَكُونًا*) heißen „schibh at-tanwīn“ (dem Tanwīn ähnliches Nūn).",
               "**Gemeinsames und Unterschied:** Die vier Regeln (Iẓhār, Idghām, Iqlāb, Ikhfāʾ) gelten für beide. Der Unterschied: Das **sākine Nūn** wird geschrieben (rasman) und in jedem Fall gesprochen (lafẓan); das **Tanwīn** wird nur gesprochen und entfällt in Schrift und Waqf.",
               "**Zusammentreffen zweier Sākins (Iltiqāʾ as-sākinayn):** Im Arabischen können zwei sākine Buchstaben nicht nacheinander gelesen werden. Folgt dem sākinen Nūn oder dem Tanwīn ein **Verbindungs-Hamza** (Hamzat al-waṣl, am Wortanfang, beim Übergang nicht gesprochen), so wird der sākine Laut **vorübergehend (ʿāriḍ)** bewegt: • **Sākines Nūn → meist Kasra:** *مَنِ اهْتَدَى* (mani-htadā), *عَنِ الَّذِينَ* (ʿani-lladhīna); nur die Präposition *مِنْ* nimmt **Fatḥa:** *مِنَ الْجِنَّةِ* (mina-l-dschinna). • **Tanwīn → immer Kasra:** unabhängig von seinem Vokal wird das Nūn des Tanwīn mit Kasra gelesen."
             ],
             "en": [
               "This verse is the **opening verse** of the subject; it states that the sākin nūn and tanwīn share **four common rulings** (Iẓhār, Idghām, Iqlāb, Ikhfāʾ). Let us first get to know the two topics of this section — the **sākin nūn** and the **tanwīn**:",
-              "**What is the sākin nūn (نْ)?** A nūn that carries **no vowel** (fatḥa/kasra/ḍamma; خالية من الحركة); it is fixed in both **writing** and **pronunciation**, and **stays sākin** in both **waṣl** (connecting to the next word) and **waqf** (pausing). That is, it is inherently (originally) sākin. It occurs in a noun (*الْإِنْسَان*), a verb (*أَنْعَمْتَ*), and a particle (*مِنْ، عَنْ، مَنْ*); it may fall in the middle or at the end of a word.",
+              "**What is the sākin nūn (نْ)?** A nūn that carries **no vowel** (fatḥa/kasra/ḍamma; خالية من الحركة); it is fixed in both **writing** and **pronunciation**, and **stays sākin** in both **waṣl** (connecting to the next word) and **waqf** (pausing). That is, it is inherently (originally) sākin. It occurs in a noun (*الْإِنْسَان*), a verb (*أَنْعَمْتَ*), and a particle (*مِنْ، عَنْ*); it may fall in the middle or at the end of a word.",
               "**What is tanwīn (ـًـ ـٍـ ـٌـ)?** An **extra (zāʾid) vowelless nūn** at a noun's end, not of the root. Features: • **Present in speech, absent in writing** — not a nūn letter but a doubled fatḥa/kasra/ḍamma, yet read as \"n.\" • **Drops at a pause (waqf):** with fatḥa-tanwīn, on pausing it is **lengthened like an alif** (*عَلِيمًا* ʿalīman → *عَلِيمَا* ʿalīmā); with ḍamma and kasra it is read sākin. • **Only in nouns** — a verb has no tanwīn; only two places resembling it through the emphatic nūn (*لَنَسْفَعًا*, *لَيَكُونًا*) are called \"shibh al-tanwīn\" (a nūn resembling tanwīn).",
               "**What they share and how they differ:** The four rulings (Iẓhār, Idghām, Iqlāb, Ikhfāʾ) apply to both. The difference: the **sākin nūn** is both written (rasman) and pronounced in every case (lafẓan); the **tanwīn** is only pronounced and drops in writing and at a pause.",
               "**When two sākins meet (iltiqāʾ as-sākinayn):** In Arabic two sākin letters cannot be pronounced consecutively. If a **connecting hamza** (hamzat al-waṣl — the word-initial hamza that is not sounded in transition) follows the sākin nūn or the tanwīn, the sākin sound is **temporarily (ʿāriḍan)** given a vowel: • **Sākin nūn → generally kasra:** *مَنِ اهْتَدَى* (mani-htadā), *عَنِ الَّذِينَ* (ʿani-lladhīna); only the preposition *مِنْ* takes **fatḥa:** *مِنَ الْجِنَّةِ* (mina-l-jinna). • **Tanwīn → always kasra:** whatever its vowel, the nūn of the tanwīn is read with kasra."
@@ -1025,7 +1025,7 @@ window.CONTENT = {
               "**İdğâm (ikinci hüküm) — Lügat (sözlük) anlamı:** \"bir şeyi başka bir şeye katmak, sokmak, birleştirmek\" demektir.",
               "**Istılah (terim) anlamı:** sâkin bir harfi, kendinden sonraki harekeli harfe **katıp**, ikisini **şeddeli tek harf** hâline getirmektir.",
               "**Harfleri altıdır** ve **«يَرْمَلُونَ»** (ye-ra-mim-lâm-vâv-nûn) kelimesinde toplanmıştır: **ي · ر · م · ل · و · ن.** Bu idğam **yalnız iki kelime arasında** olur (aynı kelimede olmaz).",
-              "**Nasıl uygulanır? (iki durum):** • İki harf **aynı ise** (nûn + nûn gibi) birinci doğrudan ikinciye katılır. • İki harf **farklı ise** önce nûn/tenvîn, ikinci harfin **cinsine çevrilir**, sonra ona katılır. Örnek olarak: *مِنْ وَالٍ*'de nûn önce vâva çevrilir, sonra vâva katılır → \"mivvâl\" okunur.",
+              "**Nasıl uygulanır? (iki durum):** • İki harf **aynı ise** (nûn + nûn gibi) birinci doğrudan ikinciye katılır. • İki harf **farklı ise** önce nûn/tenvîn, **ikinci harfin aynısına dönüştürülür**, sonra ona katılır. Örnek olarak: *مِنْ وَالٍ*'de nûn önce vâva çevrilir, sonra vâva katılır → \"mivvâl\" okunur.",
               "**Bu altı harf iki gruba ayrılır** (10 ve 12. beyitlerde): **gunneli** idğam (ي ن م و) ve **gunnesiz** idğam (ل ر)."
             ],
             "de": [
@@ -1360,17 +1360,17 @@ window.CONTENT = {
           "sharh": {
             "tr": [
               "**Önemli istisna — İzhâr-ı mutlak:** Sâkin nûn ile idğam harfi (özellikle **و** veya **ي**) **aynı kelimede** yan yana gelirse idğam **yapılmaz**; nûn açıkça (izhâr ile) okunur.",
-              "**Sebebi (neden?):** Eğer bu durumda idğam yapılsaydı kelime aslından uzaklaşır, **şeddeli (iki harfli) başka bir kelimeyle karışırdı** ve mana bozulurdu. (Meselâ *dünyâ* idğam edilseydi *diyyâ*, *sınvân* → *sıvvân* olur, kelime tanınmaz hâle gelirdi.)",
+              "**Sebebi (neden?):** Eğer bu durumda idğam yapılsaydı kelime aslından uzaklaşır, **şeddeli (iki harfli) başka bir kelimeyle karışırdı** ve mana bozulurdu. (Meselâ *dünyâ* idğam edilseydi *duyyâ*, *sınvân* → *sıvvân* olur, kelime tanınmaz hâle gelirdi.)",
               "**Kur'ân'da yalnız dört kelimede** geçer: **دُنْيَا · صِنْوَان · قِنْوَان · بُنْيَان.** Bu duruma \"**izhâr-ı mutlak**\" (herhangi bir kayda/gruba bağlı olmayan izhâr) denir."
             ],
             "de": [
               "**Wichtige Ausnahme — Iẓhār muṭlaq:** Treffen das sākine Nūn und ein Idghām-Buchstabe (bes. **و** oder **ي**) **im selben Wort** zusammen, wird **nicht** verschmolzen; das Nūn wird deutlich (Iẓhār) gelesen.",
-              "**Grund:** Bei Verschmelzung entfernte sich das Wort von seiner Wurzel und **verwechselte sich mit einem verdoppelten (zweibuchstabigen) anderen Wort**, der Sinn würde verfälscht. (Würde *dunyā* verschmolzen, ergäbe es *diyyā*, *ṣinwān* → *ṣiwwān*.)",
+              "**Grund:** Bei Verschmelzung entfernte sich das Wort von seiner Wurzel und **verwechselte sich mit einem verdoppelten (zweibuchstabigen) anderen Wort**, der Sinn würde verfälscht. (Würde *dunyā* verschmolzen, ergäbe es *duyyā*, *ṣinwān* → *ṣiwwān*.)",
               "**Im Qurʾān nur vier Wörter:** **دُنْيَا · صِنْوَان · قِنْوَان · بُنْيَان.** Man nennt es „**Iẓhār muṭlaq**“ (uneingeschränktes Iẓhār)."
             ],
             "en": [
               "**Important exception — Iẓhār muṭlaq:** When the sākin nūn and an idghām letter (esp. **و** or **ي**) meet **within one word**, there is **no** merging; the nūn is read clearly (iẓhār).",
-              "**Reason:** merging here would move the word from its root and **confuse it with a doubled (two-letter) different word**, corrupting the meaning. (If *dunyā* were merged it would become *diyyā*, *ṣinwān* → *ṣiwwān*.)",
+              "**Reason:** merging here would move the word from its root and **confuse it with a doubled (two-letter) different word**, corrupting the meaning. (If *dunyā* were merged it would become *duyyā*, *ṣinwān* → *ṣiwwān*.)",
               "**In the Qurʾān, only four words:** **دُنْيَا · صِنْوَان · قِنْوَان · بُنْيَان.** It is called \"**iẓhār muṭlaq**\" (unrestricted iẓhār)."
             ]
           },
@@ -2573,9 +2573,9 @@ window.CONTENT = {
                   },
                   "إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ",
                   {
-                    "tr": "iki şeddeli nûn · Asr 2",
-                    "de": "zwei verdopp. Nūn · al-ʿAṣr 2",
-                    "en": "two doubled nūn · al-ʿAṣr 2"
+                    "tr": "bir şeddeli nûn (إِنَّ) · Asr 2",
+                    "de": "ein verdopp. Nūn (إِنَّ) · al-ʿAṣr 2",
+                    "en": "one doubled nūn (إِنَّ) · al-ʿAṣr 2"
                   }
                 ],
                 [
@@ -2749,7 +2749,7 @@ window.CONTENT = {
           "sharh": {
             "tr": [
               "Bu beyit, sâkin mîmin **üç hükmü** olduğunu haber verir. Kolay anlamak için önce şu benzetmeyi kuralım:",
-              "**\"Çarpışma\" benzetmesi:** Tecvidde iki harf yan yana geldiğinde ya birbirinin sesini değiştirir (\"çarpışma var\") ya da değiştirmeden geçer (\"çarpışma yok\"). Sâkin mîm için: • sonraki harf **mîm** ise → sesler **birleşir** (idğâm — çarpışma var). • sonraki harf **bâ** ise → mîm **burun sesine** dönüşüp gizlenir (ihfâ — çarpışma var). • **başka bir harf** ise → mîm **açıkça** okunur, iki harf ayrı kalır (izhâr — çarpışma yok).",
+              "**\"Çarpışma\" benzetmesi:** Tecvidde iki harf yan yana geldiğinde ya birbirinin sesini değiştirir (\"çarpışma var\") ya da değiştirmeden geçer (\"çarpışma yok\"). Sâkin mîm için: • sonraki harf **mîm** ise → sesler **birleşir** (idğâm — çarpışma var). • sonraki harf **bâ** ise → mîm (dudaklar tam kapanmadan) **gizlenir** ve **gunne ile** okunur (ihfâ — çarpışma var). • **başka bir harf** ise → mîm **açıkça** okunur, iki harf ayrı kalır (izhâr — çarpışma yok).",
               "**Üç hükmün adları:** • **İhfâ-i şefevî** (dudak ihfâsı), • **İdğâm-ı misleyn-i sagîr** (küçük benzer idğamı), • **İzhâr-ı şefevî** (dudak izhârı). \"Şefevî\" (dudaksal) denmesinin sebebi, mîmin mahrecinin (çıkış yerinin) **dudaklar** olmasıdır. Sıradaki üç beyit bunları tek tek açıklar."
             ],
             "de": [
@@ -3144,7 +3144,7 @@ window.CONTENT = {
           "sharh": {
             "tr": [
               "**İzhâr-ı şefevî (üçüncü hüküm) — Lügat (sözlük) anlamı:** \"açığa çıkarmak\" demektir.",
-              "**Istılah (terim) anlamı:** sâkin mîmi, ardından gelen harfle, **gunne yapmadan açıkça** kendi mahrecinden (dudaklardan) okumaktır.",
+              "**Istılah (terim) anlamı:** sâkin mîmi, ardından gelen harfle, **fazladan gunne yapmadan** (mîmin aslî gunnesi dışında) açıkça kendi mahrecinden (dudaklardan) okumaktır.",
               "**Harfleri kaçtır? (basit hesap):** Arap alfabesi 28 harftir. İhfâ 1 (bâ) + İdğâm 1 (mîm) = 2 harf çıkar; **geriye 26 harf** kalır. İzhâr-ı şefevî işte bu **26 harfte** yapılır.",
               "**Nasıl uygulanır?** İki dudak, mîmi çıkarmak için **hafifçe kapanıp açılır** (uzatma/mubalağa yapılmaz); gunne **uzatılmaz**, yalnız aslî gunnenin varlığı korunur. Mushafta izhâr edilen mîmin üzerine küçük bir **hâ başı (ﺣ)** işareti konur. Aşağıdaki tablo bu kurala (izhâr-ı şefevî) örnekler verir."
             ],
@@ -3195,11 +3195,11 @@ window.CONTENT = {
                       "en": "hamza"
                     }
                   },
-                  "كَسَرَابٍ بِقِيعَةٍ ... أَعْمَالُهُمْ",
+                  "لَهُمْ أَجْرٌ",
                   {
-                    "tr": "a'mâluhum (mîm+hemze)",
-                    "de": "aʿmāluhum (Mīm+Hamza)",
-                    "en": "aʿmāluhum (mīm+hamza)"
+                    "tr": "lehum ecr (mîm+hemze) · Tîn 6",
+                    "de": "lahum adschr (Mīm+Hamza) · at-Tīn 6",
+                    "en": "lahum ajr (mīm+hamza) · at-Tīn 6"
                   }
                 ],
                 [
@@ -3341,7 +3341,7 @@ window.CONTENT = {
             "tr": [
               "**En sık yapılan hata:** İzhâr-ı şefevîde (mîmin açık okunması) iki harfte özel dikkat gerekir; okuyucu farkında olmadan mîmi **gizleyebilir (ihfâya kaçabilir)**. Bu iki harf **vâv (و)** ve **fâ (ف)**dır.",
               "**1) Vâv (و) yanında — sebep: mahreç birliği.** Mîm de vâv da **dudaktan** çıkar. İkisi de aynı yerden çıktığı için mîm sesi vâva karışıp **\"yok olmuş gibi\"** olabilir. Doğrusu: mîm **açıkça** çıkar, sonra vâv gelir. Örnek olarak: *عَلَيْهِمْ وَلَا* (aleyhim velâ) — mîm net okunur.",
-              "**2) Fâ (ف) yanında — sebep: mahreç yakınlığı.** Mîm dudaktan, fâ ise **alt dudak + üst ön dişlerden** çıkar; mahreçleri **yakındır**. Hızlı okununca mîm yine \"kaybolmuş gibi\" olabilir. Doğrusu: mîm **net ve kısa** çıkar, sonra fâ gelir. Örnek olarak: *لَعَلَّهُمْ يَتَفَكَّرُونَ* değil de *هُمْ فِتْيَةٌ* (hum fitye) gibi yerlerde mîm gizlenmemelidir.",
+              "**2) Fâ (ف) yanında — sebep: mahreç yakınlığı.** Mîm dudaktan, fâ ise **alt dudak + üst ön dişlerden** çıkar; mahreçleri **yakındır**. Hızlı okununca mîm yine \"kaybolmuş gibi\" olabilir. Doğrusu: mîm **net ve kısa** çıkar, sonra fâ gelir. Örnek olarak: *هُمْ فِتْيَةٌ* (hum fitye) gibi yerlerde mîm gizlenmemelidir.",
               "**Özetle:** Mîm dudaktan **açıkça** okunmalı; vâv/fâ ona yakın diye gunneyle gizlenmemelidir. Bu, izhâr-ı şefevînin en kritik uygulama noktasıdır."
             ],
             "de": [
@@ -3539,7 +3539,7 @@ window.CONTENT = {
           ],
           "sharh": {
             "tr": [
-              "**Lâm-ı ta'rîf (belirtme lâmı) nedir?** Kelimeye \"belirlilik\" katan **\"el-\" (الْ)** takısının lâmıdır. Özellikleri: • **sâkindir** ve kelimenin aslından olmayıp sonradan eklenen (**zâid**) bir lâmdır; • öncesinde, söze **başlarken üstün (fetha) ile okunan bir vasıl hemzesi** (hemze-i vasl: kelime ortasında okunmayan, başta okunan geçiş hemzesi) bulunur; • ardından daima bir **isim** gelir. Örnek olarak: *الْقَمَر* (el-kamer = ay), *الشَّمْس* (eş-şems = güneş).",
+              "**Lâm-ı ta'rîf (belirtme lâmı) nedir?** Kelimeye \"belirlilik\" katan **\"el-\" (الْ)** takısının lâmıdır. Özellikleri: • **sâkindir** ve kelimenin aslından olmayıp sonradan eklenen (**zâid**) bir lâmdır; • öncesinde bir **vasıl (bağlantı) hemzesi** bulunur: söze onunla **başlarsak** okunur (fetha ile: *el-*), kelime cümlenin **ortasında** gelirse okunmaz; • ardından daima bir **isim** gelir. Örnek olarak: *الْقَمَر* (el-kamer = ay), *الشَّمْس* (eş-şems = güneş).",
               "**İki hâli (hükmü) vardır:** Bu lâm, kendisinden sonra gelen harfe göre ya **açık okunur** ya da **okunmaz**: • **1. hâl — İzhâr (Kamerî):** lâm açıkça telaffuz edilir. • **2. hâl — İdğâm (Şemsî):** lâm okunmaz, sonraki harfe katılır (o harf şeddelenir).",
               "Bu beyit **birinci hâli (izhâr)** haber verir; hangi harflerden önce olacağını bir sonraki beyit remz (şifre) cümlesiyle verecektir."
             ],
@@ -3569,7 +3569,7 @@ window.CONTENT = {
               "(Manası: \"Haccını iste ve onun sonuçsuz kalmasından kork.\") Bu sözdeki kelimelerin harfleri, on dört kamerî harfi verir:",
               "@ar ء · ب · غ · ح · ج · ك · و · خ · ف · ع · ق · ي · م · ه",
               "**\"Kamerî\" (ay ile ilgili) neden denir?** Örnek kelime **الْقَمَر** (el-kamer = ay)'dır. Nasıl gökte ayın yanında ışığı ayrı görünürse, burada da lâm **ayrı ve açık** işitilir. Yani \"el-\" takısındaki lâm net telaffuz edilir: *el-kamer* (لام okunur).",
-              "**Nasıl uygulanır?** \"el-\" yazılır ve lâm **sâkin olarak açıkça** okunur, sonra kelimenin ilk harfi gelir. Aşağıdaki tabloda her kamerî harf için, bu kurala (kamerî izhâr) örnekler verilmiştir."
+              "**Nasıl uygulanır?** \"el-\" yazılır ve lâm **sâkin olarak açıkça** okunur, sonra kelimenin ilk harfi gelir. Aşağıdaki tabloda bazı kamerî harfler için, bu kurala (kamerî izhâr) örnekler verilmiştir."
             ],
             "de": [
               "**Lām qamariyya (qamarī-Iẓhār):** Folgt nach dem Artikel-Lām einer dieser **vierzehn Buchstaben**, wird das Lām **deutlich** gelesen. Sie sind in diesem Merkspruch versammelt:",
@@ -3577,7 +3577,7 @@ window.CONTENT = {
               "(Bedeutung: „Erstrebe deine Pilgerfahrt und fürchte, dass sie fruchtlos bleibt.“) Die Buchstaben dieses Spruchs ergeben die vierzehn qamarī-Buchstaben:",
               "@ar ء · ب · غ · ح · ج · ك · و · خ · ف · ع · ق · ي · م · ه",
               "**Warum „qamarī“ (Mond-)?** Das Musterwort ist **الْقَمَر** (al-qamar = der Mond). Wie am Himmel neben dem Mond sein Licht gesondert erscheint, so wird hier das Lām **gesondert und deutlich** gehört: *al-qamar* (Lām hörbar).",
-              "**Ausführung:** „al-“ wird geschrieben, das Lām **sākin und deutlich** gelesen, dann der erste Buchstabe des Wortes. Die Tabelle gibt für jeden qamarī-Buchstaben Beispiele dieser Regel."
+              "**Ausführung:** „al-“ wird geschrieben, das Lām **sākin und deutlich** gelesen, dann der erste Buchstabe des Wortes. Die Tabelle gibt für einige qamarī-Buchstaben Beispiele dieser Regel."
             ],
             "en": [
               "**Lām qamariyya (qamarī iẓhār):** if one of these **fourteen letters** follows the article lām, the lām is read **clearly**. They are gathered in this mnemonic:",
@@ -3585,7 +3585,7 @@ window.CONTENT = {
               "(Meaning: \"Seek your pilgrimage and fear that it be fruitless.\") The letters of this phrase give the fourteen qamarī letters:",
               "@ar ء · ب · غ · ح · ج · ك · و · خ · ف · ع · ق · ي · م · ه",
               "**Why \"qamarī\" (moon-)?** The model word is **الْقَمَر** (al-qamar = the moon). As the moon's light shows separately in the sky, here the lām is heard **separately and clearly**: *al-qamar* (lām audible).",
-              "**Application:** \"al-\" is written, the lām read **sākin and clearly**, then the word's first letter. The table gives, for each qamarī letter, examples of this rule."
+              "**Application:** \"al-\" is written, the lām read **sākin and clearly**, then the word's first letter. The table gives, for some qamarī letters, examples of this rule."
             ]
           },
           "tables": [
@@ -4447,9 +4447,9 @@ window.CONTENT = {
         34
       ],
       "overview": {
-        "tr": "Bu bölüm, **herhangi iki harf** yan yana geldiğinde ne zaman birbirine katılacağını (idğam) öğretir. Karar, iki harfin **mahreç (çıkış yeri)** ve **sıfat (özellik)** bakımından ne kadar benzediğine bağlıdır. Üç isim öğreneceğiz — farkı sadece iki soruyla ayırt edilir: *mahreçleri aynı mı? sıfatları aynı mı?* • **Misleyn** (iki eş): mahreç AYNI, sıfat AYNI (kısaca: **aynı harf**). • **Mütecâniseyn** (cinsdaş): mahreç AYNI, sıfat FARKLI. • **Mütekāribeyn** (yakınlar): mahreç ve sıfat YAKIN. Sonra iki ölçü daha eklenir: harflerden **yalnız ilki sâkinse \"sagîr\"** (küçük), **ikisi de harekeliyse \"kebîr\"** (büyük) idğam; ve idğam **tam** mı yoksa **eksik (nâkıs)** mı olur.",
-        "de": "Dieser Abschnitt lehrt, wann **zwei beliebige Buchstaben** nebeneinander verschmelzen (Idghām). Die Entscheidung hängt davon ab, wie ähnlich sie in **Machradsch (Austrittsort)** und **Ṣifa (Eigenschaft)** sind. Drei Namen — unterschieden durch zwei Fragen: *gleicher Machradsch? gleiche Ṣifa?* • **Mithlān** (zwei Gleiche): Machradsch GLEICH, Ṣifa GLEICH (kurz: **derselbe Buchstabe**). • **Mutadschānisān** (gleicher Gattung): Machradsch GLEICH, Ṣifa VERSCHIEDEN. • **Mutaqāribān** (Nahe): Machradsch und Ṣifa NAHE. Dann zwei weitere Maße: ist nur der **erste sākin → „ṣaghīr“** (klein), sind **beide bewegt → „kabīr“** (groß); und ob das Idghām **vollständig** oder **unvollständig (nāqiṣ)** ist.",
-        "en": "This section teaches when **any two letters** side by side merge (idghām). The decision depends on how alike they are in **makhraj (exit point)** and **ṣifa (quality)**. Three names — told apart by two questions: *same makhraj? same ṣifa?* • **Mithlān** (two likes): makhraj SAME, ṣifa SAME (in short: **the same letter**). • **Mutajānisān** (same genus): makhraj SAME, ṣifa DIFFERENT. • **Mutaqāribān** (near ones): makhraj and ṣifa NEAR. Then two more measures: if only the **first is sākin → \"ṣaghīr\"** (small), if **both are vowelled → \"kabīr\"** (great); and whether the idghām is **complete** or **incomplete (nāqiṣ)**."
+        "tr": "Bu bölüm, **herhangi iki harf** yan yana geldiğinde ne zaman birbirine katılacağını (idğam) öğretir. Karar, iki harfin **mahreç (çıkış yeri)** ve **sıfat (özellik)** bakımından ne kadar benzediğine bağlıdır. Üç isim öğreneceğiz — farkı sadece iki soruyla ayırt edilir: *mahreçleri aynı mı? sıfatları aynı mı?* • **Misleyn** (iki eş): mahreç AYNI, sıfat AYNI (kısaca: **aynı harf**). • **Mütecâniseyn** (cinsdaş): mahreç AYNI, sıfat FARKLI. • **Mütekāribeyn** (yakınlar): mahreç YAKIN, sıfat FARKLI. Sonra iki ölçü daha eklenir: harflerden **yalnız ilki sâkinse \"sagîr\"** (küçük), **ikisi de harekeliyse \"kebîr\"** (büyük) idğam; ve idğam **tam** mı yoksa **eksik (nâkıs)** mı olur.",
+        "de": "Dieser Abschnitt lehrt, wann **zwei beliebige Buchstaben** nebeneinander verschmelzen (Idghām). Die Entscheidung hängt davon ab, wie ähnlich sie in **Machradsch (Austrittsort)** und **Ṣifa (Eigenschaft)** sind. Drei Namen — unterschieden durch zwei Fragen: *gleicher Machradsch? gleiche Ṣifa?* • **Mithlān** (zwei Gleiche): Machradsch GLEICH, Ṣifa GLEICH (kurz: **derselbe Buchstabe**). • **Mutadschānisān** (gleicher Gattung): Machradsch GLEICH, Ṣifa VERSCHIEDEN. • **Mutaqāribān** (Nahe): Machradsch NAHE, Ṣifa VERSCHIEDEN. Dann zwei weitere Maße: ist nur der **erste sākin → „ṣaghīr“** (klein), sind **beide bewegt → „kabīr“** (groß); und ob das Idghām **vollständig** oder **unvollständig (nāqiṣ)** ist.",
+        "en": "This section teaches when **any two letters** side by side merge (idghām). The decision depends on how alike they are in **makhraj (exit point)** and **ṣifa (quality)**. Three names — told apart by two questions: *same makhraj? same ṣifa?* • **Mithlān** (two likes): makhraj SAME, ṣifa SAME (in short: **the same letter**). • **Mutajānisān** (same genus): makhraj SAME, ṣifa DIFFERENT. • **Mutaqāribān** (near ones): makhraj NEAR, ṣifa DIFFERENT. Then two more measures: if only the **first is sākin → \"ṣaghīr\"** (small), if **both are vowelled → \"kabīr\"** (great); and whether the idghām is **complete** or **incomplete (nāqiṣ)**."
       },
       "beyits": [
         {
@@ -4620,7 +4620,7 @@ window.CONTENT = {
           "sharh": {
             "tr": [
               "**Mütekāribeyn (birbirine yakın iki harf) nedir?** Mahreçleri (bazen sıfatları da) **birbirine yakın** olan iki harftir — aynı değil, ama komşu.",
-              "**Tam idğam olan (gunneli/gunnesiz) üç yakın çift:** • **Nûn → Lâm** (örnek olarak *وَقِيلَ مَنْ رَاقٍ*... asıl: *مِنْ لَدُنْهُ*), • **Nûn → Râ** (örnek olarak *مِنْ رَبِّكَ*), • **Lâm → Râ** (örnek olarak *قُلْ رَبِّ*). Bunlarda birinci harf ikinciye tam katılır.",
+              "**Tam idğam olan üç yakın çift:** • **Nûn → Lâm** (örnek olarak *مِنْ لَدُنْهُ*), • **Nûn → Râ** (örnek olarak *مِنْ رَبِّكَ*), • **Lâm → Râ** (örnek olarak *قُلْ رَبِّ*). Bunlarda birinci harf ikinciye tam katılır.",
               "**Eksik (nâkıs) idğam olan iki çift:** • **Nûn → Vâv** (örnek olarak *مِنْ وَلِيٍّ*), • **Nûn → Yâ** (örnek olarak *مَنْ يَشَاءُ*). Buralarda nûn ikinci harfe katılır ama **gunnesi kalır** (bu yüzden \"eksik\"). — Bu ikisi aslında \"nûn-ı sâkine\" bölümündeki **gunneli idğam** ile aynıdır; iki açıdan da doğrudur."
             ],
             "de": [
@@ -5529,17 +5529,17 @@ window.CONTENT = {
             "tr": [
               "**Fer'î medin tanımı:** Tabiîden **daha fazla uzatılması, bir sebebe bağlı olan** meddir. \"Fer'î\" (ikincil, dallanmış) denmesi, aslî medden **türemiş** olmasındandır.",
               "**İki sebep vardır:** • **Hemze (ء)** — med harfinden sonra bir hemze gelmesi. • **Sükûn** — med harfinden sonra sâkin bir harf gelmesi. Bu sükûn ya **aslî (sabit)** olur ya da **ârız (durunca ortaya çıkan geçici)** olur.",
-              "**Bu iki sebep, sonraki bölümde (42-57. beyitler) medin üç hükmünü doğurur:** vücûb (muttasıl), cevâz (munfasıl, ârız, bedel) ve lüzûm (lâzım)."
+              "**Bu iki sebep, sonraki bölümde (42-47. beyitler) medin üç hükmünü doğurur:** vücûb (muttasıl), cevâz (munfasıl, ârız, bedel) ve lüzûm (lâzım)."
             ],
             "de": [
               "**Definition des farʿī Madd:** Ein Madd, dessen Dehnung **über das natürliche hinaus von einem Grund abhängt.** „Farʿī“ (abgeleitet) heißt es, weil es aus dem aṣlī Madd **hervorgeht**.",
               "**Zwei Gründe:** • **Hamza (ء)** — ein Hamza nach dem Madd-Buchstaben. • **Sukūn** — ein sākiner Buchstabe nach dem Madd-Buchstaben. Dieses Sukūn ist entweder **ursprünglich (fest)** oder **ʿāriḍ (beim Anhalten entstehend)**.",
-              "**Diese zwei Gründe erzeugen im nächsten Kapitel (Verse 42–57) die drei Madd-Regeln:** Wudschūb (muttaṣil), Dschawāz (munfaṣil, ʿāriḍ, badal) und Luzūm (lāzim)."
+              "**Diese zwei Gründe erzeugen im nächsten Kapitel (Verse 42–47) die drei Madd-Regeln:** Wudschūb (muttaṣil), Dschawāz (munfaṣil, ʿāriḍ, badal) und Luzūm (lāzim)."
             ],
             "en": [
               "**Definition of the farʿī madd:** a madd whose lengthening **beyond the natural depends on a cause.** It is called \"farʿī\" (derived) because it **springs from** the aṣlī madd.",
               "**Two causes:** • **Hamza (ء)** — a hamza after the madd letter. • **Sukūn** — a sākin letter after the madd letter. This sukūn is either **original (fixed)** or **ʿāriḍ (arising on pausing)**.",
-              "**These two causes produce, in the next chapter (verses 42–57), the three madd rulings:** wujūb (muttaṣil), jawāz (munfaṣil, ʿāriḍ, badal), and luzūm (lāzim)."
+              "**These two causes produce, in the next chapter (verses 42–47), the three madd rulings:** wujūb (muttaṣil), jawāz (munfaṣil, ʿāriḍ, badal), and luzūm (lāzim)."
             ]
           },
           "words": [
@@ -6099,7 +6099,7 @@ window.CONTENT = {
             "tr": [
               "**Medd-i muttasıl (bitişik med) — vücûb hükmü:** Bir med harfinden sonra, **aynı kelimede** ona bitişik bir **hemze (ء)** gelirse ortaya çıkar. \"Muttasıl\" (bitişik) denmesi, med harfi ile hemzenin **aynı kelimede birleşmesindendir**.",
               "**Hükmü:** Tabiî medden **fazla uzatmak vaciptir**; kısaltılamaz. Miktarı: **vasılda (devam ederken) 4 veya 5 hareke.** (Vakıfta, yani hemzede durulursa, ârız sükûn sebebiyle 4-5-6 hareke de câiz olur.)",
-              "**Örnekler (hangi med harfiyle):** • elif + hemze: *جَاءَ* (câe), *السَّمَاءِ* (es-semâi). • vâv + hemze: *سُوءٌ* (sûün), *السُّوءَ* (es-sûe). • yâ + hemze: *يَشَاءُ*... asıl: *جِيءَ* (cîe), *تَفِيءَ* (tefîe). Hepsinde med harfi ve hemze **tek kelime** içindedir."
+              "**Örnekler (hangi med harfiyle):** • elif + hemze: *جَاءَ* (câe), *السَّمَاءِ* (es-semâi). • vâv + hemze: *سُوءٌ* (sûün), *السُّوءَ* (es-sûe). • yâ + hemze: *جِيءَ* (cîe), *تَفِيءَ* (tefîe). Hepsinde med harfi ve hemze **tek kelime** içindedir."
             ],
             "de": [
               "**Madd muttaṣil (verbundenes Madd) — Wudschūb-Regel:** Es entsteht, wenn nach einem Madd-Buchstaben **im selben Wort** ein anschließendes **Hamza (ء)** kommt. „Muttaṣil“ (verbunden) heißt es, weil Madd-Buchstabe und Hamza **im selben Wort zusammentreffen**.",
@@ -6313,17 +6313,17 @@ window.CONTENT = {
             "tr": [
               "**Medd-i ârız li's-sükûn (geçici sükûn meddi) — cevâz hükmü:** Med harfinden sonra gelen harf, aslen **harekeli** olduğu hâlde, o kelimede **durulunca (vakıf)** sâkin hâle gelir. İşte bu **geçici (ârız) sükûn** medi doğurur.",
               "**Neden \"ârız\" (geçici)?** Çünkü sükûn kelimenin aslında yoktur; **yalnız durunca** ortaya çıkar. Devam edilirse (vasıl) sükûn kaybolur, med tabiîye döner.",
-              "**Hükmü:** Vakıfta **2, 4 veya 6 hareke** uzatmak câizdir (okuyucu birini seçer, ama bir mecliste hep aynısını tutar). Örnekler: *تَعْلَمُونَ* (ta'lemûn → durunca nûn sâkin), *نَسْتَعِينُ* (nesteîn), *الْعَالَمِينَ* (el-âlemîn), *الْبَيَان* (el-beyân). **Not — medd-i lîn ârız:** Uzatma harfi yerine **lîn harfi** (خَوْف gibi) bulunup vakıfta sâkin olursa, aynı şekilde 2-4-6 hareke okunur (medd-i lîn)."
+              "**Hükmü:** Vakıfta **2, 4 veya 6 hareke** uzatmak câizdir (okuyucu birini seçer, ama bir mecliste hep aynısını tutar). Örnekler: *تَعْلَمُونَ* (ta'lemûn → durunca nûn sâkin), *نَسْتَعِينُ* (nesteîn), *الْعَالَمِينَ* (el-âlemîn), *الْبَيَان* (el-beyân). **Not — medd-i lîn ârız:** Uzatma harfi yerine **lîn harfi** (خَوْف gibi) bulunup ondan sonraki harf vakıfta sâkin olursa, aynı şekilde 2-4-6 hareke okunur (medd-i lîn)."
             ],
             "de": [
               "**Madd ʿāriḍ li-s-sukūn (Madd des vorübergehenden Sukūn) — Dschawāz-Regel:** Der Buchstabe nach dem Madd-Buchstaben ist eigentlich **bewegt**, wird aber beim **Anhalten (Waqf)** sākin. Dieses **vorübergehende (ʿāriḍ) Sukūn** erzeugt das Madd.",
               "**Warum „ʿāriḍ“ (vorübergehend)?** Weil das Sukūn nicht zum Wort gehört; es entsteht **nur beim Anhalten**. Beim Weiterlesen (Waṣl) verschwindet es, das Madd wird wieder natürlich.",
-              "**Regel:** beim Anhalten **2, 4 oder 6 Ḥaraka** erlaubt (der Leser wählt eines, hält es aber in einer Sitzung durch). Beispiele: **تَعْلَمُونَ** (taʿlamūn), **نَسْتَعِينُ** (nastaʿīn), **الْعَالَمِينَ** (al-ʿālamīn), **الْبَيَان** (al-bayān). **Notiz — Madd al-Līn ʿāriḍ:** Steht statt des Dehnungsbuchstabens ein **Līn-Buchstabe** (wie **خَوْف** (chawf)) und wird beim Anhalten sākin, so ebenso 2–4–6 Ḥaraka (Madd al-Līn)."
+              "**Regel:** beim Anhalten **2, 4 oder 6 Ḥaraka** erlaubt (der Leser wählt eines, hält es aber in einer Sitzung durch). Beispiele: **تَعْلَمُونَ** (taʿlamūn), **نَسْتَعِينُ** (nastaʿīn), **الْعَالَمِينَ** (al-ʿālamīn), **الْبَيَان** (al-bayān). **Notiz — Madd al-Līn ʿāriḍ:** Steht statt des Dehnungsbuchstabens ein **Līn-Buchstabe** (wie **خَوْف** (chawf)), dessen folgender Buchstabe beim Anhalten sākin wird, so ebenso 2–4–6 Ḥaraka (Madd al-Līn)."
             ],
             "en": [
               "**Madd ʿāriḍ li-s-sukūn (madd of the temporary sukūn) — the jawāz ruling:** the letter after the madd letter is originally **vowelled**, but on **pausing (waqf)** becomes sākin. This **temporary (ʿāriḍ) sukūn** produces the madd.",
               "**Why \"ʿāriḍ\" (temporary)?** Because the sukūn is not part of the word; it arises **only on pausing**. If one continues (waṣl) it vanishes and the madd returns to natural.",
-              "**Ruling:** on pausing, **2, 4, or 6 ḥarakāt** are permitted (the reciter picks one but keeps it consistent in a sitting). Examples: **تَعْلَمُونَ** (taʿlamūn), **نَسْتَعِينُ** (nastaʿīn), **الْعَالَمِينَ** (al-ʿālamīn), **الْبَيَان** (al-bayān). **Note — madd al-līn ʿāriḍ:** if instead of the lengthening letter there is a **līn letter** (like **خَوْف** (khawf)) that becomes sākin on pausing, likewise 2–4–6 ḥarakāt (madd al-līn)."
+              "**Ruling:** on pausing, **2, 4, or 6 ḥarakāt** are permitted (the reciter picks one but keeps it consistent in a sitting). Examples: **تَعْلَمُونَ** (taʿlamūn), **نَسْتَعِينُ** (nastaʿīn), **الْعَالَمِينَ** (al-ʿālamīn), **الْبَيَان** (al-bayān). **Note — madd al-līn ʿāriḍ:** if instead of the lengthening letter there is a **līn letter** (like **خَوْف** (khawf)) followed by a letter that becomes sākin on pausing, likewise 2–4–6 ḥarakāt (madd al-līn)."
             ]
           },
           "words": [
@@ -6408,17 +6408,17 @@ window.CONTENT = {
             "tr": [
               "**Medd-i bedel (bedel = değiştirilmiş med) — cevâz hükmü:** Diğer üç medde hemze/sükûn med harfinden **sonra** gelirken, bedelde **hemze med harfinden önce** gelir (sıra terstir).",
               "**\"Bedel\" (değiştirilmiş) ne demek? (kelimenin aslı):** Aslında peş peşe **iki hemze** vardır: birincisi harekeli, ikincisi sâkin. Okumayı kolaylaştırmak için **ikinci sâkin hemze, öncesindeki harekeye uygun bir med harfine çevrilir (bedel = onun yerine konur).** • *آمَنُوا* aslı **أَأْمَنُوا** → ikinci hemze fetha sebebiyle **elife** dönüştü. • *إِيمَاناً* aslı **إِئْمَاناً** → esre sebebiyle **yâya** dönüştü. • *أُوتُوا* aslı **أُؤْتُوا** → ötre sebebiyle **vâva** dönüştü.",
-              "**Hükmü:** Uzatmak câiz olmakla birlikte, **uygulamada iki hareke** (tabiî med miktarında) okunur. **Şibh-i bedel (bedel benzeri):** Med harfi hemzeden dönüşmemiş olduğu hâlde bedele benzeyen yerler; örnek olarak *الْقُرْآن*, *عَبْقَرِيّ* — bunlar da iki hareke okunur."
+              "**Hükmü:** Uzatmak câiz olmakla birlikte, **uygulamada iki hareke** (tabiî med miktarında) okunur. **Şibh-i bedel (bedel benzeri):** Med harfi hemzeden dönüşmemiş olduğu hâlde bedele benzeyen yerler; örnek olarak *الْقُرْآن*, *مَآب* — bunlar da iki hareke okunur."
             ],
             "de": [
               "**Madd al-badal (badal = ersetztes Madd) — Dschawāz-Regel:** Während bei den anderen drei das Hamza/Sukūn **nach** dem Madd-Buchstaben kommt, steht beim Badal das **Hamza vor dem Madd-Buchstaben** (umgekehrte Reihenfolge).",
               "**Was heißt „badal“ (ersetzt)? (der Wortursprung):** Ursprünglich stehen **zwei Hamza** hintereinander: das erste bewegt, das zweite sākin. Zur Erleichterung wird **das zweite sākine Hamza in einen zum vorigen Vokal passenden Madd-Buchstaben verwandelt (badal = an seiner Stelle).** • *āmanū* aus **أَأْمَنُوا** → zweites Hamza wegen Fatḥa zum **Alif**. • *īmānan* aus **إِئْمَاناً** → wegen Kasra zum **Yāʾ**. • *ūtū* aus **أُؤْتُوا** → wegen Ḍamma zum **Wāw**.",
-              "**Regel:** Dehnen ist erlaubt, doch **in der Praxis zwei Ḥaraka** (natürliches Maß). **Schibh al-badal (badal-ähnlich):** Stellen, wo der Madd-Buchstabe nicht aus einem Hamza entstand, aber wie Badal aussehen; z. B. **الْقُرْآن** (al-qurʾān), **عَبْقَرِيّ** (ʿabqarī) — ebenfalls zwei Ḥaraka."
+              "**Regel:** Dehnen ist erlaubt, doch **in der Praxis zwei Ḥaraka** (natürliches Maß). **Schibh al-badal (badal-ähnlich):** Stellen, wo der Madd-Buchstabe nicht aus einem Hamza entstand, aber wie Badal aussehen; z. B. **الْقُرْآن** (al-qurʾān), **مَآب** (maʾāb) — ebenfalls zwei Ḥaraka."
             ],
             "en": [
               "**Madd al-badal (badal = substituted madd) — the jawāz ruling:** whereas in the other three the hamza/sukūn comes **after** the madd letter, in badal the **hamza comes before the madd letter** (reversed order).",
               "**What does \"badal\" (substituted) mean? (the word's origin):** originally there are **two hamzas** in succession: the first vowelled, the second sākin. To ease reading, **the second sākin hamza is turned into a madd letter matching the preceding vowel (badal = in its place).** • *āmanū* from **أَأْمَنُوا** → the second hamza, due to fatḥa, became **alif**. • *īmānan* from **إِئْمَاناً** → due to kasra, became **yāʾ**. • *ūtū* from **أُؤْتُوا** → due to ḍamma, became **wāw**.",
-              "**Ruling:** lengthening is permitted, but **in practice two ḥarakāt** (natural measure). **Shibh al-badal (badal-like):** places where the madd letter did not come from a hamza but resembles badal; e.g. **الْقُرْآن** (al-qurʾān), **عَبْقَرِيّ** (ʿabqarī) — also two ḥarakāt."
+              "**Ruling:** lengthening is permitted, but **in practice two ḥarakāt** (natural measure). **Shibh al-badal (badal-like):** places where the madd letter did not come from a hamza but resembles badal; e.g. **الْقُرْآن** (al-qurʾān), **مَآب** (maʾāb) — also two ḥarakāt."
             ]
           },
           "words": [
@@ -6831,17 +6831,17 @@ window.CONTENT = {
           },
           "sharh": {
             "tr": [
-              "**Medd-i lâzım kelimî tanımı:** Med harfinden sonra **aslî (sabit) bir sükûn**un, harf sayısı **üçten az olmayan** bir **kelime** içinde gelmesidir.",
+              "**Medd-i lâzım kelimî tanımı:** Med harfinden sonra **aslî (sabit) bir sükûn**un, tam bir **kelime** içinde gelmesidir.",
               "**Nasıl tanınır? (adım adım):** (1) Bir uzatma harfi bul. (2) Ondan **hemen sonraki harf sâkin mi** ve bu sükûn **vasılda-vakıfta hep sabit mi**? (3) Bu bir **kelime** mi? Üçü de \"evet\" ise → medd-i lâzım kelimî; **altı hareke** uzat.",
               "**Örnek olarak:** *الضَّالِّينَ* (ed-dâllîn) — elif (med) + sonra şeddeli lâm (sâkin lâm + harekeli lâm). Sâkin lâm sonrakine idğam olduğu için bu **kelimî müsakkal**tir. Bu kelime Fâtiha'nın sonunda her namazda okunduğundan en tanıdık örnektir."
             ],
             "de": [
-              "**Definition des Madd lāzim kalimī:** Ein **ursprüngliches (festes) Sukūn** nach dem Madd-Buchstaben in einem **Wort**, dessen Buchstabenzahl **nicht unter drei** liegt.",
+              "**Definition des Madd lāzim kalimī:** Ein **ursprüngliches (festes) Sukūn** nach dem Madd-Buchstaben in einem vollständigen **Wort** (nicht in einem einzeln buchstabierten Buchstaben).",
               "**Wie erkennt man es? (Schritt für Schritt):** (1) Finde einen Dehnungsbuchstaben. (2) Ist der **unmittelbar folgende Buchstabe sākin** und dieses Sukūn in Waṣl-Waqf **stets fest**? (3) Ist es ein **Wort**? Dreimal „ja“ → Madd lāzim kalimī; dehne **sechs Ḥaraka**.",
               "**Z. B.:** **الضَّالِّينَ** (aḍ-ḍāllīn) — Alif (Madd) + dann verdoppeltes Lām (sākines Lām + bewegtes Lām). Da das sākine Lām eingefügt wird, ist es **kalimī muthaqqal**. Als Schluss der Fātiḥa in jedem Gebet das vertrauteste Beispiel."
             ],
             "en": [
-              "**Definition of madd lāzim kalimī:** an **original (fixed) sukūn** after the madd letter, within a **word** whose letter count is **not below three**.",
+              "**Definition of madd lāzim kalimī:** an **original (fixed) sukūn** after the madd letter, within a full **word** (not a single spelled-out letter).",
               "**How to recognize it (step by step):** (1) Find a lengthening letter. (2) Is the **immediately following letter sākin** and this sukūn **always fixed** in waṣl and waqf? (3) Is it a **word**? Three \"yes\" → madd lāzim kalimī; lengthen **six ḥarakāt**.",
               "**E.g.:** **الضَّالِّينَ** (aḍ-ḍāllīn) — alif (madd) + then a doubled lām (sākin lām + vowelled lām). Since the sākin lām is merged, it is **kalimī muthaqqal**. As the close of al-Fātiḥa in every prayer, the most familiar example."
             ]
@@ -7446,7 +7446,7 @@ window.CONTENT = {
         {
           "n": 55,
           "translation": {
-            "tr": "Heceleniş bakımından üç harfli olup elif olmayan (kesik harflerin) dışındakine gelince, onun meddi tabiî med (olarak) bilinir.",
+            "tr": "Heceleniş bakımından üç harfli olmayan — ve elif de olmayan — (kesik) harfe gelince, onun meddi tabiî med (olarak) bilinir.",
             "de": "Was aber jenseits des dreibuchstabig buchstabierten und nicht das Alif ist, dessen Madd ist als natürliches Madd bekannt.",
             "en": "As for what is other than the three-lettered spelling and not the alif, its madd is known as natural madd."
           },
@@ -7943,7 +7943,7 @@ window.CONTENT = {
           "sharh": {
             "tr": [
               "**Bu beyit iki tarih (sayı) remzi içerir — ebced hesabıyla:** Ebced, her Arap harfine bir sayı değeri veren eski bir sistemdir; şairler bir sözün harflerini toplayıp bir sayıya/tarihe \"düşürürler\" (gizlerler). Karışıklığı önlemek için, harfler ve değerleri aşağıdaki iki tabloda tek tek gösterilmiştir.",
-              "**1) Beyit sayısı — «نَدٌّ بَدَا»:** Harf değerlerinin toplamı **61**'dir; yani eserin toplam beyti altmış birdir. (\"Nedd bedâ\" ayrıca \"bir güzel koku / inci belirdi\" gibi hoş bir mana taşır.)",
+              "**1) Beyit sayısı — «نَدٌّ بَدَا»:** Harf değerlerinin toplamı **61**'dir; yani eserin toplam beyti altmış birdir. (\"Nedd bedâ\" ayrıca \"bir güzel koku belirdi\" gibi hoş bir mana taşır.)",
               "**2) Telif (yazılış) yılı — «بُشْرَى لِمَنْ يُتْقِنُهَا»:** Harf değerlerinin toplamı **1198**'dir; yani eser **hicrî 1198** (mîlâdî ~1783) yılında tamamlanmıştır. Nâzım yılı, \"onu iyi öğrenene müjde\" gibi güzel bir sözün içine gizlemiştir."
             ],
             "de": [
@@ -8408,7 +8408,7 @@ window.CONTENT = {
               "en": "ever, eternally"
             },
             {
-              "ar": "عِلى خِتَامِ",
+              "ar": "عَلَى خِتَامِ",
               "tr": "sonuncusu (hâtimi) üzerine",
               "de": "auf das Siegel",
               "en": "upon the seal"
