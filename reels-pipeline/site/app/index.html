@@ -39,7 +39,12 @@
   --pad:calc(var(--u) * 10);
   /* The band keeps a constant height so the slide above never shifts
      between scenes; long passages scale their type down instead. */
-  --bandh:calc(var(--u) * 36);
+  --bandh:calc(var(--u) * 34);
+
+  /* Instagram covers the top with its header, the bottom with the caption
+     and username, and the right edge with the action buttons. Nothing that
+     has to be read may sit in those bands. */
+  --safe-t:0px; --safe-b:0px; --safe-r:0px;
 }
 *,*::before,*::after{box-sizing:border-box}
 html,body{height:100%; margin:0; overflow:hidden; background:var(--ground)}
@@ -63,16 +68,30 @@ h1,h2,p,li,dt,dd,span{hyphens:none; -webkit-hyphens:none; overflow-wrap:normal; 
 .frame{
   position:relative; overflow:hidden;
   width:100vw; height:100dvh;
+}
+.safe{
+  position:absolute; left:0; right:var(--safe-r);
+  top:calc(var(--safe-t) + env(safe-area-inset-top));
+  bottom:calc(var(--safe-b) + env(safe-area-inset-bottom));
   display:grid; grid-template-rows:1fr auto;
 }
+body.reel{--safe-t:8dvh; --safe-b:19dvh; --safe-r:15vw}
 .deck{position:relative; overflow:hidden}
+
+/* What Instagram will cover, shown with the cue layer while rehearsing. */
+.guides{position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .3s}
+body.cue.reel .guides{opacity:1}
+.guides i{position:absolute; background:rgba(215,90,70,.14); border:1px dashed rgba(215,90,70,.5)}
+.g-t{left:0; right:0; top:0; height:8dvh}
+.g-b{left:0; right:0; bottom:0; height:19dvh}
+.g-r{top:0; bottom:0; right:0; width:15vw}
 
 /* The subtitle band: full width, thin, its own quiet surface. */
 .band{
   position:relative; border-top:1px solid rgba(203,162,90,.42);
   background:linear-gradient(180deg, rgba(19,24,38,.96), rgba(9,12,20,.98));
-  padding:calc(var(--u) * 3.2) var(--pad) calc(var(--u) * 3.2 + env(safe-area-inset-bottom));
-  height:calc(var(--bandh) + env(safe-area-inset-bottom));
+  padding:calc(var(--u) * 3.2) var(--pad);
+  height:var(--bandh);
   display:grid; align-items:center; overflow:hidden;
 }
 .band::before{
@@ -89,7 +108,7 @@ body.no-band .band{display:none}
 
 .slide{
   position:absolute; inset:0; display:grid; align-content:center;
-  padding:calc(var(--u) * 11 + env(safe-area-inset-top)) var(--pad) calc(var(--u) * 9);
+  padding:calc(var(--u) * 6) var(--pad) calc(var(--u) * 5);
   opacity:0; pointer-events:none;
   transform:scale(1.018);
   transition:opacity .8s cubic-bezier(.33,0,.12,1), transform 1.25s cubic-bezier(.2,.75,.2,1);
@@ -247,8 +266,8 @@ body.cue .cueline{opacity:.9}
 .cueline b{color:var(--gold); font-weight:600}
 
 .panel{
-  position:fixed; right:calc(var(--u) * 4); z-index:9;
-  bottom:calc(var(--bandh) + var(--u) * 4 + env(safe-area-inset-bottom));
+  position:fixed; right:calc(var(--safe-r) + var(--u) * 3); z-index:9;
+  bottom:calc(var(--safe-b) + var(--bandh) + var(--u) * 3 + env(safe-area-inset-bottom));
   display:flex; align-items:center; gap:calc(var(--u) * .8);
   padding:calc(var(--u) * .9); border-radius:999px;
   background:rgba(12,16,25,.92); border:1px solid var(--rule);
@@ -267,7 +286,7 @@ body.cue .cueline{opacity:.9}
 .recall{
   position:fixed; right:0; bottom:0; z-index:8; border:0; background:transparent;
   width:calc(var(--u) * 15); height:calc(var(--u) * 15); cursor:pointer;
-  margin-bottom:calc(var(--bandh) + env(safe-area-inset-bottom));
+  margin-bottom:calc(var(--safe-b) + var(--bandh) + env(safe-area-inset-bottom));
   opacity:0; transition:opacity .4s;
 }
 .recall::after{
@@ -282,8 +301,9 @@ body.hidden-panel .recall{opacity:.5}
 
 <div class="stage" id="stage">
   <div class="frame">
-    <div class="deck" id="deck">
-      
+    <div class="safe">
+      <div class="deck" id="deck">
+        
   <article class="slide s-title" data-i="0">
     <div class="pad"><p class="eyebrow">Tawhid</p>
     <div class="archwrap"><svg class="arch" viewBox="0 0 300 340" fill="none" stroke="currentColor"
@@ -483,11 +503,13 @@ body.hidden-panel .recall{opacity:.5}
   <path d="M40 338V152c0-62 50-110 110-110s110 48 110 110v186" opacity=".38"/>
 </svg><p class="ar ar--lg is-gold">لا إله إلا الله</p></div><p class="sub">Ibadah und Gehorsam ausschließlich für Allah.</p></div>
   </article>
-      <div class="bar" id="bar"></div>
-      <p class="cueline" id="cueline"></p>
+        <div class="bar" id="bar"></div>
+        <p class="cueline" id="cueline"></p>
+      </div>
+      <!-- The lecture verbatim, while the slide above carries the summary. -->
+      <div class="band" id="band"><p class="band-t" id="bandt"></p></div>
     </div>
-    <!-- The lecture verbatim, while the slide above carries the summary. -->
-    <div class="band" id="band"><p class="band-t" id="bandt"></p></div>
+    <div class="guides" aria-hidden="true"><i class="g-t"></i><i class="g-b"></i><i class="g-r"></i></div>
   </div>
 </div>
 
@@ -495,6 +517,7 @@ body.hidden-panel .recall{opacity:.5}
   <button class="btn" id="prev" type="button" aria-label="Zur&uuml;ck">&larr;</button>
   <button class="btn" id="play" type="button">Play</button>
   <button class="btn" id="auto" type="button" aria-pressed="false">Auto</button>
+  <button class="btn on" id="reel" type="button" aria-pressed="true">Reel</button>
   <button class="btn on" id="text" type="button" aria-pressed="true">Text</button>
   <button class="btn" id="cue" type="button" aria-pressed="false">Cue</button>
   <button class="btn" id="hide" type="button" aria-label="Bedienung ausblenden">Aus</button>
@@ -602,6 +625,12 @@ body.hidden-panel .recall{opacity:.5}
     $('auto').classList.toggle('on', auto);
     $('auto').setAttribute('aria-pressed', String(auto));
   });
+  $('reel').addEventListener('click', function () {
+    var on = document.body.classList.toggle('reel');
+    $('reel').classList.toggle('on', on);
+    $('reel').setAttribute('aria-pressed', String(on));
+    refit();
+  });
   $('text').addEventListener('click', function () {
     var off = document.body.classList.toggle('no-band');
     $('text').classList.toggle('on', !off);
@@ -628,6 +657,7 @@ body.hidden-panel .recall{opacity:.5}
     if (e.key === 'a' || e.key === 'A') $('auto').click();
     if (e.key === 'c' || e.key === 'C') $('cue').click();
     if (e.key === 't' || e.key === 'T') $('text').click();
+    if (e.key === 'r' || e.key === 'R') $('reel').click();
     if (e.key === 'h' || e.key === 'H') setHidden(!panel.classList.contains('gone'));
   });
 
@@ -638,6 +668,7 @@ body.hidden-panel .recall{opacity:.5}
     x0 = null;
   }, { passive: true });
 
+  document.body.classList.add('reel');
   refit(); show(0); sync();
 })();
 </script>
