@@ -7,7 +7,7 @@ Stage 1 turns each scene's entrance frames plus its settled still into one
 clip, drifting slowly the whole way. Stage 2 cross-fades the clips, burns
 the subtitles and muxes the audio.
 """
-import json, shlex, subprocess, sys
+import json, re, shlex, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,6 +34,18 @@ def run(cmd):
 
 
 def probe_duration(path):
+    """Decode to find the real length.
+
+    A VBR mp3's header duration can be badly wrong - the source recording
+    here claims 5:00 and actually runs 5:28 - and the last scene is clamped
+    to this value, so trusting the header truncates the end of the video.
+    """
+    p = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-f", "null", "-"],
+                       capture_output=True, text=True)
+    stamps = re.findall(r"time=(\d+):(\d\d):(\d\d\.\d+)", p.stderr)
+    if stamps:
+        h, m, sec = stamps[-1]
+        return int(h) * 3600 + int(m) * 60 + float(sec)
     return float(run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                       "-of", "default=nw=1:nk=1", str(path)]).stdout.strip())
 

@@ -19,7 +19,8 @@ const esc = (s = '') => clean(s)
 /* Inline markup in copy: *emphasis* and _accent_. */
 const rich = (s = '') => esc(s)
   .replace(/\*([^*]+)\*/g, '<span class="hl">$1</span>')
-  .replace(/_([^_]+)_/g, '<span class="out">$1</span>');
+  .replace(/_([^_]+)_/g, '<span class="out">$1</span>')
+  .replace(/~([^~]+)~/g, '<span class="ar">$1</span>');
 
 /* Headlines animate per word, so each word needs its own box. Emphasis is
    resolved here rather than by rich(): splitting finished HTML on
@@ -131,11 +132,22 @@ const LAYOUTS = {
       </div>
     </div>`,
 
+  /* The word itself: Arabic above, transliteration below. */
+  word: (s) => `
+    <div class="scene scene--center stack">
+      ${kicker(s.kicker)}
+      <div style="text-align:center;width:100%">
+        <span class="word-ar a-lift">${esc(s.ar)}</span>
+        <div class="word-latin a-rise" style="--i:2">${esc(s.latin)}</div>
+      </div>
+      ${s.sub ? `<p class="sub a-rise" style="--i:4;max-width:100%;text-align:center">${rich(s.sub)}</p>` : ''}
+    </div>`,
+
   quote: (s) => `
     <div class="scene scene--center">
       <span class="quote-mark a-fade">"</span>
-      <h2 class="headline" style="font-size:92px">${headlineWords(s.text)}</h2>
-      ${s.by ? `<p class="sub a-rise" style="--i:6;margin-top:44px">${esc(s.by)}</p>` : ''}
+      <h2 class="headline" style="font-size:${s.size || 78}px">${headlineWords(s.text)}</h2>
+      ${s.by ? `<p class="sub a-rise" style="--i:6;margin-top:44px;color:var(--ember)">${esc(s.by)}</p>` : ''}
     </div>`,
 };
 
@@ -162,7 +174,7 @@ export function sceneHTML(spec, skin = 'quiet') {
   const skinCSS = SKINS[skin] || SKINS.quiet;
   const override = spec.bg === 'invert'
     ? (skin === 'quiet'
-        ? ':root{--paper:#EFEBE4;--paper-2:#E4DFD6;--ink:#0A0A0C;--ink-soft:#575249;--ink-mute:#8A8479;--line:#0A0A0C;--hair:rgba(10,10,12,.16);--hair-2:rgba(10,10,12,.34);--grain-blend:multiply;--grain-opacity:.05}'
+        ? ':root{--paper:#EFEBE4;--paper-2:#E4DFD6;--ink:#0A0A0C;--ink-soft:#575249;--ink-mute:#8A8479;--line:#0A0A0C;--hair:rgba(10,10,12,.16);--hair-2:rgba(10,10,12,.34);--grain-blend:multiply;--grain-opacity:.05;--vignette:radial-gradient(120% 84% at 50% 46%, transparent 58%, rgba(10,10,12,.14) 100%)}'
         : ':root{--paper:#14110E;--paper-2:#1F1A15;--ink:#F5EFE3;--ink-soft:#B9AE9C;--line:#F5EFE3}')
     : '';
   return `<!doctype html><html lang="tr"><head><meta charset="utf-8">

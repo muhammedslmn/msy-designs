@@ -12,6 +12,8 @@ const FACES = [
   { file: 'Inter_400Regular.ttf',                  family: 'Inter',            weight: 400 },
   { file: 'Inter_500Medium.ttf',                   family: 'Inter',            weight: 500 },
   { file: 'Inter_600SemiBold.ttf',                 family: 'Inter',            weight: 600 },
+  // Arabic, for the word this video is about
+  { file: 'Amiri_400Regular.ttf',                  family: 'Amiri',            weight: 400 },
   // bold skin
   { file: 'BebasNeue_400Regular.ttf',              family: 'Bebas Neue',       weight: 400 },
   { file: 'Manrope_500Medium.ttf',                 family: 'Manrope',          weight: 500 },

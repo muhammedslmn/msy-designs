@@ -128,4 +128,101 @@ export const ART = {
     <path d="M52 108 l34 18 M348 108 l-34 18 M200 20 v26" stroke-width="11"/>`),
 };
 
+
+/* ── Set for the Ilah video ───────────────────────────────────────────
+   No figures at all here, not even faceless ones: the subject is a word
+   and what the heart does with it, so the drawings stay to objects,
+   directions and structure.                                            */
+
+Object.assign(ART, {
+  /* A word root branching into what grows from it. */
+  root: S(`
+    <path d="M200 356 V206" stroke-width="12"/>
+    <path d="M200 232 C200 176 150 168 122 132" />
+    <path d="M200 214 C200 152 200 132 200 84" />
+    <path d="M200 232 C200 176 250 168 278 132" />
+    <circle cx="122" cy="118" r="26" fill="var(--fill-b)"/>
+    <circle cx="200" cy="70"  r="26" fill="var(--fill-b)"/>
+    <circle cx="278" cy="118" r="26" fill="var(--fill-b)"/>
+    <path d="M132 356 H268" stroke-width="12"/>`),
+
+  /* The heart, as the thing that turns. */
+  heart: S(`
+    <path d="M200 336 C120 274 60 226 60 162 a72 72 0 0 1 140 -26 a72 72 0 0 1 140 26
+             c0 64 -60 112 -140 174 Z" fill="var(--fill-b)"/>`),
+
+  /* An open book: the dictionaries and the tafsir. */
+  book: S(`
+    <path d="M200 116 C160 84 108 78 56 84 V304 c52 -6 104 0 144 32 Z" fill="var(--fill-a)"/>
+    <path d="M200 116 C240 84 292 78 344 84 V304 c-52 -6 -104 0 -144 32 Z" fill="var(--fill-a)"/>
+    <path d="M200 116 V336" stroke-width="11"/>
+    <path d="M92 148 h72 M92 194 h72 M236 148 h72 M236 194 h72" stroke-width="8"/>`),
+
+  /* Everything pointing to one centre. */
+  converge: S(`
+    <circle cx="200" cy="200" r="42" fill="var(--fill-b)"/>
+    <path d="M200 44 V128 M200 356 V272 M44 200 H128 M356 200 H272
+             M90 90 L150 150 M310 310 L250 250 M310 90 L250 150 M90 310 L150 250" stroke-width="11"/>
+    <path d="M186 114 L200 128 L214 114 M186 286 L200 272 L214 286
+             M114 186 L128 200 L114 214 M286 186 L272 200 L286 214" stroke-width="11"/>`),
+
+  /* The same arrows, with nothing at the centre. */
+  scatter: S(`
+    <circle cx="200" cy="200" r="40" stroke-dasharray="14 16" stroke-width="9"/>
+    <path d="M200 152 V60 M200 248 V340 M152 200 H60 M248 200 H340" stroke-width="11"/>
+    <path d="M186 74 L200 60 L214 74 M186 326 L200 340 L214 326
+             M74 186 L60 200 L74 214 M326 186 L340 200 L326 214" stroke-width="11"/>`),
+
+  /* Balance: what is permitted and what is forbidden. */
+  balance: S(`
+    <path d="M200 62 V330 M132 330 h136" stroke-width="12"/>
+    <path d="M76 124 H324" stroke-width="12"/>
+    <path d="M76 124 L36 214 h80 Z" fill="var(--fill-b)"/>
+    <path d="M324 124 L284 214 h80 Z" fill="var(--fill-c)"/>
+    <circle cx="200" cy="106" r="16" fill="var(--fill-a)"/>`),
+
+  /* The pen: who has the right to legislate. */
+  pen: S(`
+    <path d="M92 316 L120 226 L268 78 a30 30 0 0 1 42 42 L162 268 Z" fill="var(--fill-a)"/>
+    <path d="M120 226 L162 268" stroke-width="9"/>
+    <path d="M92 316 L128 300" stroke-width="9"/>
+    <path d="M60 350 H340" stroke-width="11"/>`),
+
+  /* A lamp: the guidance in the text. */
+  lamp: S(`
+    <path d="M200 54 V96" stroke-width="11"/>
+    <path d="M118 96 H282 L248 214 H152 Z" fill="var(--fill-a)"/>
+    <path d="M152 214 h96 v28 h-96 Z"/>
+    <path d="M200 242 V304" stroke-width="11"/>
+    <path d="M124 336 h152" stroke-width="12"/>
+    <path d="M64 268 l40 -22 M336 268 l-40 -22 M78 168 h-34 M356 168 h-34" stroke-width="9"/>`),
+
+  /* Two voices: the question and the answer. */
+  dialogue: S(`
+    <path d="M56 92 h182 a20 20 0 0 1 20 20 v106 a20 20 0 0 1 -20 20 H132 l-48 44 v-44 H56
+             a20 20 0 0 1 -20 -20 V112 a20 20 0 0 1 20 -20 Z" fill="var(--fill-a)"/>
+    <path d="M344 176 H286 a20 20 0 0 0 -20 20 v100 a20 20 0 0 0 20 20 h74 l40 38 v-38 h-2
+             a20 20 0 0 0 20 -20 V196 a20 20 0 0 0 -20 -20 Z" fill="var(--fill-c)"
+          transform="translate(-42,0)"/>`),
+
+  /* Refuge. */
+  refuge: S(`
+    <path d="M200 46 L332 96 v112 c0 76 -58 122 -132 148 -74 -26 -132 -72 -132 -148 V96 Z"
+          fill="var(--fill-b)"/>
+    <path d="M156 200 l30 32 l62 -70" stroke="var(--paper)" stroke-width="15"/>`),
+
+  /* One door, one way through. */
+  gate: S(`
+    <path d="M110 348 V166 a90 90 0 0 1 180 0 v182" fill="var(--fill-a)"/>
+    <path d="M200 166 V348" stroke-width="10"/>
+    <path d="M64 348 H336" stroke-width="12"/>
+    <circle cx="176" cy="258" r="9" fill="var(--line)" stroke="none"/>
+    <circle cx="224" cy="258" r="9" fill="var(--line)" stroke="none"/>`),
+
+  /* Crossed out: the claim that is rejected. */
+  reject: S(`
+    <circle cx="200" cy="200" r="136" stroke-width="16"/>
+    <path d="M104 104 L296 296" stroke-width="16" stroke="var(--line-accent)"/>`),
+});
+
 export const ART_KEYS = Object.keys(ART);

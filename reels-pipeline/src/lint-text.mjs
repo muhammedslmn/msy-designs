@@ -1,14 +1,19 @@
 /* ── Copy guard ────────────────────────────────────────────────────────
-   On-screen text stays inside plain Latin plus Turkish's own letters.
-   Accented forms (a-acute, e-acute, circumflexes, ligatures) and
-   decorative punctuation (em dash, ellipsis, curly quotes) are rejected
-   rather than silently rendered.                                        */
+   On-screen text stays inside plain Latin plus the letters the languages
+   in play actually own: Turkish's g/s/i/o/u/c forms and German's umlauts
+   and eszett. What gets rejected is borrowed accents (a-acute, e-acute,
+   circumflexes, ligatures) and decorative punctuation (em dash, ellipsis,
+   curly quotes).
+
+   Arabic script is allowed through deliberately: a video about an Arabic
+   word shows that word, and the Amiri face carries it.                   */
 
 const ALLOWED = new Set([
   ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   ...'abcdefghijklmnopqrstuvwxyz',
   ...'0123456789',
-  ...'ğĞşŞıİöÖüÜçÇ',
+  ...'ğĞşŞıİöÖüÜçÇ',        // Turkish
+  ...'äÄßẞ',                 // German (o/u umlauts already above)
   ...' \n\t.,:;!?\'"()[]%/+-=&*_#@₺$€',
 ]);
 
@@ -18,23 +23,33 @@ export const REPLACEMENTS = {
   '“': '"', '”': '"', '„': '"', '‘': "'", '’': "'", '´': "'", '`': "'",
   '·': '-', '•': '-', '×': 'x', ' ': ' ',
   'â': 'a', 'Â': 'A', 'î': 'i', 'Î': 'I', 'û': 'u', 'Û': 'U',
+  '\uFDFA': '', '\uFDFB': '',   // honorific ligatures: spell them out instead
   'á': 'a', 'à': 'a', 'é': 'e', 'è': 'e', 'ê': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
   'Á': 'A', 'À': 'A', 'É': 'E', 'È': 'E', 'Ê': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U',
   'æ': 'ae', 'Æ': 'AE', 'œ': 'oe', 'Œ': 'OE', 'ß': 'ss', 'ñ': 'n', 'Ñ': 'N',
-  'ä': 'a', 'Ä': 'A', 'ë': 'e', 'ï': 'i',
+  'ë': 'e', 'ï': 'i',
 };
 
+
+
 /* Markup characters the templates consume before anything reaches screen. */
-const MARKUP = new Set(['*', '|']);
+const MARKUP = new Set(['*', '|', '~']);
+
+/* Arabic (U+0600-U+06FF) and its supplement pass through untouched. */
+const ARABIC = /[\u0600-\u06FF\u0750-\u077F\uFE70-\uFEFF]/;
 
 export function clean(text = '') {
-  return String(text).replace(/./gsu, (ch) => REPLACEMENTS[ch] ?? ch);
+  // A character the guard allows is never rewritten, whatever the table
+  // says. Without this, adding eszett to the allowed set still left the
+  // ss substitution in place and German copy came out misspelled.
+  return String(text).replace(/./gsu, (ch) =>
+    (ALLOWED.has(ch) || MARKUP.has(ch) || ARABIC.test(ch)) ? ch : (REPLACEMENTS[ch] ?? ch));
 }
 
 export function offenders(text = '') {
   const bad = new Map();
   for (const ch of String(text)) {
-    if (ALLOWED.has(ch) || MARKUP.has(ch)) continue;
+    if (ALLOWED.has(ch) || MARKUP.has(ch) || ARABIC.test(ch)) continue;
     bad.set(ch, (bad.get(ch) || 0) + 1);
   }
   return bad;

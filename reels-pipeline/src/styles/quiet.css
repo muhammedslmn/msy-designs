@@ -127,10 +127,20 @@ ol.steps li .n{
 .vs .col li::before{ content:none }
 
 /* ── Quote ────────────────────────────────────────────────────────── */
-.quote-mark{ font-family:var(--display); font-size:150px; color:var(--ember);
-             line-height:.5; display:block; margin-bottom:28px }
+.quote-mark{ font-family:var(--display); font-size:190px; color:var(--ember);
+             line-height:.62; display:block; margin-bottom:16px; height:.62em;
+             overflow:hidden; opacity:.9 }
 
-/* Numeric columns hug their content so the first column keeps the width. */
-table.tbl th:not(:first-child),
-table.tbl td:not(:first-child){ width:1%; white-space:nowrap; padding-left:56px }
-table.tbl th:last-child, table.tbl td:last-child{ text-align:right }
+/* The label column takes a fixed share; only numeric cells hug their text. */
+table.tbl th:first-child, table.tbl td:first-child{ width:38%; padding-right:40px }
+table.tbl th:first-child{ white-space:nowrap }
+table.tbl td.num, table.tbl th.num{ width:1%; white-space:nowrap; padding-left:56px }
+
+/* Arabic sits alongside the Latin text at its own optical size. */
+.ar{ font-family:'Amiri', serif; direction:rtl; unicode-bidi:isolate; font-size:1.16em;
+     line-height:1.5; letter-spacing:0 }
+.headline .ar{ font-size:1.02em }
+.word-ar{ font-family:'Amiri', serif; direction:rtl; unicode-bidi:isolate;
+          font-size:210px; line-height:1.5; color:var(--ink); display:block }
+.word-latin{ font-family:var(--display); font-size:104px; line-height:1;
+             letter-spacing:-.02em; color:var(--ember); margin-top:10px }

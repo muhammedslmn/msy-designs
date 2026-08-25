@@ -1,0 +1,131 @@
+{
+  "out": "ilah.mp4",
+  "audio": "build/voice.mp3",
+  "frames": "build/frames-ilah",
+  "subs": "none.ass",
+  "scenes": [
+    { "start": 0, "end": 17.26, "type": "title", "motion": "in",
+      "kicker": "TAUHID",
+      "headline": "Was bedeutet *Ilah*?",
+      "sub": "Ein Begriff im Zentrum des Glaubensbekenntnisses." },
+
+    { "start": 17.26, "end": 34.86, "type": "art", "motion": "out", "art": "book",
+      "kicker": "EINORDNUNG",
+      "headline": "Der Begriff im *Zentrum*",
+      "sub": "Nach dem Tauhid und der Bedeutung von La ilaha illa Allah betrachten wir nun das Wort selbst - sprachlich und in der islamischen Fachsprache." },
+
+    { "start": 34.86, "end": 52.35, "type": "word", "motion": "in", "bg": "invert",
+      "kicker": "DAS WORT",
+      "ar": "الإله",
+      "latin": "AL-ILAH",
+      "sub": "Die Wortwurzel besteht aus drei Buchstaben." },
+
+    { "start": 52.35, "end": 69.51, "type": "art", "motion": "up", "art": "root",
+      "kicker": "WORTWURZEL",
+      "headline": "Hamza - Lam - *Ha*",
+      "sub": "Die Wurzel ~أ ل ه~ trägt eine Grundbedeutung: at-Ta'abbud, das Dienen und Anbeten." },
+
+    { "start": 69.51, "end": 86.77, "type": "quote", "motion": "in", "size": 74,
+      "text": "Ilah wird so bezeichnet, weil er der *Ma'bud* ist - derjenige, dem Anbetung dargebracht wird.",
+      "by": "Ibn Faris" },
+
+    { "start": 86.77, "end": 103.0, "type": "table", "motion": "out",
+      "title": "Die *Wörterbücher*",
+      "head": ["Gelehrter", "Erklärung"],
+      "rows": [
+        ["Ibn Faris", "Wurzel a-l-h: at-Ta'abbud"],
+        ["al-Jawhari", "Ilah trägt die Bedeutung Ma'luh"],
+        ["Ibn Manzur", "al-Ma'luh, also al-Ma'bud"]
+      ],
+      "note": "al-Ma'bud: derjenige, der angebetet wird und vor dem man sich unterwirft." },
+
+    { "start": 103.0, "end": 118.83, "type": "art", "motion": "in", "art": "heart",
+      "kicker": "SPRACHLICH",
+      "headline": "Wem sich das *Herz* zuwendet",
+      "sub": "Das Wesen, dem sich das Herz zuwendet - und das es anbetet." },
+
+    { "start": 118.83, "end": 136.23, "type": "steps", "motion": "down",
+      "kicker": "VIER BEWEGUNGEN",
+      "headline": "Was das Herz *tut*",
+      "items": ["Liebe in höchster Form", "Ehrfurcht und Verherrlichung", "Zufluchtssuche in der Not", "Furcht und Hoffnung"] },
+
+    { "start": 136.23, "end": 150.13, "type": "art", "motion": "in", "art": "converge",
+      "kicker": "FACHSPRACHE",
+      "headline": "Ilah ist *Allah* azza wa-jall",
+      "sub": "Der Einzige, dem Anbetung und uneingeschränkter Gehorsam zustehen." },
+
+    { "start": 150.13, "end": 163.36, "type": "quote", "motion": "out", "size": 70,
+      "text": "Allah ist der Einzige, der gegenüber der gesamten Schöpfung das Recht auf *Uluhiyyah* und *Ubudiyyah* besitzt.",
+      "by": "Ibn Abbas, überliefert bei at-Tabari" },
+
+    { "start": 163.36, "end": 179.19, "type": "table", "motion": "in",
+      "title": "Zwei *Rechte*",
+      "head": ["Begriff", "Bedeutung"],
+      "rows": [
+        ["Uluhiyyah", "Das Recht, Ilah zu sein"],
+        ["Ubudiyyah", "Das Recht, angebetet zu werden"]
+      ],
+      "note": "Beide stehen allein Allah zu, gegenüber der gesamten Schöpfung." },
+
+    { "start": 179.19, "end": 200.92, "type": "quote", "motion": "out", "size": 72,
+      "text": "Allah ist einzig und hat keinen Teilhaber. Nichts ist Ihm gleich. Es gibt keinen *anbetungswürdigen Gott* außer Ihm.",
+      "by": "Imam Abu Ja'far at-Tahawi" },
+
+    { "start": 200.92, "end": 214.16, "type": "table", "motion": "up",
+      "title": "Die Imame der *Aqidah*",
+      "head": ["Gelehrter", "Der Ilah ist"],
+      "rows": [
+        ["Ibn Abi l-Izz", "der Ma'luh und Ma'bud"],
+        ["al-Izz ibn Abd as-Salam", "allein Ihm gebührt Gehorsam"],
+        ["Ibn al-Qayyim", "dem die Herzen sich zuwenden"]
+      ] },
+
+    { "start": 214.16, "end": 228.0, "type": "quote", "motion": "in", "size": 70,
+      "text": "Die Herzen lieben Ihn, unterwerfen sich vor Ihm, fürchten Ihn, hoffen auf Ihn und *vertrauen* auf Ihn.",
+      "by": "Scheich al-Islam Ibn Taymiyya" },
+
+    { "start": 228.0, "end": 242.8, "type": "quote", "motion": "out", "size": 66,
+      "text": "Wer einem Geschöpf etwas davon zukommen lässt, beeinträchtigt die *Aufrichtigkeit* des Tauhid.",
+      "by": "Hafidh Ibn Rajab al-Hanbali" },
+
+    { "start": 242.8, "end": 258.51, "type": "table", "motion": "in",
+      "title": "Im *Quran*",
+      "head": ["Stelle", "Aussage"],
+      "rows": [
+        ["al-An'am 102", "Kein anbetungswürdiger Gott außer Ihm"],
+        ["al-Furqan 43", "Seine Neigung zu seinem Ilah genommen"]
+      ],
+      "note": "Ilah hängt nicht am Erschaffen allein, sondern an Anbetung, Gehorsam und der Bindung des Herzens." },
+
+    { "start": 258.51, "end": 281.81, "type": "steps", "motion": "down",
+      "kicker": "ADIYY IBN HATIM",
+      "headline": "Nur vor Statuen? *Nein.*",
+      "items": [
+        "Adiyy war Christ, bevor er den Islam annahm",
+        "Er hörte: sie nahmen ihre Rabbiner und Mönche zu Herren",
+        "Er sagte: wir haben doch nicht zu ihnen gebetet"
+      ] },
+
+    { "start": 281.81, "end": 292.24, "type": "quote", "motion": "in", "size": 64,
+      "text": "Genau das ist eure Anbetung ihnen gegenüber - und damit habt ihr sie zu *Ilah und Rabb* genommen.",
+      "by": "Der Gesandte Allahs, Friede sei auf ihm" },
+
+    { "start": 292.24, "end": 308.49, "type": "vs", "motion": "in",
+      "headline": "Nicht nur - *sondern*",
+      "left": { "title": "Ilah ist nicht", "items": ["lediglich eine erschaffende Macht", "nur eine Statue aus Stein", "eine Frage der Niederwerfung allein"] },
+      "right": { "title": "Ilah ist", "items": ["der Ma'bud, geliebt und gefürchtet", "bei dem man Zuflucht sucht", "dessen Gesetz man sich unterwirft"] } },
+
+    { "start": 308.49, "end": 320.06, "type": "steps", "motion": "up",
+      "kicker": "LA ILAHA ILLA ALLAH",
+      "headline": "Was es *bedeutet*",
+      "items": [
+        "Falsche Gottheiten aus Herz und Leben herausreißen",
+        "Jeden zurückweisen, der Gesetzgebung für sich beansprucht",
+        "Ibadah und Gehorsam allein Allah widmen"
+      ] },
+
+    { "start": 320.06, "end": 328.54, "type": "title", "motion": "in", "bg": "invert",
+      "headline": "La ilaha *illa Allah*",
+      "sub": "Es gibt keinen anbetungswürdigen Gott außer Allah." }
+  ]
+}
