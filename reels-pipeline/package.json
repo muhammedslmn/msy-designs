@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "fonts": "node src/make-fonts.mjs",
-    "render": "node src/render.mjs build/project.json build/frames"
+    "app": "node bin/make-app.mjs site/app",
+    "audit": "node bin/audit.mjs",
+    "shots": "node bin/shots.mjs"
   },
   "keywords": [],
   "author": "",
