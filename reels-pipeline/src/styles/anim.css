@@ -1,0 +1,94 @@
+/* ── Entrance motion ───────────────────────────────────────────────────
+   Every animation starts at t=0 with a fixed duration and fill:both, so
+   the renderer can pause the document and seek to any frame and get the
+   same picture back. Nothing loops; the long tail of a scene is a held
+   frame that ffmpeg drifts.                                             */
+
+@keyframes rise{
+  from{ opacity:0; transform:translateY(30px) }
+  to  { opacity:1; transform:translateY(0) }
+}
+@keyframes riseWord{
+  from{ opacity:0; transform:translateY(0.34em) }
+  to  { opacity:1; transform:translateY(0) }
+}
+@keyframes fadeIn{ from{ opacity:0 } to{ opacity:1 } }
+@keyframes ruleGrow{ from{ transform:scaleX(0) } to{ transform:scaleX(1) } }
+@keyframes drawLine{ from{ stroke-dashoffset:var(--len) } to{ stroke-dashoffset:0 } }
+/* fill-opacity, not opacity: the stroke has already drawn itself in. */
+@keyframes fillUp{ from{ fill-opacity:0 } to{ fill-opacity:1 } }
+@keyframes lift{
+  from{ opacity:0; transform:translateY(46px) scale(.965) }
+  to  { opacity:1; transform:translateY(0) scale(1) }
+}
+
+:root{
+  --ease: cubic-bezier(.17,.78,.31,1);
+  --stagger: 62ms;
+  --base-delay: 60ms;
+}
+
+/* Element-level entrances. --i carries the stagger index, set in page. */
+.a-rise{
+  animation:rise 780ms var(--ease) both;
+  animation-delay:calc(var(--base-delay) + var(--i, 0) * var(--stagger));
+}
+.a-lift{
+  animation:lift 900ms var(--ease) both;
+  animation-delay:calc(var(--base-delay) + var(--i, 0) * var(--stagger));
+}
+.a-fade{
+  animation:fadeIn 900ms ease both;
+  animation-delay:calc(var(--base-delay) + var(--i, 0) * var(--stagger));
+}
+
+/* Headlines arrive word by word — the one flourish the design allows. */
+.headline .w{
+  display:inline-block;
+  animation:riseWord 700ms var(--ease) both;
+  animation-delay:calc(140ms + var(--i, 0) * 55ms);
+}
+.headline .hl::after{
+  transform-origin:left center;
+  animation:ruleGrow 620ms var(--ease) both;
+  animation-delay:calc(320ms + var(--i, 0) * 55ms);
+}
+.kicker::before{
+  transform-origin:left center;
+  animation:ruleGrow 560ms var(--ease) both; animation-delay:120ms;
+}
+
+/* Drawings ink themselves in. */
+.art svg [data-len]{
+  stroke-dasharray:var(--len);
+  animation:drawLine 1150ms var(--ease) both;
+  animation-delay:calc(180ms + var(--i, 0) * 46ms);
+}
+.art svg [data-fill]{
+  animation:fillUp 700ms ease both;
+  animation-delay:calc(700ms + var(--i, 0) * 40ms);
+}
+
+/* Table and list rows cascade. */
+table.tbl thead th{ animation:fadeIn 600ms ease both; animation-delay:120ms }
+table.tbl tbody tr{
+  animation:rise 720ms var(--ease) both;
+  animation-delay:calc(280ms + var(--i, 0) * 110ms);
+}
+ol.steps li{
+  animation:rise 760ms var(--ease) both;
+  animation-delay:calc(220ms + var(--i, 0) * 130ms);
+}
+.vs .col{
+  animation:rise 820ms var(--ease) both;
+  animation-delay:calc(200ms + var(--i, 0) * 180ms);
+}
+.vs .col li{
+  animation:rise 700ms var(--ease) both;
+  animation-delay:calc(420ms + var(--i, 0) * 90ms);
+}
+.stat .big{ animation:lift 1000ms var(--ease) both; animation-delay:80ms }
+.stat .cap{ animation:rise 800ms var(--ease) both; animation-delay:520ms }
+
+/* The frame itself settles, very slightly. */
+.scene{ animation:fadeIn 420ms ease both }

@@ -1,0 +1,136 @@
+/* ── Skin: "quiet" ─────────────────────────────────────────────────────
+   Near-black canvas, bone type, one ember accent used sparingly. No boxes,
+   no drop shadows, no fills — structure comes from hairlines and empty
+   space. A high-contrast serif carries the statements; everything else is
+   a quiet grotesk that stays out of the way.                            */
+
+:root{
+  --paper:    #0A0A0C;
+  --paper-2:  #101013;
+  --ink:      #EFEBE4;
+  --ink-soft: #8C877E;
+  --ink-mute: #57534D;
+  --ember:    #DE5F35;
+  --ember-dim:#7A3A22;
+  --hair:     rgba(239,235,228,.13);
+  --hair-2:   rgba(239,235,228,.28);
+
+  /* Art reuses one drawing set across skins; here every fill drops out
+     and the line alone carries the image. */
+  --line:     #EFEBE4;
+  --fill-a:   none;
+  --fill-b:   none;
+  --fill-c:   none;
+  --line-accent: var(--ember);
+
+  --pad: 112px;
+  --safe-top: 290px;
+  --safe-bottom: 560px;
+  --gap: 46px;
+  --step-gap: 40px;
+  --vs-gap: 0px;
+  --art-max: 660px;
+
+  --grain-opacity: .07;
+  --grain-blend: screen;
+  --vignette: radial-gradient(128% 74% at 50% 38%, rgba(255,255,255,.045) 0%, transparent 46%),
+              radial-gradient(120% 82% at 50% 50%, transparent 44%, rgba(0,0,0,.55) 100%);
+
+  --display: 'Instrument Serif', Georgia, serif;
+  --text: 'Inter', 'Noto Sans', sans-serif;
+}
+
+body{ font-family:var(--text); font-size:38px; font-weight:400; letter-spacing:-.005em }
+
+/* ── Type ─────────────────────────────────────────────────────────── */
+.kicker{
+  display:inline-flex; align-items:center; gap:20px;
+  font-family:var(--text); font-size:23px; font-weight:500;
+  letter-spacing:.34em; text-transform:uppercase; color:var(--ember);
+  align-self:flex-start;
+}
+.kicker::before{ content:''; width:56px; height:1px; background:var(--ember); opacity:.75 }
+
+h1.headline, h2.headline{
+  font-family:var(--display); font-weight:400;
+  line-height:.94; letter-spacing:-.021em; color:var(--ink);
+}
+h1.headline{ font-size:138px }
+h2.headline{ font-size:104px }
+
+/* Emphasis stays typographic — a colour shift and an italic, never a box. */
+.headline .hl{ font-style:italic; color:var(--ink) }
+.headline .hl::after{
+  content:''; display:block; height:2px; margin-top:.1em;
+  background:linear-gradient(90deg, var(--ember), transparent);
+}
+.headline .out{ color:var(--ember); font-style:italic }
+
+.sub{
+  font-size:39px; line-height:1.52; font-weight:400; color:var(--ink-soft);
+  max-width:790px; letter-spacing:-.004em;
+}
+.sub strong{ color:var(--ink); font-weight:500 }
+
+/* ── Table — hairlines only ───────────────────────────────────────── */
+.tbl-title{
+  align-self:flex-start; font-family:var(--display); font-size:82px;
+  line-height:.96; letter-spacing:-.02em; margin-bottom:54px;
+}
+.card{ background:none; border:none; box-shadow:none; width:100% }
+table.tbl thead th{
+  font-size:22px; font-weight:500; letter-spacing:.26em; text-transform:uppercase;
+  color:var(--ink-mute); padding:0 8px 26px; text-align:left;
+  border-bottom:1px solid var(--hair-2);
+}
+table.tbl tbody td{
+  font-size:40px; font-weight:400; color:var(--ink);
+  padding:38px 8px; border-bottom:1px solid var(--hair); vertical-align:middle;
+}
+table.tbl tbody tr:last-child td{ border-bottom:none }
+table.tbl td.num{ font-weight:500; font-variant-numeric:tabular-nums lining-nums }
+table.tbl td.good{ color:var(--ink) }
+table.tbl td.bad { color:var(--ember) }
+table.tbl td.dim { color:var(--ink-mute) }
+
+/* ── Steps — figures, not badges ──────────────────────────────────── */
+ol.steps li{ font-size:42px; line-height:1.42; font-weight:400; color:var(--ink);
+             padding-bottom:34px; border-bottom:1px solid var(--hair) }
+ol.steps li:last-child{ border-bottom:none; padding-bottom:0 }
+ol.steps li .n{
+  font-family:var(--display); font-size:46px; color:var(--ember);
+  width:64px; height:64px; place-items:start; line-height:1; padding-top:6px;
+  background:none; border:none; box-shadow:none;
+}
+
+/* ── Stat ─────────────────────────────────────────────────────────── */
+.stat .big{
+  font-family:var(--display); font-size:400px; line-height:.8;
+  letter-spacing:-.045em; color:var(--ink); -webkit-text-stroke:0; text-shadow:none;
+}
+.stat .cap{ font-size:38px; line-height:1.5; color:var(--ink-soft); margin-top:56px;
+            max-width:720px; margin-left:auto; margin-right:auto }
+.stat .kicker{ align-self:center; justify-content:center }
+
+/* ── Compare — one hairline between two columns ───────────────────── */
+.vs .col{ padding:0 46px; background:none; border:none; box-shadow:none }
+.vs .col:first-child{ padding-left:0; border-right:1px solid var(--hair) }
+.vs .col:last-child{ padding-right:0 }
+.vs .col h3{
+  font-family:var(--text); font-size:22px; font-weight:500; letter-spacing:.26em;
+  text-transform:uppercase; margin-bottom:38px; color:var(--ink-mute);
+}
+.vs .col.good h3{ color:var(--ember) }
+.vs .col ul{ list-style:none; display:flex; flex-direction:column; gap:30px;
+             font-size:34px; line-height:1.4; font-weight:400; color:var(--ink-soft) }
+.vs .col.good li{ color:var(--ink) }
+.vs .col li::before{ content:none }
+
+/* ── Quote ────────────────────────────────────────────────────────── */
+.quote-mark{ font-family:var(--display); font-size:150px; color:var(--ember);
+             line-height:.5; display:block; margin-bottom:28px }
+
+/* Numeric columns hug their content so the first column keeps the width. */
+table.tbl th:not(:first-child),
+table.tbl td:not(:first-child){ width:1%; white-space:nowrap; padding-left:56px }
+table.tbl th:last-child, table.tbl td:last-child{ text-align:right }

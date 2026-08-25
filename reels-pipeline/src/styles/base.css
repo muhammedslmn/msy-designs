@@ -1,0 +1,47 @@
+/* ── Canvas & layout ───────────────────────────────────────────────────
+   Skin-independent: the 1080x1920 frame, the Instagram safe areas and the
+   structural rules every scene type shares. Colour, type and texture live
+   in a skin (styles/bold.css or styles/quiet.css).                      */
+
+*{ box-sizing:border-box; margin:0; padding:0 }
+html,body{ width:1080px; height:1920px; overflow:hidden }
+
+body{
+  color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:geometricPrecision;
+  font-kerning:normal;
+}
+
+.scene{
+  position:relative; width:1080px; height:1920px;
+  padding:var(--safe-top) var(--pad) var(--safe-bottom);
+  display:flex; flex-direction:column; overflow:hidden;
+}
+.scene--center{ justify-content:center }
+.scene--wide{ padding-left:calc(var(--pad) - 36px); padding-right:calc(var(--pad) - 36px) }
+
+.grain{
+  position:absolute; inset:0; pointer-events:none; z-index:60;
+  opacity:var(--grain-opacity); mix-blend-mode:var(--grain-blend);
+  background-image:var(--grain-url); background-size:420px 420px;
+}
+.vignette{
+  position:absolute; inset:0; pointer-events:none; z-index:59;
+  background:var(--vignette);
+}
+
+.art{ display:grid; place-items:center; flex:1; min-height:0 }
+.art svg{ width:100%; height:100%; max-height:var(--art-max); overflow:visible }
+.spacer{ flex:1; min-height:0 }
+.stack > * + *{ margin-top:var(--gap) }
+
+table.tbl{ width:100%; border-collapse:collapse }
+table.tbl td.num{ font-variant-numeric:tabular-nums; text-align:right }
+
+ol.steps{ list-style:none; display:flex; flex-direction:column; gap:var(--step-gap) }
+ol.steps li{ display:flex; gap:28px; align-items:flex-start }
+ol.steps li .n{ flex:0 0 auto; display:grid; place-items:center }
+
+.vs{ display:grid; grid-template-columns:1fr 1fr; gap:var(--vs-gap) }
+.stat{ text-align:center }
