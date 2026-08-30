@@ -140,7 +140,7 @@ def home(lang):
                           ("agb", "foot.terms"),
                           ("widerruf", "foot.withdrawal")))
     return '''
-<section class="stage night">
+<section class="stage">
   <canvas class="stage__stars" data-stars aria-hidden="true"></canvas>
   <div class="stage__aurora" aria-hidden="true"><i></i><i></i></div>
   <div class="stage__glow" aria-hidden="true"></div>
@@ -155,6 +155,7 @@ def home(lang):
       </div>
       <nav class="orbit__nav" aria-label="%(navlabel)s">%(orbs)s</nav>
       <div class="orbit__core">
+        <i class="orbit__blende" aria-hidden="true"></i>
         <img class="stage__logo" src="/assets/img/logo.webp" alt="Hidayah"
              width="1400" height="476" fetchpriority="high">
       </div>
