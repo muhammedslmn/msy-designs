@@ -76,7 +76,9 @@ T = {
  "theme.mode":"Modus",
  "theme.auto":"Automatisch",
  "theme.light":"Hell",
+ "theme.white":"Reinweiß",
  "theme.dark":"Dunkel",
+ "theme.black":"Tiefschwarz",
  "theme.accent":"Akzentfarbe",
  "acc.smaragd":"Smaragd",
  "acc.tuerkis":"Türkis",
@@ -231,7 +233,9 @@ T = {
  "theme.mode":"Mode",
  "theme.auto":"System",
  "theme.light":"Light",
+ "theme.white":"Pure white",
  "theme.dark":"Dark",
+ "theme.black":"Pure black",
  "theme.accent":"Accent colour",
  "acc.smaragd":"Emerald",
  "acc.tuerkis":"Turquoise",
@@ -384,7 +388,9 @@ T = {
  "theme.mode":"Mod",
  "theme.auto":"Otomatik",
  "theme.light":"Açık",
+ "theme.white":"Beyaz",
  "theme.dark":"Koyu",
+ "theme.black":"Siyah",
  "theme.accent":"Vurgu rengi",
  "acc.smaragd":"Zümrüt",
  "acc.tuerkis":"Turkuaz",
@@ -537,7 +543,9 @@ T = {
  "theme.mode":"الوضع",
  "theme.auto":"تلقائي",
  "theme.light":"فاتح",
+ "theme.white":"أبيض ناصع",
  "theme.dark":"داكن",
+ "theme.black":"أسود",
  "theme.accent":"لون التمييز",
  "acc.smaragd":"زمردي",
  "acc.tuerkis":"فيروزي",
@@ -680,6 +688,9 @@ def has_search_content():
     return bool(ARTICLES or COURSES or QA_PUBLIC)
 
 
+# Waehlbare Darstellungen
+MODES = ("auto", "light", "white", "dark", "black")
+
 # Zeichen der Bereiche auf der Startseite
 NAV_ICON = {"nav.about": "users", "nav.knowledge": "book", "nav.qa": "help",
             "nav.teaching": "cap", "nav.courses": "play", "nav.news": "bell",
@@ -710,7 +721,7 @@ def header(lang, active):
         % (c, "true" if c == lang else "false", code) for c, n, code in LANGS)
     modes = "".join(
         '<button class="pop__item" type="button" data-theme-set="%s" role="option" aria-selected="false">%s</button>'
-        % (m, t(lang, "theme." + m)) for m in ("auto", "light", "dark"))
+        % (m, t(lang, "theme." + m)) for m in MODES)
     swatches = "".join(
         '<button class="swatch" type="button" data-accent-set="%s" data-set="%s"'
         ' aria-selected="false" title="%s" aria-label="%s"></button>'
@@ -768,7 +779,7 @@ def header(lang, active):
         "accent": t(lang, "theme.accent"), "language": t(lang, "nav.language"),
         "modes": modes,
         "modes_pill": "".join('<button type="button" data-theme-set="%s" aria-selected="false">%s</button>'
-                              % (m, t(lang, "theme." + m)) for m in ("auto", "light", "dark")),
+                              % (m, t(lang, "theme." + m)) for m in MODES),
         "swatches": swatches, "langbtns": langbtns, "langpills": langpills, "code": cur[2],
         "i_search": ICON["search"], "i_sun": ICON["sun"], "i_globe": ICON["globe"],
         "i_menu": ICON["menu"], "i_close": ICON["close"],

@@ -4,7 +4,8 @@
     var r = document.documentElement;
     var t = localStorage.getItem('hidayah:theme');
     var a = localStorage.getItem('hidayah:accent');
-    if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t);
+    if (t === 'light' || t === 'white' || t === 'dark' || t === 'black')
+      r.setAttribute('data-theme', t);
     if (a) r.setAttribute('data-accent', a);
   } catch (e) {}
 }());

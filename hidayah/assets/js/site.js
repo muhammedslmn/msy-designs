@@ -542,6 +542,31 @@
   /* ---------------------------------------------------------- Kleinkram */
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  /* Der Kreis folgt dem Zeiger eine Spur weit. Nur mit Maus oder Stift, nicht
+     mit dem Finger, und nicht bei reduzierter Bewegung. */
+  (function depth() {
+    var st = $('.stage');
+    if (!st) return;
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var tick = 0;
+    st.addEventListener('pointermove', function (e) {
+      if (tick) return;
+      tick = requestAnimationFrame(function () {
+        tick = 0;
+        var r = st.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - .5;
+        var y = (e.clientY - r.top) / r.height - .5;
+        st.style.setProperty('--px', (x * 16).toFixed(2));
+        st.style.setProperty('--py', (y * 16).toFixed(2));
+      });
+    });
+    st.addEventListener('pointerleave', function () {
+      st.style.setProperty('--px', 0);
+      st.style.setProperty('--py', 0);
+    });
+  }());
+
   /* Antippen eines Bereichsknopfes: eine kurze Welle vom Beruehrpunkt aus. */
   (function orbTap() {
     $$('.orb__pt').forEach(function (pt) {

@@ -142,6 +142,7 @@ def home(lang):
     return '''
 <section class="stage night">
   <canvas class="stage__stars" data-stars aria-hidden="true"></canvas>
+  <div class="stage__aurora" aria-hidden="true"><i></i><i></i></div>
   <div class="stage__glow" aria-hidden="true"></div>
   <canvas class="stage__grain" data-grain aria-hidden="true"></canvas>
   <div class="stage__vignette" aria-hidden="true"></div>
