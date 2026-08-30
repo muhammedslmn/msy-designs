@@ -4,11 +4,10 @@
 Grundregel: Die Hauptbereiche stehen fest. Einzelne Beitraege darin erscheinen
 erst, wenn sie eingetragen sind — nichts wird als Platzhalter vorgetaeuscht.
 """
-import math
 import re
 from content import (SITE, SERIES, DEFAULT_AUTHOR, ARTICLES, TEACHING, COURSES,
                      PACKAGES, QA_CATEGORIES, QA_PUBLIC, NEWS, TEAM, ayah)
-from layout import t, u, ICON, NAV_ICON, nav_items
+from layout import t, u, ICON
 
 MONTHS = {"de": ["Januar","Februar","März","April","Mai","Juni","Juli","August",
                  "September","Oktober","November","Dezember"],
@@ -89,87 +88,126 @@ def steps_block(items):
 
 
 # ------------------------------------------------------------------ Startseite
-# Die Bereiche liegen auf einem Kreis um das Logo. Winkel und Punkte werden hier
-# berechnet, damit im Browser dafuer kein Skript noetig ist.
-ORBIT_R = 43.0          # Radius in Prozent der Feldbreite (breite Schirme)
-ORBIT_R_S = 37.5        # engerer Radius fuer schmale Schirme
-ORBIT_START = -90.0     # der erste Punkt steht oben
-
-def orbit(lang):
-    """Bereichsknoepfe auf dem Kreis um das Logo.
-
-    Winkel und Punkte werden hier berechnet — im Browser laeuft dafuer kein Skript.
-    Fuer schmale Schirme gibt es einen zweiten, engeren Kreis (--mx/--my).
-    Die Startseite selbst fehlt im Ring; dorthin fuehrt das Logo.
-    """
-    items = [(key, href) for key, href in nav_items(lang) if key != "nav.home"]
-    n = len(items) or 1
-    out = []
-    for i, (key, href) in enumerate(items):
-        ang = ORBIT_START + i * 360.0 / n
-        rad = math.radians(ang)
-        cx, cy = math.cos(rad), math.sin(rad)
-        if cx > .28:
-            side = "r"
-        elif cx < -.28:
-            side = "l"
-        else:
-            side = "b" if cy > 0 else "t"
-        out.append(
-            '<a class="orb orb--%s" href="%s" style="'
-            '--a:%.3fdeg;--x:%.3f%%;--y:%.3f%%;--mx:%.3f%%;--my:%.3f%%;--d:%.2fs">'
-            '<i class="orb__spoke" aria-hidden="true"></i>'
-            '<span class="orb__pt">'
-            '<span class="orb__ico" aria-hidden="true">%s</span>'
-            '<span class="orb__label">%s</span>'
-            '<i class="orb__ring" aria-hidden="true"></i></span></a>'
-            % (side, u(lang, href), ang,
-               50 + ORBIT_R * cx, 50 + ORBIT_R * cy,
-               50 + ORBIT_R_S * cx, 50 + ORBIT_R_S * cy,
-               .34 + i * .075, ICON[NAV_ICON[key]], t(lang, key)))
-    return "".join(out)
-
-
 def home(lang):
-    """Die Startseite ist eine einzige Flaeche: das Logo in der Mitte,
-    die Bereiche auf seinem Kreis. Darunter folgt nichts mehr."""
-    legal = " &middot; ".join(
-        '<a href="%s">%s</a>' % (u(lang, slug + ".html"), t(lang, key))
-        for slug, key in (("impressum", "foot.imprint"),
-                          ("datenschutz", "foot.privacy"),
-                          ("agb", "foot.terms"),
-                          ("widerruf", "foot.withdrawal")))
-    return '''
-<section class="stage">
-  <canvas class="stage__stars" data-stars aria-hidden="true"></canvas>
-  <div class="stage__aurora" aria-hidden="true"><i></i><i></i></div>
-  <div class="stage__glow" aria-hidden="true"></div>
-  <canvas class="stage__grain" data-grain aria-hidden="true"></canvas>
-  <div class="stage__vignette" aria-hidden="true"></div>
-  <div class="stage__inner">
-    <div class="orbit">
-      <div class="orbit__rings" aria-hidden="true">
-        <i class="orbit__ring orbit__ring--1"></i>
-        <i class="orbit__ring orbit__ring--2"></i>
-        <i class="orbit__ring orbit__ring--3"></i>
-      </div>
-      <nav class="orbit__nav" aria-label="%(navlabel)s">%(orbs)s</nav>
-      <div class="orbit__core">
-        <i class="orbit__blende" aria-hidden="true"></i>
-        <img class="stage__logo" src="/assets/img/logo.webp" alt="Hidayah"
-             width="1400" height="476" fetchpriority="high">
-      </div>
-    </div>
-    <div class="orbit__say">
-      <h1 class="stage__slogan balance">%(slogan)s</h1>
-      <p class="stage__sub">%(sub)s</p>
+    out = ['''
+<section class="hero night">
+  <div class="hero__sky" aria-hidden="true"></div>
+  <div class="container">
+    <img class="hero__logo" src="/assets/img/logo.webp" alt="Hidayah"
+         width="1400" height="476" fetchpriority="high">
+    <h1 class="hero__slogan display-xl balance">%(slogan)s</h1>
+    <p class="hero__sub">%(sub)s</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="%(qa)s">%(cta1)s</a>
+      <a class="btn btn--quiet" href="%(about)s">%(cta2)s</a>
     </div>
   </div>
-  <p class="stage__legal">%(legal)s &middot;
-    <a href="#" data-cookie-open>%(cookie)s</a></p>
 </section>''' % {"slogan": t(lang, "slogan"), "sub": t(lang, "hero.sub"),
-                 "orbs": orbit(lang), "navlabel": t(lang, "menu"),
-                 "legal": legal, "cookie": t(lang, "foot.cookies")}
+                 "qa": u(lang, "frage-antwort.html"), "cta1": t(lang, "hero.cta2"),
+                 "about": u(lang, "ueber-uns.html"), "cta2": t(lang, "who.cta")}]
+
+    out.append('''
+<section class="section reveal">
+  <div class="container">
+    <div class="split">
+      <p class="eyebrow">%(eb)s</p>
+      <div>
+        <h2 class="balance" style="max-width:16ch">%(title)s</h2>
+        <div class="stack" style="margin-top:1.6rem">
+          <p class="lead">%(p1)s</p>
+          <p class="lead">%(p2)s</p>
+        </div>
+        <div class="btn-row" style="margin-top:1.8rem">
+          <a class="link" href="%(href)s">%(cta)s <span class="arw">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>''' % {"eb": t(lang, "who.eyebrow"), "title": t(lang, "who.title"),
+                 "p1": t(lang, "who.p1"), "p2": t(lang, "who.p2"),
+                 "href": u(lang, "ueber-uns.html"), "cta": t(lang, "who.cta")})
+
+    if SITE.get("intro_video"):
+        out.append('<section class="section reveal"><div class="container-narrow">'
+                   '<p class="eyebrow">%s</p><h2>%s</h2>%s</div></section>'
+                   % (t(lang, "video.eyebrow"), t(lang, "video.title"),
+                      video_block(SITE["intro_video"], t(lang, "video.title"))))
+
+    areas = [(t(lang, "areas.k.title"), t(lang, "areas.k.text"), u(lang, "artikel.html")),
+             (t(lang, "areas.q.title"), t(lang, "areas.q.text"), u(lang, "frage-antwort.html")),
+             (t(lang, "areas.t.title"), t(lang, "areas.t.text"), u(lang, "unterricht.html")),
+             (t(lang, "areas.c.title"), t(lang, "areas.c.text"), u(lang, "kurse.html"))]
+    rows = "".join('''<a class="area" href="%s">
+      <span class="area__num">%02d</span>
+      <div><h3 class="area__title">%s</h3><p class="area__text">%s</p></div>
+      <span class="area__go">%s</span>
+    </a>''' % (href, i + 1, title, text, ICON["arrow"])
+                   for i, (title, text, href) in enumerate(areas))
+    out.append('''
+<section class="section section--hairline reveal">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">%s</p><h2 class="balance">%s</h2></div>
+    <div class="areas">%s</div>
+  </div>
+</section>''' % (t(lang, "areas.eyebrow"),
+                 t(lang, "areas.title%d" % len(areas)), rows))
+
+    if ARTICLES:
+        latest = sorted_articles()[:3]
+        more = ('<a class="link" href="%s">%s <span class="arw">&rarr;</span></a>'
+                % (u(lang, "artikel.html"), t(lang, "latest.all"))) if len(ARTICLES) > 3 else ""
+        out.append('''
+<section class="section reveal">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div><p class="eyebrow">%s</p><h2>%s</h2></div>%s
+    </div>
+    %s<div class="index">%s</div>
+  </div>
+</section>''' % (t(lang, "latest.eyebrow"), t(lang, "latest.title"), more,
+                 lang_notice(lang), "".join(entry(a, lang) for a in latest)))
+
+    # Unsere Grundlage — kurz, mit einem Beleg
+    out.append('''
+<section class="section section--hairline reveal">
+  <div class="container">
+    <div class="split">
+      <p class="eyebrow">%(eb)s</p>
+      <div>
+        <h2 class="balance" style="max-width:18ch">%(title)s</h2>
+        <p class="lead" style="margin-top:1.5rem">%(text)s</p>
+        %(ayah)s
+        <div class="btn-row" style="margin-top:1.6rem">
+          <a class="link" href="%(href)s">%(cta)s <span class="arw">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>''' % {"eb": t(lang, "base.eyebrow"), "title": t(lang, "base.title"),
+                 "text": t(lang, "base.text"),
+                 "ayah": ayah("﴿فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ﴾",
+                              "&bdquo;Wenn ihr es nicht wisst, dann fragt die Leute des Gedenkens (die über das Wissen der Offenbarung verfügen).&ldquo;",
+                              "Surat an-Nahl, 16:43"),
+                 "href": u(lang, "ueber-uns.html") + "#grundlage", "cta": t(lang, "base.cta")})
+
+    out.append('''
+<section class="section--tight reveal">
+  <div class="container">
+    <div class="band">
+      <h2 class="balance">%(title)s</h2>
+      <p>%(text)s</p>
+      <form data-form="newsletter" novalidate>
+        <input class="input" type="email" name="email" required placeholder="%(ph)s" aria-label="%(ph)s">
+        <button class="btn btn--primary" type="submit">%(btn)s</button>
+      </form>
+      <p class="form-note">%(privacy)s</p>
+      <p class="form-status" data-status></p>
+    </div>
+  </div>
+</section>''' % {"title": t(lang, "news.title"), "text": t(lang, "news.text"),
+                 "ph": t(lang, "news.ph"), "btn": t(lang, "news.btn"),
+                 "privacy": t(lang, "news.privacy")})
+    return "".join(out)
 
 
 # ------------------------------------------------------------------ Artikel
