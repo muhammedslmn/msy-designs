@@ -542,19 +542,6 @@
   /* ---------------------------------------------------------- Kleinkram */
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
-  /* Die Hoehe des Kopfbereichs steht als Wert bereit, damit die Startseite
-     genau eine Bildschirmhoehe fuellt. */
-  (function headerHeight() {
-    var h = $('#siteHeader');
-    if (!h) return;
-    var set = function () {
-      document.documentElement.style.setProperty('--headerH', h.offsetHeight + 'px');
-    };
-    set();
-    window.addEventListener('resize', set);
-    if ('ResizeObserver' in window) new ResizeObserver(set).observe(h);
-  }());
-
   /* Antippen eines Bereichsknopfes: eine kurze Welle vom Beruehrpunkt aus. */
   (function orbTap() {
     $$('.orb__pt').forEach(function (pt) {
@@ -597,7 +584,8 @@
           a: Math.random() * .45 + .12,
           s: Math.random() * .9 + .35,          // Grundhelligkeit
           v: (Math.random() * .1 + .02) / 60,   // Abdrift pro Bild
-          p: Math.random() * Math.PI * 2        // Phase des Flimmerns
+          p: Math.random() * Math.PI * 2,       // Phase des Flimmerns
+          flare: Math.random() < .05            // wenige tragen ein Kreuz
         });
       }
       return true;
@@ -608,11 +596,23 @@
       for (var i = 0; i < pts.length; i++) {
         var p = pts[i];
         var tw = calm ? 1 : (.72 + .28 * Math.sin(t / 1400 + p.p));
-        ctx.globalAlpha = Math.min(1, p.a * tw * p.s + .05);
+        var al = Math.min(1, p.a * tw * p.s + .05);
+        ctx.globalAlpha = al;
+        ctx.fillStyle = i % 9 === 0 ? '#BFE6D8' : '#EDEAE2';
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, 6.2832);
-        ctx.fillStyle = i % 9 === 0 ? '#BFE6D8' : '#EDEAE2';
         ctx.fill();
+        // Die hellsten Sterne tragen ein zartes Kreuz.
+        if (p.flare) {
+          var L = p.r * 9;
+          ctx.globalAlpha = al * .34;
+          ctx.strokeStyle = ctx.fillStyle;
+          ctx.lineWidth = .6;
+          ctx.beginPath();
+          ctx.moveTo(p.x - L, p.y); ctx.lineTo(p.x + L, p.y);
+          ctx.moveTo(p.x, p.y - L); ctx.lineTo(p.x, p.y + L);
+          ctx.stroke();
+        }
       }
       ctx.globalAlpha = 1;
     }
@@ -642,15 +642,59 @@
       }, { threshold: 0 }).observe(cv);
     }
 
-    var to;
+    var to, lastW = 0;
     window.addEventListener('resize', function () {
+      var now = cv.getBoundingClientRect().width;
+      if (Math.abs(now - lastW) < 64) return;   // Zoom und Adressleiste ignorieren
       clearTimeout(to);
       to = setTimeout(function () {
         if (raf) { cancelAnimationFrame(raf); raf = 0; }
+        lastW = cv.getBoundingClientRect().width;
         start();
-      }, 180);
+      }, 200);
     });
+    lastW = cv.getBoundingClientRect().width;
     start();
+  }());
+
+  (function grain() {
+    var cv = $('[data-grain]');
+    if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext('2d'), lastW = 0;
+
+    function tile() {
+      var t = document.createElement('canvas');
+      t.width = t.height = 128;
+      var c = t.getContext('2d');
+      var d = c.createImageData(128, 128);
+      for (var i = 0; i < d.data.length; i += 4) {
+        var v = 118 + Math.random() * 20;
+        d.data[i] = d.data[i + 1] = d.data[i + 2] = v;
+        d.data[i + 3] = 255;
+      }
+      c.putImageData(d, 0, 0);
+      return t;
+    }
+
+    var pat = null;
+    function paint() {
+      var r = cv.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      cv.width = Math.round(r.width);
+      cv.height = Math.round(r.height);
+      if (!pat) pat = ctx.createPattern(tile(), 'repeat');
+      ctx.fillStyle = pat;
+      ctx.fillRect(0, 0, cv.width, cv.height);
+      lastW = r.width;
+    }
+
+    var to;
+    window.addEventListener('resize', function () {
+      if (Math.abs(cv.getBoundingClientRect().width - lastW) < 64) return;
+      clearTimeout(to);
+      to = setTimeout(paint, 200);
+    });
+    paint();
   }());
 
   (function courseLayout() {
