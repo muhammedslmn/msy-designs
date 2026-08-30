@@ -45,7 +45,7 @@ for lang, _lname, _code in LANGS:
     write(pre + "index.html", page(
         lang=lang, slug="", title="Hidayah", active="nav.home", with_intro=True,
         desc=t(lang, "slogan") + " " + t(lang, "meta.desc"),
-        body=P.home(lang)))
+        bare=True, body=P.home(lang)))
 
     write(pre + "ueber-uns.html", page(
         lang=lang, slug="ueber-uns.html", title=t(lang, "nav.about"), active="nav.about",

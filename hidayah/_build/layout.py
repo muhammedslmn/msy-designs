@@ -20,6 +20,9 @@ ICON = {
  "sun": '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>',
  "arrow": '<svg viewBox="0 0 24 24"><path d="M5 12h13M12 5.5l6.5 6.5-6.5 6.5"/></svg>',
  "info": '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>',
+ "users": '<svg viewBox="0 0 24 24"><circle cx="9" cy="8.4" r="3.2"/><path d="M3.2 19.4a5.8 5.8 0 0 1 11.6 0"/><path d="M16.2 5.6a3 3 0 0 1 0 5.7M17.6 14.2a5.6 5.6 0 0 1 3.2 5.2"/></svg>',
+ "bell": '<svg viewBox="0 0 24 24"><path d="M6.4 10a5.6 5.6 0 0 1 11.2 0c0 4.1 1.3 5.4 1.9 6H4.5c.6-.6 1.9-1.9 1.9-6z"/><path d="M10.2 19.3a2 2 0 0 0 3.6 0"/></svg>',
+ "mail": '<svg viewBox="0 0 24 24"><rect x="3" y="5.4" width="18" height="13.2" rx="2.4"/><path d="M3.6 7.1l7.3 5.2a2 2 0 0 0 2.2 0l7.3-5.2"/></svg>',
  "ig": '<svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c0-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2a6.6 6.6 0 1 0 0 13.2 6.6 6.6 0 0 0 0-13.2zm0 10.9a4.3 4.3 0 1 1 0-8.6 4.3 4.3 0 0 1 0 8.6zm8.4-11.2a1.55 1.55 0 1 1-3.1 0 1.55 1.55 0 0 1 3.1 0z"/></svg>',
  "yt": '<svg viewBox="0 0 24 24"><path d="M23 12s0-3.4-.4-5c-.3-.9-1-1.6-1.9-1.9C19 4.7 12 4.7 12 4.7s-7 0-8.7.4c-.9.3-1.6 1-1.9 1.9C1 8.6 1 12 1 12s0 3.4.4 5c.3.9 1 1.6 1.9 1.9 1.7.4 8.7.4 8.7.4s7 0 8.7-.4c.9-.3 1.6-1 1.9-1.9.4-1.6.4-5 .4-5zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg>',
  "x": '<svg viewBox="0 0 24 24"><path d="M17.5 3h3.3l-7.2 8.3L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L1.5 3h6.8l4.7 6.2L17.5 3zm-1.2 16h1.8L7.8 4.9H5.9L16.3 19z"/></svg>',
@@ -76,7 +79,11 @@ T = {
  "theme.dark":"Dunkel",
  "theme.accent":"Akzentfarbe",
  "acc.smaragd":"Smaragd",
+ "acc.tuerkis":"Türkis",
  "acc.indigo":"Indigo",
+ "acc.pflaume":"Pflaume",
+ "acc.rubin":"Rubin",
+ "acc.kupfer":"Kupfer",
  "acc.messing":"Messing",
  "acc.tinte":"Tinte",
  "hero.cta2":"Frage stellen",
@@ -227,7 +234,11 @@ T = {
  "theme.dark":"Dark",
  "theme.accent":"Accent colour",
  "acc.smaragd":"Emerald",
+ "acc.tuerkis":"Turquoise",
  "acc.indigo":"Indigo",
+ "acc.pflaume":"Plum",
+ "acc.rubin":"Ruby",
+ "acc.kupfer":"Copper",
  "acc.messing":"Brass",
  "acc.tinte":"Ink",
  "hero.cta2":"Ask a question",
@@ -376,7 +387,11 @@ T = {
  "theme.dark":"Koyu",
  "theme.accent":"Vurgu rengi",
  "acc.smaragd":"Zümrüt",
+ "acc.tuerkis":"Turkuaz",
  "acc.indigo":"Çivit",
+ "acc.pflaume":"Erik",
+ "acc.rubin":"Yakut",
+ "acc.kupfer":"Bakır",
  "acc.messing":"Pirinç",
  "acc.tinte":"Mürekkep",
  "hero.cta2":"Soru sor",
@@ -525,7 +540,11 @@ T = {
  "theme.dark":"داكن",
  "theme.accent":"لون التمييز",
  "acc.smaragd":"زمردي",
+ "acc.tuerkis":"فيروزي",
  "acc.indigo":"نيلي",
+ "acc.pflaume":"برقوقي",
+ "acc.rubin":"ياقوتي",
+ "acc.kupfer":"نحاسي أحمر",
  "acc.messing":"نحاسي",
  "acc.tinte":"حبري",
  "hero.cta2":"اطرح سؤالًا",
@@ -661,7 +680,13 @@ def has_search_content():
     return bool(ARTICLES or COURSES or QA_PUBLIC)
 
 
-ACCENTS = ["smaragd", "indigo", "messing", "tinte"]
+# Zeichen der Bereiche auf der Startseite
+NAV_ICON = {"nav.about": "users", "nav.knowledge": "book", "nav.qa": "help",
+            "nav.teaching": "cap", "nav.courses": "play", "nav.news": "bell",
+            "nav.contact": "mail", "nav.home": "info"}
+
+ACCENTS = ["smaragd", "tuerkis", "indigo", "pflaume",
+           "rubin", "kupfer", "messing", "tinte"]
 
 
 def logo(lang, cls, height, priority=False):
@@ -846,7 +871,7 @@ def intro(lang):
 
 
 def page(*, lang, slug, title, desc, body, active=None, with_intro=False,
-         extra_head="", extra_js=""):
+         extra_head="", extra_js="", bare=False):
     d = t(lang, "dir")
     full_title = "Hidayah — %s" % t(lang, "slogan") if slug == "" else "%s — Hidayah" % title
     canonical = SITE["url"] + u(lang, slug)
@@ -882,7 +907,7 @@ def page(*, lang, slug, title, desc, body, active=None, with_intro=False,
 <script src="/assets/js/theme.js"></script>
 <link rel="stylesheet" href="/assets/css/hidayah.css">
 %(extra_head)s</head>
-<body data-lang="%(lang)s">
+<body data-lang="%(lang)s"%(bodycls)s>
 %(intro)s
 %(header)s
 <main id="main">
@@ -896,8 +921,10 @@ def page(*, lang, slug, title, desc, body, active=None, with_intro=False,
 %(extra_js)s</body>
 </html>''' % {
         "lang": lang, "dir": d, "title": full_title, "desc": desc, "canonical": canonical,
+        "bodycls": ' class="is-stage"' if bare else "",
         "alts": alts, "url": SITE["url"], "locale": t(lang, "locale"),
         "extra_head": extra_head, "intro": intro(lang) if with_intro else "",
-        "header": header(lang, active), "body": body, "footer": footer(lang),
+        "header": header(lang, active), "body": body,
+        "footer": "" if bare else footer(lang),
         "overlays": overlays(lang), "extra_js": extra_js,
     }

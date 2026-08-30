@@ -542,6 +542,34 @@
   /* ---------------------------------------------------------- Kleinkram */
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  /* Die Hoehe des Kopfbereichs steht als Wert bereit, damit die Startseite
+     genau eine Bildschirmhoehe fuellt. */
+  (function headerHeight() {
+    var h = $('#siteHeader');
+    if (!h) return;
+    var set = function () {
+      document.documentElement.style.setProperty('--headerH', h.offsetHeight + 'px');
+    };
+    set();
+    window.addEventListener('resize', set);
+    if ('ResizeObserver' in window) new ResizeObserver(set).observe(h);
+  }());
+
+  /* Antippen eines Bereichsknopfes: eine kurze Welle vom Beruehrpunkt aus. */
+  (function orbTap() {
+    $$('.orb__pt').forEach(function (pt) {
+      pt.addEventListener('pointerdown', function (e) {
+        var r = pt.getBoundingClientRect();
+        pt.style.setProperty('--rx', (e.clientX - r.left) + 'px');
+        pt.style.setProperty('--ry', (e.clientY - r.top) + 'px');
+        pt.classList.remove('is-tapped');
+        void pt.offsetWidth;
+        pt.classList.add('is-tapped');
+      });
+      pt.addEventListener('animationend', function () { pt.classList.remove('is-tapped'); });
+    });
+  }());
+
   /* Sternenfeld hinter dem Kopf der Startseite. Ruhig, langsam, ohne Aufdringlichkeit;
      bei reduzierter Bewegung bleibt ein einzelnes stehendes Bild. */
   (function stars() {

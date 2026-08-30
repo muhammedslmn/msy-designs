@@ -22,10 +22,14 @@
    ========================================================================== */
 
 /* Akzente — unabhaengig vom Hell/Dunkel-Modus definiert */
-:root{ --a-l:#0F5F4C; --a-d:#5FC3A6; --oa-l:#FFFFFF; --oa-d:#04211A; }
-[data-accent="indigo"] { --a-l:#274B8C; --a-d:#8DB0EC; --oa-l:#FFFFFF; --oa-d:#081426; }
-[data-accent="messing"]{ --a-l:#8A6011; --a-d:#DDB068; --oa-l:#FFFFFF; --oa-d:#221701; }
-[data-accent="tinte"]  { --a-l:#2B303C; --a-d:#C6CDDA; --oa-l:#FFFFFF; --oa-d:#14171E; }
+:root                   { --a-l:#0F5F4C; --a-d:#5FC3A6; --oa-l:#FFFFFF; --oa-d:#04211A; }
+[data-accent="tuerkis"] { --a-l:#0A5C6E; --a-d:#66C8DC; --oa-l:#FFFFFF; --oa-d:#02202A; }
+[data-accent="indigo"]  { --a-l:#274B8C; --a-d:#8DB0EC; --oa-l:#FFFFFF; --oa-d:#081426; }
+[data-accent="pflaume"] { --a-l:#6B3068; --a-d:#D49CCE; --oa-l:#FFFFFF; --oa-d:#210A20; }
+[data-accent="rubin"]   { --a-l:#8B2C3D; --a-d:#E58C9C; --oa-l:#FFFFFF; --oa-d:#280A11; }
+[data-accent="kupfer"]  { --a-l:#8C4520; --a-d:#E39C74; --oa-l:#FFFFFF; --oa-d:#251005; }
+[data-accent="messing"] { --a-l:#8A6011; --a-d:#DDB068; --oa-l:#FFFFFF; --oa-d:#221701; }
+[data-accent="tinte"]   { --a-l:#2B303C; --a-d:#C6CDDA; --oa-l:#FFFFFF; --oa-d:#14171E; }
 
 :root{
   color-scheme:light;
@@ -214,10 +218,32 @@ p{text-wrap:pretty}
   transition:transform .3s var(--ease),background .25s var(--ease),
              border-color .25s var(--ease),box-shadow .3s var(--ease),color .25s var(--ease);
 }
-.btn--primary{background:var(--accent);color:var(--on-accent)}
-.btn--primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px color-mix(in oklab,var(--accent) 70%,transparent)}
-.btn--quiet{border-color:var(--line-2);color:var(--ink);background:transparent}
-.btn--quiet:hover{transform:translateY(-2px);border-color:var(--ink-3);background:var(--surface)}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn--primary{
+  background:linear-gradient(180deg,
+    color-mix(in oklab,var(--accent) 92%,#fff),
+    var(--accent));
+  color:var(--on-accent);
+  box-shadow:0 1px 0 color-mix(in oklab,#fff 26%,transparent) inset,
+             0 8px 20px -12px color-mix(in oklab,var(--accent) 80%,transparent);
+}
+.btn--primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 1px 0 color-mix(in oklab,#fff 34%,transparent) inset,
+             0 18px 34px -14px color-mix(in oklab,var(--accent) 78%,transparent);
+}
+.btn--primary:active{transform:translateY(0) scale(.985)}
+.btn--quiet{
+  border-color:var(--line-2);color:var(--ink);
+  background:color-mix(in oklab,var(--surface) 55%,transparent);
+  backdrop-filter:blur(6px);
+}
+.btn--quiet:hover{
+  transform:translateY(-2px);border-color:var(--accent-line);background:var(--surface);
+  box-shadow:0 14px 30px -20px rgba(0,0,0,.5);
+}
+.btn--quiet:active{transform:translateY(0) scale(.985)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .btn--sm{padding:.6rem 1.15rem;font-size:.88rem}
 .btn--block{width:100%}
 .btn-row{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;margin-top:2.2rem}
@@ -314,7 +340,7 @@ p{text-wrap:pretty}
 .pop__code{font-size:.72rem;font-weight:700;letter-spacing:.07em;color:var(--ink-3)}
 
 /* Akzentfarben-Auswahl */
-.swatches{display:flex;gap:.45rem;padding:.35rem .7rem .6rem}
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;padding:.4rem .7rem .65rem;justify-items:center}
 .swatch{
   width:26px;height:26px;border-radius:50%;border:2px solid transparent;cursor:pointer;
   padding:0;position:relative;transition:transform .2s var(--ease);
@@ -323,7 +349,11 @@ p{text-wrap:pretty}
 .swatch:hover{transform:scale(1.12)}
 .swatch[aria-selected="true"]{border-color:var(--ink-3)}
 .swatch[data-set="smaragd"]{background:#0F5F4C}
+.swatch[data-set="tuerkis"]{background:#0A5C6E}
 .swatch[data-set="indigo"] {background:#274B8C}
+.swatch[data-set="pflaume"]{background:#6B3068}
+.swatch[data-set="rubin"]  {background:#8B2C3D}
+.swatch[data-set="kupfer"] {background:#8C4520}
 .swatch[data-set="messing"]{background:#8A6011}
 .swatch[data-set="tinte"]  {background:#2B303C}
 
@@ -390,170 +420,241 @@ html.intro-lock,html.intro-lock body{overflow:hidden}
 /* ==========================================================================
    8 · Startseite
    ========================================================================== */
-/* Der Kopf der Startseite ist eine Himmelskarte: der Mond des Logos steht als
-   Lichtpunkt in der Mitte, die Bereiche liegen als Wegmarken auf seinem Kreis.
-   Die Punkte werden beim Bauen berechnet — im Browser laeuft dafuer kein Skript. */
-.hero{
-  position:relative;text-align:center;overflow:hidden;
-  padding-block:clamp(2.5rem,1.5rem + 4vw,4.5rem) clamp(2.75rem,2rem + 3vw,4.25rem);
-}
-.hero__stars{
-  position:absolute;inset:0;width:100%;height:100%;pointer-events:none;
-  opacity:.9;
-}
-.hero__sky{
-  position:absolute;inset:-20% -10% auto -10%;height:150%;pointer-events:none;
+/* Die Startseite ist eine einzige Flaeche: eine Himmelskarte. Der Mond des Logos
+   steht als Lichtpunkt in der Mitte, die Bereiche liegen als Knoepfe auf seinem
+   Kreis. Die Punkte werden beim Bauen berechnet — hier laeuft kein Skript.     */
+body.is-stage{overflow-x:hidden}
+.stage{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:calc(100svh - var(--headerH,4.9rem));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:clamp(1.25rem,.6rem + 2vw,2.5rem) 1.25rem clamp(3.2rem,2.5rem + 2vw,4rem);
   background:
-    radial-gradient(40% 34% at 50% 47%, rgba(236,226,200,.19), transparent 70%),
-    radial-gradient(70% 58% at 50% 47%, rgba(120,150,200,.10), transparent 72%),
-    radial-gradient(620px 420px at 86% 2%, rgba(120,150,200,.13), transparent 72%),
-    radial-gradient(520px 380px at 8% 92%, rgba(95,195,166,.07), transparent 72%);
+    radial-gradient(120% 88% at 50% 42%, #12182A 0%, #0A0E17 46%, #05070C 100%);
 }
-.hero>.container{position:relative}
+.stage__stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.92}
+/* Das Licht geht vom Mond aus und traegt die gewaehlte Akzentfarbe mit. */
+.stage__glow{
+  position:absolute;left:50%;top:47%;translate:-50% -50%;pointer-events:none;
+  width:min(150vw,1500px);aspect-ratio:1;
+  background:
+    radial-gradient(closest-side, rgba(244,236,214,.16), transparent 62%),
+    radial-gradient(closest-side, color-mix(in oklab,var(--accent) 26%,transparent), transparent 46%);
+  filter:blur(6px);
+  animation:breathe 14s ease-in-out infinite;
+}
+@keyframes breathe{0%,100%{opacity:.85;scale:1}50%{opacity:1;scale:1.045}}
+.stage__vignette{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(115% 82% at 50% 46%, transparent 52%, rgba(0,0,0,.62) 100%);
+}
+.stage__inner{position:relative;width:100%;display:flex;justify-content:center}
+
+.stage__legal{
+  position:relative;margin:clamp(1.4rem,1rem + 2vw,2.4rem) 0 0;
+  font-size:.76rem;letter-spacing:.02em;color:var(--ink-3);text-align:center;
+  display:flex;flex-wrap:wrap;gap:.15rem .5rem;justify-content:center;
+}
+.stage__legal a{color:var(--ink-3)}
+.stage__legal a:hover{color:var(--ink-2)}
 
 /* --- Feld ---------------------------------------------------------------- */
 .orbit{
   --r:43%;
-  position:relative;width:clamp(380px,min(56vw,66vh),660px);aspect-ratio:1;
-  margin-inline:auto;
+  position:relative;width:clamp(400px,min(58vw,70svh),740px);aspect-ratio:1;
 }
 
 /* --- Ruhige Kreise als Grund --------------------------------------------- */
 .orbit__rings{position:absolute;inset:0;pointer-events:none}
-.orbit__ring{position:absolute;left:50%;top:50%;border-radius:50%;transform:translate(-50%,-50%)}
-.orbit__ring--1{width:86%;height:86%;border:1px solid rgba(255,255,255,.10)}
-.orbit__ring--2{width:60%;height:60%;border:1px solid rgba(255,255,255,.05)}
+.orbit__ring{position:absolute;left:50%;top:50%;border-radius:50%;translate:-50% -50%}
+.orbit__ring--1{width:86%;height:86%;border:1px solid rgba(255,255,255,.075)}
+.orbit__ring--2{width:56%;height:56%;border:1px solid rgba(255,255,255,.045)}
 .orbit__ring--3{
-  width:98%;height:98%;
-  border:1px dashed rgba(95,195,166,.22);
-  animation:orbitDrift 240s linear infinite;
+  width:99%;height:99%;
+  border:1px dashed color-mix(in oklab,var(--accent) 30%,transparent);
+  animation:orbitDrift 260s linear infinite;
 }
-@keyframes orbitDrift{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes orbitDrift{to{rotate:360deg}}
 
 /* --- Mitte: Logo, Slogan, Zeile ------------------------------------------ */
+/* Das Logo steht in der Mitte, Slogan und Zeile darunter — auf breiten Schirmen
+   noch innerhalb des Kreises, auf schmalen unter ihm. */
 .orbit__core{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:min(58%,25rem);display:flex;flex-direction:column;align-items:center;
+  position:absolute;left:50%;top:50%;translate:-50% -50%;
+  margin-top:-3.4rem;display:flex;justify-content:center;
 }
-.hero__logo{width:min(38vw,208px);margin-inline:auto}
-.hero__slogan{
-  font-family:var(--ff-display);font-weight:600;letter-spacing:-.02em;line-height:1.06;
-  font-size:clamp(1.35rem,.9rem + 1.9vw,2.35rem);
-  margin-top:clamp(1rem,.6rem + 1.2vw,1.7rem);max-width:15ch;color:var(--ink);
+.orbit__say{
+  position:absolute;left:50%;top:calc(50% + 1.1rem);translate:-50% 0;
+  width:min(46%,23rem);text-align:center;
+  animation:orbIn 1.1s ease backwards .1s;
 }
-.hero__sub{
-  margin-top:clamp(.7rem,.5rem + .6vw,1.1rem);max-width:34ch;
-  color:var(--ink-2);font-size:clamp(.84rem,.78rem + .22vw,.98rem);line-height:1.55;
+.stage__logo{
+  width:min(30vw,200px);margin-inline:auto;
+  filter:drop-shadow(0 0 34px rgba(236,226,200,.22));
 }
-.hero__sub strong{color:var(--ink);font-weight:600}
-.hero .btn-row{justify-content:center;margin-top:clamp(1.6rem,1rem + 2vw,2.6rem)}
+.stage__slogan{
+  font-family:var(--ff-display);font-weight:600;letter-spacing:-.022em;line-height:1.08;
+  font-size:clamp(1.25rem,.85rem + 1.5vw,2rem);
+  margin-inline:auto;max-width:15ch;color:var(--ink);
+}
+.stage__sub{
+  margin:clamp(.7rem,.5rem + .5vw,1.05rem) auto 0;max-width:34ch;
+  color:var(--ink-2);font-size:clamp(.82rem,.76rem + .2vw,.94rem);line-height:1.55;
+}
 
-/* --- Bereiche auf dem Kreis ----------------------------------------------- */
+/* --- Bereichsknoepfe auf dem Kreis ---------------------------------------- */
 .orbit__nav{position:absolute;inset:0}
 .orb{position:absolute;inset:0;pointer-events:none;text-decoration:none;display:block}
 
-/* Der Strahl laeuft von der Mitte zum Punkt und leuchtet beim Ansteuern auf. */
+/* Der Strahl laeuft vom Mond zum Knopf und fuellt sich beim Ansteuern. */
 .orb__spoke{
   position:absolute;left:50%;top:50%;width:var(--r);height:1px;
-  transform-origin:0 50%;transform:rotate(var(--a));
-  background:linear-gradient(90deg,transparent 0 54%,rgba(255,255,255,.17) 100%);
-  opacity:.6;transition:opacity .45s ease;
+  transform-origin:0 50%;rotate:var(--a);
+  background:linear-gradient(90deg,transparent 0 50%,rgba(255,255,255,.16) 100%);
+  opacity:.6;transition:opacity .45s var(--ease);
 }
 .orb__spoke::after{
   content:"";position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(0);
-  background:linear-gradient(90deg,transparent 0 54%,var(--accent) 100%);
+  background:linear-gradient(90deg,transparent 0 50%,var(--accent) 100%);
   transition:transform .6s cubic-bezier(.22,.9,.28,1);
 }
 
+/* Der Knopf selbst: ein ovales Glasplaettchen mit Zeichen und Namen. */
 .orb__pt{
   position:absolute;left:var(--x);top:var(--y);pointer-events:auto;
-  display:flex;align-items:center;gap:.6rem;
-  padding:.42rem .55rem;border-radius:10px;
-  transition:transform .4s cubic-bezier(.22,.9,.28,1);
+  display:flex;align-items:center;gap:.8rem;
+  padding:.8rem 1.35rem .8rem .82rem;border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+  backdrop-filter:blur(10px);
+  box-shadow:0 1px 0 rgba(255,255,255,.09) inset,
+             0 12px 26px -18px rgba(0,0,0,.9);
+  transition:border-color .35s var(--ease),background .35s var(--ease),
+             box-shadow .4s var(--ease),translate .4s cubic-bezier(.22,.9,.28,1),
+             scale .25s var(--ease);
 }
-.orb--r .orb__pt{transform:translateY(-50%)}
-.orb--l .orb__pt{flex-direction:row-reverse;transform:translate(-100%,-50%)}
-/* Rechts-nach-links: Punkt und Name tauschen die Seiten, damit der Punkt weiterhin
-   innen auf dem Kreis sitzt und der Name nach aussen zeigt. */
-[dir="rtl"] .orb--r .orb__pt{flex-direction:row-reverse}
-[dir="rtl"] .orb--l .orb__pt{flex-direction:row}
-.orb--t .orb__pt{flex-direction:column-reverse;gap:.5rem;transform:translate(-50%,-100%)}
-.orb--b .orb__pt{flex-direction:column;gap:.5rem;transform:translate(-50%,0)}
+.orb--r .orb__pt{translate:0 -50%}
+.orb--l .orb__pt{flex-direction:row-reverse;padding:.8rem .82rem .8rem 1.35rem;translate:-100% -50%}
+.orb--t .orb__pt{translate:-50% -100%}
+.orb--b .orb__pt{translate:-50% 0}
+[dir="rtl"] .orb--r .orb__pt{flex-direction:row-reverse;padding:.8rem .82rem .8rem 1.35rem}
+[dir="rtl"] .orb--l .orb__pt{flex-direction:row;padding:.8rem 1.35rem .8rem .82rem}
 
-.orb__dot{
-  width:7px;height:7px;border-radius:50%;flex:none;
-  background:rgba(255,255,255,.42);
-  box-shadow:0 0 0 0 var(--accent);
-  transition:background .35s ease, box-shadow .45s ease, transform .45s ease;
+.orb__ico{
+  width:2.4rem;height:2.4rem;border-radius:50%;flex:none;
+  display:grid;place-items:center;
+  background:color-mix(in oklab,var(--accent) 16%,transparent);
+  border:1px solid color-mix(in oklab,var(--accent) 26%,transparent);
+  color:var(--accent);
+  transition:background .35s var(--ease),border-color .35s var(--ease),
+             color .35s var(--ease),scale .35s var(--ease);
 }
+.orb__ico svg{width:1.26rem;height:1.26rem;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .orb__label{
-  font-family:var(--ff-display);font-weight:500;letter-spacing:-.005em;
-  font-size:clamp(.82rem,.72rem + .38vw,1.02rem);line-height:1.2;white-space:nowrap;
-  color:var(--ink-2);transition:color .3s ease;
+  font-family:var(--ff-display);font-weight:500;letter-spacing:-.008em;
+  font-size:clamp(.98rem,.86rem + .34vw,1.14rem);line-height:1.2;white-space:nowrap;
+  color:var(--ink);transition:color .3s var(--ease);
 }
+/* Der Lichtkranz blueht beim Ansteuern hinter dem Knopf auf. */
+.orb__ring{
+  position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
+  box-shadow:0 0 0 0 color-mix(in oklab,var(--accent) 30%,transparent);
+  transition:box-shadow .45s var(--ease);
+}
+
+.orb__pt:hover,.orb:focus-visible .orb__pt{
+  border-color:color-mix(in oklab,var(--accent) 55%,transparent);
+  background:linear-gradient(180deg,
+    color-mix(in oklab,var(--accent) 16%,rgba(255,255,255,.05)),
+    color-mix(in oklab,var(--accent) 7%,rgba(255,255,255,.02)));
+  box-shadow:0 1px 0 rgba(255,255,255,.14) inset,
+             0 20px 40px -22px color-mix(in oklab,var(--accent) 85%,transparent);
+}
+.orb__pt:hover .orb__ico,.orb:focus-visible .orb__ico{
+  background:var(--accent);border-color:var(--accent);color:var(--on-accent);scale:1.06;
+}
+.orb__pt:hover .orb__ring,.orb:focus-visible .orb__ring{
+  box-shadow:0 0 0 6px color-mix(in oklab,var(--accent) 13%,transparent);
+}
+.orb:hover .orb__spoke,.orb:focus-visible .orb__spoke{opacity:1}
+.orb:hover .orb__spoke::after,.orb:focus-visible .orb__spoke::after{transform:scaleX(1)}
+.orb--r .orb__pt:hover{translate:7px -50%}
+.orb--l .orb__pt:hover{translate:calc(-100% - 7px) -50%}
+.orb--t .orb__pt:hover{translate:-50% calc(-100% - 7px)}
+.orb--b .orb__pt:hover{translate:-50% 7px}
+.orb__pt:active{scale:.965}
+.orb:focus-visible{outline:none}
+.orb:focus-visible .orb__pt{outline:2px solid var(--accent);outline-offset:4px}
+
+/* Die uebrigen Bereiche treten zurueck, sobald einer angesteuert wird. */
+.orbit__nav:has(.orb__pt:hover) .orb:not(:hover) .orb__pt{opacity:.55}
+.orbit__nav:has(.orb__pt:hover) .orb:not(:hover) .orb__spoke{opacity:.28}
+.orb__pt{transition:opacity .35s var(--ease),border-color .35s var(--ease),
+  background .35s var(--ease),box-shadow .4s var(--ease),
+  translate .4s cubic-bezier(.22,.9,.28,1),scale .25s var(--ease)}
+
+/* Die Welle beim Antippen — der Punkt wird vom Skript gesetzt. */
+.orb__pt::after{
+  content:"";position:absolute;left:var(--rx,50%);top:var(--ry,50%);
+  width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;
+  background:color-mix(in oklab,var(--accent) 55%,transparent);
+  opacity:0;pointer-events:none;
+}
+.orb__pt.is-tapped::after{animation:orbTap .55s ease-out}
+@keyframes orbTap{from{opacity:.6;scale:1}to{opacity:0;scale:16}}
 
 /* Beim Oeffnen laufen die Strahlen der Reihe nach vom Mond nach aussen. */
 @keyframes orbIn{from{opacity:0}}
-.orb__spoke{animation:orbIn .9s ease backwards;animation-delay:var(--d)}
-.orb__pt{animation:orbIn .8s ease backwards;animation-delay:var(--d)}
-.orbit__ring{animation:orbIn 1.4s ease backwards .15s}
+@keyframes orbPop{from{opacity:0;scale:.9}}
+.orb__spoke{animation:orbIn 1s ease backwards;animation-delay:var(--d)}
+.orb__pt{animation:orbPop .75s cubic-bezier(.22,.9,.28,1) backwards;animation-delay:var(--d)}
+.orbit__ring{animation:orbIn 1.6s ease backwards .18s}
 
-/* Ansteuern: der Strahl fuellt sich, der Punkt wird zum Licht, der Name tritt vor. */
-.orb:hover .orb__spoke,.orb:focus-visible .orb__spoke{opacity:1}
-.orb:hover .orb__spoke::after,.orb:focus-visible .orb__spoke::after{transform:scaleX(1)}
-.orb:hover .orb__dot,.orb:focus-visible .orb__dot{
-  background:var(--accent);transform:scale(1.25);
-  box-shadow:0 0 0 5px color-mix(in oklab, var(--accent) 20%, transparent);
-}
-.orb:hover .orb__label,.orb:focus-visible .orb__label{color:var(--ink)}
-.orb--r:hover .orb__pt{transform:translate(6px,-50%)}
-.orb--l:hover .orb__pt{transform:translate(calc(-100% - 6px),-50%)}
-.orb--t:hover .orb__pt{transform:translate(-50%,calc(-100% - 6px))}
-.orb--b:hover .orb__pt{transform:translate(-50%,6px)}
-.orb:focus-visible{outline:none}
-.orb:focus-visible .orb__pt{outline:2px solid var(--accent);outline-offset:3px}
-
-/* Die uebrigen Bereiche treten zurueck, sobald einer angesteuert wird. */
-.orbit__nav:hover .orb:not(:hover) .orb__label{color:var(--ink-3)}
-.orbit__nav:hover .orb:not(:hover) .orb__spoke{opacity:.3}
-
-/* --- Schmale Schirme: aus dem Kreis wird ein Strang unter dem Logo -------- */
+/* --- Schmale Schirme: derselbe Kreis, enger und mit runden Knoepfen ------- */
 @media (max-width:1000px){
-  .orbit{width:100%;aspect-ratio:auto;display:flex;flex-direction:column;align-items:center}
-  .orbit__rings{display:none}
-  .orbit__core{position:static;transform:none;order:1;width:100%;max-width:27rem}
-  .hero__logo{width:min(50vw,220px)}
-  .hero__slogan{max-width:18ch;font-size:clamp(1.55rem,1.1rem + 2.6vw,2.15rem)}
-  .hero__sub{max-width:40ch;font-size:.95rem}
+  .orbit{--r:37.5%;width:min(94vw,440px)}
+  .orbit__ring--1,.orbit__ring--2{display:none}
+  .orbit__ring--3{width:97%;height:97%}
+  .orbit__core{margin-top:0}
+  .stage__logo{width:min(38vw,164px)}
 
-  /* Ein Strang faellt vom Logo herab; die Bereiche liegen als Punkte darauf. */
-  .orbit__nav{
-    position:relative;order:2;width:100%;max-width:27rem;
-    margin-top:clamp(1.9rem,1.2rem + 3vw,2.9rem);
-    display:flex;flex-direction:column;padding-inline-start:34%;
-  }
-  .orbit__nav::before{
-    content:"";position:absolute;inset-inline-start:34%;top:-1.5rem;bottom:1.6rem;width:1px;
-    background:linear-gradient(180deg,transparent,rgba(255,255,255,.24) 14%,rgba(255,255,255,.06));
-  }
-  .orb{position:relative;pointer-events:auto;display:block}
-  .orb__spoke{display:none}
   .orb__pt{
-    position:relative;left:auto;top:auto;transform:none!important;
-    flex-direction:row!important;justify-content:flex-start;align-items:center;
-    gap:.95rem;padding:.72rem .4rem;
+    left:var(--mx);top:var(--my);
+    flex-direction:column!important;gap:.42rem;
+    padding:.72rem .4rem .64rem;width:6.05rem;min-height:6.05rem;
+    justify-content:center;border-radius:1.6rem;
+    translate:-50% -50%!important;text-align:center;
   }
-  .orb__dot{
-    width:7px;height:7px;margin-inline-start:-3.5px;
-    background:var(--accent);opacity:.85;box-shadow:none;
+  .orb__pt:hover,.orb__pt:active{translate:-50% -50%!important}
+  .orb__ico{width:2.35rem;height:2.35rem}
+  .orb__ico svg{width:1.25rem;height:1.25rem}
+  .orb__label{
+    white-space:normal;font-size:.71rem;line-height:1.2;letter-spacing:.004em;
+    hyphens:auto;overflow-wrap:break-word;
   }
-  .orb__label{font-size:1.06rem;color:var(--ink)}
-  .orb:active .orb__dot{transform:scale(1.35)}
-  .orbit__nav:hover .orb:not(:hover) .orb__label{color:var(--ink)}
+  .orb__spoke{background:linear-gradient(90deg,transparent 0 40%,rgba(255,255,255,.14) 100%)}
+}
+/* Der Slogan steht auf schmalen Schirmen unter dem Kreis. */
+@media (max-width:1000px){
+  .stage__inner{flex-direction:column;align-items:center}
+  .orbit__say{
+    position:static;translate:none;width:100%;max-width:26rem;
+    margin-top:clamp(1.3rem,.9rem + 2.5vw,2rem);
+  }
+  .stage__slogan{font-size:clamp(1.45rem,1.05rem + 2.4vw,2rem);max-width:18ch}
+  .stage__sub{font-size:.92rem;max-width:38ch}
+}
+
+@media (max-width:400px){
+  .orbit{width:min(97vw,410px)}
+  .orb__pt{width:5.5rem;padding:.62rem .3rem .56rem}
+  .orb__label{font-size:.67rem}
+  .orb__ico{width:2.15rem;height:2.15rem}
 }
 
 @media (prefers-reduced-motion:reduce){
-  .orbit__ring,.orbit__ring--3,.orb__spoke,.orb__pt{animation:none}
+  .orbit__ring,.orbit__ring--3,.orb__spoke,.orb__pt,.stage__glow{animation:none}
   .orb__spoke::after{transition:none}
 }
 

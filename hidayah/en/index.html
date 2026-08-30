@@ -28,7 +28,7 @@
 <script src="/assets/js/theme.js"></script>
 <link rel="stylesheet" href="/assets/css/hidayah.css">
 </head>
-<body data-lang="en">
+<body data-lang="en" class="is-stage">
 <div class="intro" data-intro>
   <div class="intro__glow"></div>
   <img class="intro__logo" src="/assets/img/logo-besmele.webp"
@@ -51,7 +51,7 @@
           <div role="listbox" data-theme-group><button class="pop__item" type="button" data-theme-set="auto" role="option" aria-selected="false">System</button><button class="pop__item" type="button" data-theme-set="light" role="option" aria-selected="false">Light</button><button class="pop__item" type="button" data-theme-set="dark" role="option" aria-selected="false">Dark</button></div>
           <div class="pop__sep"></div>
           <p class="pop__label">Accent colour</p>
-          <div class="swatches" role="listbox" data-accent-group><button class="swatch" type="button" data-accent-set="smaragd" data-set="smaragd" aria-selected="false" title="Emerald" aria-label="Emerald"></button><button class="swatch" type="button" data-accent-set="indigo" data-set="indigo" aria-selected="false" title="Indigo" aria-label="Indigo"></button><button class="swatch" type="button" data-accent-set="messing" data-set="messing" aria-selected="false" title="Brass" aria-label="Brass"></button><button class="swatch" type="button" data-accent-set="tinte" data-set="tinte" aria-selected="false" title="Ink" aria-label="Ink"></button></div>
+          <div class="swatches" role="listbox" data-accent-group><button class="swatch" type="button" data-accent-set="smaragd" data-set="smaragd" aria-selected="false" title="Emerald" aria-label="Emerald"></button><button class="swatch" type="button" data-accent-set="tuerkis" data-set="tuerkis" aria-selected="false" title="Turquoise" aria-label="Turquoise"></button><button class="swatch" type="button" data-accent-set="indigo" data-set="indigo" aria-selected="false" title="Indigo" aria-label="Indigo"></button><button class="swatch" type="button" data-accent-set="pflaume" data-set="pflaume" aria-selected="false" title="Plum" aria-label="Plum"></button><button class="swatch" type="button" data-accent-set="rubin" data-set="rubin" aria-selected="false" title="Ruby" aria-label="Ruby"></button><button class="swatch" type="button" data-accent-set="kupfer" data-set="kupfer" aria-selected="false" title="Copper" aria-label="Copper"></button><button class="swatch" type="button" data-accent-set="messing" data-set="messing" aria-selected="false" title="Brass" aria-label="Brass"></button><button class="swatch" type="button" data-accent-set="tinte" data-set="tinte" aria-selected="false" title="Ink" aria-label="Ink"></button></div>
         </div>
       </div>
       <div class="pop" data-pop aria-expanded="false">
@@ -78,127 +78,33 @@
 </div>
 <main id="main">
 
-<section class="hero night">
-  <canvas class="hero__stars" data-stars aria-hidden="true"></canvas>
-  <div class="hero__sky" aria-hidden="true"></div>
-  <div class="container">
+<section class="stage night">
+  <canvas class="stage__stars" data-stars aria-hidden="true"></canvas>
+  <div class="stage__glow" aria-hidden="true"></div>
+  <div class="stage__vignette" aria-hidden="true"></div>
+  <div class="stage__inner">
     <div class="orbit">
       <div class="orbit__rings" aria-hidden="true">
         <i class="orbit__ring orbit__ring--1"></i>
         <i class="orbit__ring orbit__ring--2"></i>
         <i class="orbit__ring orbit__ring--3"></i>
       </div>
-      <nav class="orbit__nav" aria-label="Menu"><a class="orb orb--t" href="/en/ueber-uns.html" style="--a:-90.000deg;--x:50.000%;--y:7.000%;--d:0.30s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">About us</span></span></a><a class="orb orb--r" href="/en/artikel.html" style="--a:-38.571deg;--x:83.619%;--y:23.190%;--d:0.39s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">Articles</span></span></a><a class="orb orb--r" href="/en/frage-antwort.html" style="--a:12.857deg;--x:91.922%;--y:59.568%;--d:0.47s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">Q &amp; A</span></span></a><a class="orb orb--r" href="/en/unterricht.html" style="--a:64.286deg;--x:68.657%;--y:88.742%;--d:0.55s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">Private tuition</span></span></a><a class="orb orb--l" href="/en/kurse.html" style="--a:115.714deg;--x:31.343%;--y:88.742%;--d:0.64s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">Courses</span></span></a><a class="orb orb--l" href="/en/neuigkeiten.html" style="--a:167.143deg;--x:8.078%;--y:59.568%;--d:0.73s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">News</span></span></a><a class="orb orb--l" href="/en/kontakt.html" style="--a:218.571deg;--x:16.381%;--y:23.190%;--d:0.81s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">Contact</span></span></a></nav>
+      <nav class="orbit__nav" aria-label="Menu"><a class="orb orb--t" href="/en/ueber-uns.html" style="--a:-90.000deg;--x:50.000%;--y:7.000%;--mx:50.000%;--my:12.500%;--d:0.34s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><span class="orb__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8.4" r="3.2"/><path d="M3.2 19.4a5.8 5.8 0 0 1 11.6 0"/><path d="M16.2 5.6a3 3 0 0 1 0 5.7M17.6 14.2a5.6 5.6 0 0 1 3.2 5.2"/></svg></span><span class="orb__label">About us</span><i class="orb__ring" aria-hidden="true"></i></span></a><a class="orb orb--r" href="/en/artikel.html" style="--a:-38.571deg;--x:83.619%;--y:23.190%;--mx:79.319%;--my:26.619%;--d:0.42s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><span class="orb__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H19v3H6.5"/></svg></span><span class="orb__label">Articles</span><i class="orb__ring" aria-hidden="true"></i></span></a><a class="orb orb--r" href="/en/frage-antwort.html" style="--a:12.857deg;--x:91.922%;--y:59.568%;--mx:86.560%;--my:58.345%;--d:0.49s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><span class="orb__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.1-2.5 3.9M12 17.2h.01"/></svg></span><span class="orb__label">Q &amp; A</span><i class="orb__ring" aria-hidden="true"></i></span></a><a class="orb orb--r" href="/en/unterricht.html" style="--a:64.286deg;--x:68.657%;--y:88.742%;--mx:66.271%;--my:83.786%;--d:0.56s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><span class="orb__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4l9 4.5-9 4.5-9-4.5z"/><path d="M6.5 10.8V15c0 1.7 2.5 3 5.5 3s5.5-1.3 5.5-3v-4.2"/></svg></span><span class="orb__label">Private tuition</span><i class="orb__ring" aria-hidden="true"></i></span></a><a class="orb orb--l" href="/en/kurse.html" style="--a:115.714deg;--x:31.343%;--y:88.742%;--mx:33.729%;--my:83.786%;--d:0.64s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><span class="orb__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="orb__label">Courses</span><i class="orb__ring" aria-hidden="true"></i></span></a><a class="orb orb--l" href="/en/neuigkeiten.html" style="--a:167.143deg;--x:8.078%;--y:59.568%;--mx:13.440%;--my:58.345%;--d:0.72s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><span class="orb__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.4 10a5.6 5.6 0 0 1 11.2 0c0 4.1 1.3 5.4 1.9 6H4.5c.6-.6 1.9-1.9 1.9-6z"/><path d="M10.2 19.3a2 2 0 0 0 3.6 0"/></svg></span><span class="orb__label">News</span><i class="orb__ring" aria-hidden="true"></i></span></a><a class="orb orb--l" href="/en/kontakt.html" style="--a:218.571deg;--x:16.381%;--y:23.190%;--mx:20.681%;--my:26.619%;--d:0.79s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><span class="orb__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5.4" width="18" height="13.2" rx="2.4"/><path d="M3.6 7.1l7.3 5.2a2 2 0 0 0 2.2 0l7.3-5.2"/></svg></span><span class="orb__label">Contact</span><i class="orb__ring" aria-hidden="true"></i></span></a></nav>
       <div class="orbit__core">
-        <img class="hero__logo" src="/assets/img/logo.webp" alt="Hidayah"
+        <img class="stage__logo" src="/assets/img/logo.webp" alt="Hidayah"
              width="1400" height="476" fetchpriority="high">
-        <h1 class="hero__slogan balance">In search of light in a world full of darkness.</h1>
-        <p class="hero__sub">Islamic knowledge. Enjoining the good and forbidding the wrong. Orientation.</p>
       </div>
     </div>
-    <div class="btn-row">
-      <a class="btn btn--primary" href="/en/frage-antwort.html">Ask a question</a>
-      <a class="btn btn--quiet" href="/en/ueber-uns.html">Learn more about Hidayah</a>
+    <div class="orbit__say">
+      <h1 class="stage__slogan balance">In search of light in a world full of darkness.</h1>
+      <p class="stage__sub">Islamic knowledge. Enjoining the good and forbidding the wrong. Orientation.</p>
     </div>
   </div>
-</section>
-<section class="section reveal">
-  <div class="container">
-    <div class="split">
-      <p class="eyebrow">Who we are</p>
-      <div>
-        <h2 class="balance" style="max-width:16ch">Passing on what was entrusted to us</h2>
-        <div class="stack" style="margin-top:1.6rem">
-          <p class="lead">Hidayah grew out of the wish not to keep the Islamic knowledge we learned to ourselves, but to pass it on and thereby serve Islam and the Muslims according to our means.</p>
-          <p class="lead">Our aim is to call people to Tawhid, to convey authentic Islamic knowledge in an understandable way, to clear up misconceptions and to strengthen Muslims in understanding, living and holding firm to their faith.</p>
-        </div>
-        <div class="btn-row" style="margin-top:1.8rem">
-          <a class="link" href="/en/ueber-uns.html">Learn more about Hidayah <span class="arw">&rarr;</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section section--hairline reveal">
-  <div class="container">
-    <div class="section-head"><p class="eyebrow">Areas</p><h2 class="balance">Four ways to go further here</h2></div>
-    <div class="areas"><a class="area" href="/en/artikel.html">
-      <span class="area__num">01</span>
-      <div><h3 class="area__title">Articles</h3><p class="area__text">Islamic articles, explanations, terminology, questions of Fiqh and answers to widespread doubts.</p></div>
-      <span class="area__go"><svg viewBox="0 0 24 24"><path d="M5 12h13M12 5.5l6.5 6.5-6.5 6.5"/></svg></span>
-    </a><a class="area" href="/en/frage-antwort.html">
-      <span class="area__num">02</span>
-      <div><h3 class="area__title">Q &amp; A</h3><p class="area__text">Ask your question and receive a well-founded answer based on Islamic sources.</p></div>
-      <span class="area__go"><svg viewBox="0 0 24 24"><path d="M5 12h13M12 5.5l6.5 6.5-6.5 6.5"/></svg></span>
-    </a><a class="area" href="/en/unterricht.html">
-      <span class="area__num">03</span>
-      <div><h3 class="area__title">Private tuition</h3><p class="area__text">One-to-one teaching matched to your level – on request, after application and conversation.</p></div>
-      <span class="area__go"><svg viewBox="0 0 24 24"><path d="M5 12h13M12 5.5l6.5 6.5-6.5 6.5"/></svg></span>
-    </a><a class="area" href="/en/kurse.html">
-      <span class="area__num">04</span>
-      <div><h3 class="area__title">Courses</h3><p class="area__text">Fully recorded courses at your own pace – finished before they are released.</p></div>
-      <span class="area__go"><svg viewBox="0 0 24 24"><path d="M5 12h13M12 5.5l6.5 6.5-6.5 6.5"/></svg></span>
-    </a></div>
-  </div>
-</section>
-<section class="section section--hairline reveal">
-  <div class="container">
-    <div class="split">
-      <p class="eyebrow">Our foundation</p>
-      <div>
-        <h2 class="balance" style="max-width:18ch">Knowledge is taken from its people</h2>
-        <p class="lead" style="margin-top:1.5rem">Our foundation is the Quran and the authentic Sunnah of the Messenger of Allah &#65018; as understood by the Sahabah and the righteous early generations – as-Salaf as-Salih.</p>
-        <figure class="ayah"><p class="ayah__ar" lang="ar" dir="rtl">﴿فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ﴾</p><p class="ayah__de">&bdquo;Wenn ihr es nicht wisst, dann fragt die Leute des Gedenkens (die über das Wissen der Offenbarung verfügen).&ldquo;</p><figcaption class="ayah__src">Surat an-Nahl, 16:43</figcaption></figure>
-        <div class="btn-row" style="margin-top:1.6rem">
-          <a class="link" href="/en/ueber-uns.html#grundlage">Our foundation in detail <span class="arw">&rarr;</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section--tight reveal">
-  <div class="container">
-    <div class="band">
-      <h2 class="balance">Stay up to date</h2>
-      <p>New articles, videos, courses and announcements – no pop-ups, no advertising.</p>
-      <form data-form="newsletter" novalidate>
-        <input class="input" type="email" name="email" required placeholder="Your email address" aria-label="Your email address">
-        <button class="btn btn--primary" type="submit">Subscribe</button>
-      </form>
-      <p class="form-note">You can unsubscribe at any time. Our <a href="/en/datenschutz.html">privacy policy</a> applies.</p>
-      <p class="form-status" data-status></p>
-    </div>
-  </div>
+  <p class="stage__legal"><a href="/en/impressum.html">Imprint</a> &middot; <a href="/en/datenschutz.html">Privacy policy</a> &middot; <a href="/en/agb.html">Terms</a> &middot; <a href="/en/widerruf.html">Right of withdrawal</a> &middot;
+    <a href="#" data-cookie-open>Cookie settings</a></p>
 </section>
 </main>
-<footer class="site-footer night">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand"><img class="" src="/assets/img/logo-360.webp" alt="Hidayah" width="360" height="122" loading="lazy"><p>In search of light in a world full of darkness.</p></div>
-      <div class="footer-col"><h4>Content</h4><a href="/en/artikel.html">Articles</a><a href="/en/frage-antwort.html">Q &amp; A</a><a href="/en/unterricht.html">Private tuition</a><a href="/en/kurse.html">Courses</a><a href="/en/neuigkeiten.html">News</a></div>
-      <div class="footer-col"><h4>Hidayah</h4>
-        <a href="/en/ueber-uns.html">About us</a>
-        <a href="/en/kontakt.html">Contact</a>
-        <a href="/en/konto.html">My account</a>
-      </div>
-      <div class="footer-col"><h4>Legal</h4>
-        <a href="/en/impressum.html">Imprint</a>
-        <a href="/en/datenschutz.html">Privacy policy</a>
-        <a href="/en/agb.html">Terms</a>
-        <a href="/en/widerruf.html">Right of withdrawal</a>
-        <a href="#" data-cookie-open>Cookie settings</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; <span data-year>2026</span> Hidayah. All rights reserved.</span>
-      <div class="social">
-        <a href="https://instagram.com/hidayah" rel="noopener me" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c0-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2a6.6 6.6 0 1 0 0 13.2 6.6 6.6 0 0 0 0-13.2zm0 10.9a4.3 4.3 0 1 1 0-8.6 4.3 4.3 0 0 1 0 8.6zm8.4-11.2a1.55 1.55 0 1 1-3.1 0 1.55 1.55 0 0 1 3.1 0z"/></svg></a>
-        <a href="https://youtube.com/@hidayah" rel="noopener me" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.4-.4-5c-.3-.9-1-1.6-1.9-1.9C19 4.7 12 4.7 12 4.7s-7 0-8.7.4c-.9.3-1.6 1-1.9 1.9C1 8.6 1 12 1 12s0 3.4.4 5c.3.9 1 1.6 1.9 1.9 1.7.4 8.7.4 8.7.4s7 0 8.7-.4c.9-.3 1.6-1 1.9-1.9.4-1.6.4-5 .4-5zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg></a>
-        <a href="https://x.com/hidayah" rel="noopener me" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.5 3h3.3l-7.2 8.3L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L1.5 3h6.8l4.7 6.2L17.5 3zm-1.2 16h1.8L7.8 4.9H5.9L16.3 19z"/></svg></a>
-      </div>
-    </div>
-  </div>
-</footer>
+
 <div class="search-overlay" data-search aria-hidden="true">
   <div class="search-box">
     <div class="search-input-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
