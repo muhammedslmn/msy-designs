@@ -542,6 +542,89 @@
   /* ---------------------------------------------------------- Kleinkram */
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  /* Sternenfeld hinter dem Kopf der Startseite. Ruhig, langsam, ohne Aufdringlichkeit;
+     bei reduzierter Bewegung bleibt ein einzelnes stehendes Bild. */
+  (function stars() {
+    var cv = $('[data-stars]');
+    if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext('2d');
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var pts = [], w = 0, h = 0, dpr = 1, raf = 0, seen = true;
+
+    function build() {
+      var r = cv.getBoundingClientRect();
+      if (!r.width || !r.height) return false;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = r.width; h = r.height;
+      cv.width = Math.round(w * dpr);
+      cv.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.round(Math.min(110, Math.max(38, (w * h) / 14000)));
+      pts = [];
+      for (var i = 0; i < n; i++) {
+        pts.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 1.1 + .35,
+          a: Math.random() * .45 + .12,
+          s: Math.random() * .9 + .35,          // Grundhelligkeit
+          v: (Math.random() * .1 + .02) / 60,   // Abdrift pro Bild
+          p: Math.random() * Math.PI * 2        // Phase des Flimmerns
+        });
+      }
+      return true;
+    }
+
+    function draw(t) {
+      ctx.clearRect(0, 0, w, h);
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        var tw = calm ? 1 : (.72 + .28 * Math.sin(t / 1400 + p.p));
+        ctx.globalAlpha = Math.min(1, p.a * tw * p.s + .05);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+        ctx.fillStyle = i % 9 === 0 ? '#BFE6D8' : '#EDEAE2';
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function step(t) {
+      raf = 0;
+      if (!seen) return;
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        p.y -= p.v * 16;
+        if (p.y < -2) { p.y = h + 2; p.x = Math.random() * w; }
+      }
+      draw(t);
+      raf = requestAnimationFrame(step);
+    }
+
+    function start() {
+      if (!build()) return;
+      if (calm) { draw(0); return; }
+      if (!raf) raf = requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        seen = es[0].isIntersecting;
+        if (seen && !calm && !raf) raf = requestAnimationFrame(step);
+      }, { threshold: 0 }).observe(cv);
+    }
+
+    var to;
+    window.addEventListener('resize', function () {
+      clearTimeout(to);
+      to = setTimeout(function () {
+        if (raf) { cancelAnimationFrame(raf); raf = 0; }
+        start();
+      }, 180);
+    });
+    start();
+  }());
+
   (function courseLayout() {
     var el = $('[data-course-layout]');
     if (!el) return;

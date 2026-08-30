@@ -4,10 +4,11 @@
 Grundregel: Die Hauptbereiche stehen fest. Einzelne Beitraege darin erscheinen
 erst, wenn sie eingetragen sind — nichts wird als Platzhalter vorgetaeuscht.
 """
+import math
 import re
 from content import (SITE, SERIES, DEFAULT_AUTHOR, ARTICLES, TEACHING, COURSES,
                      PACKAGES, QA_CATEGORIES, QA_PUBLIC, NEWS, TEAM, ayah)
-from layout import t, u, ICON
+from layout import t, u, ICON, nav_items
 
 MONTHS = {"de": ["Januar","Februar","März","April","Mai","Juni","Juli","August",
                  "September","Oktober","November","Dezember"],
@@ -88,21 +89,64 @@ def steps_block(items):
 
 
 # ------------------------------------------------------------------ Startseite
+# Die Bereiche liegen auf einem Kreis um das Logo. Winkel und Punkte werden hier
+# berechnet, damit im Browser dafuer kein Skript noetig ist.
+ORBIT_R = 43.0          # Radius in Prozent der Feldbreite
+ORBIT_START = -90.0     # der erste Punkt steht oben
+
+
+def orbit(lang):
+    """Bereichsring um das Logo. Die Startseite fehlt — dorthin fuehrt das Logo."""
+    items = [(key, href) for key, href in nav_items(lang) if key != "nav.home"]
+    n = len(items) or 1
+    out = []
+    for i, (key, href) in enumerate(items):
+        ang = ORBIT_START + i * 360.0 / n
+        rad = math.radians(ang)
+        cx, cy = math.cos(rad), math.sin(rad)
+        x, y = 50 + ORBIT_R * cx, 50 + ORBIT_R * cy
+        if cx > .28:
+            side = "r"
+        elif cx < -.28:
+            side = "l"
+        else:
+            side = "b" if cy > 0 else "t"
+        out.append(
+            '<a class="orb orb--%s" href="%s" style="--a:%.3fdeg;--x:%.3f%%;--y:%.3f%%;--d:%.2fs">'
+            '<i class="orb__spoke" aria-hidden="true"></i>'
+            '<span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i>'
+            '<span class="orb__label">%s</span></span></a>'
+            % (side, u(lang, href), ang, x, y, .30 + i * .085, t(lang, key)))
+    return "".join(out)
+
+
 def home(lang):
     out = ['''
 <section class="hero night">
+  <canvas class="hero__stars" data-stars aria-hidden="true"></canvas>
   <div class="hero__sky" aria-hidden="true"></div>
   <div class="container">
-    <img class="hero__logo" src="/assets/img/logo.webp" alt="Hidayah"
-         width="1400" height="476" fetchpriority="high">
-    <h1 class="hero__slogan display-xl balance">%(slogan)s</h1>
-    <p class="hero__sub">%(sub)s</p>
+    <div class="orbit">
+      <div class="orbit__rings" aria-hidden="true">
+        <i class="orbit__ring orbit__ring--1"></i>
+        <i class="orbit__ring orbit__ring--2"></i>
+        <i class="orbit__ring orbit__ring--3"></i>
+      </div>
+      <nav class="orbit__nav" aria-label="%(navlabel)s">%(orbs)s</nav>
+      <div class="orbit__core">
+        <img class="hero__logo" src="/assets/img/logo.webp" alt="Hidayah"
+             width="1400" height="476" fetchpriority="high">
+        <h1 class="hero__slogan balance">%(slogan)s</h1>
+        <p class="hero__sub">%(sub)s</p>
+      </div>
+    </div>
     <div class="btn-row">
       <a class="btn btn--primary" href="%(qa)s">%(cta1)s</a>
       <a class="btn btn--quiet" href="%(about)s">%(cta2)s</a>
     </div>
   </div>
 </section>''' % {"slogan": t(lang, "slogan"), "sub": t(lang, "hero.sub"),
+                 "orbs": orbit(lang), "navlabel": t(lang, "menu"),
                  "qa": u(lang, "frage-antwort.html"), "cta1": t(lang, "hero.cta2"),
                  "about": u(lang, "ueber-uns.html"), "cta2": t(lang, "who.cta")}]
 

@@ -79,12 +79,23 @@
 <main id="main">
 
 <section class="hero night">
+  <canvas class="hero__stars" data-stars aria-hidden="true"></canvas>
   <div class="hero__sky" aria-hidden="true"></div>
   <div class="container">
-    <img class="hero__logo" src="/assets/img/logo.webp" alt="Hidayah"
-         width="1400" height="476" fetchpriority="high">
-    <h1 class="hero__slogan display-xl balance">في بحثٍ عن النور في عالمٍ يملؤه الظلام.</h1>
-    <p class="hero__sub">علم شرعي. أمر بالمعروف ونهي عن المنكر. هداية.</p>
+    <div class="orbit">
+      <div class="orbit__rings" aria-hidden="true">
+        <i class="orbit__ring orbit__ring--1"></i>
+        <i class="orbit__ring orbit__ring--2"></i>
+        <i class="orbit__ring orbit__ring--3"></i>
+      </div>
+      <nav class="orbit__nav" aria-label="القائمة"><a class="orb orb--t" href="/ar/ueber-uns.html" style="--a:-90.000deg;--x:50.000%;--y:7.000%;--d:0.30s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">من نحن</span></span></a><a class="orb orb--r" href="/ar/artikel.html" style="--a:-38.571deg;--x:83.619%;--y:23.190%;--d:0.39s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">المقالات</span></span></a><a class="orb orb--r" href="/ar/frage-antwort.html" style="--a:12.857deg;--x:91.922%;--y:59.568%;--d:0.47s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">سؤال وجواب</span></span></a><a class="orb orb--r" href="/ar/unterricht.html" style="--a:64.286deg;--x:68.657%;--y:88.742%;--d:0.55s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">دروس خاصة</span></span></a><a class="orb orb--l" href="/ar/kurse.html" style="--a:115.714deg;--x:31.343%;--y:88.742%;--d:0.64s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">الدورات</span></span></a><a class="orb orb--l" href="/ar/neuigkeiten.html" style="--a:167.143deg;--x:8.078%;--y:59.568%;--d:0.73s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">الأخبار</span></span></a><a class="orb orb--l" href="/ar/kontakt.html" style="--a:218.571deg;--x:16.381%;--y:23.190%;--d:0.81s"><i class="orb__spoke" aria-hidden="true"></i><span class="orb__pt"><i class="orb__dot" aria-hidden="true"></i><span class="orb__label">تواصل</span></span></a></nav>
+      <div class="orbit__core">
+        <img class="hero__logo" src="/assets/img/logo.webp" alt="Hidayah"
+             width="1400" height="476" fetchpriority="high">
+        <h1 class="hero__slogan balance">في بحثٍ عن النور في عالمٍ يملؤه الظلام.</h1>
+        <p class="hero__sub">علم شرعي. أمر بالمعروف ونهي عن المنكر. هداية.</p>
+      </div>
+    </div>
     <div class="btn-row">
       <a class="btn btn--primary" href="/ar/frage-antwort.html">اطرح سؤالًا</a>
       <a class="btn btn--quiet" href="/ar/ueber-uns.html">اعرف المزيد عن هداية</a>

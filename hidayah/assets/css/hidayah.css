@@ -390,33 +390,172 @@ html.intro-lock,html.intro-lock body{overflow:hidden}
 /* ==========================================================================
    8 · Startseite
    ========================================================================== */
+/* Der Kopf der Startseite ist eine Himmelskarte: der Mond des Logos steht als
+   Lichtpunkt in der Mitte, die Bereiche liegen als Wegmarken auf seinem Kreis.
+   Die Punkte werden beim Bauen berechnet — im Browser laeuft dafuer kein Skript. */
 .hero{
   position:relative;text-align:center;overflow:hidden;
-  padding-block:clamp(3.25rem,2rem + 6vw,6rem) clamp(3rem,2rem + 3vw,4.5rem);
+  padding-block:clamp(2.5rem,1.5rem + 4vw,4.5rem) clamp(2.75rem,2rem + 3vw,4.25rem);
+}
+.hero__stars{
+  position:absolute;inset:0;width:100%;height:100%;pointer-events:none;
+  opacity:.9;
 }
 .hero__sky{
-  position:absolute;inset:-30% -10% auto -10%;height:150%;pointer-events:none;
+  position:absolute;inset:-20% -10% auto -10%;height:150%;pointer-events:none;
   background:
-    radial-gradient(760px 460px at 50% 16%, rgba(236,226,200,.16), transparent 66%),
-    radial-gradient(620px 420px at 84% 4%, rgba(120,150,200,.12), transparent 70%);
+    radial-gradient(40% 34% at 50% 47%, rgba(236,226,200,.19), transparent 70%),
+    radial-gradient(70% 58% at 50% 47%, rgba(120,150,200,.10), transparent 72%),
+    radial-gradient(620px 420px at 86% 2%, rgba(120,150,200,.13), transparent 72%),
+    radial-gradient(520px 380px at 8% 92%, rgba(95,195,166,.07), transparent 72%);
 }
 .hero>.container{position:relative}
-.hero__logo{width:min(56vw,286px);margin-inline:auto}
+
+/* --- Feld ---------------------------------------------------------------- */
+.orbit{
+  --r:43%;
+  position:relative;width:clamp(380px,min(56vw,66vh),660px);aspect-ratio:1;
+  margin-inline:auto;
+}
+
+/* --- Ruhige Kreise als Grund --------------------------------------------- */
+.orbit__rings{position:absolute;inset:0;pointer-events:none}
+.orbit__ring{position:absolute;left:50%;top:50%;border-radius:50%;transform:translate(-50%,-50%)}
+.orbit__ring--1{width:86%;height:86%;border:1px solid rgba(255,255,255,.10)}
+.orbit__ring--2{width:60%;height:60%;border:1px solid rgba(255,255,255,.05)}
+.orbit__ring--3{
+  width:98%;height:98%;
+  border:1px dashed rgba(95,195,166,.22);
+  animation:orbitDrift 240s linear infinite;
+}
+@keyframes orbitDrift{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+/* --- Mitte: Logo, Slogan, Zeile ------------------------------------------ */
+.orbit__core{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(58%,25rem);display:flex;flex-direction:column;align-items:center;
+}
+.hero__logo{width:min(38vw,208px);margin-inline:auto}
 .hero__slogan{
-  color:var(--ink);
-  margin-top:clamp(1.8rem,1.3rem + 1.6vw,2.6rem);
-  max-width:23ch;margin-inline:auto;
-  color:var(--ink);
+  font-family:var(--ff-display);font-weight:600;letter-spacing:-.02em;line-height:1.06;
+  font-size:clamp(1.35rem,.9rem + 1.9vw,2.35rem);
+  margin-top:clamp(1rem,.6rem + 1.2vw,1.7rem);max-width:15ch;color:var(--ink);
 }
-.hero__sub{margin-top:1.5rem;margin-inline:auto;max-width:44ch;color:var(--ink-2);font-size:1.06rem}
+.hero__sub{
+  margin-top:clamp(.7rem,.5rem + .6vw,1.1rem);max-width:34ch;
+  color:var(--ink-2);font-size:clamp(.84rem,.78rem + .22vw,.98rem);line-height:1.55;
+}
 .hero__sub strong{color:var(--ink);font-weight:600}
-.hero .btn-row{justify-content:center;margin-top:2.4rem}
-.hero__seal{
-  margin-top:clamp(2.4rem,1.8rem + 2vw,3.4rem);display:flex;align-items:center;
-  justify-content:center;gap:1rem;color:var(--ink-3);
-  font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+.hero .btn-row{justify-content:center;margin-top:clamp(1.6rem,1rem + 2vw,2.6rem)}
+
+/* --- Bereiche auf dem Kreis ----------------------------------------------- */
+.orbit__nav{position:absolute;inset:0}
+.orb{position:absolute;inset:0;pointer-events:none;text-decoration:none;display:block}
+
+/* Der Strahl laeuft von der Mitte zum Punkt und leuchtet beim Ansteuern auf. */
+.orb__spoke{
+  position:absolute;left:50%;top:50%;width:var(--r);height:1px;
+  transform-origin:0 50%;transform:rotate(var(--a));
+  background:linear-gradient(90deg,transparent 0 54%,rgba(255,255,255,.17) 100%);
+  opacity:.6;transition:opacity .45s ease;
 }
-.hero__seal::before,.hero__seal::after{content:"";height:1px;width:min(22vw,120px);background:var(--line)}
+.orb__spoke::after{
+  content:"";position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,transparent 0 54%,var(--accent) 100%);
+  transition:transform .6s cubic-bezier(.22,.9,.28,1);
+}
+
+.orb__pt{
+  position:absolute;left:var(--x);top:var(--y);pointer-events:auto;
+  display:flex;align-items:center;gap:.6rem;
+  padding:.42rem .55rem;border-radius:10px;
+  transition:transform .4s cubic-bezier(.22,.9,.28,1);
+}
+.orb--r .orb__pt{transform:translateY(-50%)}
+.orb--l .orb__pt{flex-direction:row-reverse;transform:translate(-100%,-50%)}
+/* Rechts-nach-links: Punkt und Name tauschen die Seiten, damit der Punkt weiterhin
+   innen auf dem Kreis sitzt und der Name nach aussen zeigt. */
+[dir="rtl"] .orb--r .orb__pt{flex-direction:row-reverse}
+[dir="rtl"] .orb--l .orb__pt{flex-direction:row}
+.orb--t .orb__pt{flex-direction:column-reverse;gap:.5rem;transform:translate(-50%,-100%)}
+.orb--b .orb__pt{flex-direction:column;gap:.5rem;transform:translate(-50%,0)}
+
+.orb__dot{
+  width:7px;height:7px;border-radius:50%;flex:none;
+  background:rgba(255,255,255,.42);
+  box-shadow:0 0 0 0 var(--accent);
+  transition:background .35s ease, box-shadow .45s ease, transform .45s ease;
+}
+.orb__label{
+  font-family:var(--ff-display);font-weight:500;letter-spacing:-.005em;
+  font-size:clamp(.82rem,.72rem + .38vw,1.02rem);line-height:1.2;white-space:nowrap;
+  color:var(--ink-2);transition:color .3s ease;
+}
+
+/* Beim Oeffnen laufen die Strahlen der Reihe nach vom Mond nach aussen. */
+@keyframes orbIn{from{opacity:0}}
+.orb__spoke{animation:orbIn .9s ease backwards;animation-delay:var(--d)}
+.orb__pt{animation:orbIn .8s ease backwards;animation-delay:var(--d)}
+.orbit__ring{animation:orbIn 1.4s ease backwards .15s}
+
+/* Ansteuern: der Strahl fuellt sich, der Punkt wird zum Licht, der Name tritt vor. */
+.orb:hover .orb__spoke,.orb:focus-visible .orb__spoke{opacity:1}
+.orb:hover .orb__spoke::after,.orb:focus-visible .orb__spoke::after{transform:scaleX(1)}
+.orb:hover .orb__dot,.orb:focus-visible .orb__dot{
+  background:var(--accent);transform:scale(1.25);
+  box-shadow:0 0 0 5px color-mix(in oklab, var(--accent) 20%, transparent);
+}
+.orb:hover .orb__label,.orb:focus-visible .orb__label{color:var(--ink)}
+.orb--r:hover .orb__pt{transform:translate(6px,-50%)}
+.orb--l:hover .orb__pt{transform:translate(calc(-100% - 6px),-50%)}
+.orb--t:hover .orb__pt{transform:translate(-50%,calc(-100% - 6px))}
+.orb--b:hover .orb__pt{transform:translate(-50%,6px)}
+.orb:focus-visible{outline:none}
+.orb:focus-visible .orb__pt{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Die uebrigen Bereiche treten zurueck, sobald einer angesteuert wird. */
+.orbit__nav:hover .orb:not(:hover) .orb__label{color:var(--ink-3)}
+.orbit__nav:hover .orb:not(:hover) .orb__spoke{opacity:.3}
+
+/* --- Schmale Schirme: aus dem Kreis wird ein Strang unter dem Logo -------- */
+@media (max-width:1000px){
+  .orbit{width:100%;aspect-ratio:auto;display:flex;flex-direction:column;align-items:center}
+  .orbit__rings{display:none}
+  .orbit__core{position:static;transform:none;order:1;width:100%;max-width:27rem}
+  .hero__logo{width:min(50vw,220px)}
+  .hero__slogan{max-width:18ch;font-size:clamp(1.55rem,1.1rem + 2.6vw,2.15rem)}
+  .hero__sub{max-width:40ch;font-size:.95rem}
+
+  /* Ein Strang faellt vom Logo herab; die Bereiche liegen als Punkte darauf. */
+  .orbit__nav{
+    position:relative;order:2;width:100%;max-width:27rem;
+    margin-top:clamp(1.9rem,1.2rem + 3vw,2.9rem);
+    display:flex;flex-direction:column;padding-inline-start:34%;
+  }
+  .orbit__nav::before{
+    content:"";position:absolute;inset-inline-start:34%;top:-1.5rem;bottom:1.6rem;width:1px;
+    background:linear-gradient(180deg,transparent,rgba(255,255,255,.24) 14%,rgba(255,255,255,.06));
+  }
+  .orb{position:relative;pointer-events:auto;display:block}
+  .orb__spoke{display:none}
+  .orb__pt{
+    position:relative;left:auto;top:auto;transform:none!important;
+    flex-direction:row!important;justify-content:flex-start;align-items:center;
+    gap:.95rem;padding:.72rem .4rem;
+  }
+  .orb__dot{
+    width:7px;height:7px;margin-inline-start:-3.5px;
+    background:var(--accent);opacity:.85;box-shadow:none;
+  }
+  .orb__label{font-size:1.06rem;color:var(--ink)}
+  .orb:active .orb__dot{transform:scale(1.35)}
+  .orbit__nav:hover .orb:not(:hover) .orb__label{color:var(--ink)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .orbit__ring,.orbit__ring--3,.orb__spoke,.orb__pt{animation:none}
+  .orb__spoke::after{transition:none}
+}
 
 /* Bereichsliste — redaktionelle Zeilen statt Kartenraster */
 .areas{border-top:1px solid var(--line)}
